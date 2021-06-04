@@ -1,7 +1,7 @@
-name: "ampel-leipzig-meld"
+name: ampel-leipzig-meld
 output_dir: ../docs
 navbar:
-  title: "ampel-leipzig-meld"
+  title: ampel-leipzig-meld
   left:
   - text: Home
     href: index.html
@@ -9,6 +9,10 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  right:
+  - icon: fa-github
+    text: Source code
+    href: https://github.com/ampel-leipzig/ampel-leipzig-meld
 output:
   workflowr::wflow_html:
     toc: yes
