@@ -1,6 +1,8 @@
 GUIX=/usr/local/bin/guix
 GUIXCOMMIT=c78d6c6
 
+.PHONEY: clean clean-container
+
 container/ampel-leipzig-meld.sif: guix/manifest.scm \
 	guix/channels.scm \
 	guix/channel/ampel/packages/rpackages.scm
@@ -14,5 +16,9 @@ container/ampel-leipzig-meld.sif: guix/manifest.scm \
         --symlink=/share=share \
     	--manifest=guix/manifest.scm \
     	--load-path=guix/channel \
-		--save-provenance
-	install -D -m 664 "$(shell ls -c /gnu/store/*.squashfs | head -n 1)" $@
+		--save-provenance` $@
+
+clean: clean-container
+
+clean-container:
+	@rm -rf .cache
