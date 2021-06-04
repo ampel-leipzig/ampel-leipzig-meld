@@ -21,4 +21,4 @@ container/ampel-leipzig-meld.sif: guix/manifest.scm \
 clean: clean-container
 
 clean-container:
-	@rm -rf .cache
+	@rm -rf container
