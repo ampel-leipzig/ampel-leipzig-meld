@@ -7,4 +7,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+# Acknowledgment
+
+This work is part of the [AMPEL](https://ampel.care/en/)
+(Analysis and Reporting System for the Improvement of Patient Safety through
+Real-Time Integration of Laboratory Findings) project.
+
+This measure is co-funded with tax revenues based on the budget adopted by
+the members of the Saxon State Parliament.
