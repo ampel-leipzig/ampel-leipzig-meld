@@ -1,10 +1,11 @@
 GUIX=/usr/local/bin/guix
-GUIXCOMMIT=ff8f743
+GUIXCOMMIT=c78d6c6
 
 container/ampel-leipzig-meld.sif: guix/manifest.scm \
 	guix/channels.scm \
 	guix/channel/ampel/packages/rpackages.scm
-	$(GUIX) time-machine --commit=$(GUIXCOMMIT) -- pack \
+	mkdir -p container
+	cp `$(GUIX) time-machine --commit=$(GUIXCOMMIT) -- pack \
     	--relocatable --relocatable \
     	--format=squashfs \
     	--entry-point=bin/R \
