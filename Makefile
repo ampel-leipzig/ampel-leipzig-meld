@@ -1,7 +1,12 @@
 GUIX=/usr/local/bin/guix
 GUIXCOMMIT=c78d6c6
 
-.PHONEY: clean clean-container
+.PHONEY: clean clean-container container run
+
+run: container/ampel-leipzig-meld.sif
+	./scripts/R.sh
+
+container: container/ampel-leipzig-meld.sif
 
 container/ampel-leipzig-meld.sif: guix/manifest.scm \
 	guix/channels.scm \
