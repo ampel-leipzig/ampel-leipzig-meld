@@ -10,7 +10,6 @@ tg_site <- list(
             # Build
             workflowr::wflow_build(
                 file.path("analysis", "about.Rmd"),
-                message = "docs: rebuild about.html",
                 view = FALSE
             )
             # Return file name
@@ -25,7 +24,6 @@ tg_site <- list(
             !!tar_knitr_deps_expr(file.path("analysis", "index.Rmd"))
             workflowr::wflow_build(
                 file.path("analysis", "index.Rmd"),
-                message = "docs: rebuild index.html",
                 view = FALSE
             )
             file.path("analysis", "index.Rmd")
@@ -39,7 +37,6 @@ tg_site <- list(
             !!tar_knitr_deps_expr(file.path("analysis", "license.Rmd"))
             workflowr::wflow_build(
                 file.path("analysis", "license.Rmd"),
-                message = "docs: rebuild license.html",
                 view = FALSE
             )
 

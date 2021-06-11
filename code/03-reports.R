@@ -6,7 +6,6 @@ tg_reports <- list(
             !!tar_knitr_deps_expr(file.path("analysis", "histograms.Rmd"))
             workflowr::wflow_build(
                 file.path("analysis", "histograms.Rmd"),
-                message = "docs: rebuild histograms.html",
                 view = FALSE
            )
            file.path("analysis", "histograms.Rmd")
