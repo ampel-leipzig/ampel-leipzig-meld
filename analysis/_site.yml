@@ -9,8 +9,12 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  - text: Exploratory Data Analysis
+    menu:
+    - text: "Histograms"
+      href: histograms.html
   right:
-  - text: Source code
+  - text: Source Code
     href: https://github.com/ampel-leipzig/ampel-leipzig-meld
 output:
   workflowr::wflow_html:
