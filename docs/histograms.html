@@ -32,6 +32,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
@@ -123,6 +124,15 @@ code span.va { color: #000000; } /* Variable */
 code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -307,6 +317,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -423,7 +436,13 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="missing.html">Missing Data</a>
+    </li>
+    <li>
       <a href="histograms.html">Histograms</a>
+    </li>
+    <li>
+      <a href="corrplot.html">Correlation</a>
     </li>
   </ul>
 </li>
@@ -438,6 +457,14 @@ div.tocify {
 </div><!--/.navbar -->
 
 <div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
 
@@ -557,16 +584,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree7bee503f708fc02eb6a1c8744f0c1c988ae19df6targetblank7bee503a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/7bee503f708fc02eb6a1c8744f0c1c988ae19df6" target="_blank">7bee503</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree5d77d52e9f6571661a1882d5e988ff4a55da262dtargetblank5d77d52a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/5d77d52e9f6571661a1882d5e988ff4a55da262d" target="_blank">5d77d52</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree7bee503f708fc02eb6a1c8744f0c1c988ae19df6targetblank7bee503a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree5d77d52e9f6571661a1882d5e988ff4a55da262dtargetblank5d77d52a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/7bee503f708fc02eb6a1c8744f0c1c988ae19df6" target="_blank">7bee503</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/5d77d52e9f6571661a1882d5e988ff4a55da262d" target="_blank">5d77d52</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -615,6 +642,40 @@ Message
 <tbody>
 <tr>
 <td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3b9b8b99d7bfa71a71bf9a915e9af65dde3aa104/analysis/histograms.Rmd" target="_blank">3b9b8b9</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+<td>
+feat: use imputed data
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/24a733a22e86d92c1463c7a69314e8f223fbe94b/docs/histograms.html" target="_blank">24a733a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+<td>
+docs: rebuild site
+</td>
+</tr>
+<tr>
+<td>
 html
 </td>
 <td>
@@ -655,15 +716,15 @@ feat: add basic targets workflow
 </div>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">tar_load</span>(raw_data)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">tar_load</span>(imp_data)</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a>.hist &lt;-<span class="st"> </span><span class="cf">function</span>(</span>
 <span id="cb1-5"><a href="#cb1-5"></a>    ..., <span class="dt">xlab =</span> <span class="kw">deparse</span>(<span class="kw">substitute</span>(x)), <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;Histogram of&quot;</span>, xlab),</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    <span class="dt">col =</span> <span class="kw">palette.colors</span>(2L)[<span class="dv">2</span>]</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="dt">col =</span> <span class="kw">palette.colors</span>(2L)[2L]</span>
 <span id="cb1-7"><a href="#cb1-7"></a>)<span class="kw">hist</span>(..., <span class="dt">main =</span> main, <span class="dt">xlab =</span> xlab, <span class="dt">col =</span> col)</span></code></pre></div>
 <div id="age" class="section level1">
 <h1>Age</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">.hist</span>(raw_data<span class="op">$</span>Age, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">.hist</span>(imp_data<span class="op">$</span>Age, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
 <p><img src="figure/histograms.Rmd/histograms_age-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_age-1">
@@ -703,14 +764,17 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="laboratory-measurements" class="section level1">
-<h1>Laboratory Measurements</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(raw_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
+<div id="raw-data-imputed" class="section level1">
+<h1>Raw Data (imputed)</h1>
+<div id="laboratory-measurements" class="section level2">
+<h2>Laboratory Measurements</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
 <span id="cb3-4"><a href="#cb3-4"></a>    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>    <span class="kw">.hist</span>(raw_data[[v]], <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="dt">xlab =</span> v)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="kw">.hist</span>(imp_data[[v]], <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="dt">xlab =</span> v)</span>
 <span id="cb3-6"><a href="#cb3-6"></a>}</span></code></pre></div>
+</div>
 <div id="alat_s" class="section level2">
 <h2>ALAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -1826,6 +1890,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
