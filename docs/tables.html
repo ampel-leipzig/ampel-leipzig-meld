@@ -1,0 +1,2757 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Tables</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<!-- Add a small amount of space between sections. -->
+<style type="text/css">
+div.section {
+  padding-top: 12px;
+}
+</style>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ampel-leipzig-meld</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="license.html">License</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Exploratory Data Analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="tables.html">Tables</a>
+    </li>
+    <li>
+      <a href="missing.html">Missing Data</a>
+    </li>
+    <li>
+      <a href="histograms.html">Histograms</a>
+    </li>
+    <li>
+      <a href="boxplots.html">Boxplots</a>
+    </li>
+    <li>
+      <a href="corrplot.html">Correlation</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld">Source Code</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Tables</h1>
+
+</div>
+
+
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</button>
+</p>
+<div id="workflowr-report" class="collapse">
+<ul class="nav nav-tabs">
+<li class="active">
+<a data-toggle="tab" href="#summary">Summary</a>
+</li>
+<li>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+</li>
+<li>
+<a data-toggle="tab" href="#versions">Past versions</a>
+</li>
+</ul>
+<div class="tab-content">
+<div id="summary" class="tab-pane fade in active">
+<p>
+<strong>Last updated:</strong> 2021-06-11
+</p>
+<p>
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+</p>
+<p>
+<strong>Knit directory:</strong> <code>ampel-leipzig-meld/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+</p>
+<p>
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+</p>
+<hr>
+</div>
+<div id="checks" class="tab-pane fade">
+<div id="workflowr-checks" class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+</p>
+</div>
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+</p>
+</div>
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210604code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210604)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210604code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210604)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree51d09cee88d7b10f6b90c214ab7d02dc74e2afd5targetblank51d09cea"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/51d09cee88d7b10f6b90c214ab7d02dc74e2afd5" target="_blank">51d09ce</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree51d09cee88d7b10f6b90c214ab7d02dc74e2afd5targetblank51d09cea" class="panel-collapse collapse">
+<div class="panel-body">
+<p>
+Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+</p>
+<p>
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/51d09cee88d7b10f6b90c214ab7d02dc74e2afd5" target="_blank">51d09ce</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+</p>
+<p>
+Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+</p>
+<pre><code>
+Ignored files:
+    Ignored:    _targets/
+    Ignored:    container/
+
+Unstaged changes:
+    Modified:   code/03-reports.R
+
+</code></pre>
+<p>
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+<div id="versions" class="tab-pane fade">
+
+<p>
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/tables.Rmd</code>) and HTML (<code>docs/tables.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+</p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/51d09cee88d7b10f6b90c214ab7d02dc74e2afd5/analysis/tables.Rmd" target="_blank">51d09ce</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+<td>
+feat: add skimr tables
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(<span class="st">&quot;skimr&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">tar_load</span>(raw_data)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">tar_load</span>(imp_data)</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">tar_load</span>(zlog_data)</span></code></pre></div>
+<div id="raw-data" class="section level1">
+<h1>Raw Data</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">skim</span>(raw_data)</span></code></pre></div>
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">raw_data</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">654</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">44</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">43</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sex</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">mal: 414, fem: 240</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">56.79</td>
+<td align="right">10.09</td>
+<td align="right">18.00</td>
+<td align="right">52.00</td>
+<td align="right">58.00</td>
+<td align="right">64.00</td>
+<td align="right">81.00</td>
+<td align="left">▁▁▅▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">DaysAtRisk</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">265.08</td>
+<td align="right">258.76</td>
+<td align="right">1.00</td>
+<td align="right">38.00</td>
+<td align="right">191.00</td>
+<td align="right">383.75</td>
+<td align="right">1080.00</td>
+<td align="left">▇▃▂▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Deceased</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.16</td>
+<td align="right">0.37</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td align="left">LTx</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.09</td>
+<td align="right">0.29</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Cirrhosis</td>
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">0.91</td>
+<td align="right">0.29</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="left">▁▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">ALF</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.01</td>
+<td align="right">0.11</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Ethyltoxic</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.63</td>
+<td align="right">0.48</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="left">▅▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">HBV</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.03</td>
+<td align="right">0.17</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">HCV</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.07</td>
+<td align="right">0.25</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">AIH</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.05</td>
+<td align="right">0.21</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">PBC</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.03</td>
+<td align="right">0.16</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">PSC</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.02</td>
+<td align="right">0.15</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">NASH</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.07</td>
+<td align="right">0.26</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">Cryptogenic</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.10</td>
+<td align="right">0.31</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Dialysis</td>
+<td align="right">2</td>
+<td align="right">1.00</td>
+<td align="right">0.05</td>
+<td align="right">0.22</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">GIB</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.25</td>
+<td align="right">0.43</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="odd">
+<td align="left">HCC</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">0.19</td>
+<td align="right">0.39</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td align="left">SBP</td>
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">0.14</td>
+<td align="right">0.35</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">ALAT_S</td>
+<td align="right">10</td>
+<td align="right">0.98</td>
+<td align="right">0.66</td>
+<td align="right">3.17</td>
+<td align="right">0.08</td>
+<td align="right">0.22</td>
+<td align="right">0.33</td>
+<td align="right">0.48</td>
+<td align="right">56.03</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ALB_S</td>
+<td align="right">6</td>
+<td align="right">0.99</td>
+<td align="right">38.54</td>
+<td align="right">7.56</td>
+<td align="right">16.10</td>
+<td align="right">33.50</td>
+<td align="right">39.25</td>
+<td align="right">44.62</td>
+<td align="right">52.40</td>
+<td align="left">▁▃▆▇▅</td>
+</tr>
+<tr class="odd">
+<td align="left">AP_S</td>
+<td align="right">7</td>
+<td align="right">0.99</td>
+<td align="right">2.48</td>
+<td align="right">2.63</td>
+<td align="right">0.35</td>
+<td align="right">1.46</td>
+<td align="right">1.95</td>
+<td align="right">2.83</td>
+<td align="right">52.97</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ASAT_S</td>
+<td align="right">8</td>
+<td align="right">0.99</td>
+<td align="right">1.23</td>
+<td align="right">2.54</td>
+<td align="right">0.27</td>
+<td align="right">0.55</td>
+<td align="right">0.77</td>
+<td align="right">1.16</td>
+<td align="right">32.69</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">B_MPV_E</td>
+<td align="right">64</td>
+<td align="right">0.90</td>
+<td align="right">11.06</td>
+<td align="right">1.11</td>
+<td align="right">8.40</td>
+<td align="right">10.30</td>
+<td align="right">11.00</td>
+<td align="right">11.80</td>
+<td align="right">14.50</td>
+<td align="left">▂▇▇▃▁</td>
+</tr>
+<tr class="even">
+<td align="left">B_PLT_E</td>
+<td align="right">26</td>
+<td align="right">0.96</td>
+<td align="right">136.51</td>
+<td align="right">84.99</td>
+<td align="right">10.00</td>
+<td align="right">72.75</td>
+<td align="right">118.00</td>
+<td align="right">183.00</td>
+<td align="right">742.00</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">B_WBC_E</td>
+<td align="right">23</td>
+<td align="right">0.96</td>
+<td align="right">7.12</td>
+<td align="right">3.89</td>
+<td align="right">1.50</td>
+<td align="right">4.65</td>
+<td align="right">6.30</td>
+<td align="right">8.30</td>
+<td align="right">30.20</td>
+<td align="left">▇▅▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">BILI_S</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">59.30</td>
+<td align="right">107.03</td>
+<td align="right">2.20</td>
+<td align="right">12.80</td>
+<td align="right">24.45</td>
+<td align="right">50.38</td>
+<td align="right">1096.80</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">BILID_S</td>
+<td align="right">82</td>
+<td align="right">0.87</td>
+<td align="right">40.59</td>
+<td align="right">78.43</td>
+<td align="right">3.00</td>
+<td align="right">6.20</td>
+<td align="right">12.55</td>
+<td align="right">30.83</td>
+<td align="right">497.90</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">CA_S</td>
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">2.28</td>
+<td align="right">0.17</td>
+<td align="right">1.73</td>
+<td align="right">2.16</td>
+<td align="right">2.30</td>
+<td align="right">2.40</td>
+<td align="right">2.96</td>
+<td align="left">▁▅▇▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CHE_S</td>
+<td align="right">6</td>
+<td align="right">0.99</td>
+<td align="right">72.74</td>
+<td align="right">40.43</td>
+<td align="right">4.50</td>
+<td align="right">39.70</td>
+<td align="right">67.65</td>
+<td align="right">102.55</td>
+<td align="right">191.90</td>
+<td align="left">▆▇▆▃▁</td>
+</tr>
+<tr class="even">
+<td align="left">CHOLG_S</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">4.41</td>
+<td align="right">1.82</td>
+<td align="right">0.88</td>
+<td align="right">3.34</td>
+<td align="right">4.40</td>
+<td align="right">5.31</td>
+<td align="right">20.53</td>
+<td align="left">▇▅▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CL_S</td>
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">99.20</td>
+<td align="right">5.89</td>
+<td align="right">61.70</td>
+<td align="right">96.50</td>
+<td align="right">99.90</td>
+<td align="right">102.90</td>
+<td align="right">118.50</td>
+<td align="left">▁▁▂▇▁</td>
+</tr>
+<tr class="even">
+<td align="left">CRE_S</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">99.07</td>
+<td align="right">66.86</td>
+<td align="right">26.00</td>
+<td align="right">65.00</td>
+<td align="right">80.00</td>
+<td align="right">104.00</td>
+<td align="right">604.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CRP_S</td>
+<td align="right">14</td>
+<td align="right">0.98</td>
+<td align="right">15.93</td>
+<td align="right">26.89</td>
+<td align="right">0.30</td>
+<td align="right">2.19</td>
+<td align="right">5.80</td>
+<td align="right">16.73</td>
+<td align="right">210.07</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">CYSC_S</td>
+<td align="right">7</td>
+<td align="right">0.99</td>
+<td align="right">1.58</td>
+<td align="right">0.87</td>
+<td align="right">0.61</td>
+<td align="right">1.07</td>
+<td align="right">1.32</td>
+<td align="right">1.79</td>
+<td align="right">6.72</td>
+<td align="left">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">GGT_S</td>
+<td align="right">6</td>
+<td align="right">0.99</td>
+<td align="right">2.87</td>
+<td align="right">4.21</td>
+<td align="right">0.15</td>
+<td align="right">0.85</td>
+<td align="right">1.64</td>
+<td align="right">3.15</td>
+<td align="right">51.07</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">IL6_S</td>
+<td align="right">56</td>
+<td align="right">0.91</td>
+<td align="right">228.80</td>
+<td align="right">2264.02</td>
+<td align="right">1.50</td>
+<td align="right">5.66</td>
+<td align="right">12.53</td>
+<td align="right">41.83</td>
+<td align="right">39474.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">INR_C</td>
+<td align="right">2</td>
+<td align="right">1.00</td>
+<td align="right">1.40</td>
+<td align="right">0.61</td>
+<td align="right">0.84</td>
+<td align="right">1.09</td>
+<td align="right">1.21</td>
+<td align="right">1.45</td>
+<td align="right">6.66</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">NA_S</td>
+<td align="right">9</td>
+<td align="right">0.99</td>
+<td align="right">137.28</td>
+<td align="right">5.29</td>
+<td align="right">100.80</td>
+<td align="right">135.20</td>
+<td align="right">138.10</td>
+<td align="right">140.40</td>
+<td align="right">157.90</td>
+<td align="left">▁▁▂▇▁</td>
+</tr>
+<tr class="odd">
+<td align="left">P_S</td>
+<td align="right">1</td>
+<td align="right">1.00</td>
+<td align="right">1.05</td>
+<td align="right">0.28</td>
+<td align="right">0.17</td>
+<td align="right">0.88</td>
+<td align="right">1.03</td>
+<td align="right">1.17</td>
+<td align="right">2.94</td>
+<td align="left">▁▇▂▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">PALB_S</td>
+<td align="right">5</td>
+<td align="right">0.99</td>
+<td align="right">0.14</td>
+<td align="right">0.09</td>
+<td align="right">0.03</td>
+<td align="right">0.08</td>
+<td align="right">0.12</td>
+<td align="right">0.19</td>
+<td align="right">0.68</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">PROT_S</td>
+<td align="right">6</td>
+<td align="right">0.99</td>
+<td align="right">69.45</td>
+<td align="right">9.77</td>
+<td align="right">29.10</td>
+<td align="right">64.80</td>
+<td align="right">70.95</td>
+<td align="right">76.10</td>
+<td align="right">91.50</td>
+<td align="left">▁▁▃▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">PTH_S</td>
+<td align="right">8</td>
+<td align="right">0.99</td>
+<td align="right">5.49</td>
+<td align="right">8.78</td>
+<td align="right">0.48</td>
+<td align="right">2.84</td>
+<td align="right">3.88</td>
+<td align="right">5.45</td>
+<td align="right">180.50</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">VDT_OH_S</td>
+<td align="right">47</td>
+<td align="right">0.93</td>
+<td align="right">22.69</td>
+<td align="right">15.43</td>
+<td align="right">3.20</td>
+<td align="right">11.15</td>
+<td align="right">19.30</td>
+<td align="right">30.40</td>
+<td align="right">111.80</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="raw-data-imputed" class="section level1">
+<h1>Raw Data (imputed)</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">skim</span>(imp_data)</span></code></pre></div>
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">imp_data</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">654</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">44</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">43</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sex</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">mal: 414, fem: 240</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">56.79</td>
+<td align="right">10.09</td>
+<td align="right">18.00</td>
+<td align="right">52.00</td>
+<td align="right">58.00</td>
+<td align="right">64.00</td>
+<td align="right">81.00</td>
+<td align="left">▁▁▅▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">DaysAtRisk</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">265.08</td>
+<td align="right">258.76</td>
+<td align="right">1.00</td>
+<td align="right">38.00</td>
+<td align="right">191.00</td>
+<td align="right">383.75</td>
+<td align="right">1080.00</td>
+<td align="left">▇▃▂▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Deceased</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.16</td>
+<td align="right">0.37</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td align="left">LTx</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.09</td>
+<td align="right">0.29</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Cirrhosis</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.91</td>
+<td align="right">0.29</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="left">▁▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">ALF</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.01</td>
+<td align="right">0.11</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Ethyltoxic</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.63</td>
+<td align="right">0.48</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="left">▅▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">HBV</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.03</td>
+<td align="right">0.17</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">HCV</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.07</td>
+<td align="right">0.25</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">AIH</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.05</td>
+<td align="right">0.21</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">PBC</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.03</td>
+<td align="right">0.16</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">PSC</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
+<td align="right">0.15</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">NASH</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.07</td>
+<td align="right">0.26</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">Cryptogenic</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.10</td>
+<td align="right">0.31</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Dialysis</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0.05</td>
+<td align="right">0.22</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">GIB</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">0.43</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="odd">
+<td align="left">HCC</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.19</td>
+<td align="right">0.39</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td align="left">SBP</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.14</td>
+<td align="right">0.35</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">ALAT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.66</td>
+<td align="right">3.15</td>
+<td align="right">0.08</td>
+<td align="right">0.22</td>
+<td align="right">0.33</td>
+<td align="right">0.48</td>
+<td align="right">56.03</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ALB_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">38.58</td>
+<td align="right">7.54</td>
+<td align="right">16.10</td>
+<td align="right">33.50</td>
+<td align="right">39.40</td>
+<td align="right">44.58</td>
+<td align="right">52.40</td>
+<td align="left">▁▃▆▇▅</td>
+</tr>
+<tr class="odd">
+<td align="left">AP_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.47</td>
+<td align="right">2.62</td>
+<td align="right">0.35</td>
+<td align="right">1.45</td>
+<td align="right">1.94</td>
+<td align="right">2.81</td>
+<td align="right">52.97</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ASAT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.22</td>
+<td align="right">2.53</td>
+<td align="right">0.27</td>
+<td align="right">0.54</td>
+<td align="right">0.76</td>
+<td align="right">1.15</td>
+<td align="right">32.69</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">B_MPV_E</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">11.06</td>
+<td align="right">1.06</td>
+<td align="right">8.40</td>
+<td align="right">10.40</td>
+<td align="right">11.01</td>
+<td align="right">11.70</td>
+<td align="right">14.50</td>
+<td align="left">▂▆▇▂▁</td>
+</tr>
+<tr class="even">
+<td align="left">B_PLT_E</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">140.00</td>
+<td align="right">85.04</td>
+<td align="right">10.00</td>
+<td align="right">74.00</td>
+<td align="right">121.50</td>
+<td align="right">189.00</td>
+<td align="right">742.00</td>
+<td align="left">▇▅▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">B_WBC_E</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">7.07</td>
+<td align="right">3.83</td>
+<td align="right">1.50</td>
+<td align="right">4.70</td>
+<td align="right">6.30</td>
+<td align="right">8.17</td>
+<td align="right">30.20</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">BILI_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">59.30</td>
+<td align="right">107.03</td>
+<td align="right">2.20</td>
+<td align="right">12.80</td>
+<td align="right">24.45</td>
+<td align="right">50.38</td>
+<td align="right">1096.80</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">BILID_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">35.75</td>
+<td align="right">74.45</td>
+<td align="right">1.98</td>
+<td align="right">4.80</td>
+<td align="right">10.20</td>
+<td align="right">26.67</td>
+<td align="right">497.90</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">CA_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.28</td>
+<td align="right">0.17</td>
+<td align="right">1.73</td>
+<td align="right">2.16</td>
+<td align="right">2.30</td>
+<td align="right">2.40</td>
+<td align="right">2.96</td>
+<td align="left">▁▅▇▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CHE_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">73.30</td>
+<td align="right">40.68</td>
+<td align="right">4.50</td>
+<td align="right">39.90</td>
+<td align="right">68.05</td>
+<td align="right">103.35</td>
+<td align="right">191.90</td>
+<td align="left">▆▇▆▃▁</td>
+</tr>
+<tr class="even">
+<td align="left">CHOLG_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4.41</td>
+<td align="right">1.82</td>
+<td align="right">0.88</td>
+<td align="right">3.34</td>
+<td align="right">4.40</td>
+<td align="right">5.31</td>
+<td align="right">20.53</td>
+<td align="left">▇▅▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CL_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">99.20</td>
+<td align="right">5.88</td>
+<td align="right">61.70</td>
+<td align="right">96.50</td>
+<td align="right">99.95</td>
+<td align="right">102.90</td>
+<td align="right">118.50</td>
+<td align="left">▁▁▂▇▁</td>
+</tr>
+<tr class="even">
+<td align="left">CRE_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">99.07</td>
+<td align="right">66.86</td>
+<td align="right">26.00</td>
+<td align="right">65.00</td>
+<td align="right">80.00</td>
+<td align="right">104.00</td>
+<td align="right">604.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CRP_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">15.63</td>
+<td align="right">26.68</td>
+<td align="right">0.30</td>
+<td align="right">2.10</td>
+<td align="right">5.59</td>
+<td align="right">16.27</td>
+<td align="right">210.07</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">CYSC_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.57</td>
+<td align="right">0.87</td>
+<td align="right">0.61</td>
+<td align="right">1.06</td>
+<td align="right">1.30</td>
+<td align="right">1.77</td>
+<td align="right">6.72</td>
+<td align="left">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">GGT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.85</td>
+<td align="right">4.20</td>
+<td align="right">0.15</td>
+<td align="right">0.83</td>
+<td align="right">1.62</td>
+<td align="right">3.08</td>
+<td align="right">51.07</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">IL6_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">209.44</td>
+<td align="right">2165.69</td>
+<td align="right">1.50</td>
+<td align="right">4.42</td>
+<td align="right">10.57</td>
+<td align="right">37.42</td>
+<td align="right">39474.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">INR_C</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.40</td>
+<td align="right">0.61</td>
+<td align="right">0.84</td>
+<td align="right">1.09</td>
+<td align="right">1.21</td>
+<td align="right">1.45</td>
+<td align="right">6.66</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">NA_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">137.32</td>
+<td align="right">5.26</td>
+<td align="right">100.80</td>
+<td align="right">135.20</td>
+<td align="right">138.20</td>
+<td align="right">140.40</td>
+<td align="right">157.90</td>
+<td align="left">▁▁▂▇▁</td>
+</tr>
+<tr class="odd">
+<td align="left">P_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.05</td>
+<td align="right">0.28</td>
+<td align="right">0.17</td>
+<td align="right">0.88</td>
+<td align="right">1.03</td>
+<td align="right">1.17</td>
+<td align="right">2.94</td>
+<td align="left">▁▇▂▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">PALB_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.14</td>
+<td align="right">0.09</td>
+<td align="right">0.03</td>
+<td align="right">0.08</td>
+<td align="right">0.12</td>
+<td align="right">0.19</td>
+<td align="right">0.68</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">PROT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">69.48</td>
+<td align="right">9.73</td>
+<td align="right">29.10</td>
+<td align="right">64.90</td>
+<td align="right">71.00</td>
+<td align="right">75.97</td>
+<td align="right">91.50</td>
+<td align="left">▁▁▃▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">PTH_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5.46</td>
+<td align="right">8.73</td>
+<td align="right">0.48</td>
+<td align="right">2.85</td>
+<td align="right">3.87</td>
+<td align="right">5.38</td>
+<td align="right">180.50</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">VDT_OH_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">22.20</td>
+<td align="right">14.98</td>
+<td align="right">3.20</td>
+<td align="right">11.65</td>
+<td align="right">18.05</td>
+<td align="right">29.37</td>
+<td align="right">111.80</td>
+<td align="left">▇▃▁▁▁</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="zlog-data" class="section level1">
+<h1>Zlog Data</h1>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">skim</span>(zlog_data)</span></code></pre></div>
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">zlog_data</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">654</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">44</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">factor</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">43</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: factor</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">ordered</th>
+<th align="right">n_unique</th>
+<th align="left">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sex</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">FALSE</td>
+<td align="right">2</td>
+<td align="left">mal: 414, fem: 240</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">56.79</td>
+<td align="right">10.09</td>
+<td align="right">18.00</td>
+<td align="right">52.00</td>
+<td align="right">58.00</td>
+<td align="right">64.00</td>
+<td align="right">81.00</td>
+<td align="left">▁▁▅▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">DaysAtRisk</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">265.08</td>
+<td align="right">258.76</td>
+<td align="right">1.00</td>
+<td align="right">38.00</td>
+<td align="right">191.00</td>
+<td align="right">383.75</td>
+<td align="right">1080.00</td>
+<td align="left">▇▃▂▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Deceased</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.16</td>
+<td align="right">0.37</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td align="left">LTx</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.09</td>
+<td align="right">0.29</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Cirrhosis</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.91</td>
+<td align="right">0.29</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="left">▁▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">ALF</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.01</td>
+<td align="right">0.11</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Ethyltoxic</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.63</td>
+<td align="right">0.48</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="right">1.00</td>
+<td align="left">▅▁▁▁▇</td>
+</tr>
+<tr class="even">
+<td align="left">HBV</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.03</td>
+<td align="right">0.17</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">HCV</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.07</td>
+<td align="right">0.25</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">AIH</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.05</td>
+<td align="right">0.21</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">PBC</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.03</td>
+<td align="right">0.16</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">PSC</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.02</td>
+<td align="right">0.15</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">NASH</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.07</td>
+<td align="right">0.26</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">Cryptogenic</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.10</td>
+<td align="right">0.31</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">Dialysis</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0.05</td>
+<td align="right">0.22</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">GIB</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">0.43</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="odd">
+<td align="left">HCC</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.19</td>
+<td align="right">0.39</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▂</td>
+</tr>
+<tr class="even">
+<td align="left">SBP</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.14</td>
+<td align="right">0.35</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">1.00</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">ALAT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.04</td>
+<td align="right">2.02</td>
+<td align="right">-4.37</td>
+<td align="right">-1.22</td>
+<td align="right">-0.15</td>
+<td align="right">0.93</td>
+<td align="right">16.55</td>
+<td align="left">▇▇▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ALB_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-1.21</td>
+<td align="right">2.13</td>
+<td align="right">-9.65</td>
+<td align="right">-2.39</td>
+<td align="right">-0.79</td>
+<td align="right">0.43</td>
+<td align="right">2.04</td>
+<td align="left">▁▁▃▇▇</td>
+</tr>
+<tr class="odd">
+<td align="left">AP_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.07</td>
+<td align="right">1.89</td>
+<td align="right">-3.76</td>
+<td align="right">0.84</td>
+<td align="right">1.85</td>
+<td align="right">3.09</td>
+<td align="right">14.15</td>
+<td align="left">▁▇▂▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">ASAT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.33</td>
+<td align="right">1.79</td>
+<td align="right">-0.83</td>
+<td align="right">1.15</td>
+<td align="right">1.96</td>
+<td align="right">3.08</td>
+<td align="right">14.39</td>
+<td align="left">▇▅▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">B_MPV_E</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-0.01</td>
+<td align="right">1.18</td>
+<td align="right">-3.35</td>
+<td align="right">-0.71</td>
+<td align="right">0.00</td>
+<td align="right">0.75</td>
+<td align="right">3.41</td>
+<td align="left">▁▃▇▃▁</td>
+</tr>
+<tr class="even">
+<td align="left">B_PLT_E</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-2.74</td>
+<td align="right">2.68</td>
+<td align="right">-12.91</td>
+<td align="right">-4.61</td>
+<td align="right">-2.55</td>
+<td align="right">-0.71</td>
+<td align="right">4.96</td>
+<td align="left">▁▂▇▇▁</td>
+</tr>
+<tr class="odd">
+<td align="left">B_WBC_E</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.29</td>
+<td align="right">1.75</td>
+<td align="right">-5.19</td>
+<td align="right">-0.84</td>
+<td align="right">0.28</td>
+<td align="right">1.27</td>
+<td align="right">6.24</td>
+<td align="left">▁▅▇▂▁</td>
+</tr>
+<tr class="even">
+<td align="left">BILI_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.98</td>
+<td align="right">2.29</td>
+<td align="right">-2.28</td>
+<td align="right">1.36</td>
+<td align="right">2.70</td>
+<td align="right">4.19</td>
+<td align="right">10.56</td>
+<td align="left">▂▇▆▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">BILID_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.82</td>
+<td align="right">2.75</td>
+<td align="right">0.00</td>
+<td align="right">1.83</td>
+<td align="right">3.39</td>
+<td align="right">5.38</td>
+<td align="right">11.43</td>
+<td align="left">▇▇▅▂▁</td>
+</tr>
+<tr class="even">
+<td align="left">CA_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-0.76</td>
+<td align="right">2.05</td>
+<td align="right">-8.19</td>
+<td align="right">-1.96</td>
+<td align="right">-0.44</td>
+<td align="right">0.68</td>
+<td align="right">6.35</td>
+<td align="left">▁▃▇▅▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CHE_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-3.67</td>
+<td align="right">3.07</td>
+<td align="right">-15.22</td>
+<td align="right">-5.47</td>
+<td align="right">-3.10</td>
+<td align="right">-1.28</td>
+<td align="right">1.74</td>
+<td align="left">▁▂▃▇▆</td>
+</tr>
+<tr class="even">
+<td align="left">CHOLG_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.43</td>
+<td align="right">0.94</td>
+<td align="right">-1.71</td>
+<td align="right">1.05</td>
+<td align="right">1.62</td>
+<td align="right">2.00</td>
+<td align="right">4.80</td>
+<td align="left">▁▂▇▂▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CL_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-1.33</td>
+<td align="right">2.64</td>
+<td align="right">-22.60</td>
+<td align="right">-2.28</td>
+<td align="right">-0.84</td>
+<td align="right">0.25</td>
+<td align="right">6.51</td>
+<td align="left">▁▁▁▇▂</td>
+</tr>
+<tr class="even">
+<td align="left">CRE_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.32</td>
+<td align="right">2.96</td>
+<td align="right">-7.11</td>
+<td align="right">-0.49</td>
+<td align="right">0.72</td>
+<td align="right">2.39</td>
+<td align="right">14.13</td>
+<td align="left">▁▇▅▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">CRP_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.36</td>
+<td align="right">2.88</td>
+<td align="right">-3.85</td>
+<td align="right">0.17</td>
+<td align="right">2.19</td>
+<td align="right">4.40</td>
+<td align="right">9.68</td>
+<td align="left">▂▇▇▅▂</td>
+</tr>
+<tr class="even">
+<td align="left">CYSC_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5.48</td>
+<td align="right">3.81</td>
+<td align="right">-1.96</td>
+<td align="right">2.93</td>
+<td align="right">4.74</td>
+<td align="right">7.45</td>
+<td align="right">19.27</td>
+<td align="left">▃▇▃▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">GGT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.03</td>
+<td align="right">1.96</td>
+<td align="right">-2.21</td>
+<td align="right">1.60</td>
+<td align="right">2.92</td>
+<td align="right">4.21</td>
+<td align="right">9.53</td>
+<td align="left">▁▆▇▂▁</td>
+</tr>
+<tr class="even">
+<td align="left">IL6_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3.56</td>
+<td align="right">3.37</td>
+<td align="right">-1.22</td>
+<td align="right">1.01</td>
+<td align="right">2.81</td>
+<td align="right">5.42</td>
+<td align="right">19.81</td>
+<td align="left">▇▅▂▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">INR_C</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.88</td>
+<td align="right">2.97</td>
+<td align="right">-1.49</td>
+<td align="right">1.03</td>
+<td align="right">2.04</td>
+<td align="right">3.79</td>
+<td align="right">18.53</td>
+<td align="left">▇▅▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">NA_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-1.07</td>
+<td align="right">2.19</td>
+<td align="right">-17.99</td>
+<td align="right">-1.88</td>
+<td align="right">-0.67</td>
+<td align="right">0.19</td>
+<td align="right">6.64</td>
+<td align="left">▁▁▁▇▁</td>
+</tr>
+<tr class="odd">
+<td align="left">P_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-0.65</td>
+<td align="right">2.02</td>
+<td align="right">-13.43</td>
+<td align="right">-1.63</td>
+<td align="right">-0.50</td>
+<td align="right">0.42</td>
+<td align="right">7.04</td>
+<td align="left">▁▁▅▇▁</td>
+</tr>
+<tr class="even">
+<td align="left">PALB_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-4.79</td>
+<td align="right">3.41</td>
+<td align="right">-12.69</td>
+<td align="right">-7.14</td>
+<td align="right">-4.85</td>
+<td align="right">-2.25</td>
+<td align="right">4.96</td>
+<td align="left">▂▇▇▅▁</td>
+</tr>
+<tr class="odd">
+<td align="left">PROT_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">-0.89</td>
+<td align="right">2.34</td>
+<td align="right">-13.84</td>
+<td align="right">-1.75</td>
+<td align="right">-0.39</td>
+<td align="right">0.63</td>
+<td align="right">3.43</td>
+<td align="left">▁▁▂▇▇</td>
+</tr>
+<tr class="even">
+<td align="left">PTH_S</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.58</td>
+<td align="right">1.68</td>
+<td align="right">-5.19</td>
+<td align="right">-0.41</td>
+<td align="right">0.41</td>
+<td align="right">1.29</td>
+<td align="right">10.71</td>
+<td align="left">▁▇▃▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">VDT_OH_S</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.25</td>
+<td align="right">1.27</td>
+<td align="right">-3.15</td>
+<td align="right">-0.54</td>
+<td align="right">0.31</td>
+<td align="right">1.14</td>
+<td align="right">3.70</td>
+<td align="left">▂▃▇▅▁</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.1.0 (2021-05-18)
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+Matrix products: default
+BLAS/LAPACK: /gnu/store/bs9pl1f805ins80xaf4s3n35a0x2lyq3-openblas-0.3.9/lib/libopenblasp-r0.3.9.so
+
+locale:
+ [1] LC_CTYPE=de_DE.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=de_DE.UTF-8        LC_COLLATE=de_DE.UTF-8    
+ [5] LC_MONETARY=de_DE.UTF-8    LC_MESSAGES=de_DE.UTF-8   
+ [7] LC_PAPER=de_DE.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=de_DE.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] skimr_2.1.3   targets_0.4.2
+
+loaded via a namespace (and not attached):
+ [1] Rcpp_1.0.6        highr_0.9         pillar_1.6.1      compiler_4.1.0   
+ [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   base64enc_0.1-3  
+ [9] tools_4.1.0       digest_0.6.27     jsonlite_1.7.2    evaluate_0.14    
+[13] lifecycle_1.0.0   tibble_3.1.2      pkgconfig_2.0.3   rlang_0.4.11     
+[17] igraph_1.2.6      cli_2.5.0         yaml_2.2.1        xfun_0.23        
+[21] repr_1.1.3        dplyr_1.0.6       withr_2.4.2       stringr_1.4.0    
+[25] knitr_1.33        generics_0.1.0    fs_1.5.0          vctrs_0.3.8      
+[29] tidyselect_1.1.1  rprojroot_2.0.2   glue_1.4.2        data.table_1.14.0
+[33] R6_2.5.0          processx_3.5.2    fansi_0.5.0       rmarkdown_2.8    
+[37] tidyr_1.1.3       purrr_0.3.4       callr_3.7.0       magrittr_2.0.1   
+[41] whisker_0.4       promises_1.2.0.1  ps_1.6.0          codetools_0.2-18 
+[45] ellipsis_0.3.2    htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.1       
+[49] stringi_1.6.2     crayon_1.4.1     </code></pre>
+</div>
+</div>
+
+
+<!-- Adjust MathJax settings so that all math formulae are shown using
+TeX fonts only; see
+http://docs.mathjax.org/en/latest/configuration.html.  This will make
+the presentation more consistent at the cost of the webpage sometimes
+taking slightly longer to load. Note that this only works because the
+footer is added to webpages before the MathJax javascript. -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
