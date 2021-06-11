@@ -26,7 +26,7 @@ tar_load(raw_data)
         mai[2L] <- mai[4L] + w # taken from dotchart
     par(mai = mai)
 
-    plot.window(xlim = xlim, ylim = c(0L, n + 1L))
+    plot(NA, xlim = xlim, ylim = c(0L, n + 1L), axes = FALSE)
     title(main = "Missing Data", adj = 0L)
     title(xlab = "Frequency", adj = 1L)
     y <- seq_len(n)
@@ -63,7 +63,7 @@ tar_load(raw_data)
     title(xlab = "Rows", adj = 1L)
     mtext(
         rev(nms), at = y, adj = 0L, side = 2L, las = 2L,
-        line = (w + 0.1) / par("csi"), cex = 0.8
+        line = (w + 0.1) / par("csi"), cex = 0.75
     )
     abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
 }
