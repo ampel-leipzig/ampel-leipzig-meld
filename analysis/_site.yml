@@ -11,10 +11,14 @@ navbar:
     href: license.html
   - text: Exploratory Data Analysis
     menu:
+    - text: "Tables"
+      href: tables.html
     - text: "Missing Data"
       href: missing.html
     - text: "Histograms"
       href: histograms.html
+    - text: "Boxplots"
+      href: boxplots.html
     - text: "Correlation"
       href: corrplot.html
   right:
