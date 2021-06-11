@@ -12,14 +12,14 @@ editor_options:
 ```{r corrplot_setup}
 library("corrplot")
 library("targets")
-tar_load(raw_data)
+tar_load(imp_data)
 ```
 
 # Correlation
 
 ```{r corrplot}
-labv <- grep("_[SECQ]$", colnames(raw_data), value = TRUE)
-cr <- cor(raw_data[labv], use = "pairwise.complete.obs")
+labv <- grep("_[SECQ]$", colnames(imp_data), value = TRUE)
+cr <- cor(imp_data[labv], use = "pairwise.complete.obs")
 corrplot.mixed(
     cr,
     tl.pos = "lt", tl.col = "black", tl.cex = 0.75,
