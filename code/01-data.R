@@ -13,5 +13,19 @@ tg_data <- list(
         ## set missing lower limits to 0.15 of the upper according to
         ## Haeckel et al. 2015
         set_missing_limits(r)
-    }, packages = "zlog")
+    }, packages = "zlog"),
+    tar_target(imp_data, {
+        withCallingHandlers(
+            impute_df(raw_data, ref_data, method = "logmean"),
+            warning = function(w) {
+                if(w$message != paste0(
+                    "No reference for column(s): DaysAtRisk, Deceased, LTx, ",
+                    "Cirrhosis, ALF, Ethyltoxic, HBV, HCV, AIH, PBC, PSC, ",
+                    "NASH, Cryptogenic, Dialysis, GIB, HCC, SBP"))
+                       stop(w$message)
+                else
+                    invokeRestart("muffleWarning")
+            }
+        )
+    })
 )

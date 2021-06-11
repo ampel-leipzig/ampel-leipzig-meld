@@ -9,27 +9,29 @@ editor_options:
 
 ```{r histograms_setup}
 library("targets")
-tar_load(raw_data)
+tar_load(imp_data)
 
 .hist <- function(
     ..., xlab = deparse(substitute(x)), main = paste("Histogram of", xlab),
-    col = palette.colors(2L)[2]
+    col = palette.colors(2L)[2L]
 )hist(..., main = main, xlab = xlab, col = col)
 ```
 
 # Age
 
 ```{r histograms_age}
-.hist(raw_data$Age, xlab = "Age")
+.hist(imp_data$Age, xlab = "Age")
 ```
 
-# Laboratory Measurements
+# Raw Data (imputed)
+
+## Laboratory Measurements
 
 ```{r histograms_labs, results = "asis", message = FALSE, warning = FALSE}
-labv <- sort(grep("_[SECQ]$", colnames(raw_data), value = TRUE))
+labv <- sort(grep("_[SECQ]$", colnames(imp_data), value = TRUE))
 
 for (v in labv) {
     cat("\n\n##", v , "\n\n")
-    .hist(raw_data[[v]], main = paste0("Histogram of ", v), xlab = v)
+    .hist(imp_data[[v]], main = paste0("Histogram of ", v), xlab = v)
 }
 ```
