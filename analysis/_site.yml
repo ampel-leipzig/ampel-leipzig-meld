@@ -10,8 +10,7 @@ navbar:
   - text: License
     href: license.html
   right:
-  - icon: fa-github
-    text: Source code
+  - text: Source code
     href: https://github.com/ampel-leipzig/ampel-leipzig-meld
 output:
   workflowr::wflow_html:
