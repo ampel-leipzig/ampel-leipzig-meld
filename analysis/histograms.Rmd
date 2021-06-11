@@ -1,0 +1,35 @@
+---
+title: "Histograms"
+output:
+  workflowr::wflow_html:
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r histograms_setup}
+library("targets")
+tar_load(raw_data)
+
+.hist <- function(
+    ..., xlab = deparse(substitute(x)), main = paste("Histogram of", xlab),
+    col = palette.colors(2L)[2]
+)hist(..., main = main, xlab = xlab, col = col)
+```
+
+# Age
+
+```{r histograms_age}
+.hist(raw_data$Age, xlab = "Age")
+```
+
+# Laboratory Measurements
+
+```{r histograms_labs, results = "asis", message = FALSE, warning = FALSE}
+labv <- sort(grep("_[SECQ]$", colnames(raw_data), value = TRUE))
+
+for (v in labv) {
+    cat("\n\n##", v , "\n\n")
+    .hist(raw_data[[v]], main = paste0("Histogram of ", v), xlab = v)
+}
+```
