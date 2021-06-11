@@ -11,7 +11,7 @@
 
 
 
-<title>Corrplot</title>
+<title>Linecharts</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -477,7 +477,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Corrplot</h1>
+<h1 class="title toc-ignore">Linecharts</h1>
 
 </div>
 
@@ -628,7 +628,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/corrplot.Rmd</code>) and HTML (<code>docs/corrplot.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/linecharts.Rmd</code>) and HTML (<code>docs/linecharts.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -654,44 +654,10 @@ Message
 <tbody>
 <tr>
 <td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/783c49fa33d347733368438ed5186acb9b017e88/docs/corrplot.html" target="_blank">783c49f</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/aac7ea853bef86cd18c554f5a2b4e43137000d79/docs/corrplot.html" target="_blank">aac7ea8</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ba5de74c5781ea78710fe128f9c936ec1393d496/analysis/corrplot.Rmd" target="_blank">ba5de74</a>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/4ac1449df79ada6c1c22a1db453345715d792b3f/analysis/linecharts.Rmd" target="_blank">4ac1449</a>
 </td>
 <td>
 Sebastian Gibb
@@ -700,58 +666,7 @@ Sebastian Gibb
 2021-06-11
 </td>
 <td>
-fix: suppress package startup messages
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/6541fae70d070121151a5e6620244cba993c39eb/docs/corrplot.html" target="_blank">6541fae</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-fix: add targets for missing/corrplot
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/5d77d52e9f6571661a1882d5e988ff4a55da262d/analysis/corrplot.Rmd" target="_blank">5d77d52</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-fix: use imputed data for correlation
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3e38f5a087162b4895bf0f91f0408efad3d5ad47/analysis/corrplot.Rmd" target="_blank">3e38f5a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-feat: add correlation plot
+feat: add linecharts report
 </td>
 </tr>
 </tbody>
@@ -761,57 +676,54 @@ feat: add correlation plot
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;corrplot&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">tar_load</span>(imp_data)</span></code></pre></div>
-<div id="correlation" class="section level1">
-<h1>Correlation</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>labv &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>cr &lt;-<span class="st"> </span><span class="kw">cor</span>(imp_data[labv], <span class="dt">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">corrplot.mixed</span>(</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    cr,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>    <span class="dt">tl.pos =</span> <span class="st">&quot;lt&quot;</span>, <span class="dt">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">tl.cex =</span> <span class="fl">0.75</span>,</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="dt">number.cex =</span> <span class="fl">0.25</span>, <span class="dt">number.font =</span> 1L,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="dt">order =</span> <span class="st">&quot;AOE&quot;</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>)</span></code></pre></div>
-<p><img src="figure/corrplot.Rmd/corrplot-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-corrplot-1">
-Past versions of corrplot-1.png
-</button>
-</p>
-<div id="fig-corrplot-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/6541fae70d070121151a5e6620244cba993c39eb/docs/figure/corrplot.Rmd/corrplot-1.png" target="_blank">6541fae</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">tar_load</span>(zlog_data)</span></code></pre></div>
+<div id="compare-mean-zlog-values-vs-status" class="section level1">
+<h1>Compare Mean Zlog Values vs Status</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(zlog_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">## divide data.frame by dead/alive</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>s &lt;-<span class="st"> </span><span class="kw">split</span>(zlog_data[labv], zlog_data<span class="op">$</span>Deceased)</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">names</span>(s) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;survived&quot;</span>, <span class="st">&quot;dead&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co">## calculate mean standardized lab values</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>s &lt;-<span class="st"> </span><span class="kw">lapply</span>(s, colMeans, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>o &lt;-<span class="st"> </span><span class="kw">order</span>(s<span class="op">$</span>dead)</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">## comparison plot</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>col &lt;-<span class="st"> </span><span class="kw">palette.colors</span>(2L)</span>
+<span id="cb2-13"><a href="#cb2-13"></a></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co">## keep old graphic parameters and restore them afterwards</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">7.1</span>, <span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span>))</span>
+<span id="cb2-18"><a href="#cb2-18"></a></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="kw">plot</span>(</span>
+<span id="cb2-20"><a href="#cb2-20"></a>    s<span class="op">$</span>dead[o], <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> col[<span class="dv">1</span>],</span>
+<span id="cb2-21"><a href="#cb2-21"></a>    <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>)</span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="kw">lines</span>(s<span class="op">$</span>survived[o], <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> col[<span class="dv">2</span>])</span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="kw">legend</span>(</span>
+<span id="cb2-25"><a href="#cb2-25"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
+<span id="cb2-26"><a href="#cb2-26"></a>    <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;dead&quot;</span>, <span class="st">&quot;survived&quot;</span>),</span>
+<span id="cb2-27"><a href="#cb2-27"></a>    <span class="dt">col =</span> col, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>)</span>
+<span id="cb2-29"><a href="#cb2-29"></a><span class="kw">title</span>(</span>
+<span id="cb2-30"><a href="#cb2-30"></a>    <span class="dt">main =</span> <span class="st">&quot;Mortality Status vs Mean Standardized Laboratory Values&quot;</span>, <span class="dt">adj =</span> <span class="dv">0</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a>)</span>
+<span id="cb2-32"><a href="#cb2-32"></a><span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Laboratory Measurements&quot;</span>, <span class="dt">adj =</span> 1L, <span class="dt">line =</span> <span class="dv">5</span>)</span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="kw">title</span>(<span class="dt">ylab =</span> <span class="st">&quot;Mean Standardized Values&quot;</span>, <span class="dt">adj =</span> 1L)</span>
+<span id="cb2-34"><a href="#cb2-34"></a>r &lt;-<span class="st"> </span><span class="kw">range</span>(<span class="kw">unlist</span>(s))</span>
+<span id="cb2-35"><a href="#cb2-35"></a><span class="kw">axis</span>(</span>
+<span id="cb2-36"><a href="#cb2-36"></a>    <span class="dv">2</span>, <span class="dt">at =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">floor</span>(r[<span class="dv">1</span>]), <span class="dt">to =</span> <span class="kw">ceiling</span>(r[<span class="dv">2</span>])),</span>
+<span id="cb2-37"><a href="#cb2-37"></a>    <span class="dt">lwd.ticks =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
+<span id="cb2-38"><a href="#cb2-38"></a>)</span>
+<span id="cb2-39"><a href="#cb2-39"></a><span class="kw">axis</span>(</span>
+<span id="cb2-40"><a href="#cb2-40"></a>    <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">seq_along</span>(o), <span class="dt">labels =</span> <span class="kw">names</span>(s<span class="op">$</span>dead[o]), <span class="dt">las =</span> <span class="dv">2</span>,</span>
+<span id="cb2-41"><a href="#cb2-41"></a>    <span class="dt">lwd.ticks =</span> 0L, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
+<span id="cb2-42"><a href="#cb2-42"></a>)</span></code></pre></div>
+<p><img src="figure/linecharts.Rmd/linecharts_zlogmeanplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -819,7 +731,7 @@ Sebastian Gibb
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.0 (2021-05-18)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
@@ -838,7 +750,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] targets_0.4.2 corrplot_0.88
+[1] targets_0.4.2
 
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.6        highr_0.9         pillar_1.6.1      compiler_4.1.0   
