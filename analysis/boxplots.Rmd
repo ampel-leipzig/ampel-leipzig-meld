@@ -1,0 +1,75 @@
+---
+title: "Boxplots"
+output:
+  workflowr::wflow_html:
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r boxplots_setup, message = FALSE}
+library("targets")
+library("beeswarm")
+library("viridisLite")
+tar_load(imp_data)
+tar_load(zlog_data)
+
+.bp <- function(x, formula, col = cividis(ncol(x)), main = NULL,
+                outline = FALSE) {
+    boxplot(
+        formula, data = x, col = gsub("..$", "40", col),
+        pch = NA, outline = outline,
+        main = main
+    )
+    beeswarm(formula, data = x, col = col, add = TRUE, pch = 19L)
+}
+```
+
+# Raw vs Zlog Data
+
+## Compare Sexes
+
+```{r boxplots_rvsz_sex, results = "asis", fig.width = 12, fig.height = 12}
+old.par <- par(no.readonly = TRUE)
+par(mfrow = c(1L, 2L))
+log_data <- imp_data
+labv <- sort(grep("_[SECQ]$", colnames(imp_data), value = TRUE))
+log_data[labv] <- lapply(log_data[labv], log)
+col <- cividis(2L)
+for (v in labv) {
+    cat('\n\n### ', v, '\n\n')
+    fm <- as.formula(paste0(v, " ~ Sex"))
+    .bp(log_data, fm, col = col, main = "log()")
+    .bp(zlog_data, fm, col = col, main = "zlog()")
+}
+par(old.par)
+```
+
+## Compare Status
+
+```{r boxplots_rvsz_status, results = "asis", fig.width = 12, fig.height = 12}
+old.par <- par(no.readonly = TRUE)
+par(mfrow = c(1L, 2L))
+for (v in labv) {
+    cat('\n\n### ', v, '\n\n')
+    fm <- as.formula(paste0(v, " ~ Deceased"))
+    .bp(log_data, fm, col = col, main = "log()")
+    .bp(zlog_data, fm, col = col, main = "zlog()")
+}
+par(old.par)
+```
+
+## Compare Sexes : Status
+
+```{r boxplots_rvsz_sex_status, results = "asis", fig.width = 12, fig.height = 12}
+old.par <- par(no.readonly = TRUE)
+par(mfrow = c(1L, 2L))
+col <- cividis(4L)
+for (v in labv) {
+    cat('\n\n### ', v, '\n\n')
+    fm <- as.formula(paste0(v, " ~ Sex + Deceased"))
+    .bp(log_data, fm, col = col, main = "log()")
+    .bp(zlog_data, fm, col = col, main = "zlog()")
+}
+par(old.par)
+```

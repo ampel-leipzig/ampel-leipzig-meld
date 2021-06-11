@@ -13,6 +13,19 @@ tg_reports <- list(
         format = "file"
     ),
     tar_target(
+        report_boxplots,
+        command = {
+            list(site_conf)
+            !!tar_knitr_deps_expr(file.path("analysis", "boxplots.Rmd"))
+            workflowr::wflow_build(
+                file.path("analysis", "boxplots.Rmd"),
+                view = FALSE
+           )
+           file.path("analysis", "boxplots.Rmd")
+        },
+        format = "file"
+    ),
+    tar_target(
         report_missing,
         command = {
             list(site_conf)
