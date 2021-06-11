@@ -122,7 +122,7 @@
     (license expat)))
 
 (define-public r-ameld
-  (let ((commit "a7f2fb0"))
+  (let ((commit "25b44e0"))
   (package
     (name "r-ameld")
     (version (string-append "0.0.4-" commit))
