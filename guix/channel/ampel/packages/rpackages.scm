@@ -135,7 +135,7 @@
         (file-name (string-append name version))
         (sha256
           (base32
-            "08dn0zlhlg8k5ki5a66daq4lcbdjdi2v9z2adhwrf8hp25blkchx"))))
+            "13qx9brrsaaywgcd3m7zcq7qi9qc5avssqxd19xhfb9mcllznlg5"))))
     (properties `((upstream-name . "ameld")))
     (build-system r-build-system)
     (propagated-inputs
