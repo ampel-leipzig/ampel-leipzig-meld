@@ -9,7 +9,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r corrplot_setup}
+```{r corrplot_setup, message = FALSE}
 library("corrplot")
 library("targets")
 tar_load(imp_data)
