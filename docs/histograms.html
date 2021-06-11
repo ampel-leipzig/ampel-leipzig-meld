@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -32,10 +32,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -54,17 +51,100 @@ div.section {
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -335,14 +415,22 @@ div.tocify {
 <li>
   <a href="license.html">License</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Exploratory Data Analysis
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="histograms.html">Histograms</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld">
-    <span class="fas fa-github"></span>
-     
-    Source code
-  </a>
+  <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld">Source Code</a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -469,30 +557,24 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee42c4158eea7e798f077c2ff416fba54f14ceed5targetblanke42c415a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e42c4158eea7e798f077c2ff416fba54f14ceed5" target="_blank">e42c415</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree7bee503f708fc02eb6a1c8744f0c1c988ae19df6targetblank7bee503a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/7bee503f708fc02eb6a1c8744f0c1c988ae19df6" target="_blank">7bee503</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee42c4158eea7e798f077c2ff416fba54f14ceed5targetblanke42c415a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree7bee503f708fc02eb6a1c8744f0c1c988ae19df6targetblank7bee503a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e42c4158eea7e798f077c2ff416fba54f14ceed5" target="_blank">e42c415</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/7bee503f708fc02eb6a1c8744f0c1c988ae19df6" target="_blank">7bee503</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    _targets/
     Ignored:    container/
-
-Untracked files:
-    Untracked:  _targets/
-
-Unstaged changes:
-    Modified:   code/03-reports.R
-    Modified:   code/99-site.R
 
 </code></pre>
 <p>
@@ -533,6 +615,23 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/histograms.html" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
@@ -555,125 +654,1087 @@ feat: add basic targets workflow
 </div>
 </div>
 </div>
-<pre class="r"><code>library(&quot;targets&quot;)
-tar_load(raw_data)
-
-.hist &lt;- function(
-    ..., xlab = deparse(substitute(x)), main = paste(&quot;Histogram of&quot;, xlab),
-    col = palette.colors(2L)[2]
-)hist(..., main = main, xlab = xlab, col = col)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">tar_load</span>(raw_data)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>.hist &lt;-<span class="st"> </span><span class="cf">function</span>(</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    ..., <span class="dt">xlab =</span> <span class="kw">deparse</span>(<span class="kw">substitute</span>(x)), <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;Histogram of&quot;</span>, xlab),</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="dt">col =</span> <span class="kw">palette.colors</span>(2L)[<span class="dv">2</span>]</span>
+<span id="cb1-7"><a href="#cb1-7"></a>)<span class="kw">hist</span>(..., <span class="dt">main =</span> main, <span class="dt">xlab =</span> xlab, <span class="dt">col =</span> col)</span></code></pre></div>
 <div id="age" class="section level1">
 <h1>Age</h1>
-<pre class="r"><code>.hist(raw_data$Age, xlab = &quot;Age&quot;)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">.hist</span>(raw_data<span class="op">$</span>Age, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
 <p><img src="figure/histograms.Rmd/histograms_age-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_age-1">
+Past versions of histograms_age-1.png
+</button>
+</p>
+<div id="fig-histograms_age-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_age-1.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="laboratory-measurements" class="section level1">
 <h1>Laboratory Measurements</h1>
-<pre class="r"><code>labv &lt;- sort(grep(&quot;_[SECQ]$&quot;, colnames(raw_data), value = TRUE))
-
-for (v in labv) {
-    cat(&quot;\n\n##&quot;, v , &quot;\n\n&quot;)
-    .hist(raw_data[[v]], main = paste0(&quot;Histogram of &quot;, v), xlab = v)
-}</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(raw_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="kw">.hist</span>(raw_data[[v]], <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="dt">xlab =</span> v)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>}</span></code></pre></div>
 <div id="alat_s" class="section level2">
 <h2>ALAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-1">
+Past versions of histograms_labs-1.png
+</button>
+</p>
+<div id="fig-histograms_labs-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-1.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="alb_s" class="section level2">
 <h2>ALB_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-2">
+Past versions of histograms_labs-2.png
+</button>
+</p>
+<div id="fig-histograms_labs-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-2.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="ap_s" class="section level2">
 <h2>AP_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-3">
+Past versions of histograms_labs-3.png
+</button>
+</p>
+<div id="fig-histograms_labs-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-3.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="asat_s" class="section level2">
 <h2>ASAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-4">
+Past versions of histograms_labs-4.png
+</button>
+</p>
+<div id="fig-histograms_labs-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-4.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="b_mpv_e" class="section level2">
 <h2>B_MPV_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-5">
+Past versions of histograms_labs-5.png
+</button>
+</p>
+<div id="fig-histograms_labs-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-5.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="b_plt_e" class="section level2">
 <h2>B_PLT_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-6.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-6">
+Past versions of histograms_labs-6.png
+</button>
+</p>
+<div id="fig-histograms_labs-6" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-6.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="b_wbc_e" class="section level2">
 <h2>B_WBC_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-7.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-7">
+Past versions of histograms_labs-7.png
+</button>
+</p>
+<div id="fig-histograms_labs-7" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-7.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bili_s" class="section level2">
 <h2>BILI_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-8.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-8">
+Past versions of histograms_labs-8.png
+</button>
+</p>
+<div id="fig-histograms_labs-8" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-8.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bilid_s" class="section level2">
 <h2>BILID_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-9.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-9">
+Past versions of histograms_labs-9.png
+</button>
+</p>
+<div id="fig-histograms_labs-9" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-9.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="ca_s" class="section level2">
 <h2>CA_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-10.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-10">
+Past versions of histograms_labs-10.png
+</button>
+</p>
+<div id="fig-histograms_labs-10" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-10.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="che_s" class="section level2">
 <h2>CHE_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-11.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-11">
+Past versions of histograms_labs-11.png
+</button>
+</p>
+<div id="fig-histograms_labs-11" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-11.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="cholg_s" class="section level2">
 <h2>CHOLG_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-12.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-12">
+Past versions of histograms_labs-12.png
+</button>
+</p>
+<div id="fig-histograms_labs-12" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-12.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="cl_s" class="section level2">
 <h2>CL_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-13.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-13">
+Past versions of histograms_labs-13.png
+</button>
+</p>
+<div id="fig-histograms_labs-13" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-13.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="cre_s" class="section level2">
 <h2>CRE_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-14.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-14">
+Past versions of histograms_labs-14.png
+</button>
+</p>
+<div id="fig-histograms_labs-14" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-14.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="crp_s" class="section level2">
 <h2>CRP_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-15.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-15">
+Past versions of histograms_labs-15.png
+</button>
+</p>
+<div id="fig-histograms_labs-15" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-15.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="cysc_s" class="section level2">
 <h2>CYSC_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-16.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-16">
+Past versions of histograms_labs-16.png
+</button>
+</p>
+<div id="fig-histograms_labs-16" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-16.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="ggt_s" class="section level2">
 <h2>GGT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-17.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-17">
+Past versions of histograms_labs-17.png
+</button>
+</p>
+<div id="fig-histograms_labs-17" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-17.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="il6_s" class="section level2">
 <h2>IL6_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-18.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-18">
+Past versions of histograms_labs-18.png
+</button>
+</p>
+<div id="fig-histograms_labs-18" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-18.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="inr_c" class="section level2">
 <h2>INR_C</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-19.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-19">
+Past versions of histograms_labs-19.png
+</button>
+</p>
+<div id="fig-histograms_labs-19" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-19.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="na_s" class="section level2">
 <h2>NA_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-20.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-20">
+Past versions of histograms_labs-20.png
+</button>
+</p>
+<div id="fig-histograms_labs-20" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-20.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="p_s" class="section level2">
 <h2>P_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-21.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-21">
+Past versions of histograms_labs-21.png
+</button>
+</p>
+<div id="fig-histograms_labs-21" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-21.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="palb_s" class="section level2">
 <h2>PALB_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-22.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-22">
+Past versions of histograms_labs-22.png
+</button>
+</p>
+<div id="fig-histograms_labs-22" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-22.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="prot_s" class="section level2">
 <h2>PROT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-23.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-23">
+Past versions of histograms_labs-23.png
+</button>
+</p>
+<div id="fig-histograms_labs-23" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-23.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="pth_s" class="section level2">
 <h2>PTH_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-24.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-24">
+Past versions of histograms_labs-24.png
+</button>
+</p>
+<div id="fig-histograms_labs-24" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-24.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="vdt_oh_s" class="section level2">
 <h2>VDT_OH_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-25.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_labs-25">
+Past versions of histograms_labs-25.png
+</button>
+</p>
+<div id="fig-histograms_labs-25" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/figure/histograms.Rmd/histograms_labs-25.png" target="_blank">945a45a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -681,7 +1742,7 @@ for (v in labv) {
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<pre class="r"><code>sessionInfo()</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.0 (2021-05-18)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
