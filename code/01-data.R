@@ -27,5 +27,12 @@ tg_data <- list(
                     invokeRestart("muffleWarning")
             }
         )
-    })
+    }),
+    tar_target(zlog_data, {
+        zlog_data <- imp_data
+        iconvert <- colnames(zlog_data) %in%
+            c("Age", "Sex", grep("_[SECQ]$", colnames(imp_data), value = TRUE))
+        zlog_data[iconvert] <- zlog_df(imp_data[iconvert], ref_data)
+        zlog_data
+    }, packages = "zlog")
 )

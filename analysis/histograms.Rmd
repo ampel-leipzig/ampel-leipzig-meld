@@ -9,12 +9,31 @@ editor_options:
 
 ```{r histograms_setup}
 library("targets")
+library("viridisLite")
 tar_load(imp_data)
+tar_load(zlog_data)
 
 .hist <- function(
     ..., xlab = deparse(substitute(x)), main = paste("Histogram of", xlab),
     col = palette.colors(2L)[2L]
 )hist(..., main = main, xlab = xlab, col = col)
+
+.qqnorm <- function(y, ..., yname = deparse(substitute(y)),
+    ylab = paste0("Sample Quantiles (", yname, ")"),
+    col = palette.colors(2L)[2L]) {
+    qqnorm(y, ..., ylab = ylab, col = col, pch = 19L)
+    qqline(y, ..., col = col)
+}
+
+.bp <- function(x, formula, col = cividis(ncol(x)), main = NULL,
+                outline = FALSE) {
+    boxplot(
+        formula, data = x, col = gsub("..$", "40", col),
+        pch = NA, outline = outline,
+        main = main
+    )
+    beeswarm::beeswarm(formula, data = x, col = col, add = TRUE, pch = 19L)
+}
 ```
 
 # Age
@@ -33,5 +52,66 @@ labv <- sort(grep("_[SECQ]$", colnames(imp_data), value = TRUE))
 for (v in labv) {
     cat("\n\n##", v , "\n\n")
     .hist(imp_data[[v]], main = paste0("Histogram of ", v), xlab = v)
+    .qqnorm(imp_data[[v]], yname = v)
 }
+```
+
+# Zlog Data (imputed)
+
+## Laboratory Measurements
+
+```{r histograms_labs_zlog, results = "asis", message = FALSE, warning = FALSE}
+for (v in labv) {
+    cat("\n\n##", v , "\n\n")
+    .hist(zlog_data[[v]], main = paste0("Histogram of ", v), xlab = v)
+    .qqnorm(zlog_data[[v]], yname = v)
+}
+```
+
+# Raw vs Zlog Data
+
+## Compare Sexes
+
+```{r histograms_rvsz_sex, results = "asis"}
+old.par <- par(no.readonly = TRUE)
+par(mfrow = c(1L, 2L))
+log_data <- imp_data
+log_data[labv] <- lapply(log_data[labv], log)
+col <- cividis(2L)
+for (v in labv) {
+    cat('\n\n### ', v, '\n\n')
+    fm <- as.formula(paste0(v, " ~ Sex"))
+    .bp(log_data, fm, main = "log()")
+    .bp(zlog_data, fm, main = "zlog()")
+}
+par(old.par)
+```
+
+## Compare Status
+
+```{r histograms_rvsz_status, results = "asis"}
+old.par <- par(no.readonly = TRUE)
+par(mfrow = c(1L, 2L))
+for (v in labv) {
+    cat('\n\n### ', v, '\n\n')
+    fm <- as.formula(paste0(v, " ~ Deceased"))
+    .bp(log_data, fm, main = "log()")
+    .bp(zlog_data, fm, main = "zlog()")
+}
+par(old.par)
+```
+
+## Compare Sexes : Status
+
+```{r histograms_rvsz_sex_status, results = "asis"}
+old.par <- par(no.readonly = TRUE)
+par(mfrow = c(1L, 2L))
+col <- cividis(4L)
+for (v in labv) {
+    cat('\n\n### ', v, '\n\n')
+    fm <- as.formula(paste0(v, " ~ Sex + Deceased"))
+    .bp(log_data, fm, main = "log()")
+    .bp(zlog_data, fm, main = "zlog()")
+}
+par(old.par)
 ```
