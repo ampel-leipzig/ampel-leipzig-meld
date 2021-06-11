@@ -1,0 +1,63 @@
+---
+title: "Linecharts"
+output:
+  workflowr::wflow_html:
+    toc: true
+    fig.width: 12
+    fig.height: 8
+editor_options:
+  chunk_output_type: console
+---
+
+```{r linecharts_setup, message = FALSE}
+library("targets")
+tar_load(zlog_data)
+```
+
+# Compare Mean Zlog Values vs Status
+
+```{r linecharts_zlogmeanplot}
+labv <- sort(grep("_[SECQ]$", colnames(zlog_data), value = TRUE))
+
+## divide data.frame by dead/alive
+s <- split(zlog_data[labv], zlog_data$Deceased)
+names(s) <- c("survived", "dead")
+
+## calculate mean standardized lab values
+s <- lapply(s, colMeans, na.rm = TRUE)
+o <- order(s$dead)
+
+## comparison plot
+col <- palette.colors(2L)
+
+## keep old graphic parameters and restore them afterwards
+old.par <- par(no.readonly = TRUE)
+
+par(mar = c(7.1, 4.1, 4.1, 2.1))
+
+plot(
+    s$dead[o], type = "b", pch = 20, lwd = 2, col = col[1],
+    axes = FALSE, ann = FALSE
+)
+lines(s$survived[o], type = "b", pch = 20, lwd = 2, col = col[2])
+legend(
+    "bottomright",
+    legend = c("dead", "survived"),
+    col = col, lwd = 2, pch = 20, bty = "n"
+)
+title(
+    main = "Mortality Status vs Mean Standardized Laboratory Values", adj = 0
+)
+title(xlab = "Laboratory Measurements", adj = 1L, line = 5)
+title(ylab = "Mean Standardized Values", adj = 1L)
+r <- range(unlist(s))
+axis(
+    2, at = seq(from = floor(r[1]), to = ceiling(r[2])),
+    lwd.ticks = 0, col = "#808080"
+)
+axis(
+    1, at = seq_along(o), labels = names(s$dead[o]), las = 2,
+    lwd.ticks = 0L, col = "#808080"
+)
+par(old.par)
+```

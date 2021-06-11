@@ -52,6 +52,19 @@ tg_reports <- list(
         format = "file"
     ),
     tar_target(
+        report_linecharts,
+        command = {
+            list(site_conf)
+            !!tar_knitr_deps_expr(file.path("analysis", "linecharts.Rmd"))
+            workflowr::wflow_build(
+                file.path("analysis", "linecharts.Rmd"),
+                view = FALSE
+           )
+           file.path("analysis", "linecharts.Rmd")
+        },
+        format = "file"
+    ),
+    tar_target(
         report_corrplot,
         command = {
             list(site_conf)
