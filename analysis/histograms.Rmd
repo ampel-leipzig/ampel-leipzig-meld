@@ -44,8 +44,6 @@ tar_load(zlog_data)
 
 # Raw Data (imputed)
 
-## Laboratory Measurements
-
 ```{r histograms_labs, results = "asis", message = FALSE, warning = FALSE}
 labv <- sort(grep("_[SECQ]$", colnames(imp_data), value = TRUE))
 
@@ -57,8 +55,6 @@ for (v in labv) {
 ```
 
 # Zlog Data (imputed)
-
-## Laboratory Measurements
 
 ```{r histograms_labs_zlog, results = "asis", message = FALSE, warning = FALSE}
 for (v in labv) {
