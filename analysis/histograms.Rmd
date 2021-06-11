@@ -7,8 +7,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r histograms_setup}
+```{r histograms_setup, message = FALSE}
 library("targets")
+library("beeswarm")
 library("viridisLite")
 tar_load(imp_data)
 tar_load(zlog_data)
@@ -32,7 +33,7 @@ tar_load(zlog_data)
         pch = NA, outline = outline,
         main = main
     )
-    beeswarm::beeswarm(formula, data = x, col = col, add = TRUE, pch = 19L)
+    beeswarm(formula, data = x, col = col, add = TRUE, pch = 19L)
 }
 ```
 
@@ -68,7 +69,7 @@ for (v in labv) {
 
 ## Compare Sexes
 
-```{r histograms_rvsz_sex, results = "asis"}
+```{r histograms_rvsz_sex, results = "asis", fig.width = 12, fig.height = 12}
 old.par <- par(no.readonly = TRUE)
 par(mfrow = c(1L, 2L))
 log_data <- imp_data
@@ -77,37 +78,37 @@ col <- cividis(2L)
 for (v in labv) {
     cat('\n\n### ', v, '\n\n')
     fm <- as.formula(paste0(v, " ~ Sex"))
-    .bp(log_data, fm, main = "log()")
-    .bp(zlog_data, fm, main = "zlog()")
+    .bp(log_data, fm, col = col, main = "log()")
+    .bp(zlog_data, fm, col = col, main = "zlog()")
 }
 par(old.par)
 ```
 
 ## Compare Status
 
-```{r histograms_rvsz_status, results = "asis"}
+```{r histograms_rvsz_status, results = "asis", fig.width = 12, fig.height = 12}
 old.par <- par(no.readonly = TRUE)
 par(mfrow = c(1L, 2L))
 for (v in labv) {
     cat('\n\n### ', v, '\n\n')
     fm <- as.formula(paste0(v, " ~ Deceased"))
-    .bp(log_data, fm, main = "log()")
-    .bp(zlog_data, fm, main = "zlog()")
+    .bp(log_data, fm, col = col, main = "log()")
+    .bp(zlog_data, fm, col = col, main = "zlog()")
 }
 par(old.par)
 ```
 
 ## Compare Sexes : Status
 
-```{r histograms_rvsz_sex_status, results = "asis"}
+```{r histograms_rvsz_sex_status, results = "asis", fig.width = 12, fig.height = 12}
 old.par <- par(no.readonly = TRUE)
 par(mfrow = c(1L, 2L))
 col <- cividis(4L)
 for (v in labv) {
     cat('\n\n### ', v, '\n\n')
     fm <- as.formula(paste0(v, " ~ Sex + Deceased"))
-    .bp(log_data, fm, main = "log()")
-    .bp(zlog_data, fm, main = "zlog()")
+    .bp(log_data, fm, col = col, main = "log()")
+    .bp(zlog_data, fm, col = col, main = "zlog()")
 }
 par(old.par)
 ```
