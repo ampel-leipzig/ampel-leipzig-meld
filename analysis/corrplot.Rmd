@@ -1,0 +1,29 @@
+---
+title: "Corrplot"
+output:
+  workflowr::wflow_html:
+    toc: true
+    fig.width: 12
+    fig.height: 12
+editor_options:
+  chunk_output_type: console
+---
+
+```{r corrplot_setup}
+library("corrplot")
+library("targets")
+tar_load(raw_data)
+```
+
+# Correlation
+
+```{r corrplot}
+labv <- grep("_[SECQ]$", colnames(raw_data), value = TRUE)
+cr <- cor(raw_data[labv], use = "pairwise.complete.obs")
+corrplot.mixed(
+    cr,
+    tl.pos = "lt", tl.col = "black", tl.cex = 0.75,
+    number.cex = 0.25, number.font = 1L,
+    order = "AOE"
+)
+```
