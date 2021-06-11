@@ -6,6 +6,7 @@
       "bash-minimal"
       "nss-certs"
       "r-minimal"
+      "r-beeswarm"
       "r-corrplot"
       "r-glmnet"
       "r-lubridate"
