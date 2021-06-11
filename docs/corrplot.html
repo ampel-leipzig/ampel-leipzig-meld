@@ -584,16 +584,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree602e71419617f5d078d39bb5f8c31c89f8f2be57targetblank602e714a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/602e71419617f5d078d39bb5f8c31c89f8f2be57" target="_blank">602e714</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeba5de74c5781ea78710fe128f9c936ec1393d496targetblankba5de74a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ba5de74c5781ea78710fe128f9c936ec1393d496" target="_blank">ba5de74</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree602e71419617f5d078d39bb5f8c31c89f8f2be57targetblank602e714a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeba5de74c5781ea78710fe128f9c936ec1393d496targetblankba5de74a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/602e71419617f5d078d39bb5f8c31c89f8f2be57" target="_blank">602e714</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ba5de74c5781ea78710fe128f9c936ec1393d496" target="_blank">ba5de74</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -602,10 +602,6 @@ Note that you need to be careful to ensure that all relevant files for the analy
 Ignored files:
     Ignored:    _targets/
     Ignored:    container/
-
-Unstaged changes:
-    Modified:   analysis/missing.Rmd
-    Modified:   code/03-reports.R
 
 </code></pre>
 <p>
@@ -649,6 +645,40 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ba5de74c5781ea78710fe128f9c936ec1393d496/analysis/corrplot.Rmd" target="_blank">ba5de74</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+<td>
+fix: suppress package startup messages
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/6541fae70d070121151a5e6620244cba993c39eb/docs/corrplot.html" target="_blank">6541fae</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+<td>
+fix: add targets for missing/corrplot
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/5d77d52e9f6571661a1882d5e988ff4a55da262d/analysis/corrplot.Rmd" target="_blank">5d77d52</a>
 </td>
 <td>
@@ -685,21 +715,57 @@ feat: add correlation plot
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;corrplot&quot;</span>)</span></code></pre></div>
-<pre><code>corrplot 0.88 loaded</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">tar_load</span>(imp_data)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;corrplot&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">tar_load</span>(imp_data)</span></code></pre></div>
 <div id="correlation" class="section level1">
 <h1>Correlation</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>labv &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>cr &lt;-<span class="st"> </span><span class="kw">cor</span>(imp_data[labv], <span class="dt">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">corrplot.mixed</span>(</span>
-<span id="cb4-4"><a href="#cb4-4"></a>    cr,</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="dt">tl.pos =</span> <span class="st">&quot;lt&quot;</span>, <span class="dt">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">tl.cex =</span> <span class="fl">0.75</span>,</span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="dt">number.cex =</span> <span class="fl">0.25</span>, <span class="dt">number.font =</span> 1L,</span>
-<span id="cb4-7"><a href="#cb4-7"></a>    <span class="dt">order =</span> <span class="st">&quot;AOE&quot;</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>labv &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>cr &lt;-<span class="st"> </span><span class="kw">cor</span>(imp_data[labv], <span class="dt">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">corrplot.mixed</span>(</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    cr,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="dt">tl.pos =</span> <span class="st">&quot;lt&quot;</span>, <span class="dt">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">tl.cex =</span> <span class="fl">0.75</span>,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>    <span class="dt">number.cex =</span> <span class="fl">0.25</span>, <span class="dt">number.font =</span> 1L,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="dt">order =</span> <span class="st">&quot;AOE&quot;</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>)</span></code></pre></div>
 <p><img src="figure/corrplot.Rmd/corrplot-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-corrplot-1">
+Past versions of corrplot-1.png
+</button>
+</p>
+<div id="fig-corrplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/6541fae70d070121151a5e6620244cba993c39eb/docs/figure/corrplot.Rmd/corrplot-1.png" target="_blank">6541fae</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-06-11
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -707,7 +773,7 @@ feat: add correlation plot
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.0 (2021-05-18)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
