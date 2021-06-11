@@ -10,6 +10,7 @@
       "r-corrplot"
       "r-glmnet"
       "r-lubridate"
+      "r-skimr"
       "r-survival"
       "r-tarchetypes"
       "r-targets"

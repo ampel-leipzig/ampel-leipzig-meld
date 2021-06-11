@@ -9,6 +9,42 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics))
 
+(define-public r-skimr
+  (package
+    (name "r-skimr")
+    (version "2.1.3")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "skimr" version))
+        (sha256
+          (base32
+            "02q5l1l1a9m602dg55gbb1zd3ymh0gxy6r815dj8cp769i8hqla1"))))
+    (properties `((upstream-name . "skimr")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-cli" ,r-cli)
+        ("r-crayon" ,r-crayon)
+        ("r-dplyr" ,r-dplyr)
+        ("r-knitr" ,r-knitr)
+        ("r-magrittr" ,r-magrittr)
+        ("r-purrr" ,r-purrr)
+        ("r-repr" ,r-repr)
+        ("r-rlang" ,r-rlang)
+        ("r-stringr" ,r-stringr)
+        ("r-tibble" ,r-tibble)
+        ("r-tidyr" ,r-tidyr)
+        ("r-tidyselect" ,r-tidyselect)
+        ("r-vctrs" ,r-vctrs)
+        ("r-withr" ,r-withr)))
+    (native-inputs `(("r-knitr" ,r-knitr)))
+    (home-page "https://docs.ropensci.org/skimr/")
+    (synopsis
+      "Compact and Flexible Summaries of Data")
+    (description
+      "This package provides a simple to use summary function that can be used with pipes and displays nicely in the console.  The default summary statistics may be modified by the user as can the default formatting.  Support for data frames and vectors is included, and users can implement their own skim methods for specific object types as described in a vignette.  Default summaries include support for inline spark graphs.  Instructions for managing these on specific operating systems are given in the \"Using skimr\" vignette and the README.")
+    (license gpl3)))
+
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
