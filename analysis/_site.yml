@@ -24,3 +24,4 @@ output:
     toc_float: yes
     theme: paper
     highlight: tango
+    code_folding: hide

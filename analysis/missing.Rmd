@@ -3,6 +3,8 @@ title: "Missing Data"
 output:
   workflowr::wflow_html:
     toc: true
+    fig.width: 10
+    fig.height: 10
 editor_options:
   chunk_output_type: console
 ---
@@ -18,9 +20,8 @@ tar_load(raw_data)
 
     n <- length(x)
 
-    plot.new()
-    w <- max(strwidth(names(x), "inch"), na.rm = TRUE) + 1/16
     mai <- par("mai")
+    w <- max(strwidth(names(x), "inch"), na.rm = TRUE) + 1/16
     if (mai[2L] < w)
         mai[2L] <- mai[4L] + w # taken from dotchart
     par(mai = mai)
@@ -31,11 +32,11 @@ tar_load(raw_data)
     y <- seq_len(n)
     mtext(
         names(x), at = y, adj = 0L, side = 2L, las = 2L,
-        line = (w + 0.1) / par("csi")
+        line = (w + 0.1) / par("csi"), cex = 0.8
     )
     abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
     points(x, y, col = col, pch = pch)
-    axis(1, lwd.ticks = 0L, col = "#808080")
+    axis(1L, lwd.ticks = 0L, col = "#808080")
 }
 
 .image <- function(x, col = c("white", palette.colors(2L)[2L])) {
@@ -46,20 +47,23 @@ tar_load(raw_data)
     nc <- ncol(x)
     nms <- colnames(x)
 
-    plot.window(xlim = 0.5 + c(0, nc), ylim = 0.5 + c(0, nr))
-    title(main = "Missing Data", adj = 0L)
-    title(xlab = "Rows", adj = 1L)
-    w <- max(strwidth(nms, "inch"), na.rm = TRUE) + 1/16
     mai <- par("mai")
+    w <- max(strwidth(nms, "inch"), na.rm = TRUE) + 1/16
     if (mai[2L] < w)
         mai[2L] <- mai[4L] + w # taken from dotchart
     par(mai = mai)
 
     y <- seq_len(nc)
-    image(1L:nr, y, x[, rev(y)], axes = FALSE, xlab = "", ylab = "", col = col)
+    image(
+        1L:nr, y, x[, rev(y)], col = col,
+        xlim = 0.5 + c(0L, nr), ylim = 0.5 + c(0L, nc),
+        axes = FALSE, xlab = "", ylab = ""
+    )
+    title(main = "Missing Data", adj = 0L)
+    title(xlab = "Rows", adj = 1L)
     mtext(
         rev(nms), at = y, adj = 0L, side = 2L, las = 2L,
-        line = (w + 0.1) / par("csi")
+        line = (w + 0.1) / par("csi"), cex = 0.8
     )
     abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
 }
@@ -71,15 +75,18 @@ tar_load(raw_data)
 m <- raw_data
 m$Sex <- as.numeric(m$Sex)
 m <- as.matrix(m)
-tbl <- colSums(is.na(m))
+mna <- is.na(m)
+mode(mna) <- "numeric"
+tbl <- colSums(mna)
 na <- sort(tbl[tbl > 0L], decreasing = TRUE)
-knitr::kable(na, col.names = "# Missing Data")
+knitr::kable(
+    cbind(na, round(colMeans(mna[, names(na)]) * 100, 2)),
+    col.names = c("# Missing Data", "% of Missing Data")
+)
 
 .dotplot(sort(na), xlim = c(0L, nrow(m)))
 ```
 
-```{r missing_image}
-mna <- is.na(m)
-mode(mna) <- "numeric"
+```{r missing_image, fig.height = 10, fig.width = 12}
 .image(mna)
 ```
