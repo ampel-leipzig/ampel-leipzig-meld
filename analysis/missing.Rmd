@@ -1,0 +1,85 @@
+---
+title: "Missing Data"
+output:
+  workflowr::wflow_html:
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+
+```{r missing_setup}
+library("targets")
+tar_load(raw_data)
+
+.dotplot <- function(x, xlim = c(0, length(x)),
+                     col = palette.colors(2L)[2L], pch = 19L) {
+    old.par <- par(no.readonly = TRUE)
+    on.exit(par(old.par))
+
+    n <- length(x)
+
+    plot.new()
+    w <- max(strwidth(names(x), "inch"), na.rm = TRUE) + 1/16
+    mai <- par("mai")
+    if (mai[2L] < w)
+        mai[2L] <- mai[4L] + w # taken from dotchart
+    par(mai = mai)
+
+    plot.window(xlim = xlim, ylim = c(0L, n + 1L))
+    title(main = "Missing Data", adj = 0L)
+    title(xlab = "Frequency", adj = 1L)
+    y <- seq_len(n)
+    mtext(
+        names(x), at = y, adj = 0L, side = 2L, las = 2L,
+        line = (w + 0.1) / par("csi")
+    )
+    abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
+    points(x, y, col = col, pch = pch)
+    axis(1, lwd.ticks = 0L, col = "#808080")
+}
+
+.image <- function(x, col = c("white", palette.colors(2L)[2L])) {
+    old.par <- par(no.readonly = TRUE)
+    on.exit(par(old.par))
+
+    nr <- nrow(x)
+    nc <- ncol(x)
+    nms <- colnames(x)
+
+    plot.window(xlim = 0.5 + c(0, nc), ylim = 0.5 + c(0, nr))
+    title(main = "Missing Data", adj = 0L)
+    title(xlab = "Rows", adj = 1L)
+    w <- max(strwidth(nms, "inch"), na.rm = TRUE) + 1/16
+    mai <- par("mai")
+    if (mai[2L] < w)
+        mai[2L] <- mai[4L] + w # taken from dotchart
+    par(mai = mai)
+
+    y <- seq_len(nc)
+    image(1L:nr, y, x[, rev(y)], axes = FALSE, xlab = "", ylab = "", col = col)
+    mtext(
+        rev(nms), at = y, adj = 0L, side = 2L, las = 2L,
+        line = (w + 0.1) / par("csi")
+    )
+    abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
+}
+```
+
+# Missing Data
+
+```{r missing_table}
+m <- raw_data
+m$Sex <- as.numeric(m$Sex)
+m <- as.matrix(m)
+tbl <- colSums(is.na(m))
+na <- sort(tbl[tbl > 0L], decreasing = TRUE)
+knitr::kable(na, col.names = "# Missing Data")
+
+.dotplot(sort(na), xlim = c(0L, nrow(m)))
+```
+
+```{r missing_image}
+mna <- is.na(m)
+mode(mna) <- "numeric"
+.image(mna)
+```

@@ -11,6 +11,8 @@ navbar:
     href: license.html
   - text: Exploratory Data Analysis
     menu:
+    - text: "Missing Data"
+      href: missing.html
     - text: "Histograms"
       href: histograms.html
   right:
