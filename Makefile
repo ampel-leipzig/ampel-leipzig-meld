@@ -1,7 +1,7 @@
 GUIX=/usr/local/bin/guix
 GUIXCOMMIT=c78d6c6
 
-.PHONEY: clean clean-container clean-targets container run
+.PHONEY: clean clean-all clean-container clean-targets container run
 
 run: container/ampel-leipzig-meld.sif
 	./scripts/R.sh
@@ -25,11 +25,13 @@ container/ampel-leipzig-meld.sif: guix/manifest.scm \
 	--save-provenance) $@
 	chmod 644 $@
 
-clean: clean-container clean-targets
+
+clean: clean-targets
+
+clean-all: clean-container clean
 
 clean-container:
 	@rm -rf container
 
 clean-targets:
 	@rm -rf _targets
-
