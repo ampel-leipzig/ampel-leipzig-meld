@@ -16,5 +16,6 @@
       "r-targets"
       "r-workflowr"
       "r-viridislite"
+      "r-visnetwork"
       "r-ameld"
       "r-zlog"))
