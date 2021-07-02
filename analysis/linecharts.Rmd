@@ -16,7 +16,7 @@ tar_load(zlog_data)
 
 # Compare Mean Zlog Values vs Status
 
-```{r linecharts_zlogmeanplot}
+```{r linecharts_zlogmeanplot_status}
 labv <- sort(grep("_[SECQ]$", colnames(zlog_data), value = TRUE))
 
 ## divide data.frame by dead/alive
@@ -33,7 +33,7 @@ col <- palette.colors(2L)
 ## keep old graphic parameters and restore them afterwards
 old.par <- par(no.readonly = TRUE)
 
-par(mar = c(7.1, 4.1, 4.1, 2.1))
+par(mar = c(7.1, 4.1, 4.1, 2.1), cex = 0.5)
 
 plot(
     s$dead[o], type = "b", pch = 20, lwd = 2, col = col[1],
@@ -59,5 +59,54 @@ axis(
     1, at = seq_along(o), labels = names(s$dead[o]), las = 2,
     lwd.ticks = 0L, col = "#808080"
 )
+par(old.par)
+```
+
+# Compare Mean Zlog Values vs MeldCategory
+
+```{r linecharts_zlogmeanplot_meld}
+## divide data.frame by MELD
+s <- split(zlog_data[labv], zlog_data$MeldCategory)
+
+## calculate mean standardized lab values
+s <- lapply(s, colMeans, na.rm = TRUE)
+n <- length(s)
+o <- order(s[[n]])
+
+## comparison plot
+col <- rev(palette.colors(n))
+
+## keep old graphic parameters and restore them afterwards
+old.par <- par(no.readonly = TRUE)
+
+par(mar = c(7.1, 4.1, 4.1, 2.1), cex = 0.5)
+
+plot(
+    s[[n]][o], type = "b", pch = 20, lwd = 2, col = col[n],
+    axes = FALSE, ann = FALSE
+)
+for (i in seq_len(n - 1)) {
+    lines(s[[i]][o], type = "b", pch = 20, lwd = 2, col = col[i])
+}
+legend(
+    "bottomright",
+    legend = names(s),
+    col = col, lwd = 2, pch = 20, bty = "n"
+)
+title(
+    main = "MELD Category vs Mean Standardized Laboratory Values", adj = 0
+)
+title(xlab = "Laboratory Measurements", adj = 1L, line = 5)
+title(ylab = "Mean Standardized Values", adj = 1L)
+r <- range(unlist(s))
+axis(
+    2, at = seq(from = floor(r[1]), to = ceiling(r[2])),
+    lwd.ticks = 0, col = "#808080"
+)
+axis(
+    1, at = seq_along(o), labels = names(s[[n]][o]), las = 2,
+    lwd.ticks = 0L, col = "#808080"
+)
+abline(h = 0, col = "#808080", lty = 2)
 par(old.par)
 ```
