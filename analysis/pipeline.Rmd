@@ -9,5 +9,8 @@ editor_options:
 ---
 
 ```{r targets_visnetwork}
-targets::tar_visnetwork(targets_only = TRUE)
+targets::tar_visnetwork(
+    targets_only = TRUE,
+    label = c("time", "size", "branches")
+)
 ```
