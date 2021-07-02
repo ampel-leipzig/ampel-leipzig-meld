@@ -53,3 +53,14 @@ for (v in labv) {
     .qqnorm(zlog_data[[v]], yname = v)
 }
 ```
+
+# MELD Scores (imputed)
+
+```{r histograms_meld, results = "asis", message = FALSE, warning = FALSE}
+meldv <- c(paste0("ScoreMeld", c("", "Unos", "Na", "NaUnos")), "ProbMeldPlus7")
+for (v in meldv) {
+    cat("\n\n##", v , "\n\n")
+    .hist(zlog_data[[v]], main = paste0("Histogram of ", v), xlab = v)
+    .qqnorm(zlog_data[[v]], yname = v)
+}
+```

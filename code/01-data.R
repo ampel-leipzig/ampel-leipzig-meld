@@ -15,7 +15,7 @@ tg_data <- list(
         set_missing_limits(r)
     }, packages = "zlog"),
     tar_target(imp_data, {
-        withCallingHandlers(
+        imp <- withCallingHandlers(
             impute_df(raw_data, ref_data, method = "logmean"),
             warning = function(w) {
                 if(w$message != paste0(
@@ -27,9 +27,69 @@ tg_data <- list(
                     invokeRestart("muffleWarning")
             }
         )
+        ## assume no dialysis for missing values
+        imp$Dialysis[is.na(imp$Dialysis)] <- 0L
+        imp
+    }),
+    tar_target(meld_data, {
+        m <- imp_data
+        m$ScoreMeld <- meld(
+            creatinine = as_metric(m$CRE_S, "creatinine"),
+            bilirubin = as_metric(m$BILI_S, "bilirubin"),
+            inr = m$INR_C,
+            dialysis = m$Dialysis,
+            cause = ifelse(m$Ethyltoxic == 1, "ethyltoxisch", "other")
+        )
+        m$ScoreMeldUnos <- meld(
+            creatinine = as_metric(m$CRE_S, "creatinine"),
+            bilirubin = as_metric(m$BILI_S, "bilirubin"),
+            inr = m$INR_C,
+            dialysis = m$Dialysis,
+            cause = "other"
+        )
+        m$ScoreMeldNa <- meld_na(
+            creatinine = as_metric(m$CRE_S, "creatinine"),
+            bilirubin = as_metric(m$BILI_S, "bilirubin"),
+            inr = m$INR_C,
+            sodium = m$NA_S,
+            dialysis = m$Dialysis,
+            cause = ifelse(m$Ethyltoxic == 1, "ethyltoxisch", "other")
+        )
+        m$ScoreMeldNaUnos <- meld_na(
+            creatinine = as_metric(m$CRE_S, "creatinine"),
+            bilirubin = as_metric(m$BILI_S, "bilirubin"),
+            inr = m$INR_C,
+            sodium = m$NA_S,
+            dialysis = m$Dialysis,
+            type = "UNOS"
+        )
+        m$ProbMeldPlus7 <- meld_plus7(
+            creatinine = as_metric(m$CRE_S, "creatinine"),
+            bilirubin = as_metric(m$BILI_S, "bilirubin"),
+            inr = m$INR_C,
+            sodium = m$NA_S,
+            albumin = m$ALB_S / 10,
+            wbc = m$B_WBC_E,
+            age = m$Age
+        )
+        m$MeldCategory <- cut(
+            m$ScoreMeldUnos,
+            breaks = c(-Inf, seq(10, 40, by=10), Inf),
+            labels = c(
+                paste0(
+                    "[", floor(min(m$ScoreMeldUnos, na.rm = TRUE)), ",9]"
+                ),
+                "[10,20)", "[20,30)", "[30,40)",
+                paste0(
+                    "[40,", ceiling(max(m$ScoreMeldUnos, na.rm = TRUE)), ")"
+                )
+            ),
+            right = FALSE
+        )
+        m
     }),
     tar_target(zlog_data, {
-        zlog_data <- imp_data
+        zlog_data <- meld_data
         iconvert <- colnames(zlog_data) %in%
             c("Age", "Sex", grep("_[SECQ]$", colnames(imp_data), value = TRUE))
         zlog_data[iconvert] <- zlog_df(imp_data[iconvert], ref_data)
