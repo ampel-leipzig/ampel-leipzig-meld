@@ -22,9 +22,8 @@ if ! [[ ${HOSTNAME} =~ (x1|t400) ]] ; then
     BIND_PATH="/etc/slurm/,/usr/lib64/libmunge.so.2,${BIND_PATH},$(echo ${PREPEND_PATH} | sed 's#:#\n#g; s#\(bin\|lib\)\/\?##g' | uniq | sed ':a;N;$!ba;s#\n#,#g')"
 fi
 
-# cli:::win10_build fails on guix generated containers, see
-#
 SINGULARITYENV_LOCPATH=/lib/locale/2.31/ \
+    SINGULARITYENV_TAR_MAKE_REPORTER="timestamp" \
     SINGULARITYENV_TZ="UTC" \
     SINGULARITYENV_PREPEND_PATH="${PREPEND_PATH}" \
     SINGULARITY_BIND="${BIND_PATH}" \
