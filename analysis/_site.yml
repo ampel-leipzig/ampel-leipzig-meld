@@ -23,6 +23,8 @@ navbar:
       href: linecharts.html
     - text: "Correlation"
       href: corrplot.html
+    - text: "Survival Plots"
+      href: survivalplots.html
   right:
   - text: Pipeline
     href: pipeline.html

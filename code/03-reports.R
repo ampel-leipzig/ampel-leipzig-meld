@@ -78,6 +78,19 @@ tg_reports <- list(
         format = "file"
     ),
     tar_target(
+        report_survivalplots,
+        command = {
+            list(site_conf)
+            !!tar_knitr_deps_expr(file.path("analysis", "survivalplots.Rmd"))
+            workflowr::wflow_build(
+                file.path("analysis", "survivalplots.Rmd"),
+                view = FALSE
+           )
+           file.path("analysis", "survivalplots.Rmd")
+        },
+        format = "file"
+    ),
+    tar_target(
         report_corrplot,
         command = {
             list(site_conf)
