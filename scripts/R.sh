@@ -10,7 +10,7 @@
 # SINGULARITYENV_R_CLI_NUM_COLORS=1 \
 WORKAROUND='assignInNamespace("win10_build", function()0L, ns = "cli")'
 
-REXPR=${1:-"${WORKAROUND}; targets::tar_make()"}
+REXPR=${1:-"${WORKAROUND}; targets::tar_make(); workflowr::wflow_build(rprojroot::find_rstudio_root_file('analysis', 'pipeline.Rmd'), view = FALSE)"}
 PREPEND_PATH=""
 BIND_PATH="/var/run"
 

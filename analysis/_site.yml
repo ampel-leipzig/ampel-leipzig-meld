@@ -24,6 +24,8 @@ navbar:
     - text: "Correlation"
       href: corrplot.html
   right:
+  - text: Pipeline
+    href: pipeline.html
   - text: Source Code
     href: https://github.com/ampel-leipzig/ampel-leipzig-meld
 output:

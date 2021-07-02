@@ -1,0 +1,13 @@
+---
+title: "Pipeline"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: false
+editor_options:
+  chunk_output_type: console
+---
+
+```{r targets_visnetwork}
+targets::tar_visnetwork(targets_only = TRUE)
+```
