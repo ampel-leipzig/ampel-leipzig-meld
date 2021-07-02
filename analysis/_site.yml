@@ -19,6 +19,8 @@ navbar:
       href: histograms.html
     - text: "Boxplots"
       href: boxplots.html
+    - text: "Dotcharts"
+      href: dotcharts.html
     - text: "Linecharts"
       href: linecharts.html
     - text: "Correlation"
