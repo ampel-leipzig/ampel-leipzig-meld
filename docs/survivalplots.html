@@ -11,7 +11,7 @@
 
 
 
-<title>Home</title>
+<title>Survival Plots</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,6 +28,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -320,6 +323,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -327,6 +393,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -407,7 +483,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">Survival Plots</h1>
 
 </div>
 
@@ -555,7 +631,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/survivalplots.Rmd</code>) and HTML (<code>docs/survivalplots.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -581,10 +657,10 @@ Message
 <tbody>
 <tr>
 <td>
-html
+Rmd
 </td>
 <td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d9c37ec60ddf86a692162bd72c7656b0b132bc6b/docs/index.html" target="_blank">d9c37ec</a>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/c96bbef4d90977dedb3335a928afacb24e295169/analysis/survivalplots.Rmd" target="_blank">c96bbef</a>
 </td>
 <td>
 Sebastian Gibb
@@ -593,194 +669,7 @@ Sebastian Gibb
 2021-07-02
 </td>
 <td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ce260af11d15278fc6b08a6d1f602e7b9e5a7dfc/analysis/index.Rmd" target="_blank">ce260af</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-feat: add first citations
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/7686ce990b003a17b653aaef88ebe6b3365979e8/analysis/index.Rmd" target="_blank">7686ce9</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-refactor: remove about page
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/81fcc75108a0efeafc50f97b159e249e46fa28e1/docs/index.html" target="_blank">81fcc75</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/783c49fa33d347733368438ed5186acb9b017e88/docs/index.html" target="_blank">783c49f</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/aac7ea853bef86cd18c554f5a2b4e43137000d79/docs/index.html" target="_blank">aac7ea8</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/602e71419617f5d078d39bb5f8c31c89f8f2be57/docs/index.html" target="_blank">602e714</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/24a733a22e86d92c1463c7a69314e8f223fbe94b/docs/index.html" target="_blank">24a733a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-docs: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/945a45a5cd2d90fbc7bd47076dd043b1c602acbf/docs/index.html" target="_blank">945a45a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/f4d6b47e81631e23338e193c9c84369c3418d4e7/docs/index.html" target="_blank">f4d6b47</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-04
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/a08fecb1f5a0c0c0ec8c77c2d6f56e7551f0cddf/analysis/index.Rmd" target="_blank">a08fecb</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-04
-</td>
-<td>
-chore: initial wflow site commit
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/33b1c8885e5c26cb68a07b4fcc04477511c91e3d/analysis/index.Rmd" target="_blank">33b1c88</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-04
-</td>
-<td>
-chore: start workflowr project
+feat: add survival plots
 </td>
 </tr>
 </tbody>
@@ -790,32 +679,109 @@ chore: start workflowr project
 </div>
 </div>
 </div>
-<div id="acknowledgment" class="section level2">
-<h2>Acknowledgment</h2>
-<div id="ampel" class="section level3">
-<h3>AMPEL</h3>
-<p>This work is part of the <a href="https://ampel.care/en/">AMPEL</a> (Analysis and Reporting System for the Improvement of Patient Safety through Real-Time Integration of Laboratory Findings) project <span class="citation">(Eckelt et al. 2020)</span>.</p>
-<p>This measure is co-funded with tax revenues based on the budget adopted by the members of the Saxon State Parliament.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(<span class="st">&quot;ameld&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">library</span>(<span class="st">&quot;survival&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">tar_load</span>(zlog_data)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>srv &lt;-<span class="st"> </span><span class="kw">Surv</span>(zlog_data<span class="op">$</span>DaysAtRisk, zlog_data<span class="op">$</span>Deceased)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>col &lt;-<span class="st"> </span><span class="kw">palette.colors</span>(<span class="kw">nlevels</span>(zlog_data<span class="op">$</span>MeldCategory))</span></code></pre></div>
+<div id="survival" class="section level1">
+<h1>Survival</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>srvfit &lt;-<span class="st"> </span><span class="kw">survfit</span>(srv <span class="op">~</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">plot_surv</span>(</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    srvfit,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="dt">main =</span> <span class="st">&quot;Kaplan-Meier Survival Estimate&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="dt">col =</span> col[<span class="dv">2</span>]</span>
+<span id="cb2-6"><a href="#cb2-6"></a>)</span></code></pre></div>
+<p><img src="figure/survivalplots.Rmd/survplots_total-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>times &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">14</span>, <span class="dv">30</span>, <span class="dv">60</span>, <span class="dv">90</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">## calculate risk tables</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>sm &lt;-<span class="st"> </span><span class="kw">summary</span>(srvfit, <span class="dt">times =</span> times)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>nrisk &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(sm<span class="op">$</span>n.risk)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>ncumevents &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">cumsum</span>(sm<span class="op">$</span>n.event))</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="kw">rownames</span>(nrisk) &lt;-<span class="st"> </span><span class="kw">rownames</span>(ncumevents) &lt;-<span class="st"> </span>times</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">## keep old graphic parameters and restore them afterwards</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">nrow =</span> <span class="dv">3</span>), <span class="dt">height =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="fl">1.5</span>, <span class="fl">1.5</span>))</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="kw">plot_surv</span>(</span>
+<span id="cb3-14"><a href="#cb3-14"></a>    srvfit,</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    <span class="dt">main =</span> <span class="st">&quot;Kaplan-Meier Survival Estimate to day 90&quot;</span>,</span>
+<span id="cb3-16"><a href="#cb3-16"></a>    <span class="dt">times =</span> times,</span>
+<span id="cb3-17"><a href="#cb3-17"></a>    <span class="dt">xmax =</span> <span class="dv">90</span>,</span>
+<span id="cb3-18"><a href="#cb3-18"></a>    <span class="dt">col =</span> col[<span class="dv">2</span>]</span>
+<span id="cb3-19"><a href="#cb3-19"></a>)</span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">5.1</span>, <span class="fl">5.1</span>, <span class="fl">1.1</span>, <span class="fl">2.1</span>))</span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="kw">plot_table</span>(</span>
+<span id="cb3-22"><a href="#cb3-22"></a>    nrisk, <span class="dt">at =</span> times, <span class="dt">main =</span> <span class="st">&quot;Number at risk&quot;</span>,</span>
+<span id="cb3-23"><a href="#cb3-23"></a>    <span class="dt">xaxis =</span> <span class="ot">FALSE</span>, <span class="dt">cex.text =</span> <span class="fl">1.5</span>, <span class="dt">ylabels =</span> <span class="ot">FALSE</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>)</span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">5.1</span>, <span class="fl">5.1</span>, <span class="fl">1.1</span>, <span class="fl">2.1</span>))</span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="kw">plot_table</span>(</span>
+<span id="cb3-27"><a href="#cb3-27"></a>    ncumevents, <span class="dt">at =</span> times, <span class="dt">main =</span> <span class="st">&quot;Cumulative number of events&quot;</span>,</span>
+<span id="cb3-28"><a href="#cb3-28"></a>    <span class="dt">xaxis =</span> <span class="ot">FALSE</span>, <span class="dt">cex.text =</span> <span class="fl">1.5</span>, <span class="dt">ylabels =</span> <span class="ot">FALSE</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a>)</span></code></pre></div>
+<p><img src="figure/survivalplots.Rmd/survplots_90d-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
 </div>
-<div id="r-packages" class="section level3">
-<h3>R Packages</h3>
-<p>This site is generated by combining the <a href="https://jdblischak.github.io/workflowr/">workflowr</a> <span class="citation">(Blischak, Carbonetto, and Stephens 2019)</span> and the <a href="https://docs.ropensci.org/targets/">targets</a> <span class="citation">(Landau 2021)</span> package.</p>
-<p>A visual network of the pipeline is depicted <a href="pipeline.html">here</a>.</p>
-</div>
-</div>
-<div id="references" class="section level2">
-<h2>References</h2>
-<div id="refs">
-<div id="ref-workflowr2019">
-<p>Blischak, John D, Peter Carbonetto, and Matthew Stephens. 2019. “Creating and Sharing Reproducible Research Code the Workflowr Way [Version 1; Peer Review: 3 Approved].” <em>F1000Research</em> 8 (1749). <a href="https://doi.org/10.12688/f1000research.20843.1">https://doi.org/10.12688/f1000research.20843.1</a>.</p>
-</div>
-<div id="ref-eckelt2020">
-<p>Eckelt, F., J. Remmler, T. Kister, M. Wernsdorfer, H. Richter, M. Federbusch, M. Adler, et al. 2020. “Verbesserte Patientensicherheit Durch “Clinical Decision Support Systems” in Der Labormedizin.” <em>Der Internist</em> 61 (5): 452–59. <a href="https://doi.org/10.1007/s00108-020-00775-3">https://doi.org/10.1007/s00108-020-00775-3</a>.</p>
-</div>
-<div id="ref-targets2021">
-<p>Landau, William Michael. 2021. “The Targets R Package: A Dynamic Make-Like Function-Oriented Pipeline Toolkit for Reproducibility and High-Performance Computing.” <em>Journal of Open Source Software</em> 6 (57): 2959. <a href="https://doi.org/10.21105/joss.02959">https://doi.org/10.21105/joss.02959</a>.</p>
-</div>
-</div>
+<div id="survival-vs-meld-category" class="section level1">
+<h1>Survival vs MELD Category</h1>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>srvfit &lt;-<span class="st"> </span><span class="kw">survfit</span>(srv <span class="op">~</span><span class="st"> </span>MeldCategory, <span class="dt">data =</span> zlog_data)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>col &lt;-<span class="st"> </span><span class="kw">rev</span>(col)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">plot_surv</span>(</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    srvfit,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="dt">main =</span> <span class="st">&quot;Kaplan-Meier Survival Estimate&quot;</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="dt">col =</span> col</span>
+<span id="cb5-7"><a href="#cb5-7"></a>)</span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">legend</span>(</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="dt">legend =</span> <span class="kw">levels</span>(zlog_data<span class="op">$</span>MeldCategory),</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="dt">col =</span> col, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">3</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>)</span></code></pre></div>
+<p><img src="figure/survivalplots.Rmd/survplots_meld_total-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">## calculate risk tables</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>sm &lt;-<span class="st"> </span><span class="kw">summary</span>(srvfit, <span class="dt">times =</span> times)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>ncumevents &lt;-<span class="st"> </span>nrisk &lt;-<span class="st"> </span><span class="kw">matrix</span>(</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="ot">NA_real_</span>,</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="dt">nrow =</span> <span class="kw">length</span>(times), <span class="dt">ncol =</span> <span class="kw">nlevels</span>(zlog_data<span class="op">$</span>MeldCategory),</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="dt">dimnames =</span> <span class="kw">list</span>(times, <span class="kw">levels</span>(zlog_data<span class="op">$</span>MeldCategory))</span>
+<span id="cb6-7"><a href="#cb6-7"></a>)</span>
+<span id="cb6-8"><a href="#cb6-8"></a>nrisk[][<span class="kw">seq_along</span>(sm<span class="op">$</span>n.risk)] &lt;-<span class="st"> </span>sm<span class="op">$</span>n.risk</span>
+<span id="cb6-9"><a href="#cb6-9"></a>ncumevents[][<span class="kw">seq_along</span>(sm<span class="op">$</span>n.event)] &lt;-<span class="st"> </span>sm<span class="op">$</span>n.event</span>
+<span id="cb6-10"><a href="#cb6-10"></a>ncumevents &lt;-<span class="st"> </span><span class="kw">apply</span>(ncumevents, <span class="dt">MARGIN =</span> <span class="dv">2</span>, cumsum)</span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co">## keep old graphic parameters and restore them afterwards</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">nrow =</span> <span class="dv">3</span>), <span class="dt">height =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">5.1</span>, <span class="fl">4.1</span>, <span class="fl">1.1</span>, <span class="fl">2.1</span>))</span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="kw">plot_surv</span>(</span>
+<span id="cb6-18"><a href="#cb6-18"></a>    srvfit,</span>
+<span id="cb6-19"><a href="#cb6-19"></a>    <span class="dt">main =</span> <span class="st">&quot;Kaplan-Meier Survival Estimate to day 90&quot;</span>,</span>
+<span id="cb6-20"><a href="#cb6-20"></a>    <span class="dt">times =</span> times,</span>
+<span id="cb6-21"><a href="#cb6-21"></a>    <span class="dt">xmax =</span> <span class="dv">90</span>,</span>
+<span id="cb6-22"><a href="#cb6-22"></a>    <span class="dt">col =</span> col</span>
+<span id="cb6-23"><a href="#cb6-23"></a>)</span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="kw">legend</span>(</span>
+<span id="cb6-25"><a href="#cb6-25"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
+<span id="cb6-26"><a href="#cb6-26"></a>    <span class="dt">legend =</span> <span class="kw">levels</span>(zlog_data<span class="op">$</span>MeldCategory),</span>
+<span id="cb6-27"><a href="#cb6-27"></a>    <span class="dt">col =</span> col, <span class="dt">lwd =</span> <span class="dv">1</span>, <span class="dt">pch =</span> <span class="dv">3</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span></span>
+<span id="cb6-28"><a href="#cb6-28"></a>)</span>
+<span id="cb6-29"><a href="#cb6-29"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">5.1</span>, <span class="fl">5.1</span>, <span class="fl">1.1</span>, <span class="fl">2.1</span>))</span>
+<span id="cb6-30"><a href="#cb6-30"></a><span class="kw">plot_table</span>(</span>
+<span id="cb6-31"><a href="#cb6-31"></a>    nrisk, <span class="dt">at =</span> times, <span class="dt">main =</span> <span class="st">&quot;Number at risk&quot;</span>,</span>
+<span id="cb6-32"><a href="#cb6-32"></a>    <span class="dt">xaxis =</span> <span class="ot">FALSE</span>, <span class="dt">cex.text =</span> <span class="fl">1.5</span>, <span class="dt">col =</span> col</span>
+<span id="cb6-33"><a href="#cb6-33"></a>)</span>
+<span id="cb6-34"><a href="#cb6-34"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">5.1</span>, <span class="fl">5.1</span>, <span class="fl">1.1</span>, <span class="fl">2.1</span>))</span>
+<span id="cb6-35"><a href="#cb6-35"></a><span class="kw">plot_table</span>(</span>
+<span id="cb6-36"><a href="#cb6-36"></a>    ncumevents, <span class="dt">at =</span> times, <span class="dt">main =</span> <span class="st">&quot;Cumulative number of events&quot;</span>,</span>
+<span id="cb6-37"><a href="#cb6-37"></a>    <span class="dt">xaxis =</span> <span class="ot">FALSE</span>, <span class="dt">cex.text =</span> <span class="fl">1.5</span>, <span class="dt">col =</span> col</span>
+<span id="cb6-38"><a href="#cb6-38"></a>)</span></code></pre></div>
+<p><img src="figure/survivalplots.Rmd/survplots_meld_90d-1.png" width="1152" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -823,7 +789,7 @@ chore: start workflowr project
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.0 (2021-05-18)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
@@ -841,16 +807,22 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+[1] ameld_0.0.5     survival_3.2-11 targets_0.4.2  
+
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.6        whisker_0.4       knitr_1.33        magrittr_2.0.1   
- [5] workflowr_1.6.2   R6_2.5.0          rlang_0.4.11      fansi_0.5.0      
- [9] stringr_1.4.0     tools_4.1.0       xfun_0.23         utf8_1.2.1       
-[13] git2r_0.28.0      htmltools_0.5.1.1 ellipsis_0.3.2    rprojroot_2.0.2  
-[17] yaml_2.2.1        digest_0.6.27     tibble_3.1.2      lifecycle_1.0.0  
-[21] crayon_1.4.1      later_1.2.0       vctrs_0.3.8       fs_1.5.0         
-[25] promises_1.2.0.1  glue_1.4.2        evaluate_0.14     rmarkdown_2.8    
-[29] stringi_1.6.2     compiler_4.1.0    pillar_1.6.1      httpuv_1.6.1     
-[33] pkgconfig_2.0.3  </code></pre>
+ [1] Rcpp_1.0.6        highr_0.9         pillar_1.6.1      compiler_4.1.0   
+ [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   tools_4.1.0      
+ [9] digest_0.6.27     lattice_0.20-44   evaluate_0.14     lifecycle_1.0.0  
+[13] tibble_3.1.2      pkgconfig_2.0.3   rlang_0.4.11      Matrix_1.3-4     
+[17] igraph_1.2.6      cli_2.5.0         yaml_2.2.1        xfun_0.23        
+[21] withr_2.4.2       stringr_1.4.0     knitr_1.33        fs_1.5.0         
+[25] vctrs_0.3.8       grid_4.1.0        tidyselect_1.1.1  rprojroot_2.0.2  
+[29] glue_1.4.2        data.table_1.14.0 R6_2.5.0          processx_3.5.2   
+[33] fansi_0.5.0       rmarkdown_2.8     purrr_0.3.4       callr_3.7.0      
+[37] magrittr_2.0.1    whisker_0.4       splines_4.1.0     promises_1.2.0.1 
+[41] ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.1.1
+[45] httpuv_1.6.1      utf8_1.2.1        stringi_1.6.2     crayon_1.4.1     </code></pre>
 </div>
 </div>
 
@@ -868,6 +840,8 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
+</div>
+</div>
 
 </div>
 
@@ -905,6 +879,32 @@ $(document).ready(function () {
 });
 </script>
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

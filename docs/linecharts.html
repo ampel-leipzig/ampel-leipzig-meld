@@ -453,6 +453,9 @@ div.tocify {
     <li>
       <a href="corrplot.html">Correlation</a>
     </li>
+    <li>
+      <a href="survivalplots.html">Survival Plots</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -596,16 +599,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0cdb21dd8817662c94e0a49fe2bb4009ad5f1015targetblank0cdb21da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0cdb21dd8817662c94e0a49fe2bb4009ad5f1015" target="_blank">0cdb21d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreec96bbef4d90977dedb3335a928afacb24e295169targetblankc96bbefa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/c96bbef4d90977dedb3335a928afacb24e295169" target="_blank">c96bbef</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0cdb21dd8817662c94e0a49fe2bb4009ad5f1015targetblank0cdb21da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreec96bbef4d90977dedb3335a928afacb24e295169targetblankc96bbefa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0cdb21dd8817662c94e0a49fe2bb4009ad5f1015" target="_blank">0cdb21d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/c96bbef4d90977dedb3335a928afacb24e295169" target="_blank">c96bbef</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -652,6 +655,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d9c37ec60ddf86a692162bd72c7656b0b132bc6b/docs/linecharts.html" target="_blank">d9c37ec</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-07-02
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -757,6 +777,43 @@ feat: add linecharts report
 <span id="cb2-41"><a href="#cb2-41"></a>    <span class="dt">lwd.ticks =</span> 0L, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
 <span id="cb2-42"><a href="#cb2-42"></a>)</span></code></pre></div>
 <p><img src="figure/linecharts.Rmd/linecharts_zlogmeanplot_status-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-linecharts_zlogmeanplot_status-1">
+Past versions of linecharts_zlogmeanplot_status-1.png
+</button>
+</p>
+<div id="fig-linecharts_zlogmeanplot_status-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/d9c37ec60ddf86a692162bd72c7656b0b132bc6b/docs/figure/linecharts.Rmd/linecharts_zlogmeanplot_status-1.png" target="_blank">d9c37ec</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-07-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
 </div>
 <div id="compare-mean-zlog-values-vs-meldcategory" class="section level1">
@@ -805,6 +862,43 @@ feat: add linecharts report
 <span id="cb4-42"><a href="#cb4-42"></a>)</span>
 <span id="cb4-43"><a href="#cb4-43"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="figure/linecharts.Rmd/linecharts_zlogmeanplot_meld-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-linecharts_zlogmeanplot_meld-1">
+Past versions of linecharts_zlogmeanplot_meld-1.png
+</button>
+</p>
+<div id="fig-linecharts_zlogmeanplot_meld-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/d9c37ec60ddf86a692162bd72c7656b0b132bc6b/docs/figure/linecharts.Rmd/linecharts_zlogmeanplot_meld-1.png" target="_blank">d9c37ec</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-07-02
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
 <br>
 <p>
