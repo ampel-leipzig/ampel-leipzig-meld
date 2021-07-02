@@ -10,34 +10,6 @@ editor_options:
 ```{r dotcharts_setup, message = FALSE}
 library("targets")
 tar_load(imp_data)
-
-.dotplot <- function(x, xlim = c(0, length(x)),
-                     col = palette.colors(2L)[2L], pch = 19L) {
-    old.par <- par(no.readonly = TRUE)
-    on.exit(par(old.par))
-
-    n <- length(x)
-
-    mai <- par("mai")
-    w <- max(strwidth(names(x), "inch"), na.rm = TRUE) + 1/16
-    if (mai[2L] < w)
-        mai[2L] <- mai[4L] + w # taken from dotchart
-    par(mai = mai)
-
-    plot(NA, xlim = xlim, ylim = c(0L, n + 1L),
-        axes = FALSE, xlab = "", ylab = ""
-    )
-    title(main = "Categorial Data", adj = 0L)
-    title(xlab = "Frequency", adj = 1L)
-    y <- seq_len(n)
-    mtext(
-        names(x), at = y, adj = 0L, side = 2L, las = 2L,
-        line = (w + 0.1) / par("csi"), cex = 0.8
-    )
-    abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
-    points(x, y, col = col, pch = pch)
-    axis(1L, lwd.ticks = 0L, col = "#808080")
-}
 ```
 
 # Categorial Data
@@ -49,5 +21,5 @@ tbl <- colSums(imp_data[
 ])
 tbl <- sort(tbl[tbl > 0L])
 
-.dotplot(tbl, xlim = c(0L, nrow(imp_data)))
+plot_dots(tbl, xlim = c(0L, nrow(imp_data)), main = "Categorial Data")
 ```

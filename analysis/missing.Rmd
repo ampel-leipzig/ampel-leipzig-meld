@@ -13,32 +13,6 @@ editor_options:
 library("targets")
 tar_load(raw_data)
 
-.dotplot <- function(x, xlim = c(0, length(x)),
-                     col = palette.colors(2L)[2L], pch = 19L) {
-    old.par <- par(no.readonly = TRUE)
-    on.exit(par(old.par))
-
-    n <- length(x)
-
-    mai <- par("mai")
-    w <- max(strwidth(names(x), "inch"), na.rm = TRUE) + 1/16
-    if (mai[2L] < w)
-        mai[2L] <- mai[4L] + w # taken from dotchart
-    par(mai = mai)
-
-    plot(NA, xlim = xlim, ylim = c(0L, n + 1L), axes = FALSE)
-    title(main = "Missing Data", adj = 0L)
-    title(xlab = "Frequency", adj = 1L)
-    y <- seq_len(n)
-    mtext(
-        names(x), at = y, adj = 0L, side = 2L, las = 2L,
-        line = (w + 0.1) / par("csi"), cex = 0.8
-    )
-    abline(h = y, col = "#808080", lty = "dotted", lwd = 1L)
-    points(x, y, col = col, pch = pch)
-    axis(1L, lwd.ticks = 0L, col = "#808080")
-}
-
 .image <- function(x, col = c("white", palette.colors(2L)[2L])) {
     old.par <- par(no.readonly = TRUE)
     on.exit(par(old.par))
@@ -84,7 +58,7 @@ knitr::kable(
     col.names = c("# Missing Data", "% of Missing Data")
 )
 
-.dotplot(sort(na), xlim = c(0L, nrow(m)))
+plot_dots(sort(na), xlim = c(0L, nrow(m)), main = "Missing Data")
 ```
 
 ```{r missing_image, fig.height = 10, fig.width = 12}
