@@ -11,6 +11,7 @@ editor_options:
 
 ```{r missing_setup}
 library("targets")
+library("ameld")
 tar_load(raw_data)
 
 .image <- function(x, col = c("white", palette.colors(2L)[2L])) {
