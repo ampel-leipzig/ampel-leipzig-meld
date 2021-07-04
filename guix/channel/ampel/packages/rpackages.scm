@@ -9,6 +9,134 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics))
 
+(define-public r-distr6
+  (package
+    (name "r-distr6")
+    (version "1.5.2")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "distr6" version))
+        (sha256
+          (base32
+            "1w1wrfnqxbr9aiif7hza9bnmbn1vmglcbmij7wkk662hvkg1j6z5"))))
+    (properties `((upstream-name . "distr6")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-r6" ,r-r6)
+        ("r-r62s3" ,r-r62s3)
+        ("r-rcpp" ,r-rcpp)
+        ("r-set6" ,r-set6)))
+    (native-inputs `(("r-knitr" ,r-knitr)))
+    (home-page
+      "https://alan-turing-institute.github.io/distr6/")
+    (synopsis
+      "The Complete R6 Probability Distributions Interface")
+    (description
+      "An R6 object oriented distributions package.  Unified interface for 42 probability distributions and 11 kernels including functionality for multiple scientific types.  Additionally functionality for composite distributions and numerical imputation.  Design patterns including wrappers and decorators are described in Gamma et al. (1994, ISBN:0-201-63361-2).  For quick reference of probability distributions including d/p/q/r functions and results we refer to McLaughlin, M.  P. (2001).  Additionally Devroye (1986, ISBN:0-387-96305-7) for sampling the Dirichlet distribution, Gentle (2009) <doi:10.1007/978-0-387-98144-4> for sampling the Multivariate Normal distribution and Michael et al. (1976) <doi:10.2307/2683801> for sampling the Wald distribution.")
+    (license expat)))
+
+(define-public r-mlr3proba
+  (package
+    (name "r-mlr3proba")
+    (version "0.4.0")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "mlr3proba" version))
+        (sha256
+          (base32
+            "1sgmcbxy8xbsmywsbc8qn6qlr79fr244rfz6hvy6i6ipvb6m7rpf"))))
+    (properties `((upstream-name . "mlr3proba")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-distr6" ,r-distr6)
+        ("r-mlr3" ,r-mlr3)
+        ("r-mlr3misc" ,r-mlr3misc)
+        ("r-paradox" ,r-paradox)
+        ("r-r6" ,r-r6)
+        ("r-rcpp" ,r-rcpp)
+        ("r-survival" ,r-survival)))
+    (home-page "https://mlr3proba.mlr-org.com")
+    (synopsis
+      "Probabilistic Supervised Learning for 'mlr3'")
+    (description
+      "This package provides extensions for probabilistic supervised learning for 'mlr3'.  This includes extending the regression task to probabilistic and interval regression, adding a survival task, and other specialized models, predictions, and measures.  mlr3extralearners is available from <https://github.com/mlr-org/mlr3extralearners>.")
+    (license lgpl3)))
+
+(define-public r-mlr3viz
+  (package
+    (name "r-mlr3viz")
+    (version "0.5.4")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "mlr3viz" version))
+        (sha256
+          (base32
+            "1qf054jk9yx3v5hm55cp89vzwx5i7vwiz71zrgsgxy74kpi4f7ih"))))
+    (properties `((upstream-name . "mlr3viz")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-ggplot2" ,r-ggplot2)
+        ("r-mlr3misc" ,r-mlr3misc)))
+    (home-page "https://mlr3viz.mlr-org.com")
+    (synopsis "Visualizations for 'mlr3'")
+    (description
+      "This package provides visualizations for 'mlr3' objects such as tasks, predictions, resample results or benchmark results via the autoplot() generic of 'ggplot2'.  The returned 'ggplot' objects are intended to provide sensible defaults, yet can easily be customized to create camera-ready figures.  Visualizations include barplots, boxplots, histograms, ROC curves, and Precision-Recall curves.")
+    (license lgpl3)))
+
+(define-public r-r62s3
+  (package
+    (name "r-r62s3")
+    (version "1.4.1")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "R62S3" version))
+        (sha256
+          (base32
+            "0g01izg77spn79xqwva2gzrvk66i20xlb789wl5rgcz7pz7gpjd2"))))
+    (properties `((upstream-name . "R62S3")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-data-table" ,r-data-table)))
+    (home-page "https://github.com/RaphaelS1/R62S3/")
+    (synopsis "Automatic Method Generation from R6")
+    (description
+      "After defining an R6 class, R62S3 is used to automatically generate optional S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
+    (license expat)))
+
+(define-public r-set6
+  (package
+    (name "r-set6")
+    (version "0.2.1")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "set6" version))
+        (sha256
+          (base32
+            "05c2s8wj10nv07p9617grdhsf5ijwpv82r0d2f76p0sbcx3d46qm"))))
+    (properties `((upstream-name . "set6")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-checkmate" ,r-checkmate)
+        ("r-r6" ,r-r6)
+        ("r-rcpp" ,r-rcpp)))
+    (native-inputs `(("r-knitr" ,r-knitr)))
+    (home-page "https://xoopR.github.io/set6/")
+    (synopsis "R6 Mathematical Sets Interface")
+    (description
+      "An object-oriented package for mathematical sets, upgrading the current gold-standard {sets}.  Many forms of mathematical sets are implemented, including (countably finite) sets, tuples, intervals (countably infinite or uncountable), and fuzzy variants.  Wrappers extend functionality by allowing symbolic representations of complex operations on sets, including unions, (cartesian) products, exponentiation, and differences (asymmetric and symmetric).")
+    (license expat)))
+
 (define-public r-skimr
   (package
     (name "r-skimr")
