@@ -1,106 +1,24 @@
-tg_reports <- list(
+reports <- tools::list_files_with_exts(
+    rprojroot::find_rstudio_root_file("analysis"), "Rmd"
+)
+## exclude site parts
+reports <- reports[!grepl("index.Rmd|license.Rmd", reports)]
+
+smbs <- rlang::syms(
+    paste("reports", tools::file_path_sans_ext(basename(reports)), sep = "_")
+)
+
+tg_reports <- tar_eval(
+    values = list(s = smbs, rpt = reports),
     tar_target(
-        report_tables,
+        s,
         command = {
             list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "tables.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "tables.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "tables.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_histograms,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "histograms.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "histograms.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "histograms.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_boxplots,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "boxplots.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "boxplots.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "boxplots.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_missing,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "missing.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "missing.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "missing.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_dotcharts,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "dotcharts.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "dotcharts.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "dotcharts.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_linecharts,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "linecharts.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "linecharts.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "linecharts.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_survivalplots,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "survivalplots.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "survivalplots.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "survivalplots.Rmd")
-        },
-        format = "file"
-    ),
-    tar_target(
-        report_corrplot,
-        command = {
-            list(site_conf)
-            !!tar_knitr_deps_expr(file.path("analysis", "corrplot.Rmd"))
-            workflowr::wflow_build(
-                file.path("analysis", "corrplot.Rmd"),
-                view = FALSE
-           )
-           file.path("analysis", "corrplot.Rmd")
-        },
-        format = "file"
+            !!tar_knitr_deps_expr(rpt)
+            workflowr::wflow_build(rpt, view = FALSE)
+            rpt
+        }, format = "file"
     )
 )
+
+rm("reports", "smbs")
