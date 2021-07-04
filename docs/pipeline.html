@@ -436,7 +436,7 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-07-02
+<strong>Last updated:</strong> 2021-07-04
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -527,16 +527,16 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreec96bbef4d90977dedb3335a928afacb24e295169targetblankc96bbefa"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/c96bbef4d90977dedb3335a928afacb24e295169" target="_blank">c96bbef</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree81145e1613b1abdec923ef0c0a497827739dfa22targetblank81145e1a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/81145e1613b1abdec923ef0c0a497827739dfa22" target="_blank">81145e1</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreec96bbef4d90977dedb3335a928afacb24e295169targetblankc96bbefa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree81145e1613b1abdec923ef0c0a497827739dfa22targetblank81145e1a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/c96bbef4d90977dedb3335a928afacb24e295169" target="_blank">c96bbef</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/81145e1613b1abdec923ef0c0a497827739dfa22" target="_blank">81145e1</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
@@ -585,6 +585,40 @@ Message
 <tbody>
 <tr>
 <td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/9db8d8fb5d06984d40d054c483b9e587aecd4797/analysis/pipeline.Rmd" target="_blank">9db8d8f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-07-02
+</td>
+<td>
+feat: add runtime and size to network plot
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/28695567a26653aa43cccb12c515cb3693c334a0/docs/pipeline.html" target="_blank">2869556</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-07-02
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
 html
 </td>
 <td>
@@ -624,9 +658,12 @@ feat: add pipeline page
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>targets<span class="op">::</span><span class="kw">tar_visnetwork</span>(<span class="dt">targets_only =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>targets<span class="op">::</span><span class="kw">tar_visnetwork</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="dt">targets_only =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dt">label =</span> <span class="kw">c</span>(<span class="st">&quot;time&quot;</span>, <span class="st">&quot;size&quot;</span>, <span class="st">&quot;branches&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>)</span></code></pre></div>
 <div id="htmlwidget-73662e3cc456143a379e" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-73662e3cc456143a379e">{"x":{"nodes":{"name":["imp_data","meld_data","raw_data","ref_data","report_boxplots","report_corrplot","report_dotcharts","report_histograms","report_linecharts","report_missing","report_survivalplots","report_tables","site_conf","site_index","site_license","zlog_data"],"type":["stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[1.297,0.005,0.895,0.021,53.934,2.251,2.797,23.732,2.325,4.096,3.708,3.263,0,2.003,1.316,0.793],"bytes":[39398,59278,39269,721,1880,546,548,1710,2745,1525,2909,434,889,1178,374,98683],"branches":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"id":["imp_data","meld_data","raw_data","ref_data","report_boxplots","report_corrplot","report_dotcharts","report_histograms","report_linecharts","report_missing","report_survivalplots","report_tables","site_conf","site_index","site_license","zlog_data"],"label":["imp_data","meld_data","raw_data","ref_data","report_boxplots","report_corrplot","report_dotcharts","report_histograms","report_linecharts","report_missing","report_survivalplots","report_tables","site_conf","site_index","site_license","zlog_data"],"level":[2,3,1,1,5,3,3,5,5,2,5,5,1,2,2,4],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["imp_data","meld_data","ref_data","raw_data","site_conf","site_conf","zlog_data","imp_data","raw_data","ref_data","imp_data","site_conf","zlog_data","imp_data","site_conf","site_conf","imp_data","site_conf","site_conf","zlog_data","site_conf","imp_data","raw_data","site_conf","zlog_data","imp_data","site_conf","zlog_data"],"to":["zlog_data","zlog_data","zlog_data","report_missing","report_missing","report_survivalplots","report_survivalplots","meld_data","imp_data","imp_data","report_histograms","report_histograms","report_histograms","report_corrplot","report_corrplot","site_index","report_dotcharts","report_dotcharts","report_linecharts","report_linecharts","site_license","report_tables","report_tables","report_tables","report_tables","report_boxplots","report_boxplots","report_boxplots"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":false,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem"],"color":["#354823","#899DA4"],"shape":["dot","dot"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-73662e3cc456143a379e">{"x":{"nodes":{"name":["imp_data","meld_data","raw_data","ref_data","report_boxplots","report_corrplot","report_dotcharts","report_histograms","report_linecharts","report_missing","report_survivalplots","report_tables","site_conf","site_index","site_license","zlog_data"],"type":["stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[1.297,0.89,0.895,0.021,52.521,2.251,2.797,23.227,2.261,4.096,11.843,3.184,0,2.003,1.316,0.782],"bytes":[39398,59730,39269,721,1880,546,548,1710,2745,1525,2909,434,889,1178,374,99140],"branches":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"id":["imp_data","meld_data","raw_data","ref_data","report_boxplots","report_corrplot","report_dotcharts","report_histograms","report_linecharts","report_missing","report_survivalplots","report_tables","site_conf","site_index","site_license","zlog_data"],"label":["imp_data\n1.297 seconds\n39.398 kilobytes\n","meld_data\n0.89 seconds\n59.73 kilobytes\n","raw_data\n0.895 seconds\n39.269 kilobytes\n","ref_data\n0.021 seconds\n721 bytes\n","report_boxplots\n52.521 seconds\n1.88 kilobytes\n","report_corrplot\n2.251 seconds\n546 bytes\n","report_dotcharts\n2.797 seconds\n548 bytes\n","report_histograms\n23.227 seconds\n1.71 kilobytes\n","report_linecharts\n2.261 seconds\n2.745 kilobytes\n","report_missing\n4.096 seconds\n1.525 kilobytes\n","report_survivalplots\n11.843 seconds\n2.909 kilobytes\n","report_tables\n3.184 seconds\n434 bytes\n","site_conf\n0 seconds\n889 bytes\n","site_index\n2.003 seconds\n1.178 kilobytes\n","site_license\n1.316 seconds\n374 bytes\n","zlog_data\n0.782 seconds\n99.14 kilobytes\n"],"level":[2,3,1,1,5,3,3,5,5,2,5,5,1,2,2,4],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["imp_data","meld_data","ref_data","raw_data","site_conf","site_conf","zlog_data","imp_data","raw_data","ref_data","imp_data","site_conf","zlog_data","imp_data","site_conf","site_conf","imp_data","site_conf","site_conf","zlog_data","site_conf","imp_data","raw_data","site_conf","zlog_data","imp_data","site_conf","zlog_data"],"to":["zlog_data","zlog_data","zlog_data","report_missing","report_missing","report_survivalplots","report_survivalplots","meld_data","imp_data","imp_data","report_histograms","report_histograms","report_histograms","report_corrplot","report_corrplot","site_index","report_dotcharts","report_dotcharts","report_linecharts","report_linecharts","site_license","report_tables","report_tables","report_tables","report_tables","report_boxplots","report_boxplots","report_boxplots"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":false,"hoverNearest":false,"degree":1,"algorithm":"all","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem"],"color":["#354823","#899DA4"],"shape":["dot","dot"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
