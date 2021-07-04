@@ -45,7 +45,7 @@ tg_data <- list(
             bilirubin = as_metric(m$BILI_S, "bilirubin"),
             inr = m$INR_C,
             dialysis = m$Dialysis,
-            cause = "other"
+            cause = "UNOS"
         )
         m$ScoreMeldNa <- meld_na(
             creatinine = as_metric(m$CRE_S, "creatinine"),
