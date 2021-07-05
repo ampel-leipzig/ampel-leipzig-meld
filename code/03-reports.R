@@ -2,7 +2,7 @@ reports <- tools::list_files_with_exts(
     rprojroot::find_rstudio_root_file("analysis"), "Rmd"
 )
 ## exclude site parts
-reports <- reports[!grepl("index.Rmd|license.Rmd", reports)]
+reports <- reports[!grepl("pipeline.Rmd|index.Rmd|license.Rmd", reports)]
 
 smbs <- rlang::syms(
     paste("reports", tools::file_path_sans_ext(basename(reports)), sep = "_")
