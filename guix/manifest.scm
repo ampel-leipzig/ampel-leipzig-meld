@@ -16,6 +16,7 @@
       "r-mlr3tuning"
       "r-mlr3proba"
       "r-mlr3viz"
+      "r-ranger"
       "r-skimr"
       "r-survival"
       "r-tarchetypes"
