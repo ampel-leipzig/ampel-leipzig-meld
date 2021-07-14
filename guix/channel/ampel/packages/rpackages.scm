@@ -38,6 +38,102 @@
       "An R6 object oriented distributions package.  Unified interface for 42 probability distributions and 11 kernels including functionality for multiple scientific types.  Additionally functionality for composite distributions and numerical imputation.  Design patterns including wrappers and decorators are described in Gamma et al. (1994, ISBN:0-201-63361-2).  For quick reference of probability distributions including d/p/q/r functions and results we refer to McLaughlin, M.  P. (2001).  Additionally Devroye (1986, ISBN:0-387-96305-7) for sampling the Dirichlet distribution, Gentle (2009) <doi:10.1007/978-0-387-98144-4> for sampling the Multivariate Normal distribution and Michael et al. (1976) <doi:10.2307/2683801> for sampling the Wald distribution.")
     (license expat)))
 
+(define-public r-future-batchtools
+  (package
+    (name "r-future-batchtools")
+    (version "0.10.0")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "future.batchtools" version))
+        (sha256
+          (base32
+            "1ly98h2g7wpfxp2r8vl1hy7wqqgwgawjagz0m2iczjmcj4ix6avk"))))
+    (properties
+      `((upstream-name . "future.batchtools")))
+    (build-system r-build-system)
+    (arguments
+     `(#:phases
+       (modify-phases %standard-phases
+         (add-after 'unpack 'set-HOME
+           (lambda _ (setenv "HOME" "/tmp"))))))
+    (propagated-inputs
+      `(("r-batchtools" ,r-batchtools)
+        ("r-future" ,r-future)))
+    (native-inputs
+     `(("r-r-rsp" ,r-r-rsp))) ; vignette builder
+    (home-page
+      "https://github.com/HenrikBengtsson/future.batchtools")
+    (synopsis
+      "A Future API for Parallel and Distributed Processing using 'batchtools'")
+    (description
+      "Implementation of the Future API on top of the 'batchtools' package.  This allows you to process futures, as defined by the 'future' package, in parallel out of the box, not only on your local machine or ad-hoc cluster of machines, but also via high-performance compute ('HPC') job schedulers such as 'LSF', 'OpenLava', 'Slurm', 'SGE', and 'TORQUE' / 'PBS', e.g. 'y <- future.apply::future_lapply(files, FUN = process)'.")
+    (license lgpl2.1+)))
+
+(define-public r-future-callr
+  (package
+    (name "r-future-callr")
+    (version "0.6.1")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "future.callr" version))
+        (sha256
+          (base32
+            "037xgv604vrbdqx4zbai8nqd2d9cf47f0rwxd7iihr09y8qknd19"))))
+    (properties `((upstream-name . "future.callr")))
+    (build-system r-build-system)
+    (arguments
+     `(#:phases
+       (modify-phases %standard-phases
+         (add-after 'unpack 'set-HOME
+           (lambda _ (setenv "HOME" "/tmp"))))))
+    (propagated-inputs
+      `(("r-callr" ,r-callr)
+        ("r-future" ,r-future)))
+    (native-inputs
+     `(("r-r-rsp" ,r-r-rsp))) ; vignette builder
+    (home-page
+      "https://future.callr.futureverse.org")
+    (synopsis
+      "A Future API for Parallel Processing using 'callr'")
+    (description
+      "Implementation of the Future API on top of the 'callr' package.  This allows you to process futures, as defined by the 'future' package, in parallel out of the box, on your local (Linux, macOS, Windows, ...) machine.  Contrary to backends relying on the 'parallel' package (e.g. 'future::multisession') and socket connections, the 'callr' backend provided here can run more than 125 parallel R processes.")
+    (license lgpl2.1+)))
+
+(define-public r-mlr3extralearners
+  (let ((commit
+          "7592df7851b6050447a6f06699ca232d95582cbb")
+        (revision "1"))
+    (package
+      (name "r-mlr3extralearners")
+      (version (git-version "0.5.0" revision commit))
+      (source
+        (origin
+          (method git-fetch)
+          (uri (git-reference
+                 (url "https://github.com/mlr-org/mlr3extralearners")
+                 (commit commit)))
+          (file-name (git-file-name name version))
+          (sha256
+            (base32
+              "1hadxabapvk7rryk7y160kd0jcgn45pffv1cc020ldkd7w4agbjh"))))
+      (properties
+        `((upstream-name . "mlr3extralearners")))
+      (build-system r-build-system)
+      (propagated-inputs
+        `(("r-checkmate" ,r-checkmate)
+          ("r-data-table" ,r-data-table)
+          ("r-mlr3" ,r-mlr3)
+          ("r-mlr3misc" ,r-mlr3misc)
+          ("r-paradox" ,r-paradox)
+          ("r-r6" ,r-r6)))
+      (home-page
+        "https://github.com/mlr-org/mlr3extralearners")
+      (synopsis "Extra Learners For mlr3")
+      (description "Extra learners for use in mlr3.")
+      (license lgpl3))))
+
 (define-public r-mlr3proba
   (package
     (name "r-mlr3proba")
@@ -172,6 +268,33 @@
     (description
       "This package provides a simple to use summary function that can be used with pipes and displays nicely in the console.  The default summary statistics may be modified by the user as can the default formatting.  Support for data frames and vectors is included, and users can implement their own skim methods for specific object types as described in a vignette.  Default summaries include support for inline spark graphs.  Instructions for managing these on specific operating systems are given in the \"Using skimr\" vignette and the README.")
     (license gpl3)))
+
+(define-public r-survivalsvm
+  (package
+    (name "r-survivalsvm")
+    (version "0.0.5")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "survivalsvm" version))
+        (sha256
+          (base32
+            "1b4hrdrqq1z0kfn8vpdwg54388m25df2s6w9i574x3mkxkmkjkga"))))
+    (properties `((upstream-name . "survivalsvm")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-hmisc" ,r-hmisc)
+        ("r-kernlab" ,r-kernlab)
+        ("r-matrix" ,r-matrix)
+        ("r-pracma" ,r-pracma)
+        ("r-quadprog" ,r-quadprog)
+        ("r-survival" ,r-survival)))
+    (home-page
+      "https://github.com/imbs-hl/survivalsvm")
+    (synopsis "Survival Support Vector Analysis")
+    (description
+      "Performs support vectors analysis for data sets with survival outcome.  Three approaches are available in the package: The regression approach takes censoring into account when formulating the inequality constraints of the support vector problem.  In the ranking approach, the inequality constraints set the objective to maximize the concordance index for comparable pairs of observations.  The hybrid approach combines the regression and ranking constraints in the same model.")
+    (license (list gpl2+ gpl3+))))
 
 (define-public r-tarchetypes
   (package
