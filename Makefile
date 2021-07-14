@@ -1,22 +1,24 @@
 GUIX=/usr/local/bin/guix
-GUIXCOMMIT=c78d6c6
+GUIXCOMMIT=956b6b0
 
-.PHONEY: clean clean-all clean-container clean-targets container run
+.PHONEY: clean clean-all clean-container clean-targets container hpc run sync
 
-run: container/ampel-leipzig-meld.sif
+run: container
+	RUNLOCAL=1 ./scripts/R.sh
+
+hpc: sync
 	./scripts/R.sh
 
-container: container/ampel-leipzig-meld.sif
+container: container/ampel-leipzig-meld.squashfs
 
-container/ampel-leipzig-meld.sif: guix/manifest.scm \
+container/ampel-leipzig-meld.squashfs: guix/manifest.scm \
 	guix/channels.scm \
 	guix/channel/ampel/packages/rpackages.scm
 	mkdir -p container
 	cp $$($(GUIX) time-machine --commit=$(GUIXCOMMIT) -- pack \
 	--relocatable --relocatable \
 	--format=squashfs \
-	--entry-point=bin/R \
-	--symlink=/etc=etc \
+	--entry-point=bin/Rscript \
 	--symlink=/bin=bin \
 	--symlink=/lib=lib \
 	--symlink=/share=share \
@@ -25,6 +27,14 @@ container/ampel-leipzig-meld.sif: guix/manifest.scm \
 	--save-provenance) $@
 	chmod 644 $@
 
+sync: container scripts/R.sh scripts/slurm_batchtools.tmpl
+	rsync \
+    --verbose \
+    --modify-window=1 \
+    --recursive \
+    --links \
+    --delete \
+    analysis code container logs scripts brain:~/
 
 clean: clean-targets
 

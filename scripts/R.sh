@@ -10,22 +10,12 @@
 # SINGULARITYENV_R_CLI_NUM_COLORS=1 \
 WORKAROUND='assignInNamespace("win10_build", function()0L, ns = "cli")'
 
-REXPR=${1:-"${WORKAROUND}; targets::tar_make(); workflowr::wflow_build(rprojroot::find_rstudio_root_file('analysis', 'pipeline.Rmd'), view = FALSE)"}
-PREPEND_PATH=""
-BIND_PATH="/var/run"
-
-## on an HPC
-if ! [[ ${HOSTNAME} =~ (x1|t400) ]] ; then
-    module load singularity slurm
-    PREPEND_PATH=$(IFS=:; for i in ${PATH}; do if [[ $i =~ (slurm|munge|singularity) ]] ; then echo -n "${i}:"; fi; done;)
-    PREPEND_PATH=${PREPEND_PATH%:}
-    BIND_PATH="/etc/slurm/,/usr/lib64/libmunge.so.2,${BIND_PATH},$(echo ${PREPEND_PATH} | sed 's#:#\n#g; s#\(bin\|lib\)\/\?##g' | uniq | sed ':a;N;$!ba;s#\n#,#g')"
-fi
+REXPR=${1:-"${WORKAROUND}; targets::tar_make_future(); workflowr::wflow_build(rprojroot::find_rstudio_root_file('analysis', 'pipeline.Rmd'), view = FALSE)"}
+BIND_PATH="/etc/passwd,/etc/group,/var/run,${SSH_AUTH_SOCK}"
 
 SINGULARITYENV_LOCPATH=/lib/locale/2.31/ \
     SINGULARITYENV_TAR_MAKE_REPORTER="timestamp" \
     SINGULARITYENV_TZ="UTC" \
-    SINGULARITYENV_PREPEND_PATH="${PREPEND_PATH}" \
     SINGULARITY_BIND="${BIND_PATH}" \
-    singularity run container/ampel-leipzig-meld.sif \
-    --vanilla --silent -e "${REXPR}"
+    singularity exec container/ampel-leipzig-meld.squashfs \
+    R --vanilla --silent -e "${REXPR}"
