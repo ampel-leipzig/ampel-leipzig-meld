@@ -25,6 +25,10 @@ navbar:
       href: corrplot.html
     - text: "Survival Plots"
       href: survivalplots.html
+  - text: Machine Learning
+    menu:
+      - text: "Benchmarks"
+        href: benchmarks.html
   right:
   - text: Pipeline
     href: pipeline.html
