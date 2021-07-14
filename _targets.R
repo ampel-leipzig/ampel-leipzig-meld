@@ -20,7 +20,7 @@ login <- future::tweak(
 slurm <- future::tweak(
     future.batchtools::batchtools_slurm,
     template = "scripts/slurm_batchtools.tmpl",
-    workers = 4L,
+    workers = 8L,
     resources = list(
         logfile = "logs/job%s.log",
         partition = "batch,compute,pinky,snowball",
@@ -33,7 +33,7 @@ slurm <- future::tweak(
 if (nchar(Sys.getenv("RUNLOCAL"))) {
     future::plan(callr, workers = 3)
 } else {
-    future::plan(list(login, slurm, future::tweak(callr, workers = 8L)))
+    future::plan(list(login, slurm, callr))
 }
 
 source("code/01-data.R")
