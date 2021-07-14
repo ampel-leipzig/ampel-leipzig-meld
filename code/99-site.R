@@ -13,7 +13,8 @@ tg_site <- list(
             )
             file.path("analysis", "index.Rmd")
         },
-        format = "file"
+        format = "file",
+        deployment = "main"
     ),
     tar_target(
         site_license,
@@ -27,6 +28,7 @@ tg_site <- list(
 
             file.path("analysis", "license.Rmd")
         },
-        format = "file"
+        format = "file",
+        deployment = "main"
     )
 )

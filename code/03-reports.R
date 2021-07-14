@@ -17,7 +17,8 @@ tg_reports <- tar_eval(
             !!tar_knitr_deps_expr(rpt)
             workflowr::wflow_build(rpt, view = FALSE)
             rpt
-        }, format = "file"
+        }, format = "file",
+        deployment = "main"
     )
 )
 
