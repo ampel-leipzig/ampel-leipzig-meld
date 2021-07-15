@@ -10,7 +10,7 @@
 # SINGULARITYENV_R_CLI_NUM_COLORS=1 \
 WORKAROUND='assignInNamespace("win10_build", function()0L, ns = "cli")'
 
-REXPR=${1:-"${WORKAROUND}; targets::tar_make_future(); workflowr::wflow_build(rprojroot::find_rstudio_root_file('analysis', 'pipeline.Rmd'), view = FALSE)"}
+REXPR=${1:-"${WORKAROUND}; targets::tar_make_future(workers = 4L); workflowr::wflow_build(rprojroot::find_rstudio_root_file('analysis', 'pipeline.Rmd'), view = FALSE)"}
 BIND_PATH="/etc/passwd,/etc/group,/var/run,${SSH_AUTH_SOCK}"
 
 SINGULARITYENV_LOCPATH=/lib/locale/2.31/ \
