@@ -1,9 +1,9 @@
-library("mlr3")
-library("mlr3extralearners")
-library("mlr3learners")
-library("mlr3proba")
-library("mlr3tuning")
-library("paradox")
+suppressPackageStartupMessages(library("mlr3"))
+suppressPackageStartupMessages(library("mlr3extralearners"))
+suppressPackageStartupMessages(library("mlr3learners"))
+suppressPackageStartupMessages(library("mlr3proba"))
+suppressPackageStartupMessages(library("mlr3tuning"))
+suppressPackageStartupMessages(library("paradox"))
 
 ## learners
 lrn_cox <- lrn("surv.coxph", id = "cox")
