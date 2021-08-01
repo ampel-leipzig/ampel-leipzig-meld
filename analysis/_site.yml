@@ -29,6 +29,12 @@ navbar:
     menu:
       - text: "Benchmarks"
         href: benchmarks.html
+  - text: Article
+    menu:
+      - text: "Article"
+        href: article.html
+      - text: "Supplement"
+        href: supplement.html
   right:
   - text: Pipeline
     href: pipeline.html

@@ -1,0 +1,108 @@
+---
+editor_options:
+  chunk_output_type: console
+title: "A Model to Predict Survival in Patients with End-Stage Liver Disease"
+subtitle: >
+    Comparision against MELD, MELD-Na, MELD-Plus7.
+abstract: >
+  **Background**:
+      TODO
+
+  **Methods**:
+      TODO
+
+  **Results**:
+      TODO
+
+  **Conclusion**:
+      TODO
+
+author:
+    - Sebastian Gibb:
+        email: mail@sebastiangibb.de
+        institute: [ILM, KAINS]
+        correspondence: true
+    - Thorsten Kaiser:
+        email: thorsten.kaiser@medizin.uni-leipzig.de
+        institute: ILM
+        correspondence: false
+institute:
+    - ILM: Institute of Laboratory Medicine, Clinical Chemistry and Molecular Diagnostics, University Hospital Leipzig, Paul-List-Str. 13-15, D-04103 Leipzig, Germany.
+    - KAINS: Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Straße, D-17475 Greifswald, Germany.
+date: "`r Sys.Date()`"
+bibliography:
+  - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'bibliography.bib')`"
+  - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'article.bib')`"
+output:
+  workflowr::wflow_html:
+    pandoc_args:
+      - --filter=pandoc-crossref
+        # pandoc_args doesn't support r evaluation
+      - "--lua-filter=pandoc/lua-filters/scholarly-metadata.lua"
+      - "--lua-filter=pandoc/lua-filters/author-info-blocks.lua"
+---
+
+```{r, include=FALSE}
+knitr::write_bib(
+    c("targets", "workflowr"),
+    file = rprojroot::find_rstudio_root_file(
+        "analysis", "bibliography", "rpackages", "article.bib"
+    )
+)
+```
+
+# Introduction
+
+Liver cirrhosis is the terminal result of fibrotic remodeling
+of liver tissue due to chronic damage. An organ failure is often
+irreversible and the only available therapy is liver transplantation.
+However, the shortage in grafts for transplantation from deceased donors
+requires risk stratification and precise allocation rules.
+The allocation of liver transplantation in most countries is based on
+disease severity determined by the model of end-stage liver disease (MELD)
+[@malinchoc2000; @wiesner2003; @optn_policies2021].
+The MELD score estimates the patients' 3-month mortality risk based on
+laboratory results, namely bilirubin, creatinine and international normalized
+ratio (INR). In general the MELD score is extended by the sodium level
+(MELD-Na score) as this was found to be an important additional risk factor in
+liver cirrhosis [@kim2008; @optn_policies2021].
+The MELD was initially developed for predicting the survival of patients
+undergoing transjugular intrahepatic portosystemic shunts.
+Afterwards it was revalidated for predicting mortality risk in patients awaiting
+a liver transplantation.
+Although the MELD score should be an objective allocation score especially the
+creatinine and INR are highly dependent on the utilized laboratory methods
+[@trotter2004; @cholongitas2007]. Patients with identical disease state could
+have very different MELD scores and thus get different priority on the liver
+transplantation waiting list.
+Furthermore often, e.g. for acute-on-chronic liver failure, the MELD score
+underestimates the mortality risk [@hernaez2020].
+
+There have been some attempts to use the data extracted from more than 300.000
+electronic medical records from two hospitals in the United States to improve
+the MELD score [@kartoun2017]. The derived MELD-Plus7 and MELD-Plus9 risk score
+add albumin, white blood cell count, age and total cholesterol and length of
+stay to the MELD-Na variables. Despite its published prediction improvement the
+MELD-Plus scores are not used for transplant allocation yet.
+
+As depicted by MELD-Plus risk scores better predictive scores often need more
+variables and are more complicated. To reduce the risk of overlooking or
+incorrectly calculating and interpreting the results,
+clinical decision support systems may be used and could improve patient safety.
+The research project on digital laboratory medicine (AMPEL) develops a
+clinical decision support system based on laboratory diagnostics that should
+support clinical practitioners in interpreting the laboratory results and taking
+the necessary medical interventions [@eckelt2020].
+
+This study aims to find clinical and laboratory values that improve the risk
+stratification for liver transplantation over classical MELD, MELD-Na and
+MELD-Plus scores and could be implemented as part of the AMPEL clinical decision
+support system.
+
+# Material and methods
+
+# Results
+
+# Discussion
+
+# References
