@@ -11,7 +11,7 @@
 
 
 
-<title>Corrplot</title>
+<title>Supplement</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,9 +28,6 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
@@ -323,69 +320,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -393,16 +327,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -510,7 +434,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Corrplot</h1>
+<h1 class="title toc-ignore">Supplement</h1>
 
 </div>
 
@@ -668,7 +592,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/corrplot.Rmd</code>) and HTML (<code>docs/corrplot.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/supplement.Rmd</code>) and HTML (<code>docs/supplement.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -694,172 +618,19 @@ Message
 <tbody>
 <tr>
 <td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/3810a795dcc192cc64c88d969909f9dbe2b991f7/docs/corrplot.html" target="_blank">3810a79</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-15
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/28695567a26653aa43cccb12c515cb3693c334a0/docs/corrplot.html" target="_blank">2869556</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d9c37ec60ddf86a692162bd72c7656b0b132bc6b/docs/corrplot.html" target="_blank">d9c37ec</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/81fcc75108a0efeafc50f97b159e249e46fa28e1/docs/corrplot.html" target="_blank">81fcc75</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/783c49fa33d347733368438ed5186acb9b017e88/docs/corrplot.html" target="_blank">783c49f</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/aac7ea853bef86cd18c554f5a2b4e43137000d79/docs/corrplot.html" target="_blank">aac7ea8</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
 Rmd
 </td>
 <td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ba5de74c5781ea78710fe128f9c936ec1393d496/analysis/corrplot.Rmd" target="_blank">ba5de74</a>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/91bfbd2316b656aa5aefc6c21ba97f7cb7af2297/analysis/supplement.Rmd" target="_blank">91bfbd2</a>
 </td>
 <td>
 Sebastian Gibb
 </td>
 <td>
-2021-06-11
+2021-08-01
 </td>
 <td>
-fix: suppress package startup messages
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/6541fae70d070121151a5e6620244cba993c39eb/docs/corrplot.html" target="_blank">6541fae</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-fix: add targets for missing/corrplot
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/5d77d52e9f6571661a1882d5e988ff4a55da262d/analysis/corrplot.Rmd" target="_blank">5d77d52</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-fix: use imputed data for correlation
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3e38f5a087162b4895bf0f91f0408efad3d5ad47/analysis/corrplot.Rmd" target="_blank">3e38f5a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-<td>
-feat: add correlation plot
+feat: add first article draft with pandoc filters
 </td>
 </tr>
 </tbody>
@@ -869,68 +640,7 @@ feat: add correlation plot
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;corrplot&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">tar_load</span>(imp_data)</span></code></pre></div>
-<div id="correlation" class="section level1">
-<h1>Correlation</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>labv &lt;-<span class="st"> </span><span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>cr &lt;-<span class="st"> </span><span class="kw">cor</span>(imp_data[labv], <span class="dt">use =</span> <span class="st">&quot;pairwise.complete.obs&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">corrplot.mixed</span>(</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    cr,</span>
-<span id="cb2-5"><a href="#cb2-5"></a>    <span class="dt">tl.pos =</span> <span class="st">&quot;lt&quot;</span>, <span class="dt">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">tl.cex =</span> <span class="fl">0.75</span>,</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="dt">number.cex =</span> <span class="fl">0.25</span>, <span class="dt">number.font =</span> 1L,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="dt">order =</span> <span class="st">&quot;AOE&quot;</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>)</span></code></pre></div>
-<p><img src="figure/corrplot.Rmd/corrplot-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-corrplot-1">
-Past versions of corrplot-1.png
-</button>
-</p>
-<div id="fig-corrplot-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3810a795dcc192cc64c88d969909f9dbe2b991f7/docs/figure/corrplot.Rmd/corrplot-1.png" target="_blank">3810a79</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-15
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/6541fae70d070121151a5e6620244cba993c39eb/docs/figure/corrplot.Rmd/corrplot-1.png" target="_blank">6541fae</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-06-11
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span></code></pre></div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -938,7 +648,7 @@ Sebastian Gibb
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.0 (2021-05-18)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
@@ -957,21 +667,20 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] targets_0.4.2 corrplot_0.90
+[1] targets_0.4.2
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.1      compiler_4.1.0   
- [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   tools_4.1.0      
- [9] digest_0.6.27     evaluate_0.14     lifecycle_1.0.0   tibble_3.1.2     
-[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.0        
-[17] yaml_2.2.1        xfun_0.24         withr_2.4.2       stringr_1.4.0    
-[21] knitr_1.33        fs_1.5.0          vctrs_0.3.8       tidyselect_1.1.1 
-[25] rprojroot_2.0.2   glue_1.4.2        data.table_1.14.0 R6_2.5.0         
-[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.9     purrr_0.3.4      
-[33] callr_3.7.0       magrittr_2.0.1    whisker_0.4       promises_1.2.0.1 
-[37] ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.1.1
-[41] httpuv_1.6.1      utf8_1.2.1        stringi_1.6.2     crayon_1.4.1     </code></pre>
-</div>
+ [1] Rcpp_1.0.7        pillar_1.6.1      compiler_4.1.0    later_1.2.0      
+ [5] git2r_0.28.0      workflowr_1.6.2   tools_4.1.0       digest_0.6.27    
+ [9] evaluate_0.14     lifecycle_1.0.0   tibble_3.1.2      pkgconfig_2.0.3  
+[13] rlang_0.4.11      igraph_1.2.6      cli_3.0.0         yaml_2.2.1       
+[17] xfun_0.24         withr_2.4.2       stringr_1.4.0     knitr_1.33       
+[21] fs_1.5.0          vctrs_0.3.8       tidyselect_1.1.1  rprojroot_2.0.2  
+[25] glue_1.4.2        data.table_1.14.0 R6_2.5.0          processx_3.5.2   
+[29] fansi_0.5.0       rmarkdown_2.9     purrr_0.3.4       callr_3.7.0      
+[33] magrittr_2.0.1    whisker_0.4       promises_1.2.0.1  ps_1.6.0         
+[37] codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.1.1 httpuv_1.6.1     
+[41] utf8_1.2.1        stringi_1.6.2     crayon_1.4.1     </code></pre>
 </div>
 
 
@@ -988,8 +697,6 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
-</div>
-</div>
 
 </div>
 
@@ -1027,35 +734,6 @@ $(document).ready(function () {
 });
 </script>
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
