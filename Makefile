@@ -1,7 +1,8 @@
 GUIX=/usr/local/bin/guix
 GUIXCOMMIT=956b6b0
 
-.PHONEY: clean clean-all clean-container clean-targets container hpc run sync
+.PHONEY: clean clean-all clean-container clean-reports clean-targets \
+	container hpc run sync
 
 run: container
 	RUNLOCAL=1 ./scripts/R.sh
@@ -42,6 +43,11 @@ clean-all: clean-container clean
 
 clean-container:
 	@rm -rf container
+
+clean-reports:
+	@RUNLOCAL=1 ./scripts/R.sh \
+		'targets::tar_invalidate(starts_with("reports_"))'
+	@rm -rf docs/*
 
 clean-targets:
 	@rm -rf _targets
