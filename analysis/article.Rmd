@@ -1,4 +1,7 @@
 ---
+# R markdown template taken from
+# Dan Holmes <dtholmes@mail.ubc.ca>
+# https://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/
 editor_options:
   chunk_output_type: console
 title: "A Model to Predict Survival in Patients with End-Stage Liver Disease"
@@ -34,9 +37,8 @@ bibliography:
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'bibliography.bib')`"
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'article.bib')`"
 output:
-  workflowr::wflow_html:
+  bookdown::html_document2:
     pandoc_args:
-      - --filter=pandoc-crossref
         # pandoc_args doesn't support r evaluation
       - "--lua-filter=pandoc/lua-filters/scholarly-metadata.lua"
       - "--lua-filter=pandoc/lua-filters/author-info-blocks.lua"
