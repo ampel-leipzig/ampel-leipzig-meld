@@ -10,7 +10,10 @@ output:
 library("targets")
 library("ameld")
 library("survival")
-tar_load(zlog_data)
+
+withr::with_dir(rprojroot::find_rstudio_root_file(), {
+    tar_load(zlog_data)
+})
 
 srv <- Surv(zlog_data$DaysAtRisk, zlog_data$Deceased)
 col <- palette.colors(nlevels(zlog_data$MeldCategory))
