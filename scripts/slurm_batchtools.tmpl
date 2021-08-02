@@ -18,20 +18,6 @@ if (!"walltime" %in% names(resources)) {
 #SBATCH --mail-user=gibbs@uni-greifswald.de
 #SBATCH --time=<%= ceiling(resources$walltime / 60) %>
 
-SINGULARITYVER=3.4.2
-SINGULARITYPATH=/opt/singularity-${SINGULARITYVER}/bin/singularity
-
-. /usr/share/Modules/init/bash
-module load singularity/${SINGULARITYVER} slurm
-
 export DEBUGME=<%= Sys.getenv("DEBUGME") %>
 
-BIND_PATH="/etc/group,/etc/passwd,/etc/slurm,/var/run"
-
-SINGULARITYENV_LOCPATH=/lib/locale/2.31/ \
-    SINGULARITYENV_TAR_MAKE_REPORTER="timestamp" \
-    SINGULARITYENV_TZ="UTC" \
-    SINGULARITY_BIND="${BIND_PATH}" \
-    ${SINGULARITYPATH} run container/ampel-leipzig-meld.squashfs \
-    -e 'batchtools::doJobCollection("<%= uri %>")'
-exit 0
+scripts/Rscript.sh -e 'batchtools::doJobCollection("<%= uri %>")'
