@@ -42,7 +42,7 @@ navbar:
     href: https://github.com/ampel-leipzig/ampel-leipzig-meld
 output:
   bookdown::html_document2:
-    pre_knit: workflowr::wflow_pre_knit
+    base_format: workflowr::wflow_html
     toc: yes
     toc_float: yes
     theme: paper
