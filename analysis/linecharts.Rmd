@@ -1,12 +1,9 @@
 ---
 title: "Linecharts"
 output:
-  workflowr::wflow_html:
-    toc: true
+  bookdown::html_document2:
     fig.width: 12
     fig.height: 8
-editor_options:
-  chunk_output_type: console
 ---
 
 ```{r linecharts_setup, message = FALSE}

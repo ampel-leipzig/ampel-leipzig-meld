@@ -2,10 +2,8 @@
 title: "Home"
 site: workflowr::wflow_site
 output:
-  workflowr::wflow_html:
+  bookdown::html_document2:
     toc: false
-editor_options:
-  chunk_output_type: console
 bibliography:
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'bibliography.bib')`"
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'home.bib')`"

@@ -1,12 +1,9 @@
 ---
 title: "Missing Data"
 output:
-  workflowr::wflow_html:
-    toc: true
+  bookdown::html_document2:
     fig.width: 10
     fig.height: 10
-editor_options:
-  chunk_output_type: console
 ---
 
 ```{r missing_setup}

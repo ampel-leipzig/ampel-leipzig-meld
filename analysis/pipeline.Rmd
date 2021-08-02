@@ -1,11 +1,8 @@
 ---
 title: "Pipeline"
-site: workflowr::wflow_site
 output:
-  workflowr::wflow_html:
+  bookdown::html_document2:
     toc: false
-editor_options:
-  chunk_output_type: console
 ---
 
 ```{r targets_visnetwork}
