@@ -4,11 +4,8 @@ title: "Histograms"
 
 ```{r histograms_setup, message = FALSE}
 library("targets")
-
-withr::with_dir(rprojroot::find_rstudio_root_file(), {
-    tar_load(imp_data)
-    tar_load(zlog_data)
-})
+tar_load(imp_data)
+tar_load(zlog_data)
 
 .hist <- function(
     ..., xlab = deparse(substitute(x)), main = paste("Histogram of", xlab),

@@ -11,10 +11,7 @@ library("targets")
 library("mlr3viz")
 library("viridis")
 library("ggplot2")
-
-withr::with_dir(rprojroot::find_rstudio_root_file(), {
-    tar_load(bmrk_results)
-})
+tar_load(bmrk_results)
 ```
 
 ```{r benchmarks_plot_c_harrell}

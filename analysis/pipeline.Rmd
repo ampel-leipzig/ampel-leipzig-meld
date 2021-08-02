@@ -6,10 +6,8 @@ output:
 ---
 
 ```{r targets_visnetwork}
-withr::with_dir(rprojroot::find_rstudio_root_file(), {
-    targets::tar_visnetwork(
-        targets_only = TRUE,
-        label = c("time", "size", "branches")
-    )
-})
+targets::tar_visnetwork(
+    targets_only = TRUE,
+    label = c("time", "size", "branches")
+)
 ```

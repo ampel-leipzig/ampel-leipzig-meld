@@ -9,10 +9,7 @@ output:
 ```{r missing_setup}
 library("targets")
 library("ameld")
-
-withr::with_dir(rprojroot::find_rstudio_root_file(), {
-    tar_load(raw_data)
-})
+tar_load(raw_data)
 
 .image <- function(x, col = c("white", palette.colors(2L)[2L])) {
     old.par <- par(no.readonly = TRUE)
