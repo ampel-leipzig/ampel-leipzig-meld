@@ -18,10 +18,10 @@ guix pack \
 # Importing non-existing packages
 
 ```
-guix import cran PACKAGE
+guix import cran --recursive PACKAGE
 
 # from github
-guix import cran --archive=git URL
+guix import cran --recursive --archive=git URL
 ```
 
 # Save channels
