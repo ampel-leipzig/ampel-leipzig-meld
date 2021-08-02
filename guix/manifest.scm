@@ -13,6 +13,7 @@
       "r-minimal"
       "r-beeswarm"
       "r-corrplot"
+      "r-diagrammer"
       "r-future"
       "r-future-batchtools"
       "r-future-callr"
