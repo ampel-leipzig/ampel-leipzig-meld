@@ -18,6 +18,7 @@
       "r-future-batchtools"
       "r-future-callr"
       "r-glmnet"
+      "r-gtsummary"
       "r-lubridate"
       "r-mlr3"
       "r-mlr3extralearners"

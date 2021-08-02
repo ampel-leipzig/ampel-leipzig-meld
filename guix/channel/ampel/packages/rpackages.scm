@@ -9,6 +9,39 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics))
 
+(define-public r-broom-helpers
+  (package
+    (name "r-broom-helpers")
+    (version "1.3.0")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "broom.helpers" version))
+        (sha256
+          (base32
+            "1c5pzvnvrxrnw3ccfb4b8fdyrw5mf0q0i6isxh9nbm9wgbrk29g0"))))
+    (properties `((upstream-name . "broom.helpers")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-broom" ,r-broom)
+        ("r-cli" ,r-cli)
+        ("r-dplyr" ,r-dplyr)
+        ("r-labelled" ,r-labelled)
+        ("r-lifecycle" ,r-lifecycle)
+        ("r-purrr" ,r-purrr)
+        ("r-rlang" ,r-rlang)
+        ("r-stringr" ,r-stringr)
+        ("r-tibble" ,r-tibble)
+        ("r-tidyr" ,r-tidyr)))
+    (native-inputs `(("r-knitr" ,r-knitr)))
+    (home-page
+      "https://larmarange.github.io/broom.helpers/")
+    (synopsis
+      "Helpers for Model Coefficients Tibbles")
+    (description
+      "This package provides suite of functions to work with regression model 'broom::tidy()' tibbles.  The suite includes functions to group regression model terms by variable, insert reference and header rows for categorical variables, add variable labels, and more.")
+    (license gpl3)))
+
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
@@ -141,6 +174,80 @@
     (description
       "Implementation of the Future API on top of the 'callr' package.  This allows you to process futures, as defined by the 'future' package, in parallel out of the box, on your local (Linux, macOS, Windows, ...) machine.  Contrary to backends relying on the 'parallel' package (e.g. 'future::multisession') and socket connections, the 'callr' backend provided here can run more than 125 parallel R processes.")
     (license lgpl2.1+)))
+
+(define-public r-gt
+  (package
+    (name "r-gt")
+    (version "0.3.0")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "gt" version))
+        (sha256
+          (base32
+            "0a6icikskbhsmg4d3gqyxb6jf0hg82nh2241g4h6488ra2b1him8"))))
+    (properties `((upstream-name . "gt")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-bitops" ,r-bitops)
+        ("r-checkmate" ,r-checkmate)
+        ("r-commonmark" ,r-commonmark)
+        ("r-dplyr" ,r-dplyr)
+        ("r-fs" ,r-fs)
+        ("r-ggplot2" ,r-ggplot2)
+        ("r-glue" ,r-glue)
+        ("r-htmltools" ,r-htmltools)
+        ("r-magrittr" ,r-magrittr)
+        ("r-rlang" ,r-rlang)
+        ("r-sass" ,r-sass)
+        ("r-scales" ,r-scales)
+        ("r-stringr" ,r-stringr)
+        ("r-tibble" ,r-tibble)
+        ("r-tidyselect" ,r-tidyselect)))
+    (home-page "https://gt.rstudio.com/")
+    (synopsis
+      "Easily Create Presentation-Ready Display Tables")
+    (description
+      "Build display tables from tabular data with an easy-to-use set of functions.  With its progressive approach, we can construct display tables with a cohesive set of table parts.  Table values can be formatted using any of the included formatting functions.  Footnotes and cell styles can be precisely added through a location targeting system.  The way in which 'gt' handles things for you means that you don't often have to worry about the fine details.")
+    (license expat)))
+
+(define-public r-gtsummary
+  (package
+    (name "r-gtsummary")
+    (version "1.4.2")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "gtsummary" version))
+        (sha256
+          (base32
+            "08j1pmkxiafm89x6nwdczkknmvi5p0zagvbfafzh9rprgl3mis9z"))))
+    (properties `((upstream-name . "gtsummary")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-broom" ,r-broom)
+        ("r-broom-helpers" ,r-broom-helpers)
+        ("r-cli" ,r-cli)
+        ("r-dplyr" ,r-dplyr)
+        ("r-forcats" ,r-forcats)
+        ("r-glue" ,r-glue)
+        ("r-gt" ,r-gt)
+        ("r-knitr" ,r-knitr)
+        ("r-lifecycle" ,r-lifecycle)
+        ("r-purrr" ,r-purrr)
+        ("r-rlang" ,r-rlang)
+        ("r-stringr" ,r-stringr)
+        ("r-survival" ,r-survival)
+        ("r-tibble" ,r-tibble)
+        ("r-tidyr" ,r-tidyr)))
+    (native-inputs `(("r-knitr" ,r-knitr)))
+    (home-page
+      "https://github.com/ddsjoberg/gtsummary")
+    (synopsis
+      "Presentation-Ready Data Summary and Analytic Result Tables")
+    (description
+      "Creates presentation-ready tables summarizing data sets, regression models, and more.  The code to create the tables is concise and highly customizable.  Data frames can be summarized with any function, e.g.  mean(), median(), even user-written functions.  Regression models are summarized and include the reference rows for categorical variables.  Common regression models, such as logistic regression and Cox proportional hazards regression, are automatically identified and the tables are pre-filled with appropriate column headers.")
+    (license expat)))
 
 (define-public r-mlr3extralearners
   (let ((commit
