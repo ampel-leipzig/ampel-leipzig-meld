@@ -28,7 +28,7 @@ container/ampel-leipzig-meld.squashfs: guix/manifest.scm \
 	--save-provenance) $@
 	chmod 644 $@
 
-sync: container scripts/R.sh scripts/slurm_batchtools.tmpl
+sync: container scripts/Rscript.sh scripts/slurm_batchtools.tmpl
 	rsync \
     --verbose \
     --modify-window=1 \
