@@ -1,6 +1,6 @@
-;; with guix 956b6b078edbb96c207747e89ae485d8a4268c6b
+;; with guix f12a35cfa22092a7e3157c94abfef8335f86ac1c
 (specifications->manifest
-    '("bash"
+    '("bash-minimal"
       "coreutils"
       "glibc-utf8-locales"
       "nss-certs"
