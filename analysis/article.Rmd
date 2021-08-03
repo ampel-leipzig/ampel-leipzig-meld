@@ -2,8 +2,6 @@
 # R markdown template taken from
 # Dan Holmes <dtholmes@mail.ubc.ca>
 # https://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/
-editor_options:
-  chunk_output_type: console
 title: "A Model to Predict Survival in Patients with End-Stage Liver Disease"
 subtitle: >
     Comparision against MELD, MELD-Na, MELD-Plus7.
@@ -38,19 +36,25 @@ bibliography:
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'article.bib')`"
 output:
   bookdown::html_document2:
-    pandoc_args:
-        # pandoc_args doesn't support r evaluation
-      - "--lua-filter=pandoc/lua-filters/scholarly-metadata.lua"
-      - "--lua-filter=pandoc/lua-filters/author-info-blocks.lua"
+    pandoc_args: # pandoc_args doesn't support r evaluation
+      - --lua-filter=pandoc/lua-filters/scholarly-metadata.lua
+      - --lua-filter=pandoc/lua-filters/author-info-blocks.lua
 ---
 
-```{r, include=FALSE}
+```{r knitr_setup, include=FALSE}
 knitr::write_bib(
     c("targets", "workflowr"),
     file = rprojroot::find_rstudio_root_file(
         "analysis", "bibliography", "rpackages", "article.bib"
     )
 )
+```
+
+```{r article_setup, include=FALSE}
+library("targets")
+
+tar_load(raw_data)
+tar_load(bmrk_results)
 ```
 
 # Introduction
@@ -103,8 +107,155 @@ support system.
 
 # Material and methods
 
+## Study population
+
+```{r excluded, include = FALSE}
+n_excluded <- attr(raw_data, "excluded")
+n_analysed <- nrow(raw_data)
+n_total <- sum(n_analysed, n_excluded)
+
+cn_labs <- grep("_[CESQ]$", colnames(raw_data), value = TRUE)
+```
+
+In a retrospective cohort study we followed `r n_total` consecutive
+patients, who were recruited during the evaluation process for
+liver transplantation at the University Hospital of Leipzig from
+`r paste(format(attr(raw_data, "period"), "%B %Y"), collapse = " to ")`.
+For each patient we recorded `r ncol(raw_data)` variables.
+Among them are age, sex, etiology of liver disease, complications as listed in
+Table \@ref(tab:tableone) and `r length(cn_labs)` laboratory measurements.
+
+```{r flowchart, results = "asis", echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion."}
+graph <- "
+digraph flowchart {
+    graph [splines = false];
+
+    // invisible nodes
+    node [shape = point, width = 0, height = 0];
+    iAR [style = 'invis'];
+
+    // visible nodes
+    node [shape = box];
+    A [label = '@@1'];
+    E [label = '@@3'];
+    R [label = '@@2'];
+
+    // edge statements
+    A -> iAR [arrowhead = none];
+    {rank = same; iAR -> E [minlen = 5]};
+    iAR -> R;
+}
+
+[1]: paste0('Total Records\\n(n = ', n_total, ')')
+[2]: paste0('Analysed Records\\n(n = ', n_analysed, ')')
+[3]: str_excluded
+"
+str_excluded <- paste0(
+    'Excluded (n = ', sum(n_excluded), ')\\\\l',
+    paste0(
+        '- ',
+        paste(
+            c(
+                'Younger than 18 years:',
+                'Liver Transplantation before visit:',
+                'Follow-up missing/invalid:'
+            ),
+            n_excluded
+        ),
+        collapse = '\\\\l'
+    ),
+    '\\\\l'
+)
+
+DiagrammeR::grViz(graph)
+```
+
+We excluded `r sum(n_excluded)` patients from our analysis
+(Figure \@ref(fig:flowchart)).
+`r if (n_excluded["Children"] == 1) "One was" else paste(n_excluded["Children"], "were")` younger than 18 years.
+`r n_excluded["LiverTransplantation"]` had a liver transplantation before and
+in `r n_excluded["LostFollowUp"]` cases the follow up data were missing or
+invalid.
+
+The Ethics Committee at the Leipzig University Faculty of
+Medicine approved the retrospective usage of the data for our study
+(reference number: 039/14ff).
+
+## MELD scores
+
+MELD and MELD-Na were calculated as described in
+@optn_policies2021 using the following formulas:
+$MELD = 10 * (0.957 \ln(creatinine [mg/dl]) + 0.378 \ln(bilirubin [mg/dl]) + 1.120 * \ln(INR) + 0.643)$,
+Creatinine, bilirubin and INR values lower than 1.0 mg/dl were set to 1.0 mg/dl.
+The maximum allowed creatinine was 4.0 mg/dl. If patients received dialysis,
+creatinine was set to 4.0 mg/dl.
+For MELD-Na MELD was calculated as above and recalculated if greater than 11 using:
+$MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/l]) - (0.033 * MELD_i * (137 - Na [mmol/l]))$
+
+Serum sodium values lower than 125 mmol/l or higher than 137 mmol/l were set
+to 125 mmol/l and 137 mmol/l, respectively.
+
+The MELD-Plus7 risk score was calculated as described in @kartoun2017:
+$$
+\begin{aligned}
+L = 8.53499496 &+ \\
+    2.59679650 &* \log_{10}(1 + creatinine [mg/dl]) + \\
+    2.06503238 &* \log_{10}(1 + bilirubin [mg/dl]) + \\
+    2.99724802 &* \log_{10}(1 + INR) - \\
+    6.47834101 &* \log_{10}(1 + sodium [mmol/l]) - \\
+    6.34990436 &* \log_{10}(1 + albumin [g/l]) + \\
+    1.92811726 &* \log_{10}(1 + wbc [th/cumm]) + \\
+    0.04070442 &* age [years]
+\end{aligned}
+$$
+
+$$MELD\text{-}Plus = \frac{\exp(L)}{1 + \exp(L)}$$
+
+The MELD-Plus9 score was ignored because the length of stay information was not
+available for our cohort and the model itself wasn't superior to MELD-Plus7 in
+its original publication [@kartoun2017].
+
+## Machine learning
+
+```{r ml, include = FALSE}
+n_lrns <- nrow(bmrk_results$learners)
+#n_cv <- c(inner.folds
+#    outer = unlist(
+#        bmrk_results$resamplings$resampling[[1]]$param_set$get_values()
+#    )
+#)
+```
+
 # Results
 
 # Discussion
+
+In this retrospective analysis of `r n_analysed` consecutive patients,
+who were recruited during the evaluation process for liver transplantation at
+the University Hospital of Leipzig we compared
+`r n_lrns` different statistical and machine learning algorithms.
+
+...
+
+- higher mortality than predicted, compare @hernaez2020
+- adding sodium doesn't add much/any discrimination information
+    - as already seen in @kartoun2017
+- @kartoun2017 uses > 60 variables mostly clinical stuff, just few laboratory values, none of the clinical stuff remains
+- general low sample size thus simpler models/fewer predictors are preferred.
+- comparison of different predictors of MELD-Plus7 (+MELD-Plus9) vs our features
+    - 90 day mortality *post* discharge
+    - poorer performance in own validation set (lower and more uniform disease severity, also lower MELD)
+- machine learning algorithms worse than statistical learning (lower c-index, higher variance/instability)
+    - additive effects (favour statistical models)
+    - low sample size, for ML more than 200 events per predictor variable necessary [@ploeg2014]
+- national register required
+
+## Limitations
+
+- comparable mortality?
+- retrospective analysis
+- single center
+- unknown cause of death (death with vs of end-stage liver disease)
+- bias caused by LTx censorship?
 
 # References
