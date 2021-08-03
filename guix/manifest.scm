@@ -7,8 +7,6 @@
       "openssh-sans-x"
       "slurm@20.02.6-1" ;; has to match the major.minor version of the host
       "tzdata"
-      "pandoc"
-      "ghc-pandoc-citeproc"
       "r-minimal"
       "r-beeswarm"
       "r-bookdown"
