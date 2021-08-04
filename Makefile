@@ -5,10 +5,10 @@ GUIXCOMMIT=f12a35c
 	container hpc run sync
 
 run: container
-	RUNLOCAL=1 scripts/Rscript.sh code/make.R
+	RUNLOCAL=1 R_CLI_NUM_COLORS=256 scripts/Rscript.sh code/make.R
 
 hpc: sync
-	scripts/Rscript.sh code/make.R
+	R_CLI_NUM_COLORS=256 scripts/Rscript.sh code/make.R
 
 container: container/ampel-leipzig-meld.squashfs
 
