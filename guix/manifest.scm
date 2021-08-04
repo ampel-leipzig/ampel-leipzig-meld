@@ -17,6 +17,7 @@
       "r-future-callr"
       "r-glmnet"
       "r-gtsummary"
+      "r-kableextra"
       "r-lubridate"
       "r-mlr3"
       "r-mlr3extralearners"
