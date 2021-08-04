@@ -38,7 +38,7 @@ if (nchar(Sys.getenv("RUNLOCAL"))) {
 
 source("code/01-data.R")
 source("code/02-benchmarking.R")
-source("code/03-reports.R")
+source("code/09-reports.R")
 source("code/99-site.R")
 
 list(
