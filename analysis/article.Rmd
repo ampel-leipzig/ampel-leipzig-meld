@@ -52,9 +52,15 @@ knitr::write_bib(
 
 ```{r article_setup, include=FALSE}
 library("targets")
+library("ameld")
+
+tar_load(bmrk_results)
 
 tar_load(raw_data)
-tar_load(bmrk_results)
+tar_load(labelled_meld_data)
+
+tar_load(tbl1)
+tar_load(tbl_observed_vs_expected_mortality)
 ```
 
 # Introduction
@@ -123,7 +129,7 @@ liver transplantation at the University Hospital of Leipzig from
 `r paste(format(attr(raw_data, "period"), "%B %Y"), collapse = " to ")`.
 For each patient we recorded `r ncol(raw_data)` variables.
 Among them are age, sex, etiology of liver disease, complications as listed in
-Table \@ref(tab:tableone) and `r length(cn_labs)` laboratory measurements.
+Table \@ref(tab:tbl1) and `r length(cn_labs)` laboratory measurements.
 
 ```{r flowchart, results = "asis", echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion."}
 graph <- "
@@ -227,6 +233,105 @@ n_lrns <- nrow(bmrk_results$learners)
 ```
 
 # Results
+
+## Baseline characteristics
+
+```{r tbl1, results = "asis", echo = FALSE, message = FALSE}
+tbl1
+```
+
+<!-- TODO:
+use `pattern` argument to provide "{n} ({p}%)" for categorial/dichotomos
+variables after this PR is merged
+https://github.com/ddsjoberg/gtsummary/pull/951
+-->
+
+```{r tbl1_helper_func, echo = FALSE}
+.tbl1 <- function(variable, column = "Overall", ...) {
+    id <- gtsummary::inline_text(
+        tbl1, variable = all_of(variable), column = "tbl_id1"
+    )
+    if (column == "Overall")
+        column <- "stat_0"
+    gtsummary::inline_text(
+        tbl1$tbls[[id]],
+        variable = all_of(variable), column = all_of(column), ...
+    )
+}
+```
+
+In this study we analysed a cohort of `r n_analysed` patients evaluated for
+liver transplantation (Tab. \@ref(tab:tbl1)).
+`r sprintf("%i (%s)", sum(raw_data$Sex == "male"), gtsummary::style_percent(mean(raw_data$Sex == "male"), symbol = TRUE))`
+of them were men.
+The median (IQR) follow-up times was `r .tbl1("DaysAtRisk")` days.
+Within the follow-up time `r .tbl1("LTx")` patients received a liver transplant
+and were censored for the analysis beyond this time point.
+The median (IQR) age of the cohort was `r .tbl1("Age")` years.
+
+Most of the patients presented with cirrhosis
+(`r .tbl1("Cirrhosis")`).
+The remaining patients had an acute liver failure
+(`r .tbl1("ALF")`) or
+a chronic liver insufficiency
+(`r .tbl1("CLI")`).
+At evaluation time the median (IQR) MELD and MELD-Na score were
+`r .tbl1("ScoreMeldUnos")` and
+`r .tbl1("ScoreMeldNaUnos")`, respectively.
+Within 90 days `r .tbl1("M90")` patients died.
+In nearly two third of all patients alcohol was the main cause
+(`r .tbl1("Ethyltoxic")`) of their end-stage liver disease.
+The remaining patients had viral infections
+(hepatitis B and C viruse `r .tbl1("HBV")` and `r .tbl1("HCV")`, respectively),
+autoimmune processes (autoimmune hepatitis `r .tbl1("AIH")`,
+primary sclerosing cirrhosis `r .tbl1("PSC")`),
+primary biliary cirrhosis `r .tbl1("PBC")` or unknown causes
+(non-alcoholic steatohepatitis `r .tbl1("NASH")` and
+cryptogenic hepatitis `r .tbl1("Cryptogenic")`).
+The most common complications among all patients were gastrointestinal
+bleedings in `r .tbl1("GIB")` patients, followed by
+hepatocellular carcinoma (HCC) in `r .tbl1("HCC")` and
+spontaneous bacterial peritonitis (SBP) in `r .tbl1("SBP")` patients.
+Just `r .tbl1("Dialysis")` patients required a renal dialysis.
+
+## MELD scores
+
+According to @wiesner2003 we divided our cohort into
+`r nlevels(labelled_meld_data$MeldCategory)` MELD-score risk
+categories, with `r enum(table(labelled_meld_data$MeldCategory))` patients,
+respectively.
+As depicted in Figure \@ref(fig:observed-vs-meld-mortality-plot) and Table
+\@ref(tab:tbl-observed-vs-expected-mortality) our observed 90 day mortality was
+`r paste(round(range(tbl_observed_vs_expected_mortality$SMR[-1]), 1), collapse = " to ")`
+times higher than the predicted one. Just in the group with the lowest MELD
+scores the mortality was much lower.
+
+```{r tbl-observed-vs-expected-mortality, results = "asis", echo = FALSE, message = FALSE}
+knitr::kable(
+    cbind(
+        row.names(tbl_observed_vs_expected_mortality),
+        tbl_observed_vs_expected_mortality
+    ),
+    row.names = FALSE,
+    col.names =
+        c(
+            "MELD category",
+            "Observed deaths (n)",
+            "Expected deaths (n)",
+            "Standardized mortality ratio (SMR)",
+            "Observed mortality (%)",
+            "Expected mortality (%)"
+        ),
+    caption = paste0(
+        "Observed vs MELD-expected 90 day mortality. ",
+        "MELD mortality values are taken from @wiesner2003. ",
+        "All patients censored before day 90 are ignored for ",
+        " the calculation of the MELD-expected deaths. ",
+        "SMR, Standardized mortality ratio = observed deaths/expected deaths."
+    ),
+    digits = 1
+)
+```
 
 # Discussion
 

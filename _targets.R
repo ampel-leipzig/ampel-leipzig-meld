@@ -38,6 +38,7 @@ if (nchar(Sys.getenv("RUNLOCAL"))) {
 
 source("code/01-data.R")
 source("code/02-benchmarking.R")
+source("code/08-tables.R")
 source("code/09-reports.R")
 source("code/99-site.R")
 
@@ -46,6 +47,7 @@ list(
    tg_tasks,
    tg_benchmarks,
    tg_benchmark_results,
+   tg_tables,
    tg_reports,
    tg_site
 )

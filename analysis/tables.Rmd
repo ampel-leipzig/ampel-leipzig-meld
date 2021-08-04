@@ -5,6 +5,7 @@ title: "Tables"
 ```{r histograms_setup, message = FALSE}
 library("targets")
 library("skimr")
+library("zlog")
 tar_load(raw_data)
 tar_load(imp_data)
 tar_load(zlog_data)
@@ -26,4 +27,26 @@ skim(imp_data)
 
 ```{r tables_skim_zlog}
 skim(zlog_data)
+```
+
+# Raw Data (imputed) with Zlog Colors
+
+```{r tables_raw_zlog, results = "asis", echo = FALSE, message = FALSE}
+k <- kableExtra::kable_classic(
+    kableExtra::kbl(
+        raw_data,
+        digits = 2,
+        escape = FALSE
+    ),
+    "basic"
+)
+for (i in grep("_[CEQS]$", colnames(raw_data)))
+    k <- kableExtra::column_spec(k, i, background = zcol(zlog_data[[i]]))
+k |> kableExtra::scroll_box(width = "100%", height = "500px")
+```
+
+# Table One
+
+```{r tbl1, results = "asis", echo = FALSE, message = FALSE}
+tar_read(tbl1)
 ```
