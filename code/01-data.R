@@ -11,7 +11,7 @@
         bilirubin = as_metric(x$BILI_S, "bilirubin"),
         inr = x$INR_C,
         dialysis = x$Dialysis,
-        cause = "UNOS"
+        cause = "unos"
     )
     x$ScoreMeldNa <- meld_na(
         creatinine = as_metric(x$CRE_S, "creatinine"),
@@ -27,7 +27,7 @@
         inr = x$INR_C,
         sodium = x$NA_S,
         dialysis = x$Dialysis,
-        type = "UNOS"
+        type = "unos"
     )
     x$ProbMeldPlus7 <- meld_plus7(
         creatinine = as_metric(x$CRE_S, "creatinine"),
