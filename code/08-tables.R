@@ -158,7 +158,7 @@ tg_tables <- list(
         ## indent variable names and missing
         modify_table_styling(column = "label", text_format = "indent") |>
         modify_table_styling(
-            rows = row_type == "missing",
+            rows = row_type %in% c("missing", "level"),
             column = "label",
             text_format = "indent2"
         )
