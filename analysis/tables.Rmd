@@ -51,7 +51,7 @@ for (i in grep("_[CEQS]$", colnames(imp_data)))
     k <- kableExtra::column_spec(
             k, i,
             background = zcol(zlog_data[[i]]),
-            popover = paste0("zlog: ", round(zlog_data[[i]]), 2)
+            popover = paste0("zlog: ", round(zlog_data[[i]], 2))
     )
 k |> kableExtra::scroll_box(width = "100%", height = "500px")
 ```
