@@ -2,6 +2,13 @@
 title: "Tables"
 ---
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+
+</script>
+
 ```{r histograms_setup, message = FALSE}
 library("targets")
 library("skimr")
@@ -34,14 +41,18 @@ skim(zlog_data)
 ```{r tables_raw_zlog, results = "asis", echo = FALSE, message = FALSE}
 k <- kableExtra::kable_classic(
     kableExtra::kbl(
-        raw_data,
+        imp_data,
         digits = 2,
         escape = FALSE
     ),
     "basic"
 )
-for (i in grep("_[CEQS]$", colnames(raw_data)))
-    k <- kableExtra::column_spec(k, i, background = zcol(zlog_data[[i]]))
+for (i in grep("_[CEQS]$", colnames(imp_data)))
+    k <- kableExtra::column_spec(
+            k, i,
+            background = zcol(zlog_data[[i]]),
+            popover = paste0("zlog: ", round(zlog_data[[i]]), 2)
+    )
 k |> kableExtra::scroll_box(width = "100%", height = "500px")
 ```
 
