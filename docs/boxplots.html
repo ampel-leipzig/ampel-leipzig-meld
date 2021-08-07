@@ -517,7 +517,9 @@ div.tocify {
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -526,7 +528,9 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks">
+Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -535,17 +539,28 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-08-01
+<strong>Last updated:</strong> 2021-08-07
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong>
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+7
+<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+0
 </p>
 <p>
-<strong>Knit directory:</strong> <code>ampel-leipzig-meld/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+<strong>Knit directory:</strong>
+<code>ampel-leipzig-meld/</code>
+<span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed.">
+</span>
 </p>
 <p>
-This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
-  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version
+1.6.2). The <em>Checks</em> tab describes the
+reproducibility checks that were applied when the results were created.
+The <em>Past versions</em> tab lists the development history.
 </p>
 <hr>
 </div>
@@ -554,91 +569,128 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
 <div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you
+know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Environment:</strong> empty
+</a>
 </p>
 </div>
 <div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+<p>Great job! The global environment was empty. Objects defined in the global
+environment can affect the analysis in your R Markdown file in unknown ways.
+For reproduciblity it’s best to always run the code in an empty environment.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210604code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210604)</code> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210604code">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Seed:</strong> <code>set.seed(20210604)</code>
+</a>
 </p>
 </div>
 <div id="strongSeedstrongcodesetseed20210604code" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20210604)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20210604)</code> was run prior to running the code in the R Markdown file.
+Setting a seed ensures that any results that rely on randomness, e.g.
+subsampling or permutations, are reproducible.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Session information:</strong> recorded
+</a>
 </p>
 </div>
 <div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+<p>Great job! Recording the operating system, R version, and package versions is
+critical for reproducibility.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Cache:</strong> none
+</a>
 </p>
 </div>
 <div id="strongCachestrongnone" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+<p>Nice! There were no cached chunks for this analysis, so you can be confident
+that you successfully produced the results during this run.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>File paths:</strong> relative
+</a>
 </p>
 </div>
 <div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+<p>Great job! Using relative paths to the files within your workflowr project
+makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree51564bcafb1f294c9cb616200e273fb242305b3btargetblank51564bca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/51564bcafb1f294c9cb616200e273fb242305b3b" target="_blank">51564bc</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69targetblank6bfd31ca">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69" target="_blank">6bfd31c</a>
+</a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree51564bcafb1f294c9cb616200e273fb242305b3btargetblank51564bca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69targetblank6bfd31ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
-Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+Great! You are using Git for version control. Tracking code development and
+connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/51564bcafb1f294c9cb616200e273fb242305b3b" target="_blank">51564bc</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69" target="_blank">6bfd31c</a>.
+See the <em>Past versions</em> tab to see a history of the changes made to the
+R Markdown and HTML files.
 </p>
 <p>
-Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+Note that you need to be careful to ensure that all relevant files for the
+analysis have been committed to Git prior to generating the results (you can
+use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only
+checks the R Markdown file, but you know if there are other scripts or data
+files that it depends on. Below is the status of the Git repository when the
+results were generated:
 </p>
 <pre><code>
 Ignored files:
@@ -651,13 +703,11 @@ Untracked files:
     Untracked:  TODO
     Untracked:  scripts/bootstrap.sh
 
-Unstaged changes:
-    Modified:   guix/channel/ampel/packages/rpackages.scm
-    Modified:   guix/manifest.scm
-
 </code></pre>
 <p>
-Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in
+this status report because it is ok for generated content to have uncommitted
+changes.
 </p>
 </div>
 </div>
@@ -668,7 +718,11 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/boxplots.Rmd</code>) and HTML (<code>docs/boxplots.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made
+to the R Markdown (<code>analysis/boxplots.Rmd</code>) and HTML (<code>docs/boxplots.html</code>)
+files. If you’ve configured a remote Git repository (see
+<code>?wflow_git_remote</code>), click on the hyperlinks in the table below to
+view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -692,6 +746,74 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/4478f6ad74fd55120a3ea2d1d977cf4e2a0ab72c/analysis/boxplots.Rmd" target="_blank">4478f6a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-02
+</td>
+<td>
+Revert “fix: working directory for targets”
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/cac14f630848b078c39aee7344862d418fcdcb52/analysis/boxplots.Rmd" target="_blank">cac14f6</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-02
+</td>
+<td>
+fix: working directory for targets
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3957af7f1fc3f088a69c62cadbb0e835ed126891/analysis/boxplots.Rmd" target="_blank">3957af7</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-02
+</td>
+<td>
+refactor: move common yaml headers into _site.yml
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/3aab3e106752adffec84e36600afb9590d92004c/docs/boxplots.html" target="_blank">3aab3e1</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-01
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -834,9 +956,9 @@ refactor: move boxplots in separate report
 <span id="cb1-14"><a href="#cb1-14"></a>    <span class="kw">beeswarm</span>(formula, <span class="dt">data =</span> x, <span class="dt">col =</span> col, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">pch =</span> 19L)</span>
 <span id="cb1-15"><a href="#cb1-15"></a>}</span></code></pre></div>
 <div id="raw-vs-zlog-data" class="section level1">
-<h1>Raw vs Zlog Data</h1>
+<h1><span class="header-section-number">1</span> Raw vs Zlog Data</h1>
 <div id="compare-sexes" class="section level2">
-<h2>Compare Sexes</h2>
+<h2><span class="header-section-number">1.1</span> Compare Sexes</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(1L, 2L))</span>
 <span id="cb2-3"><a href="#cb2-3"></a>log_data &lt;-<span class="st"> </span>imp_data</span>
@@ -850,7 +972,7 @@ refactor: move boxplots in separate report
 <span id="cb2-11"><a href="#cb2-11"></a>    <span class="kw">.bp</span>(zlog_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
 <span id="cb2-12"><a href="#cb2-12"></a>}</span></code></pre></div>
 <div id="alat_s" class="section level3">
-<h3>ALAT_S</h3>
+<h3><span class="header-section-number">1.1.1</span> ALAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-1">
@@ -891,7 +1013,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="alb_s" class="section level3">
-<h3>ALB_S</h3>
+<h3><span class="header-section-number">1.1.2</span> ALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-2.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-2">
@@ -943,7 +1065,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ap_s" class="section level3">
-<h3>AP_S</h3>
+<h3><span class="header-section-number">1.1.3</span> AP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-3.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-3">
@@ -995,7 +1117,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="asat_s" class="section level3">
-<h3>ASAT_S</h3>
+<h3><span class="header-section-number">1.1.4</span> ASAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-4.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-4">
@@ -1047,7 +1169,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_mpv_e" class="section level3">
-<h3>B_MPV_E</h3>
+<h3><span class="header-section-number">1.1.5</span> B_MPV_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-5.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-5">
@@ -1099,7 +1221,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_plt_e" class="section level3">
-<h3>B_PLT_E</h3>
+<h3><span class="header-section-number">1.1.6</span> B_PLT_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-6.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-6">
@@ -1151,7 +1273,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_wbc_e" class="section level3">
-<h3>B_WBC_E</h3>
+<h3><span class="header-section-number">1.1.7</span> B_WBC_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-7.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-7">
@@ -1203,7 +1325,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="bili_s" class="section level3">
-<h3>BILI_S</h3>
+<h3><span class="header-section-number">1.1.8</span> BILI_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-8.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-8">
@@ -1255,7 +1377,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="bilid_s" class="section level3">
-<h3>BILID_S</h3>
+<h3><span class="header-section-number">1.1.9</span> BILID_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-9.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-9">
@@ -1307,7 +1429,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ca_s" class="section level3">
-<h3>CA_S</h3>
+<h3><span class="header-section-number">1.1.10</span> CA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-10.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-10">
@@ -1359,7 +1481,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="che_s" class="section level3">
-<h3>CHE_S</h3>
+<h3><span class="header-section-number">1.1.11</span> CHE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-11.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-11">
@@ -1411,7 +1533,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cholg_s" class="section level3">
-<h3>CHOLG_S</h3>
+<h3><span class="header-section-number">1.1.12</span> CHOLG_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-12.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-12">
@@ -1463,7 +1585,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cl_s" class="section level3">
-<h3>CL_S</h3>
+<h3><span class="header-section-number">1.1.13</span> CL_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-13.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-13">
@@ -1515,7 +1637,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cre_s" class="section level3">
-<h3>CRE_S</h3>
+<h3><span class="header-section-number">1.1.14</span> CRE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-14.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-14">
@@ -1567,7 +1689,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="crp_s" class="section level3">
-<h3>CRP_S</h3>
+<h3><span class="header-section-number">1.1.15</span> CRP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-15.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-15">
@@ -1619,7 +1741,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cysc_s" class="section level3">
-<h3>CYSC_S</h3>
+<h3><span class="header-section-number">1.1.16</span> CYSC_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-16.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-16">
@@ -1671,7 +1793,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ggt_s" class="section level3">
-<h3>GGT_S</h3>
+<h3><span class="header-section-number">1.1.17</span> GGT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-17.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-17">
@@ -1723,7 +1845,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="il6_s" class="section level3">
-<h3>IL6_S</h3>
+<h3><span class="header-section-number">1.1.18</span> IL6_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-18.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-18">
@@ -1775,7 +1897,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="inr_c" class="section level3">
-<h3>INR_C</h3>
+<h3><span class="header-section-number">1.1.19</span> INR_C</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-19.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-19">
@@ -1827,7 +1949,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="na_s" class="section level3">
-<h3>NA_S</h3>
+<h3><span class="header-section-number">1.1.20</span> NA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-20.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-20">
@@ -1868,7 +1990,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="p_s" class="section level3">
-<h3>P_S</h3>
+<h3><span class="header-section-number">1.1.21</span> P_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-21.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-21">
@@ -1920,7 +2042,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="palb_s" class="section level3">
-<h3>PALB_S</h3>
+<h3><span class="header-section-number">1.1.22</span> PALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-22.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-22">
@@ -1972,7 +2094,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="prot_s" class="section level3">
-<h3>PROT_S</h3>
+<h3><span class="header-section-number">1.1.23</span> PROT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-23.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-23">
@@ -2024,7 +2146,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="pth_s" class="section level3">
-<h3>PTH_S</h3>
+<h3><span class="header-section-number">1.1.24</span> PTH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-24.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-24">
@@ -2076,7 +2198,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="vdt_oh_s" class="section level3">
-<h3>VDT_OH_S</h3>
+<h3><span class="header-section-number">1.1.25</span> VDT_OH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-25.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex-25">
@@ -2130,7 +2252,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="compare-status" class="section level2">
-<h2>Compare Status</h2>
+<h2><span class="header-section-number">1.2</span> Compare Status</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(1L, 2L))</span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
@@ -2140,7 +2262,7 @@ Sebastian Gibb
 <span id="cb4-7"><a href="#cb4-7"></a>    <span class="kw">.bp</span>(zlog_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
 <span id="cb4-8"><a href="#cb4-8"></a>}</span></code></pre></div>
 <div id="alat_s-1" class="section level3">
-<h3>ALAT_S</h3>
+<h3><span class="header-section-number">1.2.1</span> ALAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-1">
@@ -2192,7 +2314,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="alb_s-1" class="section level3">
-<h3>ALB_S</h3>
+<h3><span class="header-section-number">1.2.2</span> ALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-2.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-2">
@@ -2244,7 +2366,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ap_s-1" class="section level3">
-<h3>AP_S</h3>
+<h3><span class="header-section-number">1.2.3</span> AP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-3.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-3">
@@ -2296,7 +2418,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="asat_s-1" class="section level3">
-<h3>ASAT_S</h3>
+<h3><span class="header-section-number">1.2.4</span> ASAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-4.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-4">
@@ -2348,7 +2470,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_mpv_e-1" class="section level3">
-<h3>B_MPV_E</h3>
+<h3><span class="header-section-number">1.2.5</span> B_MPV_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-5.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-5">
@@ -2400,7 +2522,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_plt_e-1" class="section level3">
-<h3>B_PLT_E</h3>
+<h3><span class="header-section-number">1.2.6</span> B_PLT_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-6.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-6">
@@ -2452,7 +2574,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_wbc_e-1" class="section level3">
-<h3>B_WBC_E</h3>
+<h3><span class="header-section-number">1.2.7</span> B_WBC_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-7.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-7">
@@ -2504,7 +2626,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="bili_s-1" class="section level3">
-<h3>BILI_S</h3>
+<h3><span class="header-section-number">1.2.8</span> BILI_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-8.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-8">
@@ -2556,7 +2678,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="bilid_s-1" class="section level3">
-<h3>BILID_S</h3>
+<h3><span class="header-section-number">1.2.9</span> BILID_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-9.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-9">
@@ -2608,7 +2730,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ca_s-1" class="section level3">
-<h3>CA_S</h3>
+<h3><span class="header-section-number">1.2.10</span> CA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-10.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-10">
@@ -2660,7 +2782,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="che_s-1" class="section level3">
-<h3>CHE_S</h3>
+<h3><span class="header-section-number">1.2.11</span> CHE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-11.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-11">
@@ -2712,7 +2834,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cholg_s-1" class="section level3">
-<h3>CHOLG_S</h3>
+<h3><span class="header-section-number">1.2.12</span> CHOLG_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-12.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-12">
@@ -2764,7 +2886,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cl_s-1" class="section level3">
-<h3>CL_S</h3>
+<h3><span class="header-section-number">1.2.13</span> CL_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-13.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-13">
@@ -2816,7 +2938,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cre_s-1" class="section level3">
-<h3>CRE_S</h3>
+<h3><span class="header-section-number">1.2.14</span> CRE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-14.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-14">
@@ -2868,7 +2990,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="crp_s-1" class="section level3">
-<h3>CRP_S</h3>
+<h3><span class="header-section-number">1.2.15</span> CRP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-15.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-15">
@@ -2920,7 +3042,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cysc_s-1" class="section level3">
-<h3>CYSC_S</h3>
+<h3><span class="header-section-number">1.2.16</span> CYSC_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-16.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-16">
@@ -2972,7 +3094,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ggt_s-1" class="section level3">
-<h3>GGT_S</h3>
+<h3><span class="header-section-number">1.2.17</span> GGT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-17.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-17">
@@ -3024,7 +3146,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="il6_s-1" class="section level3">
-<h3>IL6_S</h3>
+<h3><span class="header-section-number">1.2.18</span> IL6_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-18.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-18">
@@ -3076,7 +3198,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="inr_c-1" class="section level3">
-<h3>INR_C</h3>
+<h3><span class="header-section-number">1.2.19</span> INR_C</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-19.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-19">
@@ -3128,7 +3250,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="na_s-1" class="section level3">
-<h3>NA_S</h3>
+<h3><span class="header-section-number">1.2.20</span> NA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-20.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-20">
@@ -3180,7 +3302,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="p_s-1" class="section level3">
-<h3>P_S</h3>
+<h3><span class="header-section-number">1.2.21</span> P_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-21.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-21">
@@ -3232,7 +3354,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="palb_s-1" class="section level3">
-<h3>PALB_S</h3>
+<h3><span class="header-section-number">1.2.22</span> PALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-22.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-22">
@@ -3284,7 +3406,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="prot_s-1" class="section level3">
-<h3>PROT_S</h3>
+<h3><span class="header-section-number">1.2.23</span> PROT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-23.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-23">
@@ -3336,7 +3458,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="pth_s-1" class="section level3">
-<h3>PTH_S</h3>
+<h3><span class="header-section-number">1.2.24</span> PTH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-24.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-24">
@@ -3388,7 +3510,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="vdt_oh_s-1" class="section level3">
-<h3>VDT_OH_S</h3>
+<h3><span class="header-section-number">1.2.25</span> VDT_OH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-25.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_status-25">
@@ -3442,7 +3564,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="compare-sexes-status" class="section level2">
-<h2>Compare Sexes : Status</h2>
+<h2><span class="header-section-number">1.3</span> Compare Sexes : Status</h2>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(1L, 2L))</span>
 <span id="cb6-3"><a href="#cb6-3"></a>col &lt;-<span class="st"> </span><span class="kw">cividis</span>(4L)</span>
@@ -3453,7 +3575,7 @@ Sebastian Gibb
 <span id="cb6-8"><a href="#cb6-8"></a>    <span class="kw">.bp</span>(zlog_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
 <span id="cb6-9"><a href="#cb6-9"></a>}</span></code></pre></div>
 <div id="alat_s-2" class="section level3">
-<h3>ALAT_S</h3>
+<h3><span class="header-section-number">1.3.1</span> ALAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-1">
@@ -3505,7 +3627,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="alb_s-2" class="section level3">
-<h3>ALB_S</h3>
+<h3><span class="header-section-number">1.3.2</span> ALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-2.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-2">
@@ -3557,7 +3679,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ap_s-2" class="section level3">
-<h3>AP_S</h3>
+<h3><span class="header-section-number">1.3.3</span> AP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-3.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-3">
@@ -3609,7 +3731,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="asat_s-2" class="section level3">
-<h3>ASAT_S</h3>
+<h3><span class="header-section-number">1.3.4</span> ASAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-4.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-4">
@@ -3661,7 +3783,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_mpv_e-2" class="section level3">
-<h3>B_MPV_E</h3>
+<h3><span class="header-section-number">1.3.5</span> B_MPV_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-5.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-5">
@@ -3713,7 +3835,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_plt_e-2" class="section level3">
-<h3>B_PLT_E</h3>
+<h3><span class="header-section-number">1.3.6</span> B_PLT_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-6.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-6">
@@ -3765,7 +3887,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="b_wbc_e-2" class="section level3">
-<h3>B_WBC_E</h3>
+<h3><span class="header-section-number">1.3.7</span> B_WBC_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-7.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-7">
@@ -3817,7 +3939,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="bili_s-2" class="section level3">
-<h3>BILI_S</h3>
+<h3><span class="header-section-number">1.3.8</span> BILI_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-8.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-8">
@@ -3869,7 +3991,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="bilid_s-2" class="section level3">
-<h3>BILID_S</h3>
+<h3><span class="header-section-number">1.3.9</span> BILID_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-9.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-9">
@@ -3921,7 +4043,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ca_s-2" class="section level3">
-<h3>CA_S</h3>
+<h3><span class="header-section-number">1.3.10</span> CA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-10.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-10">
@@ -3973,7 +4095,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="che_s-2" class="section level3">
-<h3>CHE_S</h3>
+<h3><span class="header-section-number">1.3.11</span> CHE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-11.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-11">
@@ -4025,7 +4147,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cholg_s-2" class="section level3">
-<h3>CHOLG_S</h3>
+<h3><span class="header-section-number">1.3.12</span> CHOLG_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-12.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-12">
@@ -4077,7 +4199,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cl_s-2" class="section level3">
-<h3>CL_S</h3>
+<h3><span class="header-section-number">1.3.13</span> CL_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-13.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-13">
@@ -4129,7 +4251,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cre_s-2" class="section level3">
-<h3>CRE_S</h3>
+<h3><span class="header-section-number">1.3.14</span> CRE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-14.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-14">
@@ -4181,7 +4303,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="crp_s-2" class="section level3">
-<h3>CRP_S</h3>
+<h3><span class="header-section-number">1.3.15</span> CRP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-15.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-15">
@@ -4233,7 +4355,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="cysc_s-2" class="section level3">
-<h3>CYSC_S</h3>
+<h3><span class="header-section-number">1.3.16</span> CYSC_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-16.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-16">
@@ -4285,7 +4407,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="ggt_s-2" class="section level3">
-<h3>GGT_S</h3>
+<h3><span class="header-section-number">1.3.17</span> GGT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-17.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-17">
@@ -4337,7 +4459,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="il6_s-2" class="section level3">
-<h3>IL6_S</h3>
+<h3><span class="header-section-number">1.3.18</span> IL6_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-18.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-18">
@@ -4389,7 +4511,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="inr_c-2" class="section level3">
-<h3>INR_C</h3>
+<h3><span class="header-section-number">1.3.19</span> INR_C</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-19.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-19">
@@ -4441,7 +4563,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="na_s-2" class="section level3">
-<h3>NA_S</h3>
+<h3><span class="header-section-number">1.3.20</span> NA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-20.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-20">
@@ -4493,7 +4615,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="p_s-2" class="section level3">
-<h3>P_S</h3>
+<h3><span class="header-section-number">1.3.21</span> P_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-21.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-21">
@@ -4545,7 +4667,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="palb_s-2" class="section level3">
-<h3>PALB_S</h3>
+<h3><span class="header-section-number">1.3.22</span> PALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-22.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-22">
@@ -4597,7 +4719,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="prot_s-2" class="section level3">
-<h3>PROT_S</h3>
+<h3><span class="header-section-number">1.3.23</span> PROT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-23.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-23">
@@ -4649,7 +4771,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="pth_s-2" class="section level3">
-<h3>PTH_S</h3>
+<h3><span class="header-section-number">1.3.24</span> PTH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-24.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-24">
@@ -4701,7 +4823,7 @@ Sebastian Gibb
 </div>
 </div>
 <div id="vdt_oh_s-2" class="section level3">
-<h3>VDT_OH_S</h3>
+<h3><span class="header-section-number">1.3.25</span> VDT_OH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-25.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-boxplots_rvsz_sex_status-25">
@@ -4755,7 +4877,8 @@ Sebastian Gibb
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
-<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
@@ -4781,17 +4904,18 @@ other attached packages:
 [1] viridisLite_0.4.0 beeswarm_0.4.0    targets_0.4.2    
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.1      compiler_4.1.0   
+ [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.2      compiler_4.1.0   
  [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   tools_4.1.0      
- [9] digest_0.6.27     evaluate_0.14     lifecycle_1.0.0   tibble_3.1.2     
-[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.0        
+ [9] digest_0.6.27     evaluate_0.14     lifecycle_1.0.0   tibble_3.1.3     
+[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.1        
 [17] yaml_2.2.1        xfun_0.24         withr_2.4.2       stringr_1.4.0    
 [21] knitr_1.33        fs_1.5.0          vctrs_0.3.8       tidyselect_1.1.1 
 [25] rprojroot_2.0.2   glue_1.4.2        data.table_1.14.0 R6_2.5.0         
-[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.9     purrr_0.3.4      
-[33] callr_3.7.0       magrittr_2.0.1    whisker_0.4       promises_1.2.0.1 
-[37] ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.1.1
-[41] httpuv_1.6.1      utf8_1.2.1        stringi_1.6.2     crayon_1.4.1     </code></pre>
+[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.9     bookdown_0.22    
+[33] purrr_0.3.4       callr_3.7.0       magrittr_2.0.1    whisker_0.4      
+[37] promises_1.2.0.1  ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2   
+[41] htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.2        stringi_1.7.3    
+[45] crayon_1.4.1     </code></pre>
 </div>
 </div>
 </div>

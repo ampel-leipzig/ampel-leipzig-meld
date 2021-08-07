@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,2,✉, and Thorsten Kaiser1" />
 
-<meta name="date" content="2021-08-01" />
+<meta name="date" content="2021-08-07" />
 
 <title>A Model to Predict Survival in Patients with End-Stage Liver Disease</title>
 
@@ -36,6 +36,10 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="site_libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -525,13 +529,17 @@ div.tocify {
 <h1 class="title toc-ignore">A Model to Predict Survival in Patients with End-Stage Liver Disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,2,✉</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2021-08-01</h4>
+<h4 class="date">2021-08-07</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
-<p><strong>Background</strong>: TODO</p>
-<p><strong>Methods</strong>: TODO</p>
-<p><strong>Results</strong>: TODO</p>
-<p><strong>Conclusion</strong>: TODO</p>
+<p><strong>Background</strong>:
+TODO</p>
+<p><strong>Methods</strong>:
+TODO</p>
+<p><strong>Results</strong>:
+TODO</p>
+<p><strong>Conclusion</strong>:
+TODO</p>
 </div>
 
 </div>
@@ -542,7 +550,9 @@ div.tocify {
 <p><sup>✉</sup> Correspondence: <a href="mailto:mail@sebastiangibb.de">Sebastian Gibb &lt;<a href="mailto:mail@sebastiangibb.de" class="email">mail@sebastiangibb.de</a>&gt;</a></p>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+workflowr
+<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -551,7 +561,9 @@ div.tocify {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks">
+Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -560,17 +572,28 @@ div.tocify {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-08-01
+<strong>Last updated:</strong> 2021-08-07
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong>
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+6
+<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+1
 </p>
 <p>
-<strong>Knit directory:</strong> <code>ampel-leipzig-meld/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
+<strong>Knit directory:</strong>
+<code>ampel-leipzig-meld/</code>
+<span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed.">
+</span>
 </p>
 <p>
-This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis was created with <a
-  href="https://github.com/jdblischak/workflowr">workflowr</a> (version 1.6.2). The <em>Checks</em> tab describes the reproducibility checks that were applied when the results were created. The <em>Past versions</em> tab lists the development history.
+This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a>
+analysis was created with <a
+  href="https://github.com/jdblischak/workflowr">workflowr</a> (version
+1.6.2). The <em>Checks</em> tab describes the
+reproducibility checks that were applied when the results were created.
+The <em>Past versions</em> tab lists the development history.
 </p>
 <hr>
 </div>
@@ -579,91 +602,133 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<strong>R Markdown file:</strong> uncommitted changes
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes.
+To know which version of the R Markdown file created these
+results, you’ll want to first commit it to the Git repo. If
+you’re still working on the analysis, you can ignore this
+warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and
+build the HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Environment:</strong> empty
+</a>
 </p>
 </div>
 <div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+<p>Great job! The global environment was empty. Objects defined in the global
+environment can affect the analysis in your R Markdown file in unknown ways.
+For reproduciblity it’s best to always run the code in an empty environment.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210604code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210604)</code> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210604code">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Seed:</strong> <code>set.seed(20210604)</code>
+</a>
 </p>
 </div>
 <div id="strongSeedstrongcodesetseed20210604code" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The command <code>set.seed(20210604)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+<p>The command <code>set.seed(20210604)</code> was run prior to running the code in the R Markdown file.
+Setting a seed ensures that any results that rely on randomness, e.g.
+subsampling or permutations, are reproducible.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Session information:</strong> recorded
+</a>
 </p>
 </div>
 <div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+<p>Great job! Recording the operating system, R version, and package versions is
+critical for reproducibility.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Cache:</strong> none
+</a>
 </p>
 </div>
 <div id="strongCachestrongnone" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+<p>Nice! There were no cached chunks for this analysis, so you can be confident
+that you successfully produced the results during this run.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>File paths:</strong> relative
+</a>
 </p>
 </div>
 <div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+<p>Great job! Using relative paths to the files within your workflowr project
+makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree51564bcafb1f294c9cb616200e273fb242305b3btargetblank51564bca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/51564bcafb1f294c9cb616200e273fb242305b3b" target="_blank">51564bc</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee341ab4ad8bdcc39849765f44c8bb0eeeaa16591targetblanke341ab4a">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e341ab4ad8bdcc39849765f44c8bb0eeeaa16591" target="_blank">e341ab4</a>
+</a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree51564bcafb1f294c9cb616200e273fb242305b3btargetblank51564bca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee341ab4ad8bdcc39849765f44c8bb0eeeaa16591targetblanke341ab4a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
-Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
+Great! You are using Git for version control. Tracking code development and
+connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/51564bcafb1f294c9cb616200e273fb242305b3b" target="_blank">51564bc</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e341ab4ad8bdcc39849765f44c8bb0eeeaa16591" target="_blank">e341ab4</a>.
+See the <em>Past versions</em> tab to see a history of the changes made to the
+R Markdown and HTML files.
 </p>
 <p>
-Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
+Note that you need to be careful to ensure that all relevant files for the
+analysis have been committed to Git prior to generating the results (you can
+use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only
+checks the R Markdown file, but you know if there are other scripts or data
+files that it depends on. Below is the status of the Git repository when the
+results were generated:
 </p>
 <pre><code>
 Ignored files:
@@ -677,12 +742,15 @@ Untracked files:
     Untracked:  scripts/bootstrap.sh
 
 Unstaged changes:
-    Modified:   guix/channel/ampel/packages/rpackages.scm
-    Modified:   guix/manifest.scm
+    Modified:   analysis/article.Rmd
+    Modified:   analysis/tables.Rmd
+    Modified:   code/08-tables.R
 
 </code></pre>
 <p>
-Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
+Note that any generated files, e.g. HTML, png, CSS, etc., are not included in
+this status report because it is ok for generated content to have uncommitted
+changes.
 </p>
 </div>
 </div>
@@ -693,7 +761,11 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/article.Rmd</code>) and HTML (<code>docs/article.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made
+to the R Markdown (<code>analysis/article.Rmd</code>) and HTML (<code>docs/article.html</code>)
+files. If you’ve configured a remote Git repository (see
+<code>?wflow_git_remote</code>), click on the hyperlinks in the table below to
+view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -722,6 +794,91 @@ Message
 Rmd
 </td>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ebf878baa794b00af4b5ed48ef6810939f69f8ed/analysis/article.Rmd" target="_blank">ebf878b</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-07
+</td>
+<td>
+fix: observed vs expected mortality table
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/4ec3d4096c4b1188deb4108529389b4f94cd356f/analysis/article.Rmd" target="_blank">4ec3d40</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-04
+</td>
+<td>
+feat: add table 1 and table observed vs expected mortality
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/e41dd8c1cb6570099ed69cf8769a83b67bd11c55/analysis/article.Rmd" target="_blank">e41dd8c</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-03
+</td>
+<td>
+feat: add flowchart and discussion notes
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/523c2860f3ee9161e3b07b1392de88a79d31ec9e/analysis/article.Rmd" target="_blank">523c286</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-02
+</td>
+<td>
+refactor: use bookdown::html_document2 instead of workflowr::wflow_html to allow crossreferences
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/3aab3e106752adffec84e36600afb9590d92004c/docs/article.html" target="_blank">3aab3e1</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-01
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/91bfbd2316b656aa5aefc6c21ba97f7cb7af2297/analysis/article.Rmd" target="_blank">91bfbd2</a>
 </td>
 <td>
@@ -742,23 +899,883 @@ feat: add first article draft with pandoc filters
 </div>
 </div>
 <div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p>Liver cirrhosis is the terminal result of fibrotic remodeling of liver tissue due to chronic damage. An organ failure is often irreversible and the only available therapy is liver transplantation. However, the shortage in grafts for transplantation from deceased donors requires risk stratification and precise allocation rules. The allocation of liver transplantation in most countries is based on disease severity determined by the model of end-stage liver disease (MELD) <span class="citation">(Malinchoc et al. 2000; Wiesner et al. 2003; Organ Procurement and Transplantation Network 2021)</span>. The MELD score estimates the patients’ 3-month mortality risk based on laboratory results, namely bilirubin, creatinine and international normalized ratio (INR). In general the MELD score is extended by the sodium level (MELD-Na score) as this was found to be an important additional risk factor in liver cirrhosis <span class="citation">(Kim et al. 2008; Organ Procurement and Transplantation Network 2021)</span>. The MELD was initially developed for predicting the survival of patients undergoing transjugular intrahepatic portosystemic shunts. Afterwards it was revalidated for predicting mortality risk in patients awaiting a liver transplantation. Although the MELD score should be an objective allocation score especially the creatinine and INR are highly dependent on the utilized laboratory methods <span class="citation">(Trotter et al. 2004; Cholongitas et al. 2007)</span>. Patients with identical disease state could have very different MELD scores and thus get different priority on the liver transplantation waiting list. Furthermore often, e.g. for acute-on-chronic liver failure, the MELD score underestimates the mortality risk <span class="citation">(Hernaez et al. 2020)</span>.</p>
-<p>There have been some attempts to use the data extracted from more than 300.000 electronic medical records from two hospitals in the United States to improve the MELD score <span class="citation">(Kartoun et al. 2017)</span>. The derived MELD-Plus7 and MELD-Plus9 risk score add albumin, white blood cell count, age and total cholesterol and length of stay to the MELD-Na variables. Despite its published prediction improvement the MELD-Plus scores are not used for transplant allocation yet.</p>
-<p>As depicted by MELD-Plus risk scores better predictive scores often need more variables and are more complicated. To reduce the risk of overlooking or incorrectly calculating and interpreting the results, clinical decision support systems may be used and could improve patient safety. The research project on digital laboratory medicine (AMPEL) develops a clinical decision support system based on laboratory diagnostics that should support clinical practitioners in interpreting the laboratory results and taking the necessary medical interventions <span class="citation">(Eckelt et al. 2020)</span>.</p>
-<p>This study aims to find clinical and laboratory values that improve the risk stratification for liver transplantation over classical MELD, MELD-Na and MELD-Plus scores and could be implemented as part of the AMPEL clinical decision support system.</p>
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>Liver cirrhosis is the terminal result of fibrotic remodeling
+of liver tissue due to chronic damage. An organ failure is often
+irreversible and the only available therapy is liver transplantation.
+However, the shortage in grafts for transplantation from deceased donors
+requires risk stratification and precise allocation rules.
+The allocation of liver transplantation in most countries is based on
+disease severity determined by the model of end-stage liver disease (MELD)
+<span class="citation">(Malinchoc et al. 2000; Wiesner et al. 2003; Organ Procurement and Transplantation Network 2021)</span>.
+The MELD score estimates the patients’ 3-month mortality risk based on
+laboratory results, namely bilirubin, creatinine and international normalized
+ratio (INR). In general the MELD score is extended by the sodium level
+(MELD-Na score) as this was found to be an important additional risk factor in
+liver cirrhosis <span class="citation">(Kim et al. 2008; Organ Procurement and Transplantation Network 2021)</span>.
+The MELD was initially developed for predicting the survival of patients
+undergoing transjugular intrahepatic portosystemic shunts.
+Afterwards it was revalidated for predicting mortality risk in patients awaiting
+a liver transplantation.
+Although the MELD score should be an objective allocation score especially the
+creatinine and INR are highly dependent on the utilized laboratory methods
+<span class="citation">(Trotter et al. 2004; Cholongitas et al. 2007)</span>. Patients with identical disease state could
+have very different MELD scores and thus get different priority on the liver
+transplantation waiting list.
+Furthermore often, e.g. for acute-on-chronic liver failure, the MELD score
+underestimates the mortality risk <span class="citation">(Hernaez et al. 2020)</span>.</p>
+<p>There have been some attempts to use the data extracted from more than 300.000
+electronic medical records from two hospitals in the United States to improve
+the MELD score <span class="citation">(Kartoun et al. 2017)</span>. The derived MELD-Plus7 and MELD-Plus9 risk score
+add albumin, white blood cell count, age and total cholesterol and length of
+stay to the MELD-Na variables. Despite its published prediction improvement the
+MELD-Plus scores are not used for transplant allocation yet.</p>
+<p>As depicted by MELD-Plus risk scores better predictive scores often need more
+variables and are more complicated. To reduce the risk of overlooking or
+incorrectly calculating and interpreting the results,
+clinical decision support systems may be used and could improve patient safety.
+The research project on digital laboratory medicine (AMPEL) develops a
+clinical decision support system based on laboratory diagnostics that should
+support clinical practitioners in interpreting the laboratory results and taking
+the necessary medical interventions <span class="citation">(Eckelt et al. 2020)</span>.</p>
+<p>This study aims to find clinical and laboratory values that improve the risk
+stratification for liver transplantation over classical MELD, MELD-Na and
+MELD-Plus scores and could be implemented as part of the AMPEL clinical decision
+support system.</p>
 </div>
 <div id="material-and-methods" class="section level1">
-<h1>Material and methods</h1>
+<h1><span class="header-section-number">2</span> Material and methods</h1>
+<div id="study-population" class="section level2">
+<h2><span class="header-section-number">2.1</span> Study population</h2>
+<p>In a retrospective cohort study we followed 778 consecutive
+patients, who were recruited during the evaluation process for
+liver transplantation at the University Hospital of Leipzig from
+November 2012 to Juni 2015.
+For each patient we recorded 44 variables.
+Among them are age, sex, etiology of liver disease, complications as listed in
+Table <a href="#tab:tbl1">3.1</a> and 25 laboratory measurements.</p>
+<div class="figure" style="text-align: center"><span id="fig:flowchart"></span>
+<div id="htmlwidget-6cd908ff8883cd327a53" style="width:480px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6cd908ff8883cd327a53">{"x":{"diagram":"\ndigraph flowchart {\n    graph [splines = false];\n\n    // invisible nodes\n    node [shape = point, width = 0, height = 0];\n    iAR [style = \"invis\"];\n\n    // visible nodes\n    node [shape = box];\n    A [label = \"Total Records\n(n = 778)\"];\n    E [label = \"Excluded (n = 124)\\l- Younger than 18 years: 1\\l- Liver Transplantation before visit: 24\\l- Follow-up missing/invalid: 99\\l\"];\n    R [label = \"Analysed Records\n(n = 654)\"];\n\n    // edge statements\n    A -> iAR [arrowhead = none];\n    {rank = same; iAR -> E [minlen = 5]};\n    iAR -> R;\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 2.1: Flowchart Inclusion/Exclusion.
+</p>
+</div>
+<p>We excluded 124 patients from our analysis
+(Figure <a href="#fig:flowchart">2.1</a>).
+One was younger than 18 years.
+24 had a liver transplantation before and
+in 99 cases the follow up data were missing or
+invalid.</p>
+<p>The Ethics Committee at the Leipzig University Faculty of
+Medicine approved the retrospective usage of the data for our study
+(reference number: 039/14ff).</p>
+</div>
+<div id="meld-scores" class="section level2">
+<h2><span class="header-section-number">2.2</span> MELD scores</h2>
+<p>MELD and MELD-Na were calculated as described in
+<span class="citation">Organ Procurement and Transplantation Network (2021)</span> using the following formulas:
+<span class="math inline">\(MELD = 10 * (0.957 \ln(creatinine [mg/dl]) + 0.378 \ln(bilirubin [mg/dl]) + 1.120 * \ln(INR) + 0.643)\)</span>,
+Creatinine, bilirubin and INR values lower than 1.0 mg/dl were set to 1.0 mg/dl.
+The maximum allowed creatinine was 4.0 mg/dl. If patients received dialysis,
+creatinine was set to 4.0 mg/dl.
+For MELD-Na MELD was calculated as above and recalculated if greater than 11 using:
+<span class="math inline">\(MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/l]) - (0.033 * MELD_i * (137 - Na [mmol/l]))\)</span></p>
+<p>Serum sodium values lower than 125 mmol/l or higher than 137 mmol/l were set
+to 125 mmol/l and 137 mmol/l, respectively.</p>
+<p>The MELD-Plus7 risk score was calculated as described in <span class="citation">Kartoun et al. (2017)</span>:
+<span class="math display">\[
+\begin{aligned}
+L = 8.53499496 &amp;+ \\
+    2.59679650 &amp;* \log_{10}(1 + creatinine [mg/dl]) + \\
+    2.06503238 &amp;* \log_{10}(1 + bilirubin [mg/dl]) + \\
+    2.99724802 &amp;* \log_{10}(1 + INR) - \\
+    6.47834101 &amp;* \log_{10}(1 + sodium [mmol/l]) - \\
+    6.34990436 &amp;* \log_{10}(1 + albumin [g/l]) + \\
+    1.92811726 &amp;* \log_{10}(1 + wbc [th/cumm]) + \\
+    0.04070442 &amp;* age [years]
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[MELD\text{-}Plus = \frac{\exp(L)}{1 + \exp(L)}\]</span></p>
+<p>The MELD-Plus9 score was ignored because the length of stay information was not
+available for our cohort and the model itself wasn’t superior to MELD-Plus7 in
+its original publication <span class="citation">(Kartoun et al. 2017)</span>.</p>
+</div>
+<div id="machine-learning" class="section level2">
+<h2><span class="header-section-number">2.3</span> Machine learning</h2>
+</div>
 </div>
 <div id="results" class="section level1">
-<h1>Results</h1>
+<h1><span class="header-section-number">3</span> Results</h1>
+<div id="baseline-characteristics" class="section level2">
+<h2><span class="header-section-number">3.1</span> Baseline characteristics</h2>
+<div id="ziidnstgxp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#ziidnstgxp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: small;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ziidnstgxp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ziidnstgxp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ziidnstgxp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ziidnstgxp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ziidnstgxp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ziidnstgxp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ziidnstgxp .gt_group_heading {
+  padding: 1px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ziidnstgxp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ziidnstgxp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ziidnstgxp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ziidnstgxp .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ziidnstgxp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#ziidnstgxp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ziidnstgxp .gt_first_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ziidnstgxp .gt_first_grand_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ziidnstgxp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 1px;
+}
+
+#ziidnstgxp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ziidnstgxp .gt_sourcenote {
+  font-size: 90%;
+  padding: 1px;
+}
+
+#ziidnstgxp .gt_left {
+  text-align: left;
+}
+
+#ziidnstgxp .gt_center {
+  text-align: center;
+}
+
+#ziidnstgxp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ziidnstgxp .gt_font_normal {
+  font-weight: normal;
+}
+
+#ziidnstgxp .gt_font_bold {
+  font-weight: bold;
+}
+
+#ziidnstgxp .gt_font_italic {
+  font-style: italic;
+}
+
+#ziidnstgxp .gt_super {
+  font-size: 65%;
+}
+
+#ziidnstgxp .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  <caption><span id="tab:tbl1">Table 3.1: </span>Baseline characteristics.
+AIH, autoimmune hepatitis; ALAT, alanine aminotransferase; ALF, acute liver failure; ASAT, aspartate aminotransferase; CLI, chronic liver insufficiency; GIB, gastrointestinal bleeding; HBV, hepatitis B virus; HCV, hepatitis C virus; IL-6, interleukin 6; INR, international normalized ratio; LTx, liver transplantation; NASH, non-alcoholic steatohepatitis; PBC, primary biliary cirrhosis; PSC, primary sclerosing cholangitis; SBP, spontaneous bacterial peritonitis</caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"><strong>Characteristic</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Female</strong>, N = 240</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Male</strong>, N = 414</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1"><strong>Overall</strong>, N = 654</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">General</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Follow-up time [days]</td>
+<td class="gt_row gt_center">181 (17, 411)</td>
+<td class="gt_row gt_center">198 (54, 378)</td>
+<td class="gt_row gt_center">191 (38, 384)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Age</td>
+<td class="gt_row gt_center">56 (51, 64)</td>
+<td class="gt_row gt_center">58 (52, 63)</td>
+<td class="gt_row gt_center">58 (52, 64)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">LTx</td>
+<td class="gt_row gt_center">20 (8.3%)</td>
+<td class="gt_row gt_center">40 (9.7%)</td>
+<td class="gt_row gt_center">60 (9.2%)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Laboratory measurements</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Total bilirubin [µmol/l]</td>
+<td class="gt_row gt_center">21 (10, 49)</td>
+<td class="gt_row gt_center">26 (14, 51)</td>
+<td class="gt_row gt_center">24 (13, 50)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cystatin C [mg/l]</td>
+<td class="gt_row gt_center">1.31 (1.04, 1.80)</td>
+<td class="gt_row gt_center">1.32 (1.08, 1.76)</td>
+<td class="gt_row gt_center">1.32 (1.07, 1.79)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_center">5</td>
+<td class="gt_row gt_center">7</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Creatinine [µmol/l]</td>
+<td class="gt_row gt_center">73 (58, 91)</td>
+<td class="gt_row gt_center">85 (71, 110)</td>
+<td class="gt_row gt_center">80 (65, 104)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">INR</td>
+<td class="gt_row gt_center">1.20 (1.06, 1.50)</td>
+<td class="gt_row gt_center">1.22 (1.10, 1.44)</td>
+<td class="gt_row gt_center">1.21 (1.09, 1.45)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">2</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sodium [mmol/l]</td>
+<td class="gt_row gt_center">138.8 (135.4, 141.0)</td>
+<td class="gt_row gt_center">138.0 (135.0, 140.1)</td>
+<td class="gt_row gt_center">138.1 (135.2, 140.4)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">5</td>
+<td class="gt_row gt_center">4</td>
+<td class="gt_row gt_center">9</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">WBC [exp 9/l]</td>
+<td class="gt_row gt_center">6.7 (4.7, 8.8)</td>
+<td class="gt_row gt_center">6.2 (4.6, 7.8)</td>
+<td class="gt_row gt_center">6.3 (4.7, 8.3)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">10</td>
+<td class="gt_row gt_center">13</td>
+<td class="gt_row gt_center">23</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">IL-6 [pg/ml]</td>
+<td class="gt_row gt_center">10 (5, 36)</td>
+<td class="gt_row gt_center">14 (6, 47)</td>
+<td class="gt_row gt_center">13 (6, 42)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">27</td>
+<td class="gt_row gt_center">29</td>
+<td class="gt_row gt_center">56</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Albumin [g/l]</td>
+<td class="gt_row gt_center">41 (35, 46)</td>
+<td class="gt_row gt_center">38 (33, 43)</td>
+<td class="gt_row gt_center">39 (34, 45)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_center">4</td>
+<td class="gt_row gt_center">6</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Total protein [g/l]</td>
+<td class="gt_row gt_center">71 (63, 76)</td>
+<td class="gt_row gt_center">71 (65, 76)</td>
+<td class="gt_row gt_center">71 (65, 76)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_center">4</td>
+<td class="gt_row gt_center">6</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cholesterine [mmol/l]</td>
+<td class="gt_row gt_center">4.64 (3.41, 5.56)</td>
+<td class="gt_row gt_center">4.28 (3.34, 5.15)</td>
+<td class="gt_row gt_center">4.40 (3.34, 5.31)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ALAT [µkat/l]</td>
+<td class="gt_row gt_center">0.29 (0.21, 0.42)</td>
+<td class="gt_row gt_center">0.36 (0.23, 0.56)</td>
+<td class="gt_row gt_center">0.33 (0.22, 0.48)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_center">8</td>
+<td class="gt_row gt_center">10</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ASAT [µkat/l]</td>
+<td class="gt_row gt_center">0.68 (0.49, 1.05)</td>
+<td class="gt_row gt_center">0.81 (0.61, 1.23)</td>
+<td class="gt_row gt_center">0.77 (0.55, 1.16)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">3</td>
+<td class="gt_row gt_center">5</td>
+<td class="gt_row gt_center">8</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">MELD</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">MELD score</td>
+<td class="gt_row gt_center">10 (7, 18)</td>
+<td class="gt_row gt_center">12 (9, 17)</td>
+<td class="gt_row gt_center">11 (8, 17)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">3</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">MELD Category</td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td>
+<td class="gt_row gt_center"></td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">[6,9]</td>
+<td class="gt_row gt_center">111 (47%)</td>
+<td class="gt_row gt_center">146 (35%)</td>
+<td class="gt_row gt_center">257 (39%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">[10,20)</td>
+<td class="gt_row gt_center">80 (34%)</td>
+<td class="gt_row gt_center">196 (47%)</td>
+<td class="gt_row gt_center">276 (42%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">[20,30)</td>
+<td class="gt_row gt_center">30 (13%)</td>
+<td class="gt_row gt_center">50 (12%)</td>
+<td class="gt_row gt_center">80 (12%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">[30,40)</td>
+<td class="gt_row gt_center">12 (5.0%)</td>
+<td class="gt_row gt_center">14 (3.4%)</td>
+<td class="gt_row gt_center">26 (4.0%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">[40,52)</td>
+<td class="gt_row gt_center">5 (2.1%)</td>
+<td class="gt_row gt_center">7 (1.7%)</td>
+<td class="gt_row gt_center">12 (1.8%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">2</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">3</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">MELD-Na score</td>
+<td class="gt_row gt_center">10 (7, 19)</td>
+<td class="gt_row gt_center">12 (9, 20)</td>
+<td class="gt_row gt_center">11 (8, 20)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">5</td>
+<td class="gt_row gt_center">4</td>
+<td class="gt_row gt_center">9</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">MELD-Plus7 risk score</td>
+<td class="gt_row gt_center">0.04 (0.02, 0.09)</td>
+<td class="gt_row gt_center">0.05 (0.03, 0.11)</td>
+<td class="gt_row gt_center">0.04 (0.02, 0.11)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">17</td>
+<td class="gt_row gt_center">18</td>
+<td class="gt_row gt_center">35</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Entities</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cirrhosis</td>
+<td class="gt_row gt_center">203 (85%)</td>
+<td class="gt_row gt_center">391 (94%)</td>
+<td class="gt_row gt_center">594 (91%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">1</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ALF</td>
+<td class="gt_row gt_center">6 (2.5%)</td>
+<td class="gt_row gt_center">2 (0.5%)</td>
+<td class="gt_row gt_center">8 (1.2%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">CLI</td>
+<td class="gt_row gt_center">30 (12%)</td>
+<td class="gt_row gt_center">21 (5.1%)</td>
+<td class="gt_row gt_center">51 (7.8%)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Etiology (more than 1 per patient possible)</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Ethyltoxic</td>
+<td class="gt_row gt_center">114 (48%)</td>
+<td class="gt_row gt_center">297 (72%)</td>
+<td class="gt_row gt_center">411 (63%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">HBV</td>
+<td class="gt_row gt_center">4 (1.7%)</td>
+<td class="gt_row gt_center">16 (3.9%)</td>
+<td class="gt_row gt_center">20 (3.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">HCV</td>
+<td class="gt_row gt_center">17 (7.1%)</td>
+<td class="gt_row gt_center">28 (6.8%)</td>
+<td class="gt_row gt_center">45 (6.9%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">AIH</td>
+<td class="gt_row gt_center">22 (9.2%)</td>
+<td class="gt_row gt_center">9 (2.2%)</td>
+<td class="gt_row gt_center">31 (4.7%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">PBC</td>
+<td class="gt_row gt_center">17 (7.1%)</td>
+<td class="gt_row gt_center">0 (0%)</td>
+<td class="gt_row gt_center">17 (2.6%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">PSC</td>
+<td class="gt_row gt_center">5 (2.1%)</td>
+<td class="gt_row gt_center">11 (2.7%)</td>
+<td class="gt_row gt_center">16 (2.4%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">NASH</td>
+<td class="gt_row gt_center">17 (7.1%)</td>
+<td class="gt_row gt_center">31 (7.5%)</td>
+<td class="gt_row gt_center">48 (7.3%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cryptogenic</td>
+<td class="gt_row gt_center">36 (15%)</td>
+<td class="gt_row gt_center">32 (7.7%)</td>
+<td class="gt_row gt_center">68 (10%)</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Complications (more than 1 per patient possible)</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Dialysis</td>
+<td class="gt_row gt_center">14 (5.9%)</td>
+<td class="gt_row gt_center">19 (4.6%)</td>
+<td class="gt_row gt_center">33 (5.1%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">2</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">GIB</td>
+<td class="gt_row gt_center">58 (24%)</td>
+<td class="gt_row gt_center">104 (25%)</td>
+<td class="gt_row gt_center">162 (25%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">HCC</td>
+<td class="gt_row gt_center">18 (7.5%)</td>
+<td class="gt_row gt_center">103 (25%)</td>
+<td class="gt_row gt_center">121 (19%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">SBP</td>
+<td class="gt_row gt_center">31 (13%)</td>
+<td class="gt_row gt_center">60 (15%)</td>
+<td class="gt_row gt_center">91 (14%)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 20px;">(Missing)</td>
+<td class="gt_row gt_center">0</td>
+<td class="gt_row gt_center">1</td>
+<td class="gt_row gt_center">1</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Mortality</td>
+    </tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 7 days</td>
+<td class="gt_row gt_center">16 (7.2)</td>
+<td class="gt_row gt_center">18 (4.5)</td>
+<td class="gt_row gt_center">34 (5.5)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 30 days</td>
+<td class="gt_row gt_center">25 (12)</td>
+<td class="gt_row gt_center">31 (8.1)</td>
+<td class="gt_row gt_center">56 (9.4)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 90 days</td>
+<td class="gt_row gt_center">32 (16)</td>
+<td class="gt_row gt_center">49 (13)</td>
+<td class="gt_row gt_center">81 (14)</td></tr>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 365 days</td>
+<td class="gt_row gt_center">39 (20)</td>
+<td class="gt_row gt_center">61 (18)</td>
+<td class="gt_row gt_center">100 (18)</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<!-- TODO:
+use `pattern` argument to provide "{n} ({p}%)" for categorial/dichotomos
+variables after this PR is merged
+https://github.com/ddsjoberg/gtsummary/pull/951
+-->
+<p>In this study we analysed a cohort of 654 patients evaluated for
+liver transplantation (Tab. <a href="#tab:tbl1">3.1</a>).
+414 (63%)
+of them were men.
+The median (IQR) follow-up times was 191 (38, 384) days.
+Within the follow-up time 60 (9.2%) patients received a liver transplant
+and were censored for the analysis beyond this time point.
+The median (IQR) age of the cohort was 58 (52, 64) years.</p>
+<p>Most of the patients presented with cirrhosis
+(594 (91%)).
+The remaining patients had an acute liver failure
+(8 (1.2%)) or
+a chronic liver insufficiency
+(51 (7.8%)).
+At evaluation time the median (IQR) MELD and MELD-Na score were
+11 (8, 17) and
+11 (8, 20), respectively.
+Within 90 days 81 (14) patients died.
+In nearly two third of all patients alcohol was the main cause
+(411 (63%)) of their end-stage liver disease.
+The remaining patients had viral infections
+(hepatitis B and C viruse 20 (3.1%) and 45 (6.9%), respectively),
+autoimmune processes (autoimmune hepatitis 31 (4.7%),
+primary sclerosing cirrhosis 16 (2.4%)),
+primary biliary cirrhosis 17 (2.6%) or unknown causes
+(non-alcoholic steatohepatitis 48 (7.3%) and
+cryptogenic hepatitis 68 (10%)).
+The most common complications among all patients were gastrointestinal
+bleedings in 162 (25%) patients, followed by
+hepatocellular carcinoma (HCC) in 121 (19%) and
+spontaneous bacterial peritonitis (SBP) in 91 (14%) patients.
+Just 33 (5.1%) patients required a renal dialysis.</p>
+</div>
+<div id="meld-scores-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> MELD scores</h2>
+<p>According to <span class="citation">Wiesner et al. (2003)</span> we divided our cohort into
+5 MELD-score risk
+categories, with 257, 276, 80, 26, and 12 patients,
+respectively.
+As depicted in Figure <a href="#fig:observed-vs-meld-mortality-plot"><strong>??</strong></a> and Table
+<a href="#tab:tbl-observed-vs-expected-mortality">3.2</a> our observed 90 day mortality was
+1.4 to 2.9
+times higher than the predicted one. Just in the group with the lowest MELD
+scores the mortality was much lower.</p>
+<table>
+<caption><span id="tab:tbl-observed-vs-expected-mortality">Table 3.2: </span>Observed vs MELD-expected 90 day mortality. MELD mortality values are taken from <span class="citation">Wiesner et al. (2003)</span>. All patients censored before day 90 are ignored for the calculation of the MELD-expected deaths. SMR, Standardized mortality ratio = observed deaths/expected deaths.</caption>
+<colgroup>
+<col width="10%" />
+<col width="14%" />
+<col width="14%" />
+<col width="25%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">MELD category</th>
+<th align="right">Observed deaths (n)</th>
+<th align="right">Expected deaths (n)</th>
+<th align="right">Standardized mortality ratio (SMR)</th>
+<th align="right">Observed mortality (%)</th>
+<th align="right">Expected mortality (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[6,9]</td>
+<td align="right">1</td>
+<td align="right">4.0</td>
+<td align="right">0.3</td>
+<td align="right">0.5</td>
+<td align="right">1.9</td>
+</tr>
+<tr class="even">
+<td align="left">[10,20)</td>
+<td align="right">21</td>
+<td align="right">13.0</td>
+<td align="right">1.6</td>
+<td align="right">8.9</td>
+<td align="right">6.0</td>
+</tr>
+<tr class="odd">
+<td align="left">[20,30)</td>
+<td align="right">34</td>
+<td align="right">11.6</td>
+<td align="right">2.9</td>
+<td align="right">51.0</td>
+<td align="right">19.6</td>
+</tr>
+<tr class="even">
+<td align="left">[30,40)</td>
+<td align="right">18</td>
+<td align="right">10.0</td>
+<td align="right">1.8</td>
+<td align="right">92.8</td>
+<td align="right">52.6</td>
+</tr>
+<tr class="odd">
+<td align="left">[40,52)</td>
+<td align="right">6</td>
+<td align="right">4.3</td>
+<td align="right">1.4</td>
+<td align="right">100.0</td>
+<td align="right">71.3</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="discussion" class="section level1">
-<h1>Discussion</h1>
+<h1><span class="header-section-number">4</span> Discussion</h1>
+<p>In this retrospective analysis of 654 consecutive patients,
+who were recruited during the evaluation process for liver transplantation at
+the University Hospital of Leipzig we compared
+10 different statistical and machine learning algorithms.</p>
+<p>…</p>
+<ul>
+<li>higher mortality than predicted, compare <span class="citation">Hernaez et al. (2020)</span></li>
+<li>adding sodium doesn’t add much/any discrimination information
+<ul>
+<li>as already seen in <span class="citation">Kartoun et al. (2017)</span></li>
+</ul></li>
+<li><span class="citation">Kartoun et al. (2017)</span> uses &gt; 60 variables mostly clinical stuff, just few laboratory values, none of the clinical stuff remains</li>
+<li>general low sample size thus simpler models/fewer predictors are preferred.</li>
+<li>comparison of different predictors of MELD-Plus7 (+MELD-Plus9) vs our features
+<ul>
+<li>90 day mortality <em>post</em> discharge</li>
+<li>poorer performance in own validation set (lower and more uniform disease severity, also lower MELD)</li>
+</ul></li>
+<li>machine learning algorithms worse than statistical learning (lower c-index, higher variance/instability)
+<ul>
+<li>additive effects (favour statistical models)</li>
+<li>low sample size, for ML more than 200 events per predictor variable necessary <span class="citation">(Ploeg, Austin, and Steyerberg 2014)</span></li>
+</ul></li>
+<li>national register required</li>
+</ul>
+<div id="limitations" class="section level2">
+<h2><span class="header-section-number">4.1</span> Limitations</h2>
+<ul>
+<li>comparable mortality?</li>
+<li>retrospective analysis</li>
+<li>single center</li>
+<li>unknown cause of death (death with vs of end-stage liver disease)</li>
+<li>bias caused by LTx censorship?</li>
+</ul>
+</div>
 </div>
 <div id="references" class="section level1">
-<h1>References</h1>
+<h1><span class="header-section-number">5</span> References</h1>
 <div id="refs">
 <div id="ref-cholongitas2007">
 <p>Cholongitas, E., L. Marelli, A. Kerry, M. Senzolo, D. W. Goodier, D. Nair, M. Thomas, D. Patch, and A. K. Burroughs. 2007. “Different Methods of Creatinine Measurement Significantly Affect MELD Scores.” <em>Liver Transplantation</em> 13 (4): 523–29. <a href="https://doi.org/10.1002/lt.20994">https://doi.org/10.1002/lt.20994</a>.</p>
@@ -781,6 +1798,9 @@ feat: add first article draft with pandoc filters
 <div id="ref-optn_policies2021">
 <p>Organ Procurement and Transplantation Network. 2021. “Policies.” 2021. <a href="https://optn.transplant.hrsa.gov/media/1200/optn_policies.pdf">https://optn.transplant.hrsa.gov/media/1200/optn_policies.pdf</a>.</p>
 </div>
+<div id="ref-ploeg2014">
+<p>Ploeg, T. van der, P. C. Austin, and E. W. Steyerberg. 2014. “Modern Modelling Techniques Are Data Hungry: A Simulation Study for Predicting Dichotomous Endpoints.” <em>BMC Medical Research Methodology</em> 14 (1). <a href="https://doi.org/10.1186/1471-2288-14-137">https://doi.org/10.1186/1471-2288-14-137</a>.</p>
+</div>
 <div id="ref-trotter2004">
 <p>Trotter, J. F., B. Brimhall, R. Arjal, and C. Phillips. 2004. “Specific Laboratory Methodologies Achieve Higher Model for Endstage Liver Disease (MELD) Scores for Patients Listed for Liver Transplantation.” <em>Liver Transplantation</em> 10 (8): 995–1000. <a href="https://doi.org/10.1002/lt.20195">https://doi.org/10.1002/lt.20195</a>.</p>
 </div>
@@ -791,7 +1811,8 @@ feat: add first article draft with pandoc filters
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
-<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
@@ -813,16 +1834,39 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+[1] gtsummary_1.4.2 ameld_0.0.12    survival_3.2-11 targets_0.4.2  
+
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        whisker_0.4       knitr_1.33        magrittr_2.0.1   
- [5] workflowr_1.6.2   R6_2.5.0          rlang_0.4.11      fansi_0.5.0      
- [9] stringr_1.4.0     tools_4.1.0       xfun_0.24         utf8_1.2.1       
-[13] git2r_0.28.0      htmltools_0.5.1.1 ellipsis_0.3.2    rprojroot_2.0.2  
-[17] yaml_2.2.1        digest_0.6.27     tibble_3.1.2      lifecycle_1.0.0  
-[21] crayon_1.4.1      later_1.2.0       vctrs_0.3.8       fs_1.5.0         
-[25] promises_1.2.0.1  glue_1.4.2        evaluate_0.14     rmarkdown_2.9    
-[29] stringi_1.6.2     compiler_4.1.0    pillar_1.6.1      httpuv_1.6.1     
-[33] pkgconfig_2.0.3  </code></pre>
+ [1] sass_0.4.0              tidyr_1.1.3             jsonlite_1.7.2         
+ [4] splines_4.1.0           lgr_0.4.2               highr_0.9              
+ [7] set6_0.2.1              yaml_2.2.1              mlr3misc_0.9.3         
+[10] bbotk_0.3.2             pillar_1.6.2            backports_1.2.1        
+[13] lattice_0.20-44         glue_1.4.2              uuid_0.1-4             
+[16] digest_0.6.27           RColorBrewer_1.1-2      promises_1.2.0.1       
+[19] checkmate_2.0.0         colorspace_2.0-2        htmltools_0.5.1.1      
+[22] httpuv_1.6.1            Matrix_1.3-4            pkgconfig_2.0.3        
+[25] bookdown_0.22           DiagrammeR_1.0.6.1      purrr_0.3.4            
+[28] scales_1.1.1            processx_3.5.2          mlr3_0.11.0            
+[31] whisker_0.4             later_1.2.0             git2r_0.28.0           
+[34] tibble_3.1.3            generics_0.1.0          distr6_1.5.2           
+[37] ggplot2_3.3.5           ellipsis_0.3.2          mlr3proba_0.4.0        
+[40] withr_2.4.2             cli_3.0.1               magrittr_2.0.1         
+[43] crayon_1.4.1            paradox_0.7.1           evaluate_0.14          
+[46] ps_1.6.0                fs_1.5.0                fansi_0.5.0            
+[49] parallelly_1.27.0       broom.helpers_1.3.0     palmerpenguins_0.1.0   
+[52] tools_4.1.0             data.table_1.14.0       lifecycle_1.0.0        
+[55] stringr_1.4.0           munsell_0.5.0           callr_3.7.0            
+[58] compiler_4.1.0          rlang_0.4.11            grid_4.1.0             
+[61] rstudioapi_0.13         gt_0.3.0                htmlwidgets_1.5.3      
+[64] visNetwork_2.0.9        R62S3_1.4.1             igraph_1.2.6           
+[67] rmarkdown_2.9           gtable_0.3.0            codetools_0.2-18       
+[70] mlr3learners_0.4.5      R6_2.5.0                knitr_1.33             
+[73] dplyr_1.0.7             utf8_1.2.2              commonmark_1.7         
+[76] mlr3extralearners_0.5.0 workflowr_1.6.2         rprojroot_2.0.2        
+[79] mlr3tuning_0.8.0        stringi_1.7.3           parallel_4.1.0         
+[82] Rcpp_1.0.7              vctrs_0.3.8             tidyselect_1.1.1       
+[85] xfun_0.24              </code></pre>
 </div>
 </div>
 
