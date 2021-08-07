@@ -585,10 +585,10 @@
     (license expat)))
 
 (define-public r-ameld
-  (let ((commit "8150ae8"))
+  (let ((commit "5355611"))
   (package
     (name "r-ameld")
-    (version (string-append "0.0.11-" commit))
+    (version (string-append "0.0.12-" commit))
     (source
       (origin
         (method git-fetch)
@@ -598,7 +598,7 @@
         (file-name (string-append name version))
         (sha256
           (base32
-            "1h1576c2ncbbaysyf68j0y97ma2q9hwjjniv01ykf8l2ppb4lx4l"))))
+            "0nfrzjm3nd7dzzv4appl1wd5mwggbna6ahrfc6b2qjfr7lff4xyx"))))
     (properties `((upstream-name . "ameld")))
     (build-system r-build-system)
     (propagated-inputs
