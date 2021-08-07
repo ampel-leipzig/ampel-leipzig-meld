@@ -302,11 +302,15 @@ categories, with `r enum(table(labelled_meld_data$MeldCategory))` patients,
 respectively.
 As depicted in Figure \@ref(fig:observed-vs-meld-mortality-plot) and Table
 \@ref(tab:tbl-observed-vs-expected-mortality) our observed 90 day mortality was
-`r paste(round(range(tbl_observed_vs_expected_mortality$SMR[-1]), 1), collapse = " to ")`
+`r paste(round(range(tbl_observed_vs_expected_mortality$StandardizedMortalityRatio[-1]), 1), collapse = " to ")`
 times higher than the predicted one. Just in the group with the lowest MELD
 scores the mortality was much lower.
 
 ```{r tbl-observed-vs-expected-mortality, results = "asis", echo = FALSE, message = FALSE}
+tbl_observed_vs_expected_mortality$ObservedMortality <-
+    tbl_observed_vs_expected_mortality$ObservedMortality * 100
+tbl_observed_vs_expected_mortality$ExpectedMortality <-
+    tbl_observed_vs_expected_mortality$ExpectedMortality * 100
 knitr::kable(
     cbind(
         row.names(tbl_observed_vs_expected_mortality),
