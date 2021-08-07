@@ -417,6 +417,28 @@
       "This package provides a simple to use summary function that can be used with pipes and displays nicely in the console.  The default summary statistics may be modified by the user as can the default formatting.  Support for data frames and vectors is included, and users can implement their own skim methods for specific object types as described in a vignette.  Default summaries include support for inline spark graphs.  Instructions for managing these on specific operating systems are given in the \"Using skimr\" vignette and the README.")
     (license gpl3)))
 
+(define-public r-survivalmodels
+  (package
+    (name "r-survivalmodels")
+    (version "0.1.8")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "survivalmodels" version))
+        (sha256
+          (base32
+            "0dsssvlry07559f17wdlkm1l6cbsng529xmakmwa2nkfm451qjqj"))))
+    (properties
+      `((upstream-name . "survivalmodels")))
+    (build-system r-build-system)
+    (propagated-inputs `(("r-rcpp" ,r-rcpp)))
+    (home-page
+      "https://github.com/RaphaelS1/survivalmodels/")
+    (synopsis "Models for Survival Analysis")
+    (description
+      "Implementations of classical and machine learning models for survival analysis, including deep neural networks via 'keras' and 'tensorflow'.  Each model includes a separated fit and predict interface with consistent prediction types for predicting risk, survival probabilities, or survival distributions with 'distr6' <https://CRAN.R-project.org/package=distr6>.  Models are either implemented from 'Python' via 'reticulate' <https://CRAN.R-project.org/package=reticulate>, from code in GitHub packages, or novel implementations using 'Rcpp' <https://CRAN.R-project.org/package=Rcpp>.  Novel machine learning survival models wil be included in the package in near-future updates.  Neural networks are implemented from the 'Python' package 'pycox' <https://github.com/havakv/pycox> and are detailed by Kvamme et al. (2019) <https://jmlr.org/papers/v20/18-424.html>.  The 'Akritas' estimator is defined in Akritas (1994) <doi:10.1214/aos/1176325630>. 'DNNSurv' is defined in Zhao and Feng (2020) <arXiv:1908.02337>.")
+    (license expat)))
+
 (define-public r-survivalsvm
   (package
     (name "r-survivalsvm")

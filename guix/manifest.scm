@@ -1,4 +1,4 @@
-;; with guix f12a35cfa22092a7e3157c94abfef8335f86ac1c
+;; with guix 4be98fbe7e42f8be0db881caf8598a704c56265d
 (specifications->manifest
     '("bash-minimal"
       "coreutils"
@@ -29,11 +29,16 @@
       "r-penalized"
       "r-randomforestsrc"
       "r-ranger"
+      "r-reticulate"
+      "python"
+      "python-pycox"
+      "python-torchtuples"
       "r-penalized"
       "r-pracma"
       "r-quadprog"
       "r-skimr"
       "r-survival"
+      "r-survivalmodels"
       "r-survivalsvm"
       "r-tarchetypes"
       "r-targets"
