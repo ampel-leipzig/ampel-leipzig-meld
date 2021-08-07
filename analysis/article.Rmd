@@ -237,6 +237,9 @@ n_lrns <- nrow(bmrk_results$learners)
 ## Baseline characteristics
 
 ```{r tbl1, results = "asis", echo = FALSE, message = FALSE}
+library("gtsummary")
+theme_gtsummary_journal(journal = "jama")
+theme_gtsummary_compact()
 tbl1
 ```
 

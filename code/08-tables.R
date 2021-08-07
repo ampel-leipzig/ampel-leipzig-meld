@@ -1,7 +1,5 @@
 tg_tables <- list(
     tar_target(tbl1, {
-        theme_gtsummary_journal(journal = "jama")
-        theme_gtsummary_compact()
         tbGeneral <- labelled_meld_data |>
             select(
                 Sex,
