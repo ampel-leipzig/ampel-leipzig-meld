@@ -4,7 +4,7 @@
         bilirubin = as_metric(x$BILI_S, "bilirubin"),
         inr = x$INR_C,
         dialysis = x$Dialysis,
-        cause = ifelse(x$Ethyltoxic == 1, "ethyltoxisch", "other")
+        cause = ifelse(x$Ethyltoxic == 1, "ethyltoxic", "other")
     )
     x$ScoreMeldUnos <- meld(
         creatinine = as_metric(x$CRE_S, "creatinine"),
@@ -19,7 +19,7 @@
         inr = x$INR_C,
         sodium = x$NA_S,
         dialysis = x$Dialysis,
-        cause = ifelse(x$Ethyltoxic == 1, "ethyltoxisch", "other")
+        cause = ifelse(x$Ethyltoxic == 1, "ethyltoxic", "other")
     )
     x$ScoreMeldNaUnos <- meld_na(
         creatinine = as_metric(x$CRE_S, "creatinine"),
@@ -191,7 +191,9 @@ tg_data <- list(
     tar_target(zlog_data, {
             zlog_data <- meld_data
             iconvert <- colnames(zlog_data) %in%
-                c("Age", "Sex", grep("_[SECQ]$", colnames(imp_data), value = TRUE))
+                c("Age", "Sex",
+                  grep("_[SECQ]$", colnames(imp_data), value = TRUE)
+                )
             zlog_data[iconvert] <- zlog_df(imp_data[iconvert], ref_data)
             zlog_data
         },
