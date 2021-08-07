@@ -158,8 +158,10 @@ ps_svmregression$trafo <- function(x, param_set) {
 }
 
 ## resampling
-inner_cv <- rsmp("cv", folds = 5L)
-outer_cv <- rsmp("repeated_cv", folds = 3L, repeats = 5L)
+#inner_cv <- rsmp("cv", folds = 5L)
+#outer_cv <- rsmp("repeated_cv", folds = 3L, repeats = 10L)
+inner_cv <- rsmp("cv", folds = 3L)
+outer_cv <- rsmp("repeated_cv", folds = 3L, repeats = 1L)
 
 ## tuning
 autoTuner <- function(lrn, prms, rsmp = inner_cv)AutoTuner$new(
@@ -167,8 +169,8 @@ autoTuner <- function(lrn, prms, rsmp = inner_cv)AutoTuner$new(
     search_space = prms,
     resampling = rsmp,
     measure = msr("surv.cindex"),
-    tuner = tnr("grid_search", resolution = 20L, batch_size = 2L),
-    terminator = trm("stagnation", iters = 3L, threshold = 1e-3)
+    tuner = tnr("random_search", batch_size = 2L),
+    terminator = trm("evals", n_evals = 20)
 )
 
 at_lasso <- autoTuner(lrn_lasso, ps_lasso)
