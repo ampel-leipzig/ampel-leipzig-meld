@@ -14,6 +14,15 @@
 [GUIX](http://guix.gnu.org/) and [Singularity](https://sylabs.io/singularity/)
 have to be installed on the system you want to use to create the container.
 
+```bash
+# on a Debian GNU/Linux
+sudo apt install singularity-container
+cd /tmp && \
+    wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
+    chmod +x guix-install.sh && \
+    sudo ./guix-install.sh && guix pull
+```
+
 This is a [workflowr](https://github.com/jdblischak/workflowr) project.
 After creating the singularity container it was created by:
 
@@ -23,4 +32,3 @@ After creating the singularity container it was created by:
 singularity exec container/ampel-leipzig-meld.sif \
     R -e 'library("workflowr"); wflow_start(".", existing = TRUE)'
 ```
-
