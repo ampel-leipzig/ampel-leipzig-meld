@@ -5,10 +5,17 @@ library("future")
 library("future.batchtools")
 library("future.callr")
 
+library("lgr")
+
 #Sys.setenv(RUNLOCAL = 1)
 Sys.setenv(DEBUGME = "batchtools")
-lgr::get_logger("mlr3")$set_threshold("info")
-lgr::get_logger("bbotk")$set_threshold("info")
+tf <- rprojroot::find_rstudio_root_file("logs", "lgr.log")
+lgr$add_appender(AppenderFile$new(tf), name = "file")
+lgr$set_threshold("all")
+get_logger("mlr3")$set_threshold("all")
+get_logger("bbotk")$set_threshold("all")
+get_logger("mlr3")$add_appender(AppenderFile$new(tf), name = "file")
+get_logger("bbotk")$add_appender(AppenderFile$new(tf), name = "file")
 
 login <- future::tweak(
     future::remote,
@@ -31,7 +38,7 @@ slurm <- future::tweak(
 )
 
 if (nchar(Sys.getenv("RUNLOCAL"))) {
-    future::plan(callr, workers = 3L)
+    future::plan(callr, workers = 7L)
 } else {
     future::plan(list(login, slurm, callr))
 }
