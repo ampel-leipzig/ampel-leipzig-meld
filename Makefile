@@ -2,7 +2,7 @@ GUIX=/usr/local/bin/guix
 GUIXCOMMIT=4be98fb
 
 .PHONEY: clean clean-all clean-container clean-reports clean-targets \
-	container hpc run sync
+	container hpc local-guix run sync
 
 run: container
 	RUNLOCAL=1 R_CLI_NUM_COLORS=256 scripts/Rscript.sh code/make.R
@@ -36,6 +36,9 @@ sync: container scripts/Rscript.sh scripts/slurm_batchtools.tmpl
     --links \
     --delete \
     analysis code container logs scripts brain:~/
+
+local-guix:
+	guix package --manifest=guix/manifest.scm --load-path=guix/channel --profile="$(GUIX_EXTRA_PROFILES)"/ampel/ampel
 
 clean: clean-targets
 
