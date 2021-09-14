@@ -188,6 +188,14 @@ tg_data <- list(
         packages = "ameld",
         deployment = "main"
     ),
+    tar_target(ln_data, {
+            l <- meld_data
+            iconvert <- grep("_[CEQS]$", colnames(imp_data))
+            l[iconvert] <- lapply(l[iconvert], function(y)log(y + 1))
+            l
+        },
+        deployment = "main"
+    ),
     tar_target(zlog_data, {
             zlog_data <- meld_data
             iconvert <- colnames(zlog_data) %in%
