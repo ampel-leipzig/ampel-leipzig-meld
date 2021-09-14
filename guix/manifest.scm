@@ -5,7 +5,7 @@
       "glibc-utf8-locales"
       "nss-certs"
       "openssh-sans-x"
-      "slurm@20.02.6-1" ;; has to match the major.minor version of the host
+      "slurm@21.08.0" ;; has to match the major.minor version of the host
       "tzdata"
       "r-minimal"
       "r-beeswarm"

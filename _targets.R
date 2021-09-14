@@ -20,12 +20,12 @@ login <- future::tweak(
 slurm <- future::tweak(
     future.batchtools::batchtools_slurm,
     template = "scripts/slurm_batchtools.tmpl",
-    workers = 16L,
+    workers = 8L,
     resources = list(
         logfile = "logs/job%s.log",
-        partition = "batch,compute,pinky,snowball",
+        partition = "batch,compute,snowball",
         ncpu = 16L,
-        mcpu = 16L * 1024L,
+        mcpu = 8L * 1024L,
         walltime = 4L * 60L * 60L
     )
 )
