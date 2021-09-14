@@ -1,30 +1,44 @@
 suppressPackageStartupMessages(library("mlr3"))
+suppressPackageStartupMessages(library("mlr3benchmark"))
+suppressPackageStartupMessages(library("mlr3proba"))
 suppressPackageStartupMessages(library("mlr3tuning"))
 
 tg_benchmarks <- tar_target(
     bmrks,
     benchmark(
         benchmark_grid(
-            task = zlog_task,
+            task = tasks,
             learner = learners,
             resampling = crossval$outer
         ),
         store_models = FALSE,
-        store_backends = FALSE
+        store_backends = TRUE
     ),
-    pattern = map(learners),
+    pattern = cross(tasks, learners),
     iteration = "list",
     packages = c(
-        "mlr3", "mlr3tuning", "mlr3misc", "mlr3proba", "mlr3learners",
-        "ranger"
+        "mlr3", "mlr3tuning", "mlr3misc", "mlr3proba", "mlr3learners"
     ),
     deployment = "worker"
 )
 
-tg_benchmark_results <- tar_combine(
-    bmrk_results,
-    tg_benchmarks,
-    command = c(!!!.x),
-    packages = "mlr3",
-    deployment = "worker"
+tg_benchmark_results <- list(
+    tar_target(
+        bmrk_results,
+        do.call(c, bmrks),
+        packages = "mlr3",
+        deployment = "worker"
+    ),
+    tar_target(
+        bmrk_aggr,
+        as.BenchmarkAggr(
+            bmrk_results,
+            measures = list(
+                msr("surv.cindex"),
+                msr("surv.cindex", weight_meth = "G2")
+            )
+        ),
+        packages = c("mlr3", "mlr3proba", "mlr3benchmark"),
+        deployment = "worker"
+    )
 )

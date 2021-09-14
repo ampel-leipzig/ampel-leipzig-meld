@@ -249,6 +249,32 @@
       "Creates presentation-ready tables summarizing data sets, regression models, and more.  The code to create the tables is concise and highly customizable.  Data frames can be summarized with any function, e.g.  mean(), median(), even user-written functions.  Regression models are summarized and include the reference rows for categorical variables.  Common regression models, such as logistic regression and Cox proportional hazards regression, are automatically identified and the tables are pre-filled with appropriate column headers.")
     (license expat)))
 
+(define-public r-mlr3benchmark
+  (package
+    (name "r-mlr3benchmark")
+    (version "0.1.2")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "mlr3benchmark" version))
+        (sha256
+          (base32
+            "05b3x43xnj9byg6f70br6i21jdxbwlc66qmjqrrllp6vsixzc4vp"))))
+    (properties `((upstream-name . "mlr3benchmark")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-ggplot2" ,r-ggplot2)
+        ("r-mlr3misc" ,r-mlr3misc)
+        ("r-r6" ,r-r6)))
+    (home-page "https://mlr3benchmark.mlr-org.com")
+    (synopsis
+      "Analysis and Visualisation of Benchmark Experiments")
+    (description
+      "Implements methods for post-hoc analysis and visualisation of benchmark experiments, for 'mlr3' and beyond.")
+    (license lgpl3)))
+
 (define-public r-mlr3extralearners
   (let ((commit
           "7592df7851b6050447a6f06699ca232d95582cbb")
@@ -438,6 +464,36 @@
     (description
       "Implementations of classical and machine learning models for survival analysis, including deep neural networks via 'keras' and 'tensorflow'.  Each model includes a separated fit and predict interface with consistent prediction types for predicting risk, survival probabilities, or survival distributions with 'distr6' <https://CRAN.R-project.org/package=distr6>.  Models are either implemented from 'Python' via 'reticulate' <https://CRAN.R-project.org/package=reticulate>, from code in GitHub packages, or novel implementations using 'Rcpp' <https://CRAN.R-project.org/package=Rcpp>.  Novel machine learning survival models wil be included in the package in near-future updates.  Neural networks are implemented from the 'Python' package 'pycox' <https://github.com/havakv/pycox> and are detailed by Kvamme et al. (2019) <https://jmlr.org/papers/v20/18-424.html>.  The 'Akritas' estimator is defined in Akritas (1994) <doi:10.1214/aos/1176325630>. 'DNNSurv' is defined in Zhao and Feng (2020) <arXiv:1908.02337>.")
     (license expat)))
+
+;(define-public r-survivalmodels
+;  (let ((commit "446bc1f")
+;        (revision "1"))
+;    (package
+;      (name "r-survivalmodels")
+;      (version
+;        (git-version "0.1.8.9000" revision commit))
+;      (source
+;        (origin
+;          (method git-fetch)
+;          (uri (git-reference
+;                 (url "https://github.com/sgibb/survivalmodels")
+;                 (commit commit)))
+;          (file-name (git-file-name name version))
+;          (sha256
+;            (base32
+;              "17l60qgm0yk13vmyqpx9zkygnmkgb9a6pahgfbyk9mwjnzc4xls5"))))
+;      (properties
+;        `((upstream-name . "survivalmodels")))
+;      (build-system r-build-system)
+;      (propagated-inputs
+;        `(("r-lgr" ,r-lgr)
+;          ("r-rcpp" ,r-rcpp)))
+;      (home-page
+;        "https://github.com/sgibb/survivalmodels")
+;      (synopsis "Models for Survival Analysis")
+;      (description
+;        "Implementations of classical and machine learning models for survival analysis, including deep neural networks via 'keras' and 'tensorflow'.  Each model includes a separated fit and predict interface with consistent prediction types for predicting risk, survival probabilities, or survival distributions with 'distr6' <https://CRAN.R-project.org/package=distr6>.  Models are either implemented from 'Python' via 'reticulate' <https://CRAN.R-project.org/package=reticulate>, from code in GitHub packages, or novel implementations using 'Rcpp' <https://CRAN.R-project.org/package=Rcpp>.  Novel machine learning survival models wil be included in the package in near-future updates.  Neural networks are implemented from the 'Python' package 'pycox' <https://github.com/havakv/pycox> and are detailed by Kvamme et al. (2019) <https://jmlr.org/papers/v20/18-424.html>.  The 'Akritas' estimator is defined in Akritas (1994) <doi:10.1214/aos/1176325630>. 'DNNSurv' is defined in Zhao and Feng (2020) <arXiv:1908.02337>.")
+;      (license expat))))
 
 (define-public r-survivalsvm
   (package

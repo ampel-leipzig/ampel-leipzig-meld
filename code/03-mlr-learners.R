@@ -11,8 +11,9 @@ tg_lrns <- list(
     tar_target(crossval,
         list(
             inner = rsmp("cv", folds = 3L),
-            outer = rsmp("repeated_cv", folds = 3L, repeats = 1L)
-        )
+            outer = rsmp("repeated_cv", folds = 3L, repeats = 2L)
+        ),
+        deployment = "main"
     ),
     tar_target(learners, {
         l <- list(
@@ -78,7 +79,7 @@ tg_lrns <- list(
                     # ?randomForestSRC ceiling(sqrt(length(variables))) = 7
                     # in our case
                     mtry = p_int(lower = 4L, upper = 8L),
-                    splitrule = p_fct(c("logrank", "C"))
+                    splitrule = p_fct(c("logrank", "logrankscore"))
                 )
             ),
             xgboost = list(
@@ -141,6 +142,58 @@ tg_lrns <- list(
                     }
                     p
                 }
+            ),
+            # initial settings as described in
+            # https://towardsdatascience.com/neural-networks-for-survival-analysis-in-r-1e0421584ab
+            coxtime = list(
+                lrn = lrn(
+                    "surv.coxtime", id = "coxtime",
+                    frac = 1/3,
+                    early_stopping = TRUE, epochs = 1, optimizer = "adam"
+                ),
+                ps = {
+                    p <- ps(
+                        dropout = p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                        weight_decay = p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                        learning_rate = p_dbl(lower = 0, upper = 0.3, default = 0.1),
+                        ## nodes in a layer
+                        nodes = p_int(lower = 2L, upper = 32L),
+                        ## number of hidden layers
+                        k = p_int(lower = 1L, upper = 4L)
+                    )
+                    p$trafo <- function(x, param_set) {
+                        ## use same number of nodes in each layer
+                        x$num_nodes = rep(x$nodes, x$k)
+                        x$nodes <- x$k <- NULL
+                        x
+                    }
+                    p
+                }
+            ),
+            deepsurv = list(
+                lrn = lrn(
+                    "surv.deepsurv", id = "deepsurv",
+                    frac = 1/3,
+                    early_stopping = TRUE, epochs = 1, optimizer = "adam"
+                ),
+                ps = {
+                    p <- ps(
+                        dropout = p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                        weight_decay = p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                        learning_rate = p_dbl(lower = 0, upper = 0.3, default = 0.1),
+                        ## nodes in a layer
+                        nodes = p_int(lower = 2L, upper = 32L),
+                        ## number of hidden layers
+                        k = p_int(lower = 1L, upper = 4L)
+                    )
+                    p$trafo <- function(x, param_set) {
+                        ## use same number of nodes in each layer
+                        x$num_nodes = rep(x$nodes, x$k)
+                        x$nodes <- x$k <- NULL
+                        x
+                    }
+                    p
+                }
             )
         )
         lapply(l, function(ll) {
@@ -153,8 +206,11 @@ tg_lrns <- list(
                     resampling = crossval$inner,
                     measure = msr("surv.cindex"),
                     tuner = tnr("random_search", batch_size = 2L),
-                    terminator = trm("evals", n_evals = 4L)
+                    terminator = trm("evals", n_evals = 10L)
                 )
         })
-    }, iteration = "list")
+    },
+    iteration = "list",
+    deployment = "main"
+    )
 )

@@ -14,10 +14,31 @@ library("ggplot2")
 tar_load(bmrk_results)
 ```
 
+# Overview
+
 ```{r benchmarks_plot_c_harrell}
 autoplot(bmrk_results) +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
     scale_fill_viridis(discrete = TRUE) +
     theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+# Aggregated performance
+
+```{r benchmarks_aggr_plot_c_harrell}
+autoplot(bmrk_aggr, type = "box", meas = "harrell_c") +
+    geom_boxplot(aes(fill = learner_id)) +
+    geom_jitter(position = position_jitter(0.2)) +
+    scale_fill_viridis(discrete = TRUE) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+# Critical difference
+
+```{r benchmarks_aggr_critdiff_c_harrell}
+autoplot(
+    bmrk_aggr, type = "cd", meas = "harrell_c", minimize = FALSE, style = 2,
+    p.value = 0.1
+) + scale_color_viridis(discrete = TRUE)
 ```
