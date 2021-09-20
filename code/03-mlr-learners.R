@@ -10,9 +10,10 @@ tg_lrns <- list(
     ## we want to rerun the benchmarking when anything changes
     tar_target(crossval,
         list(
-            inner = rsmp("cv", folds = 3L),
-            outer = rsmp("repeated_cv", folds = 3L, repeats = 1L)
-        )
+            inner = rsmp("cv", folds = 5L),
+            outer = rsmp("repeated_cv", folds = 5L, repeats = 3L)
+        ),
+        deployment = "main"
     ),
     tar_target(learners, {
         l <- list(
@@ -153,8 +154,11 @@ tg_lrns <- list(
                     resampling = crossval$inner,
                     measure = msr("surv.cindex"),
                     tuner = tnr("random_search", batch_size = 2L),
-                    terminator = trm("evals", n_evals = 4L)
+                    terminator = trm("evals", n_evals = 10L)
                 )
         })
-    }, iteration = "list")
+    },
+    iteration = "list",
+    deployment = "main"
+    )
 )
