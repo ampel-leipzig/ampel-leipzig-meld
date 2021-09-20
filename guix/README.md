@@ -35,3 +35,11 @@ guix describe --format=channels > channels.scm
 ```
 guix time-machine --channels channels.scm
 ```
+
+# Upgrade Packages
+
+- update COMMIT in `Makefile`, and `guix/manifest.scm`
+
+```
+guix refresh --load-path=guix/channel --manifest=guix/manifest.scm --update
+```
