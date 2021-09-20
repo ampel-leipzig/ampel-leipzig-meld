@@ -20,6 +20,7 @@
       "r-kableextra"
       "r-lubridate"
       "r-mlr3"
+      "r-mlr3benchmark"
       "r-mlr3extralearners"
       "r-mlr3learners"
       "r-mlr3misc"

@@ -249,6 +249,32 @@
       "Creates presentation-ready tables summarizing data sets, regression models, and more.  The code to create the tables is concise and highly customizable.  Data frames can be summarized with any function, e.g.  mean(), median(), even user-written functions.  Regression models are summarized and include the reference rows for categorical variables.  Common regression models, such as logistic regression and Cox proportional hazards regression, are automatically identified and the tables are pre-filled with appropriate column headers.")
     (license expat)))
 
+(define-public r-mlr3benchmark
+  (package
+    (name "r-mlr3benchmark")
+    (version "0.1.2")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "mlr3benchmark" version))
+        (sha256
+          (base32
+            "05b3x43xnj9byg6f70br6i21jdxbwlc66qmjqrrllp6vsixzc4vp"))))
+    (properties `((upstream-name . "mlr3benchmark")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-ggplot2" ,r-ggplot2)
+        ("r-mlr3misc" ,r-mlr3misc)
+        ("r-r6" ,r-r6)))
+    (home-page "https://mlr3benchmark.mlr-org.com")
+    (synopsis
+      "Analysis and Visualisation of Benchmark Experiments")
+    (description
+      "Implements methods for post-hoc analysis and visualisation of benchmark experiments, for 'mlr3' and beyond.")
+    (license lgpl3)))
+
 (define-public r-mlr3extralearners
   (let ((commit
           "7592df7851b6050447a6f06699ca232d95582cbb")
