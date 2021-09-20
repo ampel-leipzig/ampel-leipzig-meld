@@ -79,7 +79,7 @@ tg_lrns <- list(
                     # ?randomForestSRC ceiling(sqrt(length(variables))) = 7
                     # in our case
                     mtry = p_int(lower = 4L, upper = 8L),
-                    splitrule = p_fct(c("logrank", "C"))
+                    splitrule = p_fct(c("logrank", "logrankscore"))
                 )
             ),
             xgboost = list(
