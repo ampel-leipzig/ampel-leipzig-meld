@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,2,✉, and Thorsten Kaiser1" />
 
-<meta name="date" content="2021-08-07" />
+<meta name="date" content="2021-08-19" />
 
 <title>A Model to Predict Survival in Patients with End-Stage Liver Disease</title>
 
@@ -529,7 +529,7 @@ div.tocify {
 <h1 class="title toc-ignore">A Model to Predict Survival in Patients with End-Stage Liver Disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,2,✉</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2021-08-07</h4>
+<h4 class="date">2021-08-19</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Background</strong>:
@@ -572,7 +572,7 @@ Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidde
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-08-07
+<strong>Last updated:</strong> 2021-08-19
 </p>
 <p>
 <strong>Checks:</strong>
@@ -705,20 +705,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee341ab4ad8bdcc39849765f44c8bb0eeeaa16591targetblanke341ab4a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8f258999c7a5a94f46c147bd3ede6a7fb69cc00dtargetblank8f25899a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e341ab4ad8bdcc39849765f44c8bb0eeeaa16591" target="_blank">e341ab4</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8f258999c7a5a94f46c147bd3ede6a7fb69cc00d" target="_blank">8f25899</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee341ab4ad8bdcc39849765f44c8bb0eeeaa16591targetblanke341ab4a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8f258999c7a5a94f46c147bd3ede6a7fb69cc00dtargetblank8f25899a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e341ab4ad8bdcc39849765f44c8bb0eeeaa16591" target="_blank">e341ab4</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8f258999c7a5a94f46c147bd3ede6a7fb69cc00d" target="_blank">8f25899</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -739,12 +739,24 @@ Ignored files:
 Untracked files:
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  scripts/bootstrap.sh
+    Untracked:  coxtime-mwe.R
+    Untracked:  coxtime.R
+    Untracked:  deepsurv-mwe.R
+    Untracked:  deepsurv.R
+    Untracked:  scripts/R.sh
 
 Unstaged changes:
+    Modified:   Makefile
+    Modified:   _targets.R
     Modified:   analysis/article.Rmd
-    Modified:   analysis/tables.Rmd
-    Modified:   code/08-tables.R
+    Modified:   analysis/benchmarks.Rmd
+    Modified:   code/01-data.R
+    Modified:   code/02-mlr-tasks.R
+    Modified:   code/03-mlr-learners.R
+    Modified:   code/04-mlr-benchmarking.R
+    Modified:   guix/channel/ampel/packages/rpackages.scm
+    Modified:   guix/manifest.scm
+    Modified:   scripts/Rscript.sh
 
 </code></pre>
 <p>
@@ -789,6 +801,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/article.html" target="_blank">afa48d9</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-07
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/d32f7b3a15ac6425ffdd29c3c9f65cea509d0bad/analysis/article.Rmd" target="_blank">d32f7b3</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-07
+</td>
+<td>
+fix: gtsummary compact theme
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1627,38 +1673,6 @@ use `pattern` argument to provide "{n} ({p}%)" for categorial/dichotomos
 variables after this PR is merged
 https://github.com/ddsjoberg/gtsummary/pull/951
 -->
-<p>In this study we analysed a cohort of 654 patients evaluated for
-liver transplantation (Tab. <a href="#tab:tbl1">3.1</a>).
-414 (63%)
-of them were men.
-The median (IQR) follow-up times was 191 (38, 384) days.
-Within the follow-up time 60 (9.2%) patients received a liver transplant
-and were censored for the analysis beyond this time point.
-The median (IQR) age of the cohort was 58 (52, 64) years.</p>
-<p>Most of the patients presented with cirrhosis
-(594 (91%)).
-The remaining patients had an acute liver failure
-(8 (1.2%)) or
-a chronic liver insufficiency
-(51 (7.8%)).
-At evaluation time the median (IQR) MELD and MELD-Na score were
-11 (8, 17) and
-11 (8, 20), respectively.
-Within 90 days 81 (14) patients died.
-In nearly two third of all patients alcohol was the main cause
-(411 (63%)) of their end-stage liver disease.
-The remaining patients had viral infections
-(hepatitis B and C viruse 20 (3.1%) and 45 (6.9%), respectively),
-autoimmune processes (autoimmune hepatitis 31 (4.7%),
-primary sclerosing cirrhosis 16 (2.4%)),
-primary biliary cirrhosis 17 (2.6%) or unknown causes
-(non-alcoholic steatohepatitis 48 (7.3%) and
-cryptogenic hepatitis 68 (10%)).
-The most common complications among all patients were gastrointestinal
-bleedings in 162 (25%) patients, followed by
-hepatocellular carcinoma (HCC) in 121 (19%) and
-spontaneous bacterial peritonitis (SBP) in 91 (14%) patients.
-Just 33 (5.1%) patients required a renal dialysis.</p>
 </div>
 <div id="meld-scores-1" class="section level2">
 <h2><span class="header-section-number">3.2</span> MELD scores</h2>
@@ -1741,7 +1755,7 @@ scores the mortality was much lower.</p>
 <p>In this retrospective analysis of 654 consecutive patients,
 who were recruited during the evaluation process for liver transplantation at
 the University Hospital of Leipzig we compared
-10 different statistical and machine learning algorithms.</p>
+11 different statistical and machine learning algorithms.</p>
 <p>…</p>
 <ul>
 <li>higher mortality than predicted, compare <span class="citation">Hernaez et al. (2020)</span></li>

@@ -35,6 +35,7 @@
       "python-pycox"
       "python-torchtuples"
       "r-penalized"
+      "r-pmcmr"
       "r-pracma"
       "r-quadprog"
       "r-skimr"

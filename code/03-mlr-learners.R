@@ -142,6 +142,58 @@ tg_lrns <- list(
                     }
                     p
                 }
+            ),
+            # initial settings as described in
+            # https://towardsdatascience.com/neural-networks-for-survival-analysis-in-r-1e0421584ab
+            coxtime = list(
+                lrn = lrn(
+                    "surv.coxtime", id = "coxtime",
+                    frac = 1/3,
+                    early_stopping = TRUE, epochs = 1, optimizer = "adam"
+                ),
+                ps = {
+                    p <- ps(
+                        dropout = p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                        weight_decay = p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                        learning_rate = p_dbl(lower = 0, upper = 0.3, default = 0.1),
+                        ## nodes in a layer
+                        nodes = p_int(lower = 2L, upper = 32L),
+                        ## number of hidden layers
+                        k = p_int(lower = 1L, upper = 4L)
+                    )
+                    p$trafo <- function(x, param_set) {
+                        ## use same number of nodes in each layer
+                        x$num_nodes = rep(x$nodes, x$k)
+                        x$nodes <- x$k <- NULL
+                        x
+                    }
+                    p
+                }
+            ),
+            deepsurv = list(
+                lrn = lrn(
+                    "surv.deepsurv", id = "deepsurv",
+                    frac = 1/3,
+                    early_stopping = TRUE, epochs = 1, optimizer = "adam"
+                ),
+                ps = {
+                    p <- ps(
+                        dropout = p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                        weight_decay = p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                        learning_rate = p_dbl(lower = 0, upper = 0.3, default = 0.1),
+                        ## nodes in a layer
+                        nodes = p_int(lower = 2L, upper = 32L),
+                        ## number of hidden layers
+                        k = p_int(lower = 1L, upper = 4L)
+                    )
+                    p$trafo <- function(x, param_set) {
+                        ## use same number of nodes in each layer
+                        x$num_nodes = rep(x$nodes, x$k)
+                        x$nodes <- x$k <- NULL
+                        x
+                    }
+                    p
+                }
             )
         )
         lapply(l, function(ll) {

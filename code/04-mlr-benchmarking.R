@@ -12,7 +12,7 @@ tg_benchmarks <- tar_target(
             resampling = crossval$outer
         ),
         store_models = FALSE,
-        store_backends = FALSE
+        store_backends = TRUE
     ),
     pattern = cross(tasks, learners),
     iteration = "list",
