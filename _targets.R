@@ -33,7 +33,7 @@ slurm <- future::tweak(
         partition = "batch,compute,snowball",
         ncpu = 16L,
         mcpu = 8L * 1024L,
-        walltime = 4L * 60L * 60L
+        walltime = 24L * 60L * 60L # seconds
     )
 )
 
