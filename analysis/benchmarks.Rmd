@@ -12,6 +12,9 @@ library("mlr3viz")
 library("viridis")
 library("ggplot2")
 tar_load(bmrk_results)
+tar_load(bmrk_aggr)
+
+p.value <- 0.2
 ```
 
 # Overview
@@ -26,6 +29,8 @@ autoplot(bmrk_results) +
 
 # Aggregated performance
 
+Aggregated performance across all `nrow(bmrk_results$tasks)` datasets.
+
 ```{r benchmarks_aggr_plot_c_harrell}
 autoplot(bmrk_aggr, type = "box", meas = "harrell_c") +
     geom_boxplot(aes(fill = learner_id)) +
@@ -34,11 +39,26 @@ autoplot(bmrk_aggr, type = "box", meas = "harrell_c") +
     theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
+# Pairwise comparison
+
+*p*-value is set to `r p.value`
+(otherwise an error is thrown because of insignificant results).
+
+```{r benchmarks_aggr_pairwise_harrell_c}
+autoplot(
+    bmrk_aggr, type = "fn", meas = "harrell_c", p.value = p.value,
+    col = palette.colors(2L)[2L]
+)
+```
+
 # Critical difference
+
+*p*-value is set to `r p.value`
+(otherwise an error is thrown because of insignificant results).
 
 ```{r benchmarks_aggr_critdiff_c_harrell}
 autoplot(
-    bmrk_aggr, type = "cd", meas = "harrell_c", minimize = FALSE, style = 2,
-    p.value = 0.1
+    bmrk_aggr, type = "cd", meas = "harrell_c", style = 2, p.value = p.value,
+    minimize = FALSE
 ) + scale_color_viridis(discrete = TRUE)
 ```
