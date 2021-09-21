@@ -1,4 +1,4 @@
-(define-module (ampel packages rpackages)
+(define-module (ampel packages cran)
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (guix download)
@@ -83,24 +83,43 @@
       " Build graph/network structures using functions for stepwise addition and deletion of nodes and edges.  Work with data available in tables for bulk addition of nodes, edges, and associated metadata.  Use graph selections and traversals to apply changes to specific nodes or edges.  A wide selection of graph algorithms allow for the analysis of graphs.  Visualize the graphs and take advantage of any aesthetic properties assigned to nodes and edges.")
     (license expat)))
 
+(define-public r-dictionar6
+  (package
+    (name "r-dictionar6")
+    (version "0.1.3")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "dictionar6" version))
+        (sha256
+          (base32 "1rg958py4pqghkid3830hla7vibvwsjhk75x55lxry5d8dp04m9f"))))
+    (properties `((upstream-name . "dictionar6")))
+    (build-system r-build-system)
+    (propagated-inputs `(("r-ooplah" ,r-ooplah) ("r-r6" ,r-r6)))
+    (home-page "https://xoopR.github.io/dictionar6/")
+    (synopsis "R6 Dictionary Interface")
+    (description
+      "Efficient object-oriented R6 dictionary capable of holding objects of any class, including R6.  Typed and untyped dictionaries are provided as well as the 'usual' dictionary methods that are available in other OOP languages, for example listing keys, items, values, and methods to get/set these.")
+    (license expat)))
+
 (define-public r-distr6
   (package
     (name "r-distr6")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "distr6" version))
         (sha256
           (base32
-            "1w1wrfnqxbr9aiif7hza9bnmbn1vmglcbmij7wkk662hvkg1j6z5"))))
+            "1m99s79ymw71a2lpl5k48q49d1krxq24x2n3p6mbhall8kjgv769"))))
     (properties `((upstream-name . "distr6")))
     (build-system r-build-system)
     (propagated-inputs
       `(("r-checkmate" ,r-checkmate)
         ("r-data-table" ,r-data-table)
+        ("r-param6" ,r-param6)
         ("r-r6" ,r-r6)
-        ("r-r62s3" ,r-r62s3)
         ("r-rcpp" ,r-rcpp)
         ("r-set6" ,r-set6)))
     (native-inputs `(("r-knitr" ,r-knitr)))
@@ -178,14 +197,14 @@
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "gt" version))
         (sha256
           (base32
-            "0a6icikskbhsmg4d3gqyxb6jf0hg82nh2241g4h6488ra2b1him8"))))
+            "06b029z32za010pfjj1pp5nqjamc58k87nxj5fsx2mpi8vjgxlfx"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs
@@ -277,11 +296,11 @@
 
 (define-public r-mlr3extralearners
   (let ((commit
-          "7592df7851b6050447a6f06699ca232d95582cbb")
+          "ce33c22c5f45a97287a213b717d220905538f92e")
         (revision "1"))
     (package
       (name "r-mlr3extralearners")
-      (version (git-version "0.5.0" revision commit))
+      (version (git-version "0.5.8" revision commit))
       (source
         (origin
           (method git-fetch)
@@ -291,7 +310,7 @@
           (file-name (git-file-name name version))
           (sha256
             (base32
-              "1hadxabapvk7rryk7y160kd0jcgn45pffv1cc020ldkd7w4agbjh"))))
+              "0hvjbrrfni8zjdqal3zvpyiwzgsh4gakmiq0m8fnna9h5bqzsra8"))))
       (properties
         `((upstream-name . "mlr3extralearners")))
       (build-system r-build-system)
@@ -311,14 +330,14 @@
 (define-public r-mlr3proba
   (package
     (name "r-mlr3proba")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3proba" version))
         (sha256
           (base32
-            "1sgmcbxy8xbsmywsbc8qn6qlr79fr244rfz6hvy6i6ipvb6m7rpf"))))
+            "1pq6ihbyz4czgykrdb0bss6h88dpprjc07xdgizrjhx7lpi61vm8"))))
     (properties `((upstream-name . "mlr3proba")))
     (build-system r-build-system)
     (propagated-inputs
@@ -341,14 +360,14 @@
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.5.4")
+    (version "0.5.6")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3viz" version))
         (sha256
           (base32
-            "1qf054jk9yx3v5hm55cp89vzwx5i7vwiz71zrgsgxy74kpi4f7ih"))))
+            "1jafba74gv3v0lyqc9m274f4ds6ciw3had8x5awynby69kmqyjwl"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs
@@ -362,38 +381,60 @@
       "This package provides visualizations for 'mlr3' objects such as tasks, predictions, resample results or benchmark results via the autoplot() generic of 'ggplot2'.  The returned 'ggplot' objects are intended to provide sensible defaults, yet can easily be customized to create camera-ready figures.  Visualizations include barplots, boxplots, histograms, ROC curves, and Precision-Recall curves.")
     (license lgpl3)))
 
-(define-public r-r62s3
+(define-public r-ooplah
   (package
-    (name "r-r62s3")
-    (version "1.4.1")
+    (name "r-ooplah")
+    (version "0.1.0")
     (source
       (origin
         (method url-fetch)
-        (uri (cran-uri "R62S3" version))
+        (uri (cran-uri "ooplah" version))
         (sha256
-          (base32
-            "0g01izg77spn79xqwva2gzrvk66i20xlb789wl5rgcz7pz7gpjd2"))))
-    (properties `((upstream-name . "R62S3")))
+          (base32 "0hrbpidcrnvm14qdjhcz4j4im1caydxkj4k9zmqs7dq3wv10rgr9"))))
+    (properties `((upstream-name . "ooplah")))
+    (build-system r-build-system)
+    (propagated-inputs `(("r-r6" ,r-r6)))
+    (home-page "https://xoopR.github.io/ooplah/")
+    (synopsis "Helper Functions for Class Object-Oriented Programming")
+    (description
+      "Helper functions for coding object-oriented programming with a focus on R6.  Includes functions for assertions and testing, looping, and re-usable design patterns including Abstract and Decorator classes.")
+    (license expat)))
+
+(define-public r-param6
+  (package
+    (name "r-param6")
+    (version "0.2.1")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "param6" version))
+        (sha256
+          (base32 "1yll1azhiixjg7qslmj832p1rsqmq2ai94jlp6px7rawp3dalgb2"))))
+    (properties `((upstream-name . "param6")))
     (build-system r-build-system)
     (propagated-inputs
-      `(("r-data-table" ,r-data-table)))
-    (home-page "https://github.com/RaphaelS1/R62S3/")
-    (synopsis "Automatic Method Generation from R6")
+      `(("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-dictionar6" ,r-dictionar6)
+        ("r-r6" ,r-r6)
+        ("r-set6" ,r-set6)))
+    (home-page "https://xoopR.github.io/param6/")
+    (synopsis "A Fast and Lightweight R6 Parameter Interface")
     (description
-      "After defining an R6 class, R62S3 is used to automatically generate optional S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
+      "By making use of 'set6', alongside the S3 and R6 paradigms, this package provides a fast and lightweight R6 interface for parameters and parameter sets.")
     (license expat)))
 
 (define-public r-set6
   (package
     (name "r-set6")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "set6" version))
         (sha256
           (base32
-            "05c2s8wj10nv07p9617grdhsf5ijwpv82r0d2f76p0sbcx3d46qm"))))
+            "16877rqq4ayr6x95fjl9yagnjsv0x4mxvqw5zgsx8a3azqkplail"))))
     (properties `((upstream-name . "set6")))
     (build-system r-build-system)
     (propagated-inputs
@@ -446,14 +487,14 @@
 (define-public r-survivalmodels
   (package
     (name "r-survivalmodels")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "survivalmodels" version))
         (sha256
           (base32
-            "0dsssvlry07559f17wdlkm1l6cbsng529xmakmwa2nkfm451qjqj"))))
+            "13plpgvxlljd953kv0krzzs1rfgl4yv9s7s5naplqfzjrapk0j7z"))))
     (properties
       `((upstream-name . "survivalmodels")))
     (build-system r-build-system)
@@ -495,14 +536,14 @@
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "tarchetypes" version))
         (sha256
           (base32
-            "1i0fpsq1qmz2rkc9pkvkr1px3gwlc4flfxc9j2z0g8v8ws2rlc2y"))))
+            "02khsl7d1wnj15k2xcwhqp0pff9i9xn7z5jy44x42lxjwpj3dclh"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs
@@ -523,14 +564,14 @@
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.4.2")
+    (version "0.7.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "targets" version))
         (sha256
           (base32
-            "0vrdgikgxhm0gvcrs4qvlp3n63jvkkg54jhsjaqnyyimdhv15wm4"))))
+            "19xmygh3nv3rznmhm493kvhf5dgyv8kyaif0q7yxx8l45g48paf9"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs

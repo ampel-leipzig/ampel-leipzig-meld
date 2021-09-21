@@ -6,7 +6,7 @@
 (define-public slurm-21.08
   (package
     (inherit slurm)
-    (version "21.08.0")
+    (version "21.08.1")
     (source (origin
       (inherit (package-source slurm))
         (method url-fetch)
@@ -14,4 +14,4 @@
           "https://download.schedmd.com/slurm/slurm-" version ".tar.bz2"))
         (sha256
           (base32
-            "1rzwrv07bkvscr9fmbci7h2gxalqwvmiwywh8j01gin490jfzq08"))))))
+            "010ciqmfsv58n96jv49n9jq2k97smsyvjl67i30zaxv40dj8hr2v"))))))

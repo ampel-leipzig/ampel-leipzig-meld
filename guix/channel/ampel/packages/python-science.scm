@@ -1,4 +1,4 @@
-(define-module (ampel packages pythonpackages)
+(define-module (ampel packages python-science)
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (guix download)
@@ -14,14 +14,14 @@
 (define-public python-torchtuples
   (package
     (name "python-torchtuples")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
       (origin
         (method url-fetch)
         (uri (pypi-uri "torchtuples" version))
         (sha256
           (base32
-            "1nshsvywnrw38xsv6l97lmqjvba369spg3dn8smgm29n3s4mkvp4"))))
+            "1hzzizb8rc6w5c3vsy6kjjz4kj32pchmh0c1kvyr9dbyjxlzxiz0"))))
     (build-system python-build-system)
     (arguments
      `(#:tests? #f)) ; no test target
@@ -62,4 +62,3 @@
     (synopsis "Survival analysis with PyTorch")
     (description "Survival analysis with PyTorch")
     (license #f)))
-

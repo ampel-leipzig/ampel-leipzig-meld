@@ -38,8 +38,8 @@ guix time-machine --channels channels.scm
 
 # Upgrade Packages
 
-- update COMMIT in `Makefile`, and `guix/manifest.scm`
+- update COMMIT in `Makefile`, and `guix/manifest.scm`, and `guix/channels.scm`
 
 ```
-guix refresh --load-path=guix/channel --manifest=guix/manifest.scm --update
+guix refresh --load-path=guix/channel --update $(grep define-public channel/ampel/packages/*.scm | cut -f 2 -d ' ' | grep -v slurm)
 ```

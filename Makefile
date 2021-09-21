@@ -1,5 +1,5 @@
 GUIX=/usr/local/bin/guix
-GUIXCOMMIT=4be98fb
+GUIXCOMMIT=6eded1a
 
 .PHONEY: clean clean-all clean-container clean-reports clean-targets \
 	container hpc local-guix run sync
@@ -14,7 +14,9 @@ container: container/ampel-leipzig-meld.squashfs
 
 container/ampel-leipzig-meld.squashfs: guix/manifest.scm \
 	guix/channels.scm \
-	guix/channel/ampel/packages/rpackages.scm
+	guix/channel/ampel/packages/cran.scm \
+	guix/channel/ampel/packages/parallel.scm \
+	guix/channel/ampel/packages/python-science.scm
 	mkdir -p container
 	cp $$($(GUIX) time-machine --commit=$(GUIXCOMMIT) -- pack \
 	--relocatable --relocatable \
