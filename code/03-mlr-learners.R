@@ -1,6 +1,7 @@
 suppressPackageStartupMessages(library("mlr3"))
 suppressPackageStartupMessages(library("mlr3extralearners"))
 suppressPackageStartupMessages(library("mlr3learners"))
+suppressPackageStartupMessages(library("mlr3pipelines"))
 suppressPackageStartupMessages(library("mlr3proba"))
 suppressPackageStartupMessages(library("mlr3tuning"))
 suppressPackageStartupMessages(library("paradox"))
@@ -216,6 +217,22 @@ tg_lrns <- list(
                     terminator = trm("evals", n_evals = 10L)
                 )
         })
+
+        ## preprocessing (is part of the crossval now)
+        # TODO: add scaling to ln_data task (not to zlog_data)
+        #po_nop <- po("nop", "nothing")
+        #po_scale <- po("scale")
+        #choices <- c("nothing", "scale")
+        #g <-
+        #    po("removeconstants") %>>%
+        #        po("branch", choices) %>>%
+        #            gunion(list(po_nop, po_scale)) %>>%
+        #        po("unbranch", choices)
+
+        #l <- lapply(l, function(ll) {
+        #    as_learner(g %>>% po("learner", ll))
+        #})
+        l
     },
     iteration = "list",
     deployment = "main"

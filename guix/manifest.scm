@@ -25,6 +25,7 @@
       "r-mlr3learners"
       "r-mlr3misc"
       "r-mlr3tuning"
+      "r-mlr3pipelines"
       "r-mlr3proba"
       "r-mlr3viz"
       "r-penalized"

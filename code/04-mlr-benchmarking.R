@@ -1,5 +1,6 @@
 suppressPackageStartupMessages(library("mlr3"))
 suppressPackageStartupMessages(library("mlr3benchmark"))
+suppressPackageStartupMessages(library("mlr3pipelines"))
 suppressPackageStartupMessages(library("mlr3proba"))
 suppressPackageStartupMessages(library("mlr3tuning"))
 
@@ -17,7 +18,8 @@ tg_benchmarks <- tar_target(
     pattern = cross(tasks, learners),
     iteration = "list",
     packages = c(
-        "mlr3", "mlr3tuning", "mlr3misc", "mlr3proba", "mlr3learners"
+        "mlr3", "mlr3tuning", "mlr3misc", "mlr3pipelines", "mlr3proba",
+        "mlr3learners"
     ),
     deployment = "worker"
 )

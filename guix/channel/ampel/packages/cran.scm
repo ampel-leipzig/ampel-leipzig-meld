@@ -327,6 +327,35 @@
       (description "Extra learners for use in mlr3.")
       (license lgpl3))))
 
+(define-public r-mlr3pipelines
+  (package
+    (name "r-mlr3pipelines")
+    (version "0.3.6")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "mlr3pipelines" version))
+        (sha256
+          (base32 "1imgsfqc5753yva8ws16yjjj44w7hp9l0l5znjjlhdplwcmss5dr"))))
+    (properties `((upstream-name . "mlr3pipelines")))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-backports" ,r-backports)
+        ("r-checkmate" ,r-checkmate)
+        ("r-data-table" ,r-data-table)
+        ("r-digest" ,r-digest)
+        ("r-lgr" ,r-lgr)
+        ("r-mlr3" ,r-mlr3)
+        ("r-mlr3misc" ,r-mlr3misc)
+        ("r-paradox" ,r-paradox)
+        ("r-r6" ,r-r6)
+        ("r-withr" ,r-withr)))
+    (home-page "https://mlr3pipelines.mlr-org.com")
+    (synopsis "Preprocessing Operators and Pipelines for 'mlr3'")
+    (description
+      "Dataflow programming toolkit that enriches 'mlr3' with a diverse set of pipelining operators ('PipeOps') that can be composed into graphs.  Operations exist for data preprocessing, model fitting, and ensemble learning.  Graphs can themselves be treated as 'mlr3' 'Learners' and can therefore be resampled, benchmarked, and tuned.")
+    (license lgpl3)))
+
 (define-public r-mlr3proba
   (package
     (name "r-mlr3proba")
