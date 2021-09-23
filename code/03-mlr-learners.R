@@ -107,7 +107,7 @@ tg_lrns <- list(
             ),
             svmregression = list(
                 lrn = lrn(
-                    "surv.svm", id = "svm-regression", type = "regression",
+                    "surv.svm", id = "svmregression", type = "regression",
                     gamma.mu = 0 # would be trained later, is required by ctor
                 ),
                 ps = {
@@ -125,7 +125,7 @@ tg_lrns <- list(
             ),
             svmvanbelle1 = list(
                 lrn = lrn(
-                    "surv.svm", id = "svm-vanbelle1", type = "vanbelle1",
+                    "surv.svm", id = "svmvanbelle1", type = "vanbelle1",
                     diff.meth = "makediff3", kernel = "rbf_kernel",
                     opt.meth = "quadprog",
                     gamma.mu = 0 # would be trained later, is required by ctor
@@ -149,13 +149,16 @@ tg_lrns <- list(
                 lrn = lrn(
                     "surv.coxtime", id = "coxtime",
                     frac = 1/3,
-                    early_stopping = TRUE, epochs = 1, optimizer = "adam"
+                    early_stopping = TRUE, epochs = 10, optimizer = "adam"
                 ),
                 ps = {
                     p <- ps(
-                        dropout = p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
-                        weight_decay = p_dbl(lower = 0, upper = 0.4, default = 0.1),
-                        learning_rate = p_dbl(lower = 0, upper = 0.3, default = 0.1),
+                        dropout =
+                            p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                        weight_decay =
+                            p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                        learning_rate =
+                            p_dbl(lower = 0, upper = 0.3, default = 0.1),
                         ## nodes in a layer
                         nodes = p_int(lower = 2L, upper = 32L),
                         ## number of hidden layers
@@ -174,13 +177,16 @@ tg_lrns <- list(
                 lrn = lrn(
                     "surv.deepsurv", id = "deepsurv",
                     frac = 1/3,
-                    early_stopping = TRUE, epochs = 1, optimizer = "adam"
+                    early_stopping = TRUE, epochs = 10, optimizer = "adam"
                 ),
                 ps = {
                     p <- ps(
-                        dropout = p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
-                        weight_decay = p_dbl(lower = 0, upper = 0.4, default = 0.1),
-                        learning_rate = p_dbl(lower = 0, upper = 0.3, default = 0.1),
+                        dropout =
+                            p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                        weight_decay =
+                            p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                        learning_rate =
+                            p_dbl(lower = 0, upper = 0.3, default = 0.1),
                         ## nodes in a layer
                         nodes = p_int(lower = 2L, upper = 32L),
                         ## number of hidden layers
@@ -196,9 +202,10 @@ tg_lrns <- list(
                 }
             )
         )
-        lapply(l, function(ll) {
+        ## autotuner
+        l <- lapply(l, function(ll) {
             if (is.null(ll$ps))
-                ll
+                ll$lrn
             else
                 AutoTuner$new(
                     learner = ll$lrn,
