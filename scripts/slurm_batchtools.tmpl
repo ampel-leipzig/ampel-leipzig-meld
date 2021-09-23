@@ -1,15 +1,17 @@
 #!/bin/bash
 <%
+if (!is.null(resources$log.file))
+  log.file = resources$log.file
 # relative paths are not handled well by Slurm
-logfile = fs::path_expand(resources$logfile)
-if (!"walltime" %in% names(resources)) {
-  resources$walltime = 48 * 3600
-}
+log.file = fs::path_expand(log.file)
+
+if (is.null(resources$walltime))
+  resources$walltime = 24 * 3600
 -%>
 
 #SBATCH --job-name=<%= job.name %>
-#SBATCH --output=<%= logfile %>
-#SBATCH --error=<%= logfile %>
+#SBATCH --output=<%= log.file %>
+#SBATCH --error=<%= log.file %>
 <%= if (!is.null(resources$partition)) sprintf("#SBATCH --partition='%s'", resources$partition) %>
 #SBATCH --ntasks=1
 <%= if (!is.null(resources$ncpu)) sprintf("#SBATCH --cpus-per-task=%d", resources$ncpu) %>
