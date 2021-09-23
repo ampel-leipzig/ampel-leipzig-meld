@@ -12,7 +12,7 @@ tg_lrns <- list(
     tar_target(crossval,
         list(
             inner = rsmp("cv", folds = 5L),
-            outer = rsmp("repeated_cv", folds = 5L, repeats = 3L)
+            outer = rsmp("repeated_cv", folds = 3L, repeats = 5L)
         ),
         deployment = "main"
     ),
