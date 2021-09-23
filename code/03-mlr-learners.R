@@ -213,8 +213,10 @@ tg_lrns <- list(
                     search_space = ll$ps,
                     resampling = crossval$inner,
                     measure = msr("surv.cindex"),
-                    tuner = tnr("random_search", batch_size = 2L),
-                    terminator = trm("evals", n_evals = 10L)
+                    tuner =
+                        tnr("grid_search", resolution = 20L, batch_size = 2L),
+                    terminator =
+                        trm("stagnation", iters = 3L, threshold = 1e-3)
                 )
         })
 
