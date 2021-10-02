@@ -22,15 +22,24 @@ tg_lrns <- list(
                 lrn = lrn("surv.coxph", id = "cox")
             ),
             lasso = list(
-                lrn = lrn("surv.cv_glmnet", id = "lasso", alpha = 1L),
+                lrn = lrn(
+                    "surv.cv_glmnet", id = "lasso", alpha = 1L,
+                    standardize = FALSE # use pipeline/zlog
+                ),
                 ps = ps(s = p_dbl(lower = 0, upper = 1))
             ),
             ridge = list(
-                lrn = lrn("surv.cv_glmnet", id = "ridge", alpha = 0L),
+                lrn = lrn(
+                    "surv.cv_glmnet", id = "ridge", alpha = 0L,
+                    standardize = FALSE # use pipeline/zlog
+                ),
                 ps = ps(s = p_dbl(lower = 0, upper = 1))
             ),
             elasticnet = list(
-                lrn = lrn("surv.cv_glmnet", id = "elasticnet"),
+                lrn = lrn(
+                    "surv.cv_glmnet", id = "elasticnet",
+                    standardize = FALSE # use pipeline/zlog
+                ),
                 ps = ps(
                     alpha = p_dbl(lower = 0, upper = 1),
                     s = p_dbl(lower = 0, upper = 1)
@@ -38,8 +47,9 @@ tg_lrns <- list(
             ),
             penlasso = list(
                 lrn = lrn(
-                    "surv.penalized", id = "penlasso",
-                    lambda2 = 0, standardize = TRUE, trace = FALSE
+                    "surv.penalized", id = "penlasso", lambda2 = 0,
+                    trace = FALSE,
+                    standardize = FALSE # use pipeline/zlog
                 ),
                 ps = ps(
                     lambda1 = p_dbl(lower = 1, upper = 100)
@@ -47,8 +57,9 @@ tg_lrns <- list(
             ),
             penridge = list(
                 lrn = lrn(
-                    "surv.penalized", id = "penridge",
-                    lambda1 = 0, standardize = TRUE, trace = FALSE
+                    "surv.penalized", id = "penridge", lambda1 = 0,
+                    trace = FALSE,
+                    standardize = FALSE # use pipeline/zlog
                 ),
                 ps = ps(
                     lambda2 = p_dbl(lower = 1, upper = 100)
