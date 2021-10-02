@@ -55,5 +55,22 @@ login <- future::tweak(
     workers = "brain",
 ```
 
-The `script/Rscript.sh` has to be adopted to the cluster's module system and
-singularity version.
+The partitions/ncpu/mcpu settings have to be changed in the `_target.R`.
+
+```r
+slurm <- future::tweak(
+    future.batchtools::batchtools_slurm,
+    template = "scripts/slurm_batchtools.tmpl",
+    workers = 16L,
+    resources = list(
+        partition = "batch,compute,snowball",
+        ncpu = 64, # 72, 64
+        mcpu = 2L * 1024L, # 2L
+        walltime = 24L * 60L * 60L # seconds
+    )
+)
+```
+
+The `scripts/Rscript.sh` has to be adopted to the cluster's module system and
+singularity version. Maybe the `scripts/slurm_batchtools.tmpl` has to be
+modified as well.
