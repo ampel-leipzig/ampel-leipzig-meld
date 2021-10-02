@@ -16,7 +16,9 @@ have to be installed on the system you want to use to create the container.
 
 ```bash
 # on a Debian GNU/Linux
-sudo apt install singularity-container
+sudo apt install singularity-container make rsync
+
+# newer Debian versions may support installation of guix via apt
 cd /tmp && \
     wget https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh && \
     chmod +x guix-install.sh && \
@@ -32,3 +34,26 @@ After creating the singularity container it was created by:
 singularity exec container/ampel-leipzig-meld.sif \
     R -e 'library("workflowr"); wflow_start(".", existing = TRUE)'
 ```
+
+## HPC
+
+### Requirements
+
+- Linux cluster
+- `slurm` (version 21.08.x)
+- `singularity` (tested with version 3.4.2)
+- `ssh` access.
+
+### Adoption
+
+The login node in `_targets.R` (here `brain`) has to match an
+entry in `~/.ssh_config` or be configured manually.
+
+```r
+login <- future::tweak(
+    future::remote,
+    workers = "brain",
+```
+
+The `script/Rscript.sh` has to be adopted to the cluster's module system and
+singularity version.
