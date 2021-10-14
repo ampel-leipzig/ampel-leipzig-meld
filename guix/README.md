@@ -41,5 +41,5 @@ guix time-machine --channels channels.scm
 - update COMMIT in `Makefile`, and `guix/manifest.scm`, and `guix/channels.scm`
 
 ```
-guix refresh --load-path=guix/channel --update $(grep define-public channel/ampel/packages/*.scm | cut -f 2 -d ' ' | grep -v slurm)
+guix refresh --load-path=guix/channel --update $(grep define-public guix/channel/ampel/packages/*.scm | cut -f 2 -d ' ' | grep -v slurm)
 ```

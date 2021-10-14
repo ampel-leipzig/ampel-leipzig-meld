@@ -296,11 +296,11 @@
 
 (define-public r-mlr3extralearners
   (let ((commit
-          "ce33c22c5f45a97287a213b717d220905538f92e")
+          "fb4976d195d895e5cd9daee5cca001cf13835881")
         (revision "1"))
     (package
       (name "r-mlr3extralearners")
-      (version (git-version "0.5.8" revision commit))
+      (version (git-version "0.5.9" revision commit))
       (source
         (origin
           (method git-fetch)
@@ -310,7 +310,7 @@
           (file-name (git-file-name name version))
           (sha256
             (base32
-              "0hvjbrrfni8zjdqal3zvpyiwzgsh4gakmiq0m8fnna9h5bqzsra8"))))
+              "1v0975i8gx6ma1pf244ww9gd5lqgmw6j9yjpsbk0ss33jgpw7afq"))))
       (properties
         `((upstream-name . "mlr3extralearners")))
       (build-system r-build-system)
@@ -330,13 +330,13 @@
 (define-public r-mlr3pipelines
   (package
     (name "r-mlr3pipelines")
-    (version "0.3.6")
+    (version "0.3.6-1")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3pipelines" version))
         (sha256
-          (base32 "1imgsfqc5753yva8ws16yjjj44w7hp9l0l5znjjlhdplwcmss5dr"))))
+          (base32 "00v39y50krmjbmk63j7kc8zgdkwi2m4l6r7j5913ghiy9f9394wc"))))
     (properties `((upstream-name . "mlr3pipelines")))
     (build-system r-build-system)
     (propagated-inputs
@@ -432,13 +432,13 @@
 (define-public r-param6
   (package
     (name "r-param6")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "param6" version))
         (sha256
-          (base32 "1yll1azhiixjg7qslmj832p1rsqmq2ai94jlp6px7rawp3dalgb2"))))
+          (base32 "1d4fhs82qpb18480wg6i1q59kw65hqvafv5nb7p7jqys16mmsj3i"))))
     (properties `((upstream-name . "param6")))
     (build-system r-build-system)
     (propagated-inputs
@@ -565,14 +565,14 @@
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "tarchetypes" version))
         (sha256
           (base32
-            "02khsl7d1wnj15k2xcwhqp0pff9i9xn7z5jy44x42lxjwpj3dclh"))))
+            "05m27inf7sbf96z3qfaj1659pwifysav85gp2r9w8jk45da6wm49"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs
@@ -593,14 +593,14 @@
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "targets" version))
         (sha256
           (base32
-            "19xmygh3nv3rznmhm493kvhf5dgyv8kyaif0q7yxx8l45g48paf9"))))
+            "0lcn4la6qh3ljks8s7q9il2hm2lzfhf5wzi5igxs9d0xlqxr2r8n"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs
@@ -636,14 +636,14 @@
 (define-public r-visnetwork
   (package
     (name "r-visnetwork")
-    (version "2.0.9")
+    (version "2.1.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "visNetwork" version))
         (sha256
           (base32
-            "0854r9znpjd9iy6j5bgrn20vj13dhp606gs3b6iy0rhym71ks2sy"))))
+            "0bqmy5m6b5hda4vzlwnpgabsbg60v68wicm556cqml6rpdzixfd2"))))
     (properties `((upstream-name . "visNetwork")))
     (build-system r-build-system)
     (propagated-inputs
