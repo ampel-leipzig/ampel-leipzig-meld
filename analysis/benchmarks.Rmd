@@ -2,7 +2,7 @@
 title: "Benchmarks"
 output:
   bookdown::html_document2:
-    fig.width: 12
+    fig.width: 18
     fig.height: 8
 ---
 
