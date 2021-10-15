@@ -11,8 +11,8 @@ tg_lrns <- list(
     ## we want to rerun the benchmarking when anything changes
     tar_target(crossval,
         list(
-            inner = rsmp("cv", folds = 5L),
-            outer = rsmp("repeated_cv", folds = 3L, repeats = 5L)
+            inner = rsmp("cv", folds = 2L),
+            outer = rsmp("repeated_cv", folds = 2L, repeats = 1L)
         ),
         deployment = "main"
     ),
