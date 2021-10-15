@@ -43,7 +43,13 @@ output:
 
 ```{r knitr_setup, include=FALSE}
 knitr::write_bib(
-    c("targets", "workflowr"),
+    c(
+        "base",
+        "targets", "workflowr",
+        "mlr3", "mlr3proba", "zlog",
+        "survival", "glmnet", "penalized", "ranger", "randomForestSRC",
+        "xgboost", "survivalsvm", "survivalmodels"
+    ),
     file = rprojroot::find_rstudio_root_file(
         "analysis", "bibliography", "rpackages", "article.bib"
     )
@@ -52,9 +58,13 @@ knitr::write_bib(
 
 ```{r article_setup, include=FALSE}
 library("targets")
+library("ggplot2")
+library("mlr3viz")
+library("viridis")
 library("ameld")
 
 tar_load(bmrk_results)
+tar_load(crossval)
 
 tar_load(raw_data)
 tar_load(labelled_meld_data)
@@ -224,13 +234,47 @@ its original publication [@kartoun2017].
 ## Machine learning
 
 ```{r ml, include = FALSE}
-n_lrns <- nrow(bmrk_results$learners)
+n_lrns <- sum(!grepl("^scale..*", bmrk_results$learners$learner_id))
 #n_cv <- c(inner.folds
 #    outer = unlist(
 #        bmrk_results$resamplings$resampling[[1]]$param_set$get_values()
 #    )
 #)
 ```
+
+All statistical and machine learning analyses were performed using R version
+`r paste0(sessionInfo()$R.version[c("major", "minor")], collapse = ".")`
+[@R-base].
+Prior to the analyses all laboratory values were zlog transformed
+[@hoffmann2017; @R-zlog].
+We compared `r n_lrns` different statistical and machine learning
+algorithms using the mlr3 framework
+[@mlr3; @R-mlr3; @mlr3proba2021; @R-mlr3proba].
+The used algorithms are designed for analysis of survival data:
+Cox proportional hazards regression model
+[@cox1972; @survival-book; @R-survival],
+penalized regressions,
+namely two different implementations of the
+lasso (least absolute shrinkage and selection operator) regression
+[@tibshirani1997; @glmnet2011; @R-glmnet; @penalized2010; @R-penalized],
+tow different implementations of the
+ridge regression [@glmnet2011; @R-glmnet; @penalized2010; @R-penalized], and
+the elastic net regression [@glmnet2011; @R-glmnet],
+two different random forest implementations
+[@ranger2017; @R-ranger; @randomForestSRC2008; @R-randomForestSRC],
+extreme gradient boosting [@chen2016; @R-xgboost],
+two different support vector machines [@vanbelle2011; @R-survivalsvm]
+and a neural network [@katzman2018; @R-survivalmodels].
+
+To choose the best model we used nested resampling to avoid feature- and
+model-selection-bias.
+Therefore, we applied a `r crossval$inner$param_set$values$folds`-fold inner
+and a `r crossval$outer$param_set$values$folds`-fold outer cross-validation
+that was repeated `r crossval$outer$param_set$values$repeats` times.
+Subsequently we selected the model with the
+highest median concordance index [@harrell1982].
+
+TODO: selected final model, analysis, feature selection
 
 # Results
 
@@ -339,6 +383,19 @@ knitr::kable(
     digits = 1
 )
 ```
+
+```{r benchmark-plot, fig.cap = "Benchmark results of machine learning algorithms."}
+r <- bmrk_results$clone()
+id <- grep("^scale", x = r$learners$learner_id, invert = TRUE, value = TRUE)
+r$filter(task_id = "zlog_eldd", learner_id = id)
+autoplot(r) +
+    geom_boxplot(aes(fill = learner_id)) +
+    geom_jitter(position = position_jitter(0.2)) +
+    scale_fill_viridis(discrete = TRUE) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+TODO: mention best ml algorithm (\@ref(fig:benchmark-plot))
 
 # Discussion
 
