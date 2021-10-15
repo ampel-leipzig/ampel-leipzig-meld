@@ -13,7 +13,8 @@
 
 <title>Linecharts</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -33,7 +34,6 @@
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -42,6 +42,8 @@ div.section {
   padding-top: 12px;
 }
 </style>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -65,6 +67,7 @@ div.section {
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -539,7 +542,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-08-18
+<strong>Last updated:</strong> 2021-10-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -667,20 +670,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8f258999c7a5a94f46c147bd3ede6a7fb69cc00dtargetblank8f25899a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8f258999c7a5a94f46c147bd3ede6a7fb69cc00d" target="_blank">8f25899</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8f258999c7a5a94f46c147bd3ede6a7fb69cc00dtargetblank8f25899a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8f258999c7a5a94f46c147bd3ede6a7fb69cc00d" target="_blank">8f25899</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -699,25 +702,16 @@ Ignored files:
     Ignored:    logs/
 
 Untracked files:
+    Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
+    Untracked:  _targets-debug.R
     Untracked:  coxtime-mwe.R
     Untracked:  coxtime.R
     Untracked:  deepsurv-mwe.R
     Untracked:  deepsurv.R
+    Untracked:  s12874-018-0482-1.pdf
     Untracked:  scripts/R.sh
-
-Unstaged changes:
-    Modified:   Makefile
-    Modified:   _targets.R
-    Modified:   analysis/benchmarks.Rmd
-    Modified:   code/01-data.R
-    Modified:   code/02-mlr-tasks.R
-    Modified:   code/03-mlr-learners.R
-    Modified:   code/04-mlr-benchmarking.R
-    Modified:   guix/channel/ampel/packages/rpackages.scm
-    Modified:   guix/manifest.scm
-    Modified:   scripts/Rscript.sh
 
 </code></pre>
 <p>
@@ -767,6 +761,23 @@ Message
 html
 </td>
 <td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/c66640c2b1856a5311392b2592f58ca80a5dfd34/docs/linecharts.html" target="_blank">c66640c</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-09-14
+</td>
+<td>
+feat: first nnet tests
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
 <a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/linecharts.html" target="_blank">afa48d9</a>
 </td>
 <td>
@@ -793,7 +804,7 @@ Sebastian Gibb
 2021-08-02
 </td>
 <td>
-Revert “fix: working directory for targets”
+Revert "fix: working directory for targets"
 </td>
 </tr>
 <tr>
@@ -973,52 +984,52 @@ feat: add linecharts report
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">tar_load</span>(zlog_data)</span></code></pre></div>
-<div id="compare-mean-zlog-values-vs-status" class="section level1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data)</span></code></pre></div>
+<div id="compare-mean-zlog-values-vs-status" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Compare Mean Zlog Values vs Status</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(zlog_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">## divide data.frame by dead/alive</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a>s &lt;-<span class="st"> </span><span class="kw">split</span>(zlog_data[labv], zlog_data<span class="op">$</span>Deceased)</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">names</span>(s) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;survived&quot;</span>, <span class="st">&quot;dead&quot;</span>)</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">## calculate mean standardized lab values</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>s &lt;-<span class="st"> </span><span class="kw">lapply</span>(s, colMeans, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a>o &lt;-<span class="st"> </span><span class="kw">order</span>(s<span class="op">$</span>dead)</span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">## comparison plot</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>col &lt;-<span class="st"> </span><span class="kw">palette.colors</span>(2L)</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="co">## keep old graphic parameters and restore them afterwards</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-16"><a href="#cb2-16"></a></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">7.1</span>, <span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span>), <span class="dt">cex =</span> <span class="fl">0.5</span>)</span>
-<span id="cb2-18"><a href="#cb2-18"></a></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="kw">plot</span>(</span>
-<span id="cb2-20"><a href="#cb2-20"></a>    s<span class="op">$</span>dead[o], <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> col[<span class="dv">1</span>],</span>
-<span id="cb2-21"><a href="#cb2-21"></a>    <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>)</span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="kw">lines</span>(s<span class="op">$</span>survived[o], <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> col[<span class="dv">2</span>])</span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="kw">legend</span>(</span>
-<span id="cb2-25"><a href="#cb2-25"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
-<span id="cb2-26"><a href="#cb2-26"></a>    <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;dead&quot;</span>, <span class="st">&quot;survived&quot;</span>),</span>
-<span id="cb2-27"><a href="#cb2-27"></a>    <span class="dt">col =</span> col, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a>)</span>
-<span id="cb2-29"><a href="#cb2-29"></a><span class="kw">title</span>(</span>
-<span id="cb2-30"><a href="#cb2-30"></a>    <span class="dt">main =</span> <span class="st">&quot;Mortality Status vs Mean Standardized Laboratory Values&quot;</span>, <span class="dt">adj =</span> <span class="dv">0</span></span>
-<span id="cb2-31"><a href="#cb2-31"></a>)</span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Laboratory Measurements&quot;</span>, <span class="dt">adj =</span> 1L, <span class="dt">line =</span> <span class="dv">5</span>)</span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="kw">title</span>(<span class="dt">ylab =</span> <span class="st">&quot;Mean Standardized Values&quot;</span>, <span class="dt">adj =</span> 1L)</span>
-<span id="cb2-34"><a href="#cb2-34"></a>r &lt;-<span class="st"> </span><span class="kw">range</span>(<span class="kw">unlist</span>(s))</span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="kw">axis</span>(</span>
-<span id="cb2-36"><a href="#cb2-36"></a>    <span class="dv">2</span>, <span class="dt">at =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">floor</span>(r[<span class="dv">1</span>]), <span class="dt">to =</span> <span class="kw">ceiling</span>(r[<span class="dv">2</span>])),</span>
-<span id="cb2-37"><a href="#cb2-37"></a>    <span class="dt">lwd.ticks =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
-<span id="cb2-38"><a href="#cb2-38"></a>)</span>
-<span id="cb2-39"><a href="#cb2-39"></a><span class="kw">axis</span>(</span>
-<span id="cb2-40"><a href="#cb2-40"></a>    <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">seq_along</span>(o), <span class="dt">labels =</span> <span class="kw">names</span>(s<span class="op">$</span>dead[o]), <span class="dt">las =</span> <span class="dv">2</span>,</span>
-<span id="cb2-41"><a href="#cb2-41"></a>    <span class="dt">lwd.ticks =</span> 0L, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
-<span id="cb2-42"><a href="#cb2-42"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>labv <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="fu">colnames</span>(zlog_data), <span class="at">value =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="do">## divide data.frame by dead/alive</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">split</span>(zlog_data[labv], zlog_data<span class="sc">$</span>Deceased)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(s) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;survived&quot;</span>, <span class="st">&quot;dead&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="do">## calculate mean standardized lab values</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">lapply</span>(s, colMeans, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>o <span class="ot">&lt;-</span> <span class="fu">order</span>(s<span class="sc">$</span>dead)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="do">## comparison plot</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">palette.colors</span>(2L)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="do">## keep old graphic parameters and restore them afterwards</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="fl">7.1</span>, <span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span>), <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    s<span class="sc">$</span>dead[o], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> col[<span class="dv">1</span>],</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">ann =</span> <span class="cn">FALSE</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(s<span class="sc">$</span>survived[o], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> col[<span class="dv">2</span>])</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;dead&quot;</span>, <span class="st">&quot;survived&quot;</span>),</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> col, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Mortality Status vs Mean Standardized Laboratory Values&quot;</span>, <span class="at">adj =</span> <span class="dv">0</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">xlab =</span> <span class="st">&quot;Laboratory Measurements&quot;</span>, <span class="at">adj =</span> 1L, <span class="at">line =</span> <span class="dv">5</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">ylab =</span> <span class="st">&quot;Mean Standardized Values&quot;</span>, <span class="at">adj =</span> 1L)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">unlist</span>(s))</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fu">floor</span>(r[<span class="dv">1</span>]), <span class="at">to =</span> <span class="fu">ceiling</span>(r[<span class="dv">2</span>])),</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd.ticks =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">at =</span> <span class="fu">seq_along</span>(o), <span class="at">labels =</span> <span class="fu">names</span>(s<span class="sc">$</span>dead[o]), <span class="at">las =</span> <span class="dv">2</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd.ticks =</span> 0L, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="figure/linecharts.Rmd/linecharts_zlogmeanplot_status-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-linecharts_zlogmeanplot_status-1">
@@ -1068,53 +1079,53 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old.par)</span></code></pre></div>
 </div>
-<div id="compare-mean-zlog-values-vs-meldcategory" class="section level1">
+<div id="compare-mean-zlog-values-vs-meldcategory" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Compare Mean Zlog Values vs MeldCategory</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">## divide data.frame by MELD</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>s &lt;-<span class="st"> </span><span class="kw">split</span>(zlog_data[labv], zlog_data<span class="op">$</span>MeldCategory)</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">## calculate mean standardized lab values</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>s &lt;-<span class="st"> </span><span class="kw">lapply</span>(s, colMeans, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb4-6"><a href="#cb4-6"></a>n &lt;-<span class="st"> </span><span class="kw">length</span>(s)</span>
-<span id="cb4-7"><a href="#cb4-7"></a>o &lt;-<span class="st"> </span><span class="kw">order</span>(s[[n]])</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co">## comparison plot</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>col &lt;-<span class="st"> </span><span class="kw">rev</span>(<span class="kw">palette.colors</span>(n))</span>
-<span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co">## keep old graphic parameters and restore them afterwards</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb4-14"><a href="#cb4-14"></a></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="fl">7.1</span>, <span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span>), <span class="dt">cex =</span> <span class="fl">0.5</span>)</span>
-<span id="cb4-16"><a href="#cb4-16"></a></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="kw">plot</span>(</span>
-<span id="cb4-18"><a href="#cb4-18"></a>    s[[n]][o], <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> col[n],</span>
-<span id="cb4-19"><a href="#cb4-19"></a>    <span class="dt">axes =</span> <span class="ot">FALSE</span>, <span class="dt">ann =</span> <span class="ot">FALSE</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>)</span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_len</span>(n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)) {</span>
-<span id="cb4-22"><a href="#cb4-22"></a>    <span class="kw">lines</span>(s[[i]][o], <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">col =</span> col[i])</span>
-<span id="cb4-23"><a href="#cb4-23"></a>}</span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="kw">legend</span>(</span>
-<span id="cb4-25"><a href="#cb4-25"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
-<span id="cb4-26"><a href="#cb4-26"></a>    <span class="dt">legend =</span> <span class="kw">names</span>(s),</span>
-<span id="cb4-27"><a href="#cb4-27"></a>    <span class="dt">col =</span> col, <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="dt">pch =</span> <span class="dv">20</span>, <span class="dt">bty =</span> <span class="st">&quot;n&quot;</span></span>
-<span id="cb4-28"><a href="#cb4-28"></a>)</span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="kw">title</span>(</span>
-<span id="cb4-30"><a href="#cb4-30"></a>    <span class="dt">main =</span> <span class="st">&quot;MELD Category vs Mean Standardized Laboratory Values&quot;</span>, <span class="dt">adj =</span> <span class="dv">0</span></span>
-<span id="cb4-31"><a href="#cb4-31"></a>)</span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="kw">title</span>(<span class="dt">xlab =</span> <span class="st">&quot;Laboratory Measurements&quot;</span>, <span class="dt">adj =</span> 1L, <span class="dt">line =</span> <span class="dv">5</span>)</span>
-<span id="cb4-33"><a href="#cb4-33"></a><span class="kw">title</span>(<span class="dt">ylab =</span> <span class="st">&quot;Mean Standardized Values&quot;</span>, <span class="dt">adj =</span> 1L)</span>
-<span id="cb4-34"><a href="#cb4-34"></a>r &lt;-<span class="st"> </span><span class="kw">range</span>(<span class="kw">unlist</span>(s))</span>
-<span id="cb4-35"><a href="#cb4-35"></a><span class="kw">axis</span>(</span>
-<span id="cb4-36"><a href="#cb4-36"></a>    <span class="dv">2</span>, <span class="dt">at =</span> <span class="kw">seq</span>(<span class="dt">from =</span> <span class="kw">floor</span>(r[<span class="dv">1</span>]), <span class="dt">to =</span> <span class="kw">ceiling</span>(r[<span class="dv">2</span>])),</span>
-<span id="cb4-37"><a href="#cb4-37"></a>    <span class="dt">lwd.ticks =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
-<span id="cb4-38"><a href="#cb4-38"></a>)</span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="kw">axis</span>(</span>
-<span id="cb4-40"><a href="#cb4-40"></a>    <span class="dv">1</span>, <span class="dt">at =</span> <span class="kw">seq_along</span>(o), <span class="dt">labels =</span> <span class="kw">names</span>(s[[n]][o]), <span class="dt">las =</span> <span class="dv">2</span>,</span>
-<span id="cb4-41"><a href="#cb4-41"></a>    <span class="dt">lwd.ticks =</span> 0L, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span></span>
-<span id="cb4-42"><a href="#cb4-42"></a>)</span>
-<span id="cb4-43"><a href="#cb4-43"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;#808080&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## divide data.frame by MELD</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">split</span>(zlog_data[labv], zlog_data<span class="sc">$</span>MeldCategory)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">## calculate mean standardized lab values</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">lapply</span>(s, colMeans, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(s)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>o <span class="ot">&lt;-</span> <span class="fu">order</span>(s[[n]])</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## comparison plot</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">rev</span>(<span class="fu">palette.colors</span>(n))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## keep old graphic parameters and restore them afterwards</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="fl">7.1</span>, <span class="fl">4.1</span>, <span class="fl">4.1</span>, <span class="fl">2.1</span>), <span class="at">cex =</span> <span class="fl">0.5</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    s[[n]][o], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> col[n],</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">ann =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(n <span class="sc">-</span> <span class="dv">1</span>)) {</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lines</span>(s[[i]][o], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> col[i])</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;bottomright&quot;</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend =</span> <span class="fu">names</span>(s),</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> col, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;MELD Category vs Mean Standardized Laboratory Values&quot;</span>, <span class="at">adj =</span> <span class="dv">0</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">xlab =</span> <span class="st">&quot;Laboratory Measurements&quot;</span>, <span class="at">adj =</span> 1L, <span class="at">line =</span> <span class="dv">5</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">ylab =</span> <span class="st">&quot;Mean Standardized Values&quot;</span>, <span class="at">adj =</span> 1L)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="fu">unlist</span>(s))</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>, <span class="at">at =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="fu">floor</span>(r[<span class="dv">1</span>]), <span class="at">to =</span> <span class="fu">ceiling</span>(r[<span class="dv">2</span>])),</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd.ticks =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>, <span class="at">at =</span> <span class="fu">seq_along</span>(o), <span class="at">labels =</span> <span class="fu">names</span>(s[[n]][o]), <span class="at">las =</span> <span class="dv">2</span>,</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd.ticks =</span> 0L, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="figure/linecharts.Rmd/linecharts_zlogmeanplot_meld-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-linecharts_zlogmeanplot_meld-1">
@@ -1186,7 +1197,7 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old.par)</span></code></pre></div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1195,8 +1206,8 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.0 (2021-05-18)
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.1.1 (2021-08-10)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
@@ -1214,21 +1225,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] targets_0.4.2
+[1] targets_0.8.0
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.2      compiler_4.1.0   
- [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   tools_4.1.0      
- [9] digest_0.6.27     evaluate_0.14     lifecycle_1.0.0   tibble_3.1.3     
-[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.1        
-[17] yaml_2.2.1        xfun_0.24         withr_2.4.2       stringr_1.4.0    
-[21] knitr_1.33        fs_1.5.0          vctrs_0.3.8       tidyselect_1.1.1 
-[25] rprojroot_2.0.2   glue_1.4.2        data.table_1.14.0 R6_2.5.0         
-[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.9     bookdown_0.22    
-[33] purrr_0.3.4       callr_3.7.0       magrittr_2.0.1    whisker_0.4      
-[37] promises_1.2.0.1  ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2   
-[41] htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.2        stringi_1.7.3    
-[45] crayon_1.4.1     </code></pre>
+ [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.3      compiler_4.1.1   
+ [5] later_1.3.0       jquerylib_0.1.4   git2r_0.28.0      workflowr_1.6.2  
+ [9] tools_4.1.1       digest_0.6.28     evaluate_0.14     lifecycle_1.0.1  
+[13] tibble_3.1.4      pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6     
+[17] cli_3.0.1         yaml_2.2.1        xfun_0.26         fastmap_1.1.0    
+[21] withr_2.4.2       stringr_1.4.0     knitr_1.34        fs_1.5.0         
+[25] vctrs_0.3.8       tidyselect_1.1.1  rprojroot_2.0.2   data.table_1.14.0
+[29] glue_1.4.2        R6_2.5.1          processx_3.5.2    fansi_0.5.0      
+[33] rmarkdown_2.11    bookdown_0.24     purrr_0.3.4       callr_3.7.0      
+[37] magrittr_2.0.1    whisker_0.4       promises_1.2.0.1  ps_1.6.0         
+[41] codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.3     
+[45] utf8_1.2.2        stringi_1.7.4     crayon_1.4.1     </code></pre>
 </div>
 </div>
 
@@ -1244,6 +1255,8 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
+
+
 
 
 </div>

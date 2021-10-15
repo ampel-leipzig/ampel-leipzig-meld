@@ -13,7 +13,8 @@
 
 <title>Boxplots</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -33,7 +34,6 @@
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -42,6 +42,8 @@ div.section {
   padding-top: 12px;
 }
 </style>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -65,6 +67,7 @@ div.section {
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -539,7 +542,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-08-18
+<strong>Last updated:</strong> 2021-10-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -667,20 +670,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8f258999c7a5a94f46c147bd3ede6a7fb69cc00dtargetblank8f25899a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8f258999c7a5a94f46c147bd3ede6a7fb69cc00d" target="_blank">8f25899</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8f258999c7a5a94f46c147bd3ede6a7fb69cc00dtargetblank8f25899a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8f258999c7a5a94f46c147bd3ede6a7fb69cc00d" target="_blank">8f25899</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -699,25 +702,16 @@ Ignored files:
     Ignored:    logs/
 
 Untracked files:
+    Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
+    Untracked:  _targets-debug.R
     Untracked:  coxtime-mwe.R
     Untracked:  coxtime.R
     Untracked:  deepsurv-mwe.R
     Untracked:  deepsurv.R
+    Untracked:  s12874-018-0482-1.pdf
     Untracked:  scripts/R.sh
-
-Unstaged changes:
-    Modified:   Makefile
-    Modified:   _targets.R
-    Modified:   analysis/benchmarks.Rmd
-    Modified:   code/01-data.R
-    Modified:   code/02-mlr-tasks.R
-    Modified:   code/03-mlr-learners.R
-    Modified:   code/04-mlr-benchmarking.R
-    Modified:   guix/channel/ampel/packages/rpackages.scm
-    Modified:   guix/manifest.scm
-    Modified:   scripts/Rscript.sh
 
 </code></pre>
 <p>
@@ -767,6 +761,23 @@ Message
 html
 </td>
 <td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/c66640c2b1856a5311392b2592f58ca80a5dfd34/docs/boxplots.html" target="_blank">c66640c</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-09-14
+</td>
+<td>
+feat: first nnet tests
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
 <a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/boxplots.html" target="_blank">afa48d9</a>
 </td>
 <td>
@@ -793,7 +804,7 @@ Sebastian Gibb
 2021-08-02
 </td>
 <td>
-Revert “fix: working directory for targets”
+Revert "fix: working directory for targets"
 </td>
 </tr>
 <tr>
@@ -973,38 +984,38 @@ refactor: move boxplots in separate report
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(<span class="st">&quot;beeswarm&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">library</span>(<span class="st">&quot;viridisLite&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">tar_load</span>(imp_data)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">tar_load</span>(zlog_data)</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a>.bp &lt;-<span class="st"> </span><span class="cf">function</span>(x, formula, <span class="dt">col =</span> <span class="kw">cividis</span>(<span class="kw">ncol</span>(x)), <span class="dt">main =</span> <span class="ot">NULL</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>                <span class="dt">outline =</span> <span class="ot">FALSE</span>) {</span>
-<span id="cb1-9"><a href="#cb1-9"></a>    <span class="kw">boxplot</span>(</span>
-<span id="cb1-10"><a href="#cb1-10"></a>        formula, <span class="dt">data =</span> x, <span class="dt">col =</span> <span class="kw">gsub</span>(<span class="st">&quot;..$&quot;</span>, <span class="st">&quot;40&quot;</span>, col),</span>
-<span id="cb1-11"><a href="#cb1-11"></a>        <span class="dt">pch =</span> <span class="ot">NA</span>, <span class="dt">outline =</span> outline,</span>
-<span id="cb1-12"><a href="#cb1-12"></a>        <span class="dt">main =</span> main</span>
-<span id="cb1-13"><a href="#cb1-13"></a>    )</span>
-<span id="cb1-14"><a href="#cb1-14"></a>    <span class="kw">beeswarm</span>(formula, <span class="dt">data =</span> x, <span class="dt">col =</span> col, <span class="dt">add =</span> <span class="ot">TRUE</span>, <span class="dt">pch =</span> 19L)</span>
-<span id="cb1-15"><a href="#cb1-15"></a>}</span></code></pre></div>
-<div id="raw-vs-zlog-data" class="section level1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;beeswarm&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridisLite&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(imp_data)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>.bp <span class="ot">&lt;-</span> <span class="cf">function</span>(x, formula, <span class="at">col =</span> <span class="fu">cividis</span>(<span class="fu">ncol</span>(x)), <span class="at">main =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">outline =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">boxplot</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        formula, <span class="at">data =</span> x, <span class="at">col =</span> <span class="fu">gsub</span>(<span class="st">&quot;..$&quot;</span>, <span class="st">&quot;40&quot;</span>, col),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">pch =</span> <span class="cn">NA</span>, <span class="at">outline =</span> outline,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> main</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">beeswarm</span>(formula, <span class="at">data =</span> x, <span class="at">col =</span> col, <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">pch =</span> 19L)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="raw-vs-zlog-data" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Raw vs Zlog Data</h1>
-<div id="compare-sexes" class="section level2">
+<div id="compare-sexes" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Compare Sexes</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(1L, 2L))</span>
-<span id="cb2-3"><a href="#cb2-3"></a>log_data &lt;-<span class="st"> </span>imp_data</span>
-<span id="cb2-4"><a href="#cb2-4"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb2-5"><a href="#cb2-5"></a>log_data[labv] &lt;-<span class="st"> </span><span class="kw">lapply</span>(log_data[labv], log)</span>
-<span id="cb2-6"><a href="#cb2-6"></a>col &lt;-<span class="st"> </span><span class="kw">cividis</span>(2L)</span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="kw">cat</span>(<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">### &#39;</span>, v, <span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">&#39;</span>)</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    fm &lt;-<span class="st"> </span><span class="kw">as.formula</span>(<span class="kw">paste0</span>(v, <span class="st">&quot; ~ Sex&quot;</span>))</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="kw">.bp</span>(log_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;log()&quot;</span>)</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    <span class="kw">.bp</span>(zlog_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
-<span id="cb2-12"><a href="#cb2-12"></a>}</span></code></pre></div>
-<div id="alat_s" class="section level3">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(1L, 2L))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>log_data <span class="ot">&lt;-</span> imp_data</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>labv <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="fu">colnames</span>(imp_data), <span class="at">value =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>log_data[labv] <span class="ot">&lt;-</span> <span class="fu">lapply</span>(log_data[labv], log)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">cividis</span>(2L)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">### &#39;</span>, v, <span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">&#39;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    fm <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste0</span>(v, <span class="st">&quot; ~ Sex&quot;</span>))</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bp</span>(log_data, fm, <span class="at">col =</span> col, <span class="at">main =</span> <span class="st">&quot;log()&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bp</span>(zlog_data, fm, <span class="at">col =</span> col, <span class="at">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="alat_s" class="section level3" number="1.1.1">
 <h3><span class="header-section-number">1.1.1</span> ALAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1045,7 +1056,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="alb_s" class="section level3">
+<div id="alb_s" class="section level3" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> ALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-2.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1097,7 +1108,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ap_s" class="section level3">
+<div id="ap_s" class="section level3" number="1.1.3">
 <h3><span class="header-section-number">1.1.3</span> AP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-3.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1149,7 +1160,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="asat_s" class="section level3">
+<div id="asat_s" class="section level3" number="1.1.4">
 <h3><span class="header-section-number">1.1.4</span> ASAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-4.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1201,7 +1212,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_mpv_e" class="section level3">
+<div id="b_mpv_e" class="section level3" number="1.1.5">
 <h3><span class="header-section-number">1.1.5</span> B_MPV_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-5.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1253,7 +1264,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_plt_e" class="section level3">
+<div id="b_plt_e" class="section level3" number="1.1.6">
 <h3><span class="header-section-number">1.1.6</span> B_PLT_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-6.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1305,7 +1316,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_wbc_e" class="section level3">
+<div id="b_wbc_e" class="section level3" number="1.1.7">
 <h3><span class="header-section-number">1.1.7</span> B_WBC_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-7.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1357,7 +1368,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bili_s" class="section level3">
+<div id="bili_s" class="section level3" number="1.1.8">
 <h3><span class="header-section-number">1.1.8</span> BILI_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-8.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1409,7 +1420,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bilid_s" class="section level3">
+<div id="bilid_s" class="section level3" number="1.1.9">
 <h3><span class="header-section-number">1.1.9</span> BILID_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-9.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1461,7 +1472,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ca_s" class="section level3">
+<div id="ca_s" class="section level3" number="1.1.10">
 <h3><span class="header-section-number">1.1.10</span> CA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-10.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1513,7 +1524,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="che_s" class="section level3">
+<div id="che_s" class="section level3" number="1.1.11">
 <h3><span class="header-section-number">1.1.11</span> CHE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-11.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1565,7 +1576,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cholg_s" class="section level3">
+<div id="cholg_s" class="section level3" number="1.1.12">
 <h3><span class="header-section-number">1.1.12</span> CHOLG_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-12.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1617,7 +1628,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cl_s" class="section level3">
+<div id="cl_s" class="section level3" number="1.1.13">
 <h3><span class="header-section-number">1.1.13</span> CL_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-13.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1669,7 +1680,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cre_s" class="section level3">
+<div id="cre_s" class="section level3" number="1.1.14">
 <h3><span class="header-section-number">1.1.14</span> CRE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-14.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1721,7 +1732,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="crp_s" class="section level3">
+<div id="crp_s" class="section level3" number="1.1.15">
 <h3><span class="header-section-number">1.1.15</span> CRP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-15.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1773,7 +1784,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cysc_s" class="section level3">
+<div id="cysc_s" class="section level3" number="1.1.16">
 <h3><span class="header-section-number">1.1.16</span> CYSC_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-16.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1825,7 +1836,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ggt_s" class="section level3">
+<div id="ggt_s" class="section level3" number="1.1.17">
 <h3><span class="header-section-number">1.1.17</span> GGT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-17.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1877,7 +1888,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="il6_s" class="section level3">
+<div id="il6_s" class="section level3" number="1.1.18">
 <h3><span class="header-section-number">1.1.18</span> IL6_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-18.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1929,7 +1940,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="inr_c" class="section level3">
+<div id="inr_c" class="section level3" number="1.1.19">
 <h3><span class="header-section-number">1.1.19</span> INR_C</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-19.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -1981,7 +1992,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="na_s" class="section level3">
+<div id="na_s" class="section level3" number="1.1.20">
 <h3><span class="header-section-number">1.1.20</span> NA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-20.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2022,7 +2033,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="p_s" class="section level3">
+<div id="p_s" class="section level3" number="1.1.21">
 <h3><span class="header-section-number">1.1.21</span> P_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-21.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2074,7 +2085,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="palb_s" class="section level3">
+<div id="palb_s" class="section level3" number="1.1.22">
 <h3><span class="header-section-number">1.1.22</span> PALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-22.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2126,7 +2137,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="prot_s" class="section level3">
+<div id="prot_s" class="section level3" number="1.1.23">
 <h3><span class="header-section-number">1.1.23</span> PROT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-23.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2178,7 +2189,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="pth_s" class="section level3">
+<div id="pth_s" class="section level3" number="1.1.24">
 <h3><span class="header-section-number">1.1.24</span> PTH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-24.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2230,7 +2241,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="vdt_oh_s" class="section level3">
+<div id="vdt_oh_s" class="section level3" number="1.1.25">
 <h3><span class="header-section-number">1.1.25</span> VDT_OH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex-25.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2281,20 +2292,20 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old.par)</span></code></pre></div>
 </div>
 </div>
-<div id="compare-status" class="section level2">
+<div id="compare-status" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Compare Status</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(1L, 2L))</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
-<span id="cb4-4"><a href="#cb4-4"></a>    <span class="kw">cat</span>(<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">### &#39;</span>, v, <span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">&#39;</span>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    fm &lt;-<span class="st"> </span><span class="kw">as.formula</span>(<span class="kw">paste0</span>(v, <span class="st">&quot; ~ Deceased&quot;</span>))</span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="kw">.bp</span>(log_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;log()&quot;</span>)</span>
-<span id="cb4-7"><a href="#cb4-7"></a>    <span class="kw">.bp</span>(zlog_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
-<span id="cb4-8"><a href="#cb4-8"></a>}</span></code></pre></div>
-<div id="alat_s-1" class="section level3">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(1L, 2L))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">### &#39;</span>, v, <span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">&#39;</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    fm <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste0</span>(v, <span class="st">&quot; ~ Deceased&quot;</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bp</span>(log_data, fm, <span class="at">col =</span> col, <span class="at">main =</span> <span class="st">&quot;log()&quot;</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bp</span>(zlog_data, fm, <span class="at">col =</span> col, <span class="at">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="alat_s-1" class="section level3" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> ALAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2346,7 +2357,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="alb_s-1" class="section level3">
+<div id="alb_s-1" class="section level3" number="1.2.2">
 <h3><span class="header-section-number">1.2.2</span> ALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-2.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2398,7 +2409,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ap_s-1" class="section level3">
+<div id="ap_s-1" class="section level3" number="1.2.3">
 <h3><span class="header-section-number">1.2.3</span> AP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-3.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2450,7 +2461,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="asat_s-1" class="section level3">
+<div id="asat_s-1" class="section level3" number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> ASAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-4.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2502,7 +2513,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_mpv_e-1" class="section level3">
+<div id="b_mpv_e-1" class="section level3" number="1.2.5">
 <h3><span class="header-section-number">1.2.5</span> B_MPV_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-5.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2554,7 +2565,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_plt_e-1" class="section level3">
+<div id="b_plt_e-1" class="section level3" number="1.2.6">
 <h3><span class="header-section-number">1.2.6</span> B_PLT_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-6.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2606,7 +2617,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_wbc_e-1" class="section level3">
+<div id="b_wbc_e-1" class="section level3" number="1.2.7">
 <h3><span class="header-section-number">1.2.7</span> B_WBC_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-7.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2658,7 +2669,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bili_s-1" class="section level3">
+<div id="bili_s-1" class="section level3" number="1.2.8">
 <h3><span class="header-section-number">1.2.8</span> BILI_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-8.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2710,7 +2721,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bilid_s-1" class="section level3">
+<div id="bilid_s-1" class="section level3" number="1.2.9">
 <h3><span class="header-section-number">1.2.9</span> BILID_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-9.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2762,7 +2773,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ca_s-1" class="section level3">
+<div id="ca_s-1" class="section level3" number="1.2.10">
 <h3><span class="header-section-number">1.2.10</span> CA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-10.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2814,7 +2825,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="che_s-1" class="section level3">
+<div id="che_s-1" class="section level3" number="1.2.11">
 <h3><span class="header-section-number">1.2.11</span> CHE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-11.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2866,7 +2877,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cholg_s-1" class="section level3">
+<div id="cholg_s-1" class="section level3" number="1.2.12">
 <h3><span class="header-section-number">1.2.12</span> CHOLG_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-12.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2918,7 +2929,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cl_s-1" class="section level3">
+<div id="cl_s-1" class="section level3" number="1.2.13">
 <h3><span class="header-section-number">1.2.13</span> CL_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-13.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -2970,7 +2981,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cre_s-1" class="section level3">
+<div id="cre_s-1" class="section level3" number="1.2.14">
 <h3><span class="header-section-number">1.2.14</span> CRE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-14.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3022,7 +3033,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="crp_s-1" class="section level3">
+<div id="crp_s-1" class="section level3" number="1.2.15">
 <h3><span class="header-section-number">1.2.15</span> CRP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-15.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3074,7 +3085,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cysc_s-1" class="section level3">
+<div id="cysc_s-1" class="section level3" number="1.2.16">
 <h3><span class="header-section-number">1.2.16</span> CYSC_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-16.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3126,7 +3137,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ggt_s-1" class="section level3">
+<div id="ggt_s-1" class="section level3" number="1.2.17">
 <h3><span class="header-section-number">1.2.17</span> GGT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-17.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3178,7 +3189,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="il6_s-1" class="section level3">
+<div id="il6_s-1" class="section level3" number="1.2.18">
 <h3><span class="header-section-number">1.2.18</span> IL6_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-18.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3230,7 +3241,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="inr_c-1" class="section level3">
+<div id="inr_c-1" class="section level3" number="1.2.19">
 <h3><span class="header-section-number">1.2.19</span> INR_C</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-19.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3282,7 +3293,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="na_s-1" class="section level3">
+<div id="na_s-1" class="section level3" number="1.2.20">
 <h3><span class="header-section-number">1.2.20</span> NA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-20.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3334,7 +3345,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="p_s-1" class="section level3">
+<div id="p_s-1" class="section level3" number="1.2.21">
 <h3><span class="header-section-number">1.2.21</span> P_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-21.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3386,7 +3397,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="palb_s-1" class="section level3">
+<div id="palb_s-1" class="section level3" number="1.2.22">
 <h3><span class="header-section-number">1.2.22</span> PALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-22.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3438,7 +3449,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="prot_s-1" class="section level3">
+<div id="prot_s-1" class="section level3" number="1.2.23">
 <h3><span class="header-section-number">1.2.23</span> PROT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-23.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3490,7 +3501,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="pth_s-1" class="section level3">
+<div id="pth_s-1" class="section level3" number="1.2.24">
 <h3><span class="header-section-number">1.2.24</span> PTH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-24.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3542,7 +3553,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="vdt_oh_s-1" class="section level3">
+<div id="vdt_oh_s-1" class="section level3" number="1.2.25">
 <h3><span class="header-section-number">1.2.25</span> VDT_OH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_status-25.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3593,21 +3604,21 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old.par)</span></code></pre></div>
 </div>
 </div>
-<div id="compare-sexes-status" class="section level2">
+<div id="compare-sexes-status" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Compare Sexes : Status</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>old.par &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">no.readonly =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(1L, 2L))</span>
-<span id="cb6-3"><a href="#cb6-3"></a>col &lt;-<span class="st"> </span><span class="kw">cividis</span>(4L)</span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
-<span id="cb6-5"><a href="#cb6-5"></a>    <span class="kw">cat</span>(<span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">### &#39;</span>, v, <span class="st">&#39;</span><span class="ch">\n\n</span><span class="st">&#39;</span>)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>    fm &lt;-<span class="st"> </span><span class="kw">as.formula</span>(<span class="kw">paste0</span>(v, <span class="st">&quot; ~ Sex + Deceased&quot;</span>))</span>
-<span id="cb6-7"><a href="#cb6-7"></a>    <span class="kw">.bp</span>(log_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;log()&quot;</span>)</span>
-<span id="cb6-8"><a href="#cb6-8"></a>    <span class="kw">.bp</span>(zlog_data, fm, <span class="dt">col =</span> col, <span class="dt">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>}</span></code></pre></div>
-<div id="alat_s-2" class="section level3">
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(1L, 2L))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> <span class="fu">cividis</span>(4L)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">### &#39;</span>, v, <span class="st">&#39;</span><span class="sc">\n\n</span><span class="st">&#39;</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    fm <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste0</span>(v, <span class="st">&quot; ~ Sex + Deceased&quot;</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bp</span>(log_data, fm, <span class="at">col =</span> col, <span class="at">main =</span> <span class="st">&quot;log()&quot;</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.bp</span>(zlog_data, fm, <span class="at">col =</span> col, <span class="at">main =</span> <span class="st">&quot;zlog()&quot;</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="alat_s-2" class="section level3" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> ALAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3659,7 +3670,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="alb_s-2" class="section level3">
+<div id="alb_s-2" class="section level3" number="1.3.2">
 <h3><span class="header-section-number">1.3.2</span> ALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-2.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3711,7 +3722,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ap_s-2" class="section level3">
+<div id="ap_s-2" class="section level3" number="1.3.3">
 <h3><span class="header-section-number">1.3.3</span> AP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-3.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3763,7 +3774,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="asat_s-2" class="section level3">
+<div id="asat_s-2" class="section level3" number="1.3.4">
 <h3><span class="header-section-number">1.3.4</span> ASAT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-4.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3815,7 +3826,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_mpv_e-2" class="section level3">
+<div id="b_mpv_e-2" class="section level3" number="1.3.5">
 <h3><span class="header-section-number">1.3.5</span> B_MPV_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-5.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3867,7 +3878,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_plt_e-2" class="section level3">
+<div id="b_plt_e-2" class="section level3" number="1.3.6">
 <h3><span class="header-section-number">1.3.6</span> B_PLT_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-6.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3919,7 +3930,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_wbc_e-2" class="section level3">
+<div id="b_wbc_e-2" class="section level3" number="1.3.7">
 <h3><span class="header-section-number">1.3.7</span> B_WBC_E</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-7.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -3971,7 +3982,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bili_s-2" class="section level3">
+<div id="bili_s-2" class="section level3" number="1.3.8">
 <h3><span class="header-section-number">1.3.8</span> BILI_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-8.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4023,7 +4034,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bilid_s-2" class="section level3">
+<div id="bilid_s-2" class="section level3" number="1.3.9">
 <h3><span class="header-section-number">1.3.9</span> BILID_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-9.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4075,7 +4086,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ca_s-2" class="section level3">
+<div id="ca_s-2" class="section level3" number="1.3.10">
 <h3><span class="header-section-number">1.3.10</span> CA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-10.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4127,7 +4138,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="che_s-2" class="section level3">
+<div id="che_s-2" class="section level3" number="1.3.11">
 <h3><span class="header-section-number">1.3.11</span> CHE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-11.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4179,7 +4190,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cholg_s-2" class="section level3">
+<div id="cholg_s-2" class="section level3" number="1.3.12">
 <h3><span class="header-section-number">1.3.12</span> CHOLG_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-12.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4231,7 +4242,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cl_s-2" class="section level3">
+<div id="cl_s-2" class="section level3" number="1.3.13">
 <h3><span class="header-section-number">1.3.13</span> CL_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-13.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4283,7 +4294,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cre_s-2" class="section level3">
+<div id="cre_s-2" class="section level3" number="1.3.14">
 <h3><span class="header-section-number">1.3.14</span> CRE_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-14.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4335,7 +4346,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="crp_s-2" class="section level3">
+<div id="crp_s-2" class="section level3" number="1.3.15">
 <h3><span class="header-section-number">1.3.15</span> CRP_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-15.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4387,7 +4398,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cysc_s-2" class="section level3">
+<div id="cysc_s-2" class="section level3" number="1.3.16">
 <h3><span class="header-section-number">1.3.16</span> CYSC_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-16.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4439,7 +4450,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ggt_s-2" class="section level3">
+<div id="ggt_s-2" class="section level3" number="1.3.17">
 <h3><span class="header-section-number">1.3.17</span> GGT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-17.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4491,7 +4502,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="il6_s-2" class="section level3">
+<div id="il6_s-2" class="section level3" number="1.3.18">
 <h3><span class="header-section-number">1.3.18</span> IL6_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-18.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4543,7 +4554,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="inr_c-2" class="section level3">
+<div id="inr_c-2" class="section level3" number="1.3.19">
 <h3><span class="header-section-number">1.3.19</span> INR_C</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-19.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4595,7 +4606,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="na_s-2" class="section level3">
+<div id="na_s-2" class="section level3" number="1.3.20">
 <h3><span class="header-section-number">1.3.20</span> NA_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-20.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4647,7 +4658,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="p_s-2" class="section level3">
+<div id="p_s-2" class="section level3" number="1.3.21">
 <h3><span class="header-section-number">1.3.21</span> P_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-21.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4699,7 +4710,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="palb_s-2" class="section level3">
+<div id="palb_s-2" class="section level3" number="1.3.22">
 <h3><span class="header-section-number">1.3.22</span> PALB_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-22.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4751,7 +4762,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="prot_s-2" class="section level3">
+<div id="prot_s-2" class="section level3" number="1.3.23">
 <h3><span class="header-section-number">1.3.23</span> PROT_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-23.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4803,7 +4814,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="pth_s-2" class="section level3">
+<div id="pth_s-2" class="section level3" number="1.3.24">
 <h3><span class="header-section-number">1.3.24</span> PTH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-24.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4855,7 +4866,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="vdt_oh_s-2" class="section level3">
+<div id="vdt_oh_s-2" class="section level3" number="1.3.25">
 <h3><span class="header-section-number">1.3.25</span> VDT_OH_S</h3>
 <p><img src="figure/boxplots.Rmd/boxplots_rvsz_sex_status-25.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
@@ -4906,7 +4917,7 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">par</span>(old.par)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old.par)</span></code></pre></div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -4915,8 +4926,8 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.0 (2021-05-18)
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.1.1 (2021-08-10)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
@@ -4934,21 +4945,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] viridisLite_0.4.0 beeswarm_0.4.0    targets_0.4.2    
+[1] viridisLite_0.4.0 beeswarm_0.4.0    targets_0.8.0    
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.2      compiler_4.1.0   
- [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   tools_4.1.0      
- [9] digest_0.6.27     evaluate_0.14     lifecycle_1.0.0   tibble_3.1.3     
-[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.1        
-[17] yaml_2.2.1        xfun_0.24         withr_2.4.2       stringr_1.4.0    
-[21] knitr_1.33        fs_1.5.0          vctrs_0.3.8       tidyselect_1.1.1 
-[25] rprojroot_2.0.2   glue_1.4.2        data.table_1.14.0 R6_2.5.0         
-[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.9     bookdown_0.22    
-[33] purrr_0.3.4       callr_3.7.0       magrittr_2.0.1    whisker_0.4      
-[37] promises_1.2.0.1  ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2   
-[41] htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.2        stringi_1.7.3    
-[45] crayon_1.4.1     </code></pre>
+ [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.3      compiler_4.1.1   
+ [5] later_1.3.0       jquerylib_0.1.4   git2r_0.28.0      workflowr_1.6.2  
+ [9] tools_4.1.1       digest_0.6.28     evaluate_0.14     lifecycle_1.0.1  
+[13] tibble_3.1.4      pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6     
+[17] cli_3.0.1         yaml_2.2.1        xfun_0.26         fastmap_1.1.0    
+[21] withr_2.4.2       stringr_1.4.0     knitr_1.34        fs_1.5.0         
+[25] vctrs_0.3.8       tidyselect_1.1.1  rprojroot_2.0.2   data.table_1.14.0
+[29] glue_1.4.2        R6_2.5.1          processx_3.5.2    fansi_0.5.0      
+[33] rmarkdown_2.11    bookdown_0.24     purrr_0.3.4       callr_3.7.0      
+[37] magrittr_2.0.1    whisker_0.4       promises_1.2.0.1  ps_1.6.0         
+[41] codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.3     
+[45] utf8_1.2.2        stringi_1.7.4     crayon_1.4.1     </code></pre>
 </div>
 </div>
 </div>
@@ -4966,6 +4977,8 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
+
+
 
 
 </div>

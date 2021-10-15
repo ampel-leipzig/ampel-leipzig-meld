@@ -13,7 +13,8 @@
 
 <title>Histograms</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -33,7 +34,6 @@
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -42,6 +42,8 @@ div.section {
   padding-top: 12px;
 }
 </style>
+
+
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -65,6 +67,7 @@ div.section {
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -539,7 +542,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-08-07
+<strong>Last updated:</strong> 2021-10-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -667,20 +670,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69targetblank6bfd31ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69" target="_blank">6bfd31c</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69targetblank6bfd31ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/6bfd31ce82423f8b25a88403f7cb7ab1f57e3b69" target="_blank">6bfd31c</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -699,9 +702,16 @@ Ignored files:
     Ignored:    logs/
 
 Untracked files:
+    Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  scripts/bootstrap.sh
+    Untracked:  _targets-debug.R
+    Untracked:  coxtime-mwe.R
+    Untracked:  coxtime.R
+    Untracked:  deepsurv-mwe.R
+    Untracked:  deepsurv.R
+    Untracked:  s12874-018-0482-1.pdf
+    Untracked:  scripts/R.sh
 
 </code></pre>
 <p>
@@ -748,6 +758,23 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/histograms.html" target="_blank">afa48d9</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-07
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
@@ -760,7 +787,7 @@ Sebastian Gibb
 2021-08-02
 </td>
 <td>
-Revert “fix: working directory for targets”
+Revert "fix: working directory for targets"
 </td>
 </tr>
 <tr>
@@ -1144,25 +1171,25 @@ feat: add basic targets workflow
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">tar_load</span>(imp_data)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">tar_load</span>(zlog_data)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>.hist &lt;-<span class="st"> </span><span class="cf">function</span>(</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    ..., <span class="dt">xlab =</span> <span class="kw">deparse</span>(<span class="kw">substitute</span>(x)), <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;Histogram of&quot;</span>, xlab),</span>
-<span id="cb1-7"><a href="#cb1-7"></a>    <span class="dt">col =</span> <span class="kw">palette.colors</span>(2L)[2L]</span>
-<span id="cb1-8"><a href="#cb1-8"></a>)<span class="kw">hist</span>(..., <span class="dt">main =</span> main, <span class="dt">xlab =</span> xlab, <span class="dt">col =</span> col)</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>.qqnorm &lt;-<span class="st"> </span><span class="cf">function</span>(y, ..., <span class="dt">yname =</span> <span class="kw">deparse</span>(<span class="kw">substitute</span>(y)),</span>
-<span id="cb1-11"><a href="#cb1-11"></a>    <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Normal Q-Q Plot (&quot;</span>, yname, <span class="st">&quot;)&quot;</span>),</span>
-<span id="cb1-12"><a href="#cb1-12"></a>    <span class="dt">ylab =</span> <span class="kw">paste0</span>(<span class="st">&quot;Sample Quantiles (&quot;</span>, yname, <span class="st">&quot;)&quot;</span>),</span>
-<span id="cb1-13"><a href="#cb1-13"></a>    <span class="dt">col =</span> <span class="kw">palette.colors</span>(2L)[2L]) {</span>
-<span id="cb1-14"><a href="#cb1-14"></a>    <span class="kw">qqnorm</span>(y, ..., <span class="dt">main =</span> main, <span class="dt">ylab =</span> ylab, <span class="dt">col =</span> col, <span class="dt">pch =</span> 19L)</span>
-<span id="cb1-15"><a href="#cb1-15"></a>    <span class="kw">qqline</span>(y, ..., <span class="dt">col =</span> col)</span>
-<span id="cb1-16"><a href="#cb1-16"></a>}</span></code></pre></div>
-<div id="age" class="section level1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(imp_data)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>.hist <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    ..., <span class="at">xlab =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(x)), <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">&quot;Histogram of&quot;</span>, xlab),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">palette.colors</span>(2L)[2L]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)<span class="fu">hist</span>(..., <span class="at">main =</span> main, <span class="at">xlab =</span> xlab, <span class="at">col =</span> col)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>.qqnorm <span class="ot">&lt;-</span> <span class="cf">function</span>(y, ..., <span class="at">yname =</span> <span class="fu">deparse</span>(<span class="fu">substitute</span>(y)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;Normal Q-Q Plot (&quot;</span>, yname, <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="fu">paste0</span>(<span class="st">&quot;Sample Quantiles (&quot;</span>, yname, <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">palette.colors</span>(2L)[2L]) {</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">qqnorm</span>(y, ..., <span class="at">main =</span> main, <span class="at">ylab =</span> ylab, <span class="at">col =</span> col, <span class="at">pch =</span> 19L)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">qqline</span>(y, ..., <span class="at">col =</span> col)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="age" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Age</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">.hist</span>(imp_data<span class="op">$</span>Age, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.hist</span>(imp_data<span class="sc">$</span>Age, <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>)</span></code></pre></div>
 <p><img src="figure/histograms.Rmd/histograms_age-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-histograms_age-1">
@@ -1213,16 +1240,16 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="raw-data-imputed" class="section level1">
+<div id="raw-data-imputed" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Raw Data (imputed)</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>labv &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="kw">colnames</span>(imp_data), <span class="dt">value =</span> <span class="ot">TRUE</span>))</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
-<span id="cb3-4"><a href="#cb3-4"></a>    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>    <span class="kw">.hist</span>(imp_data[[v]], <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="dt">xlab =</span> v)</span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="kw">.qqnorm</span>(imp_data[[v]], <span class="dt">yname =</span> v)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>}</span></code></pre></div>
-<div id="alat_s" class="section level2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>labv <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">grep</span>(<span class="st">&quot;_[SECQ]$&quot;</span>, <span class="fu">colnames</span>(imp_data), <span class="at">value =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.hist</span>(imp_data[[v]], <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="at">xlab =</span> v)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.qqnorm</span>(imp_data[[v]], <span class="at">yname =</span> v)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="alat_s" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> ALAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1367,7 +1394,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="alb_s" class="section level2">
+<div id="alb_s" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> ALB_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1523,7 +1550,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ap_s" class="section level2">
+<div id="ap_s" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> AP_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-5.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1679,7 +1706,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="asat_s" class="section level2">
+<div id="asat_s" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> ASAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-7.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1824,7 +1851,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_mpv_e" class="section level2">
+<div id="b_mpv_e" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> B_MPV_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-9.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1980,7 +2007,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_plt_e" class="section level2">
+<div id="b_plt_e" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> B_PLT_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-11.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2125,7 +2152,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_wbc_e" class="section level2">
+<div id="b_wbc_e" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> B_WBC_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-13.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2270,7 +2297,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bili_s" class="section level2">
+<div id="bili_s" class="section level2" number="2.8">
 <h2><span class="header-section-number">2.8</span> BILI_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-15.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2426,7 +2453,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bilid_s" class="section level2">
+<div id="bilid_s" class="section level2" number="2.9">
 <h2><span class="header-section-number">2.9</span> BILID_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-17.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2582,7 +2609,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ca_s" class="section level2">
+<div id="ca_s" class="section level2" number="2.10">
 <h2><span class="header-section-number">2.10</span> CA_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-19.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2738,7 +2765,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="che_s" class="section level2">
+<div id="che_s" class="section level2" number="2.11">
 <h2><span class="header-section-number">2.11</span> CHE_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-21.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -2894,7 +2921,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cholg_s" class="section level2">
+<div id="cholg_s" class="section level2" number="2.12">
 <h2><span class="header-section-number">2.12</span> CHOLG_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-23.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3050,7 +3077,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cl_s" class="section level2">
+<div id="cl_s" class="section level2" number="2.13">
 <h2><span class="header-section-number">2.13</span> CL_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-25.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3184,7 +3211,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cre_s" class="section level2">
+<div id="cre_s" class="section level2" number="2.14">
 <h2><span class="header-section-number">2.14</span> CRE_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-27.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3296,7 +3323,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="crp_s" class="section level2">
+<div id="crp_s" class="section level2" number="2.15">
 <h2><span class="header-section-number">2.15</span> CRP_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-29.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3408,7 +3435,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cysc_s" class="section level2">
+<div id="cysc_s" class="section level2" number="2.16">
 <h2><span class="header-section-number">2.16</span> CYSC_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-31.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3520,7 +3547,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ggt_s" class="section level2">
+<div id="ggt_s" class="section level2" number="2.17">
 <h2><span class="header-section-number">2.17</span> GGT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-33.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3632,7 +3659,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="il6_s" class="section level2">
+<div id="il6_s" class="section level2" number="2.18">
 <h2><span class="header-section-number">2.18</span> IL6_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-35.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3744,7 +3771,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="inr_c" class="section level2">
+<div id="inr_c" class="section level2" number="2.19">
 <h2><span class="header-section-number">2.19</span> INR_C</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-37.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3856,7 +3883,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="na_s" class="section level2">
+<div id="na_s" class="section level2" number="2.20">
 <h2><span class="header-section-number">2.20</span> NA_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-39.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -3968,7 +3995,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="p_s" class="section level2">
+<div id="p_s" class="section level2" number="2.21">
 <h2><span class="header-section-number">2.21</span> P_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-41.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4080,7 +4107,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="palb_s" class="section level2">
+<div id="palb_s" class="section level2" number="2.22">
 <h2><span class="header-section-number">2.22</span> PALB_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-43.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4192,7 +4219,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="prot_s" class="section level2">
+<div id="prot_s" class="section level2" number="2.23">
 <h2><span class="header-section-number">2.23</span> PROT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-45.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4304,7 +4331,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="pth_s" class="section level2">
+<div id="pth_s" class="section level2" number="2.24">
 <h2><span class="header-section-number">2.24</span> PTH_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-47.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4416,7 +4443,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="vdt_oh_s" class="section level2">
+<div id="vdt_oh_s" class="section level2" number="2.25">
 <h2><span class="header-section-number">2.25</span> VDT_OH_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs-49.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4529,14 +4556,14 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="zlog-data-imputed" class="section level1">
+<div id="zlog-data-imputed" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Zlog Data (imputed)</h1>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
-<span id="cb4-2"><a href="#cb4-2"></a>    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>    <span class="kw">.hist</span>(zlog_data[[v]], <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="dt">xlab =</span> v)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>    <span class="kw">.qqnorm</span>(zlog_data[[v]], <span class="dt">yname =</span> v)</span>
-<span id="cb4-5"><a href="#cb4-5"></a>}</span></code></pre></div>
-<div id="alat_s-1" class="section level2">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (v <span class="cf">in</span> labv) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.hist</span>(zlog_data[[v]], <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="at">xlab =</span> v)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.qqnorm</span>(zlog_data[[v]], <span class="at">yname =</span> v)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="alat_s-1" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> ALAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4648,7 +4675,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="alb_s-1" class="section level2">
+<div id="alb_s-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> ALB_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4760,7 +4787,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ap_s-1" class="section level2">
+<div id="ap_s-1" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> AP_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-5.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4872,7 +4899,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="asat_s-1" class="section level2">
+<div id="asat_s-1" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> ASAT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-7.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -4984,7 +5011,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_mpv_e-1" class="section level2">
+<div id="b_mpv_e-1" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> B_MPV_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-9.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5096,7 +5123,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_plt_e-1" class="section level2">
+<div id="b_plt_e-1" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> B_PLT_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-11.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5208,7 +5235,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="b_wbc_e-1" class="section level2">
+<div id="b_wbc_e-1" class="section level2" number="3.7">
 <h2><span class="header-section-number">3.7</span> B_WBC_E</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-13.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5320,7 +5347,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bili_s-1" class="section level2">
+<div id="bili_s-1" class="section level2" number="3.8">
 <h2><span class="header-section-number">3.8</span> BILI_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-15.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5432,7 +5459,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bilid_s-1" class="section level2">
+<div id="bilid_s-1" class="section level2" number="3.9">
 <h2><span class="header-section-number">3.9</span> BILID_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-17.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5544,7 +5571,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ca_s-1" class="section level2">
+<div id="ca_s-1" class="section level2" number="3.10">
 <h2><span class="header-section-number">3.10</span> CA_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-19.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5656,7 +5683,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="che_s-1" class="section level2">
+<div id="che_s-1" class="section level2" number="3.11">
 <h2><span class="header-section-number">3.11</span> CHE_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-21.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5768,7 +5795,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cholg_s-1" class="section level2">
+<div id="cholg_s-1" class="section level2" number="3.12">
 <h2><span class="header-section-number">3.12</span> CHOLG_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-23.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5880,7 +5907,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cl_s-1" class="section level2">
+<div id="cl_s-1" class="section level2" number="3.13">
 <h2><span class="header-section-number">3.13</span> CL_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-25.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -5992,7 +6019,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cre_s-1" class="section level2">
+<div id="cre_s-1" class="section level2" number="3.14">
 <h2><span class="header-section-number">3.14</span> CRE_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-27.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6104,7 +6131,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="crp_s-1" class="section level2">
+<div id="crp_s-1" class="section level2" number="3.15">
 <h2><span class="header-section-number">3.15</span> CRP_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-29.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6216,7 +6243,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="cysc_s-1" class="section level2">
+<div id="cysc_s-1" class="section level2" number="3.16">
 <h2><span class="header-section-number">3.16</span> CYSC_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-31.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6328,7 +6355,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="ggt_s-1" class="section level2">
+<div id="ggt_s-1" class="section level2" number="3.17">
 <h2><span class="header-section-number">3.17</span> GGT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-33.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6440,7 +6467,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="il6_s-1" class="section level2">
+<div id="il6_s-1" class="section level2" number="3.18">
 <h2><span class="header-section-number">3.18</span> IL6_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-35.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6552,7 +6579,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="inr_c-1" class="section level2">
+<div id="inr_c-1" class="section level2" number="3.19">
 <h2><span class="header-section-number">3.19</span> INR_C</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-37.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6664,7 +6691,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="na_s-1" class="section level2">
+<div id="na_s-1" class="section level2" number="3.20">
 <h2><span class="header-section-number">3.20</span> NA_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-39.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6776,7 +6803,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="p_s-1" class="section level2">
+<div id="p_s-1" class="section level2" number="3.21">
 <h2><span class="header-section-number">3.21</span> P_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-41.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -6888,7 +6915,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="palb_s-1" class="section level2">
+<div id="palb_s-1" class="section level2" number="3.22">
 <h2><span class="header-section-number">3.22</span> PALB_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-43.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7000,7 +7027,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="prot_s-1" class="section level2">
+<div id="prot_s-1" class="section level2" number="3.23">
 <h2><span class="header-section-number">3.23</span> PROT_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-45.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7112,7 +7139,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="pth_s-1" class="section level2">
+<div id="pth_s-1" class="section level2" number="3.24">
 <h2><span class="header-section-number">3.24</span> PTH_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-47.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7224,7 +7251,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="vdt_oh_s-1" class="section level2">
+<div id="vdt_oh_s-1" class="section level2" number="3.25">
 <h2><span class="header-section-number">3.25</span> VDT_OH_S</h2>
 <p><img src="figure/histograms.Rmd/histograms_labs_zlog-49.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7315,15 +7342,15 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="meld-scores-imputed" class="section level1">
+<div id="meld-scores-imputed" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> MELD Scores (imputed)</h1>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>meldv &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="kw">paste0</span>(<span class="st">&quot;ScoreMeld&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;Na&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>)), <span class="st">&quot;ProbMeldPlus7&quot;</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="cf">for</span> (v <span class="cf">in</span> meldv) {</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="kw">.hist</span>(zlog_data[[v]], <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="dt">xlab =</span> v)</span>
-<span id="cb5-5"><a href="#cb5-5"></a>    <span class="kw">.qqnorm</span>(zlog_data[[v]], <span class="dt">yname =</span> v)</span>
-<span id="cb5-6"><a href="#cb5-6"></a>}</span></code></pre></div>
-<div id="scoremeld" class="section level2">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>meldv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">&quot;ScoreMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;Na&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>)), <span class="st">&quot;ProbMeldPlus7&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (v <span class="cf">in</span> meldv) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">##&quot;</span>, v , <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.hist</span>(zlog_data[[v]], <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">&quot;Histogram of &quot;</span>, v), <span class="at">xlab =</span> v)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">.qqnorm</span>(zlog_data[[v]], <span class="at">yname =</span> v)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div id="scoremeld" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> ScoreMeld</h2>
 <p><img src="figure/histograms.Rmd/histograms_meld-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7424,7 +7451,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="scoremeldunos" class="section level2">
+<div id="scoremeldunos" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> ScoreMeldUnos</h2>
 <p><img src="figure/histograms.Rmd/histograms_meld-3.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7449,6 +7476,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/figure/histograms.Rmd/histograms_meld-3.png" target="_blank">afa48d9</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-07
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3810a795dcc192cc64c88d969909f9dbe2b991f7/docs/figure/histograms.Rmd/histograms_meld-3.png" target="_blank">3810a79</a>
@@ -7511,6 +7549,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/figure/histograms.Rmd/histograms_meld-4.png" target="_blank">afa48d9</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-08-07
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3810a795dcc192cc64c88d969909f9dbe2b991f7/docs/figure/histograms.Rmd/histograms_meld-4.png" target="_blank">3810a79</a>
 </td>
 <td>
@@ -7547,7 +7596,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="scoremeldna" class="section level2">
+<div id="scoremeldna" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> ScoreMeldNa</h2>
 <p><img src="figure/histograms.Rmd/histograms_meld-5.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7648,7 +7697,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="scoremeldnaunos" class="section level2">
+<div id="scoremeldnaunos" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> ScoreMeldNaUnos</h2>
 <p><img src="figure/histograms.Rmd/histograms_meld-7.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7749,7 +7798,7 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="probmeldplus7" class="section level2">
+<div id="probmeldplus7" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> ProbMeldPlus7</h2>
 <p><img src="figure/histograms.Rmd/histograms_meld-9.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -7857,8 +7906,8 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.0 (2021-05-18)
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.1.1 (2021-08-10)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
@@ -7876,21 +7925,21 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] targets_0.4.2
+[1] targets_0.8.0
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.2      compiler_4.1.0   
- [5] later_1.2.0       git2r_0.28.0      workflowr_1.6.2   tools_4.1.0      
- [9] digest_0.6.27     evaluate_0.14     lifecycle_1.0.0   tibble_3.1.3     
-[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.1        
-[17] yaml_2.2.1        xfun_0.24         withr_2.4.2       stringr_1.4.0    
-[21] knitr_1.33        fs_1.5.0          vctrs_0.3.8       tidyselect_1.1.1 
-[25] rprojroot_2.0.2   glue_1.4.2        data.table_1.14.0 R6_2.5.0         
-[29] processx_3.5.2    fansi_0.5.0       rmarkdown_2.9     bookdown_0.22    
-[33] purrr_0.3.4       callr_3.7.0       magrittr_2.0.1    whisker_0.4      
-[37] promises_1.2.0.1  ps_1.6.0          codetools_0.2-18  ellipsis_0.3.2   
-[41] htmltools_0.5.1.1 httpuv_1.6.1      utf8_1.2.2        stringi_1.7.3    
-[45] crayon_1.4.1     </code></pre>
+ [1] Rcpp_1.0.7        highr_0.9         pillar_1.6.3      compiler_4.1.1   
+ [5] later_1.3.0       jquerylib_0.1.4   git2r_0.28.0      workflowr_1.6.2  
+ [9] tools_4.1.1       digest_0.6.28     evaluate_0.14     lifecycle_1.0.1  
+[13] tibble_3.1.4      pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6     
+[17] cli_3.0.1         yaml_2.2.1        xfun_0.26         fastmap_1.1.0    
+[21] withr_2.4.2       stringr_1.4.0     knitr_1.34        fs_1.5.0         
+[25] vctrs_0.3.8       tidyselect_1.1.1  rprojroot_2.0.2   data.table_1.14.0
+[29] glue_1.4.2        R6_2.5.1          processx_3.5.2    fansi_0.5.0      
+[33] rmarkdown_2.11    bookdown_0.24     purrr_0.3.4       callr_3.7.0      
+[37] magrittr_2.0.1    whisker_0.4       promises_1.2.0.1  ps_1.6.0         
+[41] codetools_0.2-18  ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.3     
+[45] utf8_1.2.2        stringi_1.7.4     crayon_1.4.1     </code></pre>
 </div>
 </div>
 </div>
@@ -7907,6 +7956,8 @@ footer is added to webpages before the MathJax javascript. -->
     "HTML-CSS": { availableFonts: ["TeX"] }
   });
 </script>
+
+
 
 
 </div>
