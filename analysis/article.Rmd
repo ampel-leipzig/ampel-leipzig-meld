@@ -347,8 +347,8 @@ According to @wiesner2003 we divided our cohort into
 `r nlevels(labelled_meld_data$MeldCategory)` MELD-score risk
 categories, with `r enum(table(labelled_meld_data$MeldCategory))` patients,
 respectively.
-As depicted in Figure \@ref(fig:observed-vs-meld-mortality-plot) and Table
-\@ref(tab:tbl-observed-vs-expected-mortality) our observed 90 day mortality was
+As shown in Table \@ref(tab:tbl-observed-vs-expected-mortality)
+our observed 90 day mortality was
 `r paste(round(range(tbl_observed_vs_expected_mortality$StandardizedMortalityRatio[-1]), 1), collapse = " to ")`
 times higher than the predicted one. Just in the group with the lowest MELD
 scores the mortality was much lower.
