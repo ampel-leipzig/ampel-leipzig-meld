@@ -155,58 +155,30 @@ tg_lrns <- list(
                     p
                 }
             ),
-            # initial settings as described in
-            # https://towardsdatascience.com/neural-networks-for-survival-analysis-in-r-1e0421584ab
-            coxtime = list(
-                lrn = lrn(
-                    "surv.coxtime", id = "coxtime",
-                    frac = 1/3,
-                    early_stopping = TRUE, epochs = 10, optimizer = "adam"
-                ),
-                ps = {
-                    p <- ps(
-                        dropout =
-                            p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
-                        weight_decay =
-                            p_dbl(lower = 0, upper = 0.4, default = 0.1),
-                        learning_rate =
-                            p_dbl(lower = 0, upper = 0.3, default = 0.1),
-                        ## nodes in a layer
-                        nodes = p_int(lower = 2L, upper = 32L),
-                        ## number of hidden layers
-                        k = p_int(lower = 1L, upper = 4L)
-                    )
-                    p$trafo <- function(x, param_set) {
-                        ## use same number of nodes in each layer
-                        x$num_nodes = rep(x$nodes, x$k)
-                        x$nodes <- x$k <- NULL
-                        x
-                    }
-                    p
-                }
-            ),
             deepsurv = list(
                 lrn = lrn(
                     "surv.deepsurv", id = "deepsurv",
-                    frac = 1/3,
-                    early_stopping = TRUE, epochs = 10, optimizer = "adam"
+                    activation = "leakyrelu",
+                    frac = 0.3, early_stopping = TRUE,
+                    epochs = 100, optimizer = "adam"
                 ),
                 ps = {
                     p <- ps(
                         dropout =
-                            p_dbl(lower = 0.1, upper = 0.7, default = 0.5),
+                            p_dbl(lower = 0, upper = 0.7, default = 0.5),
+                        ## 0.4, 0.2, 0.1, 0.05, 0.02, 0.01, 0
                         weight_decay =
-                            p_dbl(lower = 0, upper = 0.4, default = 0.1),
+                            p_int(lower = 0, upper = 6, default = 2),
                         learning_rate =
-                            p_dbl(lower = 0, upper = 0.3, default = 0.1),
-                        ## nodes in a layer
-                        nodes = p_int(lower = 2L, upper = 32L),
-                        ## number of hidden layers
-                        k = p_int(lower = 1L, upper = 4L)
+                            p_dbl(lower = 0, upper = 1L, default = 0.1),
+                        ## nodes in a layer (64, 128, 256, 512)
+                        nodes = p_int(lower = 6L, upper = 9L, default = 6L),
+                        ## number of hidden layers (1, 2, 4)
+                        k = p_int(lower = 0L, upper = 2L, default = 2L)
                     )
                     p$trafo <- function(x, param_set) {
-                        ## use same number of nodes in each layer
-                        x$num_nodes = rep(x$nodes, x$k)
+                        x$weight_decay <- trunc(40L / 2L^(x$weight_decay)) / 100
+                        x$num_nodes = rep(2L^x$nodes, 2L^x$k)
                         x$nodes <- x$k <- NULL
                         x
                     }
