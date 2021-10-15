@@ -19,7 +19,7 @@ p.value <- 0.2
 
 # Overview
 
-```{r benchmarks_plot_c_harrell}
+```{r benchmarks_plot_c_harrell, fig.width = 18}
 autoplot(bmrk_results) +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
