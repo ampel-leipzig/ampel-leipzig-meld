@@ -186,6 +186,21 @@ tg_lrns <- list(
                 }
             )
         )
+        ## tuner
+        tuner <-
+            tnr("grid_search", resolution = 4L, batch_size = 4L)
+            #tnr("random_search", batch_size = 5L)
+
+        ## terminator
+        terminator <- trm("combo", list(
+                trm("evals", n_evals = 50L),
+                trm("run_time", secs = 90L),
+                trm("stagnation", iters = 3L, threshold = 1e-3),
+                trm("stagnation_batch", n = 1L, threshold = 1e-3)
+            ),
+            any = TRUE
+        )
+
         ## autotuner
         l <- lapply(l, function(ll) {
             if (is.null(ll$ps))
@@ -196,27 +211,19 @@ tg_lrns <- list(
                     search_space = ll$ps,
                     resampling = crossval$inner,
                     measure = msr("surv.cindex"),
-                    tuner =
-                        tnr("grid_search", resolution = 20L, batch_size = 2L),
-                    terminator =
-                        trm("stagnation", iters = 3L, threshold = 1e-3)
+                    tuner = tuner,
+                    terminator = terminator
                 )
         })
 
-        ## preprocessing (is part of the crossval now)
-        # TODO: add scaling to ln_data task (not to zlog_data)
-        #po_nop <- po("nop", "nothing")
-        #po_scale <- po("scale")
-        #choices <- c("nothing", "scale")
-        #g <-
-        #    po("removeconstants") %>>%
-        #        po("branch", choices) %>>%
-        #            gunion(list(po_nop, po_scale)) %>>%
-        #        po("unbranch", choices)
-
-        #l <- lapply(l, function(ll) {
-        #    as_learner(g %>>% po("learner", ll))
-        #})
+        ### preprocessing (is part of the crossval now)
+        l <- c(
+            l,
+            lapply(
+                l,
+                function(ll)as_learner(po("scale") %>>% po("learner", ll))
+            )
+        )
         l
     },
     iteration = "list",
