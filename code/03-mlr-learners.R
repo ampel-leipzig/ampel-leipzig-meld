@@ -124,8 +124,8 @@ tg_lrns <- list(
                 ),
                 ps = {
                     p <- ps(
-                        gamma.mu = p_dbl(lower = -5, upper = 5, default = 0),
-                        kernel.pars = p_dbl(lower = -5, upper = 5, default = 0)
+                        gamma.mu = p_dbl(lower = -3, upper = 3, default = 0),
+                        kernel.pars = p_dbl(lower = -3, upper = 3, default = 0)
                     )
                     p$trafo <- function(x, param_set) {
                         x$gamma.mu <- 2^x$gamma.mu
