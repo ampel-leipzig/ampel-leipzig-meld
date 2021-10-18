@@ -12,14 +12,14 @@
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "broom.helpers" version))
         (sha256
           (base32
-            "1c5pzvnvrxrnw3ccfb4b8fdyrw5mf0q0i6isxh9nbm9wgbrk29g0"))))
+            "0x9z9v4d4dyd1mip86z084b9mizvzwbc4swp676mf2r6g465qskz"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs
@@ -105,14 +105,14 @@
 (define-public r-distr6
   (package
     (name "r-distr6")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "distr6" version))
         (sha256
           (base32
-            "1m99s79ymw71a2lpl5k48q49d1krxq24x2n3p6mbhall8kjgv769"))))
+            "19xyivl0prrmqdjg61d5yw5763f0j6h9ji8am2d5iydlqvwl2x7f"))))
     (properties `((upstream-name . "distr6")))
     (build-system r-build-system)
     (propagated-inputs
@@ -233,14 +233,14 @@
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "gtsummary" version))
         (sha256
           (base32
-            "08j1pmkxiafm89x6nwdczkknmvi5p0zagvbfafzh9rprgl3mis9z"))))
+            "19qi0w1ymvaw9m3l1ynj681q4bqhrnjn0ir8jg50ia5jql8mxpal"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs
@@ -271,14 +271,14 @@
 (define-public r-mlr3benchmark
   (package
     (name "r-mlr3benchmark")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3benchmark" version))
         (sha256
           (base32
-            "05b3x43xnj9byg6f70br6i21jdxbwlc66qmjqrrllp6vsixzc4vp"))))
+            "0j56l8yi1c0sa3fsychrvv42rpip2d300yccps0bj636c5r7na64"))))
     (properties `((upstream-name . "mlr3benchmark")))
     (build-system r-build-system)
     (propagated-inputs
@@ -389,14 +389,14 @@
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3viz" version))
         (sha256
           (base32
-            "1jafba74gv3v0lyqc9m274f4ds6ciw3had8x5awynby69kmqyjwl"))))
+            "1agl6s6i9l7mk8mrvmnz7csqsc77dwjnymlrqcy5vxddr2nfc47l"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs
