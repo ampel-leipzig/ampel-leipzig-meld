@@ -231,7 +231,7 @@ The MELD-Plus9 score was ignored because the length of stay information was not
 available for our cohort and the model itself wasn't superior to MELD-Plus7 in
 its original publication [@kartoun2017].
 
-## Machine learning
+## Data processing and machine learning
 
 ```{r ml, include = FALSE}
 n_lrns <- sum(!grepl("^scale..*", bmrk_results$learners$learner_id))
@@ -242,11 +242,23 @@ n_lrns <- sum(!grepl("^scale..*", bmrk_results$learners$learner_id))
 #)
 ```
 
-All statistical and machine learning analyses were performed using R version
+All data processing, statistical and machine learning analyses were performed
+using R version
 `r paste0(sessionInfo()$R.version[c("major", "minor")], collapse = ".")`
 [@R-base].
-Prior to the analyses all laboratory values were zlog transformed
-[@hoffmann2017; @R-zlog].
+Prior to the analyses all laboratory values were *zlog* transformed
+as described in @hoffmann2017 and implemented in @R-zlog.
+
+$$
+z = (\log(x) - \frac{\log(LL) + \log(UL)}{2}) * \frac{3.92}{\log(UL) - \log(LL)}
+$$
+
+Where $LL$ and $UL$ are the lower and upper reference limit of
+the corresponding laboratory diagnostic, respectively.
+Missing laboratory measurements were replaced with a *zlog* value of zero.
+In similar manner if information about complications or
+comorbidities were missing we treat them as not present.
+
 We compared `r n_lrns` different statistical and machine learning
 algorithms using the mlr3 framework
 [@mlr3; @R-mlr3; @mlr3proba2021; @R-mlr3proba].
@@ -272,7 +284,8 @@ Therefore, we applied a `r crossval$inner$param_set$values$folds`-fold inner
 and a `r crossval$outer$param_set$values$folds`-fold outer cross-validation
 that was repeated `r crossval$outer$param_set$values$repeats` times.
 Subsequently we selected the model with the
-highest median concordance index [@harrell1982].
+highest median concordance index [@harrell1982]. If multiple models were
+comparable we chose the simpler (more penalized) one.
 
 TODO: selected final model, analysis, feature selection
 
