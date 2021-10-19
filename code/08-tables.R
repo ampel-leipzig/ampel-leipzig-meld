@@ -72,7 +72,7 @@ tg_tables <- list(
             add_overall()
 
         ## generate mortality table stub
-        ## (tbl_survfit doesn't support (cumulative) events)
+        ## (tbl_survfit doesn't support (cumulative) events) and t()
         tbMortality <- labelled_meld_data |>
             select(
                Sex,
@@ -111,15 +111,15 @@ tg_tables <- list(
             label = paste0("Within ", times, " days"),
             stat_label = "n (%)",
             stat_0 = paste0(
-                n_overall, " (", style_percent(m_overall), ")"
+                n_overall, " (", style_percent(m_overall, symbol = TRUE), ")"
             ),
             stat_1 = paste0(
                 n_sex[, "Female"],
-                " (", style_percent(m_sex[, "Female"]), ")"
+                " (", style_percent(m_sex[, "Female"], symbol = TRUE), ")"
             ),
             stat_2 = paste0(
                 n_sex[, "Male"],
-                " (", style_percent(m_sex[, "Male"]), ")"
+                " (", style_percent(m_sex[, "Male"], symbol = TRUE), ")"
             )
         )
 
@@ -165,7 +165,9 @@ tg_tables <- list(
         tbl1 |>
         modify_caption(
             paste0(
-                "Baseline characteristics.\n",
+                "Baseline characteristics.<br />",
+                "Values are given as ",
+                "median (lower quartile, upper quartile) or n (percent).<br />",
                 paste0(
                     Filter(
                         nchar,
