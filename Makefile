@@ -51,7 +51,7 @@ clean-container:
 
 clean-reports:
 	@RUNLOCAL=1 ./scripts/Rscript.sh -e \
-		'targets::tar_invalidate(starts_with("reports_"))'
+		'targets::tar_invalidate(starts_with("reports_")); targets::tar_invalidate(starts_with("site_"))'
 	@rm -rf docs/*
 
 clean-targets:
