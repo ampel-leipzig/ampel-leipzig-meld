@@ -46,6 +46,7 @@ knitr::write_bib(
     c(
         "base",
         "targets", "workflowr",
+        "gtsummary",
         "mlr3", "mlr3proba", "zlog",
         "survival", "glmnet", "penalized", "ranger", "randomForestSRC",
         "xgboost", "survivalsvm", "survivalmodels"
@@ -260,7 +261,7 @@ In similar manner if information about complications or
 comorbidities were missing we treat them as not present.
 
 We compared `r n_lrns` different statistical and machine learning
-algorithms using the mlr3 framework
+algorithms using the *mlr3* framework
 [@mlr3; @R-mlr3; @mlr3proba2021; @R-mlr3proba].
 The used algorithms are designed for analysis of survival data:
 Cox proportional hazards regression model
@@ -288,6 +289,9 @@ highest median concordance index [@harrell1982]. If multiple models were
 comparable we chose the simpler (more penalized) one.
 
 TODO: selected final model, analysis, feature selection
+
+Summary tables were built using the *gtsummary* package
+[@gtsummary; @R-gtsummary].
 
 # Results
 
