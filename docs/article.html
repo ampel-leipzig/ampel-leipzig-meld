@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,2,✉, and Thorsten Kaiser1" />
 
-<meta name="date" content="2021-10-15" />
+<meta name="date" content="2021-10-20" />
 
 <title>A Model to Predict Survival in Patients with End-Stage Liver Disease</title>
 
@@ -554,7 +554,7 @@ div.tocify {
 <h1 class="title toc-ignore">A Model to Predict Survival in Patients with End-Stage Liver Disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,2,✉</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2021-10-15</h4>
+<h4 class="date">2021-10-20</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Background</strong>:
@@ -597,7 +597,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-10-15
+<strong>Last updated:</strong> 2021-10-20
 </p>
 <p>
 <strong>Checks:</strong>
@@ -725,20 +725,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4btargetblank8b3ba9ca">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b" target="_blank">8b3ba9c</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2697eadb3908db885f3d7667ada498b647eb37fftargetblank2697eada" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4btargetblank8b3ba9ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2697eadb3908db885f3d7667ada498b647eb37ff" target="_blank">2697ead</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b" target="_blank">8b3ba9c</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -767,6 +767,11 @@ Untracked files:
     Untracked:  deepsurv.R
     Untracked:  s12874-018-0482-1.pdf
     Untracked:  scripts/R.sh
+
+Unstaged changes:
+    Modified:   code/03-mlr-learners.R
+    Modified:   guix/channel/ampel/packages/cran.scm
+    Modified:   guix/manifest.scm
 
 </code></pre>
 <p>
@@ -811,6 +816,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b/analysis/article.Rmd" target="_blank">8b3ba9c</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+feat: cite gtsummary
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/28ad932ab9c0b5fac3d38a839cc331552bb819ad/analysis/article.Rmd" target="_blank">28ad932</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-19
+</td>
+<td>
+feat: describe zlog in more detail
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/article.html" target="_blank">df8964f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-15
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1108,15 +1164,24 @@ L = 8.53499496 &amp;+ \\
 available for our cohort and the model itself wasn’t superior to MELD-Plus7 in
 its original publication <span class="citation">(Kartoun et al. 2017)</span>.</p>
 </div>
-<div id="machine-learning" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Machine learning</h2>
-<p>All statistical and machine learning analyses were performed using R version
+<div id="data-processing-and-machine-learning" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data processing and machine learning</h2>
+<p>All data processing, statistical and machine learning analyses were performed
+using R version
 4.1.1
 <span class="citation">(R Core Team 2021)</span>.
-Prior to the analyses all laboratory values were zlog transformed
-<span class="citation">(Hoffmann et al. 2017; Gibb 2021)</span>.
-We compared 12 different statistical and machine learning
-algorithms using the mlr3 framework
+Prior to the analyses all laboratory values were <em>zlog</em> transformed
+as described in <span class="citation">Hoffmann et al. (2017)</span> and implemented in <span class="citation">Gibb (2021)</span>.</p>
+<p><span class="math display">\[
+z = (\log(x) - \frac{\log(LL) + \log(UL)}{2}) * \frac{3.92}{\log(UL) - \log(LL)}
+\]</span></p>
+<p>Where <span class="math inline">\(LL\)</span> and <span class="math inline">\(UL\)</span> are the lower and upper reference limit of
+the corresponding laboratory diagnostic, respectively.
+Missing laboratory measurements were replaced with a <em>zlog</em> value of zero.
+In similar manner if information about complications or
+comorbidities were missing we treat them as not present.</p>
+<p>We compared 12 different statistical and machine learning
+algorithms using the <em>mlr3</em> framework
 <span class="citation">(Lang et al. 2019, 2021; Sonabend et al. 2021; Sonabend, Kiraly, and Lang 2021)</span>.
 The used algorithms are designed for analysis of survival data:
 Cox proportional hazards regression model
@@ -1139,8 +1204,11 @@ Therefore, we applied a 2-fold inner
 and a 2-fold outer cross-validation
 that was repeated 1 times.
 Subsequently we selected the model with the
-highest median concordance index <span class="citation">(Harrell 1982)</span>.</p>
+highest median concordance index <span class="citation">(Harrell 1982)</span>. If multiple models were
+comparable we chose the simpler (more penalized) one.</p>
 <p>TODO: selected final model, analysis, feature selection</p>
+<p>Summary tables were built using the <em>gtsummary</em> package
+<span class="citation">(Sjoberg, Whiting, et al. 2021; Sjoberg, Curry, et al. 2021)</span>.</p>
 </div>
 </div>
 <div id="results" class="section level1" number="3">
@@ -1486,8 +1554,7 @@ highest median concordance index <span class="citation">(Harrell 1982)</span>.</
 }
 </style>
 <table class="gt_table">
-  <caption><span id="tab:tbl1">Table 3.1: </span>Baseline characteristics.
-AIH, autoimmune hepatitis; ALAT, alanine aminotransferase; ALF, acute liver failure; ASAT, aspartate aminotransferase; CLI, chronic liver insufficiency; GIB, gastrointestinal bleeding; HBV, hepatitis B virus; HCV, hepatitis C virus; IL-6, interleukin 6; INR, international normalized ratio; LTx, liver transplantation; NASH, non-alcoholic steatohepatitis; PBC, primary biliary cirrhosis; PSC, primary sclerosing cholangitis; SBP, spontaneous bacterial peritonitis</caption>
+  <caption><span id="tab:tbl1">Table 3.1: </span>Baseline characteristics.<br />Values are given as median (lower quartile, upper quartile) or n (percent).<br />AIH, autoimmune hepatitis; ALAT, alanine aminotransferase; ALF, acute liver failure; ASAT, aspartate aminotransferase; CLI, chronic liver insufficiency; GIB, gastrointestinal bleeding; HBV, hepatitis B virus; HCV, hepatitis C virus; IL-6, interleukin 6; INR, international normalized ratio; LTx, liver transplantation; NASH, non-alcoholic steatohepatitis; PBC, primary biliary cirrhosis; PSC, primary sclerosing cholangitis; SBP, spontaneous bacterial peritonitis</caption>
   
   <thead class="gt_col_headings">
     <tr>
@@ -1740,21 +1807,21 @@ AIH, autoimmune hepatitis; ALAT, alanine aminotransferase; ALF, acute liver fail
       <td colspan="4" class="gt_group_heading">Mortality</td>
     </tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 7 days</td>
-<td class="gt_row gt_center">16 (7.2)</td>
-<td class="gt_row gt_center">18 (4.5)</td>
-<td class="gt_row gt_center">34 (5.5)</td></tr>
+<td class="gt_row gt_center">16 (7.2%)</td>
+<td class="gt_row gt_center">18 (4.5%)</td>
+<td class="gt_row gt_center">34 (5.5%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 30 days</td>
-<td class="gt_row gt_center">25 (12)</td>
-<td class="gt_row gt_center">31 (8.1)</td>
-<td class="gt_row gt_center">56 (9.4)</td></tr>
+<td class="gt_row gt_center">25 (12%)</td>
+<td class="gt_row gt_center">31 (8.1%)</td>
+<td class="gt_row gt_center">56 (9.4%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 90 days</td>
-<td class="gt_row gt_center">32 (16)</td>
-<td class="gt_row gt_center">49 (13)</td>
-<td class="gt_row gt_center">81 (14)</td></tr>
+<td class="gt_row gt_center">32 (16%)</td>
+<td class="gt_row gt_center">49 (13%)</td>
+<td class="gt_row gt_center">81 (14%)</td></tr>
     <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Within 365 days</td>
-<td class="gt_row gt_center">39 (20)</td>
-<td class="gt_row gt_center">61 (18)</td>
-<td class="gt_row gt_center">100 (18)</td></tr>
+<td class="gt_row gt_center">39 (20%)</td>
+<td class="gt_row gt_center">61 (18%)</td>
+<td class="gt_row gt_center">100 (18%)</td></tr>
   </tbody>
   
   
@@ -1782,7 +1849,7 @@ a chronic liver insufficiency
 At evaluation time the median (IQR) MELD and MELD-Na score were
 11 (8, 17) and
 11 (8, 20), respectively.
-Within 90 days 81 (14) patients died.
+Within 90 days 81 (14%) patients died.
 In nearly two third of all patients alcohol was the main cause
 (411 (63%)) of their end-stage liver disease.
 The remaining patients had viral infections
@@ -1885,6 +1952,43 @@ scores the mortality was much lower.</p>
 <p class="caption">
 Figure 3.1: Benchmark results of machine learning algorithms.
 </p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmark-plot-1">
+Past versions of benchmark-plot-1.png
+</button>
+</p>
+<div id="fig-benchmark-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">df8964f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>TODO: mention best ml algorithm (<a href="#fig:benchmark-plot">3.1</a>)</p>
 </div>
@@ -2008,6 +2112,12 @@ R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</
 <div id="ref-glmnet2011" class="csl-entry">
 Simon, Noah, Jerome Friedman, Trevor Hastie, and Rob Tibshirani. 2011. <span>“Regularization Paths for Cox’s Proportional Hazards Model via Coordinate Descent.”</span> <em>Journal of Statistical Software</em> 39 (5): 1–13. <a href="https://www.jstatsoft.org/v39/i05/">https://www.jstatsoft.org/v39/i05/</a>.
 </div>
+<div id="ref-R-gtsummary" class="csl-entry">
+Sjoberg, Daniel D., Michael Curry, Joseph Larmarange, Jessica Lavery, Karissa Whiting, and Emily C. Zabor. 2021. <em>Gtsummary: Presentation-Ready Data Summary and Analytic Result Tables</em>. <a href="https://CRAN.R-project.org/package=gtsummary">https://CRAN.R-project.org/package=gtsummary</a>.
+</div>
+<div id="ref-gtsummary" class="csl-entry">
+Sjoberg, Daniel D., Karissa Whiting, Michael Curry, Jessica A. Lavery, and Joseph Larmarange. 2021. <span>“Reproducible Summary Tables with the Gtsummary Package.”</span> <em><span>The R Journal</span></em> 13: 570–80. <a href="https://doi.org/10.32614/RJ-2021-053">https://doi.org/10.32614/RJ-2021-053</a>.
+</div>
 <div id="ref-R-survivalmodels" class="csl-entry">
 Sonabend, Raphael. 2021. <em>Survivalmodels: Models for Survival Analysis</em>. <a href="https://github.com/RaphaelS1/survivalmodels/">https://github.com/RaphaelS1/survivalmodels/</a>.
 </div>
@@ -2066,8 +2176,8 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] gtsummary_1.4.2   ameld_0.0.12      survival_3.2-13   viridis_0.6.1    
-[5] viridisLite_0.4.0 mlr3viz_0.5.6     ggplot2_3.3.5     targets_0.8.0    
+[1] gtsummary_1.5.0   ameld_0.0.12      survival_3.2-13   viridis_0.6.1    
+[5] viridisLite_0.4.0 mlr3viz_0.5.7     ggplot2_3.3.5     targets_0.8.0    
 
 loaded via a namespace (and not attached):
  [1] fs_1.5.0                RColorBrewer_1.1-2      bbotk_0.4.0            
@@ -2097,8 +2207,8 @@ loaded via a namespace (and not attached):
 [73] knitr_1.34              ps_1.6.0                pillar_1.6.3           
 [76] igraph_1.2.6            uuid_0.1-4              codetools_0.2-18       
 [79] glue_1.4.2              evaluate_0.14           data.table_1.14.0      
-[82] broom.helpers_1.3.0     vctrs_0.3.8             httpuv_1.6.3           
-[85] distr6_1.6.0            gtable_0.3.0            purrr_0.3.4            
+[82] broom.helpers_1.4.0     vctrs_0.3.8             httpuv_1.6.3           
+[85] distr6_1.6.2            gtable_0.3.0            purrr_0.3.4            
 [88] tidyr_1.1.3             future_1.22.1           assertthat_0.2.1       
 [91] xfun_0.26               later_1.3.0             tibble_3.1.4           
 [94] workflowr_1.6.2         DiagrammeR_1.0.6.1      globals_0.14.0         
