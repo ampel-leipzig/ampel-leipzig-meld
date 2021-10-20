@@ -166,19 +166,20 @@ tg_lrns <- list(
                     p <- ps(
                         dropout =
                             p_dbl(lower = 0, upper = 0.7, default = 0.5),
-                        ## 0.4, 0.2, 0.1, 0.05, 0.02, 0.01, 0
+                        ## 0.004, 0.002, 0.001, 0.0005, 0.0002, 0.0001, 0
                         weight_decay =
                             p_int(lower = 0, upper = 6, default = 2),
                         learning_rate =
-                            p_dbl(lower = 0, upper = 1L, default = 0.1),
-                        ## nodes in a layer (64, 128, 256, 512)
-                        nodes = p_int(lower = 6L, upper = 9L, default = 6L),
-                        ## number of hidden layers (1, 2, 4)
-                        k = p_int(lower = 0L, upper = 2L, default = 2L)
+                            p_dbl(lower = 0, upper = 0.2, default = 0.1),
+                        ## nodes in a layer (2, 4, 8, 16, 32, 64, 128)
+                        nodes = p_int(lower = 0L, upper = 7L, default = 5L),
+                        ## number of hidden layers
+                        k = p_int(lower = 0L, upper = 4L, default = 2L)
                     )
                     p$trafo <- function(x, param_set) {
-                        x$weight_decay <- trunc(40L / 2L^(x$weight_decay)) / 100
-                        x$num_nodes = rep(2L^x$nodes, 2L^x$k)
+                        x$weight_decay <-
+                            trunc(40L / 2L^(x$weight_decay)) / 10000
+                        x$num_nodes = rep(2L^x$nodes, x$k)
                         x$nodes <- x$k <- NULL
                         x
                     }
