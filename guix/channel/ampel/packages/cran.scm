@@ -7,6 +7,7 @@
   #:use-module (gnu packages)
   #:use-module (gnu packages commencement)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages statistics))
 
 (define-public r-broom-helpers
@@ -41,6 +42,25 @@
     (description
       "This package provides suite of functions to work with regression model 'broom::tidy()' tibbles.  The suite includes functions to group regression model terms by variable, insert reference and header rows for categorical variables, add variable labels, and more.")
     (license gpl3)))
+
+(define-public r-bwstest
+  (package
+    (name "r-bwstest")
+    (version "0.2.2")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "BWStest" version))
+        (sha256
+          (base32 "02amzlfprmw5pyis0dg0kg0x8xqh50a4vfdcxxmklrzik3b1vzzs"))))
+    (properties `((upstream-name . "BWStest")))
+    (build-system r-build-system)
+    (propagated-inputs `(("r-memoise" ,r-memoise) ("r-rcpp" ,r-rcpp)))
+    (home-page "https://github.com/shabbychef/BWStest")
+    (synopsis "Baumgartner Weiss Schindler Test of Equal Distributions")
+    (description
+      "Performs the 'Baumgartner-Weiss-Schindler' two-sample test of equal probability distributions, <doi:10.2307/2533862>.  Also performs similar rank-based tests for equal probability distributions due to Neuhauser <doi:10.1080/10485250108832874> and Murakami <doi:10.1080/00949655.2010.551516>.")
+    (license lgpl3)))
 
 (define-public r-diagrammer
   (package
@@ -410,6 +430,24 @@
       "This package provides visualizations for 'mlr3' objects such as tasks, predictions, resample results or benchmark results via the autoplot() generic of 'ggplot2'.  The returned 'ggplot' objects are intended to provide sensible defaults, yet can easily be customized to create camera-ready figures.  Visualizations include barplots, boxplots, histograms, ROC curves, and Precision-Recall curves.")
     (license lgpl3)))
 
+(define-public r-multcompview
+  (package
+    (name "r-multcompview")
+    (version "0.1-8")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "multcompView" version))
+        (sha256
+          (base32 "1rfq9wvvrghq0542ff40wy8vdmsyd8spzz6ihcywcvxdfa8m6g8j"))))
+    (properties `((upstream-name . "multcompView")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=multcompView")
+    (synopsis "Visualizations of Paired Comparisons")
+    (description
+      "Convert a logical vector or a vector of p-values or a correlation, difference, or distance matrix into a display identifying the pairs for which the differences were not significantly different.  Designed for use in conjunction with the output of functions like TukeyHSD, dist{stats}, simint, simtest, csimint, csimtest{multcomp}, friedmanmc, kruskalmc{pgirmess}.")
+    (license (list gpl2+ gpl3+))))
+
 (define-public r-ooplah
   (package
     (name "r-ooplah")
@@ -452,6 +490,36 @@
     (description
       "By making use of 'set6', alongside the S3 and R6 paradigms, this package provides a fast and lightweight R6 interface for parameters and parameter sets.")
     (license expat)))
+
+(define-public r-pmcmrplus
+  (package
+    (name "r-pmcmrplus")
+    (version "1.9.2")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "PMCMRplus" version))
+        (sha256
+          (base32 "084lcard82cd9s0d89pr7q0wvmc5432yfpn9gjmrjdnani4j5wzh"))))
+    (properties `((upstream-name . "PMCMRplus")))
+    (build-system r-build-system)
+    (inputs `(("gmp" ,gmp)))
+    (propagated-inputs
+      `(("r-bwstest" ,r-bwstest)
+        ("r-gmp" ,r-gmp)
+        ("r-ksamples" ,r-ksamples)
+        ("r-mass" ,r-mass)
+        ("r-multcompview" ,r-multcompview)
+        ("r-mvtnorm" ,r-mvtnorm)
+        ("r-rmpfr" ,r-rmpfr)
+        ("r-suppdists" ,r-suppdists)))
+    (native-inputs `(("gfortran-toolchain" ,gfortran-toolchain) ("r-knitr" ,r-knitr)))
+    (home-page "https://cran.r-project.org/package=PMCMRplus")
+    (synopsis
+      "Calculate Pairwise Multiple Comparisons of Mean Rank Sums Extended")
+    (description
+      "For one-way layout experiments the one-way ANOVA can be performed as an omnibus test.  All-pairs multiple comparisons tests (Tukey-Kramer test, Scheffe test, LSD-test) and many-to-one tests (Dunnett test) for normally distributed residuals and equal within variance are available.  Furthermore, all-pairs tests (Games-Howell test, Tamhane's T2 test, Dunnett T3 test, Ury-Wiggins-Hochberg test) and many-to-one (Tamhane-Dunnett Test) for normally distributed residuals and heterogeneous variances are provided.  Van der Waerden's normal scores test for omnibus, all-pairs and many-to-one tests is provided for non-normally distributed residuals and homogeneous variances.  The Kruskal-Wallis, BWS and Anderson-Darling omnibus test and all-pairs tests (Nemenyi test, Dunn test, Conover test, Dwass-Steele-Critchlow- Fligner test) as well as many-to-one (Nemenyi test, Dunn test, U-test) are given for the analysis of variance by ranks.  Non-parametric trend tests (Jonckheere test, Cuzick test, Johnson-Mehrotra test, Spearman test) are included.  In addition, a Friedman-test for one-way ANOVA with repeated measures on ranks (CRBD) and Skillings-Mack test for unbalanced CRBD is provided with consequent all-pairs tests (Nemenyi test, Siegel test, Miller test, Conover test, Exact test) and many-to-one tests (Nemenyi test, Demsar test, Exact test).  A trend can be tested with Pages's test.  Durbin's test for a two-way balanced incomplete block design (BIBD) is given in this package as well as Gore's test for CRBD with multiple observations per cell is given.  Outlier tests, Mandel's k- and h statistic as well as functions for Type I error and Power analysis as well as generic summary, print and plot methods are provided.")
+    (license gpl3+)))
 
 (define-public r-set6
   (package

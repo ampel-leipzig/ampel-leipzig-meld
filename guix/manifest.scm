@@ -29,6 +29,7 @@
       "r-mlr3proba"
       "r-mlr3viz"
       "r-penalized"
+      "r-pmcmrplus"
       "r-randomforestsrc"
       "r-ranger"
       "r-reticulate"
