@@ -3,10 +3,10 @@
 BIND_PATH="/etc/passwd,/etc/group,/var/run"
 
 # on HPC?
-MODULESPATH=/usr/share/Modules/init/bash
-if [ -f "${MODULESPATH}" ] ; then
+MODULESPATH="/usr/share/[Mm]odules/init/bash"
+if [ -f ${MODULESPATH} ] ; then
+    . ${MODULESPATH}
     SINGULARITYVER=3.4.2
-    . "${MODULESPATH}"
     module load singularity/${SINGULARITYVER}
     SINGULARITYPATH=/opt/singularity-${SINGULARITYVER}/bin/singularity
     BIND_PATH="${BIND_PATH},/etc/slurm/slurm.conf"
