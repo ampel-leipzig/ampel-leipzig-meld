@@ -9,7 +9,7 @@ if [ -f ${MODULESPATH} ] ; then
     SINGULARITYVER=3.4.2
     module load singularity/${SINGULARITYVER}
     SINGULARITYPATH=/opt/singularity-${SINGULARITYVER}/bin/singularity
-    BIND_PATH="${BIND_PATH},/etc/slurm/slurm.conf"
+    BIND_PATH="${BIND_PATH},/var/run/slurm/conf/slurm.conf:/etc/slurm/slurm.conf"
     TMPDIR=~/tmp
 else # local
     BIND_PATH="${BIND_PATH},${SSH_AUTH_SOCK}"
