@@ -26,10 +26,7 @@
     (arguments
      `(#:tests? #f)) ; no test target
     (propagated-inputs
-      `(("python-matplotlib" ,python-matplotlib)
-        ("python-numpy" ,python-numpy)
-        ("python-pytorch" ,python-pytorch)
-        ("python-pandas" ,python-pandas)))
+      (list python-matplotlib python-numpy python-pytorch python-pandas))
     (home-page
       "https://github.com/havakv/torchtuples")
     (synopsis "Training neural networks in PyTorch")
@@ -50,14 +47,14 @@
             "0axby1pb1f9laqb5f8bzycgx7r79j5870k3va1nwk9b8hkbmcjvv"))))
     (build-system python-build-system)
     (propagated-inputs
-      `(("python-feather-format" ,python-feather-format)
-        ("python-h5py" ,python-h5py)
-        ("python-numba" ,python-numba)
-        ("python-py7zr" ,python-py7zr)
-        ("python-pytorch" ,python-pytorch)
-        ("python-requests" ,python-requests)
-        ("python-scikit-learn" ,python-scikit-learn)
-        ("python-torchtuples" ,python-torchtuples)))
+      (list python-feather-format
+            python-h5py
+            python-numba
+            python-py7zr
+            python-pytorch
+            python-requests
+            python-scikit-learn
+            python-torchtuples))
     (home-page "https://github.com/havakv/pycox")
     (synopsis "Survival analysis with PyTorch")
     (description "Survival analysis with PyTorch")
