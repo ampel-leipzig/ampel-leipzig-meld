@@ -763,7 +763,7 @@
   (let ((commit "30ac673"))
   (package
     (name "r-ameld")
-    (version (string-append "0.0.14-" commit))
+    (version (string-append "0.0.15-" commit))
     (source
       (origin
         (method git-fetch)
