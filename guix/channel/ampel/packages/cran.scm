@@ -377,24 +377,6 @@
       "This package provides visualizations for 'mlr3' objects such as tasks, predictions, resample results or benchmark results via the autoplot() generic of 'ggplot2'.  The returned 'ggplot' objects are intended to provide sensible defaults, yet can easily be customized to create camera-ready figures.  Visualizations include barplots, boxplots, histograms, ROC curves, and Precision-Recall curves.")
     (license lgpl3)))
 
-(define-public r-multcompview
-  (package
-    (name "r-multcompview")
-    (version "0.1-8")
-    (source
-      (origin
-        (method url-fetch)
-        (uri (cran-uri "multcompView" version))
-        (sha256
-          (base32 "1rfq9wvvrghq0542ff40wy8vdmsyd8spzz6ihcywcvxdfa8m6g8j"))))
-    (properties `((upstream-name . "multcompView")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=multcompView")
-    (synopsis "Visualizations of Paired Comparisons")
-    (description
-      "Convert a logical vector or a vector of p-values or a correlation, difference, or distance matrix into a display identifying the pairs for which the differences were not significantly different.  Designed for use in conjunction with the output of functions like TukeyHSD, dist{stats}, simint, simtest, csimint, csimtest{multcomp}, friedmanmc, kruskalmc{pgirmess}.")
-    (license (list gpl2+ gpl3+))))
-
 (define-public r-ooplah
   (package
     (name "r-ooplah")
