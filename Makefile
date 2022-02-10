@@ -1,5 +1,5 @@
 GUIX=/usr/local/bin/guix
-GUIXCOMMIT=8fcf947
+GUIXCOMMIT=7c9ad54
 
 .PHONEY: clean clean-all clean-container clean-reports clean-targets \
 	container hpc local-guix run sync
