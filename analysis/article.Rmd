@@ -237,11 +237,6 @@ its original publication [@kartoun2017].
 
 ```{r ml, include = FALSE}
 n_lrns <- sum(!grepl("^scale..*", bmrk_results$learners$learner_id))
-#n_cv <- c(inner.folds
-#    outer = unlist(
-#        bmrk_results$resamplings$resampling[[1]]$param_set$get_values()
-#    )
-#)
 ```
 
 All data processing, statistical and machine learning analyses were performed
