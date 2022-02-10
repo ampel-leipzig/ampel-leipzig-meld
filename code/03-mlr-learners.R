@@ -11,8 +11,20 @@ tg_lrns <- list(
     ## we want to rerun the benchmarking when anything changes
     tar_target(crossval,
         list(
-            inner = rsmp("cv", folds = 2L),
-            outer = rsmp("repeated_cv", folds = 2L, repeats = 1L)
+            inner = rsmp("cv", folds = 3L),
+            outer = rsmp("repeated_cv", folds = 3L, repeats = 10L)
+        ),
+        deployment = "main"
+    ),
+    tar_target(terminator,
+        trm("combo",
+            list(
+                trm("evals", n_evals = 50L),
+                trm("stagnation", iters = 3L, threshold = 1e-2),
+                trm("stagnation_batch", n = 1L, threshold = 1e-2),
+                trm("run_time", secs = 60)
+            ),
+            any = TRUE
         ),
         deployment = "main"
     ),
@@ -210,19 +222,7 @@ tg_lrns <- list(
             )
         )
         ## tuner
-        tuner <-
-            tnr("grid_search", resolution = 4L, batch_size = 4L)
-            #tnr("random_search", batch_size = 5L)
-
-        ## terminator
-        terminator <- trm("combo", list(
-                trm("evals", n_evals = 50L),
-                trm("run_time", secs = 90L),
-                trm("stagnation", iters = 3L, threshold = 1e-3),
-                trm("stagnation_batch", n = 1L, threshold = 1e-3)
-            ),
-            any = TRUE
-        )
+        tuner <- tnr("grid_search", resolution = 10L, batch_size = 5L)
 
         ## autotuner
         l <- lapply(l, function(ll) {
@@ -239,14 +239,15 @@ tg_lrns <- list(
                 )
         })
 
-        ### preprocessing (is part of the crossval now)
-        l <- c(
+        ## preprocessing (is part of the crossval now)
+        l <- c(l, lapply(
             l,
-            lapply(
-                l,
-                function(ll)as_learner(po("scale") %>>% po("learner", ll))
-            )
-        )
+            function(ll)as_learner(po("scale") %>>% po("learner", ll))
+        ))
+
+        ## name learners
+        names(l) <- vapply(l, "[[", NA_character_, "id")
+
         l
     },
     iteration = "list",
