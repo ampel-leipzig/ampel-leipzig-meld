@@ -37,21 +37,20 @@
 (define-public python-pycox
   (package
     (name "python-pycox")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
       (origin
         (method url-fetch)
         (uri (pypi-uri "pycox" version))
         (sha256
           (base32
-            "0axby1pb1f9laqb5f8bzycgx7r79j5870k3va1nwk9b8hkbmcjvv"))))
+            "0vrxfhq4x6gvnmclbyxrdnfkrdrv39mqi6nvirxxnqlj9nrcc2f2"))))
     (build-system python-build-system)
     (propagated-inputs
       (list python-feather-format
             python-h5py
             python-numba
             python-py7zr
-            python-pytorch
             python-requests
             python-scikit-learn
             python-torchtuples))

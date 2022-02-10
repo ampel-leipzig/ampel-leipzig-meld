@@ -13,14 +13,14 @@
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "broom.helpers" version))
         (sha256
           (base32
-            "0s0hs41z4jqz7kwxc168l2vnlacaa6s8q5mfmkmcvf3cdqqi3hyq"))))
+            "11svlfn80xl8vyrq8vqxrqii5c77kp67drnal9v9l7q1frlnq509"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs
@@ -46,14 +46,14 @@
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
-    (version "1.0.6.1")
+    (version "1.0.8")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "DiagrammeR" version))
         (sha256
           (base32
-            "0gb7ccdrh7jlyqafdk8zs465ygczxxd25s05whn914in1994qkmy"))))
+            "0cyj9mc7rf4kylr9h2k6grfimc6mjyjk14qv1bza9pay44k7n5dr"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
     (propagated-inputs
@@ -106,14 +106,14 @@
 (define-public r-distr6
   (package
     (name "r-distr6")
-    (version "1.6.2")
+    (version "1.6.4")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "distr6" version))
         (sha256
           (base32
-            "19xyivl0prrmqdjg61d5yw5763f0j6h9ji8am2d5iydlqvwl2x7f"))))
+            "1h1f42mcsj44px1j7pnj0mmbi4129nsai2nsyvhqrs7iadyx3z27"))))
     (properties `((upstream-name . "distr6")))
     (build-system r-build-system)
     (propagated-inputs
@@ -165,14 +165,14 @@
 (define-public r-future-callr
   (package
     (name "r-future-callr")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "future.callr" version))
         (sha256
           (base32
-            "037xgv604vrbdqx4zbai8nqd2d9cf47f0rwxd7iihr09y8qknd19"))))
+            "0y5x2xz29j7aidk3c1iby3dk23gpxmgzp4f5z5bdgd1w0n4jslg4"))))
     (properties `((upstream-name . "future.callr")))
     (build-system r-build-system)
     (arguments
@@ -229,14 +229,14 @@
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.5.0")
+    (version "1.5.2")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "gtsummary" version))
         (sha256
           (base32
-            "19qi0w1ymvaw9m3l1ynj681q4bqhrnjn0ir8jg50ia5jql8mxpal"))))
+            "1vmzlpn7h68cgxpnsh49qj6xzanhrxa2v3d1f4s96y6kwla0s395"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs
@@ -326,14 +326,14 @@
 (define-public r-mlr3proba
   (package
     (name "r-mlr3proba")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3proba" version))
         (sha256
           (base32
-            "01k49spc52i8bnwi61b1knw0xnll4hgd489pswfdm7367yskhb2r"))))
+            "1giwab6hdn15xn0vnimnqihl3grrk6vw0p2yf1r590nnqmnyadic"))))
     (properties `((upstream-name . "mlr3proba")))
     (build-system r-build-system)
     (propagated-inputs
@@ -380,13 +380,13 @@
 (define-public r-ooplah
   (package
     (name "r-ooplah")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "ooplah" version))
         (sha256
-          (base32 "0hrbpidcrnvm14qdjhcz4j4im1caydxkj4k9zmqs7dq3wv10rgr9"))))
+          (base32 "1p74jh9g62yicrw0lhpbn0diqi2myl24z28kpd2b3mglyffadr0b"))))
     (properties `((upstream-name . "ooplah")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -524,14 +524,14 @@
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "tarchetypes" version))
         (sha256
           (base32
-            "1ajncm404radx0czqmvd7knrlk0kg39s18fav4gxx3y8lk98qw64"))))
+            "1js09qap4a63m7ldfk8lxj438p5fjy893zqck7vvzmv6zyzxhlg6"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs
@@ -540,10 +540,10 @@
             r-fs
             r-rlang
             r-targets
+            r-tibble
             r-tidyselect
             r-vctrs
             r-withr))
-    (native-inputs (list r-knitr))
     (home-page
       "https://docs.ropensci.org/tarchetypes/")
     (synopsis "Archetypes for Targets")
@@ -554,22 +554,24 @@
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "targets" version))
         (sha256
           (base32
-            "13d673v13bn17ykdiw4n164azdshrdggcb5gm7i2ly19njfhfild"))))
+            "1c9llj6iwry6mj92sy1hqk9kkyyxwa60zr20vj4hivlfff1s2h88"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs
-      (list r-callr
+      (list r-base64url
+            r-callr
             r-cli
             r-codetools
             r-data-table
             r-digest
+            r-knitr
             r-igraph
             r-r6
             r-rlang
@@ -578,7 +580,6 @@
             r-vctrs
             r-withr
             r-yaml))
-    (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/targets/")
     (synopsis
       "Dynamic Function-Oriented 'Make'-Like Declarative Workflows")
