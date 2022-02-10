@@ -28,6 +28,11 @@ tg_lrns <- list(
         ),
         deployment = "main"
     ),
+    tar_target(tuner,
+        #tuner <- tnr("random_search", batch_size = 10L)
+        tuner <- tnr("grid_search", resolution = 20L, batch_size = 10L),
+        deployment = "main"
+    ),
     tar_target(learners, {
         l <- list(
             cox = list(
@@ -221,8 +226,6 @@ tg_lrns <- list(
                 }
             )
         )
-        ## tuner
-        tuner <- tnr("grid_search", resolution = 10L, batch_size = 5L)
 
         ## autotuner
         l <- lapply(l, function(ll) {
