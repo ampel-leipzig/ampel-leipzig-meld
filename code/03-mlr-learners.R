@@ -155,6 +155,30 @@ tg_lrns <- list(
                     p
                 }
             ),
+            coxtime = list(
+                lrn = lrn(
+                    "surv.deepsurv", id = "coxtime",
+                    activation = "leakyrelu",
+                    #frac = 0.3, # we run our own nested cv
+                    early_stopping = TRUE,
+                    epochs = 100, optimizer = "adam"
+                ),
+                ps = {
+                    p <- ps(
+                        dropout = p_dbl(lower = 0, upper = 1),
+                        weight_decay = p_dbl(lower = 0, upper = 0.5),
+                        learning_rate = p_dbl(lower = 0, upper = 1),
+                        nodes = p_int(lower = 1, upper = 32),
+                        k = p_int(lower = 1, upper = 4)
+                    )
+                    p$trafo <- function(x, param_set) {
+                        x$num_nodes <- rep(x$nodes, x$k)
+                        x$nodes <- x$k <- NULL
+                        x
+                    }
+                    p
+                }
+            ),
             deepsurv = list(
                 lrn = lrn(
                     "surv.deepsurv", id = "deepsurv",
