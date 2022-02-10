@@ -183,22 +183,20 @@ tg_lrns <- list(
                 lrn = lrn(
                     "surv.deepsurv", id = "deepsurv",
                     activation = "leakyrelu",
-                    frac = 0.3, early_stopping = TRUE,
+                    #frac = 0.3, # we run our own nested cv
+                    early_stopping = TRUE,
                     epochs = 100, optimizer = "adam"
                 ),
                 ps = {
                     p <- ps(
-                        dropout =
-                            p_dbl(lower = 0, upper = 0.7, default = 0.5),
+                        dropout = p_dbl(lower = 0, upper = 0.7),
                         ## 0.004, 0.002, 0.001, 0.0005, 0.0002, 0.0001, 0
-                        weight_decay =
-                            p_int(lower = 0, upper = 6, default = 2),
-                        learning_rate =
-                            p_dbl(lower = 0, upper = 0.2, default = 0.1),
+                        weight_decay = p_int(lower = 0, upper = 6),
+                        learning_rate = p_dbl(lower = 0, upper = 0.2),
                         ## nodes in a layer (2, 4, 8, 16, 32, 64, 128)
-                        nodes = p_int(lower = 0L, upper = 7L, default = 5L),
+                        nodes = p_int(lower = 0L, upper = 7L),
                         ## number of hidden layers
-                        k = p_int(lower = 0L, upper = 4L, default = 2L)
+                        k = p_int(lower = 1L, upper = 4L)
                     )
                     p$trafo <- function(x, param_set) {
                         x$weight_decay <-
