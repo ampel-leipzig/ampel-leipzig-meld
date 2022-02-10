@@ -8,19 +8,50 @@ output:
 
 ```{r benchmarks_setup, message = FALSE}
 library("targets")
+library("data.table")
+library("mlr3")
+library("mlr3misc")
+library("mlr3proba")
 library("mlr3viz")
 library("viridis")
 library("ggplot2")
 tar_load(bmrk_results)
 tar_load(bmrk_aggr)
 
+agg <- bmrk_results$aggregate(msr("surv.cindex", id = "harrell"))
+agg[, `:=`
+    (nr = NULL, resample_result = NULL, resampling_id = NULL, iters = NULL)
+]
+setorder(agg, task_id, -harrell)
 p.value <- 0.2
 ```
 
 # Overview
 
+## Table
+
+```{r benchmarks_table, results = "asis"}
+lapply(split(agg, agg$task_id), knitr::kable, digits = 4)
+```
+
+## Boxplots
+
 ```{r benchmarks_plot_c_harrell, fig.width = 18}
+m <- agg[, max(harrell), by = task_id]
 autoplot(bmrk_results) +
+    geom_boxplot(aes(fill = learner_id)) +
+    geom_jitter(position = position_jitter(0.2)) +
+    scale_fill_viridis(discrete = TRUE) +
+    geom_hline(
+        aes(yintercept = V1), linetype = "dashed", color = "red", data = m
+    ) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+```{r benchmarks_plot_c_uno, fig.width = 18}
+autoplot(
+    bmrk_results,
+    measure = msr("surv.cindex", id = "uno", weight_meth = "G2")) +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
     scale_fill_viridis(discrete = TRUE) +
@@ -29,10 +60,18 @@ autoplot(bmrk_results) +
 
 # Aggregated performance
 
-Aggregated performance across all `nrow(bmrk_results$tasks)` datasets.
+Aggregated performance across all `r nrow(bmrk_results$tasks)` datasets.
 
 ```{r benchmarks_aggr_plot_c_harrell}
-autoplot(bmrk_aggr, type = "box", meas = "harrell_c") +
+autoplot(bmrk_aggr, type = "box", meas = "harrell") +
+    geom_boxplot(aes(fill = learner_id)) +
+    geom_jitter(position = position_jitter(0.2)) +
+    scale_fill_viridis(discrete = TRUE) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+```{r benchmarks_aggr_plot_c_uno}
+autoplot(bmrk_aggr, type = "box", meas = "uno") +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
     scale_fill_viridis(discrete = TRUE) +
@@ -46,7 +85,7 @@ autoplot(bmrk_aggr, type = "box", meas = "harrell_c") +
 
 ```{r benchmarks_aggr_pairwise_harrell_c}
 autoplot(
-    bmrk_aggr, type = "fn", meas = "harrell_c", p.value = p.value,
+    bmrk_aggr, type = "fn", meas = "harrell", p.value = p.value,
     col = palette.colors(2L)[2L]
 )
 ```
@@ -58,7 +97,7 @@ autoplot(
 
 ```{r benchmarks_aggr_critdiff_c_harrell}
 autoplot(
-    bmrk_aggr, type = "cd", meas = "harrell_c", style = 2, p.value = p.value,
+    bmrk_aggr, type = "cd", meas = "harrell", style = 2, p.value = p.value,
     minimize = FALSE
 ) + scale_color_viridis(discrete = TRUE)
 ```
