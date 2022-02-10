@@ -37,7 +37,7 @@ sync: container scripts/Rscript.sh scripts/slurm_batchtools.tmpl
     --recursive \
     --links \
     --delete \
-    analysis code container logs scripts brain:~/
+    .Renviron analysis code container logs scripts brain:~/
 
 local-guix:
 	guix package --manifest=guix/manifest.scm --load-path=guix/channel --profile="$(GUIX_EXTRA_PROFILES)"/ampel/ampel

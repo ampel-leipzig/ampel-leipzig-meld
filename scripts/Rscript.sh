@@ -6,7 +6,11 @@ BIND_PATH="/etc/passwd,/etc/group,/var/run"
 MODULESPATH="/usr/share/[Mm]odules/init/bash"
 if [ -f ${MODULESPATH} ] ; then
     . ${MODULESPATH}
-    SINGULARITYVER=3.4.2
+    SINGULARITYVER=3.8.2
+    if [ ! -d "/opt/singularity-${SINGULARITYVER}" ] ; then
+        SINGULARITYVER=3.4.2
+    fi
+    SINGULARITYPATH=/opt/singularity-${SINGULARITYVER}/bin/singularity
     module load singularity/${SINGULARITYVER}
     SINGULARITYPATH=/opt/singularity-${SINGULARITYVER}/bin/singularity
     BIND_PATH="${BIND_PATH},/var/run/slurm/conf/slurm.conf:/etc/slurm/slurm.conf"
@@ -16,14 +20,12 @@ else # local
     SINGULARITYPATH=/usr/bin/singularity
 fi
 
-SINGULARITYENV_LOCPATH=/lib/locale/2.31/ \
-    SINGULARITYENV_RETICULATE_PYTHON=/bin/python3.8 \
-    SINGULARITYENV_PYCOX_DATA_DIR=${TMPDIR:-/tmp} \
-    SINGULARITY_TMPDIR=${TMPDIR:-/tmp} \
-    SINGULARITYENV_TMPDIR=${TMPDIR:-/tmp} \
-    SINGULARITYENV_TAR_MAKE_REPORTER="timestamp" \
-    SINGULARITYENV_TZ="UTC" \
+SINGULARITY_TMPDIR=${TMPDIR:-/tmp}
     SINGULARITY_BIND="${BIND_PATH}" \
     ${SINGULARITYPATH} run container/ampel-leipzig-meld.squashfs \
-    "--vanilla ${@}"
+    "--no-save --no-restore --no-site-file --no-init-file ${@}"
+    # don't use --vanilla to read .Renviron to set TMP and PYTHONDIR which
+    # is not possible via SINGULARITY_TMPDIR/SINGULARITYENV_*
+    # in the current singularity 3.8.2 on the HPC
+    #"--vanilla ${@}"
 exit 0
