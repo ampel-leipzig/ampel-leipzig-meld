@@ -36,8 +36,8 @@ tg_benchmark_results <- list(
         as.BenchmarkAggr(
             bmrk_results,
             measures = list(
-                msr("surv.cindex"),
-                msr("surv.cindex", weight_meth = "G2")
+                msr("surv.cindex", id = "harrell"),
+                msr("surv.cindex", id = "uno", weight_meth = "G2")
             )
         ),
         packages = c("mlr3", "mlr3proba", "mlr3benchmark"),
