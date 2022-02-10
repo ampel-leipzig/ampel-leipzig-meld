@@ -66,6 +66,7 @@ library("ameld")
 
 tar_load(bmrk_results)
 tar_load(crossval)
+tar_load(tuner)
 
 tar_load(raw_data)
 tar_load(labelled_meld_data)
@@ -277,13 +278,15 @@ two different random forest implementations
 [@ranger2017; @R-ranger; @randomForestSRC2008; @R-randomForestSRC],
 extreme gradient boosting [@chen2016; @R-xgboost],
 two different support vector machines [@vanbelle2011; @R-survivalsvm]
-and a neural network [@katzman2018; @R-survivalmodels].
+and two neural networks [@katzman2018; @kvamme2019; @R-survivalmodels].
 
 To choose the best model we used nested resampling to avoid feature- and
 model-selection-bias.
 Therefore, we applied a `r crossval$inner$param_set$values$folds`-fold inner
 and a `r crossval$outer$param_set$values$folds`-fold outer cross-validation
 that was repeated `r crossval$outer$param_set$values$repeats` times.
+We searched the hyperparameter space using a grid search with a resolution of
+`r tuner$param_set$get_values()$resolution`.
 Subsequently we selected the model with the
 highest median concordance index [@harrell1982]. If multiple models were
 comparable we chose the simpler (more penalized) one.
