@@ -43,25 +43,6 @@
       "This package provides suite of functions to work with regression model 'broom::tidy()' tibbles.  The suite includes functions to group regression model terms by variable, insert reference and header rows for categorical variables, add variable labels, and more.")
     (license gpl3)))
 
-(define-public r-bwstest
-  (package
-    (name "r-bwstest")
-    (version "0.2.2")
-    (source
-      (origin
-        (method url-fetch)
-        (uri (cran-uri "BWStest" version))
-        (sha256
-          (base32 "02amzlfprmw5pyis0dg0kg0x8xqh50a4vfdcxxmklrzik3b1vzzs"))))
-    (properties `((upstream-name . "BWStest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-memoise r-rcpp))
-    (home-page "https://github.com/shabbychef/BWStest")
-    (synopsis "Baumgartner Weiss Schindler Test of Equal Distributions")
-    (description
-      "Performs the 'Baumgartner-Weiss-Schindler' two-sample test of equal probability distributions, <doi:10.2307/2533862>.  Also performs similar rank-based tests for equal probability distributions due to Neuhauser <doi:10.1080/10485250108832874> and Murakami <doi:10.1080/00949655.2010.551516>.")
-    (license lgpl3)))
-
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
