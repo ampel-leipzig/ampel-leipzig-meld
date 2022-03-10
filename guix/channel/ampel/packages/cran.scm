@@ -264,6 +264,41 @@
       "Creates presentation-ready tables summarizing data sets, regression models, and more.  The code to create the tables is concise and highly customizable.  Data frames can be summarized with any function, e.g.  mean(), median(), even user-written functions.  Regression models are summarized and include the reference rows for categorical variables.  Common regression models, such as logistic regression and Cox proportional hazards regression, are automatically identified and the tables are pre-filled with appropriate column headers.")
     (license expat)))
 
+(define-public r-mets
+  (package
+    (name "r-mets")
+    (version "1.2.9")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "mets" version))
+        (sha256
+          (base32 "1daah4wkn428gdlah5f96jyjs3z9c3sz8h7g9lil8p3i9q3crb2z"))))
+    (properties `((upstream-name . "mets")))
+    (build-system r-build-system)
+    (arguments
+     `(#:tests? #f)) ; one vignette overwrite another, disable checks, hopefully CRAN checks it
+    (propagated-inputs
+      (list r-lava
+            r-mvtnorm
+            r-numderiv
+            r-rcpp
+            r-rcpparmadillo
+            r-survival
+            r-timereg))
+    (native-inputs (list gfortran-toolchain r-knitr))
+    (home-page "https://kkholst.github.io/mets/")
+    (synopsis "Analysis of Multivariate Event Times")
+    (description
+      "Implementation of various statistical models for multivariate event history data
+      <doi:10.1007/s10985-013-9244-x>.  Including multivariate cumulative incidence
+      models <doi:10.1002/sim.6016>, and  bivariate random effects probit models
+      (Liability models) <doi:10.1016/j.csda.2015.01.014>.  Also contains two-stage
+      binomial modelling that can do pairwise odds-ratio dependence modelling based
+      marginal logistic regression models.  This is an alternative to the alternating
+      logistic regression approach (ALR).")
+    (license gpl2+)))
+
 (define-public r-mlr3benchmark
   (package
     (name "r-mlr3benchmark")
@@ -419,6 +454,110 @@
     (description
       "By making use of 'set6', alongside the S3 and R6 paradigms, this package provides a fast and lightweight R6 interface for parameters and parameter sets.")
     (license expat)))
+
+(define-public r-pec
+  (package
+    (name "r-pec")
+    (version "2022.03.06")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "pec" version))
+        (sha256
+          (base32 "1v43k2l46dz1myas9afyd5cp9a9rw7l71i7k4z8pwlw6aydispnm"))))
+    (properties `((upstream-name . "pec")))
+    (build-system r-build-system)
+    (propagated-inputs
+      (list r-foreach
+            r-lava
+            r-prodlim
+            r-riskregression
+            r-rms
+            r-survival
+            r-timereg))
+    (home-page "https://cran.r-project.org/package=pec")
+    (synopsis
+      "Prediction Error Curves for Risk Prediction Models in Survival Analysis")
+    (description
+      "Validation of risk predictions obtained from survival models and
+      competing risk models based on censored data using inverse weighting and
+      cross-validation.
+      Most of the 'pec' functionality has been moved to 'riskRegression'.")
+    (license gpl2+)))
+
+(define-public r-publish
+  (package
+    (name "r-publish")
+    (version "2020.12.23")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "Publish" version))
+        (sha256
+          (base32 "1qpv5hj9agmc4hrpskqk0lns8bh8w3j27d4ckh5y7gh1532qzad7"))))
+    (properties `((upstream-name . "Publish")))
+    (build-system r-build-system)
+    (propagated-inputs
+      (list r-data-table r-lava r-multcomp r-prodlim r-survival))
+    (home-page "https://cran.r-project.org/package=Publish")
+    (synopsis
+      "Format Output of Various Routines in a Suitable Way for Reports and Publication")
+    (description
+      "This package provides a bunch of convenience functions that transform the
+      results of some basic statistical analyses into table format nearly ready for
+      publication.  This includes descriptive tables, tables of logistic regression
+      and Cox regression results as well as forest plots.")
+    (license gpl2+)))
+
+(define-public r-riskregression
+  (package
+    (name "r-riskregression")
+    (version "2021.10.10")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "riskRegression" version))
+        (sha256
+          (base32 "1fhkn9qz7h95qzb2fcai0smy4vsvj7f7538g5jk0pa7wqr8z6wc4"))))
+    (properties `((upstream-name . "riskRegression")))
+    (build-system r-build-system)
+    (propagated-inputs
+      (list r-cmprsk
+            r-data-table
+            r-doparallel
+            r-foreach
+            r-ggplot2
+            r-lattice
+            r-lava
+            r-mets
+            r-mvtnorm
+            r-plotrix
+            r-prodlim
+            r-publish
+            r-ranger
+            r-rcpp
+            r-rcpparmadillo
+            r-rms
+            r-survival
+            r-timereg))
+    (home-page "https://github.com/tagteam/riskRegression")
+    (synopsis
+      "Risk Regression Models and Prediction Scores for Survival Analysis with Competing Risks")
+    (description
+      "Implementation of the following methods for event history analysis.  Risk
+      regression models for survival endpoints also in the presence of competing risks
+      are fitted using binomial regression based on a time sequence of binary event
+      status variables.  A formula interface for the Fine-Gray regression model and an
+      interface for the combination of cause-specific Cox regression models.  A
+      toolbox for assessing and comparing performance of risk predictions (risk
+      markers and risk prediction models).  Prediction performance is measured by the
+      Brier score and the area under the ROC curve for binary possibly time-dependent
+      outcome.  Inverse probability of censoring weighting and pseudo values are used
+      to deal with right censored data.  Lists of risk markers and lists of risk
+      models are assessed simultaneously.  Cross-validation repeatedly splits the
+      data, trains the risk prediction models on one part of each split and then
+      summarizes and compares the performance across splits.")
+    (license gpl2+)))
 
 (define-public r-set6
   (package
@@ -594,6 +733,59 @@
       GNU 'Make' (2015, ISBN:978-9881443519) and 'drake'
       (2018, <doi:10.21105/joss.00550>).")
     (license expat)))
+
+(define-public r-timereg
+  (package
+    (name "r-timereg")
+    (version "2.0.1")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "timereg" version))
+        (sha256
+          (base32 "1mrqy54jwgfygjlm7hvlx42c631is1nc1q6jd3chw2cx3pi9lhiq"))))
+    (properties `((upstream-name . "timereg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lava r-numderiv r-survival))
+    (home-page "https://github.com/scheike/timereg")
+    (synopsis "Flexible Regression Models for Survival Data")
+    (description
+      "Programs for Martinussen and Scheike (2006), `Dynamic Regression Models
+      for Survival Data', Springer Verlag.  Plus more recent developments.
+      Additive survival model, semiparametric proportional odds model,
+      fast cumulative residuals, excess risk models and more.
+      Flexible competing risks regression including GOF-tests.
+      Two-stage frailty modelling.  PLS for the additive risk model.
+      Lasso in the 'ahaz' package.")
+    (license gpl2+)))
+
+(define-public r-timeroc
+  (package
+    (name "r-timeroc")
+    (version "0.4")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "timeROC" version))
+        (sha256
+          (base32 "1qxijg7hazc8bifwj2254ig2p3cbrp9p0bsyhhh3aikf1rg113v1"))))
+    (properties `((upstream-name . "timeROC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-pec))
+    (home-page "https://cran.r-project.org/package=timeROC")
+    (synopsis "Time-Dependent ROC Curve and AUC for Censored Survival Data")
+    (description
+      "Estimation of time-dependent ROC curve and area under time dependent ROC
+      curve (AUC) in the presence of censored data, with or without competing
+      risks. Confidence intervals of AUCs and tests for comparing AUCs of two
+      rival markers measured on the same subjects can be computed, using the
+      iid-representation of the AUC estimator.  Plot functions for
+      time-dependent ROC curves and AUC curves are provided.
+      Time-dependent Positive Predictive Values (PPV) and
+      Negative Predictive Values (NPV) can also be computed.
+      See Blanche et al. (2013) <doi:10.1002/sim.5958> and references
+      therein for the details of the methods implemented in the package.")
+    (license gpl2+)))
 
 (define-public r-visnetwork
   (package

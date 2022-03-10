@@ -46,6 +46,7 @@
       "r-survivalsvm"
       "r-tarchetypes"
       "r-targets"
+      "r-timeroc"
       "r-workflowr"
       "r-viridis"
       "r-visnetwork"
