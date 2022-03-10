@@ -73,6 +73,8 @@ tar_load(labelled_meld_data)
 
 tar_load(tbl1)
 tar_load(tbl_observed_vs_expected_mortality)
+
+tar_load(ameldcfg)
 ```
 
 # Introduction
@@ -286,7 +288,23 @@ Subsequently we selected the model with the
 highest median concordance index [@harrell1982]. If multiple models were
 comparable we chose the simpler (more penalized) one.
 
-TODO: selected final model, analysis, feature selection
+After selecting the final model we train and validated it as described in
+@harrell1996.
+Briefly we develop our model and predict survival at `r ameldcfg$times` days.
+The predictions were grouped into equal sized intervals so that there
+are `r ameldcfg$m` patients in each interval.
+For each group the mean survival probability and the difference to the
+Kaplan-Meier estimate was calculated.
+The same procedure was repeated for `r ameldcfg$nboot` bootstrap samples.
+Subsequently the differences between predicted survival and Kaplan-Meier
+estimates of the bootstrap samples were averaged and added to the original
+model difference to obtain a bias-corrected estimated between predicted and
+observed survival.
+
+The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
+using the area under the time-dependent ROC curve (AUC)
+based on the nonparametric inverse probability of censoring weighting estimator
+(IPCW) [@blanche2013].
 
 Summary tables were built using the *gtsummary* package
 [@gtsummary; @R-gtsummary].
@@ -301,12 +319,6 @@ theme_gtsummary_journal(journal = "jama")
 theme_gtsummary_compact()
 tbl1
 ```
-
-<!-- TODO:
-use `pattern` argument to provide "{n} ({p}%)" for categorial/dichotomos
-variables after this PR is merged
-https://github.com/ddsjoberg/gtsummary/pull/951
--->
 
 ```{r tbl1_helper_func, echo = FALSE}
 .tbl1 <- function(variable, column = "Overall", ...) {
