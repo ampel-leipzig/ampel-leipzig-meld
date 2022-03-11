@@ -49,7 +49,7 @@ knitr::write_bib(
         "gtsummary",
         "mlr3", "mlr3proba", "zlog",
         "survival", "glmnet", "penalized", "ranger", "randomForestSRC",
-        "xgboost", "survivalsvm", "survivalmodels"
+        "xgboost", "survivalsvm", "survivalmodels", "timeROC"
     ),
     file = rprojroot::find_rstudio_root_file(
         "analysis", "bibliography", "rpackages", "article.bib"
@@ -304,7 +304,7 @@ observed survival.
 The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
 using the area under the time-dependent ROC curve (AUC)
 based on the nonparametric inverse probability of censoring weighting estimator
-(IPCW) [@blanche2013].
+(IPCW) [@blanche2013, @R-timeROC].
 
 Summary tables were built using the *gtsummary* package
 [@gtsummary; @R-gtsummary].
