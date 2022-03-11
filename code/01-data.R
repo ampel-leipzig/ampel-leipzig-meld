@@ -29,7 +29,8 @@
         dialysis = x$Dialysis,
         type = "unos"
     )
-    x$ProbMeldPlus7 <- meld_plus7(
+    x$ProbMeldUnos <- pmeld(x$ScoreMeldUnos)
+    x$ProbMeldPlus7 <- pmeld_plus7(
         creatinine = as_metric(x$CRE_S, "creatinine"),
         bilirubin = as_metric(x$BILI_S, "bilirubin"),
         inr = x$INR_C,
