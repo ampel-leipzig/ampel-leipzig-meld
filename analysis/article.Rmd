@@ -411,7 +411,7 @@ knitr::kable(
 )
 ```
 
-```{r benchmark-plot, fig.cap = "Benchmark results of machine learning algorithms."}
+```{r benchmark-plot, fig.cap = "Benchmark results of machine learning algorithms.", echo = FALSE}
 r <- bmrk_results$clone()
 id <- grep("^scale", x = r$learners$learner_id, invert = TRUE, value = TRUE)
 r$filter(task_id = "zlog_eldd", learner_id = id)
@@ -454,13 +454,15 @@ the University Hospital of Leipzig we compared
 - unknown cause of death (death with vs of end-stage liver disease)
 - bias caused by LTx censorship?
 
-```{r co2e}
+```{r co2e, include = FALSE}
 tdp <- c(
-    ## brain/batch Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
+    ## brain/(batch|login) Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz
     ## https://ark.intel.com/content/www/us/en/ark/products/91767/intel-xeon-processor-e52650-v4-30m-cache-2-20-ghz.html
-    batch = 105,
+    login = 105,
     ## brain/snowball Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
     ## https://www.intel.com/content/www/us/en/products/sku/192443/intel-xeon-gold-6240-processor-24-75m-cache-2-60-ghz.html
+    ## TDP 150, contains 2 processors
+    ## (but even with workers = 72, we barely use more than 36, so 150 instead of 300 W should be fine)
     snowball = 150
 )
 
@@ -471,11 +473,14 @@ tdp <- c(
 ## https://www.umweltbundesamt.de/sites/default/files/medien/5750/publikationen/2021-05-26_cc-45-2021_strommix_2021_0.pdf
 kgco2kwh <- 0.471
 
-elapsed_runtime <- sum(
-    subset(tar_meta(), !type %in% c("function", "object", "branch"))$seconds
-)
+tm <- tar_meta(fields = c("name", "type", "seconds"))
+tm <- tm[tm$type %in% c("pattern", "stem"),]
+tm$node <-
+    ifelse(grepl("^boot|^bmrks$|^arcvob$", tm$name), "snowball", "login")
 
-kgco2e <- tdp["snowball"] / 1000 * elapsed_runtime / 3600 * kgco2kwh
+tm$runtime <- tm$seconds *
+    ifelse(tm$node == "snowball", 32, 1) # on snowball we use 32 workers
+kgco2e <- sum((tm$runtime / 3600) * (tdp[tm$node] / 1000)) * kgco2kwh
 kgco2e
 
 ## Umweltbundesamt
@@ -485,7 +490,7 @@ kgco2e
 ## https://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/texte_156-2020_oekologische_bewertung_von_verkehrsarten_0.pdf
 ## Gesamt CO2eq (nur Verbrauch und Energiebereitstellung) je Personen km,
 ## A2, Tab. 69: PKW TTW 131 gCO2eq/Pkm, A3, Tab. 71.: PKW WTT 22 gCO2eq/Pkm
-carkgco2e <- 153/ 1000
+carkgco2e <- 153 / 1000
 km <- kgco2e / carkgco2e
 ```
 
@@ -493,9 +498,10 @@ The calculations were conducted using the high performance computing (HPC)
 cluster of the University Greifswald.
 In 2018 the average carbon efficiency of the German power grid was
 `r kgco2kwh` kgCO~2~eq/kWh [@icha2021].
-A single run of the complete calculation pipeline took
-`r sprintf("%.1f", elapsed_runtime / 3600)` hours of computation on an
-Intel(R) Xeon(R) Gold 6240 CPU (thermal design power: 150 W).
+A single run of the complete calculation pipeline took roughly
+`r sprintf("%.1f", sum(tm$runtime) / 3600)` hours of computation on an
+Intel(R) Xeon(R) E5-2650 v4 and
+Intel(R) Xeon(R) Gold 6240 CPU (thermal design power: 105 and 150 W).
 The total estimated emissions were at least
 `r sprintf("%.2f", kgco2e)` kgCO~2~eq
 (ignoring development, test runs, etc.).
