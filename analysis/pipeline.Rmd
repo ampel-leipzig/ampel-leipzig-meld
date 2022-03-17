@@ -6,8 +6,10 @@ output:
 ---
 
 ```{r targets_visnetwork}
-targets::tar_visnetwork(
+graph <- targets::tar_visnetwork(
     targets_only = TRUE,
     label = c("time", "size", "branches")
 )
+graph$x$main$text <- paste0("Last built: ", Sys.time())
+graph
 ```
