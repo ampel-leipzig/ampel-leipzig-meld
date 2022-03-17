@@ -52,7 +52,9 @@ for (v in labv) {
 # MELD Scores (imputed)
 
 ```{r histograms_meld, results = "asis", message = FALSE, warning = FALSE}
-meldv <- c(paste0("ScoreMeld", c("", "Unos", "Na", "NaUnos")), "ProbMeldPlus7")
+meldv <-
+    c(paste0("ScoreMeld", c("", "Unos", "Na", "NaUnos")),
+      paste0("SurvProbMeld", c("Unos", "NaUnos", "Plus7")))
 for (v in meldv) {
     cat("\n\n##", v , "\n\n")
     .hist(zlog_data[[v]], main = paste0("Histogram of ", v), xlab = v)

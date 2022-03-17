@@ -29,8 +29,9 @@
         dialysis = x$Dialysis,
         type = "unos"
     )
-    x$ProbMeldUnos <- pmeld(x$ScoreMeldUnos)
-    x$ProbMeldPlus7 <- pmeld_plus7(
+    x$SurvProbMeldUnos <- pmeld(x$ScoreMeldUnos)
+    x$SurvProbMeldNaUnos <- pmeld(x$ScoreMeldNaUnos)
+    x$SurvProbMeldPlus7 <- pmeld_plus7(
         creatinine = as_metric(x$CRE_S, "creatinine"),
         bilirubin = as_metric(x$BILI_S, "bilirubin"),
         inr = x$INR_C,
@@ -154,8 +155,6 @@ tg_data <- list(
                 attr(x$ScoreMeldUnos, "label") <- "MELD score"
             attr(x$ScoreMeldNa, "label") <-
                 attr(x$ScoreMeldNaUnos, "label") <- "MELD-Na score"
-            attr(x$ProbMeldPlus7, "label") <- "MELD-Plus7 risk score"
-
             attr(x$MeldCategory, "label") <- "MELD Category"
 
             ## labels where the column names are identical to the abbreviation

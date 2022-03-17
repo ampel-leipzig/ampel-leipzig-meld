@@ -30,7 +30,7 @@ tg_tables <- list(
                Sex,
                ScoreMeldUnos,
                MeldCategory,
-               ScoreMeldNaUnos, ProbMeldPlus7,
+               ScoreMeldNaUnos,
             ) |>
             tbl_summary(
                 by = Sex,
