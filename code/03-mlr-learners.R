@@ -11,7 +11,16 @@ tg_lrns <- list(
     ## we want to rerun the benchmarking when anything changes
     tar_target(crossval,
         list(
-            inner = rsmp("cv", folds = 3L),
+            # works
+             # 3, 3,2, GS 4
+             # 5, 3,2, GS 4
+             # 5, 3,5, GS 8
+             # 5, 3,10, GS 10
+            # doesn't work/finish
+             # 5, 3,10 GS 12 (penridge > 4 h)
+             # 3, 3,10 GS 12 (coxtime 'obj' must have column names)
+             # 3, 3,10 GS 10 (coxtime 'obj' must have column names)
+            inner = rsmp("cv", folds = 5L),
             outer = rsmp("repeated_cv", folds = 3L, repeats = 10L)
         ),
         deployment = "main"
@@ -19,7 +28,7 @@ tg_lrns <- list(
     tar_target(terminator,
         trm("combo",
             list(
-                trm("evals", n_evals = 50L),
+                trm("evals", n_evals = 60L),
                 trm("stagnation", iters = 3L, threshold = 1e-2),
                 trm("stagnation_batch", n = 1L, threshold = 1e-2),
                 trm("run_time", secs = 60)
@@ -29,8 +38,7 @@ tg_lrns <- list(
         deployment = "main"
     ),
     tar_target(tuner,
-        #tuner <- tnr("random_search", batch_size = 10L)
-        tuner <- tnr("grid_search", resolution = 20L, batch_size = 10L),
+        tuner <- tnr("grid_search", resolution = 10L, batch_size = 5L),
         deployment = "main"
     ),
     tar_target(learners, {

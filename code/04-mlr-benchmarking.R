@@ -29,7 +29,7 @@ tg_benchmark_results <- list(
         bmrk_results,
         do.call(c, bmrks),
         packages = "mlr3",
-        deployment = "worker"
+        deployment = "main"
     ),
     tar_target(
         bmrk_aggr,
@@ -41,6 +41,6 @@ tg_benchmark_results <- list(
             )
         ),
         packages = c("mlr3", "mlr3proba", "mlr3benchmark"),
-        deployment = "worker"
+        deployment = "main"
     )
 )
