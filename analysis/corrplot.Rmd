@@ -14,6 +14,8 @@ tar_load(imp_data)
 
 # Correlation
 
+## Plot
+
 ```{r corrplot}
 labv <- grep("_[SECQ]$", colnames(imp_data), value = TRUE)
 cr <- cor(imp_data[labv], use = "pairwise.complete.obs")
@@ -23,4 +25,18 @@ corrplot.mixed(
     number.cex = 0.25, number.font = 1L,
     order = "AOE"
 )
+```
+
+## Table
+
+```{r cortbl}
+ut <- upper.tri(cr)
+nms <- paste(
+    colnames(cr)[col(cr)[ut]],
+    rownames(cr)[row(cr)[ut]],
+    sep = ":"
+)
+tbl <- data.frame(Values = nms, Correlation = cr[ut])
+tbl <- tbl[order(-abs(tbl$Correlation)),]
+knitr::kable(tbl, header = TRUE, row.names = FALSE, digits = 3L)
 ```
