@@ -23,7 +23,7 @@ agg[, `:=`
     (nr = NULL, resample_result = NULL, resampling_id = NULL, iters = NULL)
 ]
 setorder(agg, task_id, -harrell)
-p.value <- 0.2
+p.value <- 0.05
 ```
 
 # Overview

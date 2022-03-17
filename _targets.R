@@ -57,17 +57,22 @@ source("code/01-data.R")
 source("code/02-mlr-tasks.R")
 source("code/03-mlr-learners.R")
 source("code/04-mlr-benchmarking.R")
+source("code/05-ameld-elasticnet.R")
+source("code/06-timeroc.R")
 source("code/08-tables.R")
 source("code/09-reports.R")
 source("code/99-site.R")
 
 list(
    tg_data,
-   tg_lrns,
    tg_tasks,
+   tg_tables,
+   tg_lrns,
    tg_benchmarks,
    tg_benchmark_results,
-   tg_tables,
+   tg_ameld,
+   tg_timeroc,
+   tg_timeroc_psurv,
    tg_reports,
    tg_site
 )

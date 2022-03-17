@@ -1,0 +1,94 @@
+---
+title: "elasticnet"
+output:
+  bookdown::html_document2:
+    fig.width: 18
+    fig.height: 8
+---
+
+```{r elasticnet_setup, message = FALSE}
+library("targets")
+library("ameld")
+library("viridisLite")
+tar_load(arcvob)
+tar_load(bootrcv)
+tar_load(bootarcv)
+#tar_load(bootarcv9)
+tar_load(amelddata)
+tar_load(ameldcfg)
+tar_load(zlog_data)
+```
+
+# Tuning alpha
+
+```{r arcvob}
+arcvob
+```
+
+```{r arcvob-plot-alpha}
+plot(arcvob)
+```
+
+```{r arcvob-plot-lambdamin}
+plot(arcvob, what = "lambda.min")
+```
+
+```{r arcvob-plot-lambda1se}
+plot(arcvob, what = "lambda.1se")
+```
+
+# Bootstrapping
+
+## rcv.glmnet
+
+```{r bootrcv}
+plot(bootrcv, what = "calibration")
+
+ps <- lapply(
+    zlog_data[paste0("SurvProbMeld", c("Unos", "NaUnos", "Plus7"))],
+    function(p) {
+        ctpnts <- cutpoints(p, n = ameldcfg$m)
+        f <- cut(p, ctpnts, include.lowest = TRUE)
+        list(
+            predicted = groupmean(p, f = f),
+            observed = observed_survival(
+                amelddata$y, f = f, times = ameldcfg$times
+            )
+        )
+    }
+)
+names(ps) <- c("MELD", "MELD-Na", "MELD-Plus7")
+col <- viridisLite::viridis(6)[4:6]
+
+for (i in seq_along(ps)) {
+    lines(
+        ps[[i]]$predicted, ps[[i]]$observed, col = col[i], type = "b", pch = 19
+    )
+}
+legend("topleft", col = col, legend = names(ps), pch = 19, bty = "n")
+
+plot(bootrcv, what = "selected", cex = 0.5)
+plot(bootrcv$fit$glmnet.fit, xvar = "norm")
+plot(bootrcv$fit$glmnet.fit, xvar = "lambda")
+plot(bootrcv$fit$glmnet.fit, xvar = "dev")
+```
+
+## arcv.glmnet
+
+```{r bootarcv}
+a <- c(table(sapply(bootarcv$models, function(m)m$fit$alpha)))
+plot(bootarcv, what = "calibration")
+```
+```{r bootarcv2, fig.height = 12}
+plot(bootarcv, what = "selected")
+plot_dots(a, main = "Selected Alpha Values")
+```
+
+## arcv9.glmnet
+
+```{r bootarcv9}
+#a <- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))
+#plot(bootarcv9 , what = "calibration")
+#plot(bootarcv9, what = "selected")
+#plot_dots(a, main = "Selected Alpha Values")
+```

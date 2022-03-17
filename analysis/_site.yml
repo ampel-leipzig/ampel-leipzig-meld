@@ -29,6 +29,10 @@ navbar:
     menu:
       - text: "Benchmarks"
         href: benchmarks.html
+      - text: "ElasticNet"
+        href: elasticnet.html
+      - text: "ROC"
+        href: roc.html
   - text: Article
     menu:
       - text: "Article"

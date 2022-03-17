@@ -1,0 +1,31 @@
+---
+title: "ROC"
+output:
+  bookdown::html_document2:
+    fig.width: 18
+    fig.height: 8
+---
+
+```{r roc_setup, message = FALSE}
+library("targets")
+library("ameld")
+tar_load(timeROC_MELD)
+tar_load(timeROC_MELDNa)
+tar_load(timeROC_MELDPlus7)
+tar_load(timeROC_RCV)
+tar_load(timeROC_ARCV)
+```
+
+# ROC
+
+```{r roc}
+m <- list(
+    MELD = timeROC_MELD,
+    "MELD-Na" = timeROC_MELDNa,
+    "MELD-Plus7" = timeROC_MELDPlus7,
+    RCV = timeROC_RCV,
+    ARCV = timeROC_ARCV
+)
+plot_surv_roc(m, timepoint = 90)
+plot_surv_roc_trend(m)
+```
