@@ -35,7 +35,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 
-<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
 <style type="text/css">
 div.section {
@@ -471,6 +471,12 @@ div.tocify {
     <li>
       <a href="benchmarks.html">Benchmarks</a>
     </li>
+    <li>
+      <a href="elasticnet.html">ElasticNet</a>
+    </li>
+    <li>
+      <a href="roc.html">ROC</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -542,7 +548,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-10-20
+<strong>Last updated:</strong> 2022-03-17
 </p>
 <p>
 <strong>Checks:</strong>
@@ -558,10 +564,10 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 </span>
 </p>
 <p>
-This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
 analysis was created with <a
-  href="https://github.com/jdblischak/workflowr">workflowr</a> (version
-1.6.2). The <em>Checks</em> tab describes the
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.0). The <em>Checks</em> tab describes the
 reproducibility checks that were applied when the results were created.
 The <em>Past versions</em> tab lists the development history.
 </p>
@@ -670,20 +676,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4btargetblank8b3ba9ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeef54ecfdc872ff382dc0b367fa66e1adcff7ff1ctargetblankef54ecfa">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b" target="_blank">8b3ba9c</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ef54ecfdc872ff382dc0b367fa66e1adcff7ff1c" target="_blank">ef54ecf</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4btargetblank8b3ba9ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeef54ecfdc872ff382dc0b367fa66e1adcff7ff1ctargetblankef54ecfa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b" target="_blank">8b3ba9c</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ef54ecfdc872ff382dc0b367fa66e1adcff7ff1c" target="_blank">ef54ecf</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -705,18 +711,12 @@ Untracked files:
     Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  _targets-debug.R
-    Untracked:  coxtime-mwe.R
-    Untracked:  coxtime.R
-    Untracked:  deepsurv-mwe.R
-    Untracked:  deepsurv.R
     Untracked:  s12874-018-0482-1.pdf
     Untracked:  scripts/R.sh
+    Untracked:  scripts/env.sh
 
 Unstaged changes:
-    Modified:   code/03-mlr-learners.R
-    Modified:   guix/channel/ampel/packages/cran.scm
-    Modified:   guix/manifest.scm
+    Modified:   code/01-data.R
 
 </code></pre>
 <p>
@@ -761,6 +761,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/057f935e970d0c3de9fe3a29925c796db1c337a6/analysis/benchmarks.Rmd" target="_blank">057f935</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+feat: add elastic net bootstrap and timeROC evaluations
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/d586effd8524e2106807b07793836e832dfb89a9/analysis/benchmarks.Rmd" target="_blank">d586eff</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-02-10
+</td>
+<td>
+feat: add benchmark table and plots
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/benchmarks.html" target="_blank">373e7d8</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-20
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1007,20 +1058,323 @@ feat: add mlr benchmarks
 </div>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3viz&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bmrk_results)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bmrk_aggr)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>p.value <span class="ot">&lt;-</span> <span class="fl">0.2</span></span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;data.table&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3misc&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3proba&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3viz&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bmrk_results)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bmrk_aggr)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>agg <span class="ot">&lt;-</span> bmrk_results<span class="sc">$</span><span class="fu">aggregate</span>(<span class="fu">msr</span>(<span class="st">&quot;surv.cindex&quot;</span>, <span class="at">id =</span> <span class="st">&quot;harrell&quot;</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>agg[, <span class="st">`</span><span class="at">:=</span><span class="st">`</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    (<span class="at">nr =</span> <span class="cn">NULL</span>, <span class="at">resample_result =</span> <span class="cn">NULL</span>, <span class="at">resampling_id =</span> <span class="cn">NULL</span>, <span class="at">iters =</span> <span class="cn">NULL</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">setorder</span>(agg, task_id, <span class="sc">-</span>harrell)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>p.value <span class="ot">&lt;-</span> <span class="fl">0.05</span></span></code></pre></div>
 <div id="overview" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Overview</h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bmrk_results) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<div id="table" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Table</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(<span class="fu">split</span>(agg, agg<span class="sc">$</span>task_id), knitr<span class="sc">::</span>kable, <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p>$ln_eldd</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">task_id</th>
+<th align="left">learner_id</th>
+<th align="right">harrell</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.ridge.tuned</td>
+<td align="right">0.9222</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.svmregression.tuned</td>
+<td align="right">0.9205</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.penridge.tuned</td>
+<td align="right">0.9195</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.elasticnet.tuned</td>
+<td align="right">0.9191</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">ridge.tuned</td>
+<td align="right">0.9152</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">penridge.tuned</td>
+<td align="right">0.9147</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.penlasso.tuned</td>
+<td align="right">0.9116</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.ranger.tuned</td>
+<td align="right">0.9110</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">ranger.tuned</td>
+<td align="right">0.9109</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">elasticnet.tuned</td>
+<td align="right">0.9050</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.surv.rfsrc.tuned</td>
+<td align="right">0.9035</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">surv.rfsrc.tuned</td>
+<td align="right">0.9035</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">penlasso.tuned</td>
+<td align="right">0.9013</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">cox</td>
+<td align="right">0.8627</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">lasso.tuned</td>
+<td align="right">0.8594</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.cox</td>
+<td align="right">0.8581</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.lasso.tuned</td>
+<td align="right">0.8429</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">surv.xgboost.tuned</td>
+<td align="right">0.8366</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.surv.xgboost.tuned</td>
+<td align="right">0.8366</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.coxtime.tuned</td>
+<td align="right">0.8347</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.svmvanbelle1.tuned</td>
+<td align="right">0.8303</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.deepsurv.tuned</td>
+<td align="right">0.8295</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">svmvanbelle1.tuned</td>
+<td align="right">0.7763</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">coxtime.tuned</td>
+<td align="right">0.7646</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">deepsurv.tuned</td>
+<td align="right">0.7630</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">svmregression.tuned</td>
+<td align="right">0.5716</td>
+</tr>
+</tbody>
+</table>
+<p>$zlog_eldd</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">task_id</th>
+<th align="left">learner_id</th>
+<th align="right">harrell</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.ridge.tuned</td>
+<td align="right">0.9216</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.penridge.tuned</td>
+<td align="right">0.9194</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.svmregression.tuned</td>
+<td align="right">0.9189</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">ridge.tuned</td>
+<td align="right">0.9171</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.elasticnet.tuned</td>
+<td align="right">0.9162</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.penlasso.tuned</td>
+<td align="right">0.9147</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">elasticnet.tuned</td>
+<td align="right">0.9122</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">ranger.tuned</td>
+<td align="right">0.9121</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.ranger.tuned</td>
+<td align="right">0.9105</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">penridge.tuned</td>
+<td align="right">0.9104</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">penlasso.tuned</td>
+<td align="right">0.9096</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">lasso.tuned</td>
+<td align="right">0.9070</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">surv.rfsrc.tuned</td>
+<td align="right">0.9039</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.surv.rfsrc.tuned</td>
+<td align="right">0.9034</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.cox</td>
+<td align="right">0.8664</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">cox</td>
+<td align="right">0.8641</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.coxtime.tuned</td>
+<td align="right">0.8500</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.deepsurv.tuned</td>
+<td align="right">0.8372</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">surv.xgboost.tuned</td>
+<td align="right">0.8343</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.surv.xgboost.tuned</td>
+<td align="right">0.8290</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">coxtime.tuned</td>
+<td align="right">0.8274</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">svmvanbelle1.tuned</td>
+<td align="right">0.8226</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.lasso.tuned</td>
+<td align="right">0.8146</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">deepsurv.tuned</td>
+<td align="right">0.8119</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">scale.svmvanbelle1.tuned</td>
+<td align="right">0.8083</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">svmregression.tuned</td>
+<td align="right">0.8071</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="boxplots" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Boxplots</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> agg[, <span class="fu">max</span>(harrell), by <span class="ot">=</span> task_id]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bmrk_results) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">yintercept =</span> V1), <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">data =</span> m</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
 <p><img src="figure/benchmarks.Rmd/benchmarks_plot_c_harrell-1.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmarks_plot_c_harrell-1">
@@ -1044,6 +1398,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/figure/benchmarks.Rmd/benchmarks_plot_c_harrell-1.png" target="_blank">373e7d8</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-20
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/figure/benchmarks.Rmd/benchmarks_plot_c_harrell-1.png" target="_blank">df8964f</a>
@@ -1092,15 +1457,27 @@ Sebastian Gibb
 </table>
 </div>
 </div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    bmrk_results,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">measure =</span> <span class="fu">msr</span>(<span class="st">&quot;surv.cindex&quot;</span>, <span class="at">id =</span> <span class="st">&quot;uno&quot;</span>, <span class="at">weight_meth =</span> <span class="st">&quot;G2&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<pre><code>Warning: Removed 154 rows containing non-finite values (stat_boxplot).
+Removed 154 rows containing non-finite values (stat_boxplot).</code></pre>
+<pre><code>Warning: Removed 154 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/benchmarks.Rmd/benchmarks_plot_c_uno-1.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
 </div>
 <div id="aggregated-performance" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Aggregated performance</h1>
-<p>Aggregated performance across all <code>nrow(bmrk_results$tasks)</code> datasets.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;box&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;harrell_c&quot;</span>) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p>Aggregated performance across all 2 datasets.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;box&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;harrell&quot;</span>) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
 <p><img src="figure/benchmarks.Rmd/benchmarks_aggr_plot_c_harrell-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmarks_aggr_plot_c_harrell-1">
@@ -1126,6 +1503,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/figure/benchmarks.Rmd/benchmarks_aggr_plot_c_harrell-1.png" target="_blank">373e7d8</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-20
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/figure/benchmarks.Rmd/benchmarks_aggr_plot_c_harrell-1.png" target="_blank">df8964f</a>
 </td>
 <td>
@@ -1139,15 +1527,24 @@ Sebastian Gibb
 </table>
 </div>
 </div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;box&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;uno&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<pre><code>Warning: Removed 49 rows containing non-finite values (stat_boxplot).
+Removed 49 rows containing non-finite values (stat_boxplot).</code></pre>
+<pre><code>Warning: Removed 49 rows containing missing values (geom_point).</code></pre>
+<p><img src="figure/benchmarks.Rmd/benchmarks_aggr_plot_c_uno-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="pairwise-comparison" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Pairwise comparison</h1>
-<p><em>p</em>-value is set to 0.2
+<p><em>p</em>-value is set to 0.05
 (otherwise an error is thrown because of insignificant results).</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;fn&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;harrell_c&quot;</span>, <span class="at">p.value =</span> p.value,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">palette.colors</span>(2L)[2L]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;fn&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;harrell&quot;</span>, <span class="at">p.value =</span> p.value,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">palette.colors</span>(2L)[2L]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="figure/benchmarks.Rmd/benchmarks_aggr_pairwise_harrell_c-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmarks_aggr_pairwise_harrell_c-1">
@@ -1189,12 +1586,12 @@ Sebastian Gibb
 </div>
 <div id="critical-difference" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Critical difference</h1>
-<p><em>p</em>-value is set to 0.2
+<p><em>p</em>-value is set to 0.05
 (otherwise an error is thrown because of insignificant results).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;cd&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;harrell_c&quot;</span>, <span class="at">style =</span> <span class="dv">2</span>, <span class="at">p.value =</span> p.value,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimize =</span> <span class="cn">FALSE</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    bmrk_aggr, <span class="at">type =</span> <span class="st">&quot;cd&quot;</span>, <span class="at">meas =</span> <span class="st">&quot;harrell&quot;</span>, <span class="at">style =</span> <span class="dv">2</span>, <span class="at">p.value =</span> p.value,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">minimize =</span> <span class="cn">FALSE</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="figure/benchmarks.Rmd/benchmarks_aggr_critdiff_c_harrell-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmarks_aggr_critdiff_c_harrell-1">
@@ -1220,6 +1617,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/figure/benchmarks.Rmd/benchmarks_aggr_critdiff_c_harrell-1.png" target="_blank">373e7d8</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-20
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/figure/benchmarks.Rmd/benchmarks_aggr_critdiff_c_harrell-1.png" target="_blank">df8964f</a>
 </td>
 <td>
@@ -1241,12 +1649,12 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.1 (2021-08-10)
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.1.2 (2021-11-01)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
-BLAS/LAPACK: /gnu/store/bs9pl1f805ins80xaf4s3n35a0x2lyq3-openblas-0.3.9/lib/libopenblasp-r0.3.9.so
+BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
  [1] LC_CTYPE=de_DE.UTF-8       LC_NUMERIC=C              
@@ -1260,50 +1668,50 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggplot2_3.3.5     viridis_0.6.1     viridisLite_0.4.0 mlr3viz_0.5.7    
-[5] targets_0.8.0    
+[1] ggplot2_3.3.5     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.7    
+[5] mlr3proba_0.4.3   mlr3misc_0.10.0   mlr3_0.13.1       data.table_1.14.2
+[9] targets_0.10.0   
 
 loaded via a namespace (and not attached):
- [1] fs_1.5.0                bbotk_0.4.0             rprojroot_2.0.2        
- [4] mlr3proba_0.4.1         mlr3pipelines_0.3.6-1   mlr3learners_0.5.0     
- [7] tools_4.1.1             backports_1.2.1         utf8_1.2.2             
-[10] R6_2.5.1                mlr3_0.12.0             DBI_1.1.1              
-[13] colorspace_2.0-2        withr_2.4.2             mlr3misc_0.9.4         
-[16] tidyselect_1.1.1        gridExtra_2.3           processx_3.5.2         
-[19] compiler_4.1.1          git2r_0.28.0            cli_3.0.1              
-[22] ooplah_0.1.0            lgr_0.4.3               labeling_0.4.2         
-[25] bookdown_0.24           BWStest_0.2.2           scales_1.1.1           
-[28] checkmate_2.0.0         mvtnorm_1.1-2           callr_3.7.0            
-[31] multcompView_0.1-8      palmerpenguins_0.1.0    mlr3tuning_0.9.0       
-[34] stringr_1.4.0           digest_0.6.28           mlr3extralearners_0.5.9
-[37] rmarkdown_2.11          param6_0.2.3            paradox_0.7.1          
-[40] set6_0.2.3              pkgconfig_2.0.3         htmltools_0.5.2        
-[43] parallelly_1.28.1       mlr3benchmark_0.1.3     fastmap_1.1.0          
-[46] highr_0.9               rlang_0.4.11            SuppDists_1.1-9.5      
-[49] jquerylib_0.1.4         generics_0.1.0          farver_2.1.0           
-[52] dplyr_1.0.7             magrittr_2.0.1          Matrix_1.3-4           
-[55] Rcpp_1.0.7              munsell_0.5.0           fansi_0.5.0            
-[58] lifecycle_1.0.1         stringi_1.7.4           whisker_0.4            
-[61] yaml_2.2.1              MASS_7.3-54             grid_4.1.1             
-[64] parallel_4.1.1          dictionar6_0.1.3        listenv_0.8.0          
-[67] promises_1.2.0.1        crayon_1.4.1            lattice_0.20-45        
-[70] PMCMRplus_1.9.2         splines_4.1.1           knitr_1.34             
-[73] ps_1.6.0                pillar_1.6.3            igraph_1.2.6           
-[76] uuid_0.1-4              codetools_0.2-18        kSamples_1.2-9         
-[79] glue_1.4.2              evaluate_0.14           data.table_1.14.0      
-[82] vctrs_0.3.8             httpuv_1.6.3            distr6_1.6.2           
-[85] gtable_0.3.0            purrr_0.3.4             future_1.22.1          
-[88] assertthat_0.2.1        cachem_1.0.6            xfun_0.26              
-[91] Rmpfr_0.8-4             later_1.3.0             survival_3.2-13        
-[94] tibble_3.1.4            memoise_2.0.0           workflowr_1.6.2        
-[97] gmp_0.6-2               globals_0.14.0          ellipsis_0.3.2         </code></pre>
+ [1] fs_1.5.2                bbotk_0.5.0             rprojroot_2.0.2        
+ [4] mlr3pipelines_0.4.0     mlr3learners_0.5.2      tools_4.1.2            
+ [7] backports_1.4.1         utf8_1.2.2              R6_2.5.1               
+[10] DBI_1.1.1               colorspace_2.0-2        withr_2.4.3            
+[13] tidyselect_1.1.1        gridExtra_2.3           processx_3.5.2         
+[16] compiler_4.1.2          git2r_0.29.0            cli_3.1.1              
+[19] ooplah_0.2.0            lgr_0.4.3               labeling_0.4.2         
+[22] bookdown_0.24           BWStest_0.2.2           scales_1.1.1           
+[25] checkmate_2.0.0         mvtnorm_1.1-3           callr_3.7.0            
+[28] multcompView_0.1-8      palmerpenguins_0.1.0    mlr3tuning_0.10.0      
+[31] stringr_1.4.0           digest_0.6.29           mlr3extralearners_0.5.9
+[34] rmarkdown_2.11          param6_0.2.3            paradox_0.8.0          
+[37] set6_0.2.4              pkgconfig_2.0.3         htmltools_0.5.2        
+[40] parallelly_1.30.0       mlr3benchmark_0.1.3     fastmap_1.1.0          
+[43] highr_0.9               rlang_1.0.0             SuppDists_1.1-9.7      
+[46] jquerylib_0.1.4         generics_0.1.0          farver_2.1.0           
+[49] dplyr_1.0.7             magrittr_2.0.2          Matrix_1.4-0           
+[52] Rcpp_1.0.8              munsell_0.5.0           fansi_1.0.2            
+[55] lifecycle_1.0.1         stringi_1.7.6           whisker_0.4            
+[58] yaml_2.2.2              MASS_7.3-55             grid_4.1.2             
+[61] parallel_4.1.2          dictionar6_0.1.3        listenv_0.8.0          
+[64] promises_1.2.0.1        crayon_1.4.2            lattice_0.20-45        
+[67] PMCMRplus_1.9.3         splines_4.1.2           knitr_1.37             
+[70] ps_1.6.0                pillar_1.6.5            igraph_1.2.11          
+[73] uuid_1.0-3              base64url_1.4           kSamples_1.2-9         
+[76] codetools_0.2-18        glue_1.6.1              evaluate_0.14          
+[79] vctrs_0.3.8             httpuv_1.6.5            distr6_1.6.4           
+[82] gtable_0.3.0            purrr_0.3.4             future_1.23.0          
+[85] assertthat_0.2.1        cachem_1.0.6            xfun_0.29              
+[88] Rmpfr_0.8-7             later_1.3.0             survival_3.2-13        
+[91] tibble_3.1.6            memoise_2.0.1           workflowr_1.7.0        
+[94] gmp_0.6-2.1             globals_0.14.0          ellipsis_0.3.2         </code></pre>
 </div>
 </div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
 TeX fonts only; see
-http://docs.mathjax.org/en/latest/configuration.html.  This will make
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
 the presentation more consistent at the cost of the webpage sometimes
 taking slightly longer to load. Note that this only works because the
 footer is added to webpages before the MathJax javascript. -->

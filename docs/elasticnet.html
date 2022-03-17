@@ -11,7 +11,7 @@
 
 
 
-<title>Pipeline</title>
+<title>elasticnet</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,12 +29,11 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="site_libs/vis-9.1.0/vis-network.min.css" rel="stylesheet" />
-<script src="site_libs/vis-9.1.0/vis-network.min.js"></script>
-<script src="site_libs/visNetwork-binding-2.1.0/visNetwork.js"></script>
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -327,6 +326,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -334,6 +396,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -447,7 +519,7 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Pipeline</h1>
+<h1 class="title toc-ignore">elasticnet</h1>
 
 </div>
 
@@ -662,7 +734,7 @@ changes.
 
 <p>
 These are the previous versions of the repository in which changes were made
-to the R Markdown (<code>analysis/pipeline.Rmd</code>) and HTML (<code>docs/pipeline.html</code>)
+to the R Markdown (<code>analysis/elasticnet.Rmd</code>) and HTML (<code>docs/elasticnet.html</code>)
 files. If you’ve configured a remote Git repository (see
 <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to
 view the files as they were in that past version.
@@ -694,7 +766,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/19df07ce03a58b254e78d160512d3ee404a4c5c2/analysis/pipeline.Rmd" target="_blank">19df07c</a>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/057f935e970d0c3de9fe3a29925c796db1c337a6/analysis/elasticnet.Rmd" target="_blank">057f935</a>
 </td>
 <td>
 Sebastian Gibb
@@ -703,262 +775,7 @@ Sebastian Gibb
 2022-03-17
 </td>
 <td>
-feat: add last built title
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/pipeline.html" target="_blank">373e7d8</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-10-20
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/pipeline.html" target="_blank">df8964f</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-10-15
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/c66640c2b1856a5311392b2592f58ca80a5dfd34/docs/pipeline.html" target="_blank">c66640c</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-feat: first nnet tests
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/2b9ab65522dc8c50f84fa504ab53a900104749fc/docs/pipeline.html" target="_blank">2b9ab65</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-08-07
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/afa48d91c0fd2263888b6b84aceb6e3c33e4209a/docs/pipeline.html" target="_blank">afa48d9</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-08-07
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/4478f6ad74fd55120a3ea2d1d977cf4e2a0ab72c/analysis/pipeline.Rmd" target="_blank">4478f6a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-08-02
-</td>
-<td>
-Revert "fix: working directory for targets"
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/cac14f630848b078c39aee7344862d418fcdcb52/analysis/pipeline.Rmd" target="_blank">cac14f6</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-08-02
-</td>
-<td>
-fix: working directory for targets
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3957af7f1fc3f088a69c62cadbb0e835ed126891/analysis/pipeline.Rmd" target="_blank">3957af7</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-08-02
-</td>
-<td>
-refactor: move common yaml headers into _site.yml
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/3aab3e106752adffec84e36600afb9590d92004c/docs/pipeline.html" target="_blank">3aab3e1</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-08-01
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/3810a795dcc192cc64c88d969909f9dbe2b991f7/docs/pipeline.html" target="_blank">3810a79</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-15
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/13b68cab550d8eae082ae2f94fc247f27987a65c/docs/pipeline.html" target="_blank">13b68ca</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-04
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/9db8d8fb5d06984d40d054c483b9e587aecd4797/analysis/pipeline.Rmd" target="_blank">9db8d8f</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-feat: add runtime and size to network plot
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/28695567a26653aa43cccb12c515cb3693c334a0/docs/pipeline.html" target="_blank">2869556</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d9c37ec60ddf86a692162bd72c7656b0b132bc6b/docs/pipeline.html" target="_blank">d9c37ec</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-chore: rebuild site
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/17a05edada9f08c231217390b6ef52a67d1c4194/analysis/pipeline.Rmd" target="_blank">17a05ed</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-07-02
-</td>
-<td>
-feat: add pipeline page
+feat: add elastic net bootstrap and timeROC evaluations
 </td>
 </tr>
 </tbody>
@@ -968,34 +785,118 @@ feat: add pipeline page
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>graph <span class="ot">&lt;-</span> targets<span class="sc">::</span><span class="fu">tar_visnetwork</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">targets_only =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">c</span>(<span class="st">&quot;time&quot;</span>, <span class="st">&quot;size&quot;</span>, <span class="st">&quot;branches&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>[31mOpenSSH_8.8p1, OpenSSL 1.1.1m  14 Dec 2021
-debug1: Reading configuration data /home/sebastian/.ssh/config
-debug1: /home/sebastian/.ssh/config line 119: Applying options for brain
-debug1: Setting implicit ProxyCommand from ProxyJump: /gnu/store/2baw33by5zqwn9nqyr1px2y7x12576ai-profile/bin/ssh -v -W &#39;[%h]:%p&#39; ssh-gateway
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-debug1: auto-mux: Trying existing master
-[39m[31mdebug1: Requesting forwarding of remote forward LOCALHOST:11499 -&gt; localhost:11499
-[39m[31mdebug1: Requesting forwarding of remote forward /home/gibbs/.gnupg/S.gpg-agent:-2 -&gt; /run/user/1000/gnupg/S.gpg-agent.extra:-2
-[39m[31mdebug1: mux_client_request_session: master session id: 2
-[39m[31mWARNING: passwd file doesn&#39;t exist in container, not updating
-WARNING: group file doesn&#39;t exist in container, not updating
-[39m[31mDuring startup - Warning messages:
-1: Setting LC_CTYPE failed, using &quot;C&quot; 
-2: Setting LC_COLLATE failed, using &quot;C&quot; 
-3: Setting LC_TIME failed, using &quot;C&quot; 
-4: Setting LC_MESSAGES failed, using &quot;C&quot; 
-5: Setting LC_MONETARY failed, using &quot;C&quot; 
-6: Setting LC_PAPER failed, using &quot;C&quot; 
-7: Setting LC_MEASUREMENT failed, using &quot;C&quot; 
-[39m</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>graph<span class="sc">$</span>x<span class="sc">$</span>main<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Last built: &quot;</span>, <span class="fu">Sys.time</span>())</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>graph</span></code></pre></div>
-<div id="htmlwidget-73662e3cc456143a379e" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-73662e3cc456143a379e">{"x":{"nodes":{"name":["ameldcfg","amelddata","arcvob","bmrk_aggr","bmrk_results","bmrks","bootarcv","bootrcv","crossval","imp_data","labelled_meld_data","learners","ln_data","meld_data","psurvbootarcv","psurvbootrcv","raw_data","ref_data","reports_article","reports_benchmarks","reports_boxplots","reports_corrplot","reports_dotcharts","reports_elasticnet","reports_histograms","reports_linecharts","reports_missing","reports_roc","reports_supplement","reports_survivalplots","reports_tables","site_conf","site_index","site_license","tasks","tbl_observed_vs_expected_mortality","tbl1","terminator","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","tuner","zlog_data"],"type":["stem","stem","stem","stem","stem","pattern","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0,0.001,60.628,8.505,1.078,2171.987,1501.916,323.767,0.07,0.975,0.108,2.809,0.001,0.003,0.306,1.946,0.044,0.014,23.544,41,46.39,2.043,2.476,6.343,22.211,2.038,3.044,2.755,2.299,3.287,88.876,2.434,1.758,1.257,2.03,0.011,15.602,0.089,1.368,1.698,1.381,1.107,1.722,0.015,0.587],"bytes":[212,81571,281211,1731,72444111,26672569,6339407,19308715,8370,41235,65759,532693,87470,66345,6741,6733,39270,722,21406,2772,1788,801,456,1979,1665,2689,1469,523,144,2853,1171,1306,1132,332,153313,391,744120,7888,266104,246862,245638,263872,267621,17690,105770],"branches":[null,null,null,null,null,52,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"id":["ameldcfg","amelddata","arcvob","bmrk_aggr","bmrk_results","bmrks","bootarcv","bootrcv","crossval","imp_data","labelled_meld_data","learners","ln_data","meld_data","psurvbootarcv","psurvbootrcv","raw_data","ref_data","reports_article","reports_benchmarks","reports_boxplots","reports_corrplot","reports_dotcharts","reports_elasticnet","reports_histograms","reports_linecharts","reports_missing","reports_roc","reports_supplement","reports_survivalplots","reports_tables","site_conf","site_index","site_license","tasks","tbl_observed_vs_expected_mortality","tbl1","terminator","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","tuner","zlog_data"],"label":["ameldcfg\n0 seconds\n212 bytes\n","amelddata\n0.001 seconds\n81.571 kilobytes\n","arcvob\n1.01 minutes\n281.211 kilobytes\n","bmrk_aggr\n8.505 seconds\n1.731 kilobytes\n","bmrk_results\n1.078 seconds\n72.444 megabytes\n","bmrks\n36.2 minutes\n26.673 megabytes\n52 branches","bootarcv\n25.032 minutes\n6.339 megabytes\n","bootrcv\n5.396 minutes\n19.309 megabytes\n","crossval\n0.07 seconds\n8.37 kilobytes\n","imp_data\n0.975 seconds\n41.235 kilobytes\n","labelled_meld_data\n0.108 seconds\n65.759 kilobytes\n","learners\n2.809 seconds\n532.693 kilobytes\n","ln_data\n0.001 seconds\n87.47 kilobytes\n","meld_data\n0.003 seconds\n66.345 kilobytes\n","psurvbootarcv\n0.306 seconds\n6.741 kilobytes\n","psurvbootrcv\n1.946 seconds\n6.733 kilobytes\n","raw_data\n0.044 seconds\n39.27 kilobytes\n","ref_data\n0.014 seconds\n722 bytes\n","reports_article\n23.544 seconds\n21.406 kilobytes\n","reports_benchmarks\n41 seconds\n2.772 kilobytes\n","reports_boxplots\n46.39 seconds\n1.788 kilobytes\n","reports_corrplot\n2.043 seconds\n801 bytes\n","reports_dotcharts\n2.476 seconds\n456 bytes\n","reports_elasticnet\n6.343 seconds\n1.979 kilobytes\n","reports_histograms\n22.211 seconds\n1.665 kilobytes\n","reports_linecharts\n2.038 seconds\n2.689 kilobytes\n","reports_missing\n3.044 seconds\n1.469 kilobytes\n","reports_roc\n2.755 seconds\n523 bytes\n","reports_supplement\n2.299 seconds\n144 bytes\n","reports_survivalplots\n3.287 seconds\n2.853 kilobytes\n","reports_tables\n1.481 minutes\n1.171 kilobytes\n","site_conf\n2.434 seconds\n1.306 kilobytes\n","site_index\n1.758 seconds\n1.132 kilobytes\n","site_license\n1.257 seconds\n332 bytes\n","tasks\n2.03 seconds\n153.313 kilobytes\n","tbl_observed_vs_expected_mortality\n0.011 seconds\n391 bytes\n","tbl1\n15.602 seconds\n744.12 kilobytes\n","terminator\n0.089 seconds\n7.888 kilobytes\n","timeROC_ARCV\n1.368 seconds\n266.104 kilobytes\n","timeROC_MELD\n1.698 seconds\n246.862 kilobytes\n","timeROC_MELDNa\n1.381 seconds\n245.638 kilobytes\n","timeROC_MELDPlus7\n1.107 seconds\n263.872 kilobytes\n","timeROC_RCV\n1.722 seconds\n267.621 kilobytes\n","tuner\n0.015 seconds\n17.69 kilobytes\n","zlog_data\n0.587 seconds\n105.77 kilobytes\n"],"level":[1,5,6,8,7,6,6,6,1,2,2,2,4,3,7,7,1,1,8,9,5,3,3,7,5,5,2,9,2,5,5,1,2,2,5,3,3,1,8,5,5,5,8,1,4],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","square","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["site_conf","zlog_data","zlog_data","site_conf","ameldcfg","amelddata","bootarcv","psurvbootrcv","zlog_data","raw_data","ref_data","zlog_data","ameldcfg","amelddata","crossval","terminator","tuner","ameldcfg","amelddata","bootrcv","site_conf","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","site_conf","bmrk_results","imp_data","site_conf","zlog_data","site_conf","ameldcfg","amelddata","arcvob","bootarcv","bootrcv","site_conf","zlog_data","imp_data","site_conf","labelled_meld_data","bmrks","imp_data","site_conf","zlog_data","imp_data","meld_data","ref_data","labelled_meld_data","raw_data","psurvbootarcv","zlog_data","zlog_data","site_conf","zlog_data","imp_data","site_conf","zlog_data","ln_data","zlog_data","bmrk_aggr","bmrk_results","site_conf","ameldcfg","amelddata","crossval","learners","tasks","imp_data","meld_data","raw_data","site_conf","imp_data","raw_data","site_conf","tbl1","zlog_data","ameldcfg","bmrk_results","crossval","labelled_meld_data","raw_data","site_conf","tbl_observed_vs_expected_mortality","tbl1","tuner","imp_data","ameldcfg","amelddata"],"to":["reports_linecharts","reports_linecharts","timeROC_MELD","site_index","psurvbootarcv","psurvbootarcv","psurvbootarcv","timeROC_RCV","timeROC_RCV","imp_data","imp_data","timeROC_MELDNa","arcvob","arcvob","learners","learners","learners","psurvbootrcv","psurvbootrcv","psurvbootrcv","reports_roc","reports_roc","reports_roc","reports_roc","reports_roc","reports_roc","reports_supplement","bmrk_aggr","reports_histograms","reports_histograms","reports_histograms","site_license","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_corrplot","reports_corrplot","tbl_observed_vs_expected_mortality","bmrk_results","reports_dotcharts","reports_dotcharts","timeROC_MELDPlus7","zlog_data","zlog_data","zlog_data","tbl1","labelled_meld_data","timeROC_ARCV","timeROC_ARCV","amelddata","reports_survivalplots","reports_survivalplots","reports_boxplots","reports_boxplots","reports_boxplots","tasks","tasks","reports_benchmarks","reports_benchmarks","reports_benchmarks","bootarcv","bootarcv","bmrks","bmrks","bmrks","ln_data","ln_data","reports_missing","reports_missing","reports_tables","reports_tables","reports_tables","reports_tables","reports_tables","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","meld_data","bootrcv","bootrcv"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Last built: 2022-03-17 10:51:45","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Pattern"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","square"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ameld&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridisLite&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(arcvob)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootrcv)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootarcv)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#tar_load(bootarcv9)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(amelddata)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(ameldcfg)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data)</span></code></pre></div>
+<div id="tuning-alpha" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Tuning alpha</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>arcvob</span></code></pre></div>
+<pre><code>
+Call: arcv.glmnet(x = amelddata$x, y = amelddata$y, alpha = ameldcfg$alpha,      nrepcv = ameldcfg$nrepcv, nfolds = ameldcfg$nfolds, balanced = TRUE,      family = &quot;cox&quot;, standardize = ameldcfg$standardize, trace.it = FALSE) 
+
+Models: 11
+Alpha: 0 0.001 0.008 0.027 0.064 0.125 0.216 0.343 0.512 0.729 1
+Number of CV for Lambda: 3
+Number of repeated CV for Lambda: 100
+
+
+Measure: Partial Likelihood Deviance 
+
+Lambda min:
+      Alpha  Lambda Index Measure     SE Nonzero
+ [1,] 0.000 1.09708    71   9.024 0.2846      42
+ [2,] 0.001 1.09708    71   9.024 0.2844      37
+ [3,] 0.008 0.96746    50   9.022 0.2844      26
+ [4,] 0.027 0.79764    39   9.024 0.2838      19
+ [5,] 0.064 0.53581    34   9.039 0.2858      18
+ [6,] 0.125 0.39801    30   9.059 0.2860      16
+ [7,] 0.216 0.27743    28   9.076 0.2868      12
+ [8,] 0.343 0.19174    27   9.092 0.2880      11
+ [9,] 0.512 0.14098    26   9.107 0.2877       9
+[10,] 0.729 0.09901    26   9.120 0.2900       9
+[11,] 1.000 0.07218    26   9.129 0.2919       9
+
+Lambda 1se:
+      Alpha Lambda Index Measure     SE Nonzero
+ [1,] 0.000 4.4290    56   9.286 0.2606      42
+ [2,] 0.001 4.4290    56   9.297 0.2598      33
+ [3,] 0.008 3.5587    36   9.274 0.2601      23
+ [4,] 0.027 2.6734    26   9.297 0.2575      17
+ [5,] 0.064 1.7958    21   9.301 0.2576      12
+ [6,] 0.125 1.2155    18   9.323 0.2579      10
+ [7,] 0.216 0.7720    17   9.307 0.2621       9
+ [8,] 0.343 0.5335    16   9.328 0.2633       8
+ [9,] 0.512 0.3923    15   9.370 0.2635       6
+[10,] 0.729 0.2755    15   9.364 0.2649       6
+[11,] 1.000 0.2008    15   9.364 0.2658       6</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(arcvob)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(arcvob, <span class="at">what =</span> <span class="st">&quot;lambda.min&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/arcvob-plot-lambdamin-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(arcvob, <span class="at">what =</span> <span class="st">&quot;lambda.1se&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/arcvob-plot-lambda1se-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bootstrapping" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Bootstrapping</h1>
+<div id="rcv.glmnet" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> rcv.glmnet</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    zlog_data[<span class="fu">paste0</span>(<span class="st">&quot;SurvProbMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>, <span class="st">&quot;Plus7&quot;</span>))],</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(p) {</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        ctpnts <span class="ot">&lt;-</span> <span class="fu">cutpoints</span>(p, <span class="at">n =</span> ameldcfg<span class="sc">$</span>m)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        f <span class="ot">&lt;-</span> <span class="fu">cut</span>(p, ctpnts, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">predicted =</span> <span class="fu">groupmean</span>(p, <span class="at">f =</span> f),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">observed =</span> <span class="fu">observed_survival</span>(</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                amelddata<span class="sc">$</span>y, <span class="at">f =</span> f, <span class="at">times =</span> ameldcfg<span class="sc">$</span>times</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MELD&quot;</span>, <span class="st">&quot;MELD-Na&quot;</span>, <span class="st">&quot;MELD-Plus7&quot;</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">6</span>)[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(ps)) {</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lines</span>(</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        ps[[i]]<span class="sc">$</span>predicted, ps[[i]]<span class="sc">$</span>observed, <span class="at">col =</span> col[i], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">col =</span> col, <span class="at">legend =</span> <span class="fu">names</span>(ps), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;norm&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv-3.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;lambda&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv-4.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;dev&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="arcv.glmnet" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> arcv.glmnet</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootarcv-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootarcv2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootarcv2-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="arcv9.glmnet" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> arcv9.glmnet</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a &lt;- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(bootarcv9 , what = &quot;calibration&quot;)</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(bootarcv9, what = &quot;selected&quot;)</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plot_dots(a, main = &quot;Selected Alpha Values&quot;)</span></span></code></pre></div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1004,7 +905,7 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.2 (2021-11-01)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
@@ -1022,20 +923,27 @@ locale:
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
+other attached packages:
+[1] viridisLite_0.4.0 ameld_0.0.20      survival_3.2-13   glmnet_4.1-3     
+[5] Matrix_1.4-0      targets_0.10.0   
+
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.8        pillar_1.6.5      compiler_4.1.2    later_1.3.0      
- [5] jquerylib_0.1.4   git2r_0.29.0      workflowr_1.7.0   tools_4.1.2      
- [9] targets_0.10.0    digest_0.6.29     jsonlite_1.7.3    evaluate_0.14    
-[13] lifecycle_1.0.1   tibble_3.1.6      pkgconfig_2.0.3   rlang_1.0.0      
-[17] igraph_1.2.11     cli_3.1.1         yaml_2.2.2        xfun_0.29        
-[21] fastmap_1.1.0     withr_2.4.3       stringr_1.4.0     knitr_1.37       
-[25] htmlwidgets_1.5.4 fs_1.5.2          vctrs_0.3.8       tidyselect_1.1.1 
-[29] rprojroot_2.0.2   data.table_1.14.2 glue_1.6.1        R6_2.5.1         
-[33] processx_3.5.2    fansi_1.0.2       base64url_1.4     rmarkdown_2.11   
-[37] bookdown_0.24     purrr_0.3.4       callr_3.7.0       magrittr_2.0.2   
-[41] whisker_0.4       codetools_0.2-18  ps_1.6.0          backports_1.4.1  
-[45] promises_1.2.0.1  ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.5     
-[49] utf8_1.2.2        stringi_1.7.6     visNetwork_2.1.0  crayon_1.4.2     </code></pre>
+ [1] shape_1.4.6       tidyselect_1.1.1  xfun_0.29         purrr_0.3.4      
+ [5] splines_4.1.2     lattice_0.20-45   vctrs_0.3.8       htmltools_0.5.2  
+ [9] yaml_2.2.2        utf8_1.2.2        rlang_1.0.0       jquerylib_0.1.4  
+[13] later_1.3.0       pillar_1.6.5      glue_1.6.1        withr_2.4.3      
+[17] foreach_1.5.1     lifecycle_1.0.1   stringr_1.4.0     workflowr_1.7.0  
+[21] codetools_0.2-18  evaluate_0.14     knitr_1.37        callr_3.7.0      
+[25] fastmap_1.1.0     httpuv_1.6.5      ps_1.6.0          fansi_1.0.2      
+[29] highr_0.9         Rcpp_1.0.8        promises_1.2.0.1  backports_1.4.1  
+[33] fs_1.5.2          digest_0.6.29     stringi_1.7.6     bookdown_0.24    
+[37] processx_3.5.2    rprojroot_2.0.2   grid_4.1.2        cli_3.1.1        
+[41] tools_4.1.2       magrittr_2.0.2    base64url_1.4     tibble_3.1.6     
+[45] crayon_1.4.2      whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.2   
+[49] data.table_1.14.2 rmarkdown_2.11    iterators_1.0.13  R6_2.5.1         
+[53] igraph_1.2.11     git2r_0.29.0      compiler_4.1.2   </code></pre>
+</div>
+</div>
 </div>
 
 
@@ -1054,6 +962,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -1091,6 +1001,35 @@ $(document).ready(function () {
 });
 </script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

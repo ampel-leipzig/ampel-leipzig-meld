@@ -32,7 +32,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 
-<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/master/img/reproducible.png">
+<link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
 <style type="text/css">
 div.section {
@@ -395,6 +395,12 @@ $(document).ready(function () {
     <li>
       <a href="benchmarks.html">Benchmarks</a>
     </li>
+    <li>
+      <a href="elasticnet.html">ElasticNet</a>
+    </li>
+    <li>
+      <a href="roc.html">ROC</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -466,7 +472,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-10-19
+<strong>Last updated:</strong> 2022-03-17
 </p>
 <p>
 <strong>Checks:</strong>
@@ -482,10 +488,10 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 </span>
 </p>
 <p>
-This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a>
+This reproducible <a href="https://rmarkdown.rstudio.com">R Markdown</a>
 analysis was created with <a
-  href="https://github.com/jdblischak/workflowr">workflowr</a> (version
-1.6.2). The <em>Checks</em> tab describes the
+  href="https://github.com/workflowr/workflowr">workflowr</a> (version
+1.7.0). The <em>Checks</em> tab describes the
 reproducibility checks that were applied when the results were created.
 The <em>Past versions</em> tab lists the development history.
 </p>
@@ -594,20 +600,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4btargetblank8b3ba9ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeef54ecfdc872ff382dc0b367fa66e1adcff7ff1ctargetblankef54ecfa">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b" target="_blank">8b3ba9c</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ef54ecfdc872ff382dc0b367fa66e1adcff7ff1c" target="_blank">ef54ecf</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4btargetblank8b3ba9ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeef54ecfdc872ff382dc0b367fa66e1adcff7ff1ctargetblankef54ecfa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/8b3ba9c9aaa97e4553f4781f9cddc4163ad66a4b" target="_blank">8b3ba9c</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ef54ecfdc872ff382dc0b367fa66e1adcff7ff1c" target="_blank">ef54ecf</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -629,17 +635,12 @@ Untracked files:
     Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  _targets-debug.R
-    Untracked:  coxtime-mwe.R
-    Untracked:  coxtime.R
-    Untracked:  deepsurv-mwe.R
-    Untracked:  deepsurv.R
     Untracked:  s12874-018-0482-1.pdf
     Untracked:  scripts/R.sh
+    Untracked:  scripts/env.sh
 
 Unstaged changes:
-    Modified:   guix/channel/ampel/packages/cran.scm
-    Modified:   guix/manifest.scm
+    Modified:   code/01-data.R
 
 </code></pre>
 <p>
@@ -684,6 +685,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/supplement.html" target="_blank">373e7d8</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2021-10-20
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -803,11 +821,11 @@ Session information
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.1 (2021-08-10)
+<pre><code>R version 4.1.2 (2021-11-01)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
-BLAS/LAPACK: /gnu/store/bs9pl1f805ins80xaf4s3n35a0x2lyq3-openblas-0.3.9/lib/libopenblasp-r0.3.9.so
+BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
  [1] LC_CTYPE=de_DE.UTF-8       LC_NUMERIC=C              
@@ -821,27 +839,27 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] targets_0.8.0
+[1] targets_0.10.0
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.7        pillar_1.6.3      compiler_4.1.1    later_1.3.0      
- [5] jquerylib_0.1.4   git2r_0.28.0      workflowr_1.6.2   tools_4.1.1      
- [9] digest_0.6.28     evaluate_0.14     lifecycle_1.0.1   tibble_3.1.4     
-[13] pkgconfig_2.0.3   rlang_0.4.11      igraph_1.2.6      cli_3.0.1        
-[17] yaml_2.2.1        xfun_0.26         fastmap_1.1.0     withr_2.4.2      
-[21] stringr_1.4.0     knitr_1.34        fs_1.5.0          vctrs_0.3.8      
-[25] tidyselect_1.1.1  rprojroot_2.0.2   data.table_1.14.0 glue_1.4.2       
-[29] R6_2.5.1          processx_3.5.2    fansi_0.5.0       rmarkdown_2.11   
-[33] bookdown_0.24     purrr_0.3.4       callr_3.7.0       magrittr_2.0.1   
-[37] whisker_0.4       promises_1.2.0.1  ps_1.6.0          codetools_0.2-18 
-[41] ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.3      utf8_1.2.2       
-[45] stringi_1.7.4     crayon_1.4.1     </code></pre>
+ [1] Rcpp_1.0.8        pillar_1.6.5      compiler_4.1.2    later_1.3.0      
+ [5] jquerylib_0.1.4   git2r_0.29.0      workflowr_1.7.0   tools_4.1.2      
+ [9] digest_0.6.29     evaluate_0.14     lifecycle_1.0.1   tibble_3.1.6     
+[13] pkgconfig_2.0.3   rlang_1.0.0       igraph_1.2.11     cli_3.1.1        
+[17] yaml_2.2.2        xfun_0.29         fastmap_1.1.0     withr_2.4.3      
+[21] stringr_1.4.0     knitr_1.37        fs_1.5.2          vctrs_0.3.8      
+[25] tidyselect_1.1.1  rprojroot_2.0.2   data.table_1.14.2 glue_1.6.1       
+[29] R6_2.5.1          processx_3.5.2    fansi_1.0.2       base64url_1.4    
+[33] rmarkdown_2.11    bookdown_0.24     purrr_0.3.4       callr_3.7.0      
+[37] magrittr_2.0.2    whisker_0.4       codetools_0.2-18  ps_1.6.0         
+[41] backports_1.4.1   promises_1.2.0.1  ellipsis_0.3.2    htmltools_0.5.2  
+[45] httpuv_1.6.5      utf8_1.2.2        stringi_1.7.6     crayon_1.4.2     </code></pre>
 </div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
 TeX fonts only; see
-http://docs.mathjax.org/en/latest/configuration.html.  This will make
+https://docs.mathjax.org/en/latest/web/configuration.html. This will make
 the presentation more consistent at the cost of the webpage sometimes
 taking slightly longer to load. Note that this only works because the
 footer is added to webpages before the MathJax javascript. -->
