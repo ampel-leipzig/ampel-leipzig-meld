@@ -3,7 +3,6 @@ library("tarchetypes")
 
 library("future")
 library("future.batchtools")
-library("future.callr")
 
 library("lgr")
 
@@ -18,28 +17,40 @@ get_logger("mlr3")$add_appender(AppenderFile$new(tf), name = "file")
 get_logger("bbotk")$add_appender(AppenderFile$new(tf), name = "file")
 
 login <- future::tweak(
-    future::remote,
+    future::cluster,
     workers = "brain",
+    homogeneous = FALSE,
     rscript = "scripts/Rscript.sh",
     rshopts = if (nchar(Sys.getenv("DEBUGME"))) "-v" else ""
+)
+
+resources <- list(
+    workers = 32L,
+    partition = "snowball",
+    ncpu = 36,
+    mcpu = 1L * 1024L,
+    walltime = 4L * 60L * 60L # seconds
 )
 
 slurm <- future::tweak(
     future.batchtools::batchtools_slurm,
     template = "scripts/slurm_batchtools.tmpl",
-    workers = 16L,
-    resources = list(
-        partition = "batch,compute,snowball",
-        ncpu = 64,
-        mcpu = 2L * 1024L,
-        walltime = 48L * 60L * 60L # seconds
-    )
+    workers = resources$workers,
+    resources = resources
+)
+
+node <- future::tweak(
+    multisession,
+    workers = resources$ncpu
 )
 
 if (nchar(Sys.getenv("RUNLOCAL"))) {
-    future::plan(callr, workers = 7L)
+    future::plan(list(
+        future::tweak(multisession, workers = 2L),
+        future::tweak(multicore, workers = 3L))
+    )
 } else {
-    future::plan(list(login, slurm, callr))
+    future::plan(list(login, slurm, node))
 }
 
 source("code/01-data.R")
