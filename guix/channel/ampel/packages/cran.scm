@@ -359,16 +359,23 @@
       (license lgpl3))))
 
 (define-public r-mlr3proba
+  (let ((commit "fdfd269"))
   (package
     (name "r-mlr3proba")
-    (version "0.4.3")
+    ;(version "0.4.9")
+    (version (string-append "0.4.11-" commit))
     (source
       (origin
-        (method url-fetch)
-        (uri (cran-uri "mlr3proba" version))
+        ;(method url-fetch)
+        ;(uri (cran-uri "mlr3proba" version))
+        (method git-fetch)
+        (uri (git-reference
+               (url "https://github.com/mlr-org/mlr3proba")
+               (commit commit)))
+        (file-name (string-append name version))
         (sha256
           (base32
-            "1giwab6hdn15xn0vnimnqihl3grrk6vw0p2yf1r590nnqmnyadic"))))
+            "0jri3m2f9apxvhl8snbm2fs5kpcq7f0axzcdfc1w0jmrmidajlkb"))))
     (properties `((upstream-name . "mlr3proba")))
     (build-system r-build-system)
     (propagated-inputs
@@ -380,13 +387,14 @@
             r-paradox
             r-r6
             r-rcpp
-            r-survival))
+            r-survival
+            r-survivalmodels))
     (home-page "https://mlr3proba.mlr-org.com")
     (synopsis
       "Probabilistic Supervised Learning for 'mlr3'")
     (description
       "This package provides extensions for probabilistic supervised learning for 'mlr3'.  This includes extending the regression task to probabilistic and interval regression, adding a survival task, and other specialized models, predictions, and measures.  mlr3extralearners is available from <https://github.com/mlr-org/mlr3extralearners>.")
-    (license lgpl3)))
+    (license lgpl3))))
 
 (define-public r-mlr3viz
   (package
