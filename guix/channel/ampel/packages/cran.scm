@@ -13,14 +13,14 @@
 (define-public r-broom-helpers
   (package
     (name "r-broom-helpers")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "broom.helpers" version))
         (sha256
           (base32
-            "11svlfn80xl8vyrq8vqxrqii5c77kp67drnal9v9l7q1frlnq509"))))
+            "1xc12l3dy4mh0q0pxv74rixmbqwh2nag9ywdwwqa215gfg58fw1b"))))
     (properties `((upstream-name . "broom.helpers")))
     (build-system r-build-system)
     (propagated-inputs
@@ -46,14 +46,14 @@
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "DiagrammeR" version))
         (sha256
           (base32
-            "0cyj9mc7rf4kylr9h2k6grfimc6mjyjk14qv1bza9pay44k7n5dr"))))
+            "1gqaqk7jdh37zzadv0aymr9yb8lpqgj3l8n1n3cds38i4zz2d934"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
     (propagated-inputs
@@ -106,14 +106,14 @@
 (define-public r-distr6
   (package
     (name "r-distr6")
-    (version "1.6.4")
+    (version "1.6.9")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "distr6" version))
         (sha256
           (base32
-            "1h1f42mcsj44px1j7pnj0mmbi4129nsai2nsyvhqrs7iadyx3z27"))))
+            "1vl8xg0r0g169xdx6prnfpfr1jnn8mc4daayrzpws4my2dc59dqh"))))
     (properties `((upstream-name . "distr6")))
     (build-system r-build-system)
     (propagated-inputs
@@ -165,14 +165,14 @@
 (define-public r-future-callr
   (package
     (name "r-future-callr")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "future.callr" version))
         (sha256
           (base32
-            "0y5x2xz29j7aidk3c1iby3dk23gpxmgzp4f5z5bdgd1w0n4jslg4"))))
+            "1nhkmxaaii647gizrxa8zj1iakivml7zrqi4bvvs5yshc7m9slg9"))))
     (properties `((upstream-name . "future.callr")))
     (build-system r-build-system)
     (arguments
@@ -193,14 +193,14 @@
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.3.1")
+    (version "0.6.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "gt" version))
         (sha256
           (base32
-            "06b029z32za010pfjj1pp5nqjamc58k87nxj5fsx2mpi8vjgxlfx"))))
+            "1yr6w8nd42gnqrf641hr5a3hs8p92xmybr0lb2fv1m7cvbh894s6"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs
@@ -229,14 +229,14 @@
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "gtsummary" version))
         (sha256
           (base32
-            "1vmzlpn7h68cgxpnsh49qj6xzanhrxa2v3d1f4s96y6kwla0s395"))))
+            "0lw70g14sj0nfmcq9kj8lyckydaxngxbm1xgan5bgd7i88n4bzfz"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs
@@ -331,7 +331,7 @@
         (revision "1"))
     (package
       (name "r-mlr3extralearners")
-      (version (git-version "0.5.18" revision commit))
+      (version (git-version "0.5.25" revision commit))
       (source
         (origin
           (method git-fetch)
@@ -391,21 +391,23 @@
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.5.7")
+    (version "0.5.9")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "mlr3viz" version))
         (sha256
           (base32
-            "1agl6s6i9l7mk8mrvmnz7csqsc77dwjnymlrqcy5vxddr2nfc47l"))))
+            "07hhhasd43iwcm77kic7wfz4gm0q6lryp2lh3cmjrjin1ma7vxig"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs
       (list r-checkmate
             r-data-table
             r-ggplot2
-            r-mlr3misc))
+            r-mlr3misc
+            r-scales
+            r-viridis))
     (home-page "https://mlr3viz.mlr-org.com")
     (synopsis "Visualizations for 'mlr3'")
     (description
@@ -434,13 +436,14 @@
 (define-public r-param6
   (package
     (name "r-param6")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "param6" version))
         (sha256
-          (base32 "1d4fhs82qpb18480wg6i1q59kw65hqvafv5nb7p7jqys16mmsj3i"))))
+          (base32
+            "0h4r2l670zvsbq0cakbm7f5yc0ghaf40kby80q3ql8lwgfnay1jd"))))
     (properties `((upstream-name . "param6")))
     (build-system r-build-system)
     (propagated-inputs
@@ -458,13 +461,14 @@
 (define-public r-pec
   (package
     (name "r-pec")
-    (version "2022.03.06")
+    (version "2022.05.04")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "pec" version))
         (sha256
-          (base32 "1v43k2l46dz1myas9afyd5cp9a9rw7l71i7k4z8pwlw6aydispnm"))))
+          (base32
+            "0s0lfr8747gfnn9hrwacbh160mn593p28qvima5dz9aabndhg8a7"))))
     (properties `((upstream-name . "pec")))
     (build-system r-build-system)
     (propagated-inputs
@@ -512,13 +516,14 @@
 (define-public r-riskregression
   (package
     (name "r-riskregression")
-    (version "2021.10.10")
+    (version "2022.03.22")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "riskRegression" version))
         (sha256
-          (base32 "1fhkn9qz7h95qzb2fcai0smy4vsvj7f7538g5jk0pa7wqr8z6wc4"))))
+          (base32
+            "0ix0h91a9zsw3cl4pg14mmkzq71f2g9r4wakpixy0fp7bfj6c6jf"))))
     (properties `((upstream-name . "riskRegression")))
     (build-system r-build-system)
     (propagated-inputs
@@ -583,22 +588,22 @@
 (define-public r-skimr
   (package
     (name "r-skimr")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "skimr" version))
         (sha256
           (base32
-            "02q5l1l1a9m602dg55gbb1zd3ymh0gxy6r815dj8cp769i8hqla1"))))
+            "1xfma7h488sjhqz3mj1zz5xlm075arzp85rny24rckvn7nj6avkg"))))
     (properties `((upstream-name . "skimr")))
     (build-system r-build-system)
     (propagated-inputs
       (list r-cli
-            r-crayon
             r-dplyr
             r-knitr
             r-magrittr
+            r-pillar
             r-purrr
             r-repr
             r-rlang
@@ -606,8 +611,7 @@
             r-tibble
             r-tidyr
             r-tidyselect
-            r-vctrs
-            r-withr))
+            r-vctrs))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/skimr/")
     (synopsis
@@ -619,14 +623,14 @@
 (define-public r-survivalmodels
   (package
     (name "r-survivalmodels")
-    (version "0.1.9")
+    (version "0.1.13")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "survivalmodels" version))
         (sha256
           (base32
-            "13plpgvxlljd953kv0krzzs1rfgl4yv9s7s5naplqfzjrapk0j7z"))))
+            "0d5bfmvfwf3i1iim5cjrqq5vlja92znpzv1csrk488rb582zaza7"))))
     (properties
       `((upstream-name . "survivalmodels")))
     (build-system r-build-system)
@@ -663,14 +667,14 @@
 (define-public r-tarchetypes
   (package
     (name "r-tarchetypes")
-    (version "0.4.1")
+    (version "0.6.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "tarchetypes" version))
         (sha256
           (base32
-            "1js09qap4a63m7ldfk8lxj438p5fjy893zqck7vvzmv6zyzxhlg6"))))
+            "1knzzbfxka8n1vvz7ikplckqzrdw62fqy5wkh46fvgcb13dmx99a"))))
     (properties `((upstream-name . "tarchetypes")))
     (build-system r-build-system)
     (propagated-inputs
@@ -693,14 +697,14 @@
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.10.0")
+    (version "0.12.0")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "targets" version))
         (sha256
           (base32
-            "1c9llj6iwry6mj92sy1hqk9kkyyxwa60zr20vj4hivlfff1s2h88"))))
+            "096hw48253izfc2chyk5c4dplw5ha669nx7ca447hs8p0cniijjz"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs
@@ -737,13 +741,14 @@
 (define-public r-timereg
   (package
     (name "r-timereg")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "timereg" version))
         (sha256
-          (base32 "1mrqy54jwgfygjlm7hvlx42c631is1nc1q6jd3chw2cx3pi9lhiq"))))
+          (base32
+            "0n9mvdki50j0nbmbs1r91slf7j9nz4cwglscn71kckadsgjjpxmi"))))
     (properties `((upstream-name . "timereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-lava r-numderiv r-survival))

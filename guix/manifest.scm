@@ -1,11 +1,11 @@
-;; with guix 7c9ad54b0616112c7eea6dd02379616aef206490
+;; with guix 83f444de56957ff6a6fa76605c73a57ea76c6e3c
 (specifications->manifest
     '("bash-minimal"
       "coreutils"
-      "glibc-utf8-locales"
+      "glibc-english-utf8-locales"
       "nss-certs"
       "openssh-sans-x"
-      "slurm@21.08.1" ;; has to match the major.minor version of the host
+      "slurm@21.08.8" ;; has to match the major.minor version of the host
       "tzdata"
       "r-minimal"
       "r-beeswarm"
