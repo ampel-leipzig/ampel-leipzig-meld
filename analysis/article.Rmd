@@ -317,7 +317,7 @@ Summary tables were built using the *gtsummary* package
 
 ## Baseline characteristics
 
-```{r tbl1, results = "asis", echo = FALSE, message = FALSE}
+```{r tbl1, results = "asis", echo = FALSE, message = FALSE, warning = FALSE}
 library("gtsummary")
 theme_gtsummary_journal(journal = "jama")
 theme_gtsummary_compact()
