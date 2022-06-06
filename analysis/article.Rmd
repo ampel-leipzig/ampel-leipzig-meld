@@ -111,7 +111,7 @@ underestimates the mortality risk [@hernaez2020].
 There have been some attempts to use the data extracted from more than 300.000
 electronic medical records from two hospitals in the United States to improve
 the MELD score [@kartoun2017]. The derived MELD-Plus7 and MELD-Plus9 risk score
-add albumin, white blood cell count, age and total cholesterol and length of
+add albumin, white blood cell count, total cholesterol, age and length of
 stay to the MELD-Na variables. Despite its published prediction improvement the
 MELD-Plus scores are not used for transplant allocation yet.
 
@@ -292,9 +292,9 @@ Subsequently we selected the model with the
 highest median concordance index [@harrell1982]. If multiple models were
 comparable we chose the simpler (more penalized) one.
 
-After selecting the final model we train and validated it as described in
+After selecting the final model we trained and validated it as described in
 @harrell1996.
-Briefly we develop our model and predict survival at `r ameldcfg$times` days.
+Briefly we developed our model and predicted survival at `r ameldcfg$times` days.
 The predictions were grouped into equal sized intervals so that there
 are `r ameldcfg$m` patients in each interval.
 For each group the mean survival probability and the difference to the
@@ -432,10 +432,48 @@ TODO: mention best ml algorithm (\@ref(fig:benchmark-plot))
 
 In this retrospective analysis of `r n_analysed` consecutive patients,
 who were recruited during the evaluation process for liver transplantation at
-the University Hospital of Leipzig we compared
-`r n_lrns` different statistical and machine learning algorithms.
+the University Hospital of Leipzig we developed a new model to predict the
+90-day survival probability. Our new model outperforms the MELD-Na score and
+the recently published MELD-Plus risk score.
 
-...
+**NUMBER_OF_VARIABLES**
+
+- more variables, harder to cheat
+- comparison of different predictors of MELD-Plus7 (+MELD-Plus9) vs our features
+
+Sodium is not part of our model.
+In line with the results presented in @kartoun2017 we could show that
+adding sodium to MELD the discrimination performance increases just
+insignificantly.
+
+It has shown that women get lower scores in MELD-Na and therefore
+are less likely getting an urgent listing for liver transplantation
+[@Gaertner2022].
+To address sexual differences in laboratory measurements we applied the *zlog*
+transformation [@hoffmann2017].
+Additionally this transformation yield comparable laboratory measurements
+across different clinical laboratories and methods which could improve the
+objectivity of the allocation process.
+The already nearly normal scaled *zlog*-transformed laboratory measurements
+allow us to avoid the sample depending scaling prior to model development.
+Both should increase the external applicability of our approach.
+
+Additionally to laboratory data we investigated
+`r (ncol(raw_data) - length(cn_labs) - 2)`
+clinical data but none of them were chosen in our model selection process.
+@kartoun2017 used a similar penalizing approach and neither select any clinical
+data. Especially in retrospective analysis the clinical data are often not
+detailed enough.
+
+In our benchmark of `r n_lrns` different machine learning algorithms we have
+seen that the more complex algorithm like boosting and neural networks perform
+worse than simpler ones.
+This may due additive effects that favour regression models or due to our
+relative small sample size.
+In machine learning more than 200 events per predictor variable are necessary
+to achieve good prediction performance [@ploeg2014].
+
+<!--
 
 - higher mortality than predicted, compare @hernaez2020
 - adding sodium doesn't add much/any discrimination information
@@ -448,15 +486,65 @@ the University Hospital of Leipzig we compared
 - machine learning algorithms worse than statistical learning (lower c-index, higher variance/instability)
     - additive effects (favour statistical models)
     - low sample size, for ML more than 200 events per predictor variable necessary [@ploeg2014]
+- sex-differences and sample-dependencies (by scaling) addressed by *zlog*.
+- more variables, harder to cheat
 - national register required
+-->
 
 ## Limitations
+
+Our study has limitations. Principally it is a single center, retrospective
+analysis and without an external validation cohort.
+The data were collected during the evaluation process for liver transplantation
+at the University Hospital of Leipzig.
+There was no controlled follow-up process. Instead the follow-up information
+were recored at the next clinical admission.
+Furthermore we excluded all patients who had already a liver transplantation
+which could artificial lower the disease severity of the cohort.
+
+With a median MELD score of `r .tbl1("ScoreMeldUnos")` our
+cohort was healthier than in previous studies that reported
+a score of 14-15 [@kim2008; @kartoun2017].
+However the 90-day mortality rate of `r .tbl1("M90")` was comparable to
+the mortality rates seen in earlier studies that ranges from 6 to 30%
+[@malinchoc2000; @kim2008; @kartoun2017].
+Although our cohort was healthier with a medium mortality rate the classical
+MELD score underestimates the observed mortality
+`r paste(round(range(tbl_observed_vs_expected_mortality$StandardizedMortalityRatio[-1]), 1), collapse = " to ")`
+times.
+Unfortunately our sample size is very low in the higher MELD categories which
+yield a poor but better than MELD based prediction performance of our model
+for very ill patients.
+
+In conclusion we developed a new model to predict the 90-day survival of
+patients during the evaluation process for liver transplantation.
+Our model outperforms the established MELD-Na and the recently published
+MELD-Plus risk scores.
+For a wider adoption a prospective multi center study for model
+recalibration and validation is needed.
+
+<!--
+Mortality
+[@malinchoc2000] ~ 30 %
+[@kim2008] ~ 6-7 %
+[@kartoun2017] ~ 16.3 % (90 d, post-discharge-mortality)
+
+random time point for blood sampling
+
+It was not possible to ensure that patients died of end-stage liver disease.
+
+The variables we found and the model itself have to be validated and
+recalibrated in a multi center, prospective trial.
+
+Few patients with high MELD scores, poor calibration for high mortality
+
 
 - comparable mortality?
 - retrospective analysis
 - single center
 - unknown cause of death (death with vs of end-stage liver disease)
 - bias caused by LTx censorship?
+-->
 
 ```{r co2e, include = FALSE}
 tdp <- c(

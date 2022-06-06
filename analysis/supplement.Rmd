@@ -5,6 +5,10 @@ output:
     toc: false
 ---
 
+```{r knitr_setup, include=FALSE}
+```
+
 ```{r supplement_setup, message = FALSE}
 library("targets")
 ```
+
