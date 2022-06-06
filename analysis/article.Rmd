@@ -39,6 +39,10 @@ output:
     pandoc_args: # pandoc_args doesn't support r evaluation
       - --lua-filter=pandoc/lua-filters/scholarly-metadata.lua
       - --lua-filter=pandoc/lua-filters/author-info-blocks.lua
+  bookdown::word_document2:
+    pandoc_args: # pandoc_args doesn't support r evaluation
+      - --lua-filter=pandoc/lua-filters/scholarly-metadata.lua
+      - --lua-filter=pandoc/lua-filters/author-info-blocks.lua
 ---
 
 ```{r knitr_setup, include=FALSE}
@@ -145,7 +149,7 @@ For each patient we recorded `r ncol(raw_data)` variables.
 Among them are age, sex, etiology of liver disease, complications as listed in
 Table \@ref(tab:tbl1) and `r length(cn_labs)` laboratory measurements.
 
-```{r flowchart, results = "asis", echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion."}
+```{r flowchart, results = "asis", eval = knitr::is_html_output(), echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion."}
 graph <- "
 digraph flowchart {
     graph [splines = false];
