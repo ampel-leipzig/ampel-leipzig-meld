@@ -13,7 +13,6 @@
 
 <title>Pipeline</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
@@ -54,6 +53,7 @@ div.section {
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -186,6 +186,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -341,7 +344,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -357,7 +360,7 @@ $(document).ready(function () {
   <a href="license.html">License</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Exploratory Data Analysis
      
     <span class="caret"></span>
@@ -390,7 +393,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Machine Learning
      
     <span class="caret"></span>
@@ -408,7 +411,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Article
      
     <span class="caret"></span>
@@ -438,7 +441,7 @@ $(document).ready(function () {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -476,7 +479,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-03-17
+<strong>Last updated:</strong> 2022-06-06
 </p>
 <p>
 <strong>Checks:</strong>
@@ -604,20 +607,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeef54ecfdc872ff382dc0b367fa66e1adcff7ff1ctargetblankef54ecfa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2f24e00a9d177413471214395ae00cccde065f38targetblank2f24e00a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ef54ecfdc872ff382dc0b367fa66e1adcff7ff1c" target="_blank">ef54ecf</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2f24e00a9d177413471214395ae00cccde065f38" target="_blank">2f24e00</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeef54ecfdc872ff382dc0b367fa66e1adcff7ff1ctargetblankef54ecfa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2f24e00a9d177413471214395ae00cccde065f38targetblank2f24e00a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ef54ecfdc872ff382dc0b367fa66e1adcff7ff1c" target="_blank">ef54ecf</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2f24e00a9d177413471214395ae00cccde065f38" target="_blank">2f24e00</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -644,7 +647,16 @@ Untracked files:
     Untracked:  scripts/env.sh
 
 Unstaged changes:
+    Modified:   Makefile
+    Modified:   _targets.R
+    Modified:   analysis/article.Rmd
+    Modified:   analysis/benchmarks.Rmd
+    Modified:   analysis/bibliography/rpackages/article.bib
+    Modified:   analysis/bibliography/rpackages/home.bib
+    Modified:   analysis/elasticnet.Rmd
+    Modified:   analysis/supplement.Rmd
     Modified:   code/01-data.R
+    Modified:   code/05-ameld-elasticnet.R
 
 </code></pre>
 <p>
@@ -689,6 +701,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/pipeline.html" target="_blank">983ec69</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-03-17
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -972,17 +1001,30 @@ feat: add pipeline page
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">targets_only =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">c</span>(<span class="st">&quot;time&quot;</span>, <span class="st">&quot;size&quot;</span>, <span class="st">&quot;branches&quot;</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>[31mOpenSSH_8.8p1, OpenSSL 1.1.1m  14 Dec 2021
-debug1: Reading configuration data /home/sebastian/.ssh/config
-debug1: /home/sebastian/.ssh/config line 119: Applying options for brain
-debug1: Setting implicit ProxyCommand from ProxyJump: /gnu/store/2baw33by5zqwn9nqyr1px2y7x12576ai-profile/bin/ssh -v -W &#39;[%h]:%p&#39; ssh-gateway
-Pseudo-terminal will not be allocated because stdin is not a terminal.
-debug1: auto-mux: Trying existing master
-[39m[31mdebug1: Requesting forwarding of remote forward LOCALHOST:11499 -&gt; localhost:11499
-[39m[31mdebug1: Requesting forwarding of remote forward /home/gibbs/.gnupg/S.gpg-agent:-2 -&gt; /run/user/1000/gnupg/S.gpg-agent.extra:-2
-[39m[31mdebug1: mux_client_request_session: master session id: 2
-[39m[31mWARNING: passwd file doesn&#39;t exist in container, not updating
-WARNING: group file doesn&#39;t exist in container, not updating
+<pre><code>[31mDuring startup - Warning messages:
+1: Setting LC_CTYPE failed, using &quot;C&quot; 
+2: Setting LC_COLLATE failed, using &quot;C&quot; 
+3: Setting LC_TIME failed, using &quot;C&quot; 
+4: Setting LC_MESSAGES failed, using &quot;C&quot; 
+5: Setting LC_MONETARY failed, using &quot;C&quot; 
+6: Setting LC_PAPER failed, using &quot;C&quot; 
+7: Setting LC_MEASUREMENT failed, using &quot;C&quot; 
+[39m[31mDuring startup - Warning messages:
+1: Setting LC_CTYPE failed, using &quot;C&quot; 
+2: Setting LC_COLLATE failed, using &quot;C&quot; 
+3: Setting LC_TIME failed, using &quot;C&quot; 
+4: Setting LC_MESSAGES failed, using &quot;C&quot; 
+5: Setting LC_MONETARY failed, using &quot;C&quot; 
+6: Setting LC_PAPER failed, using &quot;C&quot; 
+7: Setting LC_MEASUREMENT failed, using &quot;C&quot; 
+[39m[31mDuring startup - Warning messages:
+1: Setting LC_CTYPE failed, using &quot;C&quot; 
+2: Setting LC_COLLATE failed, using &quot;C&quot; 
+3: Setting LC_TIME failed, using &quot;C&quot; 
+4: Setting LC_MESSAGES failed, using &quot;C&quot; 
+5: Setting LC_MONETARY failed, using &quot;C&quot; 
+6: Setting LC_PAPER failed, using &quot;C&quot; 
+7: Setting LC_MEASUREMENT failed, using &quot;C&quot; 
 [39m[31mDuring startup - Warning messages:
 1: Setting LC_CTYPE failed, using &quot;C&quot; 
 2: Setting LC_COLLATE failed, using &quot;C&quot; 
@@ -995,7 +1037,7 @@ WARNING: group file doesn&#39;t exist in container, not updating
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>graph<span class="sc">$</span>x<span class="sc">$</span>main<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;Last built: &quot;</span>, <span class="fu">Sys.time</span>())</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>graph</span></code></pre></div>
 <div id="htmlwidget-73662e3cc456143a379e" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
-<script type="application/json" data-for="htmlwidget-73662e3cc456143a379e">{"x":{"nodes":{"name":["ameldcfg","amelddata","arcvob","bmrk_aggr","bmrk_results","bmrks","bootarcv","bootrcv","crossval","imp_data","labelled_meld_data","learners","ln_data","meld_data","psurvbootarcv","psurvbootrcv","raw_data","ref_data","reports_article","reports_benchmarks","reports_boxplots","reports_corrplot","reports_dotcharts","reports_elasticnet","reports_histograms","reports_linecharts","reports_missing","reports_roc","reports_supplement","reports_survivalplots","reports_tables","site_conf","site_index","site_license","tasks","tbl_observed_vs_expected_mortality","tbl1","terminator","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","tuner","zlog_data"],"type":["stem","stem","stem","stem","stem","pattern","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0,0.001,60.628,8.505,1.078,2171.987,1501.916,323.767,0.07,0.975,0.108,2.809,0.001,0.003,0.306,1.946,0.044,0.014,23.544,41,46.39,2.043,2.476,6.343,22.211,2.038,3.044,2.755,2.299,3.287,88.876,2.434,1.758,1.257,2.03,0.011,15.602,0.089,1.368,1.698,1.381,1.107,1.722,0.015,0.587],"bytes":[212,81571,281211,1731,72444111,26672569,6339407,19308715,8370,41235,65759,532693,87470,66345,6741,6733,39270,722,21406,2772,1788,801,456,1979,1665,2689,1469,523,144,2853,1171,1306,1132,332,153313,391,744120,7888,266104,246862,245638,263872,267621,17690,105770],"branches":[null,null,null,null,null,52,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"id":["ameldcfg","amelddata","arcvob","bmrk_aggr","bmrk_results","bmrks","bootarcv","bootrcv","crossval","imp_data","labelled_meld_data","learners","ln_data","meld_data","psurvbootarcv","psurvbootrcv","raw_data","ref_data","reports_article","reports_benchmarks","reports_boxplots","reports_corrplot","reports_dotcharts","reports_elasticnet","reports_histograms","reports_linecharts","reports_missing","reports_roc","reports_supplement","reports_survivalplots","reports_tables","site_conf","site_index","site_license","tasks","tbl_observed_vs_expected_mortality","tbl1","terminator","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","tuner","zlog_data"],"label":["ameldcfg\n0 seconds\n212 bytes\n","amelddata\n0.001 seconds\n81.571 kilobytes\n","arcvob\n1.01 minutes\n281.211 kilobytes\n","bmrk_aggr\n8.505 seconds\n1.731 kilobytes\n","bmrk_results\n1.078 seconds\n72.444 megabytes\n","bmrks\n36.2 minutes\n26.673 megabytes\n52 branches","bootarcv\n25.032 minutes\n6.339 megabytes\n","bootrcv\n5.396 minutes\n19.309 megabytes\n","crossval\n0.07 seconds\n8.37 kilobytes\n","imp_data\n0.975 seconds\n41.235 kilobytes\n","labelled_meld_data\n0.108 seconds\n65.759 kilobytes\n","learners\n2.809 seconds\n532.693 kilobytes\n","ln_data\n0.001 seconds\n87.47 kilobytes\n","meld_data\n0.003 seconds\n66.345 kilobytes\n","psurvbootarcv\n0.306 seconds\n6.741 kilobytes\n","psurvbootrcv\n1.946 seconds\n6.733 kilobytes\n","raw_data\n0.044 seconds\n39.27 kilobytes\n","ref_data\n0.014 seconds\n722 bytes\n","reports_article\n23.544 seconds\n21.406 kilobytes\n","reports_benchmarks\n41 seconds\n2.772 kilobytes\n","reports_boxplots\n46.39 seconds\n1.788 kilobytes\n","reports_corrplot\n2.043 seconds\n801 bytes\n","reports_dotcharts\n2.476 seconds\n456 bytes\n","reports_elasticnet\n6.343 seconds\n1.979 kilobytes\n","reports_histograms\n22.211 seconds\n1.665 kilobytes\n","reports_linecharts\n2.038 seconds\n2.689 kilobytes\n","reports_missing\n3.044 seconds\n1.469 kilobytes\n","reports_roc\n2.755 seconds\n523 bytes\n","reports_supplement\n2.299 seconds\n144 bytes\n","reports_survivalplots\n3.287 seconds\n2.853 kilobytes\n","reports_tables\n1.481 minutes\n1.171 kilobytes\n","site_conf\n2.434 seconds\n1.306 kilobytes\n","site_index\n1.758 seconds\n1.132 kilobytes\n","site_license\n1.257 seconds\n332 bytes\n","tasks\n2.03 seconds\n153.313 kilobytes\n","tbl_observed_vs_expected_mortality\n0.011 seconds\n391 bytes\n","tbl1\n15.602 seconds\n744.12 kilobytes\n","terminator\n0.089 seconds\n7.888 kilobytes\n","timeROC_ARCV\n1.368 seconds\n266.104 kilobytes\n","timeROC_MELD\n1.698 seconds\n246.862 kilobytes\n","timeROC_MELDNa\n1.381 seconds\n245.638 kilobytes\n","timeROC_MELDPlus7\n1.107 seconds\n263.872 kilobytes\n","timeROC_RCV\n1.722 seconds\n267.621 kilobytes\n","tuner\n0.015 seconds\n17.69 kilobytes\n","zlog_data\n0.587 seconds\n105.77 kilobytes\n"],"level":[1,5,6,8,7,6,6,6,1,2,2,2,4,3,7,7,1,1,8,9,5,3,3,7,5,5,2,9,2,5,5,1,2,2,5,3,3,1,8,5,5,5,8,1,4],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"shape":["dot","dot","dot","dot","dot","square","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["site_conf","zlog_data","zlog_data","site_conf","ameldcfg","amelddata","bootarcv","psurvbootrcv","zlog_data","raw_data","ref_data","zlog_data","ameldcfg","amelddata","crossval","terminator","tuner","ameldcfg","amelddata","bootrcv","site_conf","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","site_conf","bmrk_results","imp_data","site_conf","zlog_data","site_conf","ameldcfg","amelddata","arcvob","bootarcv","bootrcv","site_conf","zlog_data","imp_data","site_conf","labelled_meld_data","bmrks","imp_data","site_conf","zlog_data","imp_data","meld_data","ref_data","labelled_meld_data","raw_data","psurvbootarcv","zlog_data","zlog_data","site_conf","zlog_data","imp_data","site_conf","zlog_data","ln_data","zlog_data","bmrk_aggr","bmrk_results","site_conf","ameldcfg","amelddata","crossval","learners","tasks","imp_data","meld_data","raw_data","site_conf","imp_data","raw_data","site_conf","tbl1","zlog_data","ameldcfg","bmrk_results","crossval","labelled_meld_data","raw_data","site_conf","tbl_observed_vs_expected_mortality","tbl1","tuner","imp_data","ameldcfg","amelddata"],"to":["reports_linecharts","reports_linecharts","timeROC_MELD","site_index","psurvbootarcv","psurvbootarcv","psurvbootarcv","timeROC_RCV","timeROC_RCV","imp_data","imp_data","timeROC_MELDNa","arcvob","arcvob","learners","learners","learners","psurvbootrcv","psurvbootrcv","psurvbootrcv","reports_roc","reports_roc","reports_roc","reports_roc","reports_roc","reports_roc","reports_supplement","bmrk_aggr","reports_histograms","reports_histograms","reports_histograms","site_license","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_corrplot","reports_corrplot","tbl_observed_vs_expected_mortality","bmrk_results","reports_dotcharts","reports_dotcharts","timeROC_MELDPlus7","zlog_data","zlog_data","zlog_data","tbl1","labelled_meld_data","timeROC_ARCV","timeROC_ARCV","amelddata","reports_survivalplots","reports_survivalplots","reports_boxplots","reports_boxplots","reports_boxplots","tasks","tasks","reports_benchmarks","reports_benchmarks","reports_benchmarks","bootarcv","bootarcv","bmrks","bmrks","bmrks","ln_data","ln_data","reports_missing","reports_missing","reports_tables","reports_tables","reports_tables","reports_tables","reports_tables","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","meld_data","bootrcv","bootrcv"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Last built: 2022-03-17 10:51:45","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Pattern"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","square"]},"nodesToDataframe":true}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-73662e3cc456143a379e">{"x":{"nodes":{"name":["ameldcfg","amelddata","arcvob","bmrk_aggr","bmrk_results","bmrks","bootarcv","bootarcv7","bootarcv9","bootrcv","bootrcv.woICA","crossval","imp_data","labelled_meld_data","learners","ln_data","meld_data","psurvbootarcv","psurvbootrcv","raw_data","ref_data","reports_article","reports_benchmarks","reports_boxplots","reports_corrplot","reports_dotcharts","reports_elasticnet","reports_histograms","reports_linecharts","reports_missing","reports_roc","reports_supplement","reports_survivalplots","reports_tables","site_conf","site_index","site_license","tasks","tbl1","tbl_observed_vs_expected_mortality","terminator","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","tuner","zlog_data"],"type":["stem","stem","stem","stem","stem","pattern","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem","stem"],"status":["uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0,0.002,100.568,14.397,0.565,6799.064,5295.35,1650.655,816.858,165.599,200.222,0.07,1.411,0.097,4.094,0.001,0.005,1.035,1.45,0.137,0.022,40.08,71.679,59.413,3.272,3.152,24.093,30.806,2.741,5.74,3.895,3.996,4.442,107.787,2.434,2.582,1.654,0.688,26.671,0.023,0.089,1.593,2.445,1.872,1.725,1.942,0.015,0.945],"bytes":[212,81582,281203,1736,62696777,73288304,6284345,4711183,4949598,96231341,17686510,8370,41247,65769,535719,87483,66354,6739,6742,39280,731,25658,2502,1788,801,456,2376,1665,2689,1469,523,184,2853,1175,1306,1132,332,153435,748896,400,7888,266377,246889,245649,263887,267641,17690,105779],"branches":[null,null,null,null,null,52,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"label":["ameldcfg\n0 seconds\n212 bytes","amelddata\n0.002 seconds\n81.582 kilobytes","arcvob\n1.676 minutes\n281.203 kilobytes","bmrk_aggr\n14.397 seconds\n1.736 kilobytes","bmrk_results\n0.565 seconds\n62.697 megabytes","bmrks\n1.889 hours\n73.288 megabytes\n52 branches","bootarcv\n1.471 hours\n6.284 megabytes","bootarcv7\n27.511 minutes\n4.711 megabytes","bootarcv9\n13.614 minutes\n4.95 megabytes","bootrcv\n2.76 minutes\n96.231 megabytes","bootrcv.woICA\n3.337 minutes\n17.687 megabytes","crossval\n0.07 seconds\n8.37 kilobytes","imp_data\n1.411 seconds\n41.247 kilobytes","labelled_meld_data\n0.097 seconds\n65.769 kilobytes","learners\n4.094 seconds\n535.719 kilobytes","ln_data\n0.001 seconds\n87.483 kilobytes","meld_data\n0.005 seconds\n66.354 kilobytes","psurvbootarcv\n1.035 seconds\n6.739 kilobytes","psurvbootrcv\n1.45 seconds\n6.742 kilobytes","raw_data\n0.137 seconds\n39.28 kilobytes","ref_data\n0.022 seconds\n731 bytes","reports_article\n40.08 seconds\n25.658 kilobytes","reports_benchmarks\n1.195 minutes\n2.502 kilobytes","reports_boxplots\n59.413 seconds\n1.788 kilobytes","reports_corrplot\n3.272 seconds\n801 bytes","reports_dotcharts\n3.152 seconds\n456 bytes","reports_elasticnet\n24.093 seconds\n2.376 kilobytes","reports_histograms\n30.806 seconds\n1.665 kilobytes","reports_linecharts\n2.741 seconds\n2.689 kilobytes","reports_missing\n5.74 seconds\n1.469 kilobytes","reports_roc\n3.895 seconds\n523 bytes","reports_supplement\n3.996 seconds\n184 bytes","reports_survivalplots\n4.442 seconds\n2.853 kilobytes","reports_tables\n1.796 minutes\n1.175 kilobytes","site_conf\n2.434 seconds\n1.306 kilobytes","site_index\n2.582 seconds\n1.132 kilobytes","site_license\n1.654 seconds\n332 bytes","tasks\n0.688 seconds\n153.435 kilobytes","tbl1\n26.671 seconds\n748.896 kilobytes","tbl_observed_vs_expected_mortality\n0.023 seconds\n400 bytes","terminator\n0.089 seconds\n7.888 kilobytes","timeROC_ARCV\n1.593 seconds\n266.377 kilobytes","timeROC_MELD\n2.445 seconds\n246.889 kilobytes","timeROC_MELDNa\n1.872 seconds\n245.649 kilobytes","timeROC_MELDPlus7\n1.725 seconds\n263.887 kilobytes","timeROC_RCV\n1.942 seconds\n267.641 kilobytes","tuner\n0.015 seconds\n17.69 kilobytes","zlog_data\n0.945 seconds\n105.779 kilobytes"],"color":["#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823","#354823"],"id":["ameldcfg","amelddata","arcvob","bmrk_aggr","bmrk_results","bmrks","bootarcv","bootarcv7","bootarcv9","bootrcv","bootrcv.woICA","crossval","imp_data","labelled_meld_data","learners","ln_data","meld_data","psurvbootarcv","psurvbootrcv","raw_data","ref_data","reports_article","reports_benchmarks","reports_boxplots","reports_corrplot","reports_dotcharts","reports_elasticnet","reports_histograms","reports_linecharts","reports_missing","reports_roc","reports_supplement","reports_survivalplots","reports_tables","site_conf","site_index","site_license","tasks","tbl1","tbl_observed_vs_expected_mortality","terminator","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","tuner","zlog_data"],"level":[1,5,6,8,7,6,6,6,6,6,6,1,2,2,2,4,3,7,7,1,1,8,9,5,3,3,7,5,5,2,9,2,5,5,1,2,2,5,3,3,1,8,5,5,5,8,1,4],"shape":["dot","dot","dot","dot","dot","square","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot","dot"]},"edges":{"from":["crossval","learners","tasks","bmrks","imp_data","site_conf","raw_data","ameldcfg","amelddata","bootrcv","psurvbootrcv","zlog_data","ameldcfg","amelddata","ameldcfg","amelddata","imp_data","site_conf","labelled_meld_data","ln_data","zlog_data","site_conf","timeROC_ARCV","timeROC_MELD","timeROC_MELDNa","timeROC_MELDPlus7","timeROC_RCV","labelled_meld_data","raw_data","site_conf","site_conf","zlog_data","psurvbootarcv","zlog_data","site_conf","imp_data","site_conf","zlog_data","zlog_data","zlog_data","ameldcfg","amelddata","zlog_data","bmrk_results","imp_data","meld_data","ref_data","ameldcfg","amelddata","bootarcv","site_conf","ameldcfg","amelddata","ameldcfg","amelddata","arcvob","bootarcv","bootarcv7","bootarcv9","bootrcv","bootrcv.woICA","site_conf","zlog_data","imp_data","site_conf","zlog_data","imp_data","bmrk_aggr","bmrk_results","site_conf","crossval","terminator","tuner","site_conf","zlog_data","site_conf","ameldcfg","amelddata","imp_data","meld_data","imp_data","raw_data","site_conf","tbl1","zlog_data","ameldcfg","amelddata","zlog_data","ameldcfg","bmrk_results","crossval","labelled_meld_data","raw_data","site_conf","tbl1","tbl_observed_vs_expected_mortality","tuner","raw_data","ref_data"],"to":["bmrks","bmrks","bmrks","bmrk_results","reports_corrplot","reports_corrplot","labelled_meld_data","psurvbootrcv","psurvbootrcv","psurvbootrcv","timeROC_RCV","timeROC_RCV","bootarcv7","bootarcv7","bootarcv9","bootarcv9","reports_dotcharts","reports_dotcharts","tbl1","tasks","tasks","reports_roc","reports_roc","reports_roc","reports_roc","reports_roc","reports_roc","tbl_observed_vs_expected_mortality","reports_missing","reports_missing","reports_survivalplots","reports_survivalplots","timeROC_ARCV","timeROC_ARCV","site_index","reports_histograms","reports_histograms","reports_histograms","amelddata","timeROC_MELDNa","bootrcv.woICA","bootrcv.woICA","timeROC_MELDPlus7","bmrk_aggr","zlog_data","zlog_data","zlog_data","psurvbootarcv","psurvbootarcv","psurvbootarcv","reports_supplement","bootrcv","bootrcv","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_elasticnet","reports_boxplots","reports_boxplots","reports_boxplots","meld_data","reports_benchmarks","reports_benchmarks","reports_benchmarks","learners","learners","learners","reports_linecharts","reports_linecharts","site_license","arcvob","arcvob","ln_data","ln_data","reports_tables","reports_tables","reports_tables","reports_tables","reports_tables","bootarcv","bootarcv","timeROC_MELD","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","reports_article","imp_data","imp_data"],"arrows":["to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"Last built: 2022-06-06 18:56:09","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Pattern"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","square"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1005,37 +1047,33 @@ Session information
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.2 (2021-11-01)
+<pre><code>R version 4.1.3 (2022-03-10)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
- [1] LC_CTYPE=de_DE.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=de_DE.UTF-8        LC_COLLATE=de_DE.UTF-8    
- [5] LC_MONETARY=de_DE.UTF-8    LC_MESSAGES=de_DE.UTF-8   
- [7] LC_PAPER=de_DE.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=de_DE.UTF-8 LC_IDENTIFICATION=C       
+[1] C
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.8        pillar_1.6.5      compiler_4.1.2    later_1.3.0      
- [5] jquerylib_0.1.4   git2r_0.29.0      workflowr_1.7.0   tools_4.1.2      
- [9] targets_0.10.0    digest_0.6.29     jsonlite_1.7.3    evaluate_0.14    
-[13] lifecycle_1.0.1   tibble_3.1.6      pkgconfig_2.0.3   rlang_1.0.0      
-[17] igraph_1.2.11     cli_3.1.1         yaml_2.2.2        xfun_0.29        
-[21] fastmap_1.1.0     withr_2.4.3       stringr_1.4.0     knitr_1.37       
-[25] htmlwidgets_1.5.4 fs_1.5.2          vctrs_0.3.8       tidyselect_1.1.1 
-[29] rprojroot_2.0.2   data.table_1.14.2 glue_1.6.1        R6_2.5.1         
-[33] processx_3.5.2    fansi_1.0.2       base64url_1.4     rmarkdown_2.11   
-[37] bookdown_0.24     purrr_0.3.4       callr_3.7.0       magrittr_2.0.2   
-[41] whisker_0.4       codetools_0.2-18  ps_1.6.0          backports_1.4.1  
-[45] promises_1.2.0.1  ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.5     
-[49] utf8_1.2.2        stringi_1.7.6     visNetwork_2.1.0  crayon_1.4.2     </code></pre>
+ [1] Rcpp_1.0.8.3      pillar_1.7.0      compiler_4.1.3    bslib_0.3.1      
+ [5] later_1.3.0       jquerylib_0.1.4   git2r_0.30.1      workflowr_1.7.0  
+ [9] tools_4.1.3       targets_0.12.0    digest_0.6.29     jsonlite_1.8.0   
+[13] evaluate_0.15     lifecycle_1.0.1   tibble_3.1.6      pkgconfig_2.0.3  
+[17] rlang_1.0.2       igraph_1.3.0      cli_3.2.0         yaml_2.3.5       
+[21] xfun_0.30         fastmap_1.1.0     withr_2.5.0       stringr_1.4.0    
+[25] knitr_1.38        htmlwidgets_1.5.4 fs_1.5.2          vctrs_0.4.0      
+[29] sass_0.4.1        tidyselect_1.1.2  rprojroot_2.0.3   data.table_1.14.2
+[33] glue_1.6.2        R6_2.5.1          processx_3.5.3    fansi_1.0.3      
+[37] base64url_1.4     rmarkdown_2.13    bookdown_0.25     purrr_0.3.4      
+[41] callr_3.7.0       magrittr_2.0.3    whisker_0.4       codetools_0.2-18 
+[45] ps_1.6.0          backports_1.4.1   promises_1.2.0.1  ellipsis_0.3.2   
+[49] htmltools_0.5.2   httpuv_1.6.5      utf8_1.2.2        stringi_1.7.6    
+[53] visNetwork_2.1.0  crayon_1.5.1     </code></pre>
 </div>
 
 
