@@ -13,7 +13,9 @@ library("viridisLite")
 tar_load(arcvob)
 tar_load(bootrcv)
 tar_load(bootarcv)
-#tar_load(bootarcv9)
+tar_load(bootarcv7)
+tar_load(bootarcv9)
+tar_load(bootrcv.woICA)
 tar_load(amelddata)
 tar_load(ameldcfg)
 tar_load(zlog_data)
@@ -73,6 +75,13 @@ plot(bootrcv$fit$glmnet.fit, xvar = "lambda")
 plot(bootrcv$fit$glmnet.fit, xvar = "dev")
 ```
 
+## bootrcv.woICA
+
+```{r bootrcv.woICA}
+plot(bootrcv.woICA, what = "calibration")
+plot(bootrcv.woICA, what = "selected", cex = 0.5)
+```
+
 ## arcv.glmnet
 
 ```{r bootarcv}
@@ -84,11 +93,20 @@ plot(bootarcv, what = "selected")
 plot_dots(a, main = "Selected Alpha Values")
 ```
 
+## arcv7.glmnet
+
+```{r bootarcv7}
+a <- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))
+plot(bootarcv7 , what = "calibration")
+plot(bootarcv7, what = "selected")
+plot_dots(a, main = "Selected Alpha Values")
+```
+
 ## arcv9.glmnet
 
 ```{r bootarcv9}
-#a <- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))
-#plot(bootarcv9 , what = "calibration")
-#plot(bootarcv9, what = "selected")
-#plot_dots(a, main = "Selected Alpha Values")
+a <- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))
+plot(bootarcv9 , what = "calibration")
+plot(bootarcv9, what = "selected")
+plot_dots(a, main = "Selected Alpha Values")
 ```

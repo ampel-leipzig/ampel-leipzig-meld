@@ -36,7 +36,7 @@ lapply(split(agg, agg$task_id), knitr::kable, digits = 4)
 
 ## Boxplots
 
-```{r benchmarks_plot_c_harrell, fig.width = 18}
+```{r benchmarks_plot_c_harrell, fig.width = 18, fig.height = 12}
 m <- agg[, max(harrell), by = task_id]
 autoplot(bmrk_results) +
     geom_boxplot(aes(fill = learner_id)) +
@@ -44,18 +44,16 @@ autoplot(bmrk_results) +
     scale_fill_viridis(discrete = TRUE) +
     geom_hline(
         aes(yintercept = V1), linetype = "dashed", color = "red", data = m
-    ) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    )
 ```
 
-```{r benchmarks_plot_c_uno, fig.width = 18}
+```{r benchmarks_plot_c_uno, fig.width = 18, fig.height = 12}
 autoplot(
     bmrk_results,
     measure = msr("surv.cindex", id = "uno", weight_meth = "G2")) +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
-    scale_fill_viridis(discrete = TRUE) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    scale_fill_viridis(discrete = TRUE)
 ```
 
 # Aggregated performance
@@ -66,16 +64,14 @@ Aggregated performance across all `r nrow(bmrk_results$tasks)` datasets.
 autoplot(bmrk_aggr, type = "box", meas = "harrell") +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
-    scale_fill_viridis(discrete = TRUE) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    scale_fill_viridis(discrete = TRUE)
 ```
 
 ```{r benchmarks_aggr_plot_c_uno}
 autoplot(bmrk_aggr, type = "box", meas = "uno") +
     geom_boxplot(aes(fill = learner_id)) +
     geom_jitter(position = position_jitter(0.2)) +
-    scale_fill_viridis(discrete = TRUE) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    scale_fill_viridis(discrete = TRUE)
 ```
 
 # Pairwise comparison
