@@ -531,7 +531,7 @@ div.tocify {
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
 workflowr
-<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -541,7 +541,7 @@ workflowr
 </li>
 <li>
 <a data-toggle="tab" href="#checks">
-Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </a>
 </li>
 <li>
@@ -551,14 +551,14 @@ Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidde
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-01
+<strong>Last updated:</strong> 2022-06-06
 </p>
 <p>
 <strong>Checks:</strong>
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-6
+7
 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
-1
+0
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -581,21 +581,16 @@ The <em>Past versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
-<strong>R Markdown file:</strong> uncommitted changes
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>R Markdown file:</strong> up-to-date
 </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes.
-To know which version of the R Markdown file created these
-results, you’ll want to first commit it to the Git repo. If
-you’re still working on the analysis, you can ignore this
-warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and
-build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you
+know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -684,20 +679,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2f24e00a9d177413471214395ae00cccde065f38targetblank2f24e00a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2f24e00a9d177413471214395ae00cccde065f38" target="_blank">2f24e00</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2f24e00a9d177413471214395ae00cccde065f38targetblank2f24e00a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2f24e00a9d177413471214395ae00cccde065f38" target="_blank">2f24e00</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -716,24 +711,10 @@ Ignored files:
     Ignored:    logs/
 
 Untracked files:
-    Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  article.md
-    Untracked:  s12874-018-0482-1.pdf
     Untracked:  scripts/R.sh
     Untracked:  scripts/env.sh
-
-Unstaged changes:
-    Modified:   _targets.R
-    Modified:   analysis/article.Rmd
-    Modified:   analysis/benchmarks.Rmd
-    Modified:   analysis/bibliography/rpackages/article.bib
-    Modified:   analysis/bibliography/rpackages/home.bib
-    Modified:   analysis/elasticnet.Rmd
-    Modified:   analysis/supplement.Rmd
-    Modified:   code/01-data.R
-    Modified:   code/05-ameld-elasticnet.R
 
 </code></pre>
 <p>
@@ -778,6 +759,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/elasticnet.html" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/baac1e4a7266328ca27afb22a0b727c945bf7006/analysis/elasticnet.Rmd" target="_blank">baac1e4</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+fix: bootstraping elastic net
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -898,6 +913,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -937,6 +963,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/arcvob-plot-lambdamin-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/arcvob-plot-lambdamin-1.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -974,6 +1011,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/arcvob-plot-lambda1se-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/arcvob-plot-lambda1se-1.png" target="_blank">983ec69</a>
@@ -1043,6 +1091,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootrcv-1.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -1080,6 +1139,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv-2.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootrcv-2.png" target="_blank">983ec69</a>
@@ -1217,8 +1287,82 @@ Sebastian Gibb
 <h2><span class="header-section-number">2.2</span> bootrcv.woICA</h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woICA, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcv.woICA-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcv.woICA-1">
+Past versions of bootrcv.woICA-1.png
+</button>
+</p>
+<div id="fig-bootrcv.woICA-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv.woICA-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woICA, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcv.woICA-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcv.woICA-2">
+Past versions of bootrcv.woICA-2.png
+</button>
+</p>
+<div id="fig-bootrcv.woICA-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv.woICA-2.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="arcv.glmnet" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> arcv.glmnet</h2>
@@ -1247,6 +1391,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootarcv-1.png" target="_blank">983ec69</a>
@@ -1288,6 +1443,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv2-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootarcv2-1.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -1327,6 +1493,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv2-2.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootarcv2-2.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -1346,20 +1523,242 @@ Sebastian Gibb
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv9<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv7 , <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv7-1">
+Past versions of bootarcv7-1.png
+</button>
+</p>
+<div id="fig-bootarcv7-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv7-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv7, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv7-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv7-2">
+Past versions of bootarcv7-2.png
+</button>
+</p>
+<div id="fig-bootarcv7-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv7-2.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv7-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv7-3">
+Past versions of bootarcv7-3.png
+</button>
+</p>
+<div id="fig-bootarcv7-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv7-3.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="arcv9.glmnet" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> arcv9.glmnet</h2>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv9<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv9 , <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv9-1">
+Past versions of bootarcv9-1.png
+</button>
+</p>
+<div id="fig-bootarcv9-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv9-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv9, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv9-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv9-2">
+Past versions of bootarcv9-2.png
+</button>
+</p>
+<div id="fig-bootarcv9-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv9-2.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv9-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv9-3">
+Past versions of bootarcv9-3.png
+</button>
+</p>
+<div id="fig-bootarcv9-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv9-3.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">

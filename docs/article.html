@@ -586,7 +586,7 @@ TODO</p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
 workflowr
-<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -596,7 +596,7 @@ workflowr
 </li>
 <li>
 <a data-toggle="tab" href="#checks">
-Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </a>
 </li>
 <li>
@@ -611,9 +611,9 @@ Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidde
 <p>
 <strong>Checks:</strong>
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-6
+7
 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
-1
+0
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -636,21 +636,16 @@ The <em>Past versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
-<strong>R Markdown file:</strong> uncommitted changes
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<strong>R Markdown file:</strong> up-to-date
 </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes.
-To know which version of the R Markdown file created these
-results, you’ll want to first commit it to the Git repo. If
-you’re still working on the analysis, you can ignore this
-warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and
-build the HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git repository, you
+know the exact version of the code that produced these results.</p>
 </div>
 </div>
 </div>
@@ -739,20 +734,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2f24e00a9d177413471214395ae00cccde065f38targetblank2f24e00a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree3181fbec9ef43b704d7ddae53225636b899f3ac6targetblank3181fbea">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2f24e00a9d177413471214395ae00cccde065f38" target="_blank">2f24e00</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/3181fbec9ef43b704d7ddae53225636b899f3ac6" target="_blank">3181fbe</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree2f24e00a9d177413471214395ae00cccde065f38targetblank2f24e00a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree3181fbec9ef43b704d7ddae53225636b899f3ac6targetblank3181fbea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/2f24e00a9d177413471214395ae00cccde065f38" target="_blank">2f24e00</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/3181fbec9ef43b704d7ddae53225636b899f3ac6" target="_blank">3181fbe</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -771,23 +766,11 @@ Ignored files:
     Ignored:    logs/
 
 Untracked files:
-    Untracked:  1907.00825.pdf
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  s12874-018-0482-1.pdf
+    Untracked:  article.docx
     Untracked:  scripts/R.sh
     Untracked:  scripts/env.sh
-
-Unstaged changes:
-    Modified:   _targets.R
-    Modified:   analysis/article.Rmd
-    Modified:   analysis/benchmarks.Rmd
-    Modified:   analysis/bibliography/rpackages/article.bib
-    Modified:   analysis/bibliography/rpackages/home.bib
-    Modified:   analysis/elasticnet.Rmd
-    Modified:   analysis/supplement.Rmd
-    Modified:   code/01-data.R
-    Modified:   code/05-ameld-elasticnet.R
 
 </code></pre>
 <p>
@@ -832,6 +815,74 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3181fbec9ef43b704d7ddae53225636b899f3ac6/analysis/article.Rmd" target="_blank">3181fbe</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+refactor: suppress warning for table1
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/article.html" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/01f934b19920c5f4612f5ec2042502ce1c8a22ee/analysis/article.Rmd" target="_blank">01f934b</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+feat: add first discussion draft
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/13ac21ebda6467870c7a207c5697c0352518b10c/analysis/article.Rmd" target="_blank">13ac21e</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+feat: add docx export
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1384,8 +1435,6 @@ based on the nonparametric inverse probability of censoring weighting estimator
 <h1><span class="header-section-number">3</span> Results</h1>
 <div id="baseline-characteristics" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Baseline characteristics</h2>
-<pre><code>Warning: The `fmt_missing()` function is deprecated and will soon be removed
-* Use the `sub_missing()` function instead</code></pre>
 <div id="ziidnstgxp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
@@ -2201,6 +2250,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">b20484a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -2521,7 +2581,7 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.1.3 (2022-03-10)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
