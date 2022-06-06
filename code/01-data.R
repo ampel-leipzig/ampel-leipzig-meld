@@ -203,6 +203,10 @@ tg_data <- list(
                   grep("_[SECQ]$", colnames(imp_data), value = TRUE)
                 )
             zlog_data[iconvert] <- zlog_df(imp_data[iconvert], ref_data)
+            ## additionally scale Age
+            #agelimits <- c(32, 74)
+            #zlog_data$Age <- zlog(zlog_data$Age, agelimits)
+            #attr(zlog_data, "age_limits") <- agelimits
             zlog_data
         },
         packages = "zlog",
