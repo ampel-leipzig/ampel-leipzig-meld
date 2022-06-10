@@ -1,3 +1,5 @@
+LANG=en_US.UTF-8
+R_CLI_NUM_COLORS=256
 TMPDIR=/tmp
 LOCPATH=/lib/locale/2.33/
 RETICULATE_PYTHON=/bin/python3.9
