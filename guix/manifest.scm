@@ -1,4 +1,4 @@
-;; with guix 83f444de56957ff6a6fa76605c73a57ea76c6e3c
+;; with guix 01596f4
 (specifications->manifest
     '("bash-minimal"
       "coreutils"

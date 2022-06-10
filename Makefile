@@ -1,5 +1,5 @@
 GUIX=/usr/local/bin/guix
-GUIXCOMMIT=83f444d
+GUIXCOMMIT=01596f4
 
 .PHONEY: clean clean-all clean-container clean-reports clean-targets \
 	container hpc local-guix run sync
@@ -41,10 +41,6 @@ sync: container scripts/Rscript.sh scripts/slurm_batchtools.tmpl
 
 local-guix:
 	guix package --manifest=guix/manifest.scm --load-path=guix/channel --profile="$(GUIX_EXTRA_PROFILES)"/ampel/ampel
-
-docx:
-	@./scripts/Rscript.sh -e \
-		'd <- rprojroot::find_rstudio_root_file(); rmarkdown::render(file.path(d, "analysis", "article.Rmd"), output_format = "bookdown::word_document2", knit_root_dir = d, output_dir = d)'
 
 clean: clean-targets
 

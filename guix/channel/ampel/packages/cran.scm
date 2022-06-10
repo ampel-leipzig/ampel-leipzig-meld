@@ -327,11 +327,11 @@
 
 (define-public r-mlr3extralearners
   (let ((commit
-          "fb4976d195d895e5cd9daee5cca001cf13835881")
+          "6a0da263ae31fe0163f10f5ea1a94feef2ddf852")
         (revision "1"))
     (package
       (name "r-mlr3extralearners")
-      (version (git-version "0.5.25" revision commit))
+      (version (git-version "0.5.37" revision commit))
       (source
         (origin
           (method git-fetch)
@@ -341,7 +341,7 @@
           (file-name (git-file-name name version))
           (sha256
             (base32
-              "1v0975i8gx6ma1pf244ww9gd5lqgmw6j9yjpsbk0ss33jgpw7afq"))))
+              "15vzh1ary9kn8iy92mkv7mby4s7gw766j9z0qdpvh1cvh7hxf6fz"))))
       (properties
         `((upstream-name . "mlr3extralearners")))
       (build-system r-build-system)
@@ -705,14 +705,14 @@
 (define-public r-targets
   (package
     (name "r-targets")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
       (origin
         (method url-fetch)
         (uri (cran-uri "targets" version))
         (sha256
           (base32
-            "096hw48253izfc2chyk5c4dplw5ha669nx7ca447hs8p0cniijjz"))))
+            "02g1l0mnq9p03n68pmv65af0z8il5dm5yyw470pdrg7zpx2lvg3p"))))
     (properties `((upstream-name . "targets")))
     (build-system r-build-system)
     (propagated-inputs
@@ -870,10 +870,10 @@
     (license expat)))
 
 (define-public r-ameld
-  (let ((commit "bdf52e0"))
+  (let ((commit "a925bbe"))
   (package
     (name "r-ameld")
-    (version (string-append "0.0.21-" commit))
+    (version (string-append "0.0.22-" commit))
     (source
       (origin
         (method git-fetch)
@@ -883,7 +883,7 @@
         (file-name (string-append name version))
         (sha256
           (base32
-            "1sqdg5fllvawahdq7zbk56izl76wpwky5d8w70kiy049ql16fjlw"))))
+            "1pvd0mbd6y9ivbzv9dim7q736f2wc01li88yxrjg29hmijfwbchm"))))
     (properties `((upstream-name . "ameld")))
     (build-system r-build-system)
     (propagated-inputs
