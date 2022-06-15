@@ -478,6 +478,9 @@ div.tocify {
       <a href="elasticnet.html">ElasticNet</a>
     </li>
     <li>
+      <a href="variableimportance.html">Variable Importance</a>
+    </li>
+    <li>
       <a href="roc.html">ROC</a>
     </li>
   </ul>
@@ -551,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-06
+<strong>Last updated:</strong> 2022-06-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -679,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -759,6 +762,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d3e94627fae586919bec7433b9d7c2c03b7d4e93/docs/benchmarks.html" target="_blank">d3e9462</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1141,132 +1161,132 @@ feat: add mlr benchmarks
 <tr class="odd">
 <td align="left">ln_eldd</td>
 <td align="left">scale.ridge.tuned</td>
-<td align="right">0.9212</td>
+<td align="right">0.9226</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.svmregression.tuned</td>
+<td align="right">0.9214</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.elasticnet.tuned</td>
+<td align="right">0.9206</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
 <td align="left">scale.penridge.tuned</td>
-<td align="right">0.9211</td>
-</tr>
-<tr class="odd">
-<td align="left">ln_eldd</td>
-<td align="left">scale.svmregression.tuned</td>
-<td align="right">0.9197</td>
-</tr>
-<tr class="even">
-<td align="left">ln_eldd</td>
-<td align="left">scale.elasticnet.tuned</td>
-<td align="right">0.9195</td>
+<td align="right">0.9188</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
 <td align="left">scale.penlasso.tuned</td>
-<td align="right">0.9135</td>
+<td align="right">0.9164</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
-<td align="left">ridge.tuned</td>
-<td align="right">0.9132</td>
+<td align="left">penridge.tuned</td>
+<td align="right">0.9156</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
-<td align="left">penridge.tuned</td>
-<td align="right">0.9129</td>
+<td align="left">ridge.tuned</td>
+<td align="right">0.9144</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
 <td align="left">ranger.tuned</td>
-<td align="right">0.9119</td>
-</tr>
-<tr class="odd">
-<td align="left">ln_eldd</td>
-<td align="left">scale.ranger.tuned</td>
-<td align="right">0.9105</td>
-</tr>
-<tr class="even">
-<td align="left">ln_eldd</td>
-<td align="left">scale.surv.rfsrc.tuned</td>
-<td align="right">0.9081</td>
-</tr>
-<tr class="odd">
-<td align="left">ln_eldd</td>
-<td align="left">elasticnet.tuned</td>
-<td align="right">0.9060</td>
-</tr>
-<tr class="even">
-<td align="left">ln_eldd</td>
-<td align="left">surv.rfsrc.tuned</td>
-<td align="right">0.9054</td>
+<td align="right">0.9138</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
 <td align="left">penlasso.tuned</td>
+<td align="right">0.9105</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.ranger.tuned</td>
+<td align="right">0.9100</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">surv.rfsrc.tuned</td>
+<td align="right">0.9047</td>
+</tr>
+<tr class="even">
+<td align="left">ln_eldd</td>
+<td align="left">scale.surv.rfsrc.tuned</td>
 <td align="right">0.9044</td>
+</tr>
+<tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">elasticnet.tuned</td>
+<td align="right">0.9035</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
 <td align="left">cox</td>
-<td align="right">0.8632</td>
+<td align="right">0.8722</td>
 </tr>
 <tr class="odd">
+<td align="left">ln_eldd</td>
+<td align="left">scale.lasso.tuned</td>
+<td align="right">0.8601</td>
+</tr>
+<tr class="even">
 <td align="left">ln_eldd</td>
 <td align="left">scale.cox</td>
-<td align="right">0.8552</td>
-</tr>
-<tr class="even">
-<td align="left">ln_eldd</td>
-<td align="left">scale.coxtime.tuned</td>
-<td align="right">0.8472</td>
+<td align="right">0.8566</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
-<td align="left">scale.deepsurv.tuned</td>
-<td align="right">0.8438</td>
+<td align="left">scale.coxtime.tuned</td>
+<td align="right">0.8403</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
-<td align="left">scale.surv.xgboost.tuned</td>
-<td align="right">0.8368</td>
+<td align="left">scale.deepsurv.tuned</td>
+<td align="right">0.8397</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
 <td align="left">surv.xgboost.tuned</td>
-<td align="right">0.8365</td>
+<td align="right">0.8289</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
 <td align="left">lasso.tuned</td>
-<td align="right">0.8335</td>
+<td align="right">0.8273</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
-<td align="left">scale.svmvanbelle1.tuned</td>
-<td align="right">0.8331</td>
+<td align="left">scale.surv.xgboost.tuned</td>
+<td align="right">0.8267</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
-<td align="left">scale.lasso.tuned</td>
-<td align="right">0.8275</td>
+<td align="left">scale.svmvanbelle1.tuned</td>
+<td align="right">0.8175</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
 <td align="left">svmvanbelle1.tuned</td>
-<td align="right">0.7794</td>
+<td align="right">0.7851</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
-<td align="left">deepsurv.tuned</td>
-<td align="right">0.7494</td>
+<td align="left">coxtime.tuned</td>
+<td align="right">0.7481</td>
 </tr>
 <tr class="odd">
 <td align="left">ln_eldd</td>
-<td align="left">coxtime.tuned</td>
-<td align="right">0.7336</td>
+<td align="left">deepsurv.tuned</td>
+<td align="right">0.7277</td>
 </tr>
 <tr class="even">
 <td align="left">ln_eldd</td>
 <td align="left">svmregression.tuned</td>
-<td align="right">0.5711</td>
+<td align="right">0.5635</td>
 </tr>
 </tbody>
 </table>
@@ -1283,132 +1303,132 @@ feat: add mlr benchmarks
 <tr class="odd">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.ridge.tuned</td>
-<td align="right">0.9211</td>
+<td align="right">0.9207</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.svmregression.tuned</td>
-<td align="right">0.9197</td>
+<td align="right">0.9201</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.elasticnet.tuned</td>
-<td align="right">0.9178</td>
+<td align="right">0.9184</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.penridge.tuned</td>
-<td align="right">0.9173</td>
+<td align="right">0.9179</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
-<td align="left">ridge.tuned</td>
-<td align="right">0.9154</td>
+<td align="left">scale.penlasso.tuned</td>
+<td align="right">0.9166</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
-<td align="left">scale.penlasso.tuned</td>
-<td align="right">0.9136</td>
+<td align="left">ridge.tuned</td>
+<td align="right">0.9162</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
 <td align="left">elasticnet.tuned</td>
-<td align="right">0.9133</td>
-</tr>
-<tr class="even">
-<td align="left">zlog_eldd</td>
-<td align="left">penridge.tuned</td>
-<td align="right">0.9129</td>
-</tr>
-<tr class="odd">
-<td align="left">zlog_eldd</td>
-<td align="left">penlasso.tuned</td>
-<td align="right">0.9129</td>
+<td align="right">0.9135</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
 <td align="left">ranger.tuned</td>
-<td align="right">0.9120</td>
+<td align="right">0.9124</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
-<td align="left">scale.ranger.tuned</td>
-<td align="right">0.9113</td>
+<td align="left">penlasso.tuned</td>
+<td align="right">0.9118</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
-<td align="left">surv.rfsrc.tuned</td>
-<td align="right">0.9074</td>
+<td align="left">scale.ranger.tuned</td>
+<td align="right">0.9117</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
+<td align="left">penridge.tuned</td>
+<td align="right">0.9109</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
 <td align="left">lasso.tuned</td>
-<td align="right">0.9054</td>
+<td align="right">0.9105</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
+<td align="left">surv.rfsrc.tuned</td>
+<td align="right">0.9067</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.surv.rfsrc.tuned</td>
-<td align="right">0.9042</td>
+<td align="right">0.9047</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
-<td align="left">cox</td>
-<td align="right">0.8619</td>
+<td align="left">scale.cox</td>
+<td align="right">0.8725</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
-<td align="left">scale.cox</td>
-<td align="right">0.8551</td>
+<td align="left">cox</td>
+<td align="right">0.8677</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.deepsurv.tuned</td>
-<td align="right">0.8475</td>
-</tr>
-<tr class="even">
-<td align="left">zlog_eldd</td>
-<td align="left">scale.coxtime.tuned</td>
-<td align="right">0.8462</td>
-</tr>
-<tr class="odd">
-<td align="left">zlog_eldd</td>
-<td align="left">surv.xgboost.tuned</td>
-<td align="right">0.8365</td>
+<td align="right">0.8454</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
 <td align="left">scale.surv.xgboost.tuned</td>
-<td align="right">0.8299</td>
+<td align="right">0.8367</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
-<td align="left">scale.svmvanbelle1.tuned</td>
-<td align="right">0.8267</td>
+<td align="left">scale.lasso.tuned</td>
+<td align="right">0.8318</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
 <td align="left">svmvanbelle1.tuned</td>
-<td align="right">0.8190</td>
+<td align="right">0.8315</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
-<td align="left">svmregression.tuned</td>
-<td align="right">0.8093</td>
+<td align="left">scale.svmvanbelle1.tuned</td>
+<td align="right">0.8288</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
-<td align="left">scale.lasso.tuned</td>
-<td align="right">0.8007</td>
+<td align="left">surv.xgboost.tuned</td>
+<td align="right">0.8267</td>
 </tr>
 <tr class="odd">
 <td align="left">zlog_eldd</td>
 <td align="left">coxtime.tuned</td>
-<td align="right">0.7994</td>
+<td align="right">0.8250</td>
 </tr>
 <tr class="even">
 <td align="left">zlog_eldd</td>
+<td align="left">scale.coxtime.tuned</td>
+<td align="right">0.8249</td>
+</tr>
+<tr class="odd">
+<td align="left">zlog_eldd</td>
 <td align="left">deepsurv.tuned</td>
-<td align="right">0.7901</td>
+<td align="right">0.8213</td>
+</tr>
+<tr class="even">
+<td align="left">zlog_eldd</td>
+<td align="left">svmregression.tuned</td>
+<td align="right">0.8015</td>
 </tr>
 </tbody>
 </table>
@@ -1533,9 +1553,9 @@ Sebastian Gibb
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>Warning: Removed 156 rows containing non-finite values (stat_boxplot).
-Removed 156 rows containing non-finite values (stat_boxplot).</code></pre>
-<pre><code>Warning: Removed 156 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 146 rows containing non-finite values (stat_boxplot).
+Removed 146 rows containing non-finite values (stat_boxplot).</code></pre>
+<pre><code>Warning: Removed 146 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/benchmarks.Rmd/benchmarks_plot_c_uno-1.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmarks_plot_c_uno-1">
@@ -1669,9 +1689,9 @@ Sebastian Gibb
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> learner_id)) <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="fl">0.2</span>)) <span class="sc">+</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>Warning: Removed 50 rows containing non-finite values (stat_boxplot).
-Removed 50 rows containing non-finite values (stat_boxplot).</code></pre>
-<pre><code>Warning: Removed 50 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 46 rows containing non-finite values (stat_boxplot).
+Removed 46 rows containing non-finite values (stat_boxplot).</code></pre>
+<pre><code>Warning: Removed 46 rows containing missing values (geom_point).</code></pre>
 <p><img src="figure/benchmarks.Rmd/benchmarks_aggr_plot_c_uno-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmarks_aggr_plot_c_uno-1">
@@ -1868,57 +1888,61 @@ Session information
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.3 (2022-03-10)
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
-[1] C
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ggplot2_3.3.5     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
+[1] ggplot2_3.3.6     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
 [5] mlr3proba_0.4.11  mlr3misc_0.10.0   mlr3_0.13.3       data.table_1.14.2
-[9] targets_0.12.0   
+[9] targets_0.12.1   
 
 loaded via a namespace (and not attached):
- [1] fs_1.5.2                bbotk_0.5.2             rprojroot_2.0.3        
- [4] mlr3pipelines_0.4.0     mlr3learners_0.5.2      tools_4.1.3            
- [7] backports_1.4.1         bslib_0.3.1             utf8_1.2.2             
-[10] R6_2.5.1                colorspace_2.0-3        withr_2.5.0            
-[13] tidyselect_1.1.2        gridExtra_2.3           processx_3.5.3         
-[16] compiler_4.1.3          git2r_0.30.1            cli_3.2.0              
-[19] ooplah_0.2.0            lgr_0.4.3               labeling_0.4.2         
-[22] bookdown_0.25           sass_0.4.1              BWStest_0.2.2          
-[25] scales_1.1.1            checkmate_2.0.0         mvtnorm_1.1-3          
-[28] callr_3.7.0             multcompView_0.1-8      palmerpenguins_0.1.0   
-[31] mlr3tuning_0.13.0       stringr_1.4.0           digest_0.6.29          
-[34] mlr3extralearners_0.5.9 rmarkdown_2.13          param6_0.2.4           
-[37] paradox_0.8.0           set6_0.2.4              pkgconfig_2.0.3        
-[40] htmltools_0.5.2         parallelly_1.31.0       mlr3benchmark_0.1.3    
-[43] fastmap_1.1.0           highr_0.9               rlang_1.0.2            
-[46] SuppDists_1.1-9.7       jquerylib_0.1.4         generics_0.1.2         
-[49] farver_2.1.0            jsonlite_1.8.0          dplyr_1.0.8            
-[52] magrittr_2.0.3          Matrix_1.4-1            Rcpp_1.0.8.3           
-[55] munsell_0.5.0           fansi_1.0.3             lifecycle_1.0.1        
-[58] stringi_1.7.6           whisker_0.4             yaml_2.3.5             
-[61] MASS_7.3-56             grid_4.1.3              parallel_4.1.3         
-[64] dictionar6_0.1.3        listenv_0.8.0           promises_1.2.0.1       
-[67] crayon_1.5.1            lattice_0.20-45         PMCMRplus_1.9.4        
-[70] splines_4.1.3           knitr_1.38              ps_1.6.0               
-[73] pillar_1.7.0            igraph_1.3.0            uuid_1.0-4             
-[76] base64url_1.4           kSamples_1.2-9          codetools_0.2-18       
-[79] glue_1.6.2              evaluate_0.15           vctrs_0.4.0            
-[82] httpuv_1.6.5            distr6_1.6.9            gtable_0.3.0           
-[85] purrr_0.3.4             future_1.24.0           cachem_1.0.6           
-[88] xfun_0.30               Rmpfr_0.8-7             later_1.3.0            
-[91] survival_3.3-1          tibble_3.1.6            memoise_2.0.1          
-[94] workflowr_1.7.0         gmp_0.6-5               globals_0.14.0         
-[97] ellipsis_0.3.2         </code></pre>
+ [1] fs_1.5.2                 bbotk_0.5.3              rprojroot_2.0.3         
+ [4] mlr3pipelines_0.4.1      tools_4.2.0              backports_1.4.1         
+ [7] bslib_0.3.1              utf8_1.2.2               R6_2.5.1                
+[10] colorspace_2.0-3         withr_2.5.0              tidyselect_1.1.2        
+[13] gridExtra_2.3            processx_3.5.3           compiler_4.2.0          
+[16] git2r_0.30.1             cli_3.3.0                ooplah_0.2.0            
+[19] lgr_0.4.3                labeling_0.4.2           bookdown_0.26           
+[22] sass_0.4.1               BWStest_0.2.2            scales_1.2.0            
+[25] checkmate_2.1.0          mvtnorm_1.1-3            callr_3.7.0             
+[28] multcompView_0.1-8       palmerpenguins_0.1.0     mlr3tuning_0.13.1       
+[31] stringr_1.4.0            digest_0.6.29            mlr3extralearners_0.5.37
+[34] rmarkdown_2.14           param6_0.2.4             paradox_0.9.0           
+[37] set6_0.2.4               pkgconfig_2.0.3          htmltools_0.5.2         
+[40] parallelly_1.31.1        mlr3benchmark_0.1.3      fastmap_1.1.0           
+[43] highr_0.9                rlang_1.0.2              SuppDists_1.1-9.7       
+[46] jquerylib_0.1.4          generics_0.1.2           farver_2.1.0            
+[49] jsonlite_1.8.0           dplyr_1.0.9              magrittr_2.0.3          
+[52] Matrix_1.4-1             Rcpp_1.0.8.3             munsell_0.5.0           
+[55] fansi_1.0.3              lifecycle_1.0.1          stringi_1.7.6           
+[58] whisker_0.4              yaml_2.3.5               MASS_7.3-57             
+[61] grid_4.2.0               parallel_4.2.0           dictionar6_0.1.3        
+[64] listenv_0.8.0            promises_1.2.0.1         crayon_1.5.1            
+[67] lattice_0.20-45          PMCMRplus_1.9.4          splines_4.2.0           
+[70] knitr_1.39               ps_1.7.0                 pillar_1.7.0            
+[73] igraph_1.3.1             uuid_1.1-0               base64url_1.4           
+[76] kSamples_1.2-9           codetools_0.2-18         glue_1.6.2              
+[79] evaluate_0.15            vctrs_0.4.1              httpuv_1.6.5            
+[82] distr6_1.6.9             gtable_0.3.0             purrr_0.3.4             
+[85] future_1.26.1            cachem_1.0.6             xfun_0.31               
+[88] Rmpfr_0.8-7              later_1.3.0              survival_3.3-1          
+[91] tibble_3.1.7             memoise_2.0.1            workflowr_1.7.0         
+[94] gmp_0.6-5                globals_0.15.0           ellipsis_0.3.2          </code></pre>
 </div>
 </div>
 

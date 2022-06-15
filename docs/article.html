@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,2,✉, and Thorsten Kaiser1" />
 
-<meta name="date" content="2022-06-06" />
+<meta name="date" content="2022-06-15" />
 
 <title>A Model to Predict Survival in Patients with End-Stage Liver Disease</title>
 
@@ -516,6 +516,9 @@ div.tocify {
       <a href="elasticnet.html">ElasticNet</a>
     </li>
     <li>
+      <a href="variableimportance.html">Variable Importance</a>
+    </li>
+    <li>
       <a href="roc.html">ROC</a>
     </li>
   </ul>
@@ -563,7 +566,7 @@ div.tocify {
 <h1 class="title toc-ignore">A Model to Predict Survival in Patients with End-Stage Liver Disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,2,✉</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2022-06-06</h4>
+<h4 class="date">2022-06-15</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Background</strong>:
@@ -606,7 +609,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-06
+<strong>Last updated:</strong> 2022-06-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -734,20 +737,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree3181fbec9ef43b704d7ddae53225636b899f3ac6targetblank3181fbea">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/3181fbec9ef43b704d7ddae53225636b899f3ac6" target="_blank">3181fbe</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree3181fbec9ef43b704d7ddae53225636b899f3ac6targetblank3181fbea" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/3181fbec9ef43b704d7ddae53225636b899f3ac6" target="_blank">3181fbe</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -768,7 +771,6 @@ Ignored files:
 Untracked files:
     Untracked:  METHODS
     Untracked:  TODO
-    Untracked:  article.docx
     Untracked:  scripts/R.sh
     Untracked:  scripts/env.sh
 
@@ -815,6 +817,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/19d9fedc9c7b07996332c2ed9671ba03ad3191d7/analysis/article.Rmd" target="_blank">19d9fed</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+<td>
+feat: further work on the manuscript
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d3e94627fae586919bec7433b9d7c2c03b7d4e93/docs/article.html" target="_blank">d3e9462</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1371,7 +1407,7 @@ its original publication <span class="citation">(Kartoun et al. 2017)</span>.</p
 <h2><span class="header-section-number">2.3</span> Data processing and machine learning</h2>
 <p>All data processing, statistical and machine learning analyses were performed
 using R version
-4.1.3
+4.2.0
 <span class="citation">(R Core Team 2022)</span>.
 Prior to the analyses all laboratory values were <em>zlog</em> transformed
 as described in <span class="citation">Hoffmann et al. (2017)</span> and implemented in <span class="citation">Gibb (2021)</span>.</p>
@@ -1380,7 +1416,10 @@ z = (\log(x) - \frac{\log(LL) + \log(UL)}{2}) * \frac{3.92}{\log(UL) - \log(LL)}
 \]</span></p>
 <p>Where <span class="math inline">\(LL\)</span> and <span class="math inline">\(UL\)</span> are the lower and upper reference limit of
 the corresponding laboratory diagnostic, respectively.
-Missing laboratory measurements were replaced with a <em>zlog</em> value of zero.
+If more than 10 % of laboratory measurements are missing the variable were
+excluded from further analysis.
+The remainder of missing laboratory measurements were replaced with
+a <em>zlog</em> value of zero.
 In similar manner if information about complications or
 comorbidities were missing we treat them as not present.</p>
 <p>We compared 13 different statistical and machine learning
@@ -1392,10 +1431,10 @@ Cox proportional hazards regression model
 penalized regressions,
 namely two different implementations of the
 lasso (least absolute shrinkage and selection operator) regression
-<span class="citation">(Tibshirani 1997; Simon et al. 2011; Friedman et al. 2021; J. J. Goeman 2010; J. Goeman et al. 2018)</span>,
+<span class="citation">(Tibshirani 1997; Simon et al. 2011; Friedman et al. 2022; J. J. Goeman 2010; J. Goeman et al. 2022)</span>,
 tow different implementations of the
-ridge regression <span class="citation">(Simon et al. 2011; Friedman et al. 2021; J. J. Goeman 2010; J. Goeman et al. 2018)</span>, and
-the elastic net regression <span class="citation">(Simon et al. 2011; Friedman et al. 2021)</span>,
+ridge regression <span class="citation">(Simon et al. 2011; Friedman et al. 2022; J. J. Goeman 2010; J. Goeman et al. 2022)</span>, and
+the elastic net regression <span class="citation">(Simon et al. 2011; Friedman et al. 2022)</span>,
 two different random forest implementations
 <span class="citation">(Wright and Ziegler 2017; Wright, Wager, and Probst 2021; H. Ishwaran et al. 2008; Hemant Ishwaran and Kogalur 2020)</span>,
 extreme gradient boosting <span class="citation">(T. Chen and Guestrin 2016; Tianqi Chen et al. 2022)</span>,
@@ -1426,7 +1465,7 @@ observed survival.</p>
 <p>The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
 using the area under the time-dependent ROC curve (AUC)
 based on the nonparametric inverse probability of censoring weighting estimator
-(IPCW) <span class="citation">Paul Blanche (2019)</span>.</p>
+(IPCW) <span class="citation">Paul Blanche (2019)</span>. Testing was applied as described in <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span>. A <span class="math inline">\(p &lt; 0.5\)</span> was considered as statistical significant difference.</p>
 <p>Summary tables were built using the <em>gtsummary</em> package
 <span class="citation">(Sjoberg et al. 2021, 2022)</span>.</p>
 </div>
@@ -2220,83 +2259,153 @@ scores the mortality was much lower.</p>
 </tr>
 </tbody>
 </table>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:benchmark-plot"></span>
-<img src="figure/article.Rmd/benchmark-plot-1.png" alt="Benchmark results of machine learning algorithms." width="672" />
-<p class="caption">
-Figure 3.1: Benchmark results of machine learning algorithms.
-</p>
 </div>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmark-plot-1">
-Past versions of benchmark-plot-1.png
-</button>
-</p>
-<div id="fig-benchmark-plot-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
+<div id="rcv-model" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> RCV model</h2>
+<p>The penalized regression and random forest models
+result in a similar high median performance in the benchmark process.
+In favour of simpler models we chose a lasso based approach for the final model
+development.
+The classical cox model, the data and computational intense algorithms
+extreme gradient boosting, support vector machines and neural networks yield a
+worse performance.</p>
+<table>
+<caption><span id="tab:coeftbl">Table 3.3: </span>Model coefficients</caption>
 <thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Coefficient</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
+<tr class="odd">
+<td align="left">IL-6</td>
+<td align="right">0.194</td>
 </tr>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">983ec69</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-03-17
-</td>
+<tr class="even">
+<td align="left">Total protein</td>
+<td align="right">-0.082</td>
 </tr>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/373e7d8009a9d27dd2b1ea789522d397ffbb7cbd/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">373e7d8</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-10-20
-</td>
+<tr class="odd">
+<td align="left">INR</td>
+<td align="right">0.071</td>
 </tr>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/df8964f95a7d42c7f88649245d1a027ff8108cda/docs/figure/article.Rmd/benchmark-plot-1.png" target="_blank">df8964f</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2021-10-15
-</td>
+<tr class="even">
+<td align="left">Cholinesterase</td>
+<td align="right">-0.039</td>
+</tr>
+<tr class="odd">
+<td align="left">Cystatin C</td>
+<td align="right">0.026</td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<p>TODO: mention best ml algorithm (<a href="#fig:benchmark-plot">3.1</a>)</p>
+<div id="model-comparison" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Model comparison</h2>
+<p><img src="figure/article.Rmd/roc-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tp <span class="ot">&lt;-</span> timeROC<span class="sc">::</span><span class="fu">compare</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    timeROC_RCV, timeROC_MELDNa,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)<span class="sc">$</span>p_values_AUC</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tp) <span class="ot">&lt;-</span> <span class="fu">paste</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;Non-adjusted&quot;</span>, <span class="st">&quot;Adjusted&quot;</span>), <span class="st">&quot;$p$-values&quot;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    tp,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="fu">paste0</span>(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Test comparison between AUC for MELD-Na and RCV model &quot;</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;according to @blanche2013 at day &quot;</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">paste0</span>(timeROC_RCV<span class="sc">$</span>times, <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>), <span class="st">&quot;.&quot;</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;$p$-values are shown as non-adjusted and adjusted for &quot;</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;multiple testing.&quot;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:roctest">Table 3.4: </span>Test comparison between AUC for MELD-Na and RCV model according to <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span> at day 2, 7, 30, 90, 180, 365.<span class="math inline">\(p\)</span>-values are shown as non-adjusted and adjusted for multiple testing.</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">t=2</th>
+<th align="right">t=7</th>
+<th align="right">t=30</th>
+<th align="right">t=90</th>
+<th align="right">t=180</th>
+<th align="right">t=365</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Non-adjusted <span class="math inline">\(p\)</span>-values</td>
+<td align="right">0.27</td>
+<td align="right">0.16</td>
+<td align="right">0.35</td>
+<td align="right">0.04</td>
+<td align="right">0.02</td>
+<td align="right">0.36</td>
+</tr>
+<tr class="even">
+<td align="left">Adjusted <span class="math inline">\(p\)</span>-values</td>
+<td align="right">0.76</td>
+<td align="right">0.54</td>
+<td align="right">0.86</td>
+<td align="right">0.18</td>
+<td align="right">0.09</td>
+<td align="right">0.87</td>
+</tr>
+</tbody>
+</table>
+<p><img src="figure/article.Rmd/bootrcv-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table>
+<caption><span id="tab:basehaz">Table 3.5: </span>Underlying survival function; S<sub>0</sub>: baseline survival estimate</caption>
+<thead>
+<tr class="header">
+<th align="left">t [days]</th>
+<th align="right">2</th>
+<th align="right">7</th>
+<th align="right">30</th>
+<th align="right">90</th>
+<th align="right">180</th>
+<th align="right">365</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">S<sub>0</sub> (t)</td>
+<td align="right">0.0034</td>
+<td align="right">0.0089</td>
+<td align="right">0.0187</td>
+<td align="right">0.0344</td>
+<td align="right">0.0461</td>
+<td align="right">0.0519</td>
+</tr>
+</tbody>
+</table>
+<p>The 90-day survival estimate of a given patient could be calculated as shown in
+<a href="#eq:survcalc">(<strong>??</strong>)</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cfnmsltx <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">text{&quot;</span>, <span class="fu">gsub</span>(<span class="st">&quot; &quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st"> &quot;</span>, cfnms), <span class="st">&quot;}&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">begin{align}&quot;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;S &amp;= S_{0,90}^{</span><span class="sc">\\</span><span class="st">exp{LP}} </span><span class="sc">\\\\</span><span class="st">&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;&amp;= &quot;</span>, <span class="fu">round</span>(s0[<span class="st">&quot;90&quot;</span>], <span class="dv">4</span>), <span class="st">&quot;^{</span><span class="sc">\\</span><span class="st">exp{(&quot;</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">paste0</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>            <span class="fu">round</span>(cfs[<span class="dv">1</span>], <span class="dv">4</span>), <span class="st">&quot; * zlog(&quot;</span>, cfnmsltx[<span class="dv">1</span>], <span class="st">&quot;)&quot;</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">paste0</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                <span class="fu">ifelse</span>(<span class="fu">sign</span>(cfs[<span class="sc">-</span><span class="dv">1</span>]) <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="st">&quot;+&quot;</span>, <span class="st">&quot;&quot;</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">round</span>(cfs[<span class="sc">-</span><span class="dv">1</span>], <span class="dv">4</span>), <span class="st">&quot; * zlog(&quot;</span>, cfnmsltx[<span class="sc">-</span><span class="dv">1</span>], <span class="st">&quot;)&quot;</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">collapse =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;)}}&quot;</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#&quot;(\\#eq:survcalc)&quot;,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="sc">\\</span><span class="st">end{align}$$&quot;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><span class="math display">\[\begin{align} S &amp;= S_{0,90}^{\exp{LP}} \\ &amp;=  0.0344 ^{\exp{( 0.1937 * zlog(\text{IL-6})-0.0815 * zlog(\text{Total protein})+0.0705 * zlog(\text{INR})-0.0387 * zlog(\text{Cholinesterase})+0.0261 * zlog(\text{Cystatin C}) )}} \end{align}\]</span></p>
+<p>Where <span class="math inline">\(S_{0}\)</span> is the baseline survival estimate from
+<a href="#tab:basehaz">3.5</a> and <span class="math inline">\(LP\)</span> is the linear predictor of the coefficients
+in <a href="#tab:coeftbl">3.3</a>.</p>
 </div>
 </div>
 <div id="discussion" class="section level1" number="4">
@@ -2306,32 +2415,56 @@ who were recruited during the evaluation process for liver transplantation at
 the University Hospital of Leipzig we developed a new model to predict the
 90-day survival probability. Our new model outperforms the MELD-Na score and
 the recently published MELD-Plus risk score.</p>
-<p><strong>NUMBER_OF_VARIABLES</strong></p>
-<ul>
-<li>more variables, harder to cheat</li>
-<li>comparison of different predictors of MELD-Plus7 (+MELD-Plus9) vs our features</li>
-</ul>
-<p>Sodium is not part of our model.
-In line with the results presented in <span class="citation">Kartoun et al. (2017)</span> we could show that
-adding sodium to MELD the discrimination performance increases just
-insignificantly.</p>
+<p>Although the Organ Procurement and Transplantation Network recommends the use
+of MELD-Na over MELD the sodium does not add any information to the score.
+Neither in the bootstrap selection nor in the variable importance of a
+random forest model the sodium gains any important weight
+(in bootstrap selection rank
+16
+of
+41 and in random forest variable importance
+19 of
+41,
+see <a href="#fig:vimpbs"><strong>??</strong></a>, <a href="#fig:vimprf"><strong>??</strong></a>).
+Already <span class="citation">Kartoun et al. (2017)</span> have shown that the
+discrimination performance of MELD-Na is insignificantly different from the
+classical MELD.
+Consequentially it is not a component of our model.</p>
 <p>It has shown that women get lower scores in MELD-Na and therefore
 are less likely getting an urgent listing for liver transplantation
-<span class="citation">(<strong>Gaertner2022?</strong>)</span>.
+<span class="citation">(<strong>gaertner2022?</strong>)</span>.
 To address sexual differences in laboratory measurements we applied the <em>zlog</em>
 transformation <span class="citation">(Hoffmann et al. 2017)</span>.
 Additionally this transformation yield comparable laboratory measurements
-across different clinical laboratories and methods which could improve the
-objectivity of the allocation process.
+across different clinical laboratories and methods.
+It also reduce the influence of age- and sex-related differences,
+which could improve the objectivity of the allocation process.
 The already nearly normal scaled <em>zlog</em>-transformed laboratory measurements
 allow us to avoid the sample depending scaling prior to model development.
 Both should increase the external applicability of our approach.</p>
-<p>Additionally to laboratory data we investigated
+<p><strong>NUMBER_OF_VARIABLES</strong></p>
+<ul>
+<li>comparison of different predictors of MELD/MELD-Plus7 (+MELD-Plus9) vs our features</li>
+</ul>
+<p>Results from machine learning can aid in finding clinical meaningful patterns
+and guide further research.
+For example, the systemic inflammatory response syndrome is an
+independent risk factor for poor outcome in patients with cirrhosis
+<span class="citation">(Thabut et al. 2007)</span>.
+However neither MELD nor MELD-Na taking inflammation into account.
+In contrast IL6 is the most important variable in our model. Even if IL6 is
+excluded the algorithms select CRP as one of the most important variables which
+highlights the important role of inflammation in the prognosis of patients
+with end-stage liver disease.
+We and other researchers have already shown that adding inflammatory markers,
+namely IL6 or CRP, to the classical MELD score increase the accuracy of the
+90-day mortality prediction <span class="citation">(Remmler et al. 2017; Cervoni et al. 2016)</span>.</p>
+<p>Beside laboratory measurements we investigated
 17
 clinical data but none of them were chosen in our model selection process.
 <span class="citation">Kartoun et al. (2017)</span> used a similar penalizing approach and neither select any clinical
 data. Especially in retrospective analysis the clinical data are often not
-detailed enough.</p>
+detailed enough to keep valuable information.</p>
 <p>In our benchmark of 13 different machine learning algorithms we have
 seen that the more complex algorithm like boosting and neural networks perform
 worse than simpler ones.
@@ -2339,6 +2472,10 @@ This may due additive effects that favour regression models or due to our
 relative small sample size.
 In machine learning more than 200 events per predictor variable are necessary
 to achieve good prediction performance <span class="citation">(Ploeg, Austin, and Steyerberg 2014)</span>.</p>
+<!--
+As we shown above machine learning can aid in finding clinical meaningful
+patterns.
+-->
 <!--
 
 - higher mortality than predicted, compare @hernaez2020
@@ -2358,14 +2495,18 @@ to achieve good prediction performance <span class="citation">(Ploeg, Austin, an
 -->
 <div id="limitations" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Limitations</h2>
-<p>Our study has limitations. Principally it is a single center, retrospective
-analysis and without an external validation cohort.
+<p>Our study has several limitations.
+Principally it is a single center, retrospective analysis and without an
+external validation cohort.
 The data were collected during the evaluation process for liver transplantation
 at the University Hospital of Leipzig.
 There was no controlled follow-up process. Instead the follow-up information
 were recored at the next clinical admission.
 Furthermore we excluded all patients who had already a liver transplantation
-which could artificial lower the disease severity of the cohort.</p>
+which could artificial lower the disease severity of the cohort.
+Next most of our patients suffered from ethyltoxic liver cirrhosis
+(63%) which may
+limited the transfer to other etiologies.</p>
 <p>With a median MELD score of 11 (8, 17) our
 cohort was healthier than in previous studies that reported
 a score of 14-15 <span class="citation">(Kim et al. 2008; Kartoun et al. 2017)</span>.
@@ -2412,18 +2553,25 @@ cluster of the University Greifswald.
 In 2018 the average carbon efficiency of the German power grid was
 0.471 kgCO<sub>2</sub>eq/kWh <span class="citation">(Icha, Lauf, and Kuhs 2021)</span>.
 A single run of the complete calculation pipeline took roughly
-133.7 hours of computation on an
+130.9 hours of computation on an
 Intel(R) Xeon(R) E5-2650 v4 and
 Intel(R) Xeon(R) Gold 6240 CPU (thermal design power: 105 and 150 W).
 The total estimated emissions were at least
-9.44 kgCO<sub>2</sub>eq
+9.24 kgCO<sub>2</sub>eq
 (ignoring development, test runs, etc.).
-This is equivalent to 61.7 km driven by an average car
+This is equivalent to 60.4 km driven by an average car
 <span class="citation">(Allekotte et al. 2021)</span>.</p>
 </div>
 </div>
-<div id="acknowledgement" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Acknowledgement</h1>
+<div id="data-and-software-availability" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Data and software availability</h1>
+<p>The complete code and reproducible analysis could be found at
+<a href="https://ampel-leipzig.github.io/ampel-leipzig-meld/" class="uri">https://ampel-leipzig.github.io/ampel-leipzig-meld/</a>.
+Additionally all data are available in the <code>ameld</code> R package at
+<a href="https://github.com/ampel-leipzig/ameld" class="uri">https://github.com/ampel-leipzig/ameld</a> for further investigations.</p>
+</div>
+<div id="acknowledgement" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Acknowledgement</h1>
 <p>The study was supported by the AMPEL project (www.ampel.care).
 This project is co-financed through public funds according to the budget
 decided by the Saxon State Parliament under the
@@ -2437,8 +2585,8 @@ We thank the whole AMPEL team for their support,
 and Stefan Kemnitz for his technical support regarding the use of the
 HPC cluster of the University Greifswald.</p>
 </div>
-<div id="references" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> References</h1>
+<div id="references" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-allekotte2021" class="csl-entry">
 Allekotte, M., F. Bergk, K. Biemann, C. Deregowski, W. Knörr, H.-J. Althaus, D. Sutter, and T. Bergmann. 2021. <span>“Ökologische Bewertung von Verkehrsarten.”</span> 3716581060. Umweltbundesamt. <a href="https://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/texte_156-2020_oekologische_bewertung_von_verkehrsarten_0.pdf">https://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/texte_156-2020_oekologische_bewertung_von_verkehrsarten_0.pdf</a>.
@@ -2451,6 +2599,9 @@ Blanche, Paul. 2019. <em>timeROC: Time-Dependent ROC Curve and AUC for Censored 
 </div>
 <div id="ref-blanche2013" class="csl-entry">
 Blanche, P., J.-F. Dartigues, and H. Jacqmin-Gadda. 2013. <span>“Estimating and Comparing Time-Dependent Areas Under Receiver Operating Characteristic Curves for Censored Event Times with Competing Risks.”</span> <em>Statistics in Medicine</em> 32 (30): 5381–97. <a href="https://doi.org/10.1002/sim.5958">https://doi.org/10.1002/sim.5958</a>.
+</div>
+<div id="ref-cervoni2016" class="csl-entry">
+Cervoni, J.-P., À. Amorós, R. Bañares, J. L. Montero, G. Soriano, D. Weil, R. Moreau, M. Pavesi, T. Thévenot, and V. Di Martino. 2016. <span>“Prognostic Value of c-Reactive Protein in Cirrhosis.”</span> <em>European Journal of Gastroenterology <span>&amp;</span>Amp<span class="math inline">\(\mathsemicolon\)</span> Hepatology</em> 28 (9): 1028–34. <a href="https://doi.org/10.1097/meg.0000000000000676">https://doi.org/10.1097/meg.0000000000000676</a>.
 </div>
 <div id="ref-chen2016" class="csl-entry">
 Chen, T., and C. Guestrin. 2016. <span>“<span>XGBoost</span>: <span>A</span> <span>Scalable</span> <span>Tree</span> <span>Boosting</span> <span>System</span>.”</span> <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>, August, 785–94. <a href="https://doi.org/10.1145/2939672.2939785">https://doi.org/10.1145/2939672.2939785</a>.
@@ -2471,7 +2622,7 @@ Eckelt, F., J. Remmler, T. Kister, M. Wernsdorfer, H. Richter, M. Federbusch, M.
 Fouodo, Cesaire J. K. 2018. <em>Survivalsvm: Survival Support Vector Analysis</em>. <a href="https://github.com/imbs-hl/survivalsvm">https://github.com/imbs-hl/survivalsvm</a>.
 </div>
 <div id="ref-R-glmnet" class="csl-entry">
-Friedman, Jerome, Trevor Hastie, Rob Tibshirani, Balasubramanian Narasimhan, Kenneth Tay, Noah Simon, and James Yang. 2021. <em>Glmnet: Lasso and Elastic-Net Regularized Generalized Linear Models</em>. <a href="https://CRAN.R-project.org/package=glmnet">https://CRAN.R-project.org/package=glmnet</a>.
+Friedman, Jerome, Trevor Hastie, Rob Tibshirani, Balasubramanian Narasimhan, Kenneth Tay, Noah Simon, and James Yang. 2022. <em>Glmnet: Lasso and Elastic-Net Regularized Generalized Linear Models</em>. <a href="https://CRAN.R-project.org/package=glmnet">https://CRAN.R-project.org/package=glmnet</a>.
 </div>
 <div id="ref-R-zlog" class="csl-entry">
 Gibb, Sebastian. 2021. <em>Zlog: Z(log) Transformation for Laboratory Measurements</em>. <a href="https://github.com/ampel-leipzig/zlog/">https://github.com/ampel-leipzig/zlog/</a>.
@@ -2480,7 +2631,7 @@ Gibb, Sebastian. 2021. <em>Zlog: Z(log) Transformation for Laboratory Measuremen
 Goeman, J. J. 2010. <span>“L1 Penalized Estimation in the Cox Proportional Hazards Model.”</span> <em>Biometrical Journal</em>, no. 52, 1: –14.
 </div>
 <div id="ref-R-penalized" class="csl-entry">
-Goeman, Jelle, Rosa Meijer, Nimisha Chaturvedi, and Matthew Lueder. 2018. <em>Penalized: L1 (Lasso and Fused Lasso) and L2 (Ridge) Penalized Estimation in GLMs and in the Cox Model</em>. <a href="https://CRAN.R-project.org/package=penalized">https://CRAN.R-project.org/package=penalized</a>.
+Goeman, Jelle, Rosa Meijer, Nimisha Chaturvedi, and Matthew Lueder. 2022. <em>Penalized: L1 (Lasso and Fused Lasso) and L2 (Ridge) Penalized Estimation in GLMs and in the Cox Model</em>. <a href="https://CRAN.R-project.org/package=penalized">https://CRAN.R-project.org/package=penalized</a>.
 </div>
 <div id="ref-harrell1982" class="csl-entry">
 Harrell, F. E. 1982. <span>“Evaluating the Yield of Medical Tests.”</span> <em><span>JAMA</span>: The Journal of the American Medical Association</em> 247 (18): 2543. <a href="https://doi.org/10.1001/jama.1982.03320430047030">https://doi.org/10.1001/jama.1982.03320430047030</a>.
@@ -2533,8 +2684,11 @@ Ploeg, T. van der, P. C. Austin, and E. W. Steyerberg. 2014. <span>“Modern Mod
 <div id="ref-R-base" class="csl-entry">
 R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
+<div id="ref-remmler2018" class="csl-entry">
+Remmler, J., C. Schneider, T. Treuner-Kaueroff, M. Bartels, D. Seehofer, M. Scholz, T. Berg, and T. Kaiser. 2017. <span>“Increased Level of Interleukin 6 Associates with Increased 90-Day and 1-Year Mortality in Patients with End-Stage Liver Disease.”</span> <em>Clinical Gastroenterology and Hepatology</em> 16 (5): 730–37. <a href="https://doi.org/10.1016/j.cgh.2017.09.017">https://doi.org/10.1016/j.cgh.2017.09.017</a>.
+</div>
 <div id="ref-glmnet2011" class="csl-entry">
-Simon, Noah, Jerome Friedman, Trevor Hastie, and Rob Tibshirani. 2011. <span>“Regularization Paths for Cox’s Proportional Hazards Model via Coordinate Descent.”</span> <em>Journal of Statistical Software</em> 39 (5): 1–13. <a href="https://www.jstatsoft.org/v39/i05/">https://www.jstatsoft.org/v39/i05/</a>.
+Simon, Noah, Jerome Friedman, Trevor Hastie, and Rob Tibshirani. 2011. <span>“Regularization Paths for Cox’s Proportional Hazards Model via Coordinate Descent.”</span> <em>Journal of Statistical Software</em> 39 (5): 1–13. <a href="https://doi.org/10.18637/jss.v039.i05">https://doi.org/10.18637/jss.v039.i05</a>.
 </div>
 <div id="ref-R-gtsummary" class="csl-entry">
 Sjoberg, Daniel D., Michael Curry, Joseph Larmarange, Jessica Lavery, Karissa Whiting, and Emily C. Zabor. 2022. <em>Gtsummary: Presentation-Ready Data Summary and Analytic Result Tables</em>. <a href="https://CRAN.R-project.org/package=gtsummary">https://CRAN.R-project.org/package=gtsummary</a>.
@@ -2553,6 +2707,9 @@ Sonabend, Raphael, Franz J Király, Andreas Bender, Bernd Bischl, and Michel Lan
 </div>
 <div id="ref-survival-book" class="csl-entry">
 Terry M. Therneau, and Patricia M. Grambsch. 2000. <em>Modeling Survival Data: Extending the <span>C</span>ox Model</em>. New York: Springer.
+</div>
+<div id="ref-thabut2007" class="csl-entry">
+Thabut, D., J. Massard, A. Gangloff, N. Carbonell, C. Francoz, E. Nguyen-Khac, C. Duhamel, D. Lebrec, T. Poynard, and R. Moreau. 2007. <span>“Model for End-Stage Liver Disease Score and Systemic Inflammatory Response Are Major Prognostic Factors in Patients with Cirrhosis and Acute Functional Renal Failure.”</span> <em>Hepatology</em> 46 (6): 1872–82. <a href="https://doi.org/10.1002/hep.21920">https://doi.org/10.1002/hep.21920</a>.
 </div>
 <div id="ref-R-survival" class="csl-entry">
 Therneau, Terry M. 2022. <em>Survival: Survival Analysis</em>. <a href="https://github.com/therneau/survival">https://github.com/therneau/survival</a>.
@@ -2581,58 +2738,65 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.3 (2022-03-10)
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
-[1] C
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] gtsummary_1.6.0   ameld_0.0.21      survival_3.3-1    glmnet_4.1-3     
- [5] Matrix_1.4-1      viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
- [9] ggplot2_3.3.5     targets_0.12.0   
+ [1] timeROC_0.4       gtsummary_1.6.0   ameld_0.0.23      survival_3.3-1   
+ [5] glmnet_4.1-4      Matrix_1.4-1      viridis_0.6.2     viridisLite_0.4.0
+ [9] mlr3viz_0.5.9     ggplot2_3.3.6     targets_0.12.1   
 
 loaded via a namespace (and not attached):
- [1] fs_1.5.2                RColorBrewer_1.1-3      bbotk_0.5.2            
- [4] rprojroot_2.0.3         mlr3proba_0.4.11        mlr3pipelines_0.4.0    
- [7] mlr3learners_0.5.2      tools_4.1.3             backports_1.4.1        
-[10] bslib_0.3.1             utf8_1.2.2              R6_2.5.1               
-[13] mlr3_0.13.3             colorspace_2.0-3        withr_2.5.0            
-[16] mlr3misc_0.10.0         tidyselect_1.1.2        gridExtra_2.3          
-[19] processx_3.5.3          compiler_4.1.3          git2r_0.30.1           
-[22] cli_3.2.0               ooplah_0.2.0            gt_0.6.0               
-[25] lgr_0.4.3               labeling_0.4.2          bookdown_0.25          
-[28] sass_0.4.1              scales_1.1.1            checkmate_2.0.0        
-[31] callr_3.7.0             palmerpenguins_0.1.0    commonmark_1.8.0       
-[34] mlr3tuning_0.13.0       stringr_1.4.0           digest_0.6.29          
-[37] mlr3extralearners_0.5.9 rmarkdown_2.13          param6_0.2.4           
-[40] paradox_0.8.0           set6_0.2.4              pkgconfig_2.0.3        
-[43] htmltools_0.5.2         parallelly_1.31.0       highr_0.9              
-[46] fastmap_1.1.0           htmlwidgets_1.5.4       rlang_1.0.2            
-[49] rstudioapi_0.13         farver_2.1.0            visNetwork_2.1.0       
-[52] shape_1.4.6             jquerylib_0.1.4         generics_0.1.2         
-[55] jsonlite_1.8.0          dplyr_1.0.8             magrittr_2.0.3         
-[58] Rcpp_1.0.8.3            munsell_0.5.0           fansi_1.0.3            
-[61] lifecycle_1.0.1         stringi_1.7.6           whisker_0.4            
-[64] yaml_2.3.5              grid_4.1.3              parallel_4.1.3         
-[67] dictionar6_0.1.3        listenv_0.8.0           promises_1.2.0.1       
-[70] crayon_1.5.1            lattice_0.20-45         splines_4.1.3          
-[73] knitr_1.38              ps_1.6.0                pillar_1.7.0           
-[76] igraph_1.3.0            uuid_1.0-4              base64url_1.4          
-[79] codetools_0.2-18        glue_1.6.2              evaluate_0.15          
-[82] data.table_1.14.2       broom.helpers_1.7.0     vctrs_0.4.0            
-[85] httpuv_1.6.5            foreach_1.5.2           distr6_1.6.9           
-[88] tidyr_1.2.0             gtable_0.3.0            purrr_0.3.4            
-[91] future_1.24.0           xfun_0.30               later_1.3.0            
-[94] tibble_3.1.6            iterators_1.0.14        workflowr_1.7.0        
-[97] DiagrammeR_1.0.9        globals_0.14.0          ellipsis_0.3.2         </code></pre>
+  [1] fs_1.5.2                 RColorBrewer_1.1-3       bbotk_0.5.3             
+  [4] rprojroot_2.0.3          numDeriv_2016.8-1.1      mlr3proba_0.4.11        
+  [7] mlr3pipelines_0.4.1      tools_4.2.0              backports_1.4.1         
+ [10] bslib_0.3.1              utf8_1.2.2               R6_2.5.1                
+ [13] mlr3_0.13.3              colorspace_2.0-3         withr_2.5.0             
+ [16] mlr3misc_0.10.0          tidyselect_1.1.2         gridExtra_2.3           
+ [19] processx_3.5.3           compiler_4.2.0           git2r_0.30.1            
+ [22] cli_3.3.0                ooplah_0.2.0             gt_0.6.0                
+ [25] lgr_0.4.3                bookdown_0.26            sass_0.4.1              
+ [28] scales_1.2.0             checkmate_2.1.0          mvtnorm_1.1-3           
+ [31] pec_2022.05.04           callr_3.7.0              palmerpenguins_0.1.0    
+ [34] commonmark_1.8.0         mlr3tuning_0.13.1        stringr_1.4.0           
+ [37] digest_0.6.29            mlr3extralearners_0.5.37 rmarkdown_2.14          
+ [40] param6_0.2.4             paradox_0.9.0            set6_0.2.4              
+ [43] pkgconfig_2.0.3          htmltools_0.5.2          parallelly_1.31.1       
+ [46] highr_0.9                fastmap_1.1.0            htmlwidgets_1.5.4       
+ [49] rlang_1.0.2              rstudioapi_0.13          visNetwork_2.1.0        
+ [52] shape_1.4.6              jquerylib_0.1.4          generics_0.1.2          
+ [55] jsonlite_1.8.0           dplyr_1.0.9              magrittr_2.0.3          
+ [58] Rcpp_1.0.8.3             munsell_0.5.0            fansi_1.0.3             
+ [61] lifecycle_1.0.1          stringi_1.7.6            whisker_0.4             
+ [64] yaml_2.3.5               grid_4.2.0               parallel_4.2.0          
+ [67] dictionar6_0.1.3         listenv_0.8.0            promises_1.2.0.1        
+ [70] crayon_1.5.1             lattice_0.20-45          splines_4.2.0           
+ [73] timereg_2.0.2            knitr_1.39               ps_1.7.0                
+ [76] pillar_1.7.0             igraph_1.3.1             uuid_1.1-0              
+ [79] base64url_1.4            future.apply_1.9.0       codetools_0.2-18        
+ [82] glue_1.6.2               evaluate_0.15            data.table_1.14.2       
+ [85] broom.helpers_1.7.0      vctrs_0.4.1              httpuv_1.6.5            
+ [88] foreach_1.5.2            distr6_1.6.9             gtable_0.3.0            
+ [91] purrr_0.3.4              tidyr_1.2.0              future_1.26.1           
+ [94] xfun_0.31                prodlim_2019.11.13       later_1.3.0             
+ [97] tibble_3.1.7             iterators_1.0.14         lava_1.6.10             
+[100] workflowr_1.7.0          DiagrammeR_1.0.9         globals_0.15.0          
+[103] ellipsis_0.3.2          </code></pre>
 </div>
 </div>
 

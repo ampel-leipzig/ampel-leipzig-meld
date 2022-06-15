@@ -478,6 +478,9 @@ div.tocify {
       <a href="elasticnet.html">ElasticNet</a>
     </li>
     <li>
+      <a href="variableimportance.html">Variable Importance</a>
+    </li>
+    <li>
       <a href="roc.html">ROC</a>
     </li>
   </ul>
@@ -551,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-06
+<strong>Last updated:</strong> 2022-06-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -679,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -759,6 +762,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d3e94627fae586919bec7433b9d7c2c03b7d4e93/docs/missing.html" target="_blank">d3e9462</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1144,51 +1164,56 @@ feat: add missing data overview
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ameld&quot;</span>)</span></code></pre></div>
 <pre><code>Loading required package: glmnet</code></pre>
 <pre><code>Loading required package: Matrix</code></pre>
-<pre><code>Loaded glmnet 4.1-3</code></pre>
+<pre><code>Loaded glmnet 4.1-4</code></pre>
 <pre><code>Loading required package: survival</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(raw_data)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>.image <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="fu">palette.colors</span>(2L)[2L])) {</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">on.exit</span>(<span class="fu">par</span>(old.par))</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    nc <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    nms <span class="ot">&lt;-</span> <span class="fu">colnames</span>(x)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    mai <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="st">&quot;mai&quot;</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    w <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">strwidth</span>(nms, <span class="st">&quot;inch&quot;</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">16</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (mai[2L] <span class="sc">&lt;</span> w)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        mai[2L] <span class="ot">&lt;-</span> mai[4L] <span class="sc">+</span> w <span class="co"># taken from dotchart</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">par</span>(<span class="at">mai =</span> mai)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(nc)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">image</span>(</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        1L<span class="sc">:</span>nr, y, x[, <span class="fu">rev</span>(y)], <span class="at">col =</span> col,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlim =</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">c</span>(0L, nr), <span class="at">ylim =</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">c</span>(0L, nc),</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Missing Data&quot;</span>, <span class="at">adj =</span> 0L)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="at">xlab =</span> <span class="st">&quot;Rows&quot;</span>, <span class="at">adj =</span> 1L)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mtext</span>(</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rev</span>(nms), <span class="at">at =</span> y, <span class="at">adj =</span> 0L, <span class="at">side =</span> 2L, <span class="at">las =</span> 2L,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">line =</span> (w <span class="sc">+</span> <span class="fl">0.1</span>) <span class="sc">/</span> <span class="fu">par</span>(<span class="st">&quot;csi&quot;</span>), <span class="at">cex =</span> <span class="fl">0.75</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">abline</span>(<span class="at">h =</span> y, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span>, <span class="at">lty =</span> <span class="st">&quot;dotted&quot;</span>, <span class="at">lwd =</span> 1L)</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>
+Attaching package: &#39;ameld&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:survival&#39;:
+
+    basehaz</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(raw_data)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>.image <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="fu">palette.colors</span>(2L)[2L])) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    old.par <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">on.exit</span>(<span class="fu">par</span>(old.par))</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    nr <span class="ot">&lt;-</span> <span class="fu">nrow</span>(x)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    nc <span class="ot">&lt;-</span> <span class="fu">ncol</span>(x)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    nms <span class="ot">&lt;-</span> <span class="fu">colnames</span>(x)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    mai <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="st">&quot;mai&quot;</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    w <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">strwidth</span>(nms, <span class="st">&quot;inch&quot;</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">16</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (mai[2L] <span class="sc">&lt;</span> w)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        mai[2L] <span class="ot">&lt;-</span> mai[4L] <span class="sc">+</span> w <span class="co"># taken from dotchart</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">par</span>(<span class="at">mai =</span> mai)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(nc)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">image</span>(</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>        1L<span class="sc">:</span>nr, y, x[, <span class="fu">rev</span>(y)], <span class="at">col =</span> col,</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlim =</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">c</span>(0L, nr), <span class="at">ylim =</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">c</span>(0L, nc),</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="at">main =</span> <span class="st">&quot;Missing Data&quot;</span>, <span class="at">adj =</span> 0L)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">title</span>(<span class="at">xlab =</span> <span class="st">&quot;Rows&quot;</span>, <span class="at">adj =</span> 1L)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mtext</span>(</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">rev</span>(nms), <span class="at">at =</span> y, <span class="at">adj =</span> 0L, <span class="at">side =</span> 2L, <span class="at">las =</span> 2L,</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">line =</span> (w <span class="sc">+</span> <span class="fl">0.1</span>) <span class="sc">/</span> <span class="fu">par</span>(<span class="st">&quot;csi&quot;</span>), <span class="at">cex =</span> <span class="fl">0.75</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">abline</span>(<span class="at">h =</span> y, <span class="at">col =</span> <span class="st">&quot;#808080&quot;</span>, <span class="at">lty =</span> <span class="st">&quot;dotted&quot;</span>, <span class="at">lwd =</span> 1L)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <div id="missing-data" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Missing Data</h1>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> raw_data</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>m<span class="sc">$</span>Sex <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(m<span class="sc">$</span>Sex)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(m)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mna <span class="ot">&lt;-</span> <span class="fu">is.na</span>(m)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(mna) <span class="ot">&lt;-</span> <span class="st">&quot;numeric&quot;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">colSums</span>(mna)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>na <span class="ot">&lt;-</span> <span class="fu">sort</span>(tbl[tbl <span class="sc">&gt;</span> 0L], <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cbind</span>(na, <span class="fu">round</span>(<span class="fu">colMeans</span>(mna[, <span class="fu">names</span>(na)]) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>)),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;# Missing Data&quot;</span>, <span class="st">&quot;% of Missing Data&quot;</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> raw_data</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>m<span class="sc">$</span>Sex <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(m<span class="sc">$</span>Sex)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(m)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>mna <span class="ot">&lt;-</span> <span class="fu">is.na</span>(m)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(mna) <span class="ot">&lt;-</span> <span class="st">&quot;numeric&quot;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">colSums</span>(mna)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>na <span class="ot">&lt;-</span> <span class="fu">sort</span>(tbl[tbl <span class="sc">&gt;</span> 0L], <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cbind</span>(na, <span class="fu">round</span>(<span class="fu">colMeans</span>(mna[, <span class="fu">names</span>(na)]) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>)),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;# Missing Data&quot;</span>, <span class="st">&quot;% of Missing Data&quot;</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1325,7 +1350,7 @@ feat: add missing data overview
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(<span class="fu">sort</span>(na), <span class="at">xlim =</span> <span class="fu">c</span>(0L, <span class="fu">nrow</span>(m)), <span class="at">main =</span> <span class="st">&quot;Missing Data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(<span class="fu">sort</span>(na), <span class="at">xlim =</span> <span class="fu">c</span>(0L, <span class="fu">nrow</span>(m)), <span class="at">main =</span> <span class="st">&quot;Missing Data&quot;</span>)</span></code></pre></div>
 <p><img src="figure/missing.Rmd/missing_table-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-missing_table-1">
@@ -1375,7 +1400,7 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.image</span>(mna)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.image</span>(mna)</span></code></pre></div>
 <p><img src="figure/missing.Rmd/missing_image-1.png" width="1152" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-missing_image-1">
@@ -1422,38 +1447,43 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.3 (2022-03-10)
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
-[1] C
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ameld_0.0.21   survival_3.3-1 glmnet_4.1-3   Matrix_1.4-1   targets_0.12.0
+[1] ameld_0.0.23   survival_3.3-1 glmnet_4.1-4   Matrix_1.4-1   targets_0.12.1
 
 loaded via a namespace (and not attached):
- [1] shape_1.4.6       tidyselect_1.1.2  xfun_0.30         bslib_0.3.1      
- [5] purrr_0.3.4       splines_4.1.3     lattice_0.20-45   vctrs_0.4.0      
+ [1] shape_1.4.6       tidyselect_1.1.2  xfun_0.31         bslib_0.3.1      
+ [5] purrr_0.3.4       splines_4.2.0     lattice_0.20-45   vctrs_0.4.1      
  [9] htmltools_0.5.2   yaml_2.3.5        utf8_1.2.2        rlang_1.0.2      
 [13] jquerylib_0.1.4   later_1.3.0       pillar_1.7.0      glue_1.6.2       
 [17] withr_2.5.0       foreach_1.5.2     lifecycle_1.0.1   stringr_1.4.0    
-[21] workflowr_1.7.0   codetools_0.2-18  evaluate_0.15     knitr_1.38       
-[25] callr_3.7.0       fastmap_1.1.0     httpuv_1.6.5      ps_1.6.0         
+[21] workflowr_1.7.0   codetools_0.2-18  evaluate_0.15     knitr_1.39       
+[25] callr_3.7.0       fastmap_1.1.0     httpuv_1.6.5      ps_1.7.0         
 [29] fansi_1.0.3       highr_0.9         Rcpp_1.0.8.3      promises_1.2.0.1 
 [33] backports_1.4.1   jsonlite_1.8.0    fs_1.5.2          digest_0.6.29    
-[37] stringi_1.7.6     bookdown_0.25     processx_3.5.3    rprojroot_2.0.3  
-[41] grid_4.1.3        cli_3.2.0         tools_4.1.3       magrittr_2.0.3   
-[45] base64url_1.4     sass_0.4.1        tibble_3.1.6      crayon_1.5.1     
+[37] stringi_1.7.6     bookdown_0.26     processx_3.5.3    rprojroot_2.0.3  
+[41] grid_4.2.0        cli_3.3.0         tools_4.2.0       magrittr_2.0.3   
+[45] base64url_1.4     sass_0.4.1        tibble_3.1.7      crayon_1.5.1     
 [49] whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.2    data.table_1.14.2
-[53] rmarkdown_2.13    iterators_1.0.14  R6_2.5.1          igraph_1.3.0     
-[57] git2r_0.30.1      compiler_4.1.3   </code></pre>
+[53] rmarkdown_2.14    iterators_1.0.14  R6_2.5.1          igraph_1.3.1     
+[57] git2r_0.30.1      compiler_4.2.0   </code></pre>
 </div>
 </div>
 

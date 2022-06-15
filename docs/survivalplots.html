@@ -478,6 +478,9 @@ div.tocify {
       <a href="elasticnet.html">ElasticNet</a>
     </li>
     <li>
+      <a href="variableimportance.html">Variable Importance</a>
+    </li>
+    <li>
       <a href="roc.html">ROC</a>
     </li>
   </ul>
@@ -551,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-06
+<strong>Last updated:</strong> 2022-06-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -679,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -759,6 +762,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d3e94627fae586919bec7433b9d7c2c03b7d4e93/docs/survivalplots.html" target="_blank">d3e9462</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1335,37 +1355,42 @@ Session information
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.3 (2022-03-10)
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
-[1] C
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ameld_0.0.21   survival_3.3-1 glmnet_4.1-3   Matrix_1.4-1   targets_0.12.0
+[1] ameld_0.0.23   survival_3.3-1 glmnet_4.1-4   Matrix_1.4-1   targets_0.12.1
 
 loaded via a namespace (and not attached):
- [1] shape_1.4.6       tidyselect_1.1.2  xfun_0.30         bslib_0.3.1      
- [5] purrr_0.3.4       splines_4.1.3     lattice_0.20-45   vctrs_0.4.0      
+ [1] shape_1.4.6       tidyselect_1.1.2  xfun_0.31         bslib_0.3.1      
+ [5] purrr_0.3.4       splines_4.2.0     lattice_0.20-45   vctrs_0.4.1      
  [9] htmltools_0.5.2   yaml_2.3.5        utf8_1.2.2        rlang_1.0.2      
 [13] jquerylib_0.1.4   later_1.3.0       pillar_1.7.0      glue_1.6.2       
 [17] withr_2.5.0       foreach_1.5.2     lifecycle_1.0.1   stringr_1.4.0    
-[21] workflowr_1.7.0   codetools_0.2-18  evaluate_0.15     knitr_1.38       
-[25] callr_3.7.0       fastmap_1.1.0     httpuv_1.6.5      ps_1.6.0         
+[21] workflowr_1.7.0   codetools_0.2-18  evaluate_0.15     knitr_1.39       
+[25] callr_3.7.0       fastmap_1.1.0     httpuv_1.6.5      ps_1.7.0         
 [29] fansi_1.0.3       highr_0.9         Rcpp_1.0.8.3      promises_1.2.0.1 
 [33] backports_1.4.1   jsonlite_1.8.0    fs_1.5.2          digest_0.6.29    
-[37] stringi_1.7.6     bookdown_0.25     processx_3.5.3    rprojroot_2.0.3  
-[41] grid_4.1.3        cli_3.2.0         tools_4.1.3       magrittr_2.0.3   
-[45] base64url_1.4     sass_0.4.1        tibble_3.1.6      crayon_1.5.1     
+[37] stringi_1.7.6     bookdown_0.26     processx_3.5.3    rprojroot_2.0.3  
+[41] grid_4.2.0        cli_3.3.0         tools_4.2.0       magrittr_2.0.3   
+[45] base64url_1.4     sass_0.4.1        tibble_3.1.7      crayon_1.5.1     
 [49] whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.2    data.table_1.14.2
-[53] rmarkdown_2.13    iterators_1.0.14  R6_2.5.1          igraph_1.3.0     
-[57] git2r_0.30.1      compiler_4.1.3   </code></pre>
+[53] rmarkdown_2.14    iterators_1.0.14  R6_2.5.1          igraph_1.3.1     
+[57] git2r_0.30.1      compiler_4.2.0   </code></pre>
 </div>
 </div>
 

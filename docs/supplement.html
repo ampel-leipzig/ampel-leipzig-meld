@@ -402,6 +402,9 @@ $(document).ready(function () {
       <a href="elasticnet.html">ElasticNet</a>
     </li>
     <li>
+      <a href="variableimportance.html">Variable Importance</a>
+    </li>
+    <li>
       <a href="roc.html">ROC</a>
     </li>
   </ul>
@@ -475,7 +478,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-06
+<strong>Last updated:</strong> 2022-06-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -603,20 +606,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -683,6 +686,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/19d9fedc9c7b07996332c2ed9671ba03ad3191d7/analysis/supplement.Rmd" target="_blank">19d9fed</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+<td>
+feat: further work on the manuscript
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d3e94627fae586919bec7433b9d7c2c03b7d4e93/docs/supplement.html" target="_blank">d3e9462</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -860,7 +897,124 @@ feat: add first article draft with pandoc filters
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ameld&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;data.table&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3misc&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3proba&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3viz&quot;</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<div id="benchmark-results-of-machine-learning-algorithms" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Benchmark results of machine learning algorithms</h1>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:benchmark-plot"></span>
+<img src="figure/supplement.Rmd/benchmark-plot-1.png" alt="Benchmark results of machine learning algorithms." width="1728" />
+<p class="caption">
+Figure 1.1: Benchmark results of machine learning algorithms.
+</p>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>agg <span class="ot">&lt;-</span> bmrk_results<span class="sc">$</span><span class="fu">aggregate</span>(<span class="fu">msr</span>(<span class="st">&quot;surv.cindex&quot;</span>, <span class="at">id =</span> <span class="st">&quot;harrell&quot;</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>agg[, <span class="st">`</span><span class="at">:=</span><span class="st">`</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="at">nr =</span> <span class="cn">NULL</span>, <span class="at">resample_result =</span> <span class="cn">NULL</span>, <span class="at">resampling_id =</span> <span class="cn">NULL</span>, <span class="at">iters =</span> <span class="cn">NULL</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>agg <span class="ot">&lt;-</span> <span class="fu">subset</span>(agg, task_id <span class="sc">==</span> <span class="st">&quot;zlog_eldd&quot;</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">grepl</span>(<span class="st">&quot;^scale&quot;</span>, learner_id))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>agg[, task_id <span class="sc">:</span><span class="er">=</span> <span class="cn">NULL</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">setorder</span>(agg, <span class="sc">-</span>harrell)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(agg, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Learner ID&quot;</span>, <span class="st">&quot;Harrell C&quot;</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Learner ID</th>
+<th align="right">Harrell C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ridge.tuned</td>
+<td align="right">0.9161824</td>
+</tr>
+<tr class="even">
+<td align="left">elasticnet.tuned</td>
+<td align="right">0.9134508</td>
+</tr>
+<tr class="odd">
+<td align="left">ranger.tuned</td>
+<td align="right">0.9123586</td>
+</tr>
+<tr class="even">
+<td align="left">penlasso.tuned</td>
+<td align="right">0.9117655</td>
+</tr>
+<tr class="odd">
+<td align="left">penridge.tuned</td>
+<td align="right">0.9109179</td>
+</tr>
+<tr class="even">
+<td align="left">lasso.tuned</td>
+<td align="right">0.9104912</td>
+</tr>
+<tr class="odd">
+<td align="left">surv.rfsrc.tuned</td>
+<td align="right">0.9066976</td>
+</tr>
+<tr class="even">
+<td align="left">cox</td>
+<td align="right">0.8677244</td>
+</tr>
+<tr class="odd">
+<td align="left">svmvanbelle1.tuned</td>
+<td align="right">0.8314557</td>
+</tr>
+<tr class="even">
+<td align="left">surv.xgboost.tuned</td>
+<td align="right">0.8267293</td>
+</tr>
+<tr class="odd">
+<td align="left">coxtime.tuned</td>
+<td align="right">0.8249875</td>
+</tr>
+<tr class="even">
+<td align="left">deepsurv.tuned</td>
+<td align="right">0.8212755</td>
+</tr>
+<tr class="odd">
+<td align="left">svmregression.tuned</td>
+<td align="right">0.8015032</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="auroc-trend" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> AUROC trend</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELD)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDNa)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDPlus7)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCV)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">MELD =</span> timeROC_MELD,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Na&quot;</span> <span class="ot">=</span> timeROC_MELDNa,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Plus7&quot;</span> <span class="ot">=</span> timeROC_MELDPlus7,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">RCV =</span> timeROC_RCV</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_surv_roc_trend</span>(m)</span></code></pre></div>
+<p><img src="figure/supplement.Rmd/roc-plot-1.png" width="1728" style="display: block; margin: auto;" /></p>
+</div>
+<div id="variable-importance" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Variable importance</h1>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimpbs"></span>
+<img src="figure/supplement.Rmd/vimpbs-1.png" alt="Variable importance by frequency of bootstrap selections." width="768" />
+<p class="caption">
+Figure 3.1: Variable importance by frequency of bootstrap selections.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimprf"></span>
+<img src="figure/supplement.Rmd/vimprf-1.png" alt="Variable importance by logrank in random forest." width="768" />
+<p class="caption">
+Figure 3.2: Variable importance by logrank in random forest.
+</p>
+</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -869,36 +1023,63 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.3 (2022-03-10)
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
-[1] C
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] targets_0.12.0
+ [1] ggplot2_3.3.6     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
+ [5] mlr3proba_0.4.11  mlr3misc_0.10.0   mlr3_0.13.3       targets_0.12.1   
+ [9] data.table_1.14.2 ameld_0.0.23      survival_3.3-1    glmnet_4.1-4     
+[13] Matrix_1.4-1     
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.8.3      pillar_1.7.0      compiler_4.1.3    bslib_0.3.1      
- [5] later_1.3.0       jquerylib_0.1.4   git2r_0.30.1      workflowr_1.7.0  
- [9] tools_4.1.3       digest_0.6.29     jsonlite_1.8.0    evaluate_0.15    
-[13] lifecycle_1.0.1   tibble_3.1.6      pkgconfig_2.0.3   rlang_1.0.2      
-[17] igraph_1.3.0      cli_3.2.0         yaml_2.3.5        xfun_0.30        
-[21] fastmap_1.1.0     withr_2.5.0       stringr_1.4.0     knitr_1.38       
-[25] fs_1.5.2          vctrs_0.4.0       sass_0.4.1        tidyselect_1.1.2 
-[29] rprojroot_2.0.3   data.table_1.14.2 glue_1.6.2        R6_2.5.1         
-[33] processx_3.5.3    fansi_1.0.3       base64url_1.4     rmarkdown_2.13   
-[37] bookdown_0.25     purrr_0.3.4       callr_3.7.0       magrittr_2.0.3   
-[41] whisker_0.4       codetools_0.2-18  ps_1.6.0          backports_1.4.1  
-[45] promises_1.2.0.1  ellipsis_0.3.2    htmltools_0.5.2   httpuv_1.6.5     
-[49] utf8_1.2.2        stringi_1.7.6     crayon_1.5.1     </code></pre>
+ [1] fs_1.5.2                 bbotk_0.5.3              rprojroot_2.0.3         
+ [4] numDeriv_2016.8-1.1      mlr3pipelines_0.4.1      tools_4.2.0             
+ [7] backports_1.4.1          bslib_0.3.1              utf8_1.2.2              
+[10] R6_2.5.1                 colorspace_2.0-3         withr_2.5.0             
+[13] tidyselect_1.1.2         gridExtra_2.3            processx_3.5.3          
+[16] compiler_4.2.0           git2r_0.30.1             cli_3.3.0               
+[19] ooplah_0.2.0             lgr_0.4.3                timeROC_0.4             
+[22] labeling_0.4.2           bookdown_0.26            sass_0.4.1              
+[25] scales_1.2.0             checkmate_2.1.0          mvtnorm_1.1-3           
+[28] pec_2022.05.04           callr_3.7.0              palmerpenguins_0.1.0    
+[31] mlr3tuning_0.13.1        stringr_1.4.0            digest_0.6.29           
+[34] mlr3extralearners_0.5.37 rmarkdown_2.14           param6_0.2.4            
+[37] paradox_0.9.0            set6_0.2.4               pkgconfig_2.0.3         
+[40] htmltools_0.5.2          parallelly_1.31.1        fastmap_1.1.0           
+[43] highr_0.9                rlang_1.0.2              shape_1.4.6             
+[46] jquerylib_0.1.4          generics_0.1.2           farver_2.1.0            
+[49] jsonlite_1.8.0           dplyr_1.0.9              magrittr_2.0.3          
+[52] Rcpp_1.0.8.3             munsell_0.5.0            fansi_1.0.3             
+[55] lifecycle_1.0.1          stringi_1.7.6            whisker_0.4             
+[58] yaml_2.3.5               grid_4.2.0               parallel_4.2.0          
+[61] dictionar6_0.1.3         listenv_0.8.0            promises_1.2.0.1        
+[64] crayon_1.5.1             lattice_0.20-45          splines_4.2.0           
+[67] timereg_2.0.2            knitr_1.39               ps_1.7.0                
+[70] pillar_1.7.0             igraph_1.3.1             uuid_1.1-0              
+[73] base64url_1.4            future.apply_1.9.0       codetools_0.2-18        
+[76] glue_1.6.2               evaluate_0.15            vctrs_0.4.1             
+[79] httpuv_1.6.5             foreach_1.5.2            distr6_1.6.9            
+[82] gtable_0.3.0             purrr_0.3.4              future_1.26.1           
+[85] xfun_0.31                prodlim_2019.11.13       later_1.3.0             
+[88] tibble_3.1.7             iterators_1.0.14         lava_1.6.10             
+[91] workflowr_1.7.0          globals_0.15.0           ellipsis_0.3.2          </code></pre>
+</div>
 </div>
 
 

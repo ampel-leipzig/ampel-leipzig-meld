@@ -478,6 +478,9 @@ div.tocify {
       <a href="elasticnet.html">ElasticNet</a>
     </li>
     <li>
+      <a href="variableimportance.html">Variable Importance</a>
+    </li>
+    <li>
       <a href="roc.html">ROC</a>
     </li>
   </ul>
@@ -551,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-06
+<strong>Last updated:</strong> 2022-06-15
 </p>
 <p>
 <strong>Checks:</strong>
@@ -679,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb20484abeb3ca434ad31f290a6f9531c8b40a16atargetblankb20484aa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b20484abeb3ca434ad31f290a6f9531c8b40a16a" target="_blank">b20484a</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -759,6 +762,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/7ffaeb9ce4c494fdf73e5c44ba4a900c0b1ea84d/analysis/elasticnet.Rmd" target="_blank">7ffaeb9</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+<td>
+feat: add analysis of complete cases
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/d3e94627fae586919bec7433b9d7c2c03b7d4e93/docs/elasticnet.html" target="_blank">d3e9462</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-06
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -839,13 +876,14 @@ feat: add elastic net bootstrap and timeROC evaluations
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridisLite&quot;</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(arcvob)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootrcv)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootarcv)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootarcv7)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootarcv9)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootrcv.woICA)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(amelddata)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootrcvcc)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootarcv)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(bootrcv.woIC)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(amelddata)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(amelddatacc)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(ameldcfg)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data)</span></code></pre></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(zlog_data_complete_cases)</span></code></pre></div>
 <div id="tuning-alpha" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Tuning alpha</h1>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>arcvob</span></code></pre></div>
@@ -862,31 +900,31 @@ Measure: Partial Likelihood Deviance
 
 Lambda min:
       Alpha  Lambda Index Measure     SE Nonzero
- [1,] 0.000 0.99962    72   9.020 0.3263      42
- [2,] 0.001 0.99962    72   9.020 0.3257      38
- [3,] 0.008 0.96746    50   9.017 0.3225      26
- [4,] 0.027 0.72678    40   9.018 0.3228      20
- [5,] 0.064 0.53581    34   9.032 0.3213      18
- [6,] 0.125 0.39801    30   9.052 0.3195      16
- [7,] 0.216 0.27743    28   9.070 0.3209      12
- [8,] 0.343 0.19174    27   9.084 0.3231      11
- [9,] 0.512 0.14098    26   9.098 0.3231       9
-[10,] 0.729 0.09901    26   9.109 0.3262       9
-[11,] 1.000 0.07218    26   9.118 0.3285       9
+ [1,] 0.000 0.99962    72   9.022 0.3260      41
+ [2,] 0.001 0.91082    73   9.022 0.3284      36
+ [3,] 0.008 0.88152    51   9.017 0.3253      25
+ [4,] 0.027 0.72678    40   9.015 0.3226      19
+ [5,] 0.064 0.48821    35   9.025 0.3250      17
+ [6,] 0.125 0.36265    31   9.043 0.3234      15
+ [7,] 0.216 0.27743    28   9.058 0.3213      11
+ [8,] 0.343 0.19174    27   9.072 0.3238      10
+ [9,] 0.512 0.14098    26   9.084 0.3244       9
+[10,] 0.729 0.09901    26   9.095 0.3280       9
+[11,] 1.000 0.07218    26   9.103 0.3307       9
 
 Lambda 1se:
       Alpha Lambda Index Measure     SE Nonzero
- [1,] 0.000 4.8608    55   9.331 0.2800      42
- [2,] 0.001 4.8608    55   9.343 0.2789      32
- [3,] 0.008 3.9057    35   9.320 0.2781      23
- [4,] 0.027 2.6734    26   9.300 0.2764      17
- [5,] 0.064 1.7958    21   9.304 0.2753      12
- [6,] 0.125 1.2155    18   9.326 0.2736      10
- [7,] 0.216 0.8472    16   9.371 0.2713       8
- [8,] 0.343 0.5856    15   9.393 0.2709       6
- [9,] 0.512 0.3923    15   9.372 0.2743       6
-[10,] 0.729 0.3024    14   9.433 0.2718       6
-[11,] 1.000 0.2204    14   9.431 0.2740       6</code></pre>
+ [1,] 0.000 4.4290    56   9.324 0.2811      41
+ [2,] 0.001 4.4290    56   9.336 0.2800      32
+ [3,] 0.008 3.5587    36   9.308 0.2796      22
+ [4,] 0.027 2.6734    26   9.326 0.2751      16
+ [5,] 0.064 1.7958    21   9.323 0.2743      11
+ [6,] 0.125 1.2155    18   9.338 0.2731       9
+ [7,] 0.216 0.7720    17   9.315 0.2766       9
+ [8,] 0.343 0.5335    16   9.333 0.2767       7
+ [9,] 0.512 0.3923    15   9.377 0.2745       6
+[10,] 0.729 0.2755    15   9.368 0.2774       5
+[11,] 1.000 0.2204    14   9.432 0.2742       5</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(arcvob)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -1283,91 +1321,54 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="bootrcv.woica" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> bootrcv.woICA</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woICA, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootrcv.woICA-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcv.woICA-1">
-Past versions of bootrcv.woICA-1.png
-</button>
-</p>
-<div id="fig-bootrcv.woICA-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv.woICA-1.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
+<div id="rcv.glmnet-complete-cases-only" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> rcv.glmnet (complete cases only)</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    zlog_data_complete_cases[<span class="fu">paste0</span>(<span class="st">&quot;SurvProbMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>, <span class="st">&quot;Plus7&quot;</span>))],</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(p) {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        ctpnts <span class="ot">&lt;-</span> <span class="fu">cutpoints</span>(p, <span class="at">n =</span> ameldcfg<span class="sc">$</span>m)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        f <span class="ot">&lt;-</span> <span class="fu">cut</span>(p, ctpnts, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">list</span>(</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">predicted =</span> <span class="fu">groupmean</span>(p, <span class="at">f =</span> f),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">observed =</span> <span class="fu">observed_survival</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                amelddatacc<span class="sc">$</span>y, <span class="at">f =</span> f, <span class="at">times =</span> ameldcfg<span class="sc">$</span>times</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MELD&quot;</span>, <span class="st">&quot;MELD-Na&quot;</span>, <span class="st">&quot;MELD-Plus7&quot;</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">6</span>)[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(ps)) {</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lines</span>(</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        ps[[i]]<span class="sc">$</span>predicted, ps[[i]]<span class="sc">$</span>observed, <span class="at">col =</span> col[i], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">pch =</span> <span class="dv">19</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">col =</span> col, <span class="at">legend =</span> <span class="fu">names</span>(ps), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcvcc-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcvcc-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;norm&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcvcc-3.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;lambda&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcvcc-4.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;dev&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcvcc-5.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
+<div id="bootrcv.woic" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> bootrcv.woIC</h2>
+<p>Exclude IL-6 and CYSC columns from the data set.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woIC, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv.woIC-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woIC, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="figure/elasticnet.Rmd/bootrcv.woIC-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woICA, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootrcv.woICA-2.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcv.woICA-2">
-Past versions of bootrcv.woICA-2.png
-</button>
-</p>
-<div id="fig-bootrcv.woICA-2" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv.woICA-2.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="arcv.glmnet" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> arcv.glmnet</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
+<div id="arcv.glmnet" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> arcv.glmnet</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv-1">
@@ -1417,7 +1418,7 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv2-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv2-1">
@@ -1467,7 +1468,7 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootarcv2-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv2-2">
@@ -1517,248 +1518,6 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-</div>
-<div id="arcv7.glmnet" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> arcv7.glmnet</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv9<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv7 , <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootarcv7-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv7-1">
-Past versions of bootarcv7-1.png
-</button>
-</p>
-<div id="fig-bootarcv7-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv7-1.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv7, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootarcv7-2.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv7-2">
-Past versions of bootarcv7-2.png
-</button>
-</p>
-<div id="fig-bootarcv7-2" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv7-2.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootarcv7-3.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv7-3">
-Past versions of bootarcv7-3.png
-</button>
-</p>
-<div id="fig-bootarcv7-3" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv7-3.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="arcv9.glmnet" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> arcv9.glmnet</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">table</span>(<span class="fu">sapply</span>(bootarcv9<span class="sc">$</span>models, <span class="cf">function</span>(m)m<span class="sc">$</span>fit<span class="sc">$</span>alpha)))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv9 , <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootarcv9-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv9-1">
-Past versions of bootarcv9-1.png
-</button>
-</p>
-<div id="fig-bootarcv9-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv9-1.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootarcv9, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootarcv9-2.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv9-2">
-Past versions of bootarcv9-2.png
-</button>
-</p>
-<div id="fig-bootarcv9-2" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv9-2.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_dots</span>(a, <span class="at">main =</span> <span class="st">&quot;Selected Alpha Values&quot;</span>)</span></code></pre></div>
-<p><img src="figure/elasticnet.Rmd/bootarcv9-3.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootarcv9-3">
-Past versions of bootarcv9-3.png
-</button>
-</p>
-<div id="fig-bootarcv9-3" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv9-3.png" target="_blank">b20484a</a>
-</td>
-<td>
-Sebastian Gibb
-</td>
-<td>
-2022-06-06
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -1767,39 +1526,44 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>R version 4.1.3 (2022-03-10)
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 Matrix products: default
 BLAS/LAPACK: /gnu/store/ras6dprsw3wm3swk23jjp8ww5dwxj333-openblas-0.3.18/lib/libopenblasp-r0.3.18.so
 
 locale:
-[1] C
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] viridisLite_0.4.0 ameld_0.0.21      survival_3.3-1    glmnet_4.1-3     
-[5] Matrix_1.4-1      targets_0.12.0   
+[1] viridisLite_0.4.0 ameld_0.0.23      survival_3.3-1    glmnet_4.1-4     
+[5] Matrix_1.4-1      targets_0.12.1   
 
 loaded via a namespace (and not attached):
- [1] shape_1.4.6       tidyselect_1.1.2  xfun_0.30         bslib_0.3.1      
- [5] purrr_0.3.4       splines_4.1.3     lattice_0.20-45   vctrs_0.4.0      
+ [1] shape_1.4.6       tidyselect_1.1.2  xfun_0.31         bslib_0.3.1      
+ [5] purrr_0.3.4       splines_4.2.0     lattice_0.20-45   vctrs_0.4.1      
  [9] htmltools_0.5.2   yaml_2.3.5        utf8_1.2.2        rlang_1.0.2      
 [13] jquerylib_0.1.4   later_1.3.0       pillar_1.7.0      glue_1.6.2       
 [17] withr_2.5.0       foreach_1.5.2     lifecycle_1.0.1   stringr_1.4.0    
-[21] workflowr_1.7.0   codetools_0.2-18  evaluate_0.15     knitr_1.38       
-[25] callr_3.7.0       fastmap_1.1.0     httpuv_1.6.5      ps_1.6.0         
+[21] workflowr_1.7.0   codetools_0.2-18  evaluate_0.15     knitr_1.39       
+[25] callr_3.7.0       fastmap_1.1.0     httpuv_1.6.5      ps_1.7.0         
 [29] fansi_1.0.3       highr_0.9         Rcpp_1.0.8.3      promises_1.2.0.1 
 [33] backports_1.4.1   jsonlite_1.8.0    fs_1.5.2          digest_0.6.29    
-[37] stringi_1.7.6     bookdown_0.25     processx_3.5.3    rprojroot_2.0.3  
-[41] grid_4.1.3        cli_3.2.0         tools_4.1.3       magrittr_2.0.3   
-[45] base64url_1.4     sass_0.4.1        tibble_3.1.6      crayon_1.5.1     
+[37] stringi_1.7.6     bookdown_0.26     processx_3.5.3    rprojroot_2.0.3  
+[41] grid_4.2.0        cli_3.3.0         tools_4.2.0       magrittr_2.0.3   
+[45] base64url_1.4     sass_0.4.1        tibble_3.1.7      crayon_1.5.1     
 [49] whisker_0.4       pkgconfig_2.0.3   ellipsis_0.3.2    data.table_1.14.2
-[53] rmarkdown_2.13    iterators_1.0.14  R6_2.5.1          igraph_1.3.0     
-[57] git2r_0.30.1      compiler_4.1.3   </code></pre>
+[53] rmarkdown_2.14    iterators_1.0.14  R6_2.5.1          igraph_1.3.1     
+[57] git2r_0.30.1      compiler_4.2.0   </code></pre>
 </div>
 </div>
 </div>
