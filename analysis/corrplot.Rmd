@@ -12,7 +12,7 @@ library("targets")
 tar_load(zlog_data)
 ```
 
-# Correlation
+# Correlation (pearson)
 
 ## Plot
 
@@ -30,6 +30,34 @@ corrplot.mixed(
 ## Table
 
 ```{r cortbl}
+ut <- upper.tri(cr)
+nms <- paste(
+    colnames(cr)[col(cr)[ut]],
+    rownames(cr)[row(cr)[ut]],
+    sep = ":"
+)
+tbl <- data.frame(Values = nms, Correlation = cr[ut])
+tbl <- tbl[order(-abs(tbl$Correlation)),]
+knitr::kable(tbl, header = TRUE, row.names = FALSE, digits = 3L)
+```
+
+# Correlation (spearman)
+
+## Plot
+
+```{r corrplot-spearman}
+cr <- cor(zlog_data[labv], method = "spearman", use = "pairwise.complete.obs")
+corrplot.mixed(
+    cr,
+    tl.pos = "lt", tl.col = "black", tl.cex = 0.75,
+    number.cex = 0.25, number.font = 1L,
+    order = "AOE"
+)
+```
+
+## Table
+
+```{r cortbl-spearman}
 ut <- upper.tri(cr)
 nms <- paste(
     colnames(cr)[col(cr)[ut]],
