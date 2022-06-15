@@ -9,7 +9,7 @@ output:
 ```{r corrplot_setup, message = FALSE}
 library("corrplot")
 library("targets")
-tar_load(imp_data)
+tar_load(zlog_data)
 ```
 
 # Correlation
@@ -17,8 +17,8 @@ tar_load(imp_data)
 ## Plot
 
 ```{r corrplot}
-labv <- grep("_[SECQ]$", colnames(imp_data), value = TRUE)
-cr <- cor(imp_data[labv], use = "pairwise.complete.obs")
+labv <- grep("_[SECQ]$", colnames(zlog_data), value = TRUE)
+cr <- cor(zlog_data[labv], method = "pearson", use = "pairwise.complete.obs")
 corrplot.mixed(
     cr,
     tl.pos = "lt", tl.col = "black", tl.cex = 0.75,
