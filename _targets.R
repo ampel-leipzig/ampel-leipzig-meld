@@ -59,6 +59,7 @@ source("code/03-mlr-learners.R")
 source("code/04-mlr-benchmarking.R")
 source("code/05-ameld-elasticnet.R")
 source("code/06-timeroc.R")
+source("code/07-variable-importance.R")
 source("code/08-tables.R")
 source("code/09-reports.R")
 source("code/99-site.R")
@@ -73,6 +74,7 @@ list(
    tg_ameld,
    tg_timeroc,
    tg_timeroc_psurv,
+   tg_variable_importance,
    tg_reports,
    tg_site
 )

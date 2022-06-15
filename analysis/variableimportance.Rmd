@@ -1,0 +1,23 @@
+---
+title: "Variable Importance"
+output:
+  bookdown::html_document2:
+    fig.width: 18
+    fig.height: 8
+---
+
+```{r vimp_setup, message = FALSE}
+library("targets")
+library("ameld")
+tar_load(rngr)
+```
+
+# Ranger (random forest)
+
+```{r vimp, fig.width = 8, fig.height = 14, echo = FALSE, message = FALSE}
+plot_dots(
+    sort(rngr$variable.importance),
+    main = "Variable importance (ranger)",
+    xlab = rngr$splitrule
+)
+```

@@ -31,6 +31,8 @@ navbar:
         href: benchmarks.html
       - text: "ElasticNet"
         href: elasticnet.html
+      - text: "Variable Importance"
+        href: variableimportance.html
       - text: "ROC"
         href: roc.html
   - text: Article
