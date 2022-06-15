@@ -1,13 +1,15 @@
 library("targets")
 library("tarchetypes")
 
+tar_option_set(error = "continue")
+
 library("future")
 library("future.batchtools")
 
 library("lgr")
 
 #Sys.setenv(RUNLOCAL = 1)
-Sys.setenv(DEBUGME = "batchtools")
+#Sys.setenv(DEBUGME = "batchtools")
 tf <- rprojroot::find_rstudio_root_file("logs", "lgr.log")
 lgr$add_appender(AppenderFile$new(tf), name = "file")
 lgr$set_threshold("all")
@@ -26,8 +28,8 @@ login <- future::tweak(
 
 resources <- list(
     workers = 32L,
-    partition = "snowball",
-    ncpu = 36,
+    partition = c("batch", "snowball"),
+    ncpu = 24, #36,
     mcpu = 1L * 1024L,
     walltime = 4L * 60L * 60L # seconds
 )
