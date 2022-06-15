@@ -9,6 +9,71 @@ output:
 ```
 
 ```{r supplement_setup, message = FALSE}
+library("ameld")
+library("data.table")
 library("targets")
+library("mlr3")
+library("mlr3misc")
+library("mlr3proba")
+library("mlr3viz")
+library("viridis")
+library("ggplot2")
 ```
 
+# Benchmark results of machine learning algorithms
+
+```{r benchmark-plot, fig.cap = "Benchmark results of machine learning algorithms.", echo = FALSE, fig.width = 18, fig.height = 12}
+tar_load(bmrk_results)
+r <- bmrk_results$clone()
+id <- grep("^scale", x = r$learners$learner_id, invert = TRUE, value = TRUE)
+r$filter(task_id = "zlog_eldd", learner_id = id)
+autoplot(r) +
+    geom_boxplot(aes(fill = learner_id)) +
+    geom_jitter(position = position_jitter(0.2)) +
+    scale_fill_viridis(discrete = TRUE) +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
+
+```{r benchmark-table}
+agg <- bmrk_results$aggregate(msr("surv.cindex", id = "harrell"))
+agg[, `:=`
+    (nr = NULL, resample_result = NULL, resampling_id = NULL, iters = NULL)
+]
+agg <- subset(agg, task_id == "zlog_eldd" & !grepl("^scale", learner_id))
+agg[, task_id := NULL]
+setorder(agg, -harrell)
+knitr::kable(agg, col.names = c("Learner ID", "Harrell C"))
+```
+
+# AUROC trend
+
+```{r roc-plot, fig.width = 18, fig.height = 12}
+tar_load(timeROC_MELD)
+tar_load(timeROC_MELDNa)
+tar_load(timeROC_MELDPlus7)
+tar_load(timeROC_RCV)
+
+m <- list(
+    MELD = timeROC_MELD,
+    "MELD-Na" = timeROC_MELDNa,
+    "MELD-Plus7" = timeROC_MELDPlus7,
+    RCV = timeROC_RCV
+)
+plot_surv_roc_trend(m)
+```
+
+# Variable importance
+
+```{r vimpbs, fig.width = 8, fig.height = 10, fig.cap = "Variable importance by frequency of bootstrap selections.", echo = FALSE, message = FALSE}
+tar_load(bootrcv)
+plot(bootrcv, what = "selected", cex = 0.5)
+```
+
+```{r vimprf, fig.width = 8, fig.height = 10, fig.cap = "Variable importance by logrank in random forest.", echo = FALSE, message = FALSE}
+tar_load(rngr)
+plot_dots(
+    sort(rngr$variable.importance),
+    main = "Variable importance (random forest)",
+    xlab = rngr$splitrule
+)
+```

@@ -79,6 +79,7 @@ tar_load(tbl1)
 tar_load(tbl_observed_vs_expected_mortality)
 
 tar_load(ameldcfg)
+tar_load(rngr)
 ```
 
 # Introduction
@@ -258,7 +259,10 @@ $$
 
 Where $LL$ and $UL$ are the lower and upper reference limit of
 the corresponding laboratory diagnostic, respectively.
-Missing laboratory measurements were replaced with a *zlog* value of zero.
+If more than 10 % of laboratory measurements are missing the variable were
+excluded from further analysis.
+The remainder of missing laboratory measurements were replaced with
+a *zlog* value of zero.
 In similar manner if information about complications or
 comorbidities were missing we treat them as not present.
 
@@ -308,7 +312,7 @@ observed survival.
 The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
 using the area under the time-dependent ROC curve (AUC)
 based on the nonparametric inverse probability of censoring weighting estimator
-(IPCW) [@blanche2013, @R-timeROC].
+(IPCW) [@blanche2013, @R-timeROC]. Testing was applied as described in @blanche2013. A $p < 0.5$ was considered as statistical significant difference.
 
 Summary tables were built using the *gtsummary* package
 [@gtsummary; @R-gtsummary].
@@ -415,18 +419,152 @@ knitr::kable(
 )
 ```
 
-```{r benchmark-plot, fig.cap = "Benchmark results of machine learning algorithms.", echo = FALSE}
-r <- bmrk_results$clone()
-id <- grep("^scale", x = r$learners$learner_id, invert = TRUE, value = TRUE)
-r$filter(task_id = "zlog_eldd", learner_id = id)
-autoplot(r) +
-    geom_boxplot(aes(fill = learner_id)) +
-    geom_jitter(position = position_jitter(0.2)) +
-    scale_fill_viridis(discrete = TRUE) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+## RCV model
+
+The penalized regression and random forest models
+result in a similar high median performance in the benchmark process.
+In favour of simpler models we chose a lasso based approach for the final model
+development.
+The classical cox model, the data and computational intense algorithms
+extreme gradient boosting, support vector machines and neural networks yield a
+worse performance.
+
+```{r coeftbl, echo = FALSE}
+tar_load(bootrcv)
+cf <- coef(bootrcv$fit)
+cf <- setNames(cf@x, rownames(cf)[cf@i + 1])
+o <- order(-abs(cf))
+cfs <- cf[o]
+cfnms <- lapply(
+    labelled_meld_data[names(cfs)],
+    function(nm)sub(" *\\[.*$", "", attr(nm, "label"))
+)
+cfnms[!lengths(cfnms)] <- names(cfnms)[!lengths(cfnms)]
+knitr::kable(
+    setNames(cfs, cfnms),
+    col.names = "Coefficient",
+    caption = "Model coefficients",
+    digits = 3
+)
 ```
 
-TODO: mention best ml algorithm (\@ref(fig:benchmark-plot))
+## Model comparison
+
+```{r roc, fig.width = 7, fig.height = 7, echo = FALSE, message = FALSE}
+library("timeROC")
+tar_load(timeROC_MELD)
+tar_load(timeROC_MELDNa)
+tar_load(timeROC_MELDPlus7)
+tar_load(timeROC_RCV)
+
+col <- viridisLite::viridis(5)
+m <- list(
+    RCV = timeROC_RCV,
+    MELD = timeROC_MELD,
+    "MELD-Na" = timeROC_MELDNa,
+    "MELD-Plus7" = timeROC_MELDPlus7
+)
+invisible(plot_surv_roc(m, timepoint = 90, col = col[-2]))
+```
+
+```{r roctest}
+tp <- timeROC::compare(
+    timeROC_RCV, timeROC_MELDNa,
+    adjusted = TRUE
+)$p_values_AUC
+rownames(tp) <- paste(
+    c("Non-adjusted", "Adjusted"), "$p$-values"
+)
+knitr::kable(
+    tp,
+    caption = paste0(
+        "Test comparison between AUC for MELD-Na and RCV model ",
+        "according to @blanche2013 at day ",
+        paste0(timeROC_RCV$times, collapse = ", "), ".",
+        "$p$-values are shown as non-adjusted and adjusted for ",
+        "multiple testing."
+    ),
+    digits = 2
+)
+```
+
+```{r bootrcv, fig.width = 7, fig.height = 7, echo = FALSE}
+tar_load(ameldcfg)
+tar_load(amelddata)
+tar_load(zlog_data)
+par(cex = 0.9)
+plot(bootrcv, what = "calibration")
+
+ps <- lapply(
+    zlog_data[paste0("SurvProbMeld", c("Unos", "NaUnos", "Plus7"))],
+    function(p) {
+        ctpnts <- cutpoints(p, n = ameldcfg$m)
+        f <- cut(p, ctpnts, include.lowest = TRUE)
+        list(
+            predicted = groupmean(p, f = f),
+            observed = observed_survival(
+                amelddata$y, f = f, times = ameldcfg$times
+            )
+        )
+    }
+)
+names(ps) <- c("MELD", "MELD-Na", "MELD-Plus7")
+
+for (i in seq_along(ps)) {
+    lines(
+        ps[[i]]$predicted, ps[[i]]$observed, col = col[i + 2],
+        type = "b", pch = 19
+    )
+}
+legend("topleft", col = col[3:5], legend = names(ps), pch = 19, bty = "n")
+```
+
+```{r basehaz, echo = FALSE}
+bh <- basehaz(
+    bootrcv$fit, x = amelddata$x, y = amelddata$y, s = "lambda.1se",
+    times = timeROC_RCV$times, centered = FALSE
+)
+s0 <- setNames(bh$hazard, bh$time)
+k <- knitr::kable(
+    t(s0),
+    digits = 4,
+    caption = paste0(
+        "Underlying survival function; S~0~: baseline survival estimate"
+    )
+)
+k[3] <- paste("|t [days]", k[3])
+k[4] <- paste0("|:------", k[4])
+k[5] <- paste("|S~0~ (t)", k[5])
+k
+```
+
+The 90-day survival estimate of a given patient could be calculated as shown in
+\@ref(eq:survcalc).
+
+```{r survivalcalc, results = "asis"}
+cfnmsltx <- paste0("\\text{", gsub(" ", "\\ ", cfnms), "}")
+cat(
+    "$$\\begin{align}",
+    "S &= S_{0,90}^{\\exp{LP}} \\\\",
+    "&= ", round(s0["90"], 4), "^{\\exp{(",
+        paste0(
+            round(cfs[1], 4), " * zlog(", cfnmsltx[1], ")",
+            paste0(
+                ifelse(sign(cfs[-1]) > 0, "+", ""),
+                round(cfs[-1], 4), " * zlog(", cfnmsltx[-1], ")",
+                collapse = ""
+            ),
+            collapse = ""
+        ),
+    ")}}",
+    #"(\\#eq:survcalc)",
+    "\\end{align}$$"
+)
+```
+
+Where $S_{0}$ is the baseline survival estimate from
+\@ref(tab:basehaz) and $LP$ is the linear predictor of the coefficients
+in \@ref(tab:coeftbl).
 
 # Discussion
 
@@ -436,34 +574,59 @@ the University Hospital of Leipzig we developed a new model to predict the
 90-day survival probability. Our new model outperforms the MELD-Na score and
 the recently published MELD-Plus risk score.
 
-**NUMBER_OF_VARIABLES**
-
-- more variables, harder to cheat
-- comparison of different predictors of MELD-Plus7 (+MELD-Plus9) vs our features
-
-Sodium is not part of our model.
-In line with the results presented in @kartoun2017 we could show that
-adding sodium to MELD the discrimination performance increases just
-insignificantly.
+Although the Organ Procurement and Transplantation Network recommends the use
+of MELD-Na over MELD the sodium does not add any information to the score.
+Neither in the bootstrap selection nor in the variable importance of a
+random forest model the sodium gains any important weight
+(in bootstrap selection rank
+`r as.vector(rank(-ameld:::.selvars(bootrcv$models, bootrcv$s))["NA_S"])`
+of
+`r ncol(amelddata$x)` and in random forest variable importance
+`r as.vector(rank(-rngr$variable.importance)["NA_S"])` of
+`r ncol(amelddata$x)`,
+see \@ref(fig:vimpbs), \@ref(fig:vimprf)).
+Already @kartoun2017 have shown that the
+discrimination performance of MELD-Na is insignificantly different from the
+classical MELD.
+Consequentially it is not a component of our model.
 
 It has shown that women get lower scores in MELD-Na and therefore
 are less likely getting an urgent listing for liver transplantation
-[@Gaertner2022].
+[@gaertner2022].
 To address sexual differences in laboratory measurements we applied the *zlog*
 transformation [@hoffmann2017].
 Additionally this transformation yield comparable laboratory measurements
-across different clinical laboratories and methods which could improve the
-objectivity of the allocation process.
+across different clinical laboratories and methods.
+It also reduce the influence of age- and sex-related differences,
+which could improve the objectivity of the allocation process.
 The already nearly normal scaled *zlog*-transformed laboratory measurements
 allow us to avoid the sample depending scaling prior to model development.
 Both should increase the external applicability of our approach.
 
-Additionally to laboratory data we investigated
+**NUMBER_OF_VARIABLES**
+
+- comparison of different predictors of MELD/MELD-Plus7 (+MELD-Plus9) vs our features
+
+Results from machine learning can aid in finding clinical meaningful patterns
+and guide further research.
+For example, the systemic inflammatory response syndrome is an
+independent risk factor for poor outcome in patients with cirrhosis
+[@thabut2007].
+However neither MELD nor MELD-Na taking inflammation into account.
+In contrast IL6 is the most important variable in our model. Even if IL6 is
+excluded the algorithms select CRP as one of the most important variables which
+highlights the important role of inflammation in the prognosis of patients
+with end-stage liver disease.
+We and other researchers have already shown that adding inflammatory markers,
+namely IL6 or CRP, to the classical MELD score increase the accuracy of the
+90-day mortality prediction [@remmler2018; @cervoni2016].
+
+Beside laboratory measurements we investigated
 `r (ncol(raw_data) - length(cn_labs) - 2)`
 clinical data but none of them were chosen in our model selection process.
 @kartoun2017 used a similar penalizing approach and neither select any clinical
 data. Especially in retrospective analysis the clinical data are often not
-detailed enough.
+detailed enough to keep valuable information.
 
 In our benchmark of `r n_lrns` different machine learning algorithms we have
 seen that the more complex algorithm like boosting and neural networks perform
@@ -472,6 +635,11 @@ This may due additive effects that favour regression models or due to our
 relative small sample size.
 In machine learning more than 200 events per predictor variable are necessary
 to achieve good prediction performance [@ploeg2014].
+
+<!--
+As we shown above machine learning can aid in finding clinical meaningful
+patterns.
+-->
 
 <!--
 
@@ -493,14 +661,18 @@ to achieve good prediction performance [@ploeg2014].
 
 ## Limitations
 
-Our study has limitations. Principally it is a single center, retrospective
-analysis and without an external validation cohort.
+Our study has several limitations.
+Principally it is a single center, retrospective analysis and without an
+external validation cohort.
 The data were collected during the evaluation process for liver transplantation
 at the University Hospital of Leipzig.
 There was no controlled follow-up process. Instead the follow-up information
 were recored at the next clinical admission.
 Furthermore we excluded all patients who had already a liver transplantation
 which could artificial lower the disease severity of the cohort.
+Next most of our patients suffered from ethyltoxic liver cirrhosis
+(`r .tbl1("Ethyltoxic", pattern = "{p}%")`) which may
+limited the transfer to other etiologies.
 
 With a median MELD score of `r .tbl1("ScoreMeldUnos")` our
 cohort was healthier than in previous studies that reported
@@ -599,6 +771,13 @@ The total estimated emissions were at least
 (ignoring development, test runs, etc.).
 This is equivalent to `r sprintf("%.1f", km)` km driven by an average car
 [@allekotte2021].
+
+# Data and software availability
+
+The complete code and reproducible analysis could be found at
+https://ampel-leipzig.github.io/ampel-leipzig-meld/.
+Additionally all data are available in the `ameld` R package at
+https://github.com/ampel-leipzig/ameld for further investigations.
 
 # Acknowledgement
 
