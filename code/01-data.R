@@ -80,10 +80,8 @@ tg_data <- list(
         deployment = "main"
     ),
     tar_target(imp_data, {
-            ## exclude columns with more than 10% missing values
-            keep <- vapply(raw_data, function(x)mean(is.na(x)) < 0.1, NA)
             imp <- withCallingHandlers(
-                impute_df(raw_data[keep], ref_data, method = "logmean"),
+                impute_df(raw_data, ref_data, method = "logmean"),
                 warning = function(w) {
                     if(w$message != paste0(
                         "No reference for column(s): DaysAtRisk, Deceased, ",
