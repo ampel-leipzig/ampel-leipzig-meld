@@ -13,7 +13,7 @@ tg_timeroc <- tar_eval(
                 delta = zlog_data$Deceased,
                 marker = 1 - zlog_data[[col]],
                 cause = 1,
-                times = c(1, 3, 7, 30, 60, 90, 180, 365),
+                times = c(2, 7, 30, 90, 180, 365),
                 iid = TRUE
             )
             tr$confint <- confint(object = tr, level = 0.95, n.sim = 3000)
@@ -31,7 +31,37 @@ tg_timeroc_psurv <- list(
             delta = zlog_data$Deceased,
             marker = 1 - psurvbootrcv,
             cause = 1,
-            times = c(1, 3, 7, 30, 60, 90, 180, 365),
+            times = c(2, 7, 30, 90, 180, 365),
+            iid = TRUE
+        )
+        tr$confint <- confint(object = tr, level = 0.95, n.sim = 3000)
+        tr
+    },
+    packages = c("survival", "timeROC"),
+    deployment = "main"
+    ),
+    tar_target(timeROC_RCVcc, {
+        tr <- timeROC::timeROC(
+            T = zlog_data_complete_cases$DaysAtRisk,
+            delta = zlog_data_complete_cases$Deceased,
+            marker = 1 - psurvbootrcvcc,
+            cause = 1,
+            times = c(2, 7, 30, 90, 180, 365),
+            iid = TRUE
+        )
+        tr$confint <- confint(object = tr, level = 0.95, n.sim = 3000)
+        tr
+    },
+    packages = c("survival", "timeROC"),
+    deployment = "main"
+    ),
+    tar_target(timeROC_MELDNacc, {
+        tr <- timeROC::timeROC(
+            T = zlog_data_complete_cases$DaysAtRisk,
+            delta = zlog_data_complete_cases$Deceased,
+            marker = 1 - zlog_data_complete_cases$SurvProbMeldNaUnos,
+            cause = 1,
+            times = c(2, 7, 30, 90, 180, 365),
             iid = TRUE
         )
         tr$confint <- confint(object = tr, level = 0.95, n.sim = 3000)
@@ -46,7 +76,7 @@ tg_timeroc_psurv <- list(
             delta = zlog_data$Deceased,
             marker = 1 - psurvbootarcv,
             cause = 1,
-            times = c(1, 3, 7, 30, 60, 90, 180, 365),
+            times = c(2, 7, 30, 90, 180, 365),
             iid = TRUE
         )
         tr$confint <- confint(object = tr, level = 0.95, n.sim = 3000)

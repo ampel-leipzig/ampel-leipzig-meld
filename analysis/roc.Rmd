@@ -13,19 +13,28 @@ tar_load(timeROC_MELD)
 tar_load(timeROC_MELDNa)
 tar_load(timeROC_MELDPlus7)
 tar_load(timeROC_RCV)
+tar_load(timeROC_RCVcc)
+tar_load(timeROC_MELDNacc)
 tar_load(timeROC_ARCV)
 ```
 
-# ROC
+# ROC day 90
 
-```{r roc}
+```{r roc90, fig.width = 7, fig.height = 7, echo = FALSE, message = FALSE}
 m <- list(
     MELD = timeROC_MELD,
     "MELD-Na" = timeROC_MELDNa,
+    "MELD-Na (complete cases)" = timeROC_MELDNacc,
     "MELD-Plus7" = timeROC_MELDPlus7,
     RCV = timeROC_RCV,
+    "RCV (complete cases)" = timeROC_RCVcc,
     ARCV = timeROC_ARCV
 )
 plot_surv_roc(m, timepoint = 90)
+```
+
+# ROC trend
+
+```{r roc}
 plot_surv_roc_trend(m)
 ```

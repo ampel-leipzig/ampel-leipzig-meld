@@ -22,6 +22,18 @@ tg_ameld <- list(
     packages = c("survival"),
     deployment = "main"
     ),
+    tar_target(amelddatacc, {
+        d <- zlog_data_complete_cases
+        ## exclude precalculated scores
+        d <- d[!grepl("Meld", colnames(d))]
+        srv <- Surv(d$DaysAtRisk, d$Deceased)
+        d$DaysAtRisk <- d$Deceased <- NULL
+        d <- data.matrix(d)
+        list(x = d, y = srv)
+    },
+    packages = c("survival"),
+    deployment = "main"
+    ),
     tar_target(arcvob, {
         arcv.glmnet(
             x = amelddata$x, y = amelddata$y,
@@ -41,10 +53,10 @@ tg_ameld <- list(
         bootrcv <- bootstrap(
             x = amelddata$x, y = amelddata$y,
             fun = rcv.glmnet,
+            nboot = ameldcfg$nboot,
+            nrepcv = ameldcfg$nrepcv,
+            nfolds = ameldcfg$nfolds,
             family = "cox",
-            nboot = 1000,
-            nfolds = 3,
-            nrepcv = 10,
             standardize = ameldcfg$standardize,
             m = ameldcfg$m,
             times = ameldcfg$times
@@ -56,9 +68,28 @@ tg_ameld <- list(
     ),
     deployment = "worker"
     ),
-    tar_target(bootrcv.woICA, {
+    tar_target(bootrcvcc, {
+        bootrcv <- bootstrap(
+            x = amelddatacc$x, y = amelddatacc$y,
+            fun = rcv.glmnet,
+            nboot = ameldcfg$nboot,
+            nrepcv = ameldcfg$nrepcv,
+            nfolds = ameldcfg$nfolds,
+            family = "cox",
+            standardize = ameldcfg$standardize,
+            m = ameldcfg$m,
+            times = ameldcfg$times
+        )
+        bootrcv
+    },
+    packages = c(
+        "ameld", "future", "future.batchtools", "glmnet", "survival"
+    ),
+    deployment = "worker"
+    ),
+    tar_target(bootrcv.woIC, {
         x <- amelddata$x[,
-            !colnames(amelddata$x) %in% c("IL6_S", "CYSC_S", "Age")
+            !colnames(amelddata$x) %in% c("IL6_S", "CYSC_S")
         ]
         bootrcv <- bootstrap(
             x = x, y = amelddata$y,
@@ -82,6 +113,13 @@ tg_ameld <- list(
         predict(
             bootrcv$fit, x = amelddata$x, y = amelddata$y, newx = amelddata$x,
             type = "survival", times = ameldcfg$times, s = "lambda.1se"
+        )[1,]
+    }),
+    tar_target(psurvbootrcvcc, {
+        predict(
+            bootrcvcc$fit, x = amelddatacc$x, y = amelddatacc$y,
+            newx = amelddatacc$x, type = "survival",
+            times = ameldcfg$times, s = "lambda.1se"
         )[1,]
     }),
     tar_target(bootarcv, {
@@ -114,65 +152,5 @@ tg_ameld <- list(
             bootarcv$fit, x = amelddata$x, y = amelddata$y, newx = amelddata$x,
             type = "survival", times = ameldcfg$times, s = "lambda.1se"
         )[1,]
-    }),
-    tar_target(bootarcv7, {
-        selarcv <- function(...) {
-            dots <- list(...)
-            a <- arcv.glmnet(...)
-            a$models[[
-                which.min.error(a, s = "lambda.1se", maxnnzero = dots$maxnnzero)
-            ]]
-        }
-
-        bootarcv7 <- bootstrap(
-            x = amelddata$x, y = amelddata$y,
-            fun = selarcv,
-            family = "cox",
-            alpha = ameldcfg$alpha,
-            s = "lambda.1se",
-            maxnnzero = 7,
-            nboot = ameldcfg$nboot,
-            nfolds = ameldcfg$nfolds,
-            nrepcv = ameldcfg$nrepcv,
-            standardize = ameldcfg$standardize,
-            m = ameldcfg$m,
-            times = ameldcfg$times
-        )
-        bootarcv7
-    },
-    packages = c(
-        "ameld", "future", "future.batchtools", "glmnet", "survival"
-    ),
-    deployment = "worker"
-    ),
-    tar_target(bootarcv9, {
-        selarcv <- function(...) {
-            dots <- list(...)
-            a <- do.call(arcv.glmnet, dots)
-            a$models[[
-                which.min.error(a, s = "lambda.1se", maxnnzero = dots$maxnnzero)
-            ]]
-        }
-
-        bootarcv9 <- bootstrap(
-            x = amelddata$x, y = amelddata$y,
-            fun = selarcv,
-            family = "cox",
-            alpha = ameldcfg$alpha,
-            s = "lambda.1se",
-            maxnnzero = 9,
-            nboot = ameldcfg$nboot,
-            nfolds = ameldcfg$nfolds,
-            nrepcv = ameldcfg$nrepcv,
-            standardize = ameldcfg$standardize,
-            m = ameldcfg$m,
-            times = ameldcfg$times
-        )
-        bootarcv9
-    },
-    packages = c(
-        "ameld", "future", "future.batchtools", "glmnet", "survival"
-    ),
-    deployment = "worker"
-    )
+    })
 )

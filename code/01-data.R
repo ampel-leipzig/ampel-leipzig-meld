@@ -213,5 +213,12 @@ tg_data <- list(
         },
         packages = "zlog",
         deployment = "main"
+    ),
+    tar_target(zlog_data_complete_cases, {
+            zd <- zlog_data[complete.cases(raw_data),]
+            zd
+        },
+        packages = "zlog",
+        deployment = "main"
     )
 )

@@ -12,13 +12,14 @@ library("ameld")
 library("viridisLite")
 tar_load(arcvob)
 tar_load(bootrcv)
+tar_load(bootrcvcc)
 tar_load(bootarcv)
-tar_load(bootarcv7)
-tar_load(bootarcv9)
-tar_load(bootrcv.woICA)
+tar_load(bootrcv.woIC)
 tar_load(amelddata)
+tar_load(amelddatacc)
 tar_load(ameldcfg)
 tar_load(zlog_data)
+tar_load(zlog_data_complete_cases)
 ```
 
 # Tuning alpha
@@ -75,11 +76,47 @@ plot(bootrcv$fit$glmnet.fit, xvar = "lambda")
 plot(bootrcv$fit$glmnet.fit, xvar = "dev")
 ```
 
-## bootrcv.woICA
+## rcv.glmnet (complete cases only)
 
-```{r bootrcv.woICA}
-plot(bootrcv.woICA, what = "calibration")
-plot(bootrcv.woICA, what = "selected", cex = 0.5)
+```{r bootrcvcc}
+plot(bootrcvcc, what = "calibration")
+
+ps <- lapply(
+    zlog_data_complete_cases[paste0("SurvProbMeld", c("Unos", "NaUnos", "Plus7"))],
+    function(p) {
+        ctpnts <- cutpoints(p, n = ameldcfg$m)
+        f <- cut(p, ctpnts, include.lowest = TRUE)
+        list(
+            predicted = groupmean(p, f = f),
+            observed = observed_survival(
+                amelddatacc$y, f = f, times = ameldcfg$times
+            )
+        )
+    }
+)
+names(ps) <- c("MELD", "MELD-Na", "MELD-Plus7")
+col <- viridisLite::viridis(6)[4:6]
+
+for (i in seq_along(ps)) {
+    lines(
+        ps[[i]]$predicted, ps[[i]]$observed, col = col[i], type = "b", pch = 19
+    )
+}
+legend("topleft", col = col, legend = names(ps), pch = 19, bty = "n")
+
+plot(bootrcvcc, what = "selected", cex = 0.5)
+plot(bootrcvcc$fit$glmnet.fit, xvar = "norm")
+plot(bootrcvcc$fit$glmnet.fit, xvar = "lambda")
+plot(bootrcvcc$fit$glmnet.fit, xvar = "dev")
+```
+
+## bootrcv.woIC
+
+Exclude IL-6 and CYSC columns from the data set.
+
+```{r bootrcv.woIC}
+plot(bootrcv.woIC, what = "calibration")
+plot(bootrcv.woIC, what = "selected", cex = 0.5)
 ```
 
 ## arcv.glmnet
@@ -90,23 +127,5 @@ plot(bootarcv, what = "calibration")
 ```
 ```{r bootarcv2, fig.height = 12}
 plot(bootarcv, what = "selected")
-plot_dots(a, main = "Selected Alpha Values")
-```
-
-## arcv7.glmnet
-
-```{r bootarcv7}
-a <- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))
-plot(bootarcv7 , what = "calibration")
-plot(bootarcv7, what = "selected")
-plot_dots(a, main = "Selected Alpha Values")
-```
-
-## arcv9.glmnet
-
-```{r bootarcv9}
-a <- c(table(sapply(bootarcv9$models, function(m)m$fit$alpha)))
-plot(bootarcv9 , what = "calibration")
-plot(bootarcv9, what = "selected")
 plot_dots(a, main = "Selected Alpha Values")
 ```
