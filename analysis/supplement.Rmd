@@ -54,10 +54,10 @@ tar_load(timeROC_MELDPlus7)
 tar_load(timeROC_RCV)
 
 m <- list(
+    AMELD = timeROC_RCV,
     MELD = timeROC_MELD,
     "MELD-Na" = timeROC_MELDNa,
-    "MELD-Plus7" = timeROC_MELDPlus7,
-    RCV = timeROC_RCV
+    "MELD-Plus7" = timeROC_MELDPlus7
 )
 plot_surv_roc_trend(m)
 ```
