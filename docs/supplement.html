@@ -478,7 +478,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-15
+<strong>Last updated:</strong> 2022-06-16
 </p>
 <p>
 <strong>Checks:</strong>
@@ -606,20 +606,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree43a6574a29155822da611790404e17208038981atargetblank43a6574a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/43a6574a29155822da611790404e17208038981a" target="_blank">43a6574</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree43a6574a29155822da611790404e17208038981atargetblank43a6574a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/43a6574a29155822da611790404e17208038981a" target="_blank">43a6574</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -640,8 +640,13 @@ Ignored files:
 Untracked files:
     Untracked:  METHODS
     Untracked:  TODO
+    Untracked:  analysis/bibliography/bibliography.bib.bak
+    Untracked:  analysis/bibliography/bibliography.bib.sav.tmp
     Untracked:  scripts/R.sh
     Untracked:  scripts/env.sh
+
+Unstaged changes:
+    Modified:   code/05-ameld-elasticnet.R
 
 </code></pre>
 <p>
@@ -686,6 +691,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/2c8fd1a5a8b3ff921bf1be53889014218ee027d5/analysis/supplement.Rmd" target="_blank">2c8fd1a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+<td>
+refactor: use short journal names
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/803521940699fbefb650f4567d9d5872332097d1/docs/supplement.html" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -914,6 +953,43 @@ feat: add first article draft with pandoc filters
 Figure 1.1: Benchmark results of machine learning algorithms.
 </p>
 </div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-benchmark-plot-1">
+Past versions of benchmark-plot-1.png
+</button>
+</p>
+<div id="fig-benchmark-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/supplement.Rmd/benchmark-plot-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>agg <span class="ot">&lt;-</span> bmrk_results<span class="sc">$</span><span class="fu">aggregate</span>(<span class="fu">msr</span>(<span class="st">&quot;surv.cindex&quot;</span>, <span class="at">id =</span> <span class="st">&quot;harrell&quot;</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>agg[, <span class="st">`</span><span class="at">:=</span><span class="st">`</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="at">nr =</span> <span class="cn">NULL</span>, <span class="at">resample_result =</span> <span class="cn">NULL</span>, <span class="at">resampling_id =</span> <span class="cn">NULL</span>, <span class="at">iters =</span> <span class="cn">NULL</span>)</span>
@@ -932,55 +1008,55 @@ Figure 1.1: Benchmark results of machine learning algorithms.
 <tbody>
 <tr class="odd">
 <td align="left">ridge.tuned</td>
-<td align="right">0.9161824</td>
+<td align="right">0.9148083</td>
 </tr>
 <tr class="even">
 <td align="left">elasticnet.tuned</td>
-<td align="right">0.9134508</td>
+<td align="right">0.9134060</td>
 </tr>
 <tr class="odd">
 <td align="left">ranger.tuned</td>
-<td align="right">0.9123586</td>
+<td align="right">0.9126126</td>
 </tr>
 <tr class="even">
 <td align="left">penlasso.tuned</td>
-<td align="right">0.9117655</td>
+<td align="right">0.9112051</td>
 </tr>
 <tr class="odd">
 <td align="left">penridge.tuned</td>
-<td align="right">0.9109179</td>
+<td align="right">0.9091442</td>
 </tr>
 <tr class="even">
 <td align="left">lasso.tuned</td>
-<td align="right">0.9104912</td>
+<td align="right">0.9087190</td>
 </tr>
 <tr class="odd">
 <td align="left">surv.rfsrc.tuned</td>
-<td align="right">0.9066976</td>
+<td align="right">0.9060092</td>
 </tr>
 <tr class="even">
 <td align="left">cox</td>
-<td align="right">0.8677244</td>
+<td align="right">0.8715474</td>
 </tr>
 <tr class="odd">
-<td align="left">svmvanbelle1.tuned</td>
-<td align="right">0.8314557</td>
+<td align="left">deepsurv.tuned</td>
+<td align="right">0.8333231</td>
 </tr>
 <tr class="even">
 <td align="left">surv.xgboost.tuned</td>
-<td align="right">0.8267293</td>
+<td align="right">0.8279431</td>
 </tr>
 <tr class="odd">
-<td align="left">coxtime.tuned</td>
-<td align="right">0.8249875</td>
+<td align="left">svmvanbelle1.tuned</td>
+<td align="right">0.8232930</td>
 </tr>
 <tr class="even">
-<td align="left">deepsurv.tuned</td>
-<td align="right">0.8212755</td>
+<td align="left">coxtime.tuned</td>
+<td align="right">0.8185314</td>
 </tr>
 <tr class="odd">
 <td align="left">svmregression.tuned</td>
-<td align="right">0.8015032</td>
+<td align="right">0.8091483</td>
 </tr>
 </tbody>
 </table>
@@ -993,13 +1069,50 @@ Figure 1.1: Benchmark results of machine learning algorithms.
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCV)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">MELD =</span> timeROC_MELD,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Na&quot;</span> <span class="ot">=</span> timeROC_MELDNa,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Plus7&quot;</span> <span class="ot">=</span> timeROC_MELDPlus7,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">RCV =</span> timeROC_RCV</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">AMELD =</span> timeROC_RCV,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">MELD =</span> timeROC_MELD,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Na&quot;</span> <span class="ot">=</span> timeROC_MELDNa,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Plus7&quot;</span> <span class="ot">=</span> timeROC_MELDPlus7</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_surv_roc_trend</span>(m)</span></code></pre></div>
 <p><img src="figure/supplement.Rmd/roc-plot-1.png" width="1728" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-roc-plot-1">
+Past versions of roc-plot-1.png
+</button>
+</p>
+<div id="fig-roc-plot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/supplement.Rmd/roc-plot-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="variable-importance" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Variable importance</h1>
@@ -1009,11 +1122,85 @@ Figure 1.1: Benchmark results of machine learning algorithms.
 Figure 3.1: Variable importance by frequency of bootstrap selections.
 </p>
 </div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-vimpbs-1">
+Past versions of vimpbs-1.png
+</button>
+</p>
+<div id="fig-vimpbs-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/supplement.Rmd/vimpbs-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimprf"></span>
 <img src="figure/supplement.Rmd/vimprf-1.png" alt="Variable importance by logrank in random forest." width="768" />
 <p class="caption">
 Figure 3.2: Variable importance by logrank in random forest.
 </p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-vimprf-1">
+Past versions of vimprf-1.png
+</button>
+</p>
+<div id="fig-vimprf-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/supplement.Rmd/vimprf-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <br>
 <p>
@@ -1044,7 +1231,7 @@ attached base packages:
 other attached packages:
  [1] ggplot2_3.3.6     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
  [5] mlr3proba_0.4.11  mlr3misc_0.10.0   mlr3_0.13.3       targets_0.12.1   
- [9] data.table_1.14.2 ameld_0.0.23      survival_3.3-1    glmnet_4.1-4     
+ [9] data.table_1.14.2 ameld_0.0.24      survival_3.3-1    glmnet_4.1-4     
 [13] Matrix_1.4-1     
 
 loaded via a namespace (and not attached):

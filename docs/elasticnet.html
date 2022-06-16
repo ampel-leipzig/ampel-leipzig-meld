@@ -554,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-15
+<strong>Last updated:</strong> 2022-06-16
 </p>
 <p>
 <strong>Checks:</strong>
@@ -682,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree43a6574a29155822da611790404e17208038981atargetblank43a6574a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/43a6574a29155822da611790404e17208038981a" target="_blank">43a6574</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree19d9fedc9c7b07996332c2ed9671ba03ad3191d7targetblank19d9feda" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree43a6574a29155822da611790404e17208038981atargetblank43a6574a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/19d9fedc9c7b07996332c2ed9671ba03ad3191d7" target="_blank">19d9fed</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/43a6574a29155822da611790404e17208038981a" target="_blank">43a6574</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -716,8 +716,13 @@ Ignored files:
 Untracked files:
     Untracked:  METHODS
     Untracked:  TODO
+    Untracked:  analysis/bibliography/bibliography.bib.bak
+    Untracked:  analysis/bibliography/bibliography.bib.sav.tmp
     Untracked:  scripts/R.sh
     Untracked:  scripts/env.sh
+
+Unstaged changes:
+    Modified:   code/05-ameld-elasticnet.R
 
 </code></pre>
 <p>
@@ -762,6 +767,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/803521940699fbefb650f4567d9d5872332097d1/docs/elasticnet.html" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -893,38 +915,38 @@ Call: arcv.glmnet(x = amelddata$x, y = amelddata$y, alpha = ameldcfg$alpha,     
 Models: 11
 Alpha: 0 0.001 0.008 0.027 0.064 0.125 0.216 0.343 0.512 0.729 1
 Number of CV for Lambda: 3
-Number of repeated CV for Lambda: 100
+Number of repeated CV for Lambda: 10
 
 
 Measure: Partial Likelihood Deviance 
 
 Lambda min:
       Alpha  Lambda Index Measure     SE Nonzero
- [1,] 0.000 0.99962    72   9.022 0.3260      41
- [2,] 0.001 0.91082    73   9.022 0.3284      36
- [3,] 0.008 0.88152    51   9.017 0.3253      25
- [4,] 0.027 0.72678    40   9.015 0.3226      19
- [5,] 0.064 0.48821    35   9.025 0.3250      17
- [6,] 0.125 0.36265    31   9.043 0.3234      15
- [7,] 0.216 0.27743    28   9.058 0.3213      11
- [8,] 0.343 0.19174    27   9.072 0.3238      10
- [9,] 0.512 0.14098    26   9.084 0.3244       9
-[10,] 0.729 0.09901    26   9.095 0.3280       9
-[11,] 1.000 0.07218    26   9.103 0.3307       9
+ [1,] 0.000 0.99962    72   9.016 0.3485      42
+ [2,] 0.001 0.99962    72   9.016 0.3483      38
+ [3,] 0.008 0.88152    51   9.013 0.3492      26
+ [4,] 0.027 0.72678    40   9.014 0.3508      20
+ [5,] 0.064 0.48821    35   9.027 0.3555      18
+ [6,] 0.125 0.36265    31   9.046 0.3585      16
+ [7,] 0.216 0.25279    29   9.064 0.3620      12
+ [8,] 0.343 0.17471    28   9.079 0.3660      12
+ [9,] 0.512 0.12845    27   9.093 0.3685       9
+[10,] 0.729 0.09022    27   9.104 0.3725       9
+[11,] 1.000 0.05993    28   9.113 0.3772      10
 
 Lambda 1se:
       Alpha Lambda Index Measure     SE Nonzero
- [1,] 0.000 4.4290    56   9.324 0.2811      41
- [2,] 0.001 4.4290    56   9.336 0.2800      32
- [3,] 0.008 3.5587    36   9.308 0.2796      22
- [4,] 0.027 2.6734    26   9.326 0.2751      16
- [5,] 0.064 1.7958    21   9.323 0.2743      11
- [6,] 0.125 1.2155    18   9.338 0.2731       9
- [7,] 0.216 0.7720    17   9.315 0.2766       9
- [8,] 0.343 0.5335    16   9.333 0.2767       7
- [9,] 0.512 0.3923    15   9.377 0.2745       6
-[10,] 0.729 0.2755    15   9.368 0.2774       5
-[11,] 1.000 0.2204    14   9.432 0.2742       5</code></pre>
+ [1,] 0.000 4.8608    55   9.340 0.3201      42
+ [2,] 0.001 4.8608    55   9.353 0.3189      32
+ [3,] 0.008 3.9057    35   9.329 0.3185      23
+ [4,] 0.027 2.9340    25   9.361 0.3135      17
+ [5,] 0.064 1.9709    20   9.369 0.3123      12
+ [6,] 0.125 1.3340    17   9.399 0.3108      10
+ [7,] 0.216 0.8472    16   9.380 0.3131       8
+ [8,] 0.343 0.5856    15   9.403 0.3103       6
+ [9,] 0.512 0.4305    14   9.454 0.3054       6
+[10,] 0.729 0.3024    14   9.444 0.3089       6
+[11,] 1.000 0.2204    14   9.441 0.3105       6</code></pre>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(arcvob)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>
@@ -949,6 +971,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/arcvob-plot-alpha-1.png" target="_blank">b20484a</a>
@@ -1001,6 +1034,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/arcvob-plot-lambdamin-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/arcvob-plot-lambdamin-1.png" target="_blank">b20484a</a>
 </td>
 <td>
@@ -1049,6 +1093,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/arcvob-plot-lambda1se-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/arcvob-plot-lambda1se-1.png" target="_blank">b20484a</a>
@@ -1129,6 +1184,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv-1.png" target="_blank">b20484a</a>
 </td>
 <td>
@@ -1177,6 +1243,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv-2.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootrcv-2.png" target="_blank">b20484a</a>
@@ -1229,6 +1306,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv-3.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootrcv-3.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -1268,6 +1356,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv-4.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootrcv-4.png" target="_blank">983ec69</a>
 </td>
 <td>
@@ -1305,6 +1404,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv-5.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/983ec69e93a2b399ab7ff8e81ba04b5727cdacbb/docs/figure/elasticnet.Rmd/bootrcv-5.png" target="_blank">983ec69</a>
@@ -1348,22 +1458,281 @@ Sebastian Gibb
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">col =</span> col, <span class="at">legend =</span> <span class="fu">names</span>(ps), <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcvcc-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcvcc-1">
+Past versions of bootrcvcc-1.png
+</button>
+</p>
+<div id="fig-bootrcvcc-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcvcc-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcvcc-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcvcc-2">
+Past versions of bootrcvcc-2.png
+</button>
+</p>
+<div id="fig-bootrcvcc-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcvcc-2.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;norm&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcvcc-3.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcvcc-3">
+Past versions of bootrcvcc-3.png
+</button>
+</p>
+<div id="fig-bootrcvcc-3" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcvcc-3.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;lambda&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcvcc-4.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcvcc-4">
+Past versions of bootrcvcc-4.png
+</button>
+</p>
+<div id="fig-bootrcvcc-4" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcvcc-4.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc<span class="sc">$</span>fit<span class="sc">$</span>glmnet.fit, <span class="at">xvar =</span> <span class="st">&quot;dev&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcvcc-5.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcvcc-5">
+Past versions of bootrcvcc-5.png
+</button>
+</p>
+<div id="fig-bootrcvcc-5" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcvcc-5.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="bootrcv.woic" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> bootrcv.woIC</h2>
 <p>Exclude IL-6 and CYSC columns from the data set.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woIC, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcv.woIC-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcv.woIC-1">
+Past versions of bootrcv.woIC-1.png
+</button>
+</p>
+<div id="fig-bootrcv.woIC-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv.woIC-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv.woIC, <span class="at">what =</span> <span class="st">&quot;selected&quot;</span>, <span class="at">cex =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <p><img src="figure/elasticnet.Rmd/bootrcv.woIC-2.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-bootrcv.woIC-2">
+Past versions of bootrcv.woIC-2.png
+</button>
+</p>
+<div id="fig-bootrcv.woIC-2" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootrcv.woIC-2.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="arcv.glmnet" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> arcv.glmnet</h2>
@@ -1392,6 +1761,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootarcv-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv-1.png" target="_blank">b20484a</a>
@@ -1444,6 +1824,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootarcv2-1.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv2-1.png" target="_blank">b20484a</a>
 </td>
 <td>
@@ -1492,6 +1883,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/803521940699fbefb650f4567d9d5872332097d1/docs/figure/elasticnet.Rmd/bootarcv2-2.png" target="_blank">8035219</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-15
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b20484abeb3ca434ad31f290a6f9531c8b40a16a/docs/figure/elasticnet.Rmd/bootarcv2-2.png" target="_blank">b20484a</a>
@@ -1545,7 +1947,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] viridisLite_0.4.0 ameld_0.0.23      survival_3.3-1    glmnet_4.1-4     
+[1] viridisLite_0.4.0 ameld_0.0.24      survival_3.3-1    glmnet_4.1-4     
 [5] Matrix_1.4-1      targets_0.12.1   
 
 loaded via a namespace (and not attached):
