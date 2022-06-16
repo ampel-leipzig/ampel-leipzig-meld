@@ -494,7 +494,7 @@ k
 The 90-day survival estimate of a given patient could be calculated as shown in
 \@ref(eq:survcalc).
 
-```{r survivalcalc, results = "asis"}
+```{r survivalcalc, results = "asis", echo = FALSE}
 cfnmsltx <- paste0("\\text{", gsub(" ", "\\ ", cfnms), "}")
 cat(
     "$$\\begin{align}",
@@ -535,7 +535,7 @@ invisible(roc <- plot_surv_roc(m, timepoint = 90, col = col[-2]))
 roc <- roc[order(-roc)]
 ```
 
-```{r roctest}
+```{r roctest, echo = FALSE}
 tp <- timeROC::compare(
     timeROC_RCV, timeROC_MELDNa,
     adjusted = TRUE
