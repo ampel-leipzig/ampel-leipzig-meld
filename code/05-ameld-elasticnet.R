@@ -2,7 +2,7 @@ tg_ameld <- list(
     tar_target(ameldcfg, list(
         alpha = seq(0, 1, len = 11)^3,
         nboot = 200L,
-        nrepcv = 100L,
+        nrepcv = 10L,
         nfolds = 3L,
         m = 50,
         times = 90,
