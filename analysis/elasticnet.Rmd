@@ -71,9 +71,9 @@ for (i in seq_along(ps)) {
 legend("topleft", col = col, legend = names(ps), pch = 19, bty = "n")
 
 plot(bootrcv, what = "selected", cex = 0.5)
-plot(bootrcv$fit$glmnet.fit, xvar = "norm")
-plot(bootrcv$fit$glmnet.fit, xvar = "lambda")
-plot(bootrcv$fit$glmnet.fit, xvar = "dev")
+plot(bootrcv$fit, what = "path", xvar = "norm", nlabel = 14, cex.lab = 0.5)
+plot(bootrcv$fit, what = "path", xvar = "lambda", nlabel = 14, cex.lab = 0.5)
+plot(bootrcv$fit, what = "path", xvar = "dev", nlabel = 14, cex.lab = 0.5)
 ```
 
 ## rcv.glmnet (complete cases only)
@@ -105,9 +105,9 @@ for (i in seq_along(ps)) {
 legend("topleft", col = col, legend = names(ps), pch = 19, bty = "n")
 
 plot(bootrcvcc, what = "selected", cex = 0.5)
-plot(bootrcvcc$fit$glmnet.fit, xvar = "norm")
-plot(bootrcvcc$fit$glmnet.fit, xvar = "lambda")
-plot(bootrcvcc$fit$glmnet.fit, xvar = "dev")
+plot(bootrcvcc$fit, what = "path", xvar = "norm", nlabel = 14, cex.lab = 0.5)
+plot(bootrcvcc$fit, what = "path", xvar = "lambda", nlabel = 14, cex.lab = 0.5)
+plot(bootrcvcc$fit, what = "path", xvar = "dev", nlabel = 14, cex.lab = 0.5)
 ```
 
 ## bootrcv.woIC
