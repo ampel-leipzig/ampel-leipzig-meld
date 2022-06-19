@@ -43,6 +43,7 @@ date: "`r Sys.Date()`"
 bibliography:
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'bibliography.bib')`"
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'article.bib')`"
+  - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'ameld.bib')`"
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'zlog.bib')`"
 output:
   bookdown::html_document2:
@@ -67,6 +68,12 @@ knitr::write_bib(
     ),
     file = rprojroot::find_rstudio_root_file(
         "analysis", "bibliography", "rpackages", "article.bib"
+    )
+)
+cat(
+    gsub("@Manual\\{", "@Manual\\{R-ameld", toBibtex(citation("ameld"))),
+    file = rprojroot::find_rstudio_root_file(
+        "analysis", "bibliography", "rpackages", "ameld.bib"
     )
 )
 cat(
@@ -804,13 +811,15 @@ Few patients with high MELD scores, poor calibration for high mortality
 - unknown cause of death (death with vs of end-stage liver disease)
 - bias caused by LTx censorship?
 -->
+
 # Data and software availability
 
-**TODO** add zenodo links here.
 The complete code and reproducible analysis could be found at
 https://ampel-leipzig.github.io/ampel-leipzig-meld/.
-Additionally all data are available in the `ameld` R package at
-https://github.com/ampel-leipzig/ameld for further investigations.
+Additionally all data are available in the `ameld` R package [@R-ameld] at
+https://github.com/ampel-leipzig/ameld
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg)](https://doi.org/10.5281/zenodo.6666018)
+for further investigations.
 
 # Acknowledgement
 
