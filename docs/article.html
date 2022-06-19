@@ -745,20 +745,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree071324c7085d9f996836d3f14b8177d29929826atargetblank071324ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeac8a09d21167c0d12ade7344b93dcc5f211ea00atargetblankac8a09da">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/071324c7085d9f996836d3f14b8177d29929826a" target="_blank">071324c</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ac8a09d21167c0d12ade7344b93dcc5f211ea00a" target="_blank">ac8a09d</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree071324c7085d9f996836d3f14b8177d29929826atargetblank071324ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeac8a09d21167c0d12ade7344b93dcc5f211ea00atargetblankac8a09da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/071324c7085d9f996836d3f14b8177d29929826a" target="_blank">071324c</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ac8a09d21167c0d12ade7344b93dcc5f211ea00a" target="_blank">ac8a09d</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -821,6 +821,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/396872946953ef952957f2a742e35bb99d3c1b61/analysis/article.Rmd" target="_blank">3968729</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-19
+</td>
+<td>
+feat: cite ameld with zenodo doi
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/fb43d010446fb8613cf15ede3371bf2c236599d9/docs/article.html" target="_blank">fb43d01</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-19
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2745,11 +2779,12 @@ Few patients with high MELD scores, poor calibration for high mortality
 </div>
 <div id="data-and-software-availability" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Data and software availability</h1>
-<p><strong>TODO</strong> add zenodo links here.
-The complete code and reproducible analysis could be found at
+<p>The complete code and reproducible analysis could be found at
 <a href="https://ampel-leipzig.github.io/ampel-leipzig-meld/" class="uri">https://ampel-leipzig.github.io/ampel-leipzig-meld/</a>.
-Additionally all data are available in the <code>ameld</code> R package at
-<a href="https://github.com/ampel-leipzig/ameld" class="uri">https://github.com/ampel-leipzig/ameld</a> for further investigations.</p>
+Additionally all data are available in the <code>ameld</code> R package <span class="citation">(Gibb 2022)</span> at
+<a href="https://github.com/ampel-leipzig/ameld" class="uri">https://github.com/ampel-leipzig/ameld</a>
+<a href="https://doi.org/10.5281/zenodo.6666018"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg" alt="DOI" /></a>
+for further investigations.</p>
 </div>
 <div id="acknowledgement" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Acknowledgement</h1>
@@ -2820,6 +2855,9 @@ Friedman, Jerome, Trevor Hastie, Rob Tibshirani, Balasubramanian Narasimhan, Ken
 </div>
 <div id="ref-R-zlog" class="csl-entry">
 Gibb, Sebastian. 2021. <em><span class="nocase">zlog</span>: Z(log) Transformation for Laboratory Measurements</em>. <a href="https://doi.org/10.5281/zenodo.4727117">https://doi.org/10.5281/zenodo.4727117</a>.
+</div>
+<div id="ref-R-ameld" class="csl-entry">
+———. 2022. <em>Data and Model of End-Stage Liver Disease Used in the <span>AMPEL</span> Project</em>. <a href="https://doi.org/10.5281/zenodo.6666018">https://doi.org/10.5281/zenodo.6666018</a>.
 </div>
 <div id="ref-penalized2010" class="csl-entry">
 Goeman, J. J. 2010. <span>“L1 Penalized Estimation in the Cox Proportional Hazards Model.”</span> <em>Biometrical Journal</em>, no. 52, 1: –14.
@@ -2957,7 +2995,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] gtsummary_1.6.0   timeROC_0.4       ameld_0.0.24      survival_3.3-1   
+ [1] gtsummary_1.6.0   timeROC_0.4       ameld_0.0.26      survival_3.3-1   
  [5] glmnet_4.1-4      Matrix_1.4-1      viridis_0.6.2     viridisLite_0.4.0
  [9] mlr3viz_0.5.9     ggplot2_3.3.6     targets_0.12.1   
 
