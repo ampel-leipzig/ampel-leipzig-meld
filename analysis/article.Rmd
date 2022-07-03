@@ -18,7 +18,7 @@ abstract: >
       Penalized regression algorithms yield the highest prediction performance in our ML algorithm benchmark.
       In favour of a simpler model we chose the least absolute shrinkage and selection operator (lasso) regression.
       Beside the classical MELD variables INR and bilirubin the lasso regression selected
-      cystatin c over creatinine, and additionally IL-6, total protein and cholinesterase.
+      cystatin C over creatinine, and additionally IL-6, total protein and cholinesterase.
       The new model offers a better discrimination and calibration than MELD and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.
 
   **Conclusion**:
@@ -483,7 +483,7 @@ knitr::kable(
 The resulting model AMPEL model of end-stage liver disease
 (AMELD) uses `r length(cfs)` predictors.
 Beside the classical MELD variables INR and (direct) bilirubin the lasso
-regression selected cystatin c over creatinine, and
+regression selected cystatin C over creatinine, and
 additionally IL-6, total protein and cholinesterase.
 
 ```{r basehaz, echo = FALSE}
@@ -677,7 +677,7 @@ allow us to avoid the sample depending scaling prior to model development.
 Both should increase the external applicability of our approach.
 
 Our model, AMELD, uses `r length(cfs)` predictors.
-Half of them, INR, (direct) bilirubin, and cystatin c are identical
+Half of them, INR, (direct) bilirubin, and cystatin C are identical
 or similar to the labortory measurements utilized in the classical MELD.
 The direct bilirubin selected by our approach and the total bilirubin in MELD
 are highly correlated (spearman correlation:
@@ -780,7 +780,7 @@ AMELD for very ill patients.
 In conclusion we developed a new model to predict the 90-day survival of
 patients during the evaluation process for liver transplantation.
 Our model, AMELD, extends the classical MELD predictors, INR,
-(direct) bilirubin, cystatin c (instead of creatinine) by
+(direct) bilirubin, cystatin C (instead of creatinine) by
 synthesis parameters total protein and cholinesterase and
 most importantly the inflammatory marker IL-6.
 Using these `r length(cfs)` laboratory measurments the AMELD
