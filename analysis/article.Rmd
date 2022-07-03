@@ -281,8 +281,9 @@ All data processing, statistical and machine learning analyses were performed
 using R version
 `r paste0(sessionInfo()$R.version[c("major", "minor")], collapse = ".")`
 [@R-base].
-Prior to the analyses all laboratory values were *zlog* transformed
-as described in @hoffmann2017 and implemented in @R-zlog.
+Prior to the analyses all laboratory values were *zlog* transformed to
+approximate a normal distribution as described in
+@hoffmann2017 and implemented in @R-zlog.
 
 $$
 z = (\log(x) - \frac{\log(LL) + \log(UL)}{2}) * \frac{3.92}{\log(UL) - \log(LL)}
@@ -313,23 +314,24 @@ extreme gradient boosting [@chen2016; @R-xgboost],
 two different support vector machines [@vanbelle2011; @R-survivalsvm]
 and two neural networks [@katzman2018; @kvamme2019; @R-survivalmodels].
 
-To choose the best model we used nested resampling to avoid feature- and
-model-selection-bias.
+We used nested resampling to avoid feature- and
+model-selection-bias to get reliable metrics to choose the best model.
 Therefore, we applied a `r crossval$inner$param_set$values$folds`-fold inner
 and a `r crossval$outer$param_set$values$folds`-fold outer cross-validation
 that was repeated `r crossval$outer$param_set$values$repeats` times.
 We searched the hyperparameter space using a grid search with a resolution of
 `r tuner$param_set$get_values()$resolution`.
-Subsequently we selected the model with the
-highest median concordance index [@harrell1982]. If multiple models were
-comparable we chose the simpler (more penalized) one.
+The models were evaluated using the concordance index, which is a measure of
+rank correlation between predicted and observed events [@harrell1982].
+Subsequently we selected the model with the highest median concordance index.
+If multiple models were comparable we chose the simpler (more penalized) one.
 
 After selecting the final model we trained and validated it as described in
 @harrell1996.
 Briefly we developed our model using a `r ameldcfg$nfold` cross-validation
 that was repeated `r ameldcfg$nrepcv` times and finally predicted survival
 at `r ameldcfg$times` days.
-The predictions were grouped into equal sized intervals so that there
+The predictions were sorted and grouped into equal sized intervals so that there
 are `r ameldcfg$m` patients in each interval.
 For each group the mean survival probability and the difference to the
 Kaplan-Meier estimate was calculated.
@@ -491,7 +493,7 @@ bh <- basehaz(
     bootrcv$fit, x = amelddata$x, y = amelddata$y, s = "lambda.1se",
     times = timeROC_RCV$times, centered = FALSE
 )
-s0 <- setNames(bh$hazard, bh$time)
+s0 <- setNames(1 - bh$hazard, bh$time)
 k <- knitr::kable(
     t(s0),
     digits = 4,
@@ -560,7 +562,7 @@ rownames(tp) <- paste(
 knitr::kable(
     tp,
     caption = paste0(
-        "Test comparison between AUCROC for MELD-Na and AMELD",
+        "Test comparison between AUCROC for MELD-Na and AMELD ",
         "according to @blanche2013 at day ",
         paste0(timeROC_RCV$times, collapse = ", "), ".",
         "$p$-values are shown as non-adjusted and adjusted for ",
@@ -576,7 +578,7 @@ However, the difference against the second best model `r names(roc)[2]`
 `r paste0("$p = ", round(tp[2, "t=90"], 2), "$")`) after correction for multiple
 testing (see Table \@ref(tab:roctest) for complete comparison).
 
-```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = "Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.", echo = FALSE}
+```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.'), echo = FALSE}
 par(cex = 0.9)
 plot(
     bootrcv,
@@ -823,7 +825,7 @@ for further investigations.
 
 # Acknowledgement
 
-The study was supported by the AMPEL project (www.ampel.care).
+The study was supported by the AMPEL project ([www.ampel.care](https://www.ampel.care)).
 This project is co-financed through public funds according to the budget
 decided by the Saxon State Parliament under the
 RL eHealthSax 2017/18 grant number 100331796.
@@ -833,8 +835,9 @@ but did not have any additional role in the study design,
 data collection and analysis, decision to publish, or preparation
 of the manuscript.
 We thank the whole AMPEL team for their support,
-and Stefan Kemnitz for his technical support regarding the use of the
-HPC cluster of the University Greifswald.
+Stefan Kemnitz for his technical support regarding the use of the
+HPC cluster of the University Greifswald and
+Bernd Klaus for helpful discussions about survival analysis and proof reading the manuscript.
 
 
 ```{r co2e, include = FALSE}
