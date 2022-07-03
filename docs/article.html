@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,2,✉, and Thorsten Kaiser1" />
 
-<meta name="date" content="2022-06-19" />
+<meta name="date" content="2022-07-03" />
 
 <title>A New Model to Predict Survival in Patients with End-Stage Liver Disease</title>
 
@@ -566,7 +566,7 @@ div.tocify {
 <h1 class="title toc-ignore">A New Model to Predict Survival in Patients with End-Stage Liver Disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,2,✉</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2022-06-19</h4>
+<h4 class="date">2022-07-03</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Objectives</strong>:
@@ -579,7 +579,7 @@ After comparing 13 different ML algorithms in a nested cross-validation setting 
 Penalized regression algorithms yield the highest prediction performance in our ML algorithm benchmark.
 In favour of a simpler model we chose the least absolute shrinkage and selection operator (lasso) regression.
 Beside the classical MELD variables INR and bilirubin the lasso regression selected
-cystatin c over creatinine, and additionally IL-6, total protein and cholinesterase.
+cystatin C over creatinine, and additionally IL-6, total protein and cholinesterase.
 The new model offers a better discrimination and calibration than MELD and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.</p>
 <p><strong>Conclusion</strong>:
 We provide a new model of end-stage liver disease that outperforms the classical MELD score for 90-day survival prediction.</p>
@@ -617,7 +617,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-19
+<strong>Last updated:</strong> 2022-07-03
 </p>
 <p>
 <strong>Checks:</strong>
@@ -745,20 +745,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeac8a09d21167c0d12ade7344b93dcc5f211ea00atargetblankac8a09da">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree048c9bbb59924051c1ca1279916cd056f7c606f4targetblank048c9bba">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ac8a09d21167c0d12ade7344b93dcc5f211ea00a" target="_blank">ac8a09d</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/048c9bbb59924051c1ca1279916cd056f7c606f4" target="_blank">048c9bb</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeac8a09d21167c0d12ade7344b93dcc5f211ea00atargetblankac8a09da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree048c9bbb59924051c1ca1279916cd056f7c606f4targetblank048c9bba" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/ac8a09d21167c0d12ade7344b93dcc5f211ea00a" target="_blank">ac8a09d</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/048c9bbb59924051c1ca1279916cd056f7c606f4" target="_blank">048c9bb</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -821,6 +821,74 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/048c9bbb59924051c1ca1279916cd056f7c606f4/analysis/article.Rmd" target="_blank">048c9bb</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-03
+</td>
+<td>
+feat: round spearman correlation to 2 digits
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/6c15d1c67c26a0fb63c4088063abb686e4087186/analysis/article.Rmd" target="_blank">6c15d1c</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-03
+</td>
+<td>
+refactor: integrate Bernd’s suggestions
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/464175f5495754453593c5c20729079a2cacae15/analysis/article.Rmd" target="_blank">464175f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-03
+</td>
+<td>
+fix: cystatin c
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/9da49ce6f3cadb32b926eb9bf38e1d52349a47d1/docs/article.html" target="_blank">9da49ce</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-19
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1532,8 +1600,9 @@ its original publication <span class="citation">(Kartoun et al. 2017)</span>.</p
 using R version
 4.2.0
 <span class="citation">(R Core Team 2022)</span>.
-Prior to the analyses all laboratory values were <em>zlog</em> transformed
-as described in <span class="citation">Hoffmann et al. (2017)</span> and implemented in <span class="citation">Gibb (2021)</span>.</p>
+Prior to the analyses all laboratory values were <em>zlog</em> transformed to
+approximate a normal distribution as described in
+<span class="citation">Hoffmann et al. (2017)</span> and implemented in <span class="citation">Gibb (2021)</span>.</p>
 <p><span class="math display">\[
 z = (\log(x) - \frac{\log(LL) + \log(UL)}{2}) * \frac{3.92}{\log(UL) - \log(LL)}
 \]</span></p>
@@ -1560,22 +1629,23 @@ two different random forest implementations
 extreme gradient boosting <span class="citation">(T. Chen and Guestrin 2016; Tianqi Chen et al. 2022)</span>,
 two different support vector machines <span class="citation">(Belle et al. 2011; Fouodo 2018)</span>
 and two neural networks <span class="citation">(Katzman et al. 2018; Kvamme, Borgan, and Scheel 2019; Sonabend 2022)</span>.</p>
-<p>To choose the best model we used nested resampling to avoid feature- and
-model-selection-bias.
+<p>We used nested resampling to avoid feature- and
+model-selection-bias to get reliable metrics to choose the best model.
 Therefore, we applied a 5-fold inner
 and a 3-fold outer cross-validation
 that was repeated 10 times.
 We searched the hyperparameter space using a grid search with a resolution of
 10.
-Subsequently we selected the model with the
-highest median concordance index <span class="citation">(Harrell 1982)</span>. If multiple models were
-comparable we chose the simpler (more penalized) one.</p>
+The models were evaluated using the concordance index, which is a measure of
+rank correlation between predicted and observed events <span class="citation">(Harrell 1982)</span>.
+Subsequently we selected the model with the highest median concordance index.
+If multiple models were comparable we chose the simpler (more penalized) one.</p>
 <p>After selecting the final model we trained and validated it as described in
 <span class="citation">Harrell, Lee, and Mark (1996)</span>.
 Briefly we developed our model using a 3 cross-validation
 that was repeated 10 times and finally predicted survival
 at 90 days.
-The predictions were grouped into equal sized intervals so that there
+The predictions were sorted and grouped into equal sized intervals so that there
 are 50 patients in each interval.
 For each group the mean survival probability and the difference to the
 Kaplan-Meier estimate was calculated.
@@ -2431,7 +2501,7 @@ worse performance.</p>
 <p>The resulting model AMPEL model of end-stage liver disease
 (AMELD) uses 6 predictors.
 Beside the classical MELD variables INR and (direct) bilirubin the lasso
-regression selected cystatin c over creatinine, and
+regression selected cystatin C over creatinine, and
 additionally IL-6, total protein and cholinesterase.</p>
 <table>
 <caption><span id="tab:basehaz">Table 3.4: </span>Underlying survival function; S<sub>0</sub>: baseline survival estimate</caption>
@@ -2449,18 +2519,18 @@ additionally IL-6, total protein and cholinesterase.</p>
 <tbody>
 <tr class="odd">
 <td align="left">S<sub>0</sub> (t)</td>
-<td align="right">0.0033</td>
-<td align="right">0.0088</td>
-<td align="right">0.0184</td>
-<td align="right">0.0339</td>
-<td align="right">0.0454</td>
-<td align="right">0.0511</td>
+<td align="right">0.9967</td>
+<td align="right">0.9912</td>
+<td align="right">0.9816</td>
+<td align="right">0.9661</td>
+<td align="right">0.9546</td>
+<td align="right">0.9489</td>
 </tr>
 </tbody>
 </table>
 <p>The 90-day survival estimate of a given patient could be calculated as shown in
 <a href="#eq:survcalc">(3.1)</a>.</p>
-<p><span class="math display" id="eq:survcalc">\[\begin{align} S &amp;= S_{0,90}^{\exp{LP}} \\ &amp;=  0.0339 ^{\exp{( 0.1929 * zlog(\text{IL-6})-0.0805 * zlog(\text{Total protein})+0.0667 * zlog(\text{INR})-0.0368 * zlog(\text{Cholinesterase})+0.026 * zlog(\text{Cystatin C})+0.0098 * zlog(\text{Direct bilirubin}) )}}
+<p><span class="math display" id="eq:survcalc">\[\begin{align} S &amp;= S_{0,90}^{\exp{LP}} \\ &amp;=  0.9661 ^{\exp{( 0.1929 * zlog(\text{IL-6})-0.0805 * zlog(\text{Total protein})+0.0667 * zlog(\text{INR})-0.0368 * zlog(\text{Cholinesterase})+0.026 * zlog(\text{Cystatin C})+0.0098 * zlog(\text{Direct bilirubin}) )}}
 \tag{3.1}
 \end{align}
 \]</span>
@@ -2521,7 +2591,7 @@ Sebastian Gibb
 </div>
 </div>
 <table>
-<caption><span id="tab:roctest">Table 3.5: </span>Test comparison between AUCROC for MELD-Na and AMELDaccording to <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span> at day 2, 7, 30, 90, 180, 365.<span class="math inline">\(p\)</span>-values are shown as non-adjusted and adjusted for multiple testing.</caption>
+<caption><span id="tab:roctest">Table 3.5: </span>Test comparison between AUCROC for MELD-Na and AMELD according to <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span> at day 2, 7, 30, 90, 180, 365.<span class="math inline">\(p\)</span>-values are shown as non-adjusted and adjusted for multiple testing.</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -2560,9 +2630,11 @@ However, the difference against the second best model MELD-Na
 <span class="math inline">\(p = 0.15\)</span>) after correction for multiple
 testing (see Table <a href="#tab:roctest">3.5</a> for complete comparison).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bootrcv"></span>
-<img src="figure/article.Rmd/bootrcv-1.png" alt="Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7." width="768" />
+<img src="figure/article.Rmd/bootrcv-1.png" alt="Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.
+ The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate." width="768" />
 <p class="caption">
 Figure 3.1: Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.
+The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.
 </p>
 </div>
 <p>
@@ -2651,11 +2723,11 @@ The already nearly normal scaled <em>zlog</em>-transformed laboratory measuremen
 allow us to avoid the sample depending scaling prior to model development.
 Both should increase the external applicability of our approach.</p>
 <p>Our model, AMELD, uses 6 predictors.
-Half of them, INR, (direct) bilirubin, and cystatin c are identical
+Half of them, INR, (direct) bilirubin, and cystatin C are identical
 or similar to the labortory measurements utilized in the classical MELD.
 The direct bilirubin selected by our approach and the total bilirubin in MELD
 are highly correlated (spearman correlation:
-1) and
+0.96) and
 therefore interchangeable.</p>
 <p>In our feature selection process cystatin C was chosen instead of creatinine.
 This is inline with recent studies that show a better prediction of mortality
@@ -2745,7 +2817,7 @@ AMELD for very ill patients.</p>
 <p>In conclusion we developed a new model to predict the 90-day survival of
 patients during the evaluation process for liver transplantation.
 Our model, AMELD, extends the classical MELD predictors, INR,
-(direct) bilirubin, cystatin c (instead of creatinine) by
+(direct) bilirubin, cystatin C (instead of creatinine) by
 synthesis parameters total protein and cholinesterase and
 most importantly the inflammatory marker IL-6.
 Using these 6 laboratory measurments the AMELD
@@ -2788,7 +2860,7 @@ for further investigations.</p>
 </div>
 <div id="acknowledgement" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Acknowledgement</h1>
-<p>The study was supported by the AMPEL project (www.ampel.care).
+<p>The study was supported by the AMPEL project (<a href="https://www.ampel.care">www.ampel.care</a>).
 This project is co-financed through public funds according to the budget
 decided by the Saxon State Parliament under the
 RL eHealthSax 2017/18 grant number 100331796.
@@ -2798,8 +2870,9 @@ but did not have any additional role in the study design,
 data collection and analysis, decision to publish, or preparation
 of the manuscript.
 We thank the whole AMPEL team for their support,
-and Stefan Kemnitz for his technical support regarding the use of the
-HPC cluster of the University Greifswald.</p>
+Stefan Kemnitz for his technical support regarding the use of the
+HPC cluster of the University Greifswald and
+Bernd Klaus for helpful discussions about survival analysis and proof reading the manuscript.</p>
 <p>The calculations were conducted using the high performance computing (HPC)
 cluster of the University Greifswald.
 In 2018 the average carbon efficiency of the German power grid was
