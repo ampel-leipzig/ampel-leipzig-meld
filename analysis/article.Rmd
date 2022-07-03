@@ -683,7 +683,7 @@ Half of them, INR, (direct) bilirubin, and cystatin C are identical
 or similar to the labortory measurements utilized in the classical MELD.
 The direct bilirubin selected by our approach and the total bilirubin in MELD
 are highly correlated (spearman correlation:
-`r round(cor(amelddata$x, method = "spearman")["BILI_S", "BILID_S"])`) and
+`r round(cor(amelddata$x, method = "spearman")["BILI_S", "BILID_S"], 2)`) and
 therefore interchangeable.
 
 In our feature selection process cystatin C was chosen instead of creatinine.
