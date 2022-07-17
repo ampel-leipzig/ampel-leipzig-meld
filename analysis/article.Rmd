@@ -7,25 +7,38 @@ subtitle: >
     Comparision against MELD, MELD-Na, MELD-Plus7.
 abstract: >
   **Objectives**:
-      The shortage in grafts for liver transplantation requires risk stratification and allocation rules.
-      This study aims to improve the model of end-stage liver disease (MELD) score for 90-day mortality prediction as an risk stratification tool with the help of machine learning (ML) algorithms.
+      The shortage in grafts for liver transplantation requires
+      risk stratification and adequate allocation rules.
+      This study aims to improve the model of end-stage liver disease (MELD)
+      score for 90-day mortality prediction with the help of different
+      machine learning (ML) algorithms.
 
   **Methods**:
-      We retrospectively analysed clinical and laboratory data of 654 patients who were recruited during the evaluation process for liver transplantation at the University Hospital Leipzig.
-      After comparing 13 different ML algorithms in a nested cross-validation setting and selecting the best performing one we build a new model to predict 90-day mortality in patients with end-stage liver disease.
+      We retrospectively analyzed clinical and laboratory data of 654
+      patients who were recruited during the evaluation process for
+      liver transplantation at the University Hospital Leipzig.
+      After comparing 13 different ML algorithms in a nested cross-validation
+      setting and selecting the best performing one we build a new model
+      to predict 90-day mortality in patients with end-stage liver disease.
 
   **Results**:
-      Penalized regression algorithms yield the highest prediction performance in our ML algorithm benchmark.
-      In favour of a simpler model we chose the least absolute shrinkage and selection operator (lasso) regression.
-      Beside the classical MELD variables INR and bilirubin the lasso regression selected
-      cystatin C over creatinine, and additionally IL-6, total protein and cholinesterase.
-      The new model offers a better discrimination and calibration than MELD and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.
+      Penalized regression algorithms yield the highest prediction performance
+      in our ML algorithm benchmark.
+      In favour of a simpler model we chose the least absolute shrinkage and
+      selection operator (lasso) regression.
+      Beside the classical MELD variables INR and bilirubin the
+      lasso regression selected cystatin C over creatinine, and
+      additionally IL-6, total protein and cholinesterase.
+      The new model offers an improved discrimination and calibration than MELD
+      and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.
 
   **Conclusion**:
-      We provide a new model of end-stage liver disease that outperforms the classical MELD score for 90-day survival prediction.
+      We provide a new ML based model of end-stage liver disease that
+      outperforms the classical MELD score for 90-day survival prediction.
 
   **Keywords**:
-      end-stage liver disease; MELD; risk stratification; machine learning; survival estimation; IL-6.
+      end-stage liver disease; MELD; risk stratification; machine learning;
+      survival estimation; IL-6.
 
 author:
     - Sebastian Gibb:
@@ -116,16 +129,18 @@ tar_load(timeROC_RCV)
 # Introduction
 
 Liver cirrhosis is the terminal result of fibrotic remodeling
-of liver tissue due to chronic damage. An organ failure is often
-irreversible and the only available therapy is liver transplantation.
+of liver tissue due to chronic damage.
+This end-stage of liver disease is usually irreversible and
+the only available therapy is liver transplantation.
 However, the shortage in grafts for transplantation from deceased donors
-requires risk stratification and precise allocation rules.
+requires risk stratification and precise and fair allocation rules.
 The allocation of liver transplantation in most countries is based on
 disease severity determined by the model of end-stage liver disease (MELD)
 [@malinchoc2000; @wiesner2003; @optn_policies2021].
 The MELD score estimates the patients' 3-month mortality risk based on
 laboratory results, namely bilirubin, creatinine and international normalized
-ratio (INR). In general the MELD score is extended by the sodium level
+ratio (INR).
+The MELD score has been extended by the sodium level
 (MELD-Na score) as this was found to be an important additional risk factor in
 liver cirrhosis [@kim2008; @optn_policies2021].
 The MELD was initially developed for predicting the survival of patients
@@ -573,10 +588,11 @@ knitr::kable(
 ```
 
 AMELD offers the best AUROC (`r round(roc["AMELD"], 3)`) across all competitors.
-However, the difference against the second best model `r names(roc)[2]`
-(AUROC: `r round(roc[2], 3)`) is not statistical significant (
-`r paste0("$p = ", round(tp[2, "t=90"], 2), "$")`) after correction for multiple
-testing (see Table \@ref(tab:roctest) for complete comparison).
+However, after correction for multiple testing the difference against
+the second best model `r names(roc)[2]`
+(AUROC: `r round(roc[2], 3)`) is not statistical significant
+(`r paste0("$p = ", round(tp[2, "t=90"], 2), "$")`)
+(see Table \@ref(tab:roctest) for complete comparison).
 
 ```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.'), echo = FALSE}
 par(cex = 0.9)
@@ -660,16 +676,16 @@ of MELD-Na over MELD the sodium does not add any information to the score.
 Neither in the bootstrap selection nor in the variable importance of a
 random forest model the sodium gains any important weight
 (`r bsranktxt` and `r rfranktxt`, see \@ref(fig:vimpbs), \@ref(fig:vimprf)).
-Already @kartoun2017 have shown that the
-discrimination performance of MELD-Na is insignificantly different from the
-classical MELD.
+In addition sodium levels can be affected by diuretic therapy and already
+@kartoun2017 have shown that the discrimination performance of MELD-Na is
+insignificantly different from the classical MELD.
 Consequentially it is not a component of our model.
 
-It has shown that women get lower scores in MELD-Na and therefore
+It has shown that women receive in median lower scores in MELD-Na and therefore
 are less likely getting an urgent listing for liver transplantation
 [@gaertner2022].
 To address sexual differences in laboratory measurements we applied the *zlog*
-transformation [@hoffmann2017].
+transformation [@hoffmann2017] in our study.
 Additionally this transformation yield comparable laboratory measurements
 across different clinical laboratories and methods.
 It also reduce the influence of age- and sex-related differences,
@@ -755,11 +771,10 @@ Principally it is a single center, retrospective analysis and without an
 external validation cohort.
 The data were collected during the evaluation process for liver transplantation
 at the University Hospital of Leipzig.
-There was no controlled follow-up process. Instead the follow-up information
-were recored at the next clinical admission.
-Furthermore we excluded all patients who had already a liver transplantation
+There was no controlled follow-up process.
+We excluded all patients who had already a liver transplantation
 which could artificial lower the disease severity of the cohort.
-Next most of our patients suffered from ethyltoxic liver cirrhosis
+Furthermore most of our patients suffered from ethyltoxic liver cirrhosis
 (`r .tbl1("Ethyltoxic", pattern = "{p}%")`) which may
 limited the transfer to other etiologies.
 
@@ -773,7 +788,7 @@ Although our cohort was healthier with a medium mortality rate the classical
 MELD score underestimates the observed mortality
 `r paste(round(range(tbl_observed_vs_expected_mortality$StandardizedMortalityRatio[-1]), 1), collapse = " to ")`
 times.
-Unfortunately our sample size is very low in the high risk patient category
+Unfortunately our sample size is low in the high risk patient category
 which yield a poor but better than MELD based prediction performance of our
 AMELD for very ill patients.
 
@@ -880,7 +895,7 @@ carkgco2e <- 153 / 1000
 km <- kgco2e / carkgco2e
 ```
 
-The calculations were conducted using the high performance computing (HPC)
+The calculations were conducted using the high-performance computing (HPC)
 cluster of the University Greifswald.
 In 2018 the average carbon efficiency of the German power grid was
 `r kgco2kwh` kgCO~2~eq/kWh [@icha2021].
