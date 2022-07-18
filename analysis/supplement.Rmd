@@ -40,7 +40,7 @@ autoplot(r) +
     theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
 
-```{r benchmark-table}
+```{r benchmark-table, echo = FALSE}
 agg <- bmrk_results$aggregate(msr("surv.cindex", id = "harrell"))
 agg[, `:=`
     (nr = NULL, resample_result = NULL, resampling_id = NULL, iters = NULL)
@@ -53,7 +53,7 @@ knitr::kable(agg, col.names = c("Learner ID", "Harrell C"))
 
 # AUROC trend
 
-```{r roc-plot, fig.width = 18, fig.height = 12}
+```{r roc-plot, echo = FALSE, fig.width = 18, fig.height = 12}
 tar_load(timeROC_MELD)
 tar_load(timeROC_MELDNa)
 tar_load(timeROC_MELDPlus7)
