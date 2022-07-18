@@ -218,7 +218,7 @@ For each patient we recorded `r ncol(raw_data)` variables.
 Among them are age, sex, etiology of liver disease, complications as listed in
 Table \@ref(tab:tbl1) and `r length(cn_labs)` laboratory measurements.
 
-```{r flowchart, results = "asis", eval = knitr::is_html_output(), echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion."}
+```{r flowchart, results = "asis", eval = knitr::is_html_output(), echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion.", dev = c("png", "pdf")}
 graph <- "
 digraph flowchart {
     graph [splines = false];
@@ -616,7 +616,7 @@ the second best model `r names(roc)[2]`
 (`r paste0("$p = ", round(tp[2, "t=90"], 2), "$")`)
 (see Table \@ref(tab:roctest) for complete comparison).
 
-```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.'), echo = FALSE}
+```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.'), dev = c('png', 'pdf'), echo = FALSE}
 par(cex = 0.9)
 plot(
     bootrcv,
