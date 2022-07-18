@@ -149,9 +149,10 @@ Afterwards it was revalidated for predicting mortality risk in patients awaiting
 a liver transplantation.
 Although the MELD score should be an objective allocation score especially the
 creatinine and INR are highly dependent on the utilized laboratory methods
-[@trotter2004; @cholongitas2007]. Patients with identical disease state could
-have very different MELD scores and thus get different priority on the liver
-transplantation waiting list.
+[@trotter2004; @cholongitas2007].
+Additionally women are disadvantage [@sealock2022].
+Patients with identical disease state could have very different MELD scores and
+thus get different priority on the liver transplantation waiting list.
 Furthermore often, e.g. for acute-on-chronic liver failure, the MELD score
 underestimates the mortality risk [@hernaez2020].
 
@@ -683,7 +684,7 @@ Consequentially it is not a component of our model.
 
 It has shown that women receive in median lower scores in MELD-Na and therefore
 are less likely getting an urgent listing for liver transplantation
-[@gaertner2022].
+[@sealock2022].
 To address sexual differences in laboratory measurements we applied the *zlog*
 transformation [@hoffmann2017] in our study.
 Additionally this transformation yield comparable laboratory measurements
