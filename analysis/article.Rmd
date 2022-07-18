@@ -278,25 +278,25 @@ Medicine approved the retrospective usage of the data for our study
 
 MELD and MELD-Na were calculated as described in
 @optn_policies2021 using the following formulas:
-$MELD = 10 * (0.957 \ln(creatinine [mg/dl]) + 0.378 \ln(bilirubin [mg/dl]) + 1.120 * \ln(INR) + 0.643)$,
-Creatinine, bilirubin and INR values lower than 1.0 mg/dl were set to 1.0 mg/dl.
-The maximum allowed creatinine was 4.0 mg/dl. If patients received dialysis,
-creatinine was set to 4.0 mg/dl.
+$MELD = 10 * (0.957 \ln(creatinine [mg/dL]) + 0.378 \ln(bilirubin [mg/dL]) + 1.120 * \ln(INR) + 0.643)$,
+Creatinine, bilirubin and INR values lower than 1.0 mg/dL were set to 1.0 mg/dL.
+The maximum allowed creatinine was 4.0 mg/dL. If patients received dialysis,
+creatinine was set to 4.0 mg/dL.
 For MELD-Na MELD was calculated as above and recalculated if greater than 11 using:
-$MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/l]) - (0.033 * MELD_i * (137 - Na [mmol/l]))$
+$MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/L]) - (0.033 * MELD_i * (137 - Na [mmol/L]))$
 
-Serum sodium values lower than 125 mmol/l or higher than 137 mmol/l were set
-to 125 mmol/l and 137 mmol/l, respectively.
+Serum sodium values lower than 125 mmol/L or higher than 137 mmol/L were set
+to 125 mmol/L and 137 mmol/L, respectively.
 
 The MELD-Plus7 risk score was calculated as described in @kartoun2017:
 $$
 \begin{aligned}
 L = 8.53499496 &+ \\
-    2.59679650 &* \log_{10}(1 + creatinine [mg/dl]) + \\
-    2.06503238 &* \log_{10}(1 + bilirubin [mg/dl]) + \\
+    2.59679650 &* \log_{10}(1 + creatinine [mg/dL]) + \\
+    2.06503238 &* \log_{10}(1 + bilirubin [mg/dL]) + \\
     2.99724802 &* \log_{10}(1 + INR) - \\
-    6.47834101 &* \log_{10}(1 + sodium [mmol/l]) - \\
-    6.34990436 &* \log_{10}(1 + albumin [g/l]) + \\
+    6.47834101 &* \log_{10}(1 + sodium [mmol/L]) - \\
+    6.34990436 &* \log_{10}(1 + albumin [g/L]) + \\
     1.92811726 &* \log_{10}(1 + wbc [th/cumm]) + \\
     0.04070442 &* age [years]
 \end{aligned}
