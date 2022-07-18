@@ -37,8 +37,8 @@ abstract: >
       outperforms the classical MELD score for 90-day survival prediction.
 
   **Keywords**:
-      end-stage liver disease; MELD; risk stratification; machine learning;
-      survival estimation; IL-6.
+      end-stage liver disease; IL-6; machine learning; MELD;
+      risk stratification; survival estimation.
 
 author:
     - Sebastian Gibb:
