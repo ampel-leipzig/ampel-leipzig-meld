@@ -814,7 +814,7 @@ Unfortunately our sample size is low in the high risk patient category
 which yield a poor but better than MELD based prediction performance of our
 AMELD for very ill patients.
 
-## Conclusion
+# Conclusion
 
 In conclusion we developed a new model to predict the 90-day survival of
 patients during the evaluation process for liver transplantation.
@@ -851,7 +851,7 @@ Few patients with high MELD scores, poor calibration for high mortality
 - bias caused by LTx censorship?
 -->
 
-# Data and software availability
+## Data and software availability
 
 The complete code and reproducible analysis could be found at
 https://ampel-leipzig.github.io/ampel-leipzig-meld/.
@@ -860,7 +860,7 @@ https://github.com/ampel-leipzig/ameld
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg)](https://doi.org/10.5281/zenodo.6666018)
 for further investigations.
 
-# Acknowledgement
+## Acknowledgement
 
 We thank the whole AMPEL team for their support,
 Stefan Kemnitz for his technical support regarding the use of the
@@ -922,7 +922,7 @@ The total estimated emissions were at least
 This is equivalent to `r round(km)` km driven by an average car
 [@allekotte2021].
 
-# Research funding
+## Research funding
 
 The study was supported by the AMPEL project ([www.ampel.care](https://www.ampel.care)).
 This project is co-financed through public funds according to the budget
@@ -934,7 +934,7 @@ but did not have any additional role in the study design,
 data collection and analysis, decision to publish, or preparation
 of the manuscript.
 
-# Author contributions
+## Author contributions
 
 Funding was acquired by TK.
 The study was conceptualised by SG and TK.
@@ -947,15 +947,15 @@ The project was supervised by TK.
 All authors have accepted responsibility for the entire content of this
 manuscript and approved its submission.
 
-# Competing interests
+## Competing interests
 
 Authors state no conflict of interest.
 
-# Informed consent
+## Informed consent
 
 Informed consent was obtained from all individuals included in this study.
 
-# Ethical approval
+## Ethical approval
 
 Research involving human subjects complied with all relevant national
 regulations, institutional policies and is in accordance with the tenets of
