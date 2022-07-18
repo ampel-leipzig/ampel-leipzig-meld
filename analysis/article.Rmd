@@ -856,15 +856,6 @@ for further investigations.
 
 # Acknowledgement
 
-The study was supported by the AMPEL project ([www.ampel.care](https://www.ampel.care)).
-This project is co-financed through public funds according to the budget
-decided by the Saxon State Parliament under the
-RL eHealthSax 2017/18 grant number 100331796.
-The funder provided support in the form of
-salaries for author SG
-but did not have any additional role in the study design,
-data collection and analysis, decision to publish, or preparation
-of the manuscript.
 We thank the whole AMPEL team for their support,
 Stefan Kemnitz for his technical support regarding the use of the
 HPC cluster of the University Greifswald and
@@ -924,5 +915,46 @@ The total estimated emissions were at least
 (ignoring development, test runs, etc.).
 This is equivalent to `r round(km)` km driven by an average car
 [@allekotte2021].
+
+# Research funding
+
+The study was supported by the AMPEL project ([www.ampel.care](https://www.ampel.care)).
+This project is co-financed through public funds according to the budget
+decided by the Saxon State Parliament under the
+RL eHealthSax 2017/18 grant number 100331796.
+The funder provided support in the form of
+salaries for author SG
+but did not have any additional role in the study design,
+data collection and analysis, decision to publish, or preparation
+of the manuscript.
+
+# Author contributions
+
+Funding was acquired by TK.
+The study was conceptualised by SG and TK.
+The data was acquired by TK.
+The data was analysed and processed by SG.
+Visualisation were produced by SG.
+Original drafts of the manuscript were written by SG and TK.
+Drafts were edited and reviewed by SG, TB, DS, BI, and TK.
+The project was supervised by TK.
+All authors have accepted responsibility for the entire content of this
+manuscript and approved its submission.
+
+# Competing interests
+
+Authors state no conflict of interest.
+
+# Informed consent
+
+Informed consent was obtained from all individuals included in this study.
+
+# Ethical approval
+
+Research involving human subjects complied with all relevant national
+regulations, institutional policies and is in accordance with the tenets of
+the Helsinki Declaration (as revised in 2013), and has been
+approved by the Ethics Committee at the Leipzig University Faculty of
+Medicine (reference number: 039/14ff).
 
 # References
