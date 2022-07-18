@@ -851,15 +851,6 @@ Few patients with high MELD scores, poor calibration for high mortality
 - bias caused by LTx censorship?
 -->
 
-## Data and software availability
-
-The complete code and reproducible analysis could be found at
-https://ampel-leipzig.github.io/ampel-leipzig-meld/.
-Additionally all data are available in the `ameld` R package [@R-ameld] at
-https://github.com/ampel-leipzig/ameld
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg)](https://doi.org/10.5281/zenodo.6666018)
-for further investigations.
-
 ## Acknowledgement
 
 We thank the whole AMPEL team for their support,
@@ -962,5 +953,14 @@ regulations, institutional policies and is in accordance with the tenets of
 the Helsinki Declaration (as revised in 2013), and has been
 approved by the Ethics Committee at the Leipzig University Faculty of
 Medicine (reference number: 039/14ff).
+
+## Data and software availability
+
+The complete code and reproducible analysis could be found at
+https://ampel-leipzig.github.io/ampel-leipzig-meld/.
+Additionally all data are available in the `ameld` R package [@R-ameld] at
+https://github.com/ampel-leipzig/ameld
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg)](https://doi.org/10.5281/zenodo.6666018)
+for further investigations.
 
 # References
