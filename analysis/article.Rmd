@@ -780,8 +780,8 @@ Furthermore most of our patients suffered from ethyltoxic liver cirrhosis
 (`r .tbl1("Ethyltoxic", pattern = "{p}%")`) which may
 limited the transfer to other etiologies.
 
-With a median MELD score of `r .tbl1("ScoreMeldUnos")` our
-cohort was healthier than in previous studies that reported
+With a median MELD score of `r .tbl1("ScoreMeldUnos", pattern = "{median}")`
+our cohort was healthier than in previous studies that reported
 a score of 14-15 [@kim2008; @kartoun2017].
 However the 90-day mortality rate of `r .tbl1("M90")` was comparable to
 the mortality rates seen in earlier studies that ranges from 6 to 30%
