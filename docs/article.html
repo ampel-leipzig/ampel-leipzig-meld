@@ -596,8 +596,8 @@ and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.</p>
 We provide a new ML based model of end-stage liver disease that
 outperforms the classical MELD score for 90-day survival prediction.</p>
 <p><strong>Keywords</strong>:
-end-stage liver disease; MELD; risk stratification; machine learning;
-survival estimation; IL-6.</p>
+end-stage liver disease; IL-6; machine learning; MELD;
+risk stratification; survival estimation.</p>
 </div>
 
 </div>
@@ -760,20 +760,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreed332cbecb143fec39c378dd333b047eaa1c1a396targetblankd332cbea">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/d332cbecb143fec39c378dd333b047eaa1c1a396" target="_blank">d332cbe</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreed332cbecb143fec39c378dd333b047eaa1c1a396targetblankd332cbea" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/d332cbecb143fec39c378dd333b047eaa1c1a396" target="_blank">d332cbe</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -840,6 +840,74 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/d332cbecb143fec39c378dd333b047eaa1c1a396/analysis/article.Rmd" target="_blank">d332cbe</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: labm requires upper case litre
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/4a757df9017e7c5969f0863e23b3261c552900a1/analysis/article.Rmd" target="_blank">4a757df</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: move data and software availability section
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/5435d484a10e3038cab730959b384d37d48b6497/analysis/article.Rmd" target="_blank">5435d48</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: reorder keywords
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/65d58c4380a4d02984c717b7f209be8137776ebe/docs/article.html" target="_blank">65d58c4</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1828,23 +1896,23 @@ Medicine approved the retrospective usage of the data for our study
 <h2><span class="header-section-number">2.2</span> MELD scores</h2>
 <p>MELD and MELD-Na were calculated as described in
 <span class="citation">Organ Procurement and Transplantation Network (2021)</span> using the following formulas:
-<span class="math inline">\(MELD = 10 * (0.957 \ln(creatinine [mg/dl]) + 0.378 \ln(bilirubin [mg/dl]) + 1.120 * \ln(INR) + 0.643)\)</span>,
-Creatinine, bilirubin and INR values lower than 1.0 mg/dl were set to 1.0 mg/dl.
-The maximum allowed creatinine was 4.0 mg/dl. If patients received dialysis,
-creatinine was set to 4.0 mg/dl.
+<span class="math inline">\(MELD = 10 * (0.957 \ln(creatinine [mg/dL]) + 0.378 \ln(bilirubin [mg/dL]) + 1.120 * \ln(INR) + 0.643)\)</span>,
+Creatinine, bilirubin and INR values lower than 1.0 mg/dL were set to 1.0 mg/dL.
+The maximum allowed creatinine was 4.0 mg/dL. If patients received dialysis,
+creatinine was set to 4.0 mg/dL.
 For MELD-Na MELD was calculated as above and recalculated if greater than 11 using:
-<span class="math inline">\(MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/l]) - (0.033 * MELD_i * (137 - Na [mmol/l]))\)</span></p>
-<p>Serum sodium values lower than 125 mmol/l or higher than 137 mmol/l were set
-to 125 mmol/l and 137 mmol/l, respectively.</p>
+<span class="math inline">\(MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/L]) - (0.033 * MELD_i * (137 - Na [mmol/L]))\)</span></p>
+<p>Serum sodium values lower than 125 mmol/L or higher than 137 mmol/L were set
+to 125 mmol/L and 137 mmol/L, respectively.</p>
 <p>The MELD-Plus7 risk score was calculated as described in <span class="citation">Kartoun et al. (2017)</span>:
 <span class="math display">\[
 \begin{aligned}
 L = 8.53499496 &amp;+ \\
-    2.59679650 &amp;* \log_{10}(1 + creatinine [mg/dl]) + \\
-    2.06503238 &amp;* \log_{10}(1 + bilirubin [mg/dl]) + \\
+    2.59679650 &amp;* \log_{10}(1 + creatinine [mg/dL]) + \\
+    2.06503238 &amp;* \log_{10}(1 + bilirubin [mg/dL]) + \\
     2.99724802 &amp;* \log_{10}(1 + INR) - \\
-    6.47834101 &amp;* \log_{10}(1 + sodium [mmol/l]) - \\
-    6.34990436 &amp;* \log_{10}(1 + albumin [g/l]) + \\
+    6.47834101 &amp;* \log_{10}(1 + sodium [mmol/L]) - \\
+    6.34990436 &amp;* \log_{10}(1 + albumin [g/L]) + \\
     1.92811726 &amp;* \log_{10}(1 + wbc [th/cumm]) + \\
     0.04070442 &amp;* age [years]
 \end{aligned}
@@ -2826,6 +2894,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/65d58c4380a4d02984c717b7f209be8137776ebe/docs/figure/article.Rmd/roc-1.png" target="_blank">65d58c4</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ebe29cf9f65cea961c6ea141aa04514818137f8c/docs/figure/article.Rmd/roc-1.png" target="_blank">ebe29cf</a>
 </td>
 <td>
@@ -2920,6 +2999,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/65d58c4380a4d02984c717b7f209be8137776ebe/docs/figure/article.Rmd/bootrcv-1.png" target="_blank">65d58c4</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/ebe29cf9f65cea961c6ea141aa04514818137f8c/docs/figure/article.Rmd/bootrcv-1.png" target="_blank">ebe29cf</a>
@@ -3108,17 +3198,8 @@ Few patients with high MELD scores, poor calibration for high mortality
 - unknown cause of death (death with vs of end-stage liver disease)
 - bias caused by LTx censorship?
 -->
-<div id="data-and-software-availability" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Data and software availability</h2>
-<p>The complete code and reproducible analysis could be found at
-<a href="https://ampel-leipzig.github.io/ampel-leipzig-meld/" class="uri">https://ampel-leipzig.github.io/ampel-leipzig-meld/</a>.
-Additionally all data are available in the <code>ameld</code> R package <span class="citation">(Gibb 2022)</span> at
-<a href="https://github.com/ampel-leipzig/ameld" class="uri">https://github.com/ampel-leipzig/ameld</a>
-<a href="https://doi.org/10.5281/zenodo.6666018"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg" alt="DOI" /></a>
-for further investigations.</p>
-</div>
-<div id="acknowledgement" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Acknowledgement</h2>
+<div id="acknowledgement" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Acknowledgement</h2>
 <p>We thank the whole AMPEL team for their support,
 Stefan Kemnitz for his technical support regarding the use of the
 HPC cluster of the University Greifswald and
@@ -3137,8 +3218,8 @@ The total estimated emissions were at least
 This is equivalent to 44 km driven by an average car
 <span class="citation">(Allekotte et al. 2021)</span>.</p>
 </div>
-<div id="research-funding" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Research funding</h2>
+<div id="research-funding" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Research funding</h2>
 <p>The study was supported by the AMPEL project (<a href="https://www.ampel.care">www.ampel.care</a>).
 This project is co-financed through public funds according to the budget
 decided by the Saxon State Parliament under the
@@ -3149,8 +3230,8 @@ but did not have any additional role in the study design,
 data collection and analysis, decision to publish, or preparation
 of the manuscript.</p>
 </div>
-<div id="author-contributions" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Author contributions</h2>
+<div id="author-contributions" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Author contributions</h2>
 <p>Funding was acquired by TK.
 The study was conceptualised by SG and TK.
 The data was acquired by TK.
@@ -3162,21 +3243,30 @@ The project was supervised by TK.
 All authors have accepted responsibility for the entire content of this
 manuscript and approved its submission.</p>
 </div>
-<div id="competing-interests" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Competing interests</h2>
+<div id="competing-interests" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Competing interests</h2>
 <p>Authors state no conflict of interest.</p>
 </div>
-<div id="informed-consent" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Informed consent</h2>
+<div id="informed-consent" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Informed consent</h2>
 <p>Informed consent was obtained from all individuals included in this study.</p>
 </div>
-<div id="ethical-approval" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> Ethical approval</h2>
+<div id="ethical-approval" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Ethical approval</h2>
 <p>Research involving human subjects complied with all relevant national
 regulations, institutional policies and is in accordance with the tenets of
 the Helsinki Declaration (as revised in 2013), and has been
 approved by the Ethics Committee at the Leipzig University Faculty of
 Medicine (reference number: 039/14ff).</p>
+</div>
+<div id="data-and-software-availability" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Data and software availability</h2>
+<p>The complete code and reproducible analysis could be found at
+<a href="https://ampel-leipzig.github.io/ampel-leipzig-meld/" class="uri">https://ampel-leipzig.github.io/ampel-leipzig-meld/</a>.
+Additionally all data are available in the <code>ameld</code> R package <span class="citation">(Gibb 2022)</span> at
+<a href="https://github.com/ampel-leipzig/ameld" class="uri">https://github.com/ampel-leipzig/ameld</a>
+<a href="https://doi.org/10.5281/zenodo.6666018"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg" alt="DOI" /></a>
+for further investigations.</p>
 </div>
 </div>
 <div id="references" class="section level1" number="6">
