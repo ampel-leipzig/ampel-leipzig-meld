@@ -116,9 +116,15 @@ tg_data <- list(
             ]
             abbr <- setNames(character(ncol(x)), colnames(x))
 
+            .rpl_litre <- function(x, upper = TRUE) {
+                if (upper)
+                    sub("([fµmcd]?)[lL]$", "\\1L", x)
+                else
+                    x
+            }
             .lbl <- function(x, unit) {
                 if (nchar(unit))
-                    paste0(x, " [", unit, "]")
+                    paste0(x, " [", .rpl_litre(unit, upper = TRUE), "]")
                 else
                     x
             }
