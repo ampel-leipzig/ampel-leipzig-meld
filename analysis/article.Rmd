@@ -413,7 +413,7 @@ tbl1
 }
 ```
 
-In this study we analysed a cohort of `r n_analysed` patients evaluated for
+In this study we analyzed a cohort of `r n_analysed` patients evaluated for
 liver transplantation (Tab. \@ref(tab:tbl1)).
 `r sprintf("%i (%s)", sum(raw_data$Sex == "male"), gtsummary::style_percent(mean(raw_data$Sex == "male"), symbol = TRUE))`
 of them were men.
@@ -930,7 +930,7 @@ of the manuscript.
 Funding was acquired by TK.
 The study was conceptualised by SG and TK.
 The data was acquired by TK.
-The data was analysed and processed by SG.
+The data was analyzed and processed by SG.
 Visualisation were produced by SG.
 Original drafts of the manuscript were written by SG and TK.
 Drafts were edited and reviewed by SG, TB, DS, BI, and TK.
