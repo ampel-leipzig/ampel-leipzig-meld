@@ -74,17 +74,19 @@ bibliography:
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'rpackages', 'zlog.bib')`"
 output:
   bookdown::html_document2:
+    keep_md: true
     pandoc_args: # pandoc_args doesn't support r evaluation
       - --lua-filter=pandoc/lua-filters/scholarly-metadata.lua
       - --lua-filter=pandoc/lua-filters/author-info-blocks.lua
   bookdown::word_document2:
+    keep_md: true
     pandoc_args: # pandoc_args doesn't support r evaluation
       - --lua-filter=pandoc/lua-filters/scholarly-metadata.lua
       - --lua-filter=pandoc/lua-filters/author-info-blocks.lua
       - --csl=pandoc/csl/vancouver.csl
 ---
 
-```{r knitr_setup, include=FALSE}
+```{r knitr_setup, include = FALSE}
 knitr::write_bib(
     c(
         "base",
@@ -110,6 +112,10 @@ cat(
         "analysis", "bibliography", "rpackages", "zlog.bib"
     )
 )
+```
+
+```{r knitr_setup_word, eval = !knitr::is_html_output(), include = FALSE}
+knitr::opts_chunk$set(dpi = 1200)
 ```
 
 ```{r article_setup, include=FALSE}

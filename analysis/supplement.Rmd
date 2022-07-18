@@ -3,12 +3,18 @@ title: "Supplement"
 output:
   bookdown::html_document2:
     toc: false
+  bookdown::word_document2:
+    keep_md: true
 ---
 
-```{r knitr_setup, include=FALSE}
+```{r knitr_setup, include = FALSE}
 ```
 
-```{r supplement_setup, message = FALSE}
+```{r knitr_setup_word, eval = !knitr::is_html_output(), include = FALSE}
+knitr::opts_chunk$set(dpi = 1200)
+```
+
+```{r supplement_setup, echo = FALSE, message = FALSE}
 library("ameld")
 library("data.table")
 library("targets")
