@@ -45,13 +45,27 @@ author:
         email: mail@sebastiangibb.de
         institute: [ILM, KAINS]
         correspondence: true
+    - Thomas Berg:
+        email: thomas.berg@medizin.uni-leipzig.de
+        institute: KIMH
+        correspondence: false
+    - Daniel Seehofer:
+        email: daniel.seehofer@medizin.uni-leipzig.de
+        institute: KVTTG
+        correspondence: false
+    - Berend Isermann:
+        email: berend.isermann@medizin.uni-leipzig.de
+        institute: ILM
+        correspondence: false
     - Thorsten Kaiser:
         email: thorsten.kaiser@medizin.uni-leipzig.de
         institute: ILM
         correspondence: false
 institute:
     - ILM: Institute of Laboratory Medicine, Clinical Chemistry and Molecular Diagnostics, University Hospital Leipzig, Paul-List-Str. 13-15, D-04103 Leipzig, Germany.
-    - KAINS: Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Straße, D-17475 Greifswald, Germany.
+    - KIMH: Section of Hepatology, Department of Gastroenterology and Rheumatology, University Hospital Leipzig, Liebigstr. 20, D-04103 Leipzig, Germany.
+    - KVTTG: Department of Visceral, Transplantation, Vascular and Thoracic Surgery, University Hospital of Leipzig, Liebigstr. 20, D-04103 Leipzig, Germany.
+    - KAINS: Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Str., D-17475 Greifswald, Germany.
 date: "`r Sys.Date()`"
 bibliography:
   - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'bibliography.bib')`"
