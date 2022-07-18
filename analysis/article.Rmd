@@ -67,6 +67,7 @@ output:
     pandoc_args: # pandoc_args doesn't support r evaluation
       - --lua-filter=pandoc/lua-filters/scholarly-metadata.lua
       - --lua-filter=pandoc/lua-filters/author-info-blocks.lua
+      - --csl=pandoc/csl/vancouver.csl
 ---
 
 ```{r knitr_setup, include=FALSE}
