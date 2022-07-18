@@ -478,7 +478,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-06-19
+<strong>Last updated:</strong> 2022-07-18
 </p>
 <p>
 <strong>Checks:</strong>
@@ -606,20 +606,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree071324c7085d9f996836d3f14b8177d29929826atargetblank071324ca">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/071324c7085d9f996836d3f14b8177d29929826a" target="_blank">071324c</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree071324c7085d9f996836d3f14b8177d29929826atargetblank071324ca" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/071324c7085d9f996836d3f14b8177d29929826a" target="_blank">071324c</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -635,9 +635,13 @@ results were generated:
 Ignored files:
     Ignored:    TODO
     Ignored:    _targets/
+    Ignored:    analysis/article.md
     Ignored:    container/
     Ignored:    logs/
     Ignored:    scripts/R.sh
+
+Untracked files:
+    Untracked:  submission/
 
 </code></pre>
 <p>
@@ -682,6 +686,74 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/a0f1d2e6065d659a8231d1e1b37a07c9ac6e47e5/analysis/supplement.Rmd" target="_blank">a0f1d2e</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+feat: generate png and pdfs for each plot
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/49d8c41aa1dbcea995fae85f3b0d80856d6f43a2/analysis/supplement.Rmd" target="_blank">49d8c41</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+chore: suppress code output in supplement
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/9d4a8904a77f533fbcf47ed5e97fc5af5470e54d/analysis/supplement.Rmd" target="_blank">9d4a890</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+feat: use 1200 dpi as required by labm for word output
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/fb43d010446fb8613cf15ede3371bf2c236599d9/docs/supplement.html" target="_blank">fb43d01</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-06-19
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -944,15 +1016,6 @@ feat: add first article draft with pandoc filters
 </div>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ameld&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;data.table&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;targets&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3misc&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3proba&quot;</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;mlr3viz&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;viridis&quot;</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
 <div id="benchmark-results-of-machine-learning-algorithms" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Benchmark results of machine learning algorithms</h1>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:benchmark-plot"></span>
@@ -1009,14 +1072,6 @@ Sebastian Gibb
 </table>
 </div>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>agg <span class="ot">&lt;-</span> bmrk_results<span class="sc">$</span><span class="fu">aggregate</span>(<span class="fu">msr</span>(<span class="st">&quot;surv.cindex&quot;</span>, <span class="at">id =</span> <span class="st">&quot;harrell&quot;</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>agg[, <span class="st">`</span><span class="at">:=</span><span class="st">`</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    (<span class="at">nr =</span> <span class="cn">NULL</span>, <span class="at">resample_result =</span> <span class="cn">NULL</span>, <span class="at">resampling_id =</span> <span class="cn">NULL</span>, <span class="at">iters =</span> <span class="cn">NULL</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>agg <span class="ot">&lt;-</span> <span class="fu">subset</span>(agg, task_id <span class="sc">==</span> <span class="st">&quot;zlog_eldd&quot;</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">grepl</span>(<span class="st">&quot;^scale&quot;</span>, learner_id))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>agg[, task_id <span class="sc">:</span><span class="er">=</span> <span class="cn">NULL</span>]</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">setorder</span>(agg, <span class="sc">-</span>harrell)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(agg, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Learner ID&quot;</span>, <span class="st">&quot;Harrell C&quot;</span>))</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1082,18 +1137,6 @@ Sebastian Gibb
 </div>
 <div id="auroc-trend" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> AUROC trend</h1>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELD)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDNa)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDPlus7)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCV)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">AMELD =</span> timeROC_RCV,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">MELD =</span> timeROC_MELD,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Na&quot;</span> <span class="ot">=</span> timeROC_MELDNa,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MELD-Plus7&quot;</span> <span class="ot">=</span> timeROC_MELDPlus7</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_surv_roc_trend</span>(m)</span></code></pre></div>
 <p><img src="figure/supplement.Rmd/roc-plot-1.png" width="1728" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-roc-plot-1">
@@ -1262,7 +1305,7 @@ Session information
 </button>
 </p>
 <div id="workflowr-sessioninfo" class="collapse">
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
 <pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
@@ -1283,7 +1326,7 @@ attached base packages:
 other attached packages:
  [1] ggplot2_3.3.6     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
  [5] mlr3proba_0.4.11  mlr3misc_0.10.0   mlr3_0.13.3       targets_0.12.1   
- [9] data.table_1.14.2 ameld_0.0.24      survival_3.3-1    glmnet_4.1-4     
+ [9] data.table_1.14.2 ameld_0.0.26      survival_3.3-1    glmnet_4.1-4     
 [13] Matrix_1.4-1     
 
 loaded via a namespace (and not attached):

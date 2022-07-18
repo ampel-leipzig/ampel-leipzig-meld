@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Sebastian Gibb1,2,✉, and Thorsten Kaiser1" />
+<meta name="author" content="Sebastian Gibb1,4,✉, Thomas Berg2, Daniel Seehofer3, Berend Isermann1, and Thorsten Kaiser1" />
 
-<meta name="date" content="2022-07-08" />
+<meta name="date" content="2022-07-18" />
 
-<title>A New Model to Predict Survival in Patients with End-Stage Liver Disease</title>
+<title>A new model to predict survival in patients with end-stage liver disease</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -563,35 +563,50 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">A New Model to Predict Survival in Patients with End-Stage Liver Disease</h1>
+<h1 class="title toc-ignore">A new model to predict survival in patients with end-stage liver disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
-<h4 class="author">Sebastian Gibb<sup>1,2,✉</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2022-07-08</h4>
+<h4 class="author">Sebastian Gibb<sup>1,4,✉</sup>, Thomas Berg<sup>2</sup>, Daniel Seehofer<sup>3</sup>, Berend Isermann<sup>1</sup>, and Thorsten Kaiser<sup>1</sup></h4>
+<h4 class="date">2022-07-18</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Objectives</strong>:
-The shortage in grafts for liver transplantation requires risk stratification and allocation rules.
-This study aims to improve the model of end-stage liver disease (MELD) score for 90-day mortality prediction as an risk stratification tool with the help of machine learning (ML) algorithms.</p>
+The shortage in grafts for liver transplantation requires
+risk stratification and adequate allocation rules.
+This study aims to improve the model of end-stage liver disease (MELD)
+score for 90-day mortality prediction with the help of different
+machine learning (ML) algorithms.</p>
 <p><strong>Methods</strong>:
-We retrospectively analysed clinical and laboratory data of 654 patients who were recruited during the evaluation process for liver transplantation at the University Hospital Leipzig.
-After comparing 13 different ML algorithms in a nested cross-validation setting and selecting the best performing one we build a new model to predict 90-day mortality in patients with end-stage liver disease.</p>
+We retrospectively analyzed clinical and laboratory data of 654
+patients who were recruited during the evaluation process for
+liver transplantation at the University Hospital Leipzig.
+After comparing 13 different ML algorithms in a nested cross-validation
+setting and selecting the best performing one we build a new model
+to predict 90-day mortality in patients with end-stage liver disease.</p>
 <p><strong>Results</strong>:
-Penalized regression algorithms yield the highest prediction performance in our ML algorithm benchmark.
-In favour of a simpler model we chose the least absolute shrinkage and selection operator (lasso) regression.
-Beside the classical MELD variables INR and bilirubin the lasso regression selected
-cystatin C over creatinine, and additionally IL-6, total protein and cholinesterase.
-The new model offers a better discrimination and calibration than MELD and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.</p>
+Penalized regression algorithms yield the highest prediction performance
+in our ML algorithm benchmark.
+In favour of a simpler model we chose the least absolute shrinkage and
+selection operator (lasso) regression.
+Beside the classical MELD variables INR and bilirubin the
+lasso regression selected cystatin C over creatinine, and
+additionally IL-6, total protein and cholinesterase.
+The new model offers an improved discrimination and calibration than MELD
+and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.</p>
 <p><strong>Conclusion</strong>:
-We provide a new model of end-stage liver disease that outperforms the classical MELD score for 90-day survival prediction.</p>
+We provide a new ML based model of end-stage liver disease that
+outperforms the classical MELD score for 90-day survival prediction.</p>
 <p><strong>Keywords</strong>:
-end-stage liver disease; MELD; risk stratification; machine learning; survival estimation; IL-6.</p>
+end-stage liver disease; MELD; risk stratification; machine learning;
+survival estimation; IL-6.</p>
 </div>
 
 </div>
 
 
 <p><sup>1</sup> Institute of Laboratory Medicine, Clinical Chemistry and Molecular Diagnostics, University Hospital Leipzig, Paul-List-Str. 13-15, D-04103 Leipzig, Germany.<br />
-<sup>2</sup> Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Straße, D-17475 Greifswald, Germany.</p>
+<sup>2</sup> Section of Hepatology, Department of Gastroenterology and Rheumatology, University Hospital Leipzig, Liebigstr. 20, D-04103 Leipzig, Germany.<br />
+<sup>3</sup> Department of Visceral, Transplantation, Vascular and Thoracic Surgery, University Hospital of Leipzig, Liebigstr. 20, D-04103 Leipzig, Germany.<br />
+<sup>4</sup> Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Str., D-17475 Greifswald, Germany.</p>
 <p><sup>✉</sup> Correspondence: <a href="mailto:mail@sebastiangibb.de">Sebastian Gibb &lt;<a href="mailto:mail@sebastiangibb.de" class="email">mail@sebastiangibb.de</a>&gt;</a></p>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
@@ -617,7 +632,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-07-08
+<strong>Last updated:</strong> 2022-07-18
 </p>
 <p>
 <strong>Checks:</strong>
@@ -745,20 +760,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee9761099c60956e2f2f7462642ebc7e3b2ec5469targetblanke976109a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e9761099c60956e2f2f7462642ebc7e3b2ec5469" target="_blank">e976109</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee9761099c60956e2f2f7462642ebc7e3b2ec5469targetblanke976109a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e9761099c60956e2f2f7462642ebc7e3b2ec5469" target="_blank">e976109</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -774,12 +789,13 @@ results were generated:
 Ignored files:
     Ignored:    TODO
     Ignored:    _targets/
+    Ignored:    analysis/article.md
     Ignored:    container/
     Ignored:    logs/
     Ignored:    scripts/R.sh
 
 Untracked files:
-    Untracked:  article.docx
+    Untracked:  submission/
 
 </code></pre>
 <p>
@@ -824,6 +840,193 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c/analysis/article.Rmd" target="_blank">0ac4a67</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: restruct headings
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/b8811887c55ee5322d7748b487e44a1416337720/analysis/article.Rmd" target="_blank">b881188</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: labm requires down style title
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/a0f1d2e6065d659a8231d1e1b37a07c9ac6e47e5/analysis/article.Rmd" target="_blank">a0f1d2e</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+feat: generate png and pdfs for each plot
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/9d4a8904a77f533fbcf47ed5e97fc5af5470e54d/analysis/article.Rmd" target="_blank">9d4a890</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+feat: use 1200 dpi as required by labm for word output
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/93871a1ba3a11929528fdea7171e9fc9dd246785/analysis/article.Rmd" target="_blank">93871a1</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+feat: add author contributions and competing interests section
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/3cd96434a15bd90ed348e02d928abb532a2d9fc7/analysis/article.Rmd" target="_blank">3cd9643</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+chore: add additional authors
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/abae68a2bab251ae31d7bc6b5eb0ca9b43619a85/analysis/article.Rmd" target="_blank">abae68a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: drop IQR for median MELD score in limitations
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/e81cbe10f50a1dfa8a4aef0bfb549a8069aa7364/analysis/article.Rmd" target="_blank">e81cbe1</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+feat: add vancouver csl
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/057248f11f7c5ae2c98bc33597e7a35a455a751d/analysis/article.Rmd" target="_blank">057248f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+refactor: replace gaertner2022 by sealock2022
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/024a0e03b68f3f56498233919ad9bdbec0f0d007/analysis/article.Rmd" target="_blank">024a0e0</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-17
+</td>
+<td>
+refactor: integrate Thorsten’s review comments
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/653f77897f034e5dc0ff2f58bb2e8bdea3ba764b/docs/article.html" target="_blank">653f778</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-08
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1548,16 +1751,18 @@ feat: add first article draft with pandoc filters
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
 <p>Liver cirrhosis is the terminal result of fibrotic remodeling
-of liver tissue due to chronic damage. An organ failure is often
-irreversible and the only available therapy is liver transplantation.
+of liver tissue due to chronic damage.
+This end-stage of liver disease is usually irreversible and
+the only available therapy is liver transplantation.
 However, the shortage in grafts for transplantation from deceased donors
-requires risk stratification and precise allocation rules.
+requires risk stratification and precise and fair allocation rules.
 The allocation of liver transplantation in most countries is based on
 disease severity determined by the model of end-stage liver disease (MELD)
 <span class="citation">(Malinchoc et al. 2000; Wiesner et al. 2003; Organ Procurement and Transplantation Network 2021)</span>.
 The MELD score estimates the patients’ 3-month mortality risk based on
 laboratory results, namely bilirubin, creatinine and international normalized
-ratio (INR). In general the MELD score is extended by the sodium level
+ratio (INR).
+The MELD score has been extended by the sodium level
 (MELD-Na score) as this was found to be an important additional risk factor in
 liver cirrhosis <span class="citation">(Kim et al. 2008; Organ Procurement and Transplantation Network 2021)</span>.
 The MELD was initially developed for predicting the survival of patients
@@ -1566,9 +1771,10 @@ Afterwards it was revalidated for predicting mortality risk in patients awaiting
 a liver transplantation.
 Although the MELD score should be an objective allocation score especially the
 creatinine and INR are highly dependent on the utilized laboratory methods
-<span class="citation">(Trotter et al. 2004; Cholongitas et al. 2007)</span>. Patients with identical disease state could
-have very different MELD scores and thus get different priority on the liver
-transplantation waiting list.
+<span class="citation">(Trotter et al. 2004; Cholongitas et al. 2007)</span>.
+Additionally women are disadvantage <span class="citation">(Sealock et al. 2022)</span>.
+Patients with identical disease state could have very different MELD scores and
+thus get different priority on the liver transplantation waiting list.
 Furthermore often, e.g. for acute-on-chronic liver failure, the MELD score
 underestimates the mortality risk <span class="citation">(Hernaez et al. 2020)</span>.</p>
 <p>There have been some attempts to use the data extracted from more than 300.000
@@ -2164,11 +2370,11 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
     <tr class="gt_group_heading_row">
       <td colspan="4" class="gt_group_heading">Laboratory measurements</td>
     </tr>
-    <tr class="gt_row_group_first"><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Total bilirubin [µmol/l]</td>
+    <tr class="gt_row_group_first"><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Total bilirubin [µmol/L]</td>
 <td class="gt_row gt_center">21 (10, 49)</td>
 <td class="gt_row gt_center">26 (14, 51)</td>
 <td class="gt_row gt_center">24 (13, 50)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cystatin C [mg/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cystatin C [mg/L]</td>
 <td class="gt_row gt_center">1.31 (1.04, 1.80)</td>
 <td class="gt_row gt_center">1.32 (1.08, 1.76)</td>
 <td class="gt_row gt_center">1.32 (1.07, 1.79)</td></tr>
@@ -2176,7 +2382,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">2</td>
 <td class="gt_row gt_center">5</td>
 <td class="gt_row gt_center">7</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Creatinine [µmol/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Creatinine [µmol/L]</td>
 <td class="gt_row gt_center">73 (58, 91)</td>
 <td class="gt_row gt_center">85 (71, 110)</td>
 <td class="gt_row gt_center">80 (65, 104)</td></tr>
@@ -2188,7 +2394,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">1</td>
 <td class="gt_row gt_center">1</td>
 <td class="gt_row gt_center">2</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sodium [mmol/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Sodium [mmol/L]</td>
 <td class="gt_row gt_center">138.8 (135.4, 141.0)</td>
 <td class="gt_row gt_center">138.0 (135.0, 140.1)</td>
 <td class="gt_row gt_center">138.1 (135.2, 140.4)</td></tr>
@@ -2196,7 +2402,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">5</td>
 <td class="gt_row gt_center">4</td>
 <td class="gt_row gt_center">9</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">WBC [exp 9/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">WBC [exp 9/L]</td>
 <td class="gt_row gt_center">6.7 (4.7, 8.8)</td>
 <td class="gt_row gt_center">6.2 (4.6, 7.8)</td>
 <td class="gt_row gt_center">6.3 (4.7, 8.3)</td></tr>
@@ -2204,7 +2410,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">10</td>
 <td class="gt_row gt_center">13</td>
 <td class="gt_row gt_center">23</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">IL-6 [pg/ml]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">IL-6 [pg/mL]</td>
 <td class="gt_row gt_center">10 (5, 36)</td>
 <td class="gt_row gt_center">14 (6, 47)</td>
 <td class="gt_row gt_center">13 (6, 42)</td></tr>
@@ -2212,7 +2418,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">27</td>
 <td class="gt_row gt_center">29</td>
 <td class="gt_row gt_center">56</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Albumin [g/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Albumin [g/L]</td>
 <td class="gt_row gt_center">41 (35, 46)</td>
 <td class="gt_row gt_center">38 (33, 43)</td>
 <td class="gt_row gt_center">39 (34, 45)</td></tr>
@@ -2220,7 +2426,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">2</td>
 <td class="gt_row gt_center">4</td>
 <td class="gt_row gt_center">6</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Total protein [g/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Total protein [g/L]</td>
 <td class="gt_row gt_center">71 (63, 76)</td>
 <td class="gt_row gt_center">71 (65, 76)</td>
 <td class="gt_row gt_center">71 (65, 76)</td></tr>
@@ -2228,11 +2434,11 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">2</td>
 <td class="gt_row gt_center">4</td>
 <td class="gt_row gt_center">6</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cholesterine [mmol/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">Cholesterine [mmol/L]</td>
 <td class="gt_row gt_center">4.64 (3.41, 5.56)</td>
 <td class="gt_row gt_center">4.28 (3.34, 5.15)</td>
 <td class="gt_row gt_center">4.40 (3.34, 5.31)</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ALAT [µkat/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ALAT [µkat/L]</td>
 <td class="gt_row gt_center">0.29 (0.21, 0.42)</td>
 <td class="gt_row gt_center">0.36 (0.23, 0.56)</td>
 <td class="gt_row gt_center">0.33 (0.22, 0.48)</td></tr>
@@ -2240,7 +2446,7 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
 <td class="gt_row gt_center">2</td>
 <td class="gt_row gt_center">8</td>
 <td class="gt_row gt_center">10</td></tr>
-    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ASAT [µkat/l]</td>
+    <tr><td class="gt_row gt_left" style="text-align: left; text-indent: 10px;">ASAT [µkat/L]</td>
 <td class="gt_row gt_center">0.68 (0.49, 1.05)</td>
 <td class="gt_row gt_center">0.81 (0.61, 1.23)</td>
 <td class="gt_row gt_center">0.77 (0.55, 1.16)</td></tr>
@@ -2595,7 +2801,7 @@ in <a href="#tab:coeftbl">3.3</a>.</p>
 </div>
 <div id="model-comparison" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Model comparison</h2>
-<p><img src="figure/article.Rmd/roc-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="figure/article.Rmd/roc-1.png" style="display: block; margin: auto;" /></p>
 <p>
 <button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-roc-1">
 Past versions of roc-1.png
@@ -2679,13 +2885,14 @@ Sebastian Gibb
 </tbody>
 </table>
 <p>AMELD offers the best AUROC (0.961) across all competitors.
-However, the difference against the second best model MELD-Na
-(AUROC: 0.936) is not statistical significant (
-<span class="math inline">\(p = 0.15\)</span>) after correction for multiple
-testing (see Table <a href="#tab:roctest">3.5</a> for complete comparison).</p>
+However, after correction for multiple testing the difference against
+the second best model MELD-Na
+(AUROC: 0.936) is not statistical significant
+(<span class="math inline">\(p = 0.15\)</span>)
+(see Table <a href="#tab:roctest">3.5</a> for complete comparison).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bootrcv"></span>
 <img src="figure/article.Rmd/bootrcv-1.png" alt="Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.
- The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate." width="768" />
+ The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate."  />
 <p class="caption">
 Figure 3.1: Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.
 The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.
@@ -2760,15 +2967,15 @@ of MELD-Na over MELD the sodium does not add any information to the score.
 Neither in the bootstrap selection nor in the variable importance of a
 random forest model the sodium gains any important weight
 (in bootstrap selection rank 18 of 42 and in a random forest variable importance rank 20 of 42, see <a href="#fig:vimpbs"><strong>??</strong></a>, <a href="#fig:vimprf"><strong>??</strong></a>).
-Already <span class="citation">Kartoun et al. (2017)</span> have shown that the
-discrimination performance of MELD-Na is insignificantly different from the
-classical MELD.
+In addition sodium levels can be affected by diuretic therapy and already
+<span class="citation">Kartoun et al. (2017)</span> have shown that the discrimination performance of MELD-Na is
+insignificantly different from the classical MELD.
 Consequentially it is not a component of our model.</p>
-<p>It has shown that women get lower scores in MELD-Na and therefore
+<p>It has shown that women receive in median lower scores in MELD-Na and therefore
 are less likely getting an urgent listing for liver transplantation
-<span class="citation">(<strong>gaertner2022?</strong>)</span>.
+<span class="citation">(Sealock et al. 2022)</span>.
 To address sexual differences in laboratory measurements we applied the <em>zlog</em>
-transformation <span class="citation">(Hoffmann et al. 2017)</span>.
+transformation <span class="citation">(Hoffmann et al. 2017)</span> in our study.
 Additionally this transformation yield comparable laboratory measurements
 across different clinical laboratories and methods.
 It also reduce the influence of age- and sex-related differences,
@@ -2845,15 +3052,14 @@ Principally it is a single center, retrospective analysis and without an
 external validation cohort.
 The data were collected during the evaluation process for liver transplantation
 at the University Hospital of Leipzig.
-There was no controlled follow-up process. Instead the follow-up information
-were recored at the next clinical admission.
-Furthermore we excluded all patients who had already a liver transplantation
+There was no controlled follow-up process.
+We excluded all patients who had already a liver transplantation
 which could artificial lower the disease severity of the cohort.
-Next most of our patients suffered from ethyltoxic liver cirrhosis
+Furthermore most of our patients suffered from ethyltoxic liver cirrhosis
 (63%) which may
 limited the transfer to other etiologies.</p>
-<p>With a median MELD score of 11 (8, 17) our
-cohort was healthier than in previous studies that reported
+<p>With a median MELD score of 11
+our cohort was healthier than in previous studies that reported
 a score of 14-15 <span class="citation">(Kim et al. 2008; Kartoun et al. 2017)</span>.
 However the 90-day mortality rate of 81 (14%) was comparable to
 the mortality rates seen in earlier studies that ranges from 6 to 30%
@@ -2862,12 +3068,13 @@ Although our cohort was healthier with a medium mortality rate the classical
 MELD score underestimates the observed mortality
 1.4 to 2.9
 times.
-Unfortunately our sample size is very low in the high risk patient category
+Unfortunately our sample size is low in the high risk patient category
 which yield a poor but better than MELD based prediction performance of our
 AMELD for very ill patients.</p>
 </div>
-<div id="conclusion" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Conclusion</h2>
+</div>
+<div id="conclusion" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Conclusion</h1>
 <p>In conclusion we developed a new model to predict the 90-day survival of
 patients during the evaluation process for liver transplantation.
 Our model, AMELD, extends the classical MELD predictors, INR,
@@ -2901,10 +3108,8 @@ Few patients with high MELD scores, poor calibration for high mortality
 - unknown cause of death (death with vs of end-stage liver disease)
 - bias caused by LTx censorship?
 -->
-</div>
-</div>
-<div id="data-and-software-availability" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Data and software availability</h1>
+<div id="data-and-software-availability" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Data and software availability</h2>
 <p>The complete code and reproducible analysis could be found at
 <a href="https://ampel-leipzig.github.io/ampel-leipzig-meld/" class="uri">https://ampel-leipzig.github.io/ampel-leipzig-meld/</a>.
 Additionally all data are available in the <code>ameld</code> R package <span class="citation">(Gibb 2022)</span> at
@@ -2912,22 +3117,13 @@ Additionally all data are available in the <code>ameld</code> R package <span cl
 <a href="https://doi.org/10.5281/zenodo.6666018"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg" alt="DOI" /></a>
 for further investigations.</p>
 </div>
-<div id="acknowledgement" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Acknowledgement</h1>
-<p>The study was supported by the AMPEL project (<a href="https://www.ampel.care">www.ampel.care</a>).
-This project is co-financed through public funds according to the budget
-decided by the Saxon State Parliament under the
-RL eHealthSax 2017/18 grant number 100331796.
-The funder provided support in the form of
-salaries for author SG
-but did not have any additional role in the study design,
-data collection and analysis, decision to publish, or preparation
-of the manuscript.
-We thank the whole AMPEL team for their support,
+<div id="acknowledgement" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Acknowledgement</h2>
+<p>We thank the whole AMPEL team for their support,
 Stefan Kemnitz for his technical support regarding the use of the
 HPC cluster of the University Greifswald and
 Bernd Klaus for helpful discussions about survival analysis and proof reading the manuscript.</p>
-<p>The calculations were conducted using the high performance computing (HPC)
+<p>The calculations were conducted using the high-performance computing (HPC)
 cluster of the University Greifswald.
 In 2018 the average carbon efficiency of the German power grid was
 0.471 kgCO<sub>2</sub>eq/kWh <span class="citation">(Icha, Lauf, and Kuhs 2021)</span>.
@@ -2941,8 +3137,50 @@ The total estimated emissions were at least
 This is equivalent to 44 km driven by an average car
 <span class="citation">(Allekotte et al. 2021)</span>.</p>
 </div>
-<div id="references" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> References</h1>
+<div id="research-funding" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Research funding</h2>
+<p>The study was supported by the AMPEL project (<a href="https://www.ampel.care">www.ampel.care</a>).
+This project is co-financed through public funds according to the budget
+decided by the Saxon State Parliament under the
+RL eHealthSax 2017/18 grant number 100331796.
+The funder provided support in the form of
+salaries for author SG
+but did not have any additional role in the study design,
+data collection and analysis, decision to publish, or preparation
+of the manuscript.</p>
+</div>
+<div id="author-contributions" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Author contributions</h2>
+<p>Funding was acquired by TK.
+The study was conceptualised by SG and TK.
+The data was acquired by TK.
+The data was analysed and processed by SG.
+Visualisation were produced by SG.
+Original drafts of the manuscript were written by SG and TK.
+Drafts were edited and reviewed by SG, TB, DS, BI, and TK.
+The project was supervised by TK.
+All authors have accepted responsibility for the entire content of this
+manuscript and approved its submission.</p>
+</div>
+<div id="competing-interests" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Competing interests</h2>
+<p>Authors state no conflict of interest.</p>
+</div>
+<div id="informed-consent" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Informed consent</h2>
+<p>Informed consent was obtained from all individuals included in this study.</p>
+</div>
+<div id="ethical-approval" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Ethical approval</h2>
+<p>Research involving human subjects complied with all relevant national
+regulations, institutional policies and is in accordance with the tenets of
+the Helsinki Declaration (as revised in 2013), and has been
+approved by the Ethics Committee at the Leipzig University Faculty of
+Medicine (reference number: 039/14ff).</p>
+</div>
+</div>
+<div id="references" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-allekotte2021" class="csl-entry">
 Allekotte, M., F. Bergk, K. Biemann, C. Deregowski, W. Knörr, H.-J. Althaus, D. Sutter, and T. Bergmann. 2021. <span>“Ökologische Bewertung von Verkehrsarten.”</span> 3716581060. Umweltbundesamt. <a href="https://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/texte_156-2020_oekologische_bewertung_von_verkehrsarten_0.pdf">https://www.umweltbundesamt.de/sites/default/files/medien/479/publikationen/texte_156-2020_oekologische_bewertung_von_verkehrsarten_0.pdf</a>.
@@ -3051,6 +3289,9 @@ R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</
 </div>
 <div id="ref-remmler2018" class="csl-entry">
 Remmler, J., C. Schneider, T. Treuner-Kaueroff, M. Bartels, D. Seehofer, M. Scholz, T. Berg, and T. Kaiser. 2017. <span>“Increased Level of Interleukin 6 Associates with Increased 90-Day and 1-Year Mortality in Patients with End-Stage Liver Disease.”</span> <em>Clin Gastroenterol Hepatol</em> 16 (5): 730–37. <a href="https://doi.org/10.1016/j.cgh.2017.09.017">https://doi.org/10.1016/j.cgh.2017.09.017</a>.
+</div>
+<div id="ref-sealock2022" class="csl-entry">
+Sealock, J. M., I. A. Ziogas, Z. Zhao, F. Ye, S. P. Alexopoulos, L. Matsuoka, G. Chen, and L. K. Davis. 2022. <span>“Proposing a Sex-Adjusted Sodium-Adjusted <span>MELD</span> Score for Liver Transplant Allocation.”</span> <em><span>JAMA</span> Surg</em> 157 (7): 618. <a href="https://doi.org/10.1001/jamasurg.2022.1548">https://doi.org/10.1001/jamasurg.2022.1548</a>.
 </div>
 <div id="ref-glmnet2011" class="csl-entry">
 Simon, Noah, Jerome Friedman, Trevor Hastie, and Rob Tibshirani. 2011. <span>“Regularization Paths for Cox’s Proportional Hazards Model via Coordinate Descent.”</span> <em>Journal of Statistical Software</em> 39 (5): 1–13. <a href="https://doi.org/10.18637/jss.v039.i05">https://doi.org/10.18637/jss.v039.i05</a>.
