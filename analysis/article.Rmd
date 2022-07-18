@@ -2,7 +2,7 @@
 # R markdown template taken from
 # Dan Holmes <dtholmes@mail.ubc.ca>
 # https://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/
-title: "A New Model to Predict Survival in Patients with End-Stage Liver Disease"
+title: "A new model to predict survival in patients with end-stage liver disease"
 subtitle: >
     Comparision against MELD, MELD-Na, MELD-Plus7.
 abstract: >
