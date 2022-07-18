@@ -44,7 +44,7 @@ local-guix:
 
 docx:
 	@./scripts/Rscript.sh -e \
-		'd <- rprojroot::find_rstudio_root_file(); rmarkdown::render(file.path(d, "analysis", "article.Rmd"), output_format = "bookdown::word_document2", knit_root_dir = d, output_dir = d)'
+		'd <- rprojroot::find_rstudio_root_file(); outd <- file.path(d, "submission", "labm"); rmarkdown::render(file.path(d, "analysis", "article.Rmd"), output_format = "bookdown::word_document2", knit_root_dir = d, output_dir = outd); rmarkdown::render(file.path(d, "analysis", "supplement.Rmd"), output_format = "bookdown::word_document2", knit_root_dir = d, output_dir = outd)'
 
 clean: clean-targets
 
