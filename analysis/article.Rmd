@@ -218,49 +218,43 @@ For each patient we recorded `r ncol(raw_data)` variables.
 Among them are age, sex, etiology of liver disease, complications as listed in
 Table \@ref(tab:tbl1) and `r length(cn_labs)` laboratory measurements.
 
-```{r flowchart, results = "asis", eval = knitr::is_html_output(), echo = FALSE, fig.width = 5, fig.height = 5, fig.cap = "Flowchart Inclusion/Exclusion.", dev = c("png", "pdf")}
-graph <- "
-digraph flowchart {
-    graph [splines = false];
+```{r flowchart, results = "asis", echo = FALSE, fig.width = 4.5, fig.height = 2, fig.cap = "Flowchart Inclusion/Exclusion."}
+library("consort")
+library("grid")
 
-    // invisible nodes
-    node [shape = point, width = 0, height = 0];
-    iAR [style = 'invis'];
+options(txt_gp = gpar(cex = 0.8))
 
-    // visible nodes
-    node [shape = box];
-    A [label = '@@1'];
-    E [label = '@@3'];
-    R [label = '@@2'];
-
-    // edge statements
-    A -> iAR [arrowhead = none];
-    {rank = same; iAR -> E [minlen = 5]};
-    iAR -> R;
-}
-
-[1]: paste0('Total Records\\n(n = ', n_total, ')')
-[2]: paste0('Analysed Records\\n(n = ', n_analysed, ')')
-[3]: str_excluded
-"
-str_excluded <- paste0(
-    'Excluded (n = ', sum(n_excluded), ')\\\\l',
+total_records <- paste0("Total records (n = ", n_total, ")")
+analysed_records <- paste0("Analysed records (n = ", n_analysed, ")")
+excluded_records <- paste0(
+    "Excluded (n = ", sum(n_excluded), ")\n",
     paste0(
-        '- ',
-        paste(
-            c(
-                'Younger than 18 years:',
-                'Liver Transplantation before visit:',
-                'Follow-up missing/invalid:'
-            ),
-            n_excluded
+        "- ",
+        c("Younger than 18 years",
+          "Liver transplantation before visit",
+          "Follow-up missing/invalid"
         ),
-        collapse = '\\\\l'
-    ),
-    '\\\\l'
+        " (n = ", n_excluded, ")",
+        collapse = "\n"
+    )
 )
 
-DiagrammeR::grViz(graph)
+totalbox <- textbox(
+    total_records,
+    x = unit(0.25, "npc"), y = unit(0.9, "npc"),
+    box_fn = rectGrob, name = "vertbox"
+)
+graph <- gList(gList(), totalbox)
+class(graph) <- union("consort", class(graph))
+graph <- structure(graph, split_layout = NULL)
+graph <- add_side_box(graph, txt = excluded_records, dist = 0.1)
+graph <- add_box(graph, txt = analysed_records, dist = 0.1)
+
+#graph <-
+#    add_box(txt = total_records) |>
+#    add_side_box(txt = excluded_records, dist = 0.05) |>
+#    add_box(txt = analysed_records, dist = 0.05) |>
+plot(graph)
 ```
 
 We excluded `r sum(n_excluded)` patients from our analysis

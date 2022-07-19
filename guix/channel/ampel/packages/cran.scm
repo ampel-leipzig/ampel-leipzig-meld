@@ -43,45 +43,27 @@
       "This package provides suite of functions to work with regression model 'broom::tidy()' tibbles.  The suite includes functions to group regression model terms by variable, insert reference and header rows for categorical variables, add variable labels, and more.")
     (license gpl3)))
 
-(define-public r-diagrammer
+(define-public r-consort
   (package
-    (name "r-diagrammer")
-    (version "1.0.9")
-    (source
-      (origin
-        (method url-fetch)
-        (uri (cran-uri "DiagrammeR" version))
-        (sha256
-          (base32
-            "1gqaqk7jdh37zzadv0aymr9yb8lpqgj3l8n1n3cds38i4zz2d934"))))
-    (properties `((upstream-name . "DiagrammeR")))
+    (name "r-consort")
+    (version "1.0.1")
+    (source (origin
+              (method url-fetch)
+              (uri (cran-uri "consort" version))
+              (sha256
+               (base32
+                "16i7hd433f3lfs6saa20m2jk9926r9jaln74333dmx5ld0294q99"))))
+    (properties `((upstream-name . "consort")))
     (build-system r-build-system)
-    (propagated-inputs
-      (list r-downloader
-            r-dplyr
-            r-glue
-            r-htmltools
-            r-htmlwidgets
-            r-igraph
-            r-influencer
-            r-magrittr
-            r-purrr
-            r-rcolorbrewer
-            r-readr
-            r-rlang
-            r-rstudioapi
-            r-scales
-            r-stringr
-            r-tibble
-            r-tidyr
-            r-viridis
-            r-visnetwork))
     (native-inputs (list r-knitr))
-    (home-page
-      "https://github.com/rich-iannone/DiagrammeR")
-    (synopsis "Graph/Network Visualization")
+    (home-page "https://github.com/adayim/consort/")
+    (synopsis "Create Consort Diagram")
     (description
-      " Build graph/network structures using functions for stepwise addition and deletion of nodes and edges.  Work with data available in tables for bulk addition of nodes, edges, and associated metadata.  Use graph selections and traversals to apply changes to specific nodes or edges.  A wide selection of graph algorithms allow for the analysis of graphs.  Visualize the graphs and take advantage of any aesthetic properties assigned to nodes and edges.")
+     "To make it easy to create CONSORT diagrams for the transparent reporting of
+participant allocation in randomized, controlled clinical trials.  This is done
+by creating a standardized disposition data, and using this data as the source
+for the creation a standard CONSORT diagram.  Human effort by supplying text
+labels on the node can also be achieved.")
     (license expat)))
 
 (define-public r-dictionar6
