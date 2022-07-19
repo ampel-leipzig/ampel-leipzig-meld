@@ -115,7 +115,7 @@ cat(
 ```
 
 ```{r knitr_setup_word, eval = !knitr::is_html_output(), include = FALSE}
-knitr::opts_chunk$set(dpi = 1200)
+knitr::opts_chunk$set(dpi = 1200, dev = c("png", "pdf"))
 ```
 
 ```{r article_setup, include=FALSE}
@@ -610,7 +610,7 @@ the second best model `r names(roc)[2]`
 (`r paste0("$p = ", round(tp[2, "t=90"], 2), "$")`)
 (see Table \@ref(tab:roctest) for complete comparison).
 
-```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.'), dev = c('png', 'pdf'), echo = FALSE}
+```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.'), echo = FALSE}
 par(cex = 0.9)
 plot(
     bootrcv,
