@@ -218,7 +218,7 @@ For each patient we recorded `r ncol(raw_data)` variables.
 Among them are age, sex, etiology of liver disease, complications as listed in
 Table \@ref(tab:tbl1) and `r length(cn_labs)` laboratory measurements.
 
-```{r flowchart, results = "asis", echo = FALSE, fig.width = 4.5, fig.height = 2, fig.cap = "Flowchart Inclusion/Exclusion."}
+```{r flowchart, results = "asis", echo = FALSE, fig.width = 4.5, fig.height = 2, fig.cap = "Flowchart. Inclusion and exclusion of records."}
 library("consort")
 library("grid")
 
@@ -570,7 +570,13 @@ in \@ref(tab:coeftbl).
 
 ## Model comparison
 
-```{r roc, fig.width = 7, fig.height = 7, echo = FALSE, message = FALSE}
+The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
+using the area under the time-dependent receiver operating characteristic curve
+(AUROC) based on the nonparametric inverse probability of censoring weighting
+estimator (IPCW) [@blanche2013, @R-timeROC].
+Testing was applied as described in @blanche2013.
+
+```{r roc, fig.width = 7, fig.height = 7, echo = FALSE, message = FALSE, fig.cap = "Receiver operating characteristic (ROC) curve. Area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na and MELD-Plus7 as described in [@blanche2013]."}
 col <- viridisLite::viridis(5)
 m <- list(
     AMELD = timeROC_RCV,
