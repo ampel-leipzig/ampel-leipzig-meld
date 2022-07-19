@@ -1,17 +1,29 @@
 ---
-title: "Supplement"
+title: "A new model to predict survival in patients with end-stage liver disease"
+subtitle: >
+    Supplement
+author:
+    - Sebastian Gibb^[mail@sebastiangibb.de]
+    - Thomas Berg
+    - Daniel Seehofer
+    - Berend Isermann
+    - Thorsten Kaiser
+bibliography:
+  - "`r rprojroot::find_rstudio_root_file('analysis', 'bibliography', 'bibliography.bib')`"
 output:
   bookdown::html_document2:
     toc: false
   bookdown::word_document2:
     keep_md: true
+    pandoc_args: # pandoc_args doesn't support r evaluation
+      - --csl=pandoc/csl/vancouver.csl
 ---
 
 ```{r knitr_setup, include = FALSE}
 ```
 
 ```{r knitr_setup_word, eval = !knitr::is_html_output(), include = FALSE}
-knitr::opts_chunk$set(dpi = 1200, dev = c("png", "pdf"))
+knitr::opts_chunk$set(dpi = 1200, echo = FALSE)
 ```
 
 ```{r supplement_setup, echo = FALSE, message = FALSE}
@@ -24,6 +36,47 @@ library("mlr3proba")
 library("mlr3viz")
 library("viridis")
 library("ggplot2")
+```
+
+# Survival plot
+
+```{r survival.plot, fig.cap = "Survival plot. Kaplan-Meier survival estimate for the first 90 days of the analysed population.", fig.width = 8, fig.height = 5}
+tar_load(zlog_data)
+srv <- Surv(zlog_data$DaysAtRisk, zlog_data$Deceased)
+col <- palette.colors(nlevels(zlog_data$MeldCategory))
+
+srvfit <- survfit(srv ~ 1)
+times <- c(2, 7, 14, 30, 90)
+
+## calculate risk tables
+sm <- summary(srvfit, times = times)
+nrisk <- as.matrix(sm$n.risk)
+ncumevents <- as.matrix(cumsum(sm$n.event))
+rownames(nrisk) <- rownames(ncumevents) <- times
+
+## keep old graphic parameters and restore them afterwards
+old.par <- par(no.readonly = TRUE)
+
+layout(matrix(1:3, nrow = 3), height = c(5, 1, 1))
+plot_surv(
+    srvfit,
+    main = "Kaplan-Meier survival estimate to day 90",
+    times = times,
+    xmax = 90,
+    col = col[2],
+    cex = 1.2
+)
+par(mar = c(1.1, 5.1, 1.1, 2.1))
+plot_table(
+    nrisk, at = times, main = "Number at risk",
+    xaxis = FALSE, cex.text = 1, ylabels = FALSE
+)
+par(mar = c(1.1, 5.1, 1.1, 2.1))
+plot_table(
+    ncumevents, at = times, main = "Cumulative number of events",
+    xaxis = FALSE, cex.text = 1, ylabels = FALSE
+)
+par(old.par)
 ```
 
 # Benchmark results of machine learning algorithms
@@ -48,12 +101,16 @@ agg[, `:=`
 agg <- subset(agg, task_id == "zlog_eldd" & !grepl("^scale", learner_id))
 agg[, task_id := NULL]
 setorder(agg, -harrell)
-knitr::kable(agg, col.names = c("Learner ID", "Harrell C"))
+knitr::kable(
+    agg,
+    col.names = c("Learner ID", "Harrell C"),
+    caption = paste0("Benchmark results. Ranking of the ", nrow(agg), " tested machine learning algorithms.")
+)
 ```
 
 # AUROC trend
 
-```{r roc-plot, echo = FALSE, fig.width = 18, fig.height = 12}
+```{r roc-plot, echo = FALSE, fig.width = 18, fig.height = 12, fig.cap = "Trend in AUROC. Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na and MELD-Plus7 as described in [@blanche2013]."}
 tar_load(timeROC_MELD)
 tar_load(timeROC_MELDNa)
 tar_load(timeROC_MELDPlus7)
@@ -65,7 +122,7 @@ m <- list(
     "MELD-Na" = timeROC_MELDNa,
     "MELD-Plus7" = timeROC_MELDPlus7
 )
-plot_surv_roc_trend(m)
+plot_surv_roc_trend(m, xlab = "time [days]", col = viridisLite::viridis(5)[-2])
 ```
 
 # Variable importance
@@ -83,3 +140,5 @@ plot_dots(
     xlab = rngr$splitrule
 )
 ```
+
+# References
