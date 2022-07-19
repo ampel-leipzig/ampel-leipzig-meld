@@ -474,7 +474,7 @@ knitr::kable(
             "Expected mortality (%)"
         ),
     caption = paste0(
-        "Observed vs MELD-expected 90-day mortality. ",
+        "Observed vs. MELD-expected 90-day mortality. ",
         "MELD mortality values are taken from @wiesner2003. ",
         "All patients censored before day 90 are ignored for ",
         " the calculation of the MELD-expected deaths. ",
