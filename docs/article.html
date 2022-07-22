@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,4,✉, Thomas Berg2, Daniel Seehofer3, Berend Isermann1, and Thorsten Kaiser1" />
 
-<meta name="date" content="2022-07-19" />
+<meta name="date" content="2022-07-22" />
 
 <title>A new model to predict survival in patients with end-stage liver disease</title>
 
@@ -562,38 +562,39 @@ div.tocify {
 <h1 class="title toc-ignore">A new model to predict survival in patients with end-stage liver disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,4,✉</sup>, Thomas Berg<sup>2</sup>, Daniel Seehofer<sup>3</sup>, Berend Isermann<sup>1</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2022-07-19</h4>
+<h4 class="date">2022-07-22</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Objectives</strong>:
-The shortage in grafts for liver transplantation requires
+The shortage of grafts for liver transplantation requires
 risk stratification and adequate allocation rules.
 This study aims to improve the model of end-stage liver disease (MELD)
 score for 90-day mortality prediction with the help of different
-machine learning (ML) algorithms.</p>
+machine-learning algorithms.</p>
 <p><strong>Methods</strong>:
-We retrospectively analyzed clinical and laboratory data of 654
+We retrospectively analyzed the clinical and laboratory data of 654
 patients who were recruited during the evaluation process for
-liver transplantation at the University Hospital Leipzig.
-After comparing 13 different ML algorithms in a nested cross-validation
-setting and selecting the best performing one we build a new model
-to predict 90-day mortality in patients with end-stage liver disease.</p>
+liver transplantation at University Hospital Leipzig.
+After comparing 13 different machine-learning algorithms in a nested
+cross-validation setting and selecting the best performing one we build
+a new model to predict 90-day mortality in patients with end-stage liver
+disease.</p>
 <p><strong>Results</strong>:
-Penalized regression algorithms yield the highest prediction performance
-in our ML algorithm benchmark.
-In favour of a simpler model we chose the least absolute shrinkage and
+Penalized regression algorithms yielded the highest prediction
+performance in our machine-learning algorithm benchmark.
+In favor of a simpler model we chose the least absolute shrinkage and
 selection operator (lasso) regression.
-Beside the classical MELD variables INR and bilirubin the
-lasso regression selected cystatin C over creatinine, and
-additionally IL-6, total protein and cholinesterase.
-The new model offers an improved discrimination and calibration than MELD
+Beside the classical MELD variables international normalized ratio (INR)
+and bilirubin, the lasso regression selected cystatin C over creatinine,
+as well IL-6, total protein, and cholinesterase.
+The new model offers improved discrimination and calibration over MELD
 and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.</p>
 <p><strong>Conclusion</strong>:
-We provide a new ML based model of end-stage liver disease that
-outperforms the classical MELD score for 90-day survival prediction.</p>
+We provide a new machine-learning-based model of end-stage liver disease
+that outperforms the classical MELD score for 90-day survival prediction.</p>
 <p><strong>Keywords</strong>:
 end-stage liver disease; IL-6; machine learning; MELD;
-risk stratification; survival estimation.</p>
+risk stratification; survival estimation</p>
 </div>
 
 </div>
@@ -628,7 +629,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-07-19
+<strong>Last updated:</strong> 2022-07-22
 </p>
 <p>
 <strong>Checks:</strong>
@@ -756,20 +757,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreecefd531a53f3cdcd90a7506e35d89ebff130adadtargetblankcefd531a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee6cf8a206e7f3fb1f3321f3c0a909c9eee96f111targetblanke6cf8a2a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/cefd531a53f3cdcd90a7506e35d89ebff130adad" target="_blank">cefd531</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e6cf8a206e7f3fb1f3321f3c0a909c9eee96f111" target="_blank">e6cf8a2</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreecefd531a53f3cdcd90a7506e35d89ebff130adadtargetblankcefd531a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee6cf8a206e7f3fb1f3321f3c0a909c9eee96f111targetblanke6cf8a2a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/cefd531a53f3cdcd90a7506e35d89ebff130adad" target="_blank">cefd531</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e6cf8a206e7f3fb1f3321f3c0a909c9eee96f111" target="_blank">e6cf8a2</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -792,9 +793,6 @@ Ignored files:
 
 Untracked files:
     Untracked:  submission/
-
-Unstaged changes:
-    Modified:   analysis/supplement.Rmd
 
 </code></pre>
 <p>
@@ -839,6 +837,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/e6cf8a206e7f3fb1f3321f3c0a909c9eee96f111/analysis/article.Rmd" target="_blank">e6cf8a2</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-22
+</td>
+<td>
+refactor: apply proofreading suggestions
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/83e3c7ae41877eabeb1634028bc3a5c93092f048/docs/article.html" target="_blank">83e3c7a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-19
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1919,51 +1951,53 @@ feat: add first article draft with pandoc filters
 </div>
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>Liver cirrhosis is the terminal result of fibrotic remodeling
+<p>Liver cirrhosis is the terminal result of the fibrotic remodeling
 of liver tissue due to chronic damage.
-This end-stage of liver disease is usually irreversible and
+This end-stage of liver disease is usually irreversible, and
 the only available therapy is liver transplantation.
-However, the shortage in grafts for transplantation from deceased donors
+However, the shortage of grafts for transplantation from deceased donors
 requires risk stratification and precise and fair allocation rules.
 The allocation of liver transplantation in most countries is based on
 disease severity determined by the model of end-stage liver disease (MELD)
 <span class="citation">(Malinchoc et al. 2000; Wiesner et al. 2003; Organ Procurement and Transplantation Network 2021)</span>.
-The MELD score estimates the patients’ 3-month mortality risk based on
-laboratory results, namely bilirubin, creatinine and international normalized
-ratio (INR).
+The MELD score estimates patients’ 3-month mortality risk based on
+laboratory results, namely bilirubin, creatinine, and
+the international normalized ratio (INR).
 The MELD score has been extended by the sodium level
-(MELD-Na score) as this was found to be an important additional risk factor in
-liver cirrhosis <span class="citation">(Kim et al. 2008; Organ Procurement and Transplantation Network 2021)</span>.
-The MELD was initially developed for predicting the survival of patients
+(MELD-Na score) because this was found to be an important additional
+risk factor in liver cirrhosis <span class="citation">(Kim et al. 2008; Organ Procurement and Transplantation Network 2021)</span>.
+The MELD was initially developed to predict the survival of patients
 undergoing transjugular intrahepatic portosystemic shunts.
-Afterwards it was revalidated for predicting mortality risk in patients awaiting
+It was subsequently revalidated to predict mortality risk in patients awaiting
 a liver transplantation.
-Although the MELD score should be an objective allocation score especially the
-creatinine and INR are highly dependent on the utilized laboratory methods
+Although the MELD score should be an objective allocation score,
+creatinine and INR are highly dependent on the laboratory methods used
 <span class="citation">(Trotter et al. 2004; Cholongitas et al. 2007)</span>.
-Additionally women are disadvantage <span class="citation">(Sealock et al. 2022)</span>.
-Patients with identical disease state could have very different MELD scores and
-thus get different priority on the liver transplantation waiting list.
-Furthermore often, e.g. for acute-on-chronic liver failure, the MELD score
-underestimates the mortality risk <span class="citation">(Hernaez et al. 2020)</span>.</p>
-<p>There have been some attempts to use the data extracted from more than 300.000
+In addition women are disadvantaged <span class="citation">(Sealock et al. 2022)</span>.
+Patients with identical disease states can have very different MELD scores and
+thus receive different priority levels on the liver transplantation waiting
+list.
+Furthermore, for acute-on-chronic liver failure, for example, the MELD score
+often underestimates the mortality risk <span class="citation">(Hernaez et al. 2020)</span>.</p>
+<p>There have been some attempts to use the data extracted from more than 300,000
 electronic medical records from two hospitals in the United States to improve
-the MELD score <span class="citation">(Kartoun et al. 2017)</span>. The derived MELD-Plus7 and MELD-Plus9 risk score
-add albumin, white blood cell count, total cholesterol, age and length of
-stay to the MELD-Na variables. Despite its published prediction improvement the
-MELD-Plus scores are not used for transplant allocation yet.</p>
-<p>As depicted by MELD-Plus risk scores better predictive scores often need more
+the MELD score <span class="citation">(Kartoun et al. 2017)</span>. The derived MELD-Plus7 and MELD-Plus9
+risk scores add albumin, white blood cell count, total cholesterol, age, and
+length of stay to the MELD-Na variables.
+Despite their published prediction improvement, the MELD-Plus scores are not
+yet used for transplant allocation.</p>
+<p>As shown by the MELD-Plus risk scores, better predictive scores often need more
 variables and are more complicated. To reduce the risk of overlooking or
 incorrectly calculating and interpreting the results,
 clinical decision support systems may be used and could improve patient safety.
 The research project on digital laboratory medicine (AMPEL) develops a
 clinical decision support system based on laboratory diagnostics that should
-support clinical practitioners in interpreting the laboratory results and taking
+support clinical practitioners in interpreting laboratory results and taking
 the necessary medical interventions <span class="citation">(Eckelt et al. 2020)</span>.</p>
-<p>This study aims to find clinical and laboratory values that improve the risk
-stratification for liver transplantation over classical MELD, MELD-Na and
-MELD-Plus scores and could be implemented as part of the AMPEL clinical decision
-support system.</p>
+<p>This study aims to find clinical and laboratory values that improve on the risk
+stratification for liver transplantation of the classical MELD, MELD-Na, and
+MELD-Plus scores and that might be implemented as part of the
+AMPEL clinical decision support system.</p>
 </div>
 <div id="material-and-methods" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> Material and methods</h1>
@@ -1971,22 +2005,59 @@ support system.</p>
 <h2><span class="header-section-number">2.1</span> Study population</h2>
 <p>In a retrospective cohort study we followed 778 consecutive
 patients, who were recruited during the evaluation process for
-liver transplantation at the University Hospital of Leipzig from
+liver transplantation at University Hospital Leipzig from
 November 2012 to June 2015.
-For each patient we recorded 44 variables.
-Among them are age, sex, etiology of liver disease, complications as listed in
-Table <a href="#tab:tbl1">3.1</a> and 25 laboratory measurements.</p>
+For each patient, we recorded 44 variables, including
+age, sex, etiology of liver disease, complications as listed in
+Table <a href="#tab:tbl1">3.1</a>, and 25 laboratory measurements.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:flowchart"></span>
-<img src="figure/article.Rmd/flowchart-1.png" alt="Flowchart. Inclusion and exclusion of records."  />
+<img src="figure/article.Rmd/flowchart-1.png" alt="Flowchart showing inclusion and exclusion of records."  />
 <p class="caption">
-Figure 2.1: Flowchart. Inclusion and exclusion of records.
+Figure 2.1: Flowchart showing inclusion and exclusion of records.
 </p>
+</div>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-flowchart-1">
+Past versions of flowchart-1.png
+</button>
+</p>
+<div id="fig-flowchart-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/83e3c7ae41877eabeb1634028bc3a5c93092f048/docs/figure/article.Rmd/flowchart-1.png" target="_blank">83e3c7a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>We excluded 124 patients from our analysis
 (Figure <a href="#fig:flowchart">2.1</a>).
-One was younger than 18 years.
-24 had a liver transplantation before and
-in 99 cases the follow up data were missing or
+One was younger than 18 years,
+24 had had a liver transplant before and
+in 99 cases the follow-up data were missing or
 invalid.</p>
 <p>The Ethics Committee at the Leipzig University Faculty of
 Medicine approved the retrospective usage of the data for our study
@@ -1998,9 +2069,10 @@ Medicine approved the retrospective usage of the data for our study
 <span class="citation">Organ Procurement and Transplantation Network (2021)</span> using the following formulas:
 <span class="math inline">\(MELD = 10 * (0.957 \ln(creatinine [mg/dL]) + 0.378 \ln(bilirubin [mg/dL]) + 1.120 * \ln(INR) + 0.643)\)</span>,
 Creatinine, bilirubin and INR values lower than 1.0 mg/dL were set to 1.0 mg/dL.
-The maximum allowed creatinine was 4.0 mg/dL. If patients received dialysis,
+The maximum allowed creatinine was 4.0 mg/dL. If the patients received dialysis,
 creatinine was set to 4.0 mg/dL.
-For MELD-Na MELD was calculated as above and recalculated if greater than 11 using:
+For MELD-Na, MELD was calculated as above and recalculated if greater than
+11 using:
 <span class="math inline">\(MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/L]) - (0.033 * MELD_i * (137 - Na [mmol/L]))\)</span></p>
 <p>Serum sodium values lower than 125 mmol/L or higher than 137 mmol/L were set
 to 125 mmol/L and 137 mmol/L, respectively.</p>
@@ -2019,75 +2091,75 @@ L = 8.53499496 &amp;+ \\
 \]</span></p>
 <p><span class="math display">\[MELD\text{-}Plus = \frac{\exp(L)}{1 + \exp(L)}\]</span></p>
 <p>The MELD-Plus9 score was ignored because the length of stay information was not
-available for our cohort and the model itself wasn’t superior to MELD-Plus7 in
-its original publication <span class="citation">(Kartoun et al. 2017)</span>.</p>
+available for our cohort, and the model itself was not superior to MELD-Plus7
+in its original publication <span class="citation">(Kartoun et al. 2017)</span>.</p>
 </div>
 <div id="data-processing-and-machine-learning" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Data processing and machine learning</h2>
-<p>All data processing, statistical and machine learning analyses were performed
+<p>All data processing, statistical, and machine-learning analyses were performed
 using R version
 4.2.0
 <span class="citation">(R Core Team 2022)</span>.
-Prior to the analyses all laboratory values were <em>zlog</em> transformed to
+Prior to the analyses, all laboratory values were <em>zlog</em> transformed to
 approximate a normal distribution as described in
 <span class="citation">Hoffmann et al. (2017)</span> and implemented in <span class="citation">Gibb (2021)</span>.</p>
 <p><span class="math display">\[
 z = (\log(x) - \frac{\log(LL) + \log(UL)}{2}) * \frac{3.92}{\log(UL) - \log(LL)}
 \]</span></p>
-<p>Where <span class="math inline">\(LL\)</span> and <span class="math inline">\(UL\)</span> are the lower and upper reference limit of
-the corresponding laboratory diagnostic, respectively.
+<p>where <span class="math inline">\(LL\)</span> and <span class="math inline">\(UL\)</span> are the lower and upper age-, and sex-related
+reference limits of the corresponding laboratory diagnostic, respectively.
 Missing laboratory measurements were replaced with a <em>zlog</em> value of zero.
-In similar manner if information about complications or
-comorbidities were missing we treat them as not present.</p>
-<p>We compared 13 different statistical and machine learning
+In a similar manner, where information about complications or
+comorbidities was missing, we treated them as not present.</p>
+<p>We compared 13 different statistical and machine-learning
 algorithms using the <em>mlr3</em> framework
 <span class="citation">(Lang et al. 2019, 2022; Sonabend et al. 2021; Sonabend, Kiraly, and Lang 2022)</span>.
-The used algorithms are designed for analysis of survival data:
+The algorithms used were designed for analysis of survival data:
 Cox proportional hazards regression model
-<span class="citation">(Cox 1972; Terry M. Therneau and Patricia M. Grambsch 2000; Therneau 2022)</span>,
+<span class="citation">(Cox 1972; Terry M. Therneau and Patricia M. Grambsch 2000; Therneau 2022)</span>;
 penalized regressions,
-namely two different implementations of the
+namely, two different implementations of the
 lasso (least absolute shrinkage and selection operator) regression
 <span class="citation">(Tibshirani 1997; Simon et al. 2011; Friedman et al. 2022; J. J. Goeman 2010; J. Goeman et al. 2022)</span>,
 two different implementations of the
 ridge regression <span class="citation">(Simon et al. 2011; Friedman et al. 2022; J. J. Goeman 2010; J. Goeman et al. 2022)</span>, and
-the elastic net regression <span class="citation">(Simon et al. 2011; Friedman et al. 2022)</span>,
+the elastic net regression <span class="citation">(Simon et al. 2011; Friedman et al. 2022)</span>;
 two different random forest implementations
-<span class="citation">(Wright and Ziegler 2017; Wright, Wager, and Probst 2021; H. Ishwaran et al. 2008; Hemant Ishwaran and Kogalur 2020)</span>,
-extreme gradient boosting <span class="citation">(T. Chen and Guestrin 2016; Tianqi Chen et al. 2022)</span>,
-two different support vector machines <span class="citation">(Belle et al. 2011; Fouodo 2018)</span>
-and two neural networks <span class="citation">(Katzman et al. 2018; Kvamme, Borgan, and Scheel 2019; Sonabend 2022)</span>.</p>
+<span class="citation">(Wright and Ziegler 2017; Wright, Wager, and Probst 2021; H. Ishwaran et al. 2008; Hemant Ishwaran and Kogalur 2020)</span>;
+extreme gradient boosting <span class="citation">(T. Chen and Guestrin 2016; Tianqi Chen et al. 2022)</span>;
+two different support vector machines <span class="citation">(Belle et al. 2011; Fouodo 2018)</span>;
+;nd two neural networks <span class="citation">(Katzman et al. 2018; Kvamme, Borgan, and Scheel 2019; Sonabend 2022)</span>.</p>
 <p>We used nested resampling to avoid feature- and
-model-selection-bias to get reliable metrics to choose the best model.
-Therefore, we applied a 5-fold inner
-and a 3-fold outer cross-validation
+model-selection-bias to obtain reliable metrics to choose the best model.
+We thus applied a 5-fold inner
+and 3-fold outer cross-validation
 that was repeated 10 times.
 We searched the hyperparameter space using a grid search with a resolution of
 10.
 The models were evaluated using the concordance index, which is a measure of
 rank correlation between predicted and observed events <span class="citation">(Harrell 1982)</span>.
-Subsequently we selected the model with the highest median concordance index.
-If multiple models were comparable we chose the simpler (more penalized) one.</p>
-<p>After selecting the final model we trained and validated it as described in
+Subsequently, we selected the model with the highest median concordance index.
+If multiple models were comparable, we chose the simpler (more penalized) one.</p>
+<p>After selecting the final model, we trained and validated it as described in
 <span class="citation">Harrell, Lee, and Mark (1996)</span>.
-Briefly we developed our model using a 3 cross-validation
-that was repeated 10 times and finally predicted survival
-at 90 days.
-The predictions were sorted and grouped into equal sized intervals so that there
-are 50 patients in each interval.
-For each group the mean survival probability and the difference to the
+Briefly, we developed our model using a 3-fold
+cross-validation that was repeated 10 times and finally
+predicted survival at 90 days.
+The predictions were sorted and grouped into equal-sized intervals so that there
+were 50 patients in each interval.
+For each group, the mean survival probability and the difference to the
 Kaplan-Meier estimate was calculated.
 The same procedure was repeated for 200 bootstrap samples.
-Subsequently the differences between predicted survival and Kaplan-Meier
+Subsequently, the differences between predicted survival and Kaplan-Meier
 estimates of the bootstrap samples were averaged and added to the original
-model difference to obtain a bias-corrected estimated between predicted and
+model difference to obtain a bias-corrected estimate between predicted and
 observed survival.</p>
-<p>The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
+<p>The final model was compared against the MELD, MELD-Na, and MELD-Plus7 scores
 using the area under the time-dependent receiver operating characteristic curve
 (AUROC) based on the nonparametric inverse probability of censoring weighting
 estimator (IPCW) <span class="citation">Paul Blanche (2019)</span>.
 Testing was applied as described in <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span>.
-A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical significant difference.</p>
+A <span class="math inline">\(p &lt; 0.05\)</span> was considered a statistically significant difference.</p>
 <p>Summary tables were built using the <em>gtsummary</em> package
 <span class="citation">(Sjoberg et al. 2021, 2022)</span>.</p>
 </div>
@@ -2774,50 +2846,52 @@ A <span class="math inline">\(p &lt; 0.05\)</span> was considered as statistical
   
 </table>
 </div>
-<p>In this study we analyzed a cohort of 654 patients evaluated for
+<p>In this study, we analyzed a cohort of 654 patients evaluated for
 liver transplantation (Tab. <a href="#tab:tbl1">3.1</a>).
+Of these,
 414 (63%)
-of them were men.
+were men.
 The median (IQR) follow-up times was 191 (38, 384) days.
-Within the follow-up time 60 (9.2%) patients received a liver transplant
+Within the follow-up time, 60 (9.2%) patients received a liver transplant
 and were censored for the analysis beyond this time point.
 The median (IQR) age of the cohort was 58 (52, 64) years.</p>
 <p>Most of the patients presented with cirrhosis
 (594 (91%)).
-The remaining patients had an acute liver failure
+The remaining patients had acute liver failure
 (8 (1.2%)) or
-a chronic liver insufficiency
+chronic liver insufficiency
 (51 (7.8%)).
-At evaluation time the median (IQR) MELD and MELD-Na score were
+At evaluation time, the median (IQR) MELD and MELD-Na scores were
 11 (8, 17) and
 11 (8, 20), respectively.
-Within 90 days 81 (14%) patients died.
-In nearly two third of all patients alcohol was the main cause
-(411 (63%)) of their end-stage liver disease.
-The remaining patients had viral infections
-(hepatitis B and C viruse 20 (3.1%) and 45 (6.9%), respectively),
-autoimmune processes (autoimmune hepatitis 31 (4.7%),
-primary sclerosing cirrhosis 16 (2.4%)),
-primary biliary cirrhosis 17 (2.6%) or unknown causes
-(non-alcoholic steatohepatitis 48 (7.3%) and
-cryptogenic hepatitis 68 (10%)).
+Within 90 days, 81 (14%) patients had died.
+In nearly two thirds of all patients
+(411 (63%)), alcohol was the main cause
+of their end-stage liver disease.
+The remaining patients had viral infections -
+hepatitis B (20 (3.1%)) or C (45 (6.9%)) -
+autoimmune autoimmune (31 (4.7%)),
+primary sclerosing cirrhosis (16 (2.4%)),
+primary biliary cirrhosis (17 (2.6%)), unknown causes
+(non-alcoholic steatohepatitis (48 (7.3%)), or
+cryptogenic hepatitis (68 (10%))).
 The most common complications among all patients were gastrointestinal
 bleedings in 162 (25%) patients, followed by
 hepatocellular carcinoma (HCC) in 121 (19%) and
 spontaneous bacterial peritonitis (SBP) in 91 (14%) patients.
-Just 33 (5.1%) patients required a renal dialysis.</p>
+Just 33 (5.1%) patients required renal dialysis.</p>
 </div>
 <div id="meld-scores-1" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> MELD scores</h2>
-<p>According to <span class="citation">Wiesner et al. (2003)</span> we divided our cohort into
+<p>According to <span class="citation">Wiesner et al. (2003)</span>, we divided our cohort into
 5 MELD-score risk
 categories, with 257, 276, 80, 26, and 12 patients,
 respectively.
-As shown in Table <a href="#tab:tbl-observed-vs-expected-mortality">3.2</a>
+As shown in Table <a href="#tab:tbl-observed-vs-expected-mortality">3.2</a>,
 our observed 90-day mortality was
 1.4 to 2.9
-times higher than the predicted one. Just in the group with the lowest MELD
-scores the mortality was much lower.</p>
+times higher than the predicted one.
+Only in the group with the lowest MELD scores was the mortality much lower.</p>
 <table>
 <caption><span id="tab:tbl-observed-vs-expected-mortality">Table 3.2: </span>Observed vs. MELD-expected 90-day mortality. MELD mortality values are taken from <span class="citation">Wiesner et al. (2003)</span>. All patients censored before day 90 are ignored for the calculation of the MELD-expected deaths. SMR, Standardized mortality ratio = observed deaths/expected deaths.</caption>
 <colgroup>
@@ -2885,12 +2959,12 @@ scores the mortality was much lower.</p>
 <div id="ampel-meld" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> AMPEL MELD</h2>
 <p>The penalized regression and random forest models
-result in a similar high median performance in the benchmark process.
-In favour of simpler models we chose a lasso based approach for the final model
+resulted in a similar high median performance in the benchmark process.
+In favour of simpler models, we chose a lasso-based approach for the final model
 development.
-The classical cox model, the data and computational intense algorithms
-extreme gradient boosting, support vector machines and neural networks yield a
-worse performance.</p>
+The classical Cox model, the data and computational intense algorithms
+extreme gradient boosting, the support vector machines and the neural networks
+yielded a worse performance.</p>
 <table>
 <caption><span id="tab:coeftbl">Table 3.3: </span>Model coefficients</caption>
 <thead>
@@ -2926,11 +3000,11 @@ worse performance.</p>
 </tr>
 </tbody>
 </table>
-<p>The resulting model AMPEL model of end-stage liver disease
+<p>The resulting AMPEL model of end-stage liver disease
 (AMELD) uses 6 predictors.
-Beside the classical MELD variables INR and (direct) bilirubin the lasso
-regression selected cystatin C over creatinine, and
-additionally IL-6, total protein and cholinesterase.</p>
+Besides the classical MELD variables INR and (direct) bilirubin,
+the lasso regression selected cystatin C over creatinine, as well as
+IL-6, total protein, and cholinesterase.</p>
 <table>
 <caption><span id="tab:basehaz">Table 3.4: </span>Underlying survival function; S<sub>0</sub>: baseline survival estimate</caption>
 <thead>
@@ -2956,28 +3030,23 @@ additionally IL-6, total protein and cholinesterase.</p>
 </tr>
 </tbody>
 </table>
-<p>The 90-day survival estimate of a given patient could be calculated as shown in
+<p>The 90-day survival estimate of a given patient can be calculated as shown in
 <a href="#eq:survcalc">(3.1)</a>.</p>
 <p><span class="math display" id="eq:survcalc">\[\begin{align} S &amp;= S_{0,90}^{\exp{LP}} \\ &amp;=  0.9661 ^{\exp{( 0.1929 * zlog(\text{IL-6})-0.0805 * zlog(\text{Total protein})+0.0667 * zlog(\text{INR})-0.0368 * zlog(\text{Cholinesterase})+0.026 * zlog(\text{Cystatin C})+0.0098 * zlog(\text{Direct bilirubin}) )}}
 \tag{3.1}
 \end{align}
 \]</span>
 <!-- using eq:survcalc inside the R code chunk impedes Math ML rendering --></p>
-<p>Where <span class="math inline">\(S_{0}\)</span> is the baseline survival estimate from
+<p>where <span class="math inline">\(S_{0}\)</span> is the baseline survival estimate from
 <a href="#tab:basehaz">3.4</a> and <span class="math inline">\(LP\)</span> is the linear predictor of the coefficients
 in <a href="#tab:coeftbl">3.3</a>.</p>
 </div>
 <div id="model-comparison" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Model comparison</h2>
-<p>The final model was compared against the MELD, MELD-Na and MELD-Plus7 score
-using the area under the time-dependent receiver operating characteristic curve
-(AUROC) based on the nonparametric inverse probability of censoring weighting
-estimator (IPCW) <span class="citation">Paul Blanche (2019)</span>.
-Testing was applied as described in <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span>.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc"></span>
-<img src="figure/article.Rmd/roc-1.png" alt="Receiver operating characteristic (ROC) curve. Area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na and MELD-Plus7 as described in [@blanche2013]."  />
+<img src="figure/article.Rmd/roc-1.png" alt="Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, and MELD-Plus7, as described in [@blanche2013]."  />
 <p class="caption">
-Figure 3.1: Receiver operating characteristic (ROC) curve. Area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na and MELD-Plus7 as described in <span class="citation">(P. Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>.
+Figure 3.1: Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, and MELD-Plus7, as described in <span class="citation">(P. Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>.
 </p>
 </div>
 <p>
@@ -3073,18 +3142,18 @@ Sebastian Gibb
 </tr>
 </tbody>
 </table>
-<p>AMELD offers the best AUROC (0.961) across all competitors.
-However, after correction for multiple testing the difference against
-the second best model MELD-Na
-(AUROC: 0.936) is not statistical significant
+<p>AMELD offers the best AUROC (0.961) of all competitors.
+However, after correction for multiple testing, the difference against
+the second-best model, MELD-Na
+(AUROC: 0.936), is not statistical significant
 (<span class="math inline">\(p = 0.15\)</span>)
 (see Table <a href="#tab:roctest">3.5</a> for complete comparison).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:bootrcv"></span>
-<img src="figure/article.Rmd/bootrcv-1.png" alt="Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.
- The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate."  />
+<img src="figure/article.Rmd/bootrcv-1.png" alt="Calibration of AMELD in comparison to MELD, MELD-Na, and MELD-Plus7.
+ The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95% confidence interval of the survival estimate."  />
 <p class="caption">
-Figure 3.2: Calibration of AMELD in comparison to MELD, MELD-Na and MELD-Plus7.
-The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95 % confidence interval of the survival estimate.
+Figure 3.2: Calibration of AMELD in comparison to MELD, MELD-Na, and MELD-Plus7.
+The points mark the mean predicted survival of 50 patients per interval against their observed mean survival. The error bars correspond to the 95% confidence interval of the survival estimate.
 </p>
 </div>
 <p>
@@ -3109,6 +3178,17 @@ Date
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/83e3c7ae41877eabeb1634028bc3a5c93092f048/docs/figure/article.Rmd/bootrcv-1.png" target="_blank">83e3c7a</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-19
+</td>
+</tr>
 <tr>
 <td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/65d58c4380a4d02984c717b7f209be8137776ebe/docs/figure/article.Rmd/bootrcv-1.png" target="_blank">65d58c4</a>
@@ -3148,175 +3228,134 @@ Sebastian Gibb
 </div>
 <p>Fig. <a href="#fig:bootrcv">3.2</a> depicts the calibration curve for AMELD and the
 competing MELD scores.
-While the prediction for low-risk patients is similar to other scores
-AMELD predicts the medium-risk patients more accurate.
-Because of the low number of very ill patients in our cohort the prediction
+While the prediction for low-risk patients is similar to other scores,
+AMELD predicts the medium-risk patients more accurately.
+Because of the low number of very ill patients in our cohort, the prediction
 performance in high-risk patients is poor but comparable to the other models.
-This would require a recalibration in a larger validation cohort.</p>
+This would require recalibration in a larger validation cohort.</p>
 </div>
 </div>
 <div id="discussion" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Discussion</h1>
-<p>In this retrospective analysis of 654 consecutive patients,
+<p>In this retrospective analysis of 654 consecutive patients
 who were recruited during the evaluation process for liver transplantation at
-the University Hospital of Leipzig we developed a new model to predict the
+University Hospital Leipzig, we developed a new model to predict
 90-day survival probability. Our new model, AMELD, outperforms the MELD-Na
 score and the recently published MELD-Plus7 risk score.</p>
 <p>Although the Organ Procurement and Transplantation Network recommends the use
-of MELD-Na over MELD the sodium does not add any information to the score.
+of MELD-Na over MELD, the sodium does not add any information to the score.
 Neither in the bootstrap selection nor in the variable importance of a
-random forest model the sodium gains any important weight
+random forest model does the sodium gain any important weight
 (in bootstrap selection rank 18 of 42 and in a random forest variable importance rank 20 of 42, see <a href="#fig:vimpbs"><strong>??</strong></a>, <a href="#fig:vimprf"><strong>??</strong></a>).
-In addition sodium levels can be affected by diuretic therapy and already
-<span class="citation">Kartoun et al. (2017)</span> have shown that the discrimination performance of MELD-Na is
-insignificantly different from the classical MELD.
-Consequentially it is not a component of our model.</p>
-<p>It has shown that women receive in median lower scores in MELD-Na and therefore
-are less likely getting an urgent listing for liver transplantation
+In addition, sodium levels can be affected by diuretic therapy, and
+the discrimination performance of MELD-Na has already been shown by
+<span class="citation">Kartoun et al. (2017)</span> to be insignificantly different from the classical MELD.
+Consequently it is not a component of our model.</p>
+<p>It has been shown that women receive median lower scores in MELD-Na and
+therefore are less likely to receive an urgent listing for liver transplantation
 <span class="citation">(Sealock et al. 2022)</span>.
-To address sexual differences in laboratory measurements we applied the <em>zlog</em>
+To address sexual differences, in laboratory measurements we applied the <em>zlog</em>
 transformation <span class="citation">(Hoffmann et al. 2017)</span> in our study.
-Additionally this transformation yield comparable laboratory measurements
-across different clinical laboratories and methods.
-It also reduce the influence of age- and sex-related differences,
+This transformation also yields comparable laboratory measurements
+across different clinical laboratories and methods, as well as reducing
+the influence of age- and sex-related differences,
 which could improve the objectivity of the allocation process.
 The already nearly normal scaled <em>zlog</em>-transformed laboratory measurements
-allow us to avoid the sample depending scaling prior to model development.
+allow us to avoid the sample-dependent scaling prior to model development.
 Both should increase the external applicability of our approach.</p>
 <p>Our model, AMELD, uses 6 predictors.
-Half of them, INR, (direct) bilirubin, and cystatin C are identical
-or similar to the labortory measurements utilized in the classical MELD.
+Three of these - INR, (direct) bilirubin, and cystatin C - are identical
+or similar to the laboratory measurements utilized in the classical MELD.
 The direct bilirubin selected by our approach and the total bilirubin in MELD
-are highly correlated (spearman correlation:
+are highly correlated (Spearman correlation:
 0.96) and
 therefore interchangeable.</p>
-<p>In our feature selection process cystatin C was chosen instead of creatinine.
-This is inline with recent studies that show a better prediction of mortality
-for cystatin C in unselected and critical ill patients
-<span class="citation">(Helmersson-Karlqvist, Ärnlöv, and Larsson 2016; Helmersson-Karlqvist et al. 2021)</span></p>
-<p>Furthermore AMELD extends MELD by additional synthesis parameters
-total protein and cholinesterase and
+<p>In our feature selection process, cystatin C was chosen instead of creatinine.
+This is in line with recent studies that show a better prediction of mortality
+for cystatin C in unselected and critically ill patients
+<span class="citation">(Helmersson-Karlqvist, Ärnlöv, and Larsson 2016; Helmersson-Karlqvist et al. 2021)</span>.</p>
+<p>Furthermore AMELD, extends MELD by the additional synthesis parameters
+total protein and cholinesterase, and
 most importantly the inflammatory marker IL-6.</p>
-<p>The latter is an example where results from machine learning can aid in
-finding clinical meaningful patterns and guide further research.
-The systemic inflammatory response syndrome is an
-independent risk factor for poor outcome in patients with cirrhosis
+<p>The latter is an example where results from machine-learning can aid in
+finding clinically meaningful patterns and guide further research.
+Systemic inflammatory response syndrome is an
+independent risk factor for poor outcomes in patients with cirrhosis
 <span class="citation">(Thabut et al. 2007)</span>.
-However neither MELD nor MELD-Na taking inflammation into account.
-In contrast IL-6 is the most important variable in our model. Even if IL-6 is
-excluded the algorithms select CRP as one of the most important variables which
-highlights the important role of inflammation in the prognosis of patients
-with end-stage liver disease.
+However, neither MELD nor MELD-Na took inflammation into account.
+By contrast, IL-6 is the most important variable in our model. Even if IL-6 is
+excluded, the algorithms select CRP as one of the most important variables,
+which highlights the important role of inflammation in the prognosis of
+patients with end-stage liver disease.
 We and other researchers have already shown that adding inflammatory markers,
-namely IL-6 or CRP, to the classical MELD score increase the accuracy of the
+namely IL-6 or CRP, to the classical MELD score increases the accuracy of the
 90-day mortality prediction <span class="citation">(Remmler et al. 2017; Cervoni et al. 2016)</span>.</p>
-<p>Beside laboratory measurements we investigated
-17
-clinical data but none of them were chosen in our model selection process.
-<span class="citation">Kartoun et al. (2017)</span> also used the lasso approach and neither select any clinical
-data. Especially in retrospective analysis the clinical data are often not
-detailed enough to keep valuable information.</p>
-<p>In our benchmark of 13 different machine learning algorithms we have
-seen that the more complex algorithm like boosting, support vector machines
-and neural networks perform worse than simpler ones.
-This may due additive effects that favor regression models or due to our
-relative small sample size.
-It has been shown that in machine learning more than 200 events per
+<p>Besides laboratory measurements, we investigated
+17 other items of
+clinical data, but none were chosen in our model-selection process.
+<span class="citation">Kartoun et al. (2017)</span> also used the lasso approach and did not select any clinical
+data.
+In retrospective analyses in particular, the clinical data are often not
+detailed enough to provide valuable information.</p>
+<p>In our benchmark of 13 different machine-learning algorithms we have
+seen that the more complex algorithms, such as boosting,
+support vector machines, and neural networks, perform worse than simpler ones.
+This may be due to additive effects that favor regression models or due to our
+relatively small sample size.
+It has been shown that in machine-learning more than 200 events per
 predictor variable are required to achieve good prediction performance
 <span class="citation">(Ploeg, Austin, and Steyerberg 2014)</span>.</p>
-<!--
-As we shown above machine learning can aid in finding clinical meaningful
-patterns.
--->
-<!--
-
-- higher mortality than predicted, compare @hernaez2020
-- adding sodium doesn't add much/any discrimination information
-    - as already seen in @kartoun2017
-- @kartoun2017 uses > 60 variables mostly clinical stuff, just few laboratory values, none of the clinical stuff remains
-- general low sample size thus simpler models/fewer predictors are preferred.
-- comparison of different predictors of MELD-Plus7 (+MELD-Plus9) vs our features
-    - 90 day mortality *post* discharge
-    - poorer performance in own validation set (lower and more uniform disease severity, also lower MELD)
-- machine learning algorithms worse than statistical learning (lower c-index, higher variance/instability)
-    - additive effects (favour statistical models)
-    - low sample size, for ML more than 200 events per predictor variable necessary [@ploeg2014]
-- sex-differences and sample-dependencies (by scaling) addressed by *zlog*.
-- more variables, harder to cheat
-- national register required
--->
 <div id="limitations" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Limitations</h2>
 <p>Our study has several limitations.
-Principally it is a single center, retrospective analysis and without an
+Principally, it is a single-center, retrospective analysis lacking an
 external validation cohort.
 The data were collected during the evaluation process for liver transplantation
-at the University Hospital of Leipzig.
+at University Hospital Leipzig.
 There was no controlled follow-up process.
-We excluded all patients who had already a liver transplantation
-which could artificial lower the disease severity of the cohort.
-Furthermore most of our patients suffered from ethyltoxic liver cirrhosis
-(63%) which may
+We excluded all patients who had already undergone liver transplantation,
+which could artificially lower the disease severity of the cohort.
+Furthermore, most of our patients suffered from ethyltoxic liver cirrhosis
+(63%), which may
 limited the transfer to other etiologies.</p>
-<p>With a median MELD score of 11
-our cohort was healthier than in previous studies that reported
+<p>With a median MELD score of 11,
+our cohort was healthier than those in previous studies that reported
 a score of 14-15 <span class="citation">(Kim et al. 2008; Kartoun et al. 2017)</span>.
-However the 90-day mortality rate of 81 (14%) was comparable to
-the mortality rates seen in earlier studies that ranges from 6 to 30%
+However, the 90-day mortality rate of 81 (14%) was comparable to
+the mortality rates seen in earlier studies ranging from 6% to 30%
 <span class="citation">(Malinchoc et al. 2000; Kim et al. 2008; Kartoun et al. 2017)</span>.
-Although our cohort was healthier with a medium mortality rate the classical
-MELD score underestimates the observed mortality
+Although our cohort was healthier, with a medium mortality rate, the classical
+MELD score underestimates the observed mortality by
 1.4 to 2.9
 times.
-Unfortunately our sample size is low in the high risk patient category
-which yield a poor but better than MELD based prediction performance of our
+Unfortunately, our sample size was low in the high-risk patient category,
+resulting in a poor but better than MELD-based prediction performance by our
 AMELD for very ill patients.</p>
 </div>
 </div>
 <div id="conclusion" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Conclusion</h1>
-<p>In conclusion we developed a new model to predict the 90-day survival of
+<p>In conclusion, we have developed a new model to predict the 90-day survival of
 patients during the evaluation process for liver transplantation.
-Our model, AMELD, extends the classical MELD predictors, INR,
-(direct) bilirubin, cystatin C (instead of creatinine) by
-synthesis parameters total protein and cholinesterase and
-most importantly the inflammatory marker IL-6.
-Using these 6 laboratory measurments the AMELD
+Our model, AMELD, extends the classical MELD predictors INR,
+(direct) bilirubin, and cystatin C (instead of creatinine) by using the
+synthesis parameters total protein and cholinesterase and,
+most importantly, the inflammatory marker IL-6.
+Using these six laboratory measurements, AMELD
 outperforms the established MELD-Na and the recently published
 MELD-Plus7 risk scores.
-For a wider adoption a prospective multi center study for model
+For wider adoption, a prospective multi-center study for model
 recalibration and validation is needed.</p>
-<!--
-Mortality
-[@malinchoc2000] ~ 30 %
-[@kim2008] ~ 6-7 %
-[@kartoun2017] ~ 16.3 % (90 d, post-discharge-mortality)
-
-random time point for blood sampling
-
-It was not possible to ensure that patients died of end-stage liver disease.
-
-The variables we found and the model itself have to be validated and
-recalibrated in a multi center, prospective trial.
-
-Few patients with high MELD scores, poor calibration for high mortality
-
-
-- comparable mortality?
-- retrospective analysis
-- single center
-- unknown cause of death (death with vs of end-stage liver disease)
-- bias caused by LTx censorship?
--->
-<div id="acknowledgement" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Acknowledgement</h2>
+<div id="acknowledgments" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Acknowledgments</h2>
 <p>We thank the whole AMPEL team for their support,
 Stefan Kemnitz for his technical support regarding the use of the
-HPC cluster of the University Greifswald and
-Bernd Klaus for helpful discussions about survival analysis and proof reading the manuscript.</p>
-<p>The calculations were conducted using the high-performance computing (HPC)
-cluster of the University Greifswald.
-In 2018 the average carbon efficiency of the German power grid was
+high-performance computing (HPC) cluster at the University of Greifswald and
+Bernd Klaus for helpful discussions about survival analysis and
+proofreading the manuscript.</p>
+<p>The calculations were conducted using the HPC cluster at
+University of Greifswald.
+In 2018, the average carbon efficiency of the German power grid was
 0.471 kgCO<sub>2</sub>eq/kWh <span class="citation">(Icha, Lauf, and Kuhs 2021)</span>.
 A single run of the complete calculation pipeline took roughly
 96 hours of computation on an
@@ -3332,7 +3371,7 @@ This is equivalent to 44 km driven by an average car
 <h2><span class="header-section-number">5.2</span> Research funding</h2>
 <p>The study was supported by the AMPEL project (<a href="https://www.ampel.care">www.ampel.care</a>).
 This project is co-financed through public funds according to the budget
-decided by the Saxon State Parliament under the
+decided by the Saxon State Parliament under
 RL eHealthSax 2017/18 grant number 100331796.
 The funder provided support in the form of
 salaries for author SG
@@ -3343,19 +3382,19 @@ of the manuscript.</p>
 <div id="author-contributions" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Author contributions</h2>
 <p>Funding was acquired by TK.
-The study was conceptualised by SG and TK.
-The data was acquired by TK.
-The data was analyzed and processed by SG.
-Visualisation were produced by SG.
-Original drafts of the manuscript were written by SG and TK.
+The study was conceptualized by SG and TK.
+The data were acquired by TK.
+The data were analyzed and processed by SG.
+Visualization was produced by SG.
+The original drafts of the manuscript were written by SG and TK.
 Drafts were edited and reviewed by SG, TB, DS, BI, and TK.
 The project was supervised by TK.
 All authors have accepted responsibility for the entire content of this
-manuscript and approved its submission.</p>
+manuscript and have approved its submission.</p>
 </div>
 <div id="competing-interests" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Competing interests</h2>
-<p>Authors state no conflict of interest.</p>
+<p>The authors state no conflict of interest.</p>
 </div>
 <div id="informed-consent" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Informed consent</h2>
@@ -3364,19 +3403,19 @@ manuscript and approved its submission.</p>
 <div id="ethical-approval" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Ethical approval</h2>
 <p>Research involving human subjects complied with all relevant national
-regulations, institutional policies and is in accordance with the tenets of
-the Helsinki Declaration (as revised in 2013), and has been
+regulations and institutional policies, as well as the tenets of
+the Helsinki Declaration (as revised in 2013), and was
 approved by the Ethics Committee at the Leipzig University Faculty of
 Medicine (reference number: 039/14ff).</p>
 </div>
 <div id="data-and-software-availability" class="section level2" number="5.7">
 <h2><span class="header-section-number">5.7</span> Data and software availability</h2>
-<p>The complete code and reproducible analysis could be found at
+<p>The complete code and reproducible analysis can be found at
 <a href="https://ampel-leipzig.github.io/ampel-leipzig-meld/" class="uri">https://ampel-leipzig.github.io/ampel-leipzig-meld/</a>.
-Additionally all data are available in the <code>ameld</code> R package <span class="citation">(Gibb 2022)</span> at
+In addition, all data are available in the <code>ameld</code> R package <span class="citation">(Gibb 2022)</span> at
 <a href="https://github.com/ampel-leipzig/ameld" class="uri">https://github.com/ampel-leipzig/ameld</a>
 <a href="https://doi.org/10.5281/zenodo.6666018"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6666018.svg" alt="DOI" /></a>
-for further investigations.</p>
+for further investigation.</p>
 </div>
 </div>
 <div id="references" class="section level1" number="6">
@@ -3434,7 +3473,7 @@ Goeman, Jelle, Rosa Meijer, Nimisha Chaturvedi, and Matthew Lueder. 2022. <em>Pe
 Harrell, F. E. 1982. <span>“Evaluating the Yield of Medical Tests.”</span> <em>JAMA</em> 247 (18): 2543. <a href="https://doi.org/10.1001/jama.1982.03320430047030">https://doi.org/10.1001/jama.1982.03320430047030</a>.
 </div>
 <div id="ref-harrell1996" class="csl-entry">
-Harrell, F. E., K. L. Lee, and D. B. Mark. 1996. <span>“Multivariable Prognostic Models: Issues in Developing Models, Evaluating Assumptions and Adequacy, and Measuring and Reducing Errors.”</span> <em>Stat Med</em> 15 (4): 361–87. <a href="https://doi.org/10.1002/(sici)1097-0258(19960229)15:4&lt;361::aid-sim168&gt;3.0.co;2-4">https://doi.org/10.1002/(sici)1097-0258(19960229)15:4&lt;361::aid-sim168&gt;3.0.co;2-4</a>.
+Harrell, F. E., K. L. Lee, and D. B. Mark. 1996. <span>“Multivariable Prognostic Models: <span>I</span>ssues in Developing Models, Evaluating Assumptions and Adequacy, and Measuring and Reducing Errors.”</span> <em>Stat Med</em> 15 (4): 361–87. <a href="https://doi.org/10.1002/(sici)1097-0258(19960229)15:4&lt;361::aid-sim168&gt;3.0.co;2-4">https://doi.org/10.1002/(sici)1097-0258(19960229)15:4&lt;361::aid-sim168&gt;3.0.co;2-4</a>.
 </div>
 <div id="ref-helmerssonkarlqvist2016" class="csl-entry">
 Helmersson-Karlqvist, J., J. Ärnlöv, and A. Larsson. 2016. <span>“Cystatin c-Based Glomerular Filtration Rate Associates More Closely with Mortality Than Creatinine-Based or Combined Glomerular Filtration Rate Equations in Unselected Patients.”</span> <em>Eur J Prev Cardiol</em> 23 (15): 1649–57. <a href="https://doi.org/10.1177/2047487316642086">https://doi.org/10.1177/2047487316642086</a>.
@@ -3476,7 +3515,7 @@ Lang, Michel, Martin Binder, Jakob Richter, Patrick Schratz, Florian Pfisterer, 
 Lang, Michel, Bernd Bischl, Jakob Richter, Patrick Schratz, and Martin Binder. 2022. <em>Mlr3: Machine Learning in r - Next Generation</em>. <a href="https://CRAN.R-project.org/package=mlr3">https://CRAN.R-project.org/package=mlr3</a>.
 </div>
 <div id="ref-malinchoc2000" class="csl-entry">
-Malinchoc, M., P. S. Kamath, F. D. Gordon, C. J. Peine, J. Rank, and P. C. J. ter Borg. 2000. <span>“A Model to Predict Poor Survival in Patients Undergoing Transjugular Intrahepatic Portosystemic Shunts.”</span> <em>Hepatology</em> 31 (4): 864–71. <a href="https://doi.org/10.1053/he.2000.5852">https://doi.org/10.1053/he.2000.5852</a>.
+Malinchoc, M., P. S. Kamath, F. D. Gordon, C. J. Peine, J. Rank, and P. C. J. Borg. 2000. <span>“A Model to Predict Poor Survival in Patients Undergoing Transjugular Intrahepatic Portosystemic Shunts.”</span> <em>Hepatology</em> 31 (4): 864–71. <a href="https://doi.org/10.1053/he.2000.5852">https://doi.org/10.1053/he.2000.5852</a>.
 </div>
 <div id="ref-optn_policies2021" class="csl-entry">
 Organ Procurement and Transplantation Network. 2021. <span>“Policies.”</span> 2021. <a href="https://optn.transplant.hrsa.gov/media/1200/optn_policies.pdf">https://optn.transplant.hrsa.gov/media/1200/optn_policies.pdf</a>.
