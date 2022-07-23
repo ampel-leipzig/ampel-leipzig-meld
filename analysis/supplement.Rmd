@@ -40,7 +40,7 @@ library("ggplot2")
 
 # Survival plot
 
-```{r survival.plot, fig.cap = "Survival plot. Kaplan-Meier survival estimate for the first 90 days of the analysed population.", fig.width = 8, fig.height = 5}
+```{r survival.plot, fig.cap = "Survival plot. Kaplan-Meier survival estimate for the first 90 days of the analyzed population.", fig.width = 8, fig.height = 5}
 tar_load(zlog_data)
 srv <- Surv(zlog_data$DaysAtRisk, zlog_data$Deceased)
 col <- palette.colors(nlevels(zlog_data$MeldCategory))
