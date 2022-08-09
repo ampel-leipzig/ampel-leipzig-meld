@@ -5,6 +5,7 @@ subtitle: >
 author:
     - Sebastian Gibb^[mail@sebastiangibb.de]
     - Thomas Berg
+    - Adam Herber
     - Daniel Seehofer
     - Berend Isermann
     - Thorsten Kaiser

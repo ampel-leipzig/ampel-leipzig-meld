@@ -50,6 +50,10 @@ author:
         email: thomas.berg@medizin.uni-leipzig.de
         institute: KIMH
         correspondence: false
+    - Adam Herber:
+        email: adam.herber@medizin.uni-leipzig.de
+        institute: KIMH
+        correspondence: false
     - Daniel Seehofer:
         email: daniel.seehofer@medizin.uni-leipzig.de
         institute: KVTTG
@@ -887,7 +891,7 @@ The data were acquired by TK.
 The data were analyzed and processed by SG.
 Visualization was produced by SG.
 The original drafts of the manuscript were written by SG and TK.
-Drafts were edited and reviewed by SG, TB, DS, BI, and TK.
+Drafts were edited and reviewed by SG, TB, AH, DS, BI, and TK.
 The project was supervised by TK.
 All authors have accepted responsibility for the entire content of this
 manuscript and have approved its submission.
