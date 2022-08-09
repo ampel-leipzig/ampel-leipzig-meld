@@ -899,7 +899,14 @@ manuscript and have approved its submission.
 
 ## Competing interests
 
-The authors state no conflict of interest.
+TB recieved grants or research support from
+Abbvie, BMS, Gilead, MSD/Merck, Humedics, Intercept, Merz, Norgine, Novartis, Orphalan, Sequana Medical.
+TB received honoraria or consultation fees/advisory board from
+Abbvie, Alexion, Bayer, Gilead, GSK, Eisai, Enyo Pharma, Falk Foundation, HepaRegeniX GmbH, Humedics,  Intercept, Ipsen, Janssen, MSD/Merck, Novartis, Orphalan, Roche,
+Sequana Medical, SIRTEX, SOBI, and Shionogi
+TB participated in a company sponsored speaker’s bureau for
+Abbvie, Alexion, Bayer, Gilead, Eisai, Intercept, Ipsen, Janssen, MedUpdate GmbH, MSD/Merck, Novartis, Orphalan, Sequana Medica, SIRTEX, and SOBI.
+All other authors state no conflict of interest.
 
 ## Informed consent
 
