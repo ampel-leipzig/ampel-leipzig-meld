@@ -1,5 +1,5 @@
 ---
-title: "A new model to predict survival in patients with end-stage liver disease"
+title: "A new machine-learning-based prediction of survival in patients with end-stage liver disease"
 subtitle: >
     Supplement
 author:

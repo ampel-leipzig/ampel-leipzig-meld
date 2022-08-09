@@ -2,7 +2,7 @@
 # R markdown template taken from
 # Dan Holmes <dtholmes@mail.ubc.ca>
 # https://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/
-title: "A new machine-learning based prediction of survival in patients with end-stage liver disease"
+title: "A new machine-learning-based prediction of survival in patients with end-stage liver disease"
 subtitle: >
     Comparision against MELD, MELD-Na, MELD-Plus7.
 abstract: >
@@ -38,7 +38,7 @@ abstract: >
       that outperforms the classical MELD score for 90-day survival prediction.
 
   **Keywords**:
-      end-stage liver disease; IL-6; machine learning; MELD;
+      end-stage liver disease; IL-6; machine-learning; MELD;
       risk stratification; survival estimation
 
 author:
