@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Sebastian Gibb1,4,✉, Thomas Berg2, Daniel Seehofer3, Berend Isermann1, and Thorsten Kaiser1" />
+<meta name="author" content="Sebastian Gibb1,4,✉, Thomas Berg2, Adam Herber2, Daniel Seehofer3, Berend Isermann1, and Thorsten Kaiser1,5" />
 
-<meta name="date" content="2022-07-22" />
+<meta name="date" content="2022-08-09" />
 
-<title>A new model to predict survival in patients with end-stage liver disease</title>
+<title>A new machine-learning based prediction of survival in patients with end-stage liver disease</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -559,10 +559,10 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">A new model to predict survival in patients with end-stage liver disease</h1>
+<h1 class="title toc-ignore">A new machine-learning based prediction of survival in patients with end-stage liver disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD-Plus7.</p></h3>
-<h4 class="author">Sebastian Gibb<sup>1,4,✉</sup>, Thomas Berg<sup>2</sup>, Daniel Seehofer<sup>3</sup>, Berend Isermann<sup>1</sup>, and Thorsten Kaiser<sup>1</sup></h4>
-<h4 class="date">2022-07-22</h4>
+<h4 class="author">Sebastian Gibb<sup>1,4,✉</sup>, Thomas Berg<sup>2</sup>, Adam Herber<sup>2</sup>, Daniel Seehofer<sup>3</sup>, Berend Isermann<sup>1</sup>, and Thorsten Kaiser<sup>1,5</sup></h4>
+<h4 class="date">2022-08-09</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Objectives</strong>:
@@ -603,7 +603,8 @@ risk stratification; survival estimation</p>
 <p><sup>1</sup> Institute of Laboratory Medicine, Clinical Chemistry and Molecular Diagnostics, University Hospital Leipzig, Paul-List-Str. 13-15, D-04103 Leipzig, Germany.<br />
 <sup>2</sup> Section of Hepatology, Department of Gastroenterology and Rheumatology, University Hospital Leipzig, Liebigstr. 20, D-04103 Leipzig, Germany.<br />
 <sup>3</sup> Department of Visceral, Transplantation, Vascular and Thoracic Surgery, University Hospital of Leipzig, Liebigstr. 20, D-04103 Leipzig, Germany.<br />
-<sup>4</sup> Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Str., D-17475 Greifswald, Germany.</p>
+<sup>4</sup> Anesthesiology and Intensive Care Medicine, University Hospital Greifswald, Ferdinand-Sauerbruch-Str., D-17475 Greifswald, Germany.<br />
+<sup>5</sup> Institute of Laboratory Medicine, Microbiology and Clinical Pathobiochemistry, University Hospital OWL, Hospital Lippe, Röntgenstr. 18, D-32756 Detmold, Germany.</p>
 <p><sup>✉</sup> Correspondence: <a href="mailto:mail@sebastiangibb.de">Sebastian Gibb &lt;<a href="mailto:mail@sebastiangibb.de" class="email">mail@sebastiangibb.de</a>&gt;</a></p>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
@@ -629,7 +630,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-07-22
+<strong>Last updated:</strong> 2022-08-09
 </p>
 <p>
 <strong>Checks:</strong>
@@ -757,20 +758,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee6cf8a206e7f3fb1f3321f3c0a909c9eee96f111targetblanke6cf8a2a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree34c63ff33f73f0c5e9fdc731b53d73254e74913ftargetblank34c63ffa">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e6cf8a206e7f3fb1f3321f3c0a909c9eee96f111" target="_blank">e6cf8a2</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/34c63ff33f73f0c5e9fdc731b53d73254e74913f" target="_blank">34c63ff</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee6cf8a206e7f3fb1f3321f3c0a909c9eee96f111targetblanke6cf8a2a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree34c63ff33f73f0c5e9fdc731b53d73254e74913ftargetblank34c63ffa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e6cf8a206e7f3fb1f3321f3c0a909c9eee96f111" target="_blank">e6cf8a2</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/34c63ff33f73f0c5e9fdc731b53d73254e74913f" target="_blank">34c63ff</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -837,6 +838,91 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/34c63ff33f73f0c5e9fdc731b53d73254e74913f/analysis/article.Rmd" target="_blank">34c63ff</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-08-09
+</td>
+<td>
+fix: add Thorsten’s new affiliation
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/849ca0929c3215acf6919683033e460e72f50d0b/analysis/article.Rmd" target="_blank">849ca09</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-08-09
+</td>
+<td>
+refactor: add additional co-author
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/84aeda1277afd567023cce3be7a7f87e3afab974/analysis/article.Rmd" target="_blank">84aeda1</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-08-09
+</td>
+<td>
+refactor: integrate Berend’s suggestions
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/f766011301f1f3fb842b2ee8223399e81c29dd99/analysis/article.Rmd" target="_blank">f766011</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-08-09
+</td>
+<td>
+refactor: change title
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/68ef9aa30d659554795fb8357088827c567cedd1/docs/article.html" target="_blank">68ef9aa</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-22
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2040,6 +2126,17 @@ Date
 <tbody>
 <tr>
 <td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/68ef9aa30d659554795fb8357088827c567cedd1/docs/figure/article.Rmd/flowchart-1.png" target="_blank">68ef9aa</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-22
+</td>
+</tr>
+<tr>
+<td>
 <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/83e3c7ae41877eabeb1634028bc3a5c93092f048/docs/figure/article.Rmd/flowchart-1.png" target="_blank">83e3c7a</a>
 </td>
 <td>
@@ -3229,10 +3326,7 @@ Sebastian Gibb
 <p>Fig. <a href="#fig:bootrcv">3.2</a> depicts the calibration curve for AMELD and the
 competing MELD scores.
 While the prediction for low-risk patients is similar to other scores,
-AMELD predicts the medium-risk patients more accurately.
-Because of the low number of very ill patients in our cohort, the prediction
-performance in high-risk patients is poor but comparable to the other models.
-This would require recalibration in a larger validation cohort.</p>
+AMELD predicts the medium-risk patients more accurately.</p>
 </div>
 </div>
 <div id="discussion" class="section level1" number="4">
@@ -3387,7 +3481,7 @@ The data were acquired by TK.
 The data were analyzed and processed by SG.
 Visualization was produced by SG.
 The original drafts of the manuscript were written by SG and TK.
-Drafts were edited and reviewed by SG, TB, DS, BI, and TK.
+Drafts were edited and reviewed by SG, TB, AH, DS, BI, and TK.
 The project was supervised by TK.
 All authors have accepted responsibility for the entire content of this
 manuscript and have approved its submission.</p>
