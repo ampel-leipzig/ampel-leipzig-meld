@@ -667,9 +667,6 @@ Fig. \@ref(fig:bootrcv) depicts the calibration curve for AMELD and the
 competing MELD scores.
 While the prediction for low-risk patients is similar to other scores,
 AMELD predicts the medium-risk patients more accurately.
-Because of the low number of very ill patients in our cohort, the prediction
-performance in high-risk patients is poor but comparable to the other models.
-This would require recalibration in a larger validation cohort.
 
 # Discussion
 
