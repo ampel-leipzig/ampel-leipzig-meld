@@ -185,14 +185,34 @@ tg_tables <- list(
     packages = c("ameld", "gtsummary", "survival"),
     deployment = "main"
     ),
-    tar_target(tbl_observed_vs_expected_mortality,
+    tar_target(tbl_observed_vs_expected_mortality, {
+
+        ## MELD mortality values are taken from @vanderwerken2021
+        vanderwerken <- data.frame(
+            MELD = 6:40,
+            mortality = 1 -
+            c(0.9700, 0.9720, 0.9715, 0.9744, 0.9802, 0.9759, 0.9747, 0.9791,
+              0.9752, 0.9651, 0.9606, 0.9514, 0.9380, 0.9309, 0.9128, 0.9048,
+              0.8721, 0.8509, 0.8098, 0.7869, 0.7406, 0.6787, 0.6619, 0.5791,
+              0.5244, 0.4906, 0.4831, 0.4069, 0.3860, 0.3629, 0.2944, 0.2429,
+              0.2469, 0.1003, 0.1562)
+        )
+        vanderwerken$MeldCategory <- cut(
+            vanderwerken$MELD,
+            breaks = c(-Inf, seq(10, 40, by=10), Inf),
+            labels = c("[6,9]", "[10,20)", "[20,30)", "[30,40)", "[40,52)"),
+            right = FALSE
+        )
+        expected <- tapply(
+            vanderwerken$mortality, vanderwerken$MeldCategory, mean
+        )
+
         observed_vs_expected_mortality(
             Surv(labelled_meld_data$DaysAtRisk, labelled_meld_data$Deceased),
             f = labelled_meld_data$MeldCategory,
-            time = 90,
-            ## MELD mortality values are taken from @wiesner2003.
-            c(0.019, 0.06, 0.196, 0.526, 0.713)
-        ),
+            time = 90, expected
+        )
+    },
     packages = "ameld",
     deployment = "main"
     )

@@ -456,7 +456,7 @@ respectively.
 As shown in Table \@ref(tab:tbl-observed-vs-expected-mortality),
 our observed 90-day mortality was
 `r paste(round(range(tbl_observed_vs_expected_mortality$StandardizedMortalityRatio[-1]), 1), collapse = " to ")`
-times higher than the predicted one.
+times higher than the predicted one [@vanderwerken2021].
 Only in the group with the lowest MELD scores was the mortality much lower.
 
 ```{r tbl-observed-vs-expected-mortality, results = "asis", echo = FALSE, message = FALSE}
@@ -481,7 +481,9 @@ knitr::kable(
         ),
     caption = paste0(
         "Observed vs. MELD-expected 90-day mortality. ",
-        "MELD mortality values are taken from @wiesner2003. ",
+        "MELD mortality values are taken from @vanderwerken2021 and ",
+        "the mean value was calculated for each MELD category introduced ",
+        "in @wiesner2003.",
         "All patients censored before day 90 are ignored for ",
         " the calculation of the MELD-expected deaths. ",
         "SMR, Standardized mortality ratio = observed deaths/expected deaths."
