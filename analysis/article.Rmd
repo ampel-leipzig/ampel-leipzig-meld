@@ -347,7 +347,7 @@ two different random forest implementations
 [@ranger2017; @R-ranger; @randomForestSRC2008; @R-randomForestSRC];
 extreme gradient boosting [@chen2016; @R-xgboost];
 two different support vector machines [@vanbelle2011; @R-survivalsvm];
-;nd two neural networks [@katzman2018; @kvamme2019; @R-survivalmodels].
+and two neural networks [@katzman2018; @kvamme2019; @R-survivalmodels].
 
 We used nested resampling to avoid feature- and
 model-selection-bias to obtain reliable metrics to choose the best model.
