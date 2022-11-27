@@ -86,11 +86,53 @@ tar_load(bmrk_results)
 r <- bmrk_results$clone()
 id <- grep("^scale", x = r$learners$learner_id, invert = TRUE, value = TRUE)
 r$filter(task_id = "zlog_eldd", learner_id = id)
-autoplot(r) +
-    geom_boxplot(aes(fill = learner_id)) +
+
+relabel_learners <- function(x) {
+    x <- gsub("\\.tuned", "", x)
+    x <- gsub("1$", "", x)
+    x <- gsub("^surv\\.", "", x)
+    x
+}
+
+## taken from mlr3viz::autoplot.BenchmarkResults
+task <- r$tasks$task[[1L]]
+measure <- mlr3::assert_measure(mlr3::as_measure(msr("surv.cindex"), task_type = task$task_type), task = task)
+measure_id <- measure$id
+tab <- fortify(r, measure = measure)
+tab$nr <- sprintf("%09d", tab$nr)
+tab$learner_id <- relabel_learners(tab$learner_id)
+tab$group <- tab$learner_id
+tab$group[tab$group == "xgboost"] <- "boosting"
+tab$group[grepl("lasso|ridge|net", tab$group)] <- "penalized regression"
+tab$group[grepl("svm", tab$group)] <- "svm"
+tab$group[tab$group %in% c("ranger", "rfsrc")] <- "random forests"
+tab$group[tab$group %in% c("coxtime", "deepsurv")] <- "neural networks"
+tab$group <- factor(
+    tab$group,
+    levels = c(
+        "cox", "penalized regression",
+        "random forests", "boosting", "svm", "neural networks"
+    )
+)
+learner_label_map <- tab[!duplicated(tab$nr), c("nr", "learner_id")]
+learner_labels <- learner_label_map$learner_id
+names(learner_labels) <- learner_label_map$nr
+ggplot(tab, mapping = aes(x = .data$nr, y = .data[[measure_id]])) +
+    geom_boxplot(aes(fill = .data$group)) +
+    labs(fill = "Algorithm category") +
+    labs(y = "Harrell's concordance index") +
+    labs(x = "Model") +
+    scale_x_discrete(labels = learner_labels) +
+    scale_fill_viridis(labels = learner_labels, discrete = TRUE, option = "cividis") +
+    facet_grid(cols = vars(group), scales = "free_x", space = "free") +
+    mlr3viz:::apply_theme(list(theme_mlr3())) +
     geom_jitter(position = position_jitter(0.2)) +
-    scale_fill_viridis(discrete = TRUE) +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+    theme(
+        legend.position = "none",
+        strip.text.x = element_text(size = 20),
+        text = element_text(size = 24),
+        axis.text.x = element_text(angle = 45, hjust = 1)
+    )
 ```
 
 ```{r benchmark-table, echo = FALSE}
@@ -101,9 +143,10 @@ agg[, `:=`
 agg <- subset(agg, task_id == "zlog_eldd" & !grepl("^scale", learner_id))
 agg[, task_id := NULL]
 setorder(agg, -harrell)
+agg$name <- relabel_learners(agg$learner_id)
 knitr::kable(
-    agg,
-    col.names = c("Learner ID", "Harrell C"),
+    agg[, list(name, learner_id, harrell)],
+    col.names = c("Model", "Learner ID", "Harrell C"),
     caption = paste0("Benchmark results. Ranking of the ", nrow(agg), " tested machine-learning algorithms.")
 )
 ```
