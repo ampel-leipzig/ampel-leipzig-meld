@@ -29,8 +29,17 @@
         dialysis = x$Dialysis,
         type = "unos"
     )
+    x$ScoreMeld3 <- meld3(
+        creatinine = as_metric(x$CRE_S, "creatinine"),
+        bilirubin = as_metric(x$BILI_S, "bilirubin"),
+        inr = x$INR_C,
+        sodium = x$NA_S,
+        albumin = x$ALB_S / 10,
+        female = x$Sex == "female"
+    )
     x$SurvProbMeldUnos <- pmeld(x$ScoreMeldUnos)
     x$SurvProbMeldNaUnos <- pmeld(x$ScoreMeldNaUnos)
+    x$SurvProbMeld3 <- pmeld3(x$ScoreMeld3)
     x$SurvProbMeldPlus7 <- pmeld_plus7(
         creatinine = as_metric(x$CRE_S, "creatinine"),
         bilirubin = as_metric(x$BILI_S, "bilirubin"),
@@ -161,6 +170,8 @@ tg_data <- list(
                 attr(x$ScoreMeldUnos, "label") <- "MELD score"
             attr(x$ScoreMeldNa, "label") <-
                 attr(x$ScoreMeldNaUnos, "label") <- "MELD-Na score"
+            attr(x$ScoreMeld3, "label") <-
+                attr(x$ScoreMeld3, "label") <- "MELD 3.0 score"
             attr(x$MeldCategory, "label") <- "MELD Category"
 
             ## labels where the column names are identical to the abbreviation

@@ -11,6 +11,7 @@ library("targets")
 library("ameld")
 tar_load(timeROC_MELD)
 tar_load(timeROC_MELDNa)
+tar_load(timeROC_MELD3)
 tar_load(timeROC_MELDPlus7)
 tar_load(timeROC_RCV)
 tar_load(timeROC_RCVcc)
@@ -25,6 +26,7 @@ m <- list(
     MELD = timeROC_MELD,
     "MELD-Na" = timeROC_MELDNa,
     "MELD-Na (complete cases)" = timeROC_MELDNacc,
+    "MELD 3.0" = timeROC_MELD3,
     "MELD-Plus7" = timeROC_MELDPlus7,
     RCV = timeROC_RCV,
     "RCV (complete cases)" = timeROC_RCVcc,

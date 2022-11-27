@@ -31,6 +31,7 @@ tg_tables <- list(
                ScoreMeldUnos,
                MeldCategory,
                ScoreMeldNaUnos,
+               ScoreMeld3,
             ) |>
             tbl_summary(
                 by = Sex,

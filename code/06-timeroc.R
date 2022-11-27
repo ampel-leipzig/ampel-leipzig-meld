@@ -1,5 +1,5 @@
-cols <- c("SurvProbMeldUnos", "SurvProbMeldNaUnos", "SurvProbMeldPlus7")
-nms <- c("MELD", "MELDNa", "MELDPlus7")
+cols <- c("SurvProbMeldUnos", "SurvProbMeldNaUnos", "SurvProbMeldPlus7", "SurvProbMeld3")
+nms <- c("MELD", "MELDNa", "MELDPlus7", "MELD3")
 
 smbs <- rlang::syms(paste0("timeROC_", nms))
 
