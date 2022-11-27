@@ -6,7 +6,7 @@ BIND_PATH="/etc/passwd,/etc/group,/var/run"
 MODULESPATH="/usr/share/[Mm]odules/init/bash"
 if [ -f ${MODULESPATH} ] ; then
     . ${MODULESPATH}
-    SINGULARITYVER=3.8.2
+    SINGULARITYVER=3.10.0
     if [ ! -d "/opt/singularity-${SINGULARITYVER}" ] ; then
         SINGULARITYVER=3.4.2
     fi
