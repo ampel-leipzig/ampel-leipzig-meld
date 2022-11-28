@@ -852,10 +852,10 @@ labels on the node can also be achieved.")
     (license expat)))
 
 (define-public r-ameld
-  (let ((commit "8610c37"))
+  (let ((commit "4762db5"))
   (package
     (name "r-ameld")
-    (version (string-append "0.0.28-" commit))
+    (version (string-append "0.0.29-" commit))
     (source
       (origin
         (method git-fetch)
@@ -865,7 +865,7 @@ labels on the node can also be achieved.")
         (file-name (string-append name version))
         (sha256
           (base32
-            "119qp20qp1rylp7fw6pq0qdxr8wm2wpm0q4psxmgdzggavap2dz7"))))
+            "0pd827x16gmyd2pkkh9mqf4id6r2vj378nv9ay9sp9rlcrxxqcf4"))))
     (properties `((upstream-name . "ameld")))
     (build-system r-build-system)
     (propagated-inputs
