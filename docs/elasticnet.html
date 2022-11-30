@@ -554,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-07-18
+<strong>Last updated:</strong> 2022-11-30
 </p>
 <p>
 <strong>Checks:</strong>
@@ -682,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1aebf752cb60bb3631a5686c9a998a40c1f5905targetblanke1aebf7a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1aebf752cb60bb3631a5686c9a998a40c1f5905" target="_blank">e1aebf7</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1aebf752cb60bb3631a5686c9a998a40c1f5905targetblanke1aebf7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1aebf752cb60bb3631a5686c9a998a40c1f5905" target="_blank">e1aebf7</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -709,7 +709,6 @@ results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    TODO
     Ignored:    _targets/
     Ignored:    analysis/article.md
     Ignored:    container/
@@ -717,6 +716,7 @@ Ignored files:
     Ignored:    scripts/R.sh
 
 Untracked files:
+    Untracked:  analysis/bibliography/bibliography.bib.sav.tmp
     Untracked:  submission/
 
 </code></pre>
@@ -762,6 +762,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/fba81f5497f53eb1dd84ae04507c86c53ef54bb8/analysis/elasticnet.Rmd" target="_blank">fba81f5</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-11-27
+</td>
+<td>
+feat: add MELD 3.0 score
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/65d58c4380a4d02984c717b7f209be8137776ebe/docs/elasticnet.html" target="_blank">65d58c4</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -1234,7 +1268,7 @@ Sebastian Gibb
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcv, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    zlog_data[<span class="fu">paste0</span>(<span class="st">&quot;SurvProbMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>, <span class="st">&quot;Plus7&quot;</span>))],</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    zlog_data[<span class="fu">paste0</span>(<span class="st">&quot;SurvProbMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;Plus7&quot;</span>))],</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(p) {</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        ctpnts <span class="ot">&lt;-</span> <span class="fu">cutpoints</span>(p, <span class="at">n =</span> ameldcfg<span class="sc">$</span>m)</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        f <span class="ot">&lt;-</span> <span class="fu">cut</span>(p, ctpnts, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
@@ -1246,8 +1280,8 @@ Sebastian Gibb
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MELD&quot;</span>, <span class="st">&quot;MELD-Na&quot;</span>, <span class="st">&quot;MELD-Plus7&quot;</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">6</span>)[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MELD&quot;</span>, <span class="st">&quot;MELD-Na&quot;</span>, <span class="st">&quot;MELD 3.0&quot;</span>, <span class="st">&quot;MELD-Plus7&quot;</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">7</span>)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>]</span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(ps)) {</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lines</span>(</span>
@@ -1620,7 +1654,7 @@ Sebastian Gibb
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bootrcvcc, <span class="at">what =</span> <span class="st">&quot;calibration&quot;</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ps <span class="ot">&lt;-</span> <span class="fu">lapply</span>(</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    zlog_data_complete_cases[<span class="fu">paste0</span>(<span class="st">&quot;SurvProbMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>, <span class="st">&quot;Plus7&quot;</span>))],</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    zlog_data_complete_cases[<span class="fu">paste0</span>(<span class="st">&quot;SurvProbMeld&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;Unos&quot;</span>, <span class="st">&quot;NaUnos&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;Plus7&quot;</span>))],</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(p) {</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        ctpnts <span class="ot">&lt;-</span> <span class="fu">cutpoints</span>(p, <span class="at">n =</span> ameldcfg<span class="sc">$</span>m)</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        f <span class="ot">&lt;-</span> <span class="fu">cut</span>(p, ctpnts, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
@@ -1632,8 +1666,8 @@ Sebastian Gibb
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MELD&quot;</span>, <span class="st">&quot;MELD-Na&quot;</span>, <span class="st">&quot;MELD-Plus7&quot;</span>)</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">6</span>)[<span class="dv">4</span><span class="sc">:</span><span class="dv">6</span>]</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ps) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;MELD&quot;</span>, <span class="st">&quot;MELD-Na&quot;</span>, <span class="st">&quot;MELD 3.0&quot;</span>, <span class="st">&quot;MELD-Plus7&quot;</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>col <span class="ot">&lt;-</span> viridisLite<span class="sc">::</span><span class="fu">viridis</span>(<span class="dv">7</span>)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>]</span>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(ps)) {</span>
 <span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lines</span>(</span>
@@ -2274,7 +2308,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] viridisLite_0.4.0 ameld_0.0.26      survival_3.3-1    glmnet_4.1-4     
+[1] viridisLite_0.4.0 ameld_0.0.30      survival_3.3-1    glmnet_4.1-4     
 [5] Matrix_1.4-1      targets_0.12.1   
 
 loaded via a namespace (and not attached):

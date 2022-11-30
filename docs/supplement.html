@@ -511,7 +511,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-08-10
+<strong>Last updated:</strong> 2022-11-30
 </p>
 <p>
 <strong>Checks:</strong>
@@ -639,20 +639,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree6315aaa2192bf0d94ba86ffb24108701042fb709targetblank6315aaaa">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1aebf752cb60bb3631a5686c9a998a40c1f5905targetblanke1aebf7a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/6315aaa2192bf0d94ba86ffb24108701042fb709" target="_blank">6315aaa</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1aebf752cb60bb3631a5686c9a998a40c1f5905" target="_blank">e1aebf7</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree6315aaa2192bf0d94ba86ffb24108701042fb709targetblank6315aaaa" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1aebf752cb60bb3631a5686c9a998a40c1f5905targetblanke1aebf7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/6315aaa2192bf0d94ba86ffb24108701042fb709" target="_blank">6315aaa</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1aebf752cb60bb3631a5686c9a998a40c1f5905" target="_blank">e1aebf7</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -666,7 +666,6 @@ results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    TODO
     Ignored:    _targets/
     Ignored:    analysis/article.md
     Ignored:    container/
@@ -674,6 +673,7 @@ Ignored files:
     Ignored:    scripts/R.sh
 
 Untracked files:
+    Untracked:  analysis/bibliography/bibliography.bib.sav.tmp
     Untracked:  submission/
 
 </code></pre>
@@ -719,6 +719,74 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/e1aebf752cb60bb3631a5686c9a998a40c1f5905/analysis/supplement.Rmd" target="_blank">e1aebf7</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-11-30
+</td>
+<td>
+feat: add MELD 3.0 and adapt to reviewer’s suggestions
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/fba81f5497f53eb1dd84ae04507c86c53ef54bb8/analysis/supplement.Rmd" target="_blank">fba81f5</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-11-27
+</td>
+<td>
+feat: add MELD 3.0 score
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/95c0de830f39607e45d066de13ab7a4df29b9ee3/analysis/supplement.Rmd" target="_blank">95c0de8</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-11-27
+</td>
+<td>
+refactor: change supplemental figure 2.1 according to reviewer’s suggestions
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/1821ea1669f41fbb9e6fa95ac695d287643e5a2a/docs/supplement.html" target="_blank">1821ea1</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-08-10
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1417,72 +1485,162 @@ Sebastian Gibb
 <caption><span id="tab:benchmark-table">Table 2.1: </span>Benchmark results. Ranking of the 13 tested machine-learning algorithms.</caption>
 <thead>
 <tr class="header">
-<th align="left">Learner ID</th>
-<th align="right">Harrell C</th>
+<th align="left">Model</th>
+<th align="right">Harrell’s concordance index</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">ridge.tuned</td>
-<td align="right">0.9148083</td>
+<td align="left">ridge</td>
+<td align="right">0.915</td>
 </tr>
 <tr class="even">
-<td align="left">elasticnet.tuned</td>
-<td align="right">0.9134060</td>
+<td align="left">elasticnet</td>
+<td align="right">0.913</td>
 </tr>
 <tr class="odd">
-<td align="left">ranger.tuned</td>
-<td align="right">0.9126126</td>
+<td align="left">ranger</td>
+<td align="right">0.913</td>
 </tr>
 <tr class="even">
-<td align="left">penlasso.tuned</td>
-<td align="right">0.9112051</td>
+<td align="left">penlasso</td>
+<td align="right">0.911</td>
 </tr>
 <tr class="odd">
-<td align="left">penridge.tuned</td>
-<td align="right">0.9091442</td>
+<td align="left">penridge</td>
+<td align="right">0.909</td>
 </tr>
 <tr class="even">
-<td align="left">lasso.tuned</td>
-<td align="right">0.9087190</td>
+<td align="left">lasso</td>
+<td align="right">0.909</td>
 </tr>
 <tr class="odd">
-<td align="left">surv.rfsrc.tuned</td>
-<td align="right">0.9060092</td>
+<td align="left">rfsrc</td>
+<td align="right">0.906</td>
 </tr>
 <tr class="even">
 <td align="left">cox</td>
-<td align="right">0.8715474</td>
+<td align="right">0.872</td>
 </tr>
 <tr class="odd">
-<td align="left">deepsurv.tuned</td>
-<td align="right">0.8333231</td>
+<td align="left">deepsurv</td>
+<td align="right">0.833</td>
 </tr>
 <tr class="even">
-<td align="left">surv.xgboost.tuned</td>
-<td align="right">0.8279431</td>
+<td align="left">xgboost</td>
+<td align="right">0.828</td>
 </tr>
 <tr class="odd">
-<td align="left">svmvanbelle1.tuned</td>
-<td align="right">0.8232930</td>
+<td align="left">svmvanbelle</td>
+<td align="right">0.823</td>
 </tr>
 <tr class="even">
-<td align="left">coxtime.tuned</td>
-<td align="right">0.8185314</td>
+<td align="left">coxtime</td>
+<td align="right">0.819</td>
 </tr>
 <tr class="odd">
-<td align="left">svmregression.tuned</td>
-<td align="right">0.8091483</td>
+<td align="left">svmregression</td>
+<td align="right">0.809</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="auroc-trend" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> AUROC trend</h1>
+<div id="observed-versus-meld-na-expected-90-day-mortality" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Observed versus MELD-Na-expected 90-day mortality</h1>
+<table>
+<caption><span id="tab:tbl-observed-vs-expected-mortality5">Table 3.1: </span>Observed vs. MELD-Na-expected 90-day mortality. MELD-Na mortality values are taken from <span class="citation">VanDerwerken et al. (2021)</span> and the mean value was calculated for each MELD-Na category.All patients censored before day 90 are ignored for the calculation of the MELD-Na-expected deaths. SMR, Standardized mortality ratio = observed deaths/expected deaths.</caption>
+<colgroup>
+<col width="10%" />
+<col width="14%" />
+<col width="14%" />
+<col width="25%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">MELD category</th>
+<th align="right">Observed deaths (n)</th>
+<th align="right">Expected deaths (n)</th>
+<th align="right">Standardized mortality ratio (SMR)</th>
+<th align="right">Observed mortality (%)</th>
+<th align="right">Expected mortality (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">[6,9]</td>
+<td align="right">1</td>
+<td align="right">5.8</td>
+<td align="right">0.2</td>
+<td align="right">0.5</td>
+<td align="right">2.8</td>
+</tr>
+<tr class="even">
+<td align="left">[10,15)</td>
+<td align="right">4</td>
+<td align="right">2.9</td>
+<td align="right">1.4</td>
+<td align="right">3.0</td>
+<td align="right">2.3</td>
+</tr>
+<tr class="odd">
+<td align="left">[15,20)</td>
+<td align="right">5</td>
+<td align="right">3.1</td>
+<td align="right">1.6</td>
+<td align="right">7.5</td>
+<td align="right">5.1</td>
+</tr>
+<tr class="even">
+<td align="left">[20,25)</td>
+<td align="right">15</td>
+<td align="right">5.7</td>
+<td align="right">2.6</td>
+<td align="right">27.1</td>
+<td align="right">13.0</td>
+</tr>
+<tr class="odd">
+<td align="left">[25,30)</td>
+<td align="right">22</td>
+<td align="right">10.2</td>
+<td align="right">2.1</td>
+<td align="right">62.5</td>
+<td align="right">31.1</td>
+</tr>
+<tr class="even">
+<td align="left">[30,35)</td>
+<td align="right">14</td>
+<td align="right">8.1</td>
+<td align="right">1.7</td>
+<td align="right">88.0</td>
+<td align="right">54.2</td>
+</tr>
+<tr class="odd">
+<td align="left">[35,40)</td>
+<td align="right">9</td>
+<td align="right">7.5</td>
+<td align="right">1.2</td>
+<td align="right">90.0</td>
+<td align="right">75.1</td>
+</tr>
+<tr class="even">
+<td align="left">[40,52)</td>
+<td align="right">6</td>
+<td align="right">5.1</td>
+<td align="right">1.2</td>
+<td align="right">100.0</td>
+<td align="right">84.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="auroc-trend" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> AUROC trend</h1>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc-plot"></span>
-<img src="figure/supplement.Rmd/roc-plot-1.png" alt="Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, and MELD-Plus7, as described in [@blanche2013]." width="1728" />
+<img src="figure/supplement.Rmd/roc-plot-1.png" alt="Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0 and MELD-Plus7, as described in [@blanche2013]." width="1728" />
 <p class="caption">
-Figure 3.1: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>.
+Figure 4.1: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0 and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>.
 </p>
 </div>
 <p>
@@ -1555,13 +1713,19 @@ Sebastian Gibb
 </table>
 </div>
 </div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc-plot-wo-cb"></span>
+<img src="figure/supplement.Rmd/roc-plot-wo-cb-1.png" alt="Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0 and MELD-Plus7, as described in [@blanche2013]. Identical to the figure above but without confidence bands." width="1728" />
+<p class="caption">
+Figure 4.2: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0 and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>. Identical to the figure above but without confidence bands.
+</p>
 </div>
-<div id="variable-importance" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Variable importance</h1>
+</div>
+<div id="variable-importance" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Variable importance</h1>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimpbs"></span>
 <img src="figure/supplement.Rmd/vimpbs-1.png" alt="Variable importance by frequency of bootstrap selections." width="768" />
 <p class="caption">
-Figure 4.1: Variable importance by frequency of bootstrap selections.
+Figure 5.1: Variable importance by frequency of bootstrap selections.
 </p>
 </div>
 <p>
@@ -1637,7 +1801,7 @@ Sebastian Gibb
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimprf"></span>
 <img src="figure/supplement.Rmd/vimprf-1.png" alt="Variable importance by logrank in random forest." width="768" />
 <p class="caption">
-Figure 4.2: Variable importance by logrank in random forest.
+Figure 5.2: Variable importance by logrank in random forest.
 </p>
 </div>
 <p>
@@ -1711,11 +1875,14 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="references" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> References</h1>
+<div id="references" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-blanche2013" class="csl-entry">
 Blanche, P., J.-F. Dartigues, and H. Jacqmin-Gadda. 2013. <span>“Estimating and Comparing Time-Dependent Areas Under Receiver Operating Characteristic Curves for Censored Event Times with Competing Risks.”</span> <em>Stat Med</em> 32 (30): 5381–97. <a href="https://doi.org/10.1002/sim.5958">https://doi.org/10.1002/sim.5958</a>.
+</div>
+<div id="ref-vanderwerken2021" class="csl-entry">
+VanDerwerken, D. N., N. L. Wood, D. L. Segev, and S. E. Gentry. 2021. <span>“The <span>Precise Relationship Between Model</span> for <span>End-Stage Liver Disease</span> and <span>Survival Without</span> a <span>Liver Transplant</span>.”</span> <em>Hepatology</em> 74 (2): 950–60. <a href="https://doi.org/10.1002/hep.31781">https://doi.org/10.1002/hep.31781</a>.
 </div>
 </div>
 <br>
@@ -1747,7 +1914,7 @@ attached base packages:
 other attached packages:
  [1] ggplot2_3.3.6     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
  [5] mlr3proba_0.4.11  mlr3misc_0.10.0   mlr3_0.13.3       targets_0.12.1   
- [9] data.table_1.14.2 ameld_0.0.26      survival_3.3-1    glmnet_4.1-4     
+ [9] data.table_1.14.2 ameld_0.0.30      survival_3.3-1    glmnet_4.1-4     
 [13] Matrix_1.4-1     
 
 loaded via a namespace (and not attached):

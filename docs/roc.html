@@ -554,7 +554,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-07-18
+<strong>Last updated:</strong> 2022-11-30
 </p>
 <p>
 <strong>Checks:</strong>
@@ -682,20 +682,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1aebf752cb60bb3631a5686c9a998a40c1f5905targetblanke1aebf7a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1aebf752cb60bb3631a5686c9a998a40c1f5905" target="_blank">e1aebf7</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7ctargetblank0ac4a67a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1aebf752cb60bb3631a5686c9a998a40c1f5905targetblanke1aebf7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/0ac4a673498ac9f8ed4bcc7022c9b9d90cc62f7c" target="_blank">0ac4a67</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1aebf752cb60bb3631a5686c9a998a40c1f5905" target="_blank">e1aebf7</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -709,7 +709,6 @@ results were generated:
 </p>
 <pre><code>
 Ignored files:
-    Ignored:    TODO
     Ignored:    _targets/
     Ignored:    analysis/article.md
     Ignored:    container/
@@ -717,6 +716,7 @@ Ignored files:
     Ignored:    scripts/R.sh
 
 Untracked files:
+    Untracked:  analysis/bibliography/bibliography.bib.sav.tmp
     Untracked:  submission/
 
 </code></pre>
@@ -762,6 +762,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/fba81f5497f53eb1dd84ae04507c86c53ef54bb8/analysis/roc.Rmd" target="_blank">fba81f5</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-11-27
+</td>
+<td>
+feat: add MELD 3.0 score
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/65d58c4380a4d02984c717b7f209be8137776ebe/docs/roc.html" target="_blank">65d58c4</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-07-18
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -909,11 +943,12 @@ feat: add elastic net bootstrap and timeROC evaluations
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ameld&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELD)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDNa)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDPlus7)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCV)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCVcc)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDNacc)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_ARCV)</span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELD3)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDPlus7)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCV)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_RCVcc)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_MELDNacc)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_load</span>(timeROC_ARCV)</span></code></pre></div>
 <div id="roc-day-90" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> ROC day 90</h1>
 <p><img src="figure/roc.Rmd/roc90-1.png" width="672" style="display: block; margin: auto;" /></p>
@@ -967,10 +1002,17 @@ Sebastian Gibb
 </div>
 <pre><code>                    MELD                  MELD-Na MELD-Na (complete cases) 
                0.9338468                0.9357808                0.9122839 
-              MELD-Plus7                      RCV     RCV (complete cases) 
-               0.9217082                0.9609230                0.9356413 
-                    ARCV 
-               0.9656049 </code></pre>
+                MELD 3.0               MELD-Plus7                      RCV 
+               0.9362360                0.9217082                0.9609230 
+    RCV (complete cases)                     ARCV 
+               0.9356413                0.9656049 
+attr(,&quot;CI&quot;)
+                    MELD                  MELD-Na MELD-Na (complete cases) 
+ &quot;(95% CI, 0.908-0.960)&quot;  &quot;(95% CI, 0.910-0.962)&quot;  &quot;(95% CI, 0.873-0.952)&quot; 
+                MELD 3.0               MELD-Plus7                      RCV 
+ &quot;(95% CI, 0.910-0.963)&quot;  &quot;(95% CI, 0.893-0.951)&quot;  &quot;(95% CI, 0.942-0.980)&quot; 
+    RCV (complete cases)                     ARCV 
+ &quot;(95% CI, 0.903-0.969)&quot;  &quot;(95% CI, 0.949-0.982)&quot; </code></pre>
 </div>
 <div id="roc-trend" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> ROC trend</h1>
@@ -1073,7 +1115,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] ameld_0.0.26   survival_3.3-1 glmnet_4.1-4   Matrix_1.4-1   targets_0.12.1
+[1] ameld_0.0.30   survival_3.3-1 glmnet_4.1-4   Matrix_1.4-1   targets_0.12.1
 
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.8.3        mvtnorm_1.1-3       lattice_0.20-45    
