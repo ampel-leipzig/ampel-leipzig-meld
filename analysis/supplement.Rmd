@@ -145,15 +145,99 @@ agg[, task_id := NULL]
 setorder(agg, -harrell)
 agg$name <- relabel_learners(agg$learner_id)
 knitr::kable(
-    agg[, list(name, learner_id, harrell)],
-    col.names = c("Model", "Learner ID", "Harrell C"),
-    caption = paste0("Benchmark results. Ranking of the ", nrow(agg), " tested machine-learning algorithms.")
+    agg[, list(name, harrell)],
+    col.names = c("Model", "Harrell's concordance index"),
+    caption = paste0("Benchmark results. Ranking of the ", nrow(agg), " tested machine-learning algorithms."),
+    digits = 3
+)
+```
+
+# Observed versus MELD-Na-expected 90-day mortality
+
+```{r tbl-observed-vs-expected-mortality5, results = "asis", echo = FALSE, message = FALSE}
+## identical to table in article.Rmd but categories spanning just 5 points
+tar_load(labelled_meld_data)
+
+## MELD mortality values are taken from @vanderwerken2021
+vanderwerken <- data.frame(
+    MELD = 6:40,
+    mortality = 1 -
+    c(0.9700, 0.9720, 0.9715, 0.9744, 0.9802, 0.9759, 0.9747, 0.9791,
+      0.9752, 0.9651, 0.9606, 0.9514, 0.9380, 0.9309, 0.9128, 0.9048,
+      0.8721, 0.8509, 0.8098, 0.7869, 0.7406, 0.6787, 0.6619, 0.5791,
+      0.5244, 0.4906, 0.4831, 0.4069, 0.3860, 0.3629, 0.2944, 0.2429,
+      0.2469, 0.1003, 0.1562)
+)
+
+breaks <- c(-Inf, seq(10, 40, by=5), Inf)
+labels <- c(
+    paste0(
+        "[",
+        floor(min(labelled_meld_data$ScoreMeldNaUnos, na.rm = TRUE)),
+        ",9]"
+    ),
+    paste0("[", seq(10, 35, by=5), ",", seq(15, 40, by=5), ")"),
+    paste0(
+        "[40,",
+        ceiling(max(labelled_meld_data$ScoreMeldNaUnos, na.rm = TRUE)),
+        ")"
+    )
+)
+
+vanderwerken$MeldCategory <- cut(
+    vanderwerken$MELD,
+    breaks = breaks,
+    labels = labels,
+    right = FALSE
+)
+expected <- tapply(
+    vanderwerken$mortality, vanderwerken$MeldCategory, mean
+)
+
+tbl_observed_vs_expected_mortality5 <- observed_vs_expected_mortality(
+    Surv(labelled_meld_data$DaysAtRisk, labelled_meld_data$Deceased),
+    f = cut(
+        labelled_meld_data$ScoreMeldNaUnos,
+        breaks = breaks, labels = labels,
+        right = FALSE
+    ),
+    time = 90, expected
+)
+
+tbl_observed_vs_expected_mortality5$ObservedMortality <-
+    tbl_observed_vs_expected_mortality5$ObservedMortality * 100
+tbl_observed_vs_expected_mortality5$ExpectedMortality <-
+    tbl_observed_vs_expected_mortality5$ExpectedMortality * 100
+knitr::kable(
+    cbind(
+        row.names(tbl_observed_vs_expected_mortality5),
+        tbl_observed_vs_expected_mortality5
+    ),
+    row.names = FALSE,
+    col.names =
+        c(
+            "MELD category",
+            "Observed deaths (n)",
+            "Expected deaths (n)",
+            "Standardized mortality ratio (SMR)",
+            "Observed mortality (%)",
+            "Expected mortality (%)"
+        ),
+    caption = paste0(
+        "Observed vs. MELD-Na-expected 90-day mortality. ",
+        "MELD-Na mortality values are taken from @vanderwerken2021 and ",
+        "the mean value was calculated for each MELD-Na category.",
+        "All patients censored before day 90 are ignored for ",
+        "the calculation of the MELD-Na-expected deaths. ",
+        "SMR, Standardized mortality ratio = observed deaths/expected deaths."
+    ),
+    digits = 1
 )
 ```
 
 # AUROC trend
 
-```{r roc-plot, echo = FALSE, fig.width = 18, fig.height = 12, fig.cap = "Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, and MELD-Plus7, as described in [@blanche2013]."}
+```{r roc-plot, echo = FALSE, fig.width = 18, fig.height = 12, fig.cap = "Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0 and MELD-Plus7, as described in [@blanche2013]."}
 tar_load(timeROC_MELD)
 tar_load(timeROC_MELDNa)
 tar_load(timeROC_MELD3)
@@ -167,6 +251,11 @@ m <- list(
     "MELD 3.0" = timeROC_MELD3,
     "MELD-Plus7" = timeROC_MELDPlus7
 )
+plot_surv_roc_trend(m, xlab = "time [days]", col = viridisLite::viridis(6)[-2])
+```
+
+```{r roc-plot-wo-cb, echo = FALSE, fig.width = 18, fig.height = 12, fig.cap = "Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0 and MELD-Plus7, as described in [@blanche2013]. Identical to the figure above but without confidence bands."}
+m <- lapply(m, function(x) { x$confint <- NULL;x })
 plot_surv_roc_trend(m, xlab = "time [days]", col = viridisLite::viridis(6)[-2])
 ```
 

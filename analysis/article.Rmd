@@ -4,7 +4,7 @@
 # https://labrtorian.com/2019/08/26/rmarkdown-template-that-manages-academic-affiliations/
 title: "A new machine-learning-based prediction of survival in patients with end-stage liver disease"
 subtitle: >
-    Comparision against MELD, MELD-Na, MELD-Plus7.
+    Comparision against MELD, MELD-Na, MELD 3.0, MELD-Plus7.
 abstract: >
   **Objectives**:
       The shortage of grafts for liver transplantation requires
@@ -31,11 +31,12 @@ abstract: >
       and bilirubin, the lasso regression selected cystatin C over creatinine,
       as well IL-6, total protein, and cholinesterase.
       The new model offers improved discrimination and calibration over MELD
-      and MELD with sodium (MELD-Na) or the MELD-Plus7 risk score.
+      and MELD with sodium (MELD-Na), MELD 3.0, or the MELD-Plus7 risk score.
 
   **Conclusion**:
       We provide a new machine-learning-based model of end-stage liver disease
-      that outperforms the classical MELD score for 90-day survival prediction.
+      that incorporates synthesis and inflammatory markers and
+      could improve the classical MELD score for 90-day survival prediction.
 
   **Keywords**:
       end-stage liver disease; IL-6; machine-learning; MELD;
@@ -145,6 +146,7 @@ tar_load(rngr)
 tar_load(timeROC_MELD)
 tar_load(timeROC_MELDNa)
 tar_load(timeROC_MELDPlus7)
+tar_load(timeROC_MELD3)
 tar_load(timeROC_RCV)
 ```
 
@@ -165,6 +167,8 @@ the international normalized ratio (INR).
 The MELD score has been extended by the sodium level
 (MELD-Na score) because this was found to be an important additional
 risk factor in liver cirrhosis [@kim2008; @optn_policies2021].
+Recently MELD 3.0 was introduced adding a factor for female sex, albumin and
+interactions between bilirubin and sodium and between albumin and creatinine.
 The MELD was initially developed to predict the survival of patients
 undergoing transjugular intrahepatic portosystemic shunts.
 It was subsequently revalidated to predict mortality risk in patients awaiting
@@ -172,7 +176,7 @@ a liver transplantation.
 Although the MELD score should be an objective allocation score,
 creatinine and INR are highly dependent on the laboratory methods used
 [@trotter2004; @cholongitas2007].
-In addition women are disadvantaged [@sealock2022].
+In addition women are disadvantaged in MELD-Na [@sealock2022].
 Patients with identical disease states can have very different MELD scores and
 thus receive different priority levels on the liver transplantation waiting
 list.
@@ -187,8 +191,9 @@ length of stay to the MELD-Na variables.
 Despite their published prediction improvement, the MELD-Plus scores are not
 yet used for transplant allocation.
 
-As shown by the MELD-Plus risk scores, better predictive scores often need more
-variables and are more complicated. To reduce the risk of overlooking or
+As shown by the MELD-Plus risk and MELD 3.0 scores, better predictive scores
+often need more variables and are more complicated.
+To reduce the risk of overlooking or
 incorrectly calculating and interpreting the results,
 clinical decision support systems may be used and could improve patient safety.
 The research project on digital laboratory medicine (AMPEL) develops a
@@ -197,9 +202,9 @@ support clinical practitioners in interpreting laboratory results and taking
 the necessary medical interventions [@eckelt2020].
 
 This study aims to find clinical and laboratory values that improve on the risk
-stratification for liver transplantation of the classical MELD, MELD-Na, and
-MELD-Plus scores and that might be implemented as part of the
-AMPEL clinical decision support system.
+stratification for liver transplantation of the classical
+MELD, MELD-Na, MELD 3.0 and MELD-Plus scores and that might be implemented as
+part of the AMPEL clinical decision support system.
 
 # Material and methods
 
@@ -286,6 +291,19 @@ $MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/L]) - (0.033 * MELD_i * (137 -
 Serum sodium values lower than 125 mmol/L or higher than 137 mmol/L were set
 to 125 mmol/L and 137 mmol/L, respectively.
 
+MELD 3.0 was calculated as described in kim2022:
+
+$$
+\begin{aligned}
+MELD3 = 1.33 (if female) &+
+        4.56 &* \ln(bilirubin [mg/dL]) +  \\
+        0.82 &* (137 - Na [mmol/L]) - 0.24 * (137 - Na [mmol/L]) * \ln(bilirubin [mg/dL]) + \\
+        9.09 &* \ln(INR) + \\
+        11.14 &* \ln(creatinine [mg/dL]) + 1.85 * (3.5 - albumin [g/dL]) - 1.83 * (3.5 - albumin [g/dL]) * \ln(creatinine [mg/dL]) + 6
+\end{aligned}
+$$
+In contrast to MELD-Na the maximum allowed creatinine was 3.0 mg/dL.
+
 The MELD-Plus7 risk score was calculated as described in @kartoun2017:
 $$
 \begin{aligned}
@@ -294,11 +312,11 @@ L = 8.53499496 &+ \\
     2.06503238 &* \log_{10}(1 + bilirubin [mg/dL]) + \\
     2.99724802 &* \log_{10}(1 + INR) - \\
     6.47834101 &* \log_{10}(1 + sodium [mmol/L]) - \\
-    6.34990436 &* \log_{10}(1 + albumin [g/L]) + \\
+    6.34990436 &* \log_{10}(1 + albumin [g/dL]) + \\
     1.92811726 &* \log_{10}(1 + wbc [th/cumm]) + \\
     0.04070442 &* age [years]
 \end{aligned}
-$$
+$
 
 $$MELD\text{-}Plus = \frac{\exp(L)}{1 + \exp(L)}$$
 
@@ -306,7 +324,7 @@ The MELD-Plus9 score was ignored because the length of stay information was not
 available for our cohort, and the model itself was not superior to MELD-Plus7
 in its original publication [@kartoun2017].
 
-## Data processing and machine learning
+## Data processing and machine-learning
 
 ```{r ml, include = FALSE}
 n_lrns <- sum(!grepl("^scale..*", bmrk_results$learners$learner_id))
@@ -376,9 +394,10 @@ estimates of the bootstrap samples were averaged and added to the original
 model difference to obtain a bias-corrected estimate between predicted and
 observed survival.
 
-The final model was compared against the MELD, MELD-Na, and MELD-Plus7 scores
-using the area under the time-dependent receiver operating characteristic curve
-(AUROC) based on the nonparametric inverse probability of censoring weighting
+The final model was compared against the MELD, MELD-Na, MELD 3.0 and MELD-Plus7
+scores using the area under the time-dependent receiver operating
+characteristic curve (AUROC) based on the
+nonparametric inverse probability of censoring weighting
 estimator (IPCW) [@blanche2013, @R-timeROC].
 Testing was applied as described in @blanche2013.
 A $p < 0.05$ was considered a statistically significant difference.
@@ -427,9 +446,10 @@ The remaining patients had acute liver failure
 (`r .tbl1("ALF")`) or
 chronic liver insufficiency
 (`r .tbl1("CLI")`).
-At evaluation time, the median (IQR) MELD and MELD-Na scores were
-`r .tbl1("ScoreMeldUnos")` and
-`r .tbl1("ScoreMeldNaUnos")`, respectively.
+At evaluation time, the median (IQR) MELD, MELD-Na and MELD 3.0 scores were
+`r .tbl1("ScoreMeldUnos")`,
+`r .tbl1("ScoreMeldNaUnos")`, and
+`r .tbl1("ScoreMeld3")`, respectively.
 Within 90 days, `r .tbl1("M90")` patients had died.
 In nearly two thirds of all patients
 (`r .tbl1("Ethyltoxic")`), alcohol was the main cause
@@ -449,15 +469,15 @@ Just `r .tbl1("Dialysis")` patients required renal dialysis.
 
 ## MELD scores
 
-According to @wiesner2003, we divided our cohort into
-`r nlevels(labelled_meld_data$MeldCategory)` MELD-score risk
+We divided our cohort into
+`r nlevels(labelled_meld_data$MeldCategory)` MELD-Na-score risk
 categories, with `r enum(table(labelled_meld_data$MeldCategory))` patients,
 respectively.
 As shown in Table \@ref(tab:tbl-observed-vs-expected-mortality),
 our observed 90-day mortality was
 `r paste(round(range(tbl_observed_vs_expected_mortality$StandardizedMortalityRatio[-1]), 1), collapse = " to ")`
 times higher than the predicted one [@vanderwerken2021].
-Only in the group with the lowest MELD scores was the mortality much lower.
+Only in the group with the lowest MELD-Na scores was the mortality much lower.
 
 ```{r tbl-observed-vs-expected-mortality, results = "asis", echo = FALSE, message = FALSE}
 tbl_observed_vs_expected_mortality$ObservedMortality <-
@@ -472,7 +492,7 @@ knitr::kable(
     row.names = FALSE,
     col.names =
         c(
-            "MELD category",
+            "MELD-Na category",
             "Observed deaths (n)",
             "Expected deaths (n)",
             "Standardized mortality ratio (SMR)",
@@ -480,12 +500,11 @@ knitr::kable(
             "Expected mortality (%)"
         ),
     caption = paste0(
-        "Observed vs. MELD-expected 90-day mortality. ",
-        "MELD mortality values are taken from @vanderwerken2021 and ",
-        "the mean value was calculated for each MELD category introduced ",
-        "in @wiesner2003.",
+        "Observed vs. MELD-Na-expected 90-day mortality. ",
+        "MELD-Na mortality values are taken from @vanderwerken2021 and ",
+        "the mean value was calculated for each MELD-Na category.",
         "All patients censored before day 90 are ignored for ",
-        " the calculation of the MELD-expected deaths. ",
+        "the calculation of the MELD-Na-expected deaths. ",
         "SMR, Standardized mortality ratio = observed deaths/expected deaths."
     ),
     digits = 1
@@ -578,16 +597,23 @@ in \@ref(tab:coeftbl).
 
 ## Model comparison
 
-```{r roc, fig.width = 7, fig.height = 7, echo = FALSE, message = FALSE, fig.cap = "Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, and MELD-Plus7, as described in [@blanche2013]."}
-col <- viridisLite::viridis(5)
+```{r roc, fig.width = 7, fig.height = 7, echo = FALSE, message = FALSE, fig.cap = "Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, MELD-Plus7, as described in [@blanche2013]."}
+col <- viridisLite::viridis(6)
 m <- list(
     AMELD = timeROC_RCV,
     MELD = timeROC_MELD,
     "MELD-Na" = timeROC_MELDNa,
+    "MELD 3.0" = timeROC_MELD3,
     "MELD-Plus7" = timeROC_MELDPlus7
 )
 invisible(roc <- plot_surv_roc(m, timepoint = 90, col = col[-2]))
-roc <- roc[order(-roc)]
+o <- order(-roc)
+ci <- attr(roc, "CI")[o]
+roc <- roc[o]
+
+pAUC <- function(auc, ci) {
+    sprintf("AUROC %0.3f %s", auc, ci)
+}
 ```
 
 ```{r roctest, echo = FALSE}
@@ -611,14 +637,14 @@ knitr::kable(
 )
 ```
 
-AMELD offers the best AUROC (`r round(roc["AMELD"], 3)`) of all competitors.
+AMELD offers the best `r pAUC(roc["AMELD"], ci["AMELD"])` of all competitors.
 However, after correction for multiple testing, the difference against
 the second-best model, `r names(roc)[2]`
-(AUROC: `r round(roc[2], 3)`), is not statistical significant
+(`r pAUC(roc[2], ci[2])`), is not statistical significant
 (`r paste0("$p = ", round(tp[2, "t=90"], 2), "$")`)
 (see Table \@ref(tab:roctest) for complete comparison).
 
-```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na, and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95% confidence interval of the survival estimate.'), echo = FALSE}
+```{r bootrcv, echo = FALSE, fig.width = 8, fig.height = 6, fig.cap = paste('Calibration of AMELD in comparison to MELD, MELD-Na, MELD 3.0 and MELD-Plus7.\n The points mark the mean predicted survival of', ameldcfg$m, 'patients per interval against their observed mean survival. The error bars correspond to the 95% confidence interval of the survival estimate.'), echo = FALSE}
 par(cex = 0.9)
 plot(
     bootrcv,
@@ -628,7 +654,7 @@ plot(
 )
 
 ps <- lapply(
-    zlog_data[paste0("SurvProbMeld", c("Unos", "NaUnos", "Plus7"))],
+    zlog_data[paste0("SurvProbMeld", c("Unos", "NaUnos", "3", "Plus7"))],
     function(p) {
         ctpnts <- cutpoints(p, n = ameldcfg$m)
         f <- cut(p, ctpnts, include.lowest = TRUE)
@@ -640,7 +666,7 @@ ps <- lapply(
         )
     }
 )
-names(ps) <- c("MELD", "MELD-Na", "MELD-Plus7")
+names(ps) <- c("MELD", "MELD-Na", "MELD 3.0", "MELD-Plus7")
 
 for (i in seq_along(ps)) {
     lines(
@@ -675,8 +701,10 @@ AMELD predicts the medium-risk patients more accurately.
 In this retrospective analysis of `r n_analysed` consecutive patients
 who were recruited during the evaluation process for liver transplantation at
 University Hospital Leipzig, we developed a new model to predict
-90-day survival probability. Our new model, AMELD, outperforms the MELD-Na
-score and the recently published MELD-Plus7 risk score.
+90-day survival probability. Our new model, AMELD,
+incorporates synthesis and inflammatory markers and
+could improve the prediction over previous published
+MELD scores.
 
 ```{r selvar, echo = FALSE}
 bsrank <- as.vector(rank(-ameld:::.selvars(bootrcv$models, bootrcv$s), ties = "first")["NA_S"])
@@ -706,7 +734,8 @@ Consequently it is not a component of our model.
 It has been shown that women receive median lower scores in MELD-Na and
 therefore are less likely to receive an urgent listing for liver transplantation
 [@sealock2022].
-To address sexual differences, in laboratory measurements we applied the *zlog*
+MELD 3.0 tries to circumvent this by adding 1.33 to the score for femal sex.
+To address sexual differences in laboratory measurements we applied the *zlog*
 transformation [@hoffmann2017] in our study.
 This transformation also yields comparable laboratory measurements
 across different clinical laboratories and methods, as well as reducing
@@ -738,7 +767,7 @@ finding clinically meaningful patterns and guide further research.
 Systemic inflammatory response syndrome is an
 independent risk factor for poor outcomes in patients with cirrhosis
 [@thabut2007].
-However, neither MELD nor MELD-Na took inflammation into account.
+However, neither MELD, MELD-Na nor MELD 3.0 took inflammation into account.
 By contrast, IL-6 is the most important variable in our model. Even if IL-6 is
 excluded, the algorithms select CRP as one of the most important variables,
 which highlights the important role of inflammation in the prognosis of
@@ -778,9 +807,9 @@ Furthermore, most of our patients suffered from ethyltoxic liver cirrhosis
 (`r .tbl1("Ethyltoxic", pattern = "{p}%")`), which may
 limited the transfer to other etiologies.
 
-With a median MELD score of `r .tbl1("ScoreMeldUnos", pattern = "{median}")`,
+With a median MELD-Na score of `r .tbl1("ScoreMeldNaUnos", pattern = "{median}")`,
 our cohort was healthier than those in previous studies that reported
-a score of 14-15 [@kim2008; @kartoun2017].
+a score of 14-18.5 [@kim2008; @kartoun2017; @vanderwerken2021].
 However, the 90-day mortality rate of `r .tbl1("M90")` was comparable to
 the mortality rates seen in earlier studies ranging from 6% to 30%
 [@malinchoc2000; @kim2008; @kartoun2017].
@@ -801,8 +830,8 @@ Our model, AMELD, extends the classical MELD predictors INR,
 synthesis parameters total protein and cholinesterase and,
 most importantly, the inflammatory marker IL-6.
 Using these six laboratory measurements, AMELD
-outperforms the established MELD-Na and the recently published
-MELD-Plus7 risk scores.
+could improve the prediction over previous published
+MELD scores.
 For wider adoption, a prospective multi-center study for model
 recalibration and validation is needed.
 

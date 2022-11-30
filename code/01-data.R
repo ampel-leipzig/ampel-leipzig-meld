@@ -50,15 +50,15 @@
         age = x$Age
     )
     x$MeldCategory <- cut(
-        x$ScoreMeldUnos,
+        x$ScoreMeldNaUnos,
         breaks = c(-Inf, seq(10, 40, by=10), Inf),
         labels = c(
             paste0(
-                "[", floor(min(x$ScoreMeldUnos, na.rm = TRUE)), ",9]"
+                "[", floor(min(x$ScoreMeldNaUnos, na.rm = TRUE)), ",9]"
             ),
             "[10,20)", "[20,30)", "[30,40)",
             paste0(
-                "[40,", ceiling(max(x$ScoreMeldUnos, na.rm = TRUE)), ")"
+                "[40,", ceiling(max(x$ScoreMeldNaUnos, na.rm = TRUE)), ")"
             )
         ),
         right = FALSE

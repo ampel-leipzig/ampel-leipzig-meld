@@ -187,7 +187,6 @@ tg_tables <- list(
     deployment = "main"
     ),
     tar_target(tbl_observed_vs_expected_mortality, {
-
         ## MELD mortality values are taken from @vanderwerken2021
         vanderwerken <- data.frame(
             MELD = 6:40,
