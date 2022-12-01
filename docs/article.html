@@ -610,7 +610,7 @@ risk stratification; survival estimation</p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
 workflowr
-<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -620,7 +620,7 @@ workflowr
 </li>
 <li>
 <a data-toggle="tab" href="#checks">
-Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </a>
 </li>
 <li>
@@ -635,9 +635,9 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <p>
 <strong>Checks:</strong>
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-7
+6
 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
-0
+1
 </p>
 <p>
 <strong>Knit directory:</strong>
@@ -660,16 +660,21 @@ The <em>Past versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>R Markdown file:</strong> up-to-date
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
+<strong>R Markdown file:</strong> uncommitted changes
 </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you
-know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes.
+To know which version of the R Markdown file created these
+results, you’ll want to first commit it to the Git repo. If
+you’re still working on the analysis, you can ignore this
+warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and
+build the HTML.</p>
 </div>
 </div>
 </div>
@@ -758,20 +763,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb4631f63f3f88e313c3ab4f20fb005ff6715949atargetblankb4631f6a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree88f7b9fba8d6b1165812e95ba2b40d3d332b9b28targetblank88f7b9fa">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b4631f63f3f88e313c3ab4f20fb005ff6715949a" target="_blank">b4631f6</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/88f7b9fba8d6b1165812e95ba2b40d3d332b9b28" target="_blank">88f7b9f</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb4631f63f3f88e313c3ab4f20fb005ff6715949atargetblankb4631f6a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree88f7b9fba8d6b1165812e95ba2b40d3d332b9b28targetblank88f7b9fa" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b4631f63f3f88e313c3ab4f20fb005ff6715949a" target="_blank">b4631f6</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/88f7b9fba8d6b1165812e95ba2b40d3d332b9b28" target="_blank">88f7b9f</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -793,6 +798,9 @@ Ignored files:
 
 Untracked files:
     Untracked:  submission/
+
+Unstaged changes:
+    Modified:   analysis/article.Rmd
 
 </code></pre>
 <p>
@@ -837,6 +845,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/88f7b9fba8d6b1165812e95ba2b40d3d332b9b28/docs/article.html" target="_blank">88f7b9f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2383,7 +2408,7 @@ to 125 mmol/L and 137 mmol/L, respectively.</p>
 <p>MELD 3.0 was calculated as described in kim2021:</p>
 <p><span class="math display">\[
 \begin{aligned}
-MELD3 = 1.33 (if female) &amp;+
+MELD3 = 1.33 (if female) &amp;+ \\
         4.56 &amp;* \ln(bilirubin [mg/dL]) +  \\
         0.82 &amp;* (137 - Na [mmol/L]) - 0.24 * (137 - Na [mmol/L]) * \ln(bilirubin [mg/dL]) + \\
         9.09 &amp;* \ln(INR) + \\

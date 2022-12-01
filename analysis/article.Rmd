@@ -296,11 +296,12 @@ MELD 3.0 was calculated as described in kim2021:
 
 $$
 \begin{aligned}
-MELD3 = 1.33 (if female) &+
+MELD3 = 1.33 (if female) &+ \\
         4.56 &* \ln(bilirubin [mg/dL]) +  \\
         0.82 &* (137 - Na [mmol/L]) - 0.24 * (137 - Na [mmol/L]) * \ln(bilirubin [mg/dL]) + \\
         9.09 &* \ln(INR) + \\
-        11.14 &* \ln(creatinine [mg/dL]) + 1.85 * (3.5 - albumin [g/dL]) - 1.83 * (3.5 - albumin [g/dL]) * \ln(creatinine [mg/dL]) + 6
+        11.14 &* \ln(creatinine [mg/dL]) + \\
+        1.85 &* (3.5 - albumin [g/dL]) - 1.83 * (3.5 - albumin [g/dL]) * \ln(creatinine [mg/dL]) + 6
 \end{aligned}
 $$
 In contrast to MELD-Na the maximum allowed creatinine was set to 3.0 mg/dL.
