@@ -36,7 +36,7 @@ abstract: >
   **Conclusion**:
       We provide a new machine-learning-based model of end-stage liver disease
       that incorporates synthesis and inflammatory markers and
-      could improve the classical MELD score for 90-day survival prediction.
+      may improve the classical MELD score for 90-day survival prediction.
 
   **Keywords**:
       end-stage liver disease; IL-6; machine-learning; MELD;
@@ -168,7 +168,8 @@ The MELD score has been extended by the sodium level
 (MELD-Na score) because this was found to be an important additional
 risk factor in liver cirrhosis [@kim2008; @optn_policies2021].
 Recently MELD 3.0 was introduced adding a factor for female sex, albumin and
-interactions between bilirubin and sodium and between albumin and creatinine.
+interactions between bilirubin and sodium and between albumin and creatinine
+[@kim2021].
 The MELD was initially developed to predict the survival of patients
 undergoing transjugular intrahepatic portosystemic shunts.
 It was subsequently revalidated to predict mortality risk in patients awaiting
@@ -203,7 +204,7 @@ the necessary medical interventions [@eckelt2020].
 
 This study aims to find clinical and laboratory values that improve on the risk
 stratification for liver transplantation of the classical
-MELD, MELD-Na, MELD 3.0 and MELD-Plus scores and that might be implemented as
+MELD, MELD-Na, MELD 3.0, and MELD-Plus scores and that might be implemented as
 part of the AMPEL clinical decision support system.
 
 # Material and methods
@@ -291,7 +292,7 @@ $MELD\text{-}Na = MELD_i + 1.32 * (137 - Na [mmol/L]) - (0.033 * MELD_i * (137 -
 Serum sodium values lower than 125 mmol/L or higher than 137 mmol/L were set
 to 125 mmol/L and 137 mmol/L, respectively.
 
-MELD 3.0 was calculated as described in kim2022:
+MELD 3.0 was calculated as described in kim2021:
 
 $$
 \begin{aligned}
@@ -302,7 +303,7 @@ MELD3 = 1.33 (if female) &+
         11.14 &* \ln(creatinine [mg/dL]) + 1.85 * (3.5 - albumin [g/dL]) - 1.83 * (3.5 - albumin [g/dL]) * \ln(creatinine [mg/dL]) + 6
 \end{aligned}
 $$
-In contrast to MELD-Na the maximum allowed creatinine was 3.0 mg/dL.
+In contrast to MELD-Na the maximum allowed creatinine was set to 3.0 mg/dL.
 
 The MELD-Plus7 risk score was calculated as described in @kartoun2017:
 $$
@@ -502,7 +503,7 @@ knitr::kable(
     caption = paste0(
         "Observed vs. MELD-Na-expected 90-day mortality. ",
         "MELD-Na mortality values are taken from @vanderwerken2021 and ",
-        "the mean value was calculated for each MELD-Na category.",
+        "the mean value was calculated for each MELD-Na category. ",
         "All patients censored before day 90 are ignored for ",
         "the calculation of the MELD-Na-expected deaths. ",
         "SMR, Standardized mortality ratio = observed deaths/expected deaths."
@@ -703,7 +704,7 @@ who were recruited during the evaluation process for liver transplantation at
 University Hospital Leipzig, we developed a new model to predict
 90-day survival probability. Our new model, AMELD,
 incorporates synthesis and inflammatory markers and
-could improve the prediction over previous published
+may improve the prediction over previous published
 MELD scores.
 
 ```{r selvar, echo = FALSE}
@@ -767,7 +768,7 @@ finding clinically meaningful patterns and guide further research.
 Systemic inflammatory response syndrome is an
 independent risk factor for poor outcomes in patients with cirrhosis
 [@thabut2007].
-However, neither MELD, MELD-Na nor MELD 3.0 took inflammation into account.
+However, neither MELD, MELD-Na, nor MELD 3.0 took inflammation into account.
 By contrast, IL-6 is the most important variable in our model. Even if IL-6 is
 excluded, the algorithms select CRP as one of the most important variables,
 which highlights the important role of inflammation in the prognosis of
@@ -830,7 +831,7 @@ Our model, AMELD, extends the classical MELD predictors INR,
 synthesis parameters total protein and cholinesterase and,
 most importantly, the inflammatory marker IL-6.
 Using these six laboratory measurements, AMELD
-could improve the prediction over previous published
+may improve the prediction over previous published
 MELD scores.
 For wider adoption, a prospective multi-center study for model
 recalibration and validation is needed.

@@ -29,8 +29,8 @@ tg_tables <- list(
             select(
                Sex,
                ScoreMeldUnos,
-               MeldCategory,
                ScoreMeldNaUnos,
+               MeldCategory,
                ScoreMeld3,
             ) |>
             tbl_summary(
