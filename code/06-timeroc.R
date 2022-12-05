@@ -24,6 +24,25 @@ tg_timeroc <- tar_eval(
     )
 )
 
+smbs <- rlang::syms(paste0("confidencebands_", nms))
+
+tg_confidencebands <- tar_eval(
+    values = list(s = smbs, col = cols),
+    tar_target(
+        s,
+        confidencebands(
+            T = zlog_data$DaysAtRisk,
+            delta = zlog_data$Deceased,
+            marker = 1 - zlog_data[[col]],
+            cause = 1,
+            timepoint = 90,
+            nboot = 200
+        ),
+        packages = c("survival", "timeROC", "ameld"),
+        deployment = "main"
+    )
+)
+
 tg_timeroc_psurv <- list(
     tar_target(timeROC_RCV, {
         tr <- timeROC::timeROC(
@@ -83,6 +102,21 @@ tg_timeroc_psurv <- list(
         tr
     },
     packages = c("survival", "timeROC"),
+    deployment = "main"
+    )
+)
+
+tg_confidencebands_psurv <- list(
+    tar_target(confidencebands_RCV,
+    confidencebands(
+            T = zlog_data$DaysAtRisk,
+            delta = zlog_data$Deceased,
+            marker = 1 - psurvbootrcv,
+            cause = 1,
+            timepoint = 90,
+            nboot = 200
+    ),
+    packages = c("survival", "timeROC", "ameld"),
     deployment = "main"
     )
 )

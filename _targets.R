@@ -76,6 +76,8 @@ list(
    tg_ameld,
    tg_timeroc,
    tg_timeroc_psurv,
+   tg_confidencebands,
+   tg_confidencebands_psurv,
    tg_variable_importance,
    tg_reports,
    tg_site
