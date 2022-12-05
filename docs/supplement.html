@@ -511,7 +511,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-12-01
+<strong>Last updated:</strong> 2022-12-05
 </p>
 <p>
 <strong>Checks:</strong>
@@ -639,20 +639,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb4631f63f3f88e313c3ab4f20fb005ff6715949atargetblankb4631f6a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreebe55dc7f9423017839bb8cc8b212e44063921c3btargetblankbe55dc7a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b4631f63f3f88e313c3ab4f20fb005ff6715949a" target="_blank">b4631f6</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/be55dc7f9423017839bb8cc8b212e44063921c3b" target="_blank">be55dc7</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreeb4631f63f3f88e313c3ab4f20fb005ff6715949atargetblankb4631f6a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreebe55dc7f9423017839bb8cc8b212e44063921c3btargetblankbe55dc7a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/b4631f63f3f88e313c3ab4f20fb005ff6715949a" target="_blank">b4631f6</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/be55dc7f9423017839bb8cc8b212e44063921c3b" target="_blank">be55dc7</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -718,6 +718,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/be55dc7f9423017839bb8cc8b212e44063921c3b/analysis/supplement.Rmd" target="_blank">be55dc7</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-12-05
+</td>
+<td>
+feat: add confidence bands to roc plots
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/88f7b9fba8d6b1165812e95ba2b40d3d332b9b28/docs/supplement.html" target="_blank">88f7b9f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -1679,12 +1713,27 @@ Sebastian Gibb
 </tbody>
 </table>
 </div>
-<div id="auroc-trend" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> AUROC trend</h1>
+<div id="roc-curves" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> ROC curves</h1>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc-cb-all"></span>
+<img src="figure/supplement.Rmd/roc-cb-all-1.png" alt="Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, MELD-Plus7, as described in [@blanche2013]. The dashed lines depict the corresponding 95% confidence bands calculated by threshold averaging as described in [@fawcett2004]." width="672" />
+<p class="caption">
+Figure 4.1: Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>. The dashed lines depict the corresponding 95% confidence bands calculated by threshold averaging as described in <span class="citation">(Fawcett 2004)</span>.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc-cb-ameld"></span>
+<img src="figure/supplement.Rmd/roc-cb-ameld-1.png" alt="Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, MELD-Plus7, as described in [@blanche2013]. The dashed lines depict the corresponding 95% confidence bands for AMELD calculated by threshold averaging as described in [@fawcett2004]. The other confidence bands are hidden for easier readability." width="672" />
+<p class="caption">
+Figure 4.2: Receiver operating characteristic (ROC) curve. Area under the time-dependent ROC curve (AUC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>. The dashed lines depict the corresponding 95% confidence bands for AMELD calculated by threshold averaging as described in <span class="citation">(Fawcett 2004)</span>. The other confidence bands are hidden for easier readability.
+</p>
+</div>
+</div>
+<div id="auroc-trend" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> AUROC trend</h1>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc-plot"></span>
 <img src="figure/supplement.Rmd/roc-plot-1.png" alt="Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, and MELD-Plus7, as described in [@blanche2013]." width="1728" />
 <p class="caption">
-Figure 4.1: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>.
+Figure 5.1: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>.
 </p>
 </div>
 <p>
@@ -1771,7 +1820,7 @@ Sebastian Gibb
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:roc-plot-wo-cb"></span>
 <img src="figure/supplement.Rmd/roc-plot-wo-cb-1.png" alt="Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, and MELD-Plus7, as described in [@blanche2013]. Identical to the figure above but without confidence bands." width="1728" />
 <p class="caption">
-Figure 4.2: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>. Identical to the figure above but without confidence bands.
+Figure 5.2: Trend in the area under the time-dependent receiver operating characteristic curve (AUROC) based on the nonparametric inverse probability of censoring weighting estimate (IPCW) for AMELD, MELD, MELD-Na, MELD 3.0, and MELD-Plus7, as described in <span class="citation">(Blanche, Dartigues, and Jacqmin-Gadda 2013)</span>. Identical to the figure above but without confidence bands.
 </p>
 </div>
 <p>
@@ -1812,12 +1861,12 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="variable-importance" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Variable importance</h1>
+<div id="variable-importance" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Variable importance</h1>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimpbs"></span>
 <img src="figure/supplement.Rmd/vimpbs-1.png" alt="Variable importance by frequency of bootstrap selections." width="768" />
 <p class="caption">
-Figure 5.1: Variable importance by frequency of bootstrap selections.
+Figure 6.1: Variable importance by frequency of bootstrap selections.
 </p>
 </div>
 <p>
@@ -1893,7 +1942,7 @@ Sebastian Gibb
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:vimprf"></span>
 <img src="figure/supplement.Rmd/vimprf-1.png" alt="Variable importance by logrank in random forest." width="768" />
 <p class="caption">
-Figure 5.2: Variable importance by logrank in random forest.
+Figure 6.2: Variable importance by logrank in random forest.
 </p>
 </div>
 <p>
@@ -1967,11 +2016,14 @@ Sebastian Gibb
 </div>
 </div>
 </div>
-<div id="references" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> References</h1>
+<div id="references" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-blanche2013" class="csl-entry">
 Blanche, P., J.-F. Dartigues, and H. Jacqmin-Gadda. 2013. <span>“Estimating and Comparing Time-Dependent Areas Under Receiver Operating Characteristic Curves for Censored Event Times with Competing Risks.”</span> <em>Stat Med</em> 32 (30): 5381–97. <a href="https://doi.org/10.1002/sim.5958">https://doi.org/10.1002/sim.5958</a>.
+</div>
+<div id="ref-fawcett2004" class="csl-entry">
+Fawcett, T. 2004. <span>“<span>ROC</span> Graphs: Notes and Practical Considerations for Researchers.”</span> <em>Machine Learning</em> 31 (1): 1–38.
 </div>
 <div id="ref-vanderwerken2021" class="csl-entry">
 VanDerwerken, D. N., N. L. Wood, D. L. Segev, and S. E. Gentry. 2021. <span>“The <span>Precise Relationship Between Model</span> for <span>End-Stage Liver Disease</span> and <span>Survival Without</span> a <span>Liver Transplant</span>.”</span> <em>Hepatology</em> 74 (2): 950–60. <a href="https://doi.org/10.1002/hep.31781">https://doi.org/10.1002/hep.31781</a>.
@@ -2006,7 +2058,7 @@ attached base packages:
 other attached packages:
  [1] ggplot2_3.3.6     viridis_0.6.2     viridisLite_0.4.0 mlr3viz_0.5.9    
  [5] mlr3proba_0.4.11  mlr3misc_0.10.0   mlr3_0.13.3       targets_0.12.1   
- [9] data.table_1.14.2 ameld_0.0.30      survival_3.3-1    glmnet_4.1-4     
+ [9] data.table_1.14.2 ameld_0.0.31      survival_3.3-1    glmnet_4.1-4     
 [13] Matrix_1.4-1     
 
 loaded via a namespace (and not attached):
