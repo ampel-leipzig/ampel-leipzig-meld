@@ -404,6 +404,11 @@ estimator (IPCW) [@blanche2013, @R-timeROC].
 Testing was applied as described in @blanche2013.
 A $p < 0.05$ was considered a statistically significant difference.
 
+Further we determined the variable importance by counting how often the
+variable was chosen during the feature selection in the bootstrap process
+described above and by the logrank value returned by one random forest
+implementation [@R-ranger].
+
 Summary tables were built using the *gtsummary* package
 [@gtsummary; @R-gtsummary].
 
@@ -698,6 +703,43 @@ competing MELD scores.
 While the prediction for low-risk patients is similar to other scores,
 AMELD predicts the medium-risk patients more accurately.
 
+## Variable importance
+
+```{r selvar, echo = FALSE}
+bsrank <- rank(-ameld:::.selvars(bootrcv$models, bootrcv$s), ties = "first")
+
+bsrankSodium <- as.vector(bsrank["NA_S"])
+
+bsranktxtSodium <-
+    if (!is.na(bsrankSodium)) {
+        paste0(
+            "in bootstrap selection rank ", bsrankSodium,
+            " of ", ncol(amelddata$x)
+        )
+    } else {
+        paste0("it was never selected in any boostrap sample")
+    }
+
+rfrank <- rank(-rngr$variable.importance, ties = "first")
+rfrankSodium <- as.vector(rfrank["NA_S"])
+rfranktxtSodium <- paste0(
+    "in a random forest variable importance rank ", rfrankSodium, " of ",
+    ncol(amelddata$x)
+)
+```
+
+The AMELD selected features
+`r enum(gsub("^([A-Z])([a-z])", "\\L\\1\\2", cfnms, perl = TRUE)) `
+are the `r max(bsrank[names(cfnms)])` highest ranked features in the bootstrap
+process. In the random forest logrank they are amoung the
+`r max(rfrank[names(cfnms)])` highest ranked features out of `r length(rfrank)`
+features.
+Sodium and albumin introduced by MELD-Na and MELD 3.0 are on position
+`r paste(bsrank[c("NA_S", "ALB_S")], collapse = " and ")` for the bootstrap and
+`r paste(rfrank[c("NA_S", "ALB_S")], collapse = " and ")` for the random forest
+variable importance ranking, respectively
+(see \@ref(fig:vimpbs), \@ref(fig:vimprf) for the complete rankings).
+
 # Discussion
 
 In this retrospective analysis of `r n_analysed` consecutive patients
@@ -708,30 +750,24 @@ incorporates synthesis and inflammatory markers and
 may improve the prediction over previous published
 MELD scores.
 
-```{r selvar, echo = FALSE}
-bsrank <- as.vector(rank(-ameld:::.selvars(bootrcv$models, bootrcv$s), ties = "first")["NA_S"])
-
-bsranktxt <-
-    if (!is.na(bsrank)) {
-        paste0("in bootstrap selection rank ", bsrank, " of ", ncol(amelddata$x))
-    } else {
-        paste0("it was never selected in any boostrap sample")
-    }
-
-rfrank <- as.vector(rank(-rngr$variable.importance, ties = "first")["NA_S"])
-rfranktxt <-
-    paste0("in a random forest variable importance rank ", rfrank, " of ", ncol(amelddata$x))
-```
-
 Although the Organ Procurement and Transplantation Network recommends the use
 of MELD-Na over MELD, the sodium does not add any information to the score.
 Neither in the bootstrap selection nor in the variable importance of a
 random forest model does the sodium gain any important weight
-(`r bsranktxt` and `r rfranktxt`, see \@ref(fig:vimpbs), \@ref(fig:vimprf)).
+(`r bsranktxtSodium` and `r rfranktxtSodium`, see \@ref(fig:vimpbs), \@ref(fig:vimprf)).
 In addition, sodium levels can be affected by diuretic therapy, and
 the discrimination performance of MELD-Na has already been shown by
 @kartoun2017 to be insignificantly different from the classical MELD.
 Consequently it is not a component of our model.
+
+The albumin included in MELD 3.0 is part of the total protein that has
+throughout higher rankings in both variable importance measurements
+(`r bsrank["ALB_S"]` vs. `r bsrank["PROT_S"]` in the bootstrap selection
+and `r rfrank["ALB_S"]` vs. `r rfrank["PROT_S"]` in the random forest variable
+importance, see \@ref(fig:vimpbs), \@ref(fig:vimprf)).
+Using total protein instead of albumin as synthesis marker
+offers more information about additional globulins and especially
+coagulation factors that are incompletely measured by INR.
 
 It has been shown that women receive median lower scores in MELD-Na and
 therefore are less likely to receive an urgent listing for liver transplantation
