@@ -11,7 +11,7 @@
 
 <meta name="author" content="Sebastian Gibb1,3,✉, Thomas Berg2, Adam Herber2, Berend Isermann1, and Thorsten Kaiser1,4" />
 
-<meta name="date" content="2022-12-01" />
+<meta name="date" content="2022-12-19" />
 
 <title>A new machine-learning-based prediction of survival in patients with end-stage liver disease</title>
 
@@ -562,7 +562,7 @@ div.tocify {
 <h1 class="title toc-ignore">A new machine-learning-based prediction of survival in patients with end-stage liver disease</h1>
 <h3 class="subtitle"><p>Comparision against MELD, MELD-Na, MELD 3.0, MELD-Plus7.</p></h3>
 <h4 class="author">Sebastian Gibb<sup>1,3,✉</sup>, Thomas Berg<sup>2</sup>, Adam Herber<sup>2</sup>, Berend Isermann<sup>1</sup>, and Thorsten Kaiser<sup>1,4</sup></h4>
-<h4 class="date">2022-12-01</h4>
+<h4 class="date">2022-12-19</h4>
 <div class="abstract">
 <p class="abstract">Abstract</p>
 <p><strong>Objectives</strong>:
@@ -630,7 +630,7 @@ Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></sp
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-12-01
+<strong>Last updated:</strong> 2022-12-19
 </p>
 <p>
 <strong>Checks:</strong>
@@ -758,20 +758,20 @@ makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1e7217360b9385b64d3514abb7eabeaf6ee5235targetblanke1e7217a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree7ad2405b1561c28d0a8364a46e940b23716ddc16targetblank7ad2405a">
 <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1e7217360b9385b64d3514abb7eabeaf6ee5235" target="_blank">e1e7217</a>
+<strong>Repository version:</strong> <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/7ad2405b1561c28d0a8364a46e940b23716ddc16" target="_blank">7ad2405</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtreee1e7217360b9385b64d3514abb7eabeaf6ee5235targetblanke1e7217a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomampelleipzigampelleipzigmeldtree7ad2405b1561c28d0a8364a46e940b23716ddc16targetblank7ad2405a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and
 connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/e1e7217360b9385b64d3514abb7eabeaf6ee5235" target="_blank">e1e7217</a>.
+The results in this page were generated with repository version <a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/tree/7ad2405b1561c28d0a8364a46e940b23716ddc16" target="_blank">7ad2405</a>.
 See the <em>Past versions</em> tab to see a history of the changes made to the
 R Markdown and HTML files.
 </p>
@@ -837,6 +837,40 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/ampel-leipzig/ampel-leipzig-meld/blob/7ad2405b1561c28d0a8364a46e940b23716ddc16/analysis/article.Rmd" target="_blank">7ad2405</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-12-19
+</td>
+<td>
+feat: add some paragraphs for variable importance
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/ampel-leipzig/ampel-leipzig-meld/2877c0f4506e1d2a0b857e2daa890d0adfe63298/docs/article.html" target="_blank">2877c0f</a>
+</td>
+<td>
+Sebastian Gibb
+</td>
+<td>
+2022-12-01
+</td>
+<td>
+chore: rebuild site
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -2528,6 +2562,10 @@ nonparametric inverse probability of censoring weighting
 estimator (IPCW) <span class="citation">Paul Blanche (2019)</span>.
 Testing was applied as described in <span class="citation">P. Blanche, Dartigues, and Jacqmin-Gadda (2013)</span>.
 A <span class="math inline">\(p &lt; 0.05\)</span> was considered a statistically significant difference.</p>
+<p>Further we determined the variable importance by counting how often the
+variable was chosen during the feature selection in the bootstrap process
+described above and by the logrank value returned by one random forest
+implementation <span class="citation">(Wright, Wager, and Probst 2021)</span>.</p>
 <p>Summary tables were built using the <em>gtsummary</em> package
 <span class="citation">(Sjoberg et al. 2021, 2022)</span>.</p>
 </div>
@@ -3630,6 +3668,20 @@ competing MELD scores.
 While the prediction for low-risk patients is similar to other scores,
 AMELD predicts the medium-risk patients more accurately.</p>
 </div>
+<div id="variable-importance" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Variable importance</h2>
+<p>The AMELD selected features
+IL-6, total protein, INR, cholinesterase, cystatin C, and direct bilirubin
+are the 6 highest ranked features in the bootstrap
+process. In the random forest logrank they are amoung the
+12 highest ranked features out of 42
+features.
+Sodium and albumin introduced by MELD-Na and MELD 3.0 are on position
+18 and 12 for the bootstrap and
+20 and 5 for the random forest
+variable importance ranking, respectively
+(see <a href="#fig:vimpbs"><strong>??</strong></a>, <a href="#fig:vimprf"><strong>??</strong></a> for the complete rankings).</p>
+</div>
 </div>
 <div id="discussion" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Discussion</h1>
@@ -3649,6 +3701,14 @@ In addition, sodium levels can be affected by diuretic therapy, and
 the discrimination performance of MELD-Na has already been shown by
 <span class="citation">Kartoun et al. (2017)</span> to be insignificantly different from the classical MELD.
 Consequently it is not a component of our model.</p>
+<p>The albumin included in MELD 3.0 is part of the total protein that has
+throughout higher rankings in both variable importance measurements
+(12 vs. 2 in the bootstrap selection
+and 5 vs. 1 in the random forest variable
+importance, see <a href="#fig:vimpbs"><strong>??</strong></a>, <a href="#fig:vimprf"><strong>??</strong></a>).
+Using total protein instead of albumin as synthesis marker
+offers more information about additional globulins and especially
+coagulation factors that are incompletely measured by INR.</p>
 <p>It has been shown that women receive median lower scores in MELD-Na and
 therefore are less likely to receive an urgent listing for liver transplantation
 <span class="citation">(Sealock et al. 2022)</span>.
@@ -4015,7 +4075,7 @@ attached base packages:
 [8] base     
 
 other attached packages:
- [1] gtsummary_1.6.0   consort_1.0.1     timeROC_0.4       ameld_0.0.30     
+ [1] gtsummary_1.6.0   consort_1.0.1     timeROC_0.4       ameld_0.0.31     
  [5] survival_3.3-1    glmnet_4.1-4      Matrix_1.4-1      viridis_0.6.2    
  [9] viridisLite_0.4.0 mlr3viz_0.5.9     ggplot2_3.3.6     targets_0.12.1   
 
