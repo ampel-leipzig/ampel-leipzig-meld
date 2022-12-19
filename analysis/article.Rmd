@@ -731,7 +731,7 @@ rfranktxtSodium <- paste0(
 The AMELD selected features
 `r enum(gsub("^([A-Z])([a-z])", "\\L\\1\\2", cfnms, perl = TRUE)) `
 are the `r max(bsrank[names(cfnms)])` highest ranked features in the bootstrap
-process. In the random forest logrank they are amoung the
+process. In the random forest logrank they are among the
 `r max(rfrank[names(cfnms)])` highest ranked features out of `r length(rfrank)`
 features.
 Sodium and albumin introduced by MELD-Na and MELD 3.0 are on position
